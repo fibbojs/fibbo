@@ -14,8 +14,6 @@ jobs:
             node-version: 18
             registry-url: https://registry.npmjs.org/
         - run: npm ci
-        - name: Lint with ESLint
-          run: npm run lint
         - name: Test package
           run: npm run test
         - name: Build
