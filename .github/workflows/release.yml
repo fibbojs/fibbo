@@ -1,0 +1,36 @@
+name: Publish to NPM
+
+on:
+  release:
+    types: [published]
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v2
+          with:
+            node-version: 18
+            registry-url: https://registry.npmjs.org/
+        - run: npm ci
+        - name: Lint with ESLint
+          run: npm run lint
+        - name: Test package
+          run: npm run test
+        - name: Build
+          run: npm run build
+        # Configure Git for automated commits
+        - name: Configuring Git
+          run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@users.noreply.github.com"
+        # Bump package version
+        - name: Update package version
+          run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
+        # Publish package to NPM
+        - name: Publish package to NPM
+          run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # Push changes to GitHub (package.json and package-lock.json)
+        - name: Push changes to GitHub
+          run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main

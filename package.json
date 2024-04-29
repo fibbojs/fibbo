@@ -1,0 +1,64 @@
+{
+  "name": "@fibbojs/fibbo",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "A web game engine written in TypeScript",
+  "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
+  "license": "Apache-2.0",
+  "homepage": "https://fibbojs.github.io/fibbo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibbojs/fibbo.git"
+  },
+  "bugs": "https://github.com/fibbojs/fibbo/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
+  },
+  "dependencies": {
+    "vitepress": "^1.1.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.14.0",
+    "@antfu/ni": "^0.21.12",
+    "@antfu/utils": "^0.7.7",
+    "@types/node": "^20.12.7",
+    "eslint": "^9.0.0",
+    "esno": "^4.7.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5",
+    "unbuild": "^2.0.0",
+    "vite": "^5.2.9",
+    "vitest": "^1.5.0"
+  }
+}
