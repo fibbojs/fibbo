@@ -8,6 +8,10 @@ Core package for the Fibbo game engine.
 
 - [🏡 Documentation](https://fibbojs.github.io/fibbo/)
 
+## Development
+
+3D Models used for development purpose are from [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) and [Kenney](https://kenney.nl/assets?q=3d).
+
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@fibbojs/fibbo/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/@fibbojs/fibbo

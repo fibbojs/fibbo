@@ -50,6 +50,7 @@
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
     "@types/node": "^20.12.7",
+    "@types/three": "^0.164.0",
     "eslint": "^9.0.0",
     "esno": "^4.7.0",
     "rimraf": "^5.0.5",
@@ -58,5 +59,8 @@
     "vite": "^5.2.9",
     "vitepress": "^1.1.4",
     "vitest": "^1.5.0"
+  },
+  "dependencies": {
+    "three": "^0.164.1"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "playground",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
+  "license": "Apache-2.0",
+  "homepage": "https://fibbojs.github.io/fibbo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibbojs/fibbo.git"
+  },
+  "bugs": "https://github.com/fibbojs/fibbo/issues",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@fibbojs/fibbo": "file:../",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}
