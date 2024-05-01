@@ -12,6 +12,30 @@ Core package for the Fibbo game engine.
 
 3D Models used for development purpose are from [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) and [Kenney](https://kenney.nl/assets?q=3d).
 
+- Install dependencies
+
+```bash
+npm install
+```
+
+```bash
+npm run playground:install
+```
+
+- In one terminal, run the build process in watch mode
+
+```bash
+npm run dev
+```
+
+- In another terminal, run the playground in watch mode
+
+```bash
+npm run playground:dev
+```
+
+You can now open your browser and navigate to `http://localhost:5173/`.
+
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@fibbojs/fibbo/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/@fibbojs/fibbo
