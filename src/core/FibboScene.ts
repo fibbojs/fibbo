@@ -1,13 +1,20 @@
 import * as THREE from 'three'
+import * as RAPIER from '@dimforge/rapier3d'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import type { World } from '@dimforge/rapier3d'
 import type { FibboModel } from './model/FibboModel'
+import { FibboCube } from './model/FibboCube'
 import { FibboGLTF } from './model/FibboGLTF'
 
 export class FibboScene {
   models: FibboModel[]
+  // Three.js
   scene: THREE.Scene
   camera: THREE.PerspectiveCamera
   controls: OrbitControls | undefined
+  // Rapier
+  gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
+  world?: World
 
   constructor(debug = false) {
     // Initialize models array
@@ -21,7 +28,7 @@ export class FibboScene {
     this.scene = new THREE.Scene()
     this.scene.background = new THREE.Color(0x121212)
     this.camera = new THREE.PerspectiveCamera(75, (window as any).innerWidth / (window as any).innerHeight, 0.1, 1000)
-    this.camera.position.set(2.5, 2.5, 2.5)
+    this.camera.position.set(5, 5, 5)
     const renderer = new THREE.WebGLRenderer()
     renderer.setSize((window as any).innerWidth, (window as any).innerHeight)
 
@@ -57,6 +64,13 @@ export class FibboScene {
     let currentTime = 0
     let delta = 0
 
+    // Initialize Rapier world
+    this.world = new RAPIER.World(this.gravity)
+
+    // Create the ground
+    const groundColliderDesc = RAPIER.ColliderDesc.cuboid(10.0, 0.1, 10.0)
+    this.world.createCollider(groundColliderDesc)
+
     /**
      * Animation loop
      */
@@ -78,6 +92,23 @@ export class FibboScene {
 
         // Debug info
         this.debug()
+
+        // Rapier debug
+        if (this.world) {
+          const { vertices, colors } = this.world.debugRender()
+          const geometry = new THREE.BufferGeometry()
+          geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
+          geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3))
+          const material = new THREE.LineBasicMaterial({ vertexColors: true })
+          const lines = new THREE.LineSegments(geometry, material)
+          this.scene.add(lines)
+        }
+      }
+
+      // Physics
+      if (this.world) {
+        this.world.timestep = delta
+        this.world.step()
       }
 
       renderer.render(this.scene, this.camera)

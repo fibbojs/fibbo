@@ -1,4 +1,5 @@
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import type { FibboScene } from '../FibboScene'
 import { FibboModel } from './FibboModel'
 
 /*
@@ -20,8 +21,8 @@ export class FibboGLTF extends FibboModel {
   public type: string = 'FibboGLTF'
   public onLoaded: () => void = () => {}
 
-  constructor(model: string, x: number = 0, y: number = 0, z: number = 0) {
-    super(x, y, z)
+  constructor(scene: FibboScene, model: string) {
+    super(scene)
     // Create GLTF Loader
     const loader = new GLTFLoader()
     /*
@@ -39,7 +40,7 @@ export class FibboGLTF extends FibboModel {
       (gltf) => {
         this.object3D = gltf.scene
         this.object3D.scale.set(1, 1, 1)
-        this.object3D.position.set(x, y, z)
+        this.object3D.position.set(0, 5, 0)
         this.onLoaded()
       },
       // Called while loading is progressing

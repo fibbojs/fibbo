@@ -61,6 +61,7 @@
     "vitest": "^1.5.0"
   },
   "dependencies": {
+    "@dimforge/rapier3d": "^0.12.0",
     "three": "^0.164.1"
   }
 }

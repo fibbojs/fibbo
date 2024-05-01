@@ -1,8 +1,9 @@
 import { FibboGLTF } from '@fibbojs/fibbo'
+import type { FibboScene } from '@fibbojs/fibbo'
 
 export default class Duck extends FibboGLTF {
-  constructor() {
-    super('Duck.glb')
+  constructor(scene: FibboScene) {
+    super(scene, 'Duck.glb')
   }
 
   onFrame(delta: number) {

@@ -5,8 +5,12 @@ import GltfCube from './classes/GltfCube'
 
 const scene = new FibboScene(true)
 
-const duck = new Duck()
+const duck = new Duck(scene)
 scene.addModel(duck)
 
-const cube = new GltfCube()
-scene.addModel(cube)
+const gltfCube = new GltfCube(scene)
+scene.addModel(gltfCube)
+
+setTimeout(() => {
+  gltfCube.rigidBody?.applyImpulse({ x: 0, y: 5, z: 0 }, true)
+}, 2000)
