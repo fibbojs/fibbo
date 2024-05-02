@@ -36,7 +36,7 @@ npm run playground:dev
 
 ## Documentation
 
-The documentation is using [VitePress](https://vitepress.vuejs.org/).
+The documentation is using [VitePress](https://vitepress.dev/).
 You can run the documentation locally by running:
 
 ```bash
