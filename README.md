@@ -34,6 +34,8 @@ npm run dev
 npm run playground:dev
 ```
 
+You can now open your browser and navigate to `http://localhost:5173/`.
+
 ## Documentation
 
 The documentation is using [VitePress](https://vitepress.dev/).
