@@ -10,7 +10,6 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Quick Start', link: '/getting-started/installation' },
-      { text: 'Components', link: '/components/introduction' },
     ],
 
     sidebar: [
@@ -22,16 +21,25 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Components',
-        items: [
-          { text: 'Introduction', link: '/components/introduction' },
-          { text: 'Component Example', link: '/components/component-example' },
-        ],
-      },
-      {
         text: 'Guide',
         items: [
           { text: 'Example Guide', link: '/guide/example-guide' },
+        ],
+      },
+      {
+        text: 'API Reference',
+        collapsed: true,
+        items: [
+          { text: 'Index', link: '/api/index.md' },
+          { text: 'Classes', items: [
+            { text: 'FibboScene', link: '/api/classes/FibboScene' },
+            { text: 'FibboModel', link: '/api/classes/FibboModel' },
+            { text: 'FibboCube', link: '/api/classes/FibboCube' },
+            { text: 'FibboGLTF', link: '/api/classes/FibboGLTF' },
+          ] },
+          { text: 'Functions', items: [
+            { text: 'useRigidBody', link: '/api/functions/useRigidBody' },
+          ] },
         ],
       },
     ],

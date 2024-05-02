@@ -3,9 +3,11 @@ import * as RAPIER from '@dimforge/rapier3d'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { World } from '@dimforge/rapier3d'
 import type { FibboModel } from './model/FibboModel'
-import { FibboCube } from './model/FibboCube'
 import { FibboGLTF } from './model/FibboGLTF'
 
+/**
+ * @description A scene which contains the models, the Three.js scene and the Rapier world.
+ */
 export class FibboScene {
   models: FibboModel[]
   // Three.js
@@ -14,7 +16,7 @@ export class FibboScene {
   controls: OrbitControls | undefined
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
-  world?: World
+  world: World
 
   constructor(debug = false) {
     // Initialize models array
@@ -124,11 +126,13 @@ export class FibboScene {
     if (model instanceof FibboGLTF) {
       // Wait for the model to be loaded before adding it to the scene
       model.onLoaded = () => {
-        this.scene.add(model.object3D)
+        if (model.object3D)
+          this.scene.add(model.object3D)
       }
     }
     else {
-      this.scene.add(model.object3D)
+      if (model.object3D)
+        this.scene.add(model.object3D)
     }
   }
 
@@ -180,6 +184,9 @@ export class FibboScene {
     if (objectsDOM) {
       objectsDOM.innerHTML = ''
       this.models.forEach((model, i) => {
+        if (!objectsDOM || !model.object3D)
+          return
+
         const objectInfoDOM = document.createElement('div')
         objectInfoDOM.className = 'object-info'
         objectInfoDOM.id = `object${i}`

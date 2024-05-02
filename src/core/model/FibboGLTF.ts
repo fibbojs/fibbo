@@ -17,6 +17,9 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
 )
 */
 
+/**
+ * @description A GLTF model in FibboJS.
+ */
 export class FibboGLTF extends FibboModel {
   public type: string = 'FibboGLTF'
   public onLoaded: () => void = () => {}
@@ -39,8 +42,6 @@ export class FibboGLTF extends FibboModel {
       // Called when the resource is loaded
       (gltf) => {
         this.object3D = gltf.scene
-        this.object3D.scale.set(1, 1, 1)
-        this.object3D.position.set(0, 5, 0)
         this.onLoaded()
       },
       // Called while loading is progressing
@@ -54,7 +55,6 @@ export class FibboGLTF extends FibboModel {
     )
   }
 
-  onFrame(delta: number) {
-    super.onFrame(delta)
+  onFrame(_delta: number) {
   }
 }

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/index.ts"],
+  "out": "./docs/api",
+  "categorizeByGroup": true,
+  "allReflectionsHaveOwnDocument": true,
+  "plugin": ["typedoc-plugin-markdown"]
+}
