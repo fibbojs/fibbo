@@ -72,8 +72,7 @@ export class FibboGLTF extends FibboModel {
         this.onLoaded()
       },
       // Called while loading is progressing
-      (xhr) => {
-        console.log(`${xhr.loaded / xhr.total * 100}% loaded`)
+      (_xhr) => {
       },
       // Called when loading has errors
       (error) => {
