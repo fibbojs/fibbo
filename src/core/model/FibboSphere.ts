@@ -31,7 +31,7 @@ export class FibboSphere extends FibboModel {
     super(scene)
     // Create a cube
     const geometry = new THREE.SphereGeometry(0.5, 32, 32)
-    const material = new THREE.MeshBasicMaterial({ color: 0x00FF00 })
+    const material = new THREE.MeshBasicMaterial({ color: 0x666666 })
     this.object3D = new THREE.Mesh(geometry, material)
   }
 

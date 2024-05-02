@@ -106,12 +106,19 @@ export class FibboScene {
 
         // Rapier debug
         if (this.world) {
+          // Remove previous debug lines
+          const previousLines = this.scene.getObjectByName('debugLines')
+          if (previousLines)
+            this.scene.remove(previousLines)
+
+          // Render new debug lines
           const { vertices, colors } = this.world.debugRender()
           const geometry = new THREE.BufferGeometry()
           geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
           geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3))
           const material = new THREE.LineBasicMaterial({ vertexColors: true })
           const lines = new THREE.LineSegments(geometry, material)
+          lines.name = 'debugLines'
           this.scene.add(lines)
         }
       }

@@ -77,11 +77,14 @@ export function useRigidBody(
         // If a shape wasn't defined
         if (!shape) {
           // Detect if the model is a sphere, and set the shape to sphere
-          if (this instanceof FibboSphere)
+          if (this instanceof FibboSphere) {
             shape = Fibbo3dShapes.SPHERE
+            // Add 0.005 to scale so the collider looks better when debugging a ball
+            scale.x += 0.005
+          }
           else
-            // Default to cube
-            shape = Fibbo3dShapes.CUBE
+          // Default to cube
+          { shape = Fibbo3dShapes.CUBE }
         }
 
         // Create a dynamic rigid-body.
