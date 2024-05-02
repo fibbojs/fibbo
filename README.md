@@ -34,6 +34,21 @@ npm run dev
 npm run playground:dev
 ```
 
+## Documentation
+
+The documentation is using [VitePress](https://vitepress.vuejs.org/).
+You can run the documentation locally by running:
+
+```bash
+npm run docs:dev
+```
+
+Also, the API Reference part is generated using [TypeDoc](https://typedoc.org/). You can generate it by running:
+
+```bash
+npm run docs:generate
+```
+
 You can now open your browser and navigate to `http://localhost:5173/`.
 
 <!-- Badges -->
