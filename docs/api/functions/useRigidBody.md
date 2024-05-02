@@ -2,15 +2,16 @@
 
 # Function: useRigidBody
 
-▸ **useRigidBody**(`position?`, `scale?`, `rotation?`): `Function`
+▸ **useRigidBody**(`position?`, `scale?`, `rotation?`, `shape?`): `Function`
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `position` | [`Fibbo3DVector`](../interfaces/Fibbo3DVector.md) | Default position. |
-| `scale` | [`Fibbo3DVector`](../interfaces/Fibbo3DVector.md) | Default scale. |
-| `rotation` | [`Fibbo3DVector`](../interfaces/Fibbo3DVector.md) | Default rotation. |
+| `position?` | [`FibboVector3`](../interfaces/FibboVector3.md) | Position of the rigid body. |
+| `scale?` | [`FibboVector3`](../interfaces/FibboVector3.md) | Scale of the rigid body. |
+| `rotation?` | [`FibboVector3`](../interfaces/FibboVector3.md) | Rotation of the rigid body. |
+| `shape?` | [`Fibbo3dShapes`](../enums/Fibbo3dShapes.md) | Shape of the rigid body. |
 
 #### Returns
 
@@ -22,21 +23,28 @@ The class with the rigid body added.
 
 This decorator is used to add a rigid body to a FibboModel (like FibboCube, FibboGLTF, etc).
 
+If no position, scale or rotation is provided, the default values of the FibboModel will be used.
+
+If no shape is provided, the decorator will try to detect a supported polygonal shape, otherwise it will default to a cube.
+
 **`Example`**
 
 ```ts
-import { FibboModel } from './FibboModel'
+import { FibboCube, useRigidBody } from '@fibbojs/fibbo'
 import type { FibboScene } from '../FibboScene'
-import { useRigidBody } from '../decorators/useRigidBody'
 
 @useRigidBody()
-export class MyModel extends FibboModel {
+export class MyCube extends FibboCube {
  constructor(scene: FibboScene) {
   super(scene)
+ }
+
+ onFrame(delta: number) {
+  super.onFrame(delta)
  }
 }
 ```
 
 #### Defined in
 
-[core/decorators/useRigidBody.ts:25](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/decorators/useRigidBody.ts#L25)
+[core/decorators/useRigidBody.ts:37](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/decorators/useRigidBody.ts#L37)

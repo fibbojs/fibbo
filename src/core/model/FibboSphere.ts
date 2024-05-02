@@ -3,13 +3,13 @@ import type { FibboScene } from '../FibboScene'
 import { FibboModel } from './FibboModel'
 
 /**
- * @description A simple cube model in FibboJS.
+ * @description A simple sphere model in FibboJS.
  * @example
  * ```ts
- * import { FibboCube } from './FibboCube'
+ * import { FibboSphere } from './FibboSphere'
  * import type { FibboScene } from '../FibboScene'
  *
- * export class MyCube extends FibboCube {
+ * export class MySphere extends FibboSphere {
  *  constructor(scene: FibboScene) {
  *    super(scene)
  *  }
@@ -20,7 +20,7 @@ import { FibboModel } from './FibboModel'
  * }
  * ```
  */
-export class FibboCube extends FibboModel {
+export class FibboSphere extends FibboModel {
   /**
    * Object3D is redefined from FibboModel without the ? because it is
    * directly available after the constructor, as the cube is created synchronously.
@@ -30,7 +30,7 @@ export class FibboCube extends FibboModel {
   constructor(scene: FibboScene) {
     super(scene)
     // Create a cube
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
+    const geometry = new THREE.SphereGeometry(0.5, 32, 32)
     const material = new THREE.MeshBasicMaterial({ color: 0x00FF00 })
     this.object3D = new THREE.Mesh(geometry, material)
   }

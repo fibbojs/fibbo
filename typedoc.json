@@ -4,5 +4,6 @@
   "out": "./docs/api",
   "categorizeByGroup": true,
   "allReflectionsHaveOwnDocument": true,
+  "groupOrder": ["Classes", "Functions", "Enumerations", "Interfaces", "*"],
   "plugin": ["typedoc-plugin-markdown"]
 }

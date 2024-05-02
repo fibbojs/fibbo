@@ -12,6 +12,8 @@ The base class for all models in FibboJS.
 
   ↳ [`FibboCube`](FibboCube.md)
 
+  ↳ [`FibboSphere`](FibboSphere.md)
+
   ↳ [`FibboGLTF`](FibboGLTF.md)
 
 ## Table of contents
@@ -20,16 +22,19 @@ The base class for all models in FibboJS.
 
 - [constructor](FibboModel.md#constructor)
 
+### Methods
+
+- [onFrame](FibboModel.md#onframe)
+
 ### Properties
 
 - [collider](FibboModel.md#collider)
 - [object3D](FibboModel.md#object3d)
+- [position](FibboModel.md#position)
 - [rigidBody](FibboModel.md#rigidbody)
+- [rotation](FibboModel.md#rotation)
+- [scale](FibboModel.md#scale)
 - [scene](FibboModel.md#scene)
-
-### Methods
-
-- [onFrame](FibboModel.md#onframe)
 
 ## Constructors
 
@@ -49,47 +54,7 @@ The base class for all models in FibboJS.
 
 #### Defined in
 
-[core/model/FibboModel.ts:20](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L20)
-
-## Properties
-
-### collider
-
-• `Optional` **collider**: `Collider`
-
-#### Defined in
-
-[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L15)
-
-___
-
-### object3D
-
-• `Optional` **object3D**: `Object3D`\<`Object3DEventMap`\>
-
-#### Defined in
-
-[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L12)
-
-___
-
-### rigidBody
-
-• `Optional` **rigidBody**: `RigidBody`
-
-#### Defined in
-
-[core/model/FibboModel.ts:14](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L14)
-
-___
-
-### scene
-
-• **scene**: [`FibboScene`](FibboScene.md)
-
-#### Defined in
-
-[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L10)
+[core/model/FibboModel.ts:23](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L23)
 
 ## Methods
 
@@ -109,4 +74,74 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:28](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L28)
+[core/model/FibboModel.ts:36](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L36)
+
+## Properties
+
+### collider
+
+• `Optional` **collider**: `Collider`
+
+#### Defined in
+
+[core/model/FibboModel.ts:18](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L18)
+
+___
+
+### object3D
+
+• `Optional` **object3D**: `Object3D`\<`Object3DEventMap`\>
+
+#### Defined in
+
+[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L15)
+
+___
+
+### position
+
+• **position**: `Vector3`
+
+#### Defined in
+
+[core/model/FibboModel.ts:11](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L11)
+
+___
+
+### rigidBody
+
+• `Optional` **rigidBody**: `RigidBody`
+
+#### Defined in
+
+[core/model/FibboModel.ts:17](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L17)
+
+___
+
+### rotation
+
+• **rotation**: `Vector3`
+
+#### Defined in
+
+[core/model/FibboModel.ts:13](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L13)
+
+___
+
+### scale
+
+• **scale**: `Vector3`
+
+#### Defined in
+
+[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L12)
+
+___
+
+### scene
+
+• **scene**: [`FibboScene`](FibboScene.md)
+
+#### Defined in
+
+[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L10)

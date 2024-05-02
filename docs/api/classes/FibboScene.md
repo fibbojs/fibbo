@@ -6,11 +6,28 @@
 
 A scene which contains the models, the Three.js scene and the Rapier world.
 
+**`Example`**
+
+```ts
+import { FibboScene } from './FibboScene'
+import { MyCube } from './model/MyCube'
+
+const scene = new FibboScene()
+const cube = new MyCube(scene)
+scene.addModel(cube)
+```
+
 ## Table of contents
 
 ### Constructors
 
 - [constructor](FibboScene.md#constructor)
+
+### Methods
+
+- [addDebugPanel](FibboScene.md#adddebugpanel)
+- [addModel](FibboScene.md#addmodel)
+- [debug](FibboScene.md#debug)
 
 ### Properties
 
@@ -20,12 +37,6 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 - [models](FibboScene.md#models)
 - [scene](FibboScene.md#scene)
 - [world](FibboScene.md#world)
-
-### Methods
-
-- [addDebugPanel](FibboScene.md#adddebugpanel)
-- [addModel](FibboScene.md#addmodel)
-- [debug](FibboScene.md#debug)
 
 ## Constructors
 
@@ -45,75 +56,7 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 
 #### Defined in
 
-[core/FibboScene.ts:21](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L21)
-
-## Properties
-
-### camera
-
-• **camera**: `PerspectiveCamera`
-
-#### Defined in
-
-[core/FibboScene.ts:15](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L15)
-
-___
-
-### controls
-
-• **controls**: `undefined` \| `OrbitControls`
-
-#### Defined in
-
-[core/FibboScene.ts:16](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L16)
-
-___
-
-### gravity
-
-• **gravity**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `x` | `number` |
-| `y` | `number` |
-| `z` | `number` |
-
-#### Defined in
-
-[core/FibboScene.ts:18](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L18)
-
-___
-
-### models
-
-• **models**: [`FibboModel`](FibboModel.md)[]
-
-#### Defined in
-
-[core/FibboScene.ts:12](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L12)
-
-___
-
-### scene
-
-• **scene**: `Scene`
-
-#### Defined in
-
-[core/FibboScene.ts:14](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L14)
-
-___
-
-### world
-
-• **world**: `World`
-
-#### Defined in
-
-[core/FibboScene.ts:19](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L19)
+[core/FibboScene.ts:30](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L30)
 
 ## Methods
 
@@ -127,7 +70,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:139](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L139)
+[core/FibboScene.ts:148](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L148)
 
 ___
 
@@ -147,7 +90,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:123](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L123)
+[core/FibboScene.ts:132](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L132)
 
 ___
 
@@ -161,4 +104,72 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:178](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L178)
+[core/FibboScene.ts:187](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L187)
+
+## Properties
+
+### camera
+
+• **camera**: `PerspectiveCamera`
+
+#### Defined in
+
+[core/FibboScene.ts:24](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L24)
+
+___
+
+### controls
+
+• **controls**: `undefined` \| `OrbitControls`
+
+#### Defined in
+
+[core/FibboScene.ts:25](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L25)
+
+___
+
+### gravity
+
+• **gravity**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Defined in
+
+[core/FibboScene.ts:27](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L27)
+
+___
+
+### models
+
+• **models**: [`FibboModel`](FibboModel.md)[]
+
+#### Defined in
+
+[core/FibboScene.ts:21](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L21)
+
+___
+
+### scene
+
+• **scene**: `Scene`
+
+#### Defined in
+
+[core/FibboScene.ts:23](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L23)
+
+___
+
+### world
+
+• **world**: `World`
+
+#### Defined in
+
+[core/FibboScene.ts:28](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L28)

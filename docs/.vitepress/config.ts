@@ -32,16 +32,24 @@ export default defineConfig({
         items: [
           { text: 'Index', link: '/api/index.md' },
           { text: 'Classes', items: [
-            { text: 'FibboScene', link: '/api/classes/FibboScene' },
-            { text: 'FibboModel', link: '/api/classes/FibboModel' },
             { text: 'FibboCube', link: '/api/classes/FibboCube' },
             { text: 'FibboGLTF', link: '/api/classes/FibboGLTF' },
-          ] },
-          { text: 'Interfaces', items: [
-            { text: 'Fibbo3DVector', link: '/api/interfaces/Fibbo3DVector' },
+            { text: 'FibboModel', link: '/api/classes/FibboModel' },
+            { text: 'FibboScene', link: '/api/classes/FibboScene' },
+            { text: 'FibboSphere', link: '/api/classes/FibboSphere' },
           ] },
           { text: 'Functions', items: [
+            { text: 'usePosition', link: '/api/functions/usePosition' },
             { text: 'useRigidBody', link: '/api/functions/useRigidBody' },
+            { text: 'useRotation', link: '/api/functions/useRotation' },
+            { text: 'useRotationDegree', link: '/api/functions/useRotationDegree' },
+            { text: 'useScale', link: '/api/functions/useScale' },
+          ] },
+          { text: 'Enumerations', items: [
+            { text: 'Fibbo3dShapes', link: '/api/enums/Fibbo3dShapes' },
+          ] },
+          { text: 'Interfaces', items: [
+            { text: 'FibboVector3', link: '/api/interfaces/FibboVector3' },
           ] },
         ],
       },

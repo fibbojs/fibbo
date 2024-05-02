@@ -1,9 +1,17 @@
 import './style.css'
 import { FibboScene } from '@fibbojs/fibbo'
+import MyCube from './classes/MyCube'
+import MySphere from './classes/MySphere'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 
 const scene = new FibboScene(true)
+
+const cube = new MyCube(scene)
+scene.addModel(cube)
+
+const sphere = new MySphere(scene)
+scene.addModel(sphere)
 
 const duck = new Duck(scene)
 scene.addModel(duck)

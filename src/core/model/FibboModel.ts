@@ -1,4 +1,4 @@
-import type * as THREE from 'three'
+import * as THREE from 'three'
 import type { Collider, RigidBody } from '@dimforge/rapier3d'
 import type { FibboScene } from '../FibboScene'
 
@@ -8,6 +8,9 @@ import type { FibboScene } from '../FibboScene'
 export abstract class FibboModel {
   // Scene
   scene: FibboScene
+  position: THREE.Vector3
+  scale: THREE.Vector3
+  rotation: THREE.Vector3
   // Object3D
   object3D?: THREE.Object3D
   // Physics
@@ -23,6 +26,11 @@ export abstract class FibboModel {
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FibboScene must have a world to create a FibboCube')
+
+    // Define default values for position, scale and rotation
+    this.position = new THREE.Vector3(0, 1, 0)
+    this.scale = new THREE.Vector3(1, 1, 1)
+    this.rotation = new THREE.Vector3(0, 0, 0)
   }
 
   abstract onFrame(_delta: number): void

@@ -7,6 +7,15 @@ import { FibboGLTF } from './model/FibboGLTF'
 
 /**
  * @description A scene which contains the models, the Three.js scene and the Rapier world.
+ * @example
+ * ```ts
+ * import { FibboScene } from './FibboScene'
+ * import { MyCube } from './model/MyCube'
+ *
+ * const scene = new FibboScene()
+ * const cube = new MyCube(scene)
+ * scene.addModel(cube)
+ * ```
  */
 export class FibboScene {
   models: FibboModel[]

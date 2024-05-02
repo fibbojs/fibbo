@@ -1,18 +1,18 @@
-[@fibbojs/fibbo](/api/index)  / FibboCube
+[@fibbojs/fibbo](/api/index)  / FibboSphere
 
-# Class: FibboCube
+# Class: FibboSphere
 
 **`Description`**
 
-A simple cube model in FibboJS.
+A simple sphere model in FibboJS.
 
 **`Example`**
 
 ```ts
-import { FibboCube } from './FibboCube'
+import { FibboSphere } from './FibboSphere'
 import type { FibboScene } from '../FibboScene'
 
-export class MyCube extends FibboCube {
+export class MySphere extends FibboSphere {
  constructor(scene: FibboScene) {
    super(scene)
  }
@@ -27,33 +27,33 @@ export class MyCube extends FibboCube {
 
 - [`FibboModel`](FibboModel.md)
 
-  ↳ **`FibboCube`**
+  ↳ **`FibboSphere`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](FibboCube.md#constructor)
+- [constructor](FibboSphere.md#constructor)
 
 ### Methods
 
-- [onFrame](FibboCube.md#onframe)
+- [onFrame](FibboSphere.md#onframe)
 
 ### Properties
 
-- [collider](FibboCube.md#collider)
-- [object3D](FibboCube.md#object3d)
-- [position](FibboCube.md#position)
-- [rigidBody](FibboCube.md#rigidbody)
-- [rotation](FibboCube.md#rotation)
-- [scale](FibboCube.md#scale)
-- [scene](FibboCube.md#scene)
+- [collider](FibboSphere.md#collider)
+- [object3D](FibboSphere.md#object3d)
+- [position](FibboSphere.md#position)
+- [rigidBody](FibboSphere.md#rigidbody)
+- [rotation](FibboSphere.md#rotation)
+- [scale](FibboSphere.md#scale)
+- [scene](FibboSphere.md#scene)
 
 ## Constructors
 
 ### constructor
 
-• **new FibboCube**(`scene`): [`FibboCube`](FibboCube.md)
+• **new FibboSphere**(`scene`): [`FibboSphere`](FibboSphere.md)
 
 #### Parameters
 
@@ -63,7 +63,7 @@ export class MyCube extends FibboCube {
 
 #### Returns
 
-[`FibboCube`](FibboCube.md)
+[`FibboSphere`](FibboSphere.md)
 
 #### Overrides
 
@@ -71,7 +71,7 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-[core/model/FibboCube.ts:30](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboCube.ts#L30)
+core/model/FibboSphere.ts:30
 
 ## Methods
 
@@ -95,7 +95,7 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-[core/model/FibboCube.ts:38](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboCube.ts#L38)
+core/model/FibboSphere.ts:38
 
 ## Properties
 
@@ -126,7 +126,7 @@ directly available after the constructor, as the cube is created synchronously.
 
 #### Defined in
 
-[core/model/FibboCube.ts:28](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboCube.ts#L28)
+core/model/FibboSphere.ts:28
 
 ___
 
