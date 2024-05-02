@@ -4,7 +4,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-Core package for the Fibbo game engine.
+Core package for the Fibbo web game engine, based on [three.js](https://threejs.org/) and [Rappier](https://rapier.rs/).
 
 - [🏡 Documentation](https://fibbojs.github.io/fibbo/)
 
