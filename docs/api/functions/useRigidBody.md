@@ -8,9 +8,9 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `position` | `Fibbo3DVector` | Default position. |
-| `scale` | `Fibbo3DVector` | Default scale. |
-| `rotation` | `Fibbo3DVector` | Default rotation. |
+| `position` | [`Fibbo3DVector`](../interfaces/Fibbo3DVector.md) | Default position. |
+| `scale` | [`Fibbo3DVector`](../interfaces/Fibbo3DVector.md) | Default scale. |
+| `rotation` | [`Fibbo3DVector`](../interfaces/Fibbo3DVector.md) | Default rotation. |
 
 #### Returns
 
@@ -39,4 +39,4 @@ export class MyModel extends FibboModel {
 
 #### Defined in
 
-core/decorators/useRigidBody.ts:25
+[core/decorators/useRigidBody.ts:25](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/decorators/useRigidBody.ts#L25)

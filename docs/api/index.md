@@ -11,6 +11,10 @@
 - [FibboModel](classes/FibboModel.md)
 - [FibboScene](classes/FibboScene.md)
 
+### Interfaces
+
+- [Fibbo3DVector](interfaces/Fibbo3DVector.md)
+
 ### Functions
 
 - [useRigidBody](functions/useRigidBody.md)

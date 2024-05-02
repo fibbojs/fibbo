@@ -54,7 +54,7 @@ A GLTF model in FibboJS.
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:27](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboGLTF.ts#L27)
+[core/model/FibboGLTF.ts:27](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboGLTF.ts#L27)
 
 ## Properties
 
@@ -68,7 +68,7 @@ A GLTF model in FibboJS.
 
 #### Defined in
 
-[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L15)
+[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L15)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L12)
+[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L12)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:25](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboGLTF.ts#L25)
+[core/model/FibboGLTF.ts:25](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboGLTF.ts#L25)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:14](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L14)
+[core/model/FibboModel.ts:14](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L14)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L10)
+[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L10)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:24](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboGLTF.ts#L24)
+[core/model/FibboGLTF.ts:24](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboGLTF.ts#L24)
 
 ## Methods
 
@@ -162,4 +162,4 @@ ___
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:58](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboGLTF.ts#L58)
+[core/model/FibboGLTF.ts:58](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboGLTF.ts#L58)

@@ -51,7 +51,7 @@ A simple cube model in FibboJS.
 
 #### Defined in
 
-[core/model/FibboCube.ts:21](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboCube.ts#L21)
+[core/model/FibboCube.ts:21](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboCube.ts#L21)
 
 ## Properties
 
@@ -65,7 +65,7 @@ A simple cube model in FibboJS.
 
 #### Defined in
 
-[core/model/FibboCube.ts:19](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboCube.ts#L19)
+[core/model/FibboCube.ts:19](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboCube.ts#L19)
 
 ___
 
@@ -82,7 +82,7 @@ they're directly available after the constructor, as the cube is created synchro
 
 #### Defined in
 
-[core/model/FibboCube.ts:15](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboCube.ts#L15)
+[core/model/FibboCube.ts:15](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboCube.ts#L15)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboCube.ts:17](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboCube.ts#L17)
+[core/model/FibboCube.ts:17](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboCube.ts#L17)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L10)
+[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L10)
 
 ## Methods
 
@@ -134,4 +134,4 @@ ___
 
 #### Defined in
 
-[core/model/FibboCube.ts:39](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboCube.ts#L39)
+[core/model/FibboCube.ts:39](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboCube.ts#L39)

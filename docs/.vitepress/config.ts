@@ -37,6 +37,9 @@ export default defineConfig({
             { text: 'FibboCube', link: '/api/classes/FibboCube' },
             { text: 'FibboGLTF', link: '/api/classes/FibboGLTF' },
           ] },
+          { text: 'Interfaces', items: [
+            { text: 'Fibbo3DVector', link: '/api/interfaces/Fibbo3DVector' },
+          ] },
           { text: 'Functions', items: [
             { text: 'useRigidBody', link: '/api/functions/useRigidBody' },
           ] },

@@ -45,7 +45,7 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 
 #### Defined in
 
-[core/FibboScene.ts:21](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L21)
+[core/FibboScene.ts:21](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L21)
 
 ## Properties
 
@@ -55,7 +55,7 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 
 #### Defined in
 
-[core/FibboScene.ts:15](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L15)
+[core/FibboScene.ts:15](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L15)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:16](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L16)
+[core/FibboScene.ts:16](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L16)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:18](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L18)
+[core/FibboScene.ts:18](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L18)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:12](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L12)
+[core/FibboScene.ts:12](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L12)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:14](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L14)
+[core/FibboScene.ts:14](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L14)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:19](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L19)
+[core/FibboScene.ts:19](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L19)
 
 ## Methods
 
@@ -127,7 +127,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:139](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L139)
+[core/FibboScene.ts:139](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L139)
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:123](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L123)
+[core/FibboScene.ts:123](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L123)
 
 ___
 
@@ -161,4 +161,4 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:178](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/FibboScene.ts#L178)
+[core/FibboScene.ts:178](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/FibboScene.ts#L178)

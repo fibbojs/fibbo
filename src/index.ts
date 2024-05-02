@@ -8,3 +8,6 @@ export { FibboCube } from './core/model/FibboCube'
 export { FibboGLTF } from './core/model/FibboGLTF'
 // Decorators
 export { useRigidBody } from './core/decorators/useRigidBody'
+
+// Types
+export type { Fibbo3DVector } from './types/Fibbo3DVector'

@@ -49,7 +49,7 @@ The base class for all models in FibboJS.
 
 #### Defined in
 
-[core/model/FibboModel.ts:20](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L20)
+[core/model/FibboModel.ts:20](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L20)
 
 ## Properties
 
@@ -59,7 +59,7 @@ The base class for all models in FibboJS.
 
 #### Defined in
 
-[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L15)
+[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L15)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L12)
+[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L12)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:14](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L14)
+[core/model/FibboModel.ts:14](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L14)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L10)
+[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L10)
 
 ## Methods
 
@@ -109,4 +109,4 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:28](https://github.com/fibbojs/fibbo/blob/39b31a0b731eac696fc5d788b95520a885d6af99/src/core/model/FibboModel.ts#L28)
+[core/model/FibboModel.ts:28](https://github.com/fibbojs/fibbo/blob/b30ea0e5c1962f99e47c4a8ee65926227b100fe9/src/core/model/FibboModel.ts#L28)
