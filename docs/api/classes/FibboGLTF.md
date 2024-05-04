@@ -37,13 +37,15 @@ export class MyGltfModel extends FibboGLTF {
 
 ### Methods
 
+- [emitOnLoaded](FibboGLTF.md#emitonloaded)
 - [onFrame](FibboGLTF.md#onframe)
+- [onLoaded](FibboGLTF.md#onloaded)
 
 ### Properties
 
 - [collider](FibboGLTF.md#collider)
 - [object3D](FibboGLTF.md#object3d)
-- [onLoaded](FibboGLTF.md#onloaded)
+- [onLoadedCallbacks](FibboGLTF.md#onloadedcallbacks)
 - [position](FibboGLTF.md#position)
 - [rigidBody](FibboGLTF.md#rigidbody)
 - [rotation](FibboGLTF.md#rotation)
@@ -74,9 +76,23 @@ export class MyGltfModel extends FibboGLTF {
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:47](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboGLTF.ts#L47)
+src/model/FibboGLTF.ts:48
 
 ## Methods
+
+### emitOnLoaded
+
+▸ **emitOnLoaded**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+src/model/FibboGLTF.ts:92
+
+___
 
 ### onFrame
 
@@ -98,7 +114,27 @@ export class MyGltfModel extends FibboGLTF {
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:85](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboGLTF.ts#L85)
+src/model/FibboGLTF.ts:85
+
+___
+
+### onLoaded
+
+▸ **onLoaded**(`fn`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fn` | () => `void` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+src/model/FibboGLTF.ts:88
 
 ## Properties
 
@@ -112,7 +148,7 @@ export class MyGltfModel extends FibboGLTF {
 
 #### Defined in
 
-[core/model/FibboModel.ts:18](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L18)
+src/model/FibboModel.ts:20
 
 ___
 
@@ -126,25 +162,17 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L15)
+src/model/FibboModel.ts:17
 
 ___
 
-### onLoaded
+### onLoadedCallbacks
 
-• **onLoaded**: () => `void`
-
-#### Type declaration
-
-▸ (): `void`
-
-##### Returns
-
-`void`
+• **onLoadedCallbacks**: () => `void`[] = `[]`
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:40](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboGLTF.ts#L40)
+src/model/FibboGLTF.ts:41
 
 ___
 
@@ -158,7 +186,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:11](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L11)
+src/model/FibboModel.ts:13
 
 ___
 
@@ -172,7 +200,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:17](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L17)
+src/model/FibboModel.ts:19
 
 ___
 
@@ -186,7 +214,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:13](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L13)
+src/model/FibboModel.ts:15
 
 ___
 
@@ -200,7 +228,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L12)
+src/model/FibboModel.ts:14
 
 ___
 
@@ -214,7 +242,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L10)
+src/model/FibboModel.ts:12
 
 ___
 
@@ -224,4 +252,4 @@ ___
 
 #### Defined in
 
-[core/model/FibboGLTF.ts:39](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboGLTF.ts#L39)
+src/model/FibboGLTF.ts:40

@@ -14,11 +14,11 @@
 
 `Function`
 
-The class with the position altered.
+The FibboComponent with the position altered.
 
 **`Description`**
 
-This decorator is used to alter the position of a FibboModel (like FibboCube, FibboGLTF, etc).
+This decorator is used to alter the position of a FibboComponent (like a FibboModel or a FibboCamera).
 It must be placed before useRigidBody.
 
 **`Example`**
@@ -41,4 +41,4 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-core/decorators/usePosition.ts:27
+src/decorators/usePosition.ts:30

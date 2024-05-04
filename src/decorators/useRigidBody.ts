@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import type { FibboModel } from '../model/FibboModel'
-import type { FibboVector3 } from '../../types/FibboVector3'
-import { Fibbo3dShapes } from '../../types/Fibbo3dShapes'
+import type { FibboVector3 } from '../types/FibboVector3'
+import { Fibbo3dShapes } from '../types/Fibbo3dShapes'
 import { FibboSphere } from '../model/FibboSphere'
 
 /**
@@ -44,34 +44,38 @@ export function useRigidBody(
     // Store original onFrame method
     const originalOnFrame = constructor.prototype.onFrame
 
+    let rigidBodyPosition: FibboVector3 | undefined = position
+    let rigidBodyScale: FibboVector3 | undefined = scale
+    let rigidBodyRotation: FibboVector3 | undefined = rotation
+
     // Return a new class with the rigid body added
     const newClass = class extends constructor {
       constructor(...args: any[]) {
         super(...args)
 
         // If position is not defined
-        if (!position) {
+        if (!rigidBodyPosition) {
           // Use default position of the FibboModel
-          position = { x: this.position.x, y: this.position.y, z: this.position.z }
+          rigidBodyPosition = { x: this.position.x, y: this.position.y, z: this.position.z }
         }
 
         // If scale is not defined
-        if (!scale) {
+        if (!rigidBodyScale) {
           // Use default scale of the FibboModel
-          scale = { x: this.scale.x, y: this.scale.y, z: this.scale.z }
+          rigidBodyScale = { x: this.scale.x, y: this.scale.y, z: this.scale.z }
         }
 
-        // Devide scale by 2 (RAPIER uses half-extents for cuboids)
-        if (scale) {
-          scale.x /= 2
-          scale.y /= 2
-          scale.z /= 2
+        // Devide scale by 2 (RAPIER uses half-extents)
+        if (rigidBodyScale) {
+          rigidBodyScale.x /= 2
+          rigidBodyScale.y /= 2
+          rigidBodyScale.z /= 2
         }
 
         // If rotation is not defined
-        if (!rotation) {
+        if (!rigidBodyRotation) {
           // Use default rotation of the FibboModel
-          rotation = { x: this.rotation.x, y: this.rotation.y, z: this.rotation.z }
+          rigidBodyRotation = { x: this.rotation.x, y: this.rotation.y, z: this.rotation.z }
         }
 
         // If a shape wasn't defined
@@ -80,7 +84,7 @@ export function useRigidBody(
           if (this instanceof FibboSphere) {
             shape = Fibbo3dShapes.SPHERE
             // Add 0.005 to scale so the collider looks better when debugging a ball
-            scale.x += 0.005
+            rigidBodyScale.x += 0.005
           }
           else
           // Default to cube
@@ -89,27 +93,27 @@ export function useRigidBody(
 
         // Create a dynamic rigid-body.
         const rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-          .setTranslation(position.x, position.y, position.z)
+          .setTranslation(rigidBodyPosition.x, rigidBodyPosition.y, rigidBodyPosition.z)
           .setRotation(
             // Create quaternion from Euler angles
-            new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, rotation.z)),
+            new THREE.Quaternion().setFromEuler(new THREE.Euler(rigidBodyRotation.x, rigidBodyRotation.y, rigidBodyRotation.z)),
           )
 
         this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
         // Create a cuboid collider attached to the dynamic rigidBody.
         const colliderDesc = shape === Fibbo3dShapes.CUBE
-          ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y, scale.z)
-          : RAPIER.ColliderDesc.ball(scale.x)
+          ? RAPIER.ColliderDesc.cuboid(rigidBodyScale.x, rigidBodyScale.y, rigidBodyScale.z)
+          : RAPIER.ColliderDesc.ball(rigidBodyScale.x)
         this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
       }
 
       onFrame(_delta: number) {
         if (this.rigidBody && this.object3D) {
-          const position = this.rigidBody.translation()
-          this.object3D.position.set(position.x, position.y, position.z)
-          const quaternion = this.rigidBody.rotation()
-          this.object3D.setRotationFromQuaternion(new THREE.Quaternion(quaternion.x, quaternion.y, quaternion.z, quaternion.w))
+          const newRigidBodyPosition = this.rigidBody.translation()
+          this.object3D.position.set(newRigidBodyPosition.x, newRigidBodyPosition.y, newRigidBodyPosition.z)
+          const newRigidBodyRotation = this.rigidBody.rotation()
+          this.object3D.setRotationFromQuaternion(new THREE.Quaternion(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z, newRigidBodyRotation.w))
         }
 
         // Call the original onFrame method

@@ -71,7 +71,7 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-[core/model/FibboCube.ts:30](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboCube.ts#L30)
+src/model/FibboCube.ts:31
 
 ## Methods
 
@@ -95,7 +95,7 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-[core/model/FibboCube.ts:38](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboCube.ts#L38)
+src/model/FibboCube.ts:39
 
 ## Properties
 
@@ -109,7 +109,7 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-[core/model/FibboModel.ts:18](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L18)
+src/model/FibboModel.ts:20
 
 ___
 
@@ -126,7 +126,7 @@ directly available after the constructor, as the cube is created synchronously.
 
 #### Defined in
 
-[core/model/FibboCube.ts:28](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboCube.ts#L28)
+src/model/FibboCube.ts:29
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:11](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L11)
+src/model/FibboModel.ts:13
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:17](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L17)
+src/model/FibboModel.ts:19
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:13](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L13)
+src/model/FibboModel.ts:15
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L12)
+src/model/FibboModel.ts:14
 
 ___
 
@@ -196,4 +196,4 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L10)
+src/model/FibboModel.ts:12

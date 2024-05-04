@@ -31,14 +31,25 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Index', link: '/api/index.md' },
-          { text: 'Classes', items: [
+          { text: 'Camera Classes', items: [
+            { text: 'FibboAttachedCamera', link: '/api/classes/FibboAttachedCamera' },
+            { text: 'FibboCamera', link: '/api/classes/FibboCamera' },
+            { text: 'FibboFixedCamera', link: '/api/classes/FibboFixedCamera' },
+            { text: 'FibboGameCamera', link: '/api/classes/FibboGameCamera' },
+            { text: 'FibboOrbitCamera', link: '/api/classes/FibboOrbitCamera' },
+          ] },
+          { text: 'Core Classes', items: [
+            { text: 'FibboComponent', link: '/api/classes/FibboComponent' },
+            { text: 'FibboScene', link: '/api/classes/FibboScene' },
+          ] },
+          { text: 'Model Classes', items: [
             { text: 'FibboCube', link: '/api/classes/FibboCube' },
             { text: 'FibboGLTF', link: '/api/classes/FibboGLTF' },
             { text: 'FibboModel', link: '/api/classes/FibboModel' },
-            { text: 'FibboScene', link: '/api/classes/FibboScene' },
             { text: 'FibboSphere', link: '/api/classes/FibboSphere' },
           ] },
           { text: 'Functions', items: [
+            { text: 'useLookAt', link: '/api/functions/useLookAt' },
             { text: 'usePosition', link: '/api/functions/usePosition' },
             { text: 'useRigidBody', link: '/api/functions/useRigidBody' },
             { text: 'useRotation', link: '/api/functions/useRotation' },

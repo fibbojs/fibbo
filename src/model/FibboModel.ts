@@ -1,11 +1,13 @@
 import * as THREE from 'three'
 import type { Collider, RigidBody } from '@dimforge/rapier3d'
-import type { FibboScene } from '../FibboScene'
+import type { FibboScene } from '../core/FibboScene'
+import type { FibboComponent } from '../core/FibboComponent'
 
 /**
  * @description The base class for all models in FibboJS.
+ * @category Model
  */
-export abstract class FibboModel {
+export abstract class FibboModel implements FibboComponent {
   // Scene
   scene: FibboScene
   position: THREE.Vector3

@@ -32,9 +32,12 @@ scene.addModel(cube)
 ### Properties
 
 - [camera](FibboScene.md#camera)
+- [cameraOffset](FibboScene.md#cameraoffset)
 - [controls](FibboScene.md#controls)
+- [debugCamera](FibboScene.md#debugcamera)
 - [gravity](FibboScene.md#gravity)
 - [models](FibboScene.md#models)
+- [renderer](FibboScene.md#renderer)
 - [scene](FibboScene.md#scene)
 - [world](FibboScene.md#world)
 
@@ -56,7 +59,7 @@ scene.addModel(cube)
 
 #### Defined in
 
-[core/FibboScene.ts:30](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L30)
+[src/core/FibboScene.ts:36](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L36)
 
 ## Methods
 
@@ -70,7 +73,7 @@ scene.addModel(cube)
 
 #### Defined in
 
-[core/FibboScene.ts:148](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L148)
+[src/core/FibboScene.ts:166](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L166)
 
 ___
 
@@ -90,7 +93,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:132](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L132)
+[src/core/FibboScene.ts:150](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L150)
 
 ___
 
@@ -104,17 +107,27 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:187](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L187)
+[src/core/FibboScene.ts:294](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L294)
 
 ## Properties
 
 ### camera
 
-• **camera**: `PerspectiveCamera`
+• **camera**: `Camera`
 
 #### Defined in
 
-[core/FibboScene.ts:24](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L24)
+[src/core/FibboScene.ts:28](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L28)
+
+___
+
+### cameraOffset
+
+• **cameraOffset**: [`FibboVector3`](../interfaces/FibboVector3.md)
+
+#### Defined in
+
+[src/core/FibboScene.ts:29](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L29)
 
 ___
 
@@ -124,7 +137,17 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:25](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L25)
+[src/core/FibboScene.ts:31](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L31)
+
+___
+
+### debugCamera
+
+• **debugCamera**: `PerspectiveCamera`
+
+#### Defined in
+
+[src/core/FibboScene.ts:30](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L30)
 
 ___
 
@@ -142,7 +165,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:27](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L27)
+[src/core/FibboScene.ts:33](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L33)
 
 ___
 
@@ -152,7 +175,17 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:21](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L21)
+[src/core/FibboScene.ts:24](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L24)
+
+___
+
+### renderer
+
+• **renderer**: `WebGLRenderer`
+
+#### Defined in
+
+[src/core/FibboScene.ts:27](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L27)
 
 ___
 
@@ -162,7 +195,7 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:23](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L23)
+[src/core/FibboScene.ts:26](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L26)
 
 ___
 
@@ -172,4 +205,4 @@ ___
 
 #### Defined in
 
-[core/FibboScene.ts:28](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/FibboScene.ts#L28)
+[src/core/FibboScene.ts:34](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/core/FibboScene.ts#L34)

@@ -41,4 +41,4 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-core/decorators/useScale.ts:27
+src/decorators/useScale.ts:27

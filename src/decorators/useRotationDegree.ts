@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import type { FibboVector3 } from '../../types/FibboVector3'
+import type { FibboVector3 } from '../types/FibboVector3'
 import { useRotation } from './useRotation'
 
 /**

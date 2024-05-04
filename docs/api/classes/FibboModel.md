@@ -16,6 +16,10 @@ The base class for all models in FibboJS.
 
   ↳ [`FibboGLTF`](FibboGLTF.md)
 
+## Implements
+
+- [`FibboComponent`](FibboComponent.md)
+
 ## Table of contents
 
 ### Constructors
@@ -54,7 +58,7 @@ The base class for all models in FibboJS.
 
 #### Defined in
 
-[core/model/FibboModel.ts:23](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L23)
+src/model/FibboModel.ts:25
 
 ## Methods
 
@@ -72,9 +76,13 @@ The base class for all models in FibboJS.
 
 `void`
 
+#### Implementation of
+
+[FibboComponent](FibboComponent.md).[onFrame](FibboComponent.md#onframe)
+
 #### Defined in
 
-[core/model/FibboModel.ts:36](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L36)
+src/model/FibboModel.ts:38
 
 ## Properties
 
@@ -84,7 +92,7 @@ The base class for all models in FibboJS.
 
 #### Defined in
 
-[core/model/FibboModel.ts:18](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L18)
+src/model/FibboModel.ts:20
 
 ___
 
@@ -94,7 +102,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:15](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L15)
+src/model/FibboModel.ts:17
 
 ___
 
@@ -104,7 +112,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:11](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L11)
+src/model/FibboModel.ts:13
 
 ___
 
@@ -114,7 +122,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:17](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L17)
+src/model/FibboModel.ts:19
 
 ___
 
@@ -124,7 +132,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:13](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L13)
+src/model/FibboModel.ts:15
 
 ___
 
@@ -134,7 +142,7 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:12](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L12)
+src/model/FibboModel.ts:14
 
 ___
 
@@ -144,4 +152,4 @@ ___
 
 #### Defined in
 
-[core/model/FibboModel.ts:10](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/model/FibboModel.ts#L10)
+src/model/FibboModel.ts:12

@@ -41,4 +41,4 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-core/decorators/useRotation.ts:27
+src/decorators/useRotation.ts:27

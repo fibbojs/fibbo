@@ -1,9 +1,10 @@
 import * as THREE from 'three'
-import type { FibboScene } from '../FibboScene'
+import type { FibboScene } from '../core/FibboScene'
 import { FibboModel } from './FibboModel'
 
 /**
  * @description A simple cube model in FibboJS.
+ * @category Model
  * @example
  * ```ts
  * import { FibboCube } from './FibboCube'

@@ -4,6 +4,7 @@ import MyCube from './classes/MyCube'
 import MySphere from './classes/MySphere'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
+import MyGameCamera from './cameras/MyGameCamera'
 
 const scene = new FibboScene(true)
 
@@ -19,9 +20,7 @@ scene.addModel(duck)
 const gltfCube = new GltfCube(scene)
 scene.addModel(gltfCube)
 
-setTimeout(() => {
-  gltfCube.rigidBody?.applyImpulse({ x: 0, y: 5, z: 0 }, true)
-}, 2000)
+scene.camera = new MyGameCamera(gltfCube, scene)
 
 // Detect inputs to move the cube
 document.addEventListener('keydown', (event) => {
@@ -38,6 +37,9 @@ document.addEventListener('keydown', (event) => {
       break
     case 'ArrowRight':
       impulse.x = 1
+      break
+    case ' ':
+      impulse.y = 5
       break
   }
   gltfCube.rigidBody?.applyImpulse(impulse, true)

@@ -18,7 +18,7 @@
 
 #### Defined in
 
-types/FibboVector3.ts:3
+[src/types/FibboVector3.ts:3](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/types/FibboVector3.ts#L3)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-types/FibboVector3.ts:4
+[src/types/FibboVector3.ts:4](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/types/FibboVector3.ts#L4)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-types/FibboVector3.ts:5
+[src/types/FibboVector3.ts:5](https://github.com/fibbojs/fibbo/blob/919659600127e89dd8df0ecbacb53d15d120b2c4/src/types/FibboVector3.ts#L5)

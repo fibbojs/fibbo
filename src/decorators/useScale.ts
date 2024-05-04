@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import type { FibboModel } from '../model/FibboModel'
-import type { FibboVector3 } from '../../types/FibboVector3'
+import type { FibboVector3 } from '../types/FibboVector3'
 
 /**
  * @description This decorator is used to alter the scale of a FibboModel (like FibboCube, FibboGLTF, etc).

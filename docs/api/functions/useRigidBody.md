@@ -47,4 +47,4 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-[core/decorators/useRigidBody.ts:37](https://github.com/fibbojs/fibbo/blob/b9b900181d67ac688b761b1972f316cdd1f56ef2/src/core/decorators/useRigidBody.ts#L37)
+src/decorators/useRigidBody.ts:37

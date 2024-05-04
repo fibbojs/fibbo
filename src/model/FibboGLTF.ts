@@ -1,5 +1,5 @@
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import type { FibboScene } from '../FibboScene'
+import type { FibboScene } from '../core/FibboScene'
 import { FibboModel } from './FibboModel'
 
 /*
@@ -19,6 +19,7 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
 
 /**
  * @description A GLTF model in FibboJS.
+ * @category Model
  * @example
  * ```ts
  * import { FibboGLTF } from './FibboGLTF'
@@ -37,7 +38,7 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  */
 export class FibboGLTF extends FibboModel {
   public type: string = 'FibboGLTF'
-  public onLoaded: () => void = () => {}
+  public onLoadedCallbacks: (() => void)[] = []
 
   /**
    * @param scene The FibboScene where the model will be added.
@@ -58,7 +59,7 @@ export class FibboGLTF extends FibboModel {
     // Load the glTF resource
     loader.load(
       // Resource URL
-      `models/${modelName}/${model}`,
+      `/models/${modelName}/${model}`,
       // Called when the resource is loaded
       (gltf) => {
         // Add the object to the scene
@@ -69,7 +70,7 @@ export class FibboGLTF extends FibboModel {
           this.object3D.scale.set(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2)
 
         // Call the onLoaded method
-        this.onLoaded()
+        this.emitOnLoaded()
       },
       // Called while loading is progressing
       (_xhr) => {
@@ -77,10 +78,21 @@ export class FibboGLTF extends FibboModel {
       // Called when loading has errors
       (error) => {
         console.log('An error happened', error)
+        console.log(error)
       },
     )
   }
 
   onFrame(_delta: number) {
+  }
+
+  onLoaded(fn: () => void) {
+    this.onLoadedCallbacks.push(fn)
+  }
+
+  emitOnLoaded() {
+    this.onLoadedCallbacks.forEach((callback) => {
+      callback()
+    })
   }
 }
