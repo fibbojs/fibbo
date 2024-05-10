@@ -8,7 +8,7 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `scale` | [`FibboVector3`](../interfaces/FibboVector3.md) | The scale to be applied. |
+| `scale` | [`FVector3`](../interfaces/FVector3.md) | The scale to be applied. |
 
 #### Returns
 
@@ -18,18 +18,18 @@ The class with the scale altered.
 
 **`Description`**
 
-This decorator is used to alter the scale of a FibboModel (like FibboCube, FibboGLTF, etc).
+This decorator is used to alter the scale of a FModel (like FCube, FGLTF, etc).
 It must be placed before useRigidBody.
 
 **`Example`**
 
 ```ts
-import { FibboCube, useScale } from '@fibbojs/fibbo'
-import type { FibboScene } from '@fibbojs/fibbo'
+import { FCube, useScale } from '@fibbojs/fibbo'
+import type { FScene } from '@fibbojs/fibbo'
 
 @useScale({ x: 1, y: 1, z: 1 })
-export class MyCube extends FibboCube {
- constructor(scene: FibboScene) {
+export class MyCube extends FCube {
+ constructor(scene: FScene) {
   super(scene)
  }
 
@@ -41,4 +41,4 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-src/decorators/useScale.ts:27
+[src/decorators/useScale.ts:27](https://github.com/fibbojs/fibbo/blob/5920737a801142e4f9dd76a2bdfcee7b009224d4/src/decorators/useScale.ts#L27)

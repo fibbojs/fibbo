@@ -1,8 +1,8 @@
-import { FibboGLTF } from '@fibbojs/fibbo'
-import type { FibboScene } from '@fibbojs/fibbo'
+import { FGLTF } from '@fibbojs/fibbo'
+import type { FScene } from '@fibbojs/fibbo'
 
-export default class Duck extends FibboGLTF {
-  constructor(scene: FibboScene) {
+export default class Duck extends FGLTF {
+  constructor(scene: FScene) {
     super(scene, 'Duck.glb')
   }
 

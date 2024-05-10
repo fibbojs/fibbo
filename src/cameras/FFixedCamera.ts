@@ -1,15 +1,15 @@
-import { FibboCamera } from './FibboCamera'
+import { FCamera } from './FCamera'
 
 /**
  * @description A fixed camera that does not move.
  * @category Camera
  * @example
  * ```ts
- * import { FibboFixedCamera, usePosition, useLookAt } from '@fibbojs/fibbo'
+ * import { FFixedCamera, usePosition, useLookAt } from '@fibbojs/fibbo'
  *
  * @useLookAt({ x: 0, y: 0, z: 0 })
  * @usePosition({ x: 5, y: 5, z: 5 })
- * export default class MyCamera extends FibboFixedCamera {
+ * export default class MyCamera extends FFixedCamera {
  *  constructor() {
  *   super()
  *  }
@@ -20,7 +20,7 @@ import { FibboCamera } from './FibboCamera'
  * }
  * ```
  */
-export class FibboFixedCamera extends FibboCamera {
+export class FFixedCamera extends FCamera {
   constructor() {
     super()
   }

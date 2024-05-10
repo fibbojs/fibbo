@@ -2,13 +2,13 @@
  * Export FibboJS
  */
 // Core
-export { FibboScene } from './core/FibboScene'
-export { FibboComponent } from './core/FibboComponent'
+export { FScene } from './core/FScene'
+export { FComponent } from './core/FComponent'
 // Models
-export { FibboModel } from './model/FibboModel'
-export { FibboCube } from './model/FibboCube'
-export { FibboSphere } from './model/FibboSphere'
-export { FibboGLTF } from './model/FibboGLTF'
+export { FModel } from './model/FModel'
+export { FCube } from './model/FCube'
+export { FSphere } from './model/FSphere'
+export { FGLTF } from './model/FGLTF'
 // Decorators
 export { usePosition } from './decorators/usePosition'
 export { useScale } from './decorators/useScale'
@@ -17,12 +17,12 @@ export { useRotationDegree } from './decorators/useRotationDegree'
 export { useRigidBody } from './decorators/useRigidBody'
 export { useLookAt } from './decorators/useLookAt'
 // Cameras
-export { FibboCamera } from './cameras/FibboCamera'
-export { FibboFixedCamera } from './cameras/FibboFixedCamera'
-export { FibboAttachedCamera } from './cameras/FibboAttachedCamera'
-export { FibboOrbitCamera } from './cameras/FibboOrbitCamera'
-export { FibboGameCamera } from './cameras/FibboGameCamera'
+export { FCamera } from './cameras/FCamera'
+export { FFixedCamera } from './cameras/FFixedCamera'
+export { FAttachedCamera } from './cameras/FAttachedCamera'
+export { FOrbitCamera } from './cameras/FOrbitCamera'
+export { FGameCamera } from './cameras/FGameCamera'
 
 // Types
-export type { FibboVector3 } from './types/FibboVector3'
-export { Fibbo3dShapes } from './types/Fibbo3dShapes'
+export type { FVector3 } from './types/FVector3'
+export { F3dShapes } from './types/F3dShapes'

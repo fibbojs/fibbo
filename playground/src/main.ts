@@ -1,12 +1,12 @@
 import './style.css'
-import { FibboScene } from '@fibbojs/fibbo'
+import { FScene } from '@fibbojs/fibbo'
 import MyCube from './classes/MyCube'
 import MySphere from './classes/MySphere'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 import MyGameCamera from './cameras/MyGameCamera'
 
-const scene = new FibboScene(true)
+const scene = new FScene(true)
 
 const cube = new MyCube(scene)
 scene.addModel(cube)

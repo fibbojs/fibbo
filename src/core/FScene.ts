@@ -2,31 +2,31 @@ import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { World } from '@dimforge/rapier3d'
-import type { FibboVector3 } from '../types/FibboVector3'
-import type { FibboModel } from '../model/FibboModel'
-import { FibboGLTF } from '../model/FibboGLTF'
-import { FibboCamera } from '../cameras/FibboCamera'
+import type { FVector3 } from '../types/FVector3'
+import type { FModel } from '../model/FModel'
+import { FGLTF } from '../model/FGLTF'
+import { FCamera } from '../cameras/FCamera'
 
 /**
  * @description A scene which contains the models, the Three.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts
- * import { FibboScene } from './FibboScene'
+ * import { FScene } from './FScene'
  * import { MyCube } from './model/MyCube'
  *
- * const scene = new FibboScene()
+ * const scene = new FScene()
  * const cube = new MyCube(scene)
  * scene.addModel(cube)
  * ```
  */
-export class FibboScene {
-  models: FibboModel[]
+export class FScene {
+  models: FModel[]
   // Three.js
   scene: THREE.Scene
   renderer: THREE.WebGLRenderer
   camera: THREE.Camera
-  cameraOffset: FibboVector3 = { x: -5, y: 5, z: 5 }
+  cameraOffset: FVector3 = { x: -5, y: 5, z: 5 }
   debugCamera: THREE.PerspectiveCamera
   controls: OrbitControls | undefined
   // Rapier
@@ -39,7 +39,7 @@ export class FibboScene {
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
-      throw new Error('FibboScene must be instantiated in a browser environment')
+      throw new Error('FScene must be instantiated in a browser environment')
 
     // Create scene, camera, and renderer
     this.scene = new THREE.Scene()
@@ -137,7 +137,7 @@ export class FibboScene {
       }
 
       // Camera
-      if (this.camera instanceof FibboCamera)
+      if (this.camera instanceof FCamera)
         this.camera.onFrame(delta)
 
       this.renderer.render(this.scene, this.camera)
@@ -147,10 +147,10 @@ export class FibboScene {
     animate()
   }
 
-  addModel(model: FibboModel) {
+  addModel(model: FModel) {
     this.models.push(model)
-    // Detect if the FibboModel is a FibboGLTF instance
-    if (model instanceof FibboGLTF) {
+    // Detect if the FModel is a FGLTF instance
+    if (model instanceof FGLTF) {
       // Wait for the model to be loaded before adding it to the scene
       model.onLoaded(() => {
         if (model.object3D)

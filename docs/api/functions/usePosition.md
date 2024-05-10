@@ -8,28 +8,28 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `position` | [`FibboVector3`](../interfaces/FibboVector3.md) | The position to be applied. |
+| `position` | [`FVector3`](../interfaces/FVector3.md) | The position to be applied. |
 
 #### Returns
 
 `Function`
 
-The FibboComponent with the position altered.
+The FComponent with the position altered.
 
 **`Description`**
 
-This decorator is used to alter the position of a FibboComponent (like a FibboModel or a FibboCamera).
+This decorator is used to alter the position of a FComponent (like a FModel or a FCamera).
 It must be placed before useRigidBody.
 
 **`Example`**
 
 ```ts
-import { FibboCube, usePosition } from '@fibbojs/fibbo'
-import type { FibboScene } from '@fibbojs/fibbo'
+import { FCube, usePosition } from '@fibbojs/fibbo'
+import type { FScene } from '@fibbojs/fibbo'
 
 @usePosition({ x: 1, y: 1, z: 1 })
-export class MyCube extends FibboCube {
- constructor(scene: FibboScene) {
+export class MyCube extends FCube {
+ constructor(scene: FScene) {
   super(scene)
  }
 
@@ -41,4 +41,4 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-src/decorators/usePosition.ts:30
+[src/decorators/usePosition.ts:30](https://github.com/fibbojs/fibbo/blob/5920737a801142e4f9dd76a2bdfcee7b009224d4/src/decorators/usePosition.ts#L30)

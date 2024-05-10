@@ -1,6 +1,6 @@
-[@fibbojs/fibbo](/api/index)  / FibboComponent
+[@fibbojs/fibbo](/api/index)  / FComponent
 
-# Class: FibboComponent
+# Class: FComponent
 
 **`Description`**
 
@@ -8,32 +8,32 @@ The base class for all 3D components in FibboJS.
 
 ## Implemented by
 
-- [`FibboCamera`](FibboCamera.md)
-- [`FibboModel`](FibboModel.md)
+- [`FCamera`](FCamera.md)
+- [`FModel`](FModel.md)
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](FibboComponent.md#constructor)
+- [constructor](FComponent.md#constructor)
 
 ### Methods
 
-- [onFrame](FibboComponent.md#onframe)
+- [onFrame](FComponent.md#onframe)
 
 ## Constructors
 
 ### constructor
 
-• **new FibboComponent**(): [`FibboComponent`](FibboComponent.md)
+• **new FComponent**(): [`FComponent`](FComponent.md)
 
 #### Returns
 
-[`FibboComponent`](FibboComponent.md)
+[`FComponent`](FComponent.md)
 
 #### Defined in
 
-src/core/FibboComponent.ts:6
+src/core/FComponent.ts:6
 
 ## Methods
 
@@ -53,4 +53,4 @@ src/core/FibboComponent.ts:6
 
 #### Defined in
 
-src/core/FibboComponent.ts:9
+src/core/FComponent.ts:9

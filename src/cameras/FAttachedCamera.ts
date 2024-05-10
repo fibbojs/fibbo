@@ -1,17 +1,17 @@
-import type { FibboVector3 } from '../types/FibboVector3'
-import type { FibboModel } from '../model/FibboModel'
-import { FibboCamera } from './FibboCamera'
+import type { FVector3 } from '../types/FVector3'
+import type { FModel } from '../model/FModel'
+import { FCamera } from './FCamera'
 
 /**
- * @description A camera that can be attached to a FibboModel.
+ * @description A camera that can be attached to a FModel.
  * @category Camera
  * @example
  * ```ts
- * import { FibboAttachedCamera } from '@fibbojs/fibbo'
- * import type { FibboModel } from '@fibbojs/fibbo'
+ * import { FAttachedCamera } from '@fibbojs/fibbo'
+ * import type { FModel } from '@fibbojs/fibbo'
  *
- * export default class MyAttachedCamera extends FibboAttachedCamera {
- *  constructor(attachedModel: FibboModel) {
+ * export default class MyAttachedCamera extends FAttachedCamera {
+ *  constructor(attachedModel: FModel) {
  *   super(attachedModel)
  *  }
  *
@@ -21,16 +21,16 @@ import { FibboCamera } from './FibboCamera'
  * }
  * ```
  */
-export class FibboAttachedCamera extends FibboCamera {
+export class FAttachedCamera extends FCamera {
   // Model that the camera is attached to
-  attachedModel: FibboModel
+  attachedModel: FModel
   // Offset from the model's position
-  offset: FibboVector3 = { x: 0, y: 5, z: 5 }
+  offset: FVector3 = { x: 0, y: 5, z: 5 }
 
   /**
    * @param attachedModel Model that the camera is attached to
    */
-  constructor(attachedModel: FibboModel) {
+  constructor(attachedModel: FModel) {
     super()
     this.attachedModel = attachedModel
   }

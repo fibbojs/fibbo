@@ -1,6 +1,6 @@
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import type { FibboScene } from '../core/FibboScene'
-import { FibboModel } from './FibboModel'
+import type { FScene } from '../core/FScene'
+import { FModel } from './FModel'
 
 /*
 import * as THREE from 'three'
@@ -22,11 +22,11 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * @category Model
  * @example
  * ```ts
- * import { FibboGLTF } from './FibboGLTF'
- * import type { FibboScene } from '../FibboScene'
+ * import { FGLTF } from './FGLTF'
+ * import type { FScene } from '../FScene'
  *
- * export class MyGltfModel extends FibboGLTF {
- *  constructor(scene: FibboScene) {
+ * export class MyGltfModel extends FGLTF {
+ *  constructor(scene: FScene) {
  *    super(scene, 'Cube.gltf')
  *  }
  *
@@ -36,16 +36,16 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * }
  * ```
  */
-export class FibboGLTF extends FibboModel {
-  public type: string = 'FibboGLTF'
+export class FGLTF extends FModel {
+  public type: string = 'FGLTF'
   public onLoadedCallbacks: (() => void)[] = []
 
   /**
-   * @param scene The FibboScene where the model will be added.
+   * @param scene The FScene where the model will be added.
    * @param model The name of the model file to load.
    * Should be a GLTF or GLB file.
    */
-  constructor(scene: FibboScene, model: string) {
+  constructor(scene: FScene, model: string) {
     super(scene)
     // Create GLTF Loader
     const loader = new GLTFLoader()

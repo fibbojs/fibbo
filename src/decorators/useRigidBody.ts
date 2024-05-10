@@ -1,15 +1,15 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
-import type { FibboModel } from '../model/FibboModel'
-import type { FibboVector3 } from '../types/FibboVector3'
-import { Fibbo3dShapes } from '../types/Fibbo3dShapes'
-import { FibboSphere } from '../model/FibboSphere'
+import type { FModel } from '../model/FModel'
+import type { FVector3 } from '../types/FVector3'
+import { F3dShapes } from '../types/F3dShapes'
+import { FSphere } from '../model/FSphere'
 
 /**
  * @description
- * This decorator is used to add a rigid body to a FibboModel (like FibboCube, FibboGLTF, etc).
+ * This decorator is used to add a rigid body to a FModel (like FCube, FGLTF, etc).
  *
- * If no position, scale or rotation is provided, the default values of the FibboModel will be used.
+ * If no position, scale or rotation is provided, the default values of the FModel will be used.
  *
  * If no shape is provided, the decorator will try to detect a supported polygonal shape, otherwise it will default to a cube.
  * @param position Position of the rigid body.
@@ -19,12 +19,12 @@ import { FibboSphere } from '../model/FibboSphere'
  * @returns {Function} The class with the rigid body added.
  * @example
  * ```ts
- * import { FibboCube, useRigidBody } from '@fibbojs/fibbo'
- * import type { FibboScene } from '../FibboScene'
+ * import { FCube, useRigidBody } from '@fibbojs/fibbo'
+ * import type { FScene } from '../FScene'
  *
  * @useRigidBody()
- * export class MyCube extends FibboCube {
- *  constructor(scene: FibboScene) {
+ * export class MyCube extends FCube {
+ *  constructor(scene: FScene) {
  *   super(scene)
  *  }
  *
@@ -35,18 +35,18 @@ import { FibboSphere } from '../model/FibboSphere'
  * ```
  */
 export function useRigidBody(
-  position?: FibboVector3,
-  scale?: FibboVector3,
-  rotation?: FibboVector3,
-  shape?: Fibbo3dShapes,
+  position?: FVector3,
+  scale?: FVector3,
+  rotation?: FVector3,
+  shape?: F3dShapes,
 ): Function {
-  return function <T extends { new(...args: any[]): FibboModel }>(constructor: T) {
+  return function <T extends { new(...args: any[]): FModel }>(constructor: T) {
     // Store original onFrame method
     const originalOnFrame = constructor.prototype.onFrame
 
-    let rigidBodyPosition: FibboVector3 | undefined = position
-    let rigidBodyScale: FibboVector3 | undefined = scale
-    let rigidBodyRotation: FibboVector3 | undefined = rotation
+    let rigidBodyPosition: FVector3 | undefined = position
+    let rigidBodyScale: FVector3 | undefined = scale
+    let rigidBodyRotation: FVector3 | undefined = rotation
 
     // Return a new class with the rigid body added
     const newClass = class extends constructor {
@@ -55,13 +55,13 @@ export function useRigidBody(
 
         // If position is not defined
         if (!rigidBodyPosition) {
-          // Use default position of the FibboModel
+          // Use default position of the FModel
           rigidBodyPosition = { x: this.position.x, y: this.position.y, z: this.position.z }
         }
 
         // If scale is not defined
         if (!rigidBodyScale) {
-          // Use default scale of the FibboModel
+          // Use default scale of the FModel
           rigidBodyScale = { x: this.scale.x, y: this.scale.y, z: this.scale.z }
         }
 
@@ -74,21 +74,21 @@ export function useRigidBody(
 
         // If rotation is not defined
         if (!rigidBodyRotation) {
-          // Use default rotation of the FibboModel
+          // Use default rotation of the FModel
           rigidBodyRotation = { x: this.rotation.x, y: this.rotation.y, z: this.rotation.z }
         }
 
         // If a shape wasn't defined
         if (!shape) {
           // Detect if the model is a sphere, and set the shape to sphere
-          if (this instanceof FibboSphere) {
-            shape = Fibbo3dShapes.SPHERE
+          if (this instanceof FSphere) {
+            shape = F3dShapes.SPHERE
             // Add 0.005 to scale so the collider looks better when debugging a ball
             rigidBodyScale.x += 0.005
           }
           else
           // Default to cube
-          { shape = Fibbo3dShapes.CUBE }
+          { shape = F3dShapes.CUBE }
         }
 
         // Create a dynamic rigid-body.
@@ -102,7 +102,7 @@ export function useRigidBody(
         this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
         // Create a cuboid collider attached to the dynamic rigidBody.
-        const colliderDesc = shape === Fibbo3dShapes.CUBE
+        const colliderDesc = shape === F3dShapes.CUBE
           ? RAPIER.ColliderDesc.cuboid(rigidBodyScale.x, rigidBodyScale.y, rigidBodyScale.z)
           : RAPIER.ColliderDesc.ball(rigidBodyScale.x)
         this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)

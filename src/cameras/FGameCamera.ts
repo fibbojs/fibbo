@@ -1,18 +1,18 @@
 import type * as THREE from 'three'
-import type { FibboScene } from '../core/FibboScene'
-import type { FibboModel } from '../model/FibboModel'
-import { FibboOrbitCamera } from './FibboOrbitCamera'
+import type { FScene } from '../core/FScene'
+import type { FModel } from '../model/FModel'
+import { FOrbitCamera } from './FOrbitCamera'
 
 /**
- * @description A camera that can be attached to a FibboModel and orbits around it in a more game-like way.
+ * @description A camera that can be attached to a FModel and orbits around it in a more game-like way.
  * @category Camera
  * @example
  * ```ts
- * import { FibboGameCamera } from '@fibbojs/fibbo'
- * import type { FibboModel, FibboScene } from '@fibbojs/fibbo'
+ * import { FGameCamera } from '@fibbojs/fibbo'
+ * import type { FModel, FScene } from '@fibbojs/fibbo'
  *
- * export default class MyGameCamera extends FibboGameCamera {
- *  constructor(attachedModel: FibboModel, scene: FibboScene) {
+ * export default class MyGameCamera extends FGameCamera {
+ *  constructor(attachedModel: FModel, scene: FScene) {
  *   super(attachedModel, scene)
  *  }
  *
@@ -22,7 +22,7 @@ import { FibboOrbitCamera } from './FibboOrbitCamera'
  * }
  * ```
  */
-export class FibboGameCamera extends FibboOrbitCamera {
+export class FGameCamera extends FOrbitCamera {
   // Previous position of the attached model (at each frame)
   private previousModelPosition: THREE.Vector3
 
@@ -30,7 +30,7 @@ export class FibboGameCamera extends FibboOrbitCamera {
    * @param attachedModel Model that the camera is attached to
    * @param scene Scene that the camera is in
    */
-  constructor(attachedModel: FibboModel, scene: FibboScene) {
+  constructor(attachedModel: FModel, scene: FScene) {
     super(attachedModel, scene)
     this.previousModelPosition = attachedModel.position.clone()
   }

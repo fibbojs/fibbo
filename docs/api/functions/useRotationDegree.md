@@ -8,7 +8,7 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `rotation` | [`FibboVector3`](../interfaces/FibboVector3.md) | The rotation to be applied. |
+| `rotation` | [`FVector3`](../interfaces/FVector3.md) | The rotation to be applied. |
 
 #### Returns
 
@@ -18,18 +18,18 @@ The class with the rotation altered.
 
 **`Description`**
 
-This decorator is used to alter the rotation of a FibboModel (like FibboCube, FibboGLTF, etc), using degrees.
+This decorator is used to alter the rotation of a FModel (like FCube, FGLTF, etc), using degrees.
 It must be placed before useRigidBody.
 
 **`Example`**
 
 ```ts
-import { FibboCube, useRotationDegree } from '@fibbojs/fibbo'
-import type { FibboScene } from '@fibbojs/fibbo'
+import { FCube, useRotationDegree } from '@fibbojs/fibbo'
+import type { FScene } from '@fibbojs/fibbo'
 
 @useRotationDegree({ x: 90, y: 0, z: 0 })
-export class MyCube extends FibboCube {
- constructor(scene: FibboScene) {
+export class MyCube extends FCube {
+ constructor(scene: FScene) {
   super(scene)
  }
 
@@ -41,4 +41,4 @@ export class MyCube extends FibboCube {
 
 #### Defined in
 
-src/decorators/useRotationDegree.ts:27
+[src/decorators/useRotationDegree.ts:27](https://github.com/fibbojs/fibbo/blob/5920737a801142e4f9dd76a2bdfcee7b009224d4/src/decorators/useRotationDegree.ts#L27)

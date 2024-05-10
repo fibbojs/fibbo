@@ -32,21 +32,21 @@ export default defineConfig({
         items: [
           { text: 'Index', link: '/api/index.md' },
           { text: 'Camera Classes', items: [
-            { text: 'FibboAttachedCamera', link: '/api/classes/FibboAttachedCamera' },
-            { text: 'FibboCamera', link: '/api/classes/FibboCamera' },
-            { text: 'FibboFixedCamera', link: '/api/classes/FibboFixedCamera' },
-            { text: 'FibboGameCamera', link: '/api/classes/FibboGameCamera' },
-            { text: 'FibboOrbitCamera', link: '/api/classes/FibboOrbitCamera' },
+            { text: 'FAttachedCamera', link: '/api/classes/FAttachedCamera' },
+            { text: 'FCamera', link: '/api/classes/FCamera' },
+            { text: 'FFixedCamera', link: '/api/classes/FFixedCamera' },
+            { text: 'FGameCamera', link: '/api/classes/FGameCamera' },
+            { text: 'FOrbitCamera', link: '/api/classes/FOrbitCamera' },
           ] },
           { text: 'Core Classes', items: [
-            { text: 'FibboComponent', link: '/api/classes/FibboComponent' },
-            { text: 'FibboScene', link: '/api/classes/FibboScene' },
+            { text: 'FComponent', link: '/api/classes/FComponent' },
+            { text: 'FScene', link: '/api/classes/FScene' },
           ] },
           { text: 'Model Classes', items: [
-            { text: 'FibboCube', link: '/api/classes/FibboCube' },
-            { text: 'FibboGLTF', link: '/api/classes/FibboGLTF' },
-            { text: 'FibboModel', link: '/api/classes/FibboModel' },
-            { text: 'FibboSphere', link: '/api/classes/FibboSphere' },
+            { text: 'FCube', link: '/api/classes/FCube' },
+            { text: 'FGLTF', link: '/api/classes/FGLTF' },
+            { text: 'FModel', link: '/api/classes/FModel' },
+            { text: 'FSphere', link: '/api/classes/FSphere' },
           ] },
           { text: 'Functions', items: [
             { text: 'useLookAt', link: '/api/functions/useLookAt' },
@@ -57,10 +57,10 @@ export default defineConfig({
             { text: 'useScale', link: '/api/functions/useScale' },
           ] },
           { text: 'Enumerations', items: [
-            { text: 'Fibbo3dShapes', link: '/api/enums/Fibbo3dShapes' },
+            { text: 'F3dShapes', link: '/api/enums/F3dShapes' },
           ] },
           { text: 'Interfaces', items: [
-            { text: 'FibboVector3', link: '/api/interfaces/FibboVector3' },
+            { text: 'FVector3', link: '/api/interfaces/FVector3' },
           ] },
         ],
       },

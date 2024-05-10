@@ -1,9 +1,9 @@
-import { FibboAttachedCamera, usePosition } from '@fibbojs/fibbo'
-import type { FibboModel } from '@fibbojs/fibbo'
+import { FAttachedCamera, usePosition } from '@fibbojs/fibbo'
+import type { FModel } from '@fibbojs/fibbo'
 
 @usePosition({ x: 0, y: 5, z: 5 })
-export default class MyAttachedCamera extends FibboAttachedCamera {
-  constructor(attachedModel: FibboModel) {
+export default class MyAttachedCamera extends FAttachedCamera {
+  constructor(attachedModel: FModel) {
     super(attachedModel)
   }
 

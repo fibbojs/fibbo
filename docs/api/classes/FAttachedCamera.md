@@ -1,19 +1,19 @@
-[@fibbojs/fibbo](/api/index)  / FibboAttachedCamera
+[@fibbojs/fibbo](/api/index)  / FAttachedCamera
 
-# Class: FibboAttachedCamera
+# Class: FAttachedCamera
 
 **`Description`**
 
-A camera that can be attached to a FibboModel.
+A camera that can be attached to a FModel.
 
 **`Example`**
 
 ```ts
-import { FibboAttachedCamera } from '@fibbojs/fibbo'
-import type { FibboModel } from '@fibbojs/fibbo'
+import { FAttachedCamera } from '@fibbojs/fibbo'
+import type { FModel } from '@fibbojs/fibbo'
 
-export default class MyAttachedCamera extends FibboAttachedCamera {
- constructor(attachedModel: FibboModel) {
+export default class MyAttachedCamera extends FAttachedCamera {
+ constructor(attachedModel: FModel) {
   super(attachedModel)
  }
 
@@ -25,156 +25,156 @@ export default class MyAttachedCamera extends FibboAttachedCamera {
 
 ## Hierarchy
 
-- [`FibboCamera`](FibboCamera.md)
+- [`FCamera`](FCamera.md)
 
-  ↳ **`FibboAttachedCamera`**
+  ↳ **`FAttachedCamera`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](FibboAttachedCamera.md#constructor)
+- [constructor](FAttachedCamera.md#constructor)
 
 ### Methods
 
-- [add](FibboAttachedCamera.md#add)
-- [addEventListener](FibboAttachedCamera.md#addeventlistener)
-- [applyMatrix4](FibboAttachedCamera.md#applymatrix4)
-- [applyQuaternion](FibboAttachedCamera.md#applyquaternion)
-- [attach](FibboAttachedCamera.md#attach)
-- [clear](FibboAttachedCamera.md#clear)
-- [clearViewOffset](FibboAttachedCamera.md#clearviewoffset)
-- [clone](FibboAttachedCamera.md#clone)
-- [copy](FibboAttachedCamera.md#copy)
-- [dispatchEvent](FibboAttachedCamera.md#dispatchevent)
-- [getEffectiveFOV](FibboAttachedCamera.md#geteffectivefov)
-- [getFilmHeight](FibboAttachedCamera.md#getfilmheight)
-- [getFilmWidth](FibboAttachedCamera.md#getfilmwidth)
-- [getFocalLength](FibboAttachedCamera.md#getfocallength)
-- [getObjectById](FibboAttachedCamera.md#getobjectbyid)
-- [getObjectByName](FibboAttachedCamera.md#getobjectbyname)
-- [getObjectByProperty](FibboAttachedCamera.md#getobjectbyproperty)
-- [getObjectsByProperty](FibboAttachedCamera.md#getobjectsbyproperty)
-- [getViewBounds](FibboAttachedCamera.md#getviewbounds)
-- [getViewSize](FibboAttachedCamera.md#getviewsize)
-- [getWorldDirection](FibboAttachedCamera.md#getworlddirection)
-- [getWorldPosition](FibboAttachedCamera.md#getworldposition)
-- [getWorldQuaternion](FibboAttachedCamera.md#getworldquaternion)
-- [getWorldScale](FibboAttachedCamera.md#getworldscale)
-- [hasEventListener](FibboAttachedCamera.md#haseventlistener)
-- [localToWorld](FibboAttachedCamera.md#localtoworld)
-- [lookAt](FibboAttachedCamera.md#lookat)
-- [onAfterRender](FibboAttachedCamera.md#onafterrender)
-- [onAfterShadow](FibboAttachedCamera.md#onaftershadow)
-- [onBeforeRender](FibboAttachedCamera.md#onbeforerender)
-- [onBeforeShadow](FibboAttachedCamera.md#onbeforeshadow)
-- [onFrame](FibboAttachedCamera.md#onframe)
-- [raycast](FibboAttachedCamera.md#raycast)
-- [remove](FibboAttachedCamera.md#remove)
-- [removeEventListener](FibboAttachedCamera.md#removeeventlistener)
-- [removeFromParent](FibboAttachedCamera.md#removefromparent)
-- [rotateOnAxis](FibboAttachedCamera.md#rotateonaxis)
-- [rotateOnWorldAxis](FibboAttachedCamera.md#rotateonworldaxis)
-- [rotateX](FibboAttachedCamera.md#rotatex)
-- [rotateY](FibboAttachedCamera.md#rotatey)
-- [rotateZ](FibboAttachedCamera.md#rotatez)
-- [setFocalLength](FibboAttachedCamera.md#setfocallength)
-- [setLens](FibboAttachedCamera.md#setlens)
-- [setRotationFromAxisAngle](FibboAttachedCamera.md#setrotationfromaxisangle)
-- [setRotationFromEuler](FibboAttachedCamera.md#setrotationfromeuler)
-- [setRotationFromMatrix](FibboAttachedCamera.md#setrotationfrommatrix)
-- [setRotationFromQuaternion](FibboAttachedCamera.md#setrotationfromquaternion)
-- [setViewOffset](FibboAttachedCamera.md#setviewoffset)
-- [toJSON](FibboAttachedCamera.md#tojson)
-- [translateOnAxis](FibboAttachedCamera.md#translateonaxis)
-- [translateX](FibboAttachedCamera.md#translatex)
-- [translateY](FibboAttachedCamera.md#translatey)
-- [translateZ](FibboAttachedCamera.md#translatez)
-- [traverse](FibboAttachedCamera.md#traverse)
-- [traverseAncestors](FibboAttachedCamera.md#traverseancestors)
-- [traverseVisible](FibboAttachedCamera.md#traversevisible)
-- [updateMatrix](FibboAttachedCamera.md#updatematrix)
-- [updateMatrixWorld](FibboAttachedCamera.md#updatematrixworld)
-- [updateProjectionMatrix](FibboAttachedCamera.md#updateprojectionmatrix)
-- [updateWorldMatrix](FibboAttachedCamera.md#updateworldmatrix)
-- [worldToLocal](FibboAttachedCamera.md#worldtolocal)
+- [add](FAttachedCamera.md#add)
+- [addEventListener](FAttachedCamera.md#addeventlistener)
+- [applyMatrix4](FAttachedCamera.md#applymatrix4)
+- [applyQuaternion](FAttachedCamera.md#applyquaternion)
+- [attach](FAttachedCamera.md#attach)
+- [clear](FAttachedCamera.md#clear)
+- [clearViewOffset](FAttachedCamera.md#clearviewoffset)
+- [clone](FAttachedCamera.md#clone)
+- [copy](FAttachedCamera.md#copy)
+- [dispatchEvent](FAttachedCamera.md#dispatchevent)
+- [getEffectiveFOV](FAttachedCamera.md#geteffectivefov)
+- [getFilmHeight](FAttachedCamera.md#getfilmheight)
+- [getFilmWidth](FAttachedCamera.md#getfilmwidth)
+- [getFocalLength](FAttachedCamera.md#getfocallength)
+- [getObjectById](FAttachedCamera.md#getobjectbyid)
+- [getObjectByName](FAttachedCamera.md#getobjectbyname)
+- [getObjectByProperty](FAttachedCamera.md#getobjectbyproperty)
+- [getObjectsByProperty](FAttachedCamera.md#getobjectsbyproperty)
+- [getViewBounds](FAttachedCamera.md#getviewbounds)
+- [getViewSize](FAttachedCamera.md#getviewsize)
+- [getWorldDirection](FAttachedCamera.md#getworlddirection)
+- [getWorldPosition](FAttachedCamera.md#getworldposition)
+- [getWorldQuaternion](FAttachedCamera.md#getworldquaternion)
+- [getWorldScale](FAttachedCamera.md#getworldscale)
+- [hasEventListener](FAttachedCamera.md#haseventlistener)
+- [localToWorld](FAttachedCamera.md#localtoworld)
+- [lookAt](FAttachedCamera.md#lookat)
+- [onAfterRender](FAttachedCamera.md#onafterrender)
+- [onAfterShadow](FAttachedCamera.md#onaftershadow)
+- [onBeforeRender](FAttachedCamera.md#onbeforerender)
+- [onBeforeShadow](FAttachedCamera.md#onbeforeshadow)
+- [onFrame](FAttachedCamera.md#onframe)
+- [raycast](FAttachedCamera.md#raycast)
+- [remove](FAttachedCamera.md#remove)
+- [removeEventListener](FAttachedCamera.md#removeeventlistener)
+- [removeFromParent](FAttachedCamera.md#removefromparent)
+- [rotateOnAxis](FAttachedCamera.md#rotateonaxis)
+- [rotateOnWorldAxis](FAttachedCamera.md#rotateonworldaxis)
+- [rotateX](FAttachedCamera.md#rotatex)
+- [rotateY](FAttachedCamera.md#rotatey)
+- [rotateZ](FAttachedCamera.md#rotatez)
+- [setFocalLength](FAttachedCamera.md#setfocallength)
+- [setLens](FAttachedCamera.md#setlens)
+- [setRotationFromAxisAngle](FAttachedCamera.md#setrotationfromaxisangle)
+- [setRotationFromEuler](FAttachedCamera.md#setrotationfromeuler)
+- [setRotationFromMatrix](FAttachedCamera.md#setrotationfrommatrix)
+- [setRotationFromQuaternion](FAttachedCamera.md#setrotationfromquaternion)
+- [setViewOffset](FAttachedCamera.md#setviewoffset)
+- [toJSON](FAttachedCamera.md#tojson)
+- [translateOnAxis](FAttachedCamera.md#translateonaxis)
+- [translateX](FAttachedCamera.md#translatex)
+- [translateY](FAttachedCamera.md#translatey)
+- [translateZ](FAttachedCamera.md#translatez)
+- [traverse](FAttachedCamera.md#traverse)
+- [traverseAncestors](FAttachedCamera.md#traverseancestors)
+- [traverseVisible](FAttachedCamera.md#traversevisible)
+- [updateMatrix](FAttachedCamera.md#updatematrix)
+- [updateMatrixWorld](FAttachedCamera.md#updatematrixworld)
+- [updateProjectionMatrix](FAttachedCamera.md#updateprojectionmatrix)
+- [updateWorldMatrix](FAttachedCamera.md#updateworldmatrix)
+- [worldToLocal](FAttachedCamera.md#worldtolocal)
 
 ### Properties
 
-- [animations](FibboAttachedCamera.md#animations)
-- [aspect](FibboAttachedCamera.md#aspect)
-- [attachedModel](FibboAttachedCamera.md#attachedmodel)
-- [castShadow](FibboAttachedCamera.md#castshadow)
-- [children](FibboAttachedCamera.md#children)
-- [coordinateSystem](FibboAttachedCamera.md#coordinatesystem)
-- [customDepthMaterial](FibboAttachedCamera.md#customdepthmaterial)
-- [customDistanceMaterial](FibboAttachedCamera.md#customdistancematerial)
-- [far](FibboAttachedCamera.md#far)
-- [filmGauge](FibboAttachedCamera.md#filmgauge)
-- [filmOffset](FibboAttachedCamera.md#filmoffset)
-- [focus](FibboAttachedCamera.md#focus)
-- [fov](FibboAttachedCamera.md#fov)
-- [frustumCulled](FibboAttachedCamera.md#frustumculled)
-- [id](FibboAttachedCamera.md#id)
-- [isCamera](FibboAttachedCamera.md#iscamera)
-- [isObject3D](FibboAttachedCamera.md#isobject3d)
-- [isPerspectiveCamera](FibboAttachedCamera.md#isperspectivecamera)
-- [layers](FibboAttachedCamera.md#layers)
-- [matrix](FibboAttachedCamera.md#matrix)
-- [matrixAutoUpdate](FibboAttachedCamera.md#matrixautoupdate)
-- [matrixWorld](FibboAttachedCamera.md#matrixworld)
-- [matrixWorldAutoUpdate](FibboAttachedCamera.md#matrixworldautoupdate)
-- [matrixWorldInverse](FibboAttachedCamera.md#matrixworldinverse)
-- [matrixWorldNeedsUpdate](FibboAttachedCamera.md#matrixworldneedsupdate)
-- [modelViewMatrix](FibboAttachedCamera.md#modelviewmatrix)
-- [name](FibboAttachedCamera.md#name)
-- [near](FibboAttachedCamera.md#near)
-- [normalMatrix](FibboAttachedCamera.md#normalmatrix)
-- [offset](FibboAttachedCamera.md#offset)
-- [parent](FibboAttachedCamera.md#parent)
-- [position](FibboAttachedCamera.md#position)
-- [projectionMatrix](FibboAttachedCamera.md#projectionmatrix)
-- [projectionMatrixInverse](FibboAttachedCamera.md#projectionmatrixinverse)
-- [quaternion](FibboAttachedCamera.md#quaternion)
-- [receiveShadow](FibboAttachedCamera.md#receiveshadow)
-- [renderOrder](FibboAttachedCamera.md#renderorder)
-- [rotation](FibboAttachedCamera.md#rotation)
-- [scale](FibboAttachedCamera.md#scale)
-- [type](FibboAttachedCamera.md#type)
-- [up](FibboAttachedCamera.md#up)
-- [userData](FibboAttachedCamera.md#userdata)
-- [uuid](FibboAttachedCamera.md#uuid)
-- [view](FibboAttachedCamera.md#view)
-- [viewport](FibboAttachedCamera.md#viewport)
-- [visible](FibboAttachedCamera.md#visible)
-- [zoom](FibboAttachedCamera.md#zoom)
-- [DEFAULT\_MATRIX\_AUTO\_UPDATE](FibboAttachedCamera.md#default_matrix_auto_update)
-- [DEFAULT\_MATRIX\_WORLD\_AUTO\_UPDATE](FibboAttachedCamera.md#default_matrix_world_auto_update)
-- [DEFAULT\_UP](FibboAttachedCamera.md#default_up)
+- [animations](FAttachedCamera.md#animations)
+- [aspect](FAttachedCamera.md#aspect)
+- [attachedModel](FAttachedCamera.md#attachedmodel)
+- [castShadow](FAttachedCamera.md#castshadow)
+- [children](FAttachedCamera.md#children)
+- [coordinateSystem](FAttachedCamera.md#coordinatesystem)
+- [customDepthMaterial](FAttachedCamera.md#customdepthmaterial)
+- [customDistanceMaterial](FAttachedCamera.md#customdistancematerial)
+- [far](FAttachedCamera.md#far)
+- [filmGauge](FAttachedCamera.md#filmgauge)
+- [filmOffset](FAttachedCamera.md#filmoffset)
+- [focus](FAttachedCamera.md#focus)
+- [fov](FAttachedCamera.md#fov)
+- [frustumCulled](FAttachedCamera.md#frustumculled)
+- [id](FAttachedCamera.md#id)
+- [isCamera](FAttachedCamera.md#iscamera)
+- [isObject3D](FAttachedCamera.md#isobject3d)
+- [isPerspectiveCamera](FAttachedCamera.md#isperspectivecamera)
+- [layers](FAttachedCamera.md#layers)
+- [matrix](FAttachedCamera.md#matrix)
+- [matrixAutoUpdate](FAttachedCamera.md#matrixautoupdate)
+- [matrixWorld](FAttachedCamera.md#matrixworld)
+- [matrixWorldAutoUpdate](FAttachedCamera.md#matrixworldautoupdate)
+- [matrixWorldInverse](FAttachedCamera.md#matrixworldinverse)
+- [matrixWorldNeedsUpdate](FAttachedCamera.md#matrixworldneedsupdate)
+- [modelViewMatrix](FAttachedCamera.md#modelviewmatrix)
+- [name](FAttachedCamera.md#name)
+- [near](FAttachedCamera.md#near)
+- [normalMatrix](FAttachedCamera.md#normalmatrix)
+- [offset](FAttachedCamera.md#offset)
+- [parent](FAttachedCamera.md#parent)
+- [position](FAttachedCamera.md#position)
+- [projectionMatrix](FAttachedCamera.md#projectionmatrix)
+- [projectionMatrixInverse](FAttachedCamera.md#projectionmatrixinverse)
+- [quaternion](FAttachedCamera.md#quaternion)
+- [receiveShadow](FAttachedCamera.md#receiveshadow)
+- [renderOrder](FAttachedCamera.md#renderorder)
+- [rotation](FAttachedCamera.md#rotation)
+- [scale](FAttachedCamera.md#scale)
+- [type](FAttachedCamera.md#type)
+- [up](FAttachedCamera.md#up)
+- [userData](FAttachedCamera.md#userdata)
+- [uuid](FAttachedCamera.md#uuid)
+- [view](FAttachedCamera.md#view)
+- [viewport](FAttachedCamera.md#viewport)
+- [visible](FAttachedCamera.md#visible)
+- [zoom](FAttachedCamera.md#zoom)
+- [DEFAULT\_MATRIX\_AUTO\_UPDATE](FAttachedCamera.md#default_matrix_auto_update)
+- [DEFAULT\_MATRIX\_WORLD\_AUTO\_UPDATE](FAttachedCamera.md#default_matrix_world_auto_update)
+- [DEFAULT\_UP](FAttachedCamera.md#default_up)
 
 ## Constructors
 
 ### constructor
 
-• **new FibboAttachedCamera**(`attachedModel`): [`FibboAttachedCamera`](FibboAttachedCamera.md)
+• **new FAttachedCamera**(`attachedModel`): [`FAttachedCamera`](FAttachedCamera.md)
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `attachedModel` | [`FibboModel`](FibboModel.md) | Model that the camera is attached to |
+| `attachedModel` | [`FModel`](FModel.md) | Model that the camera is attached to |
 
 #### Returns
 
-[`FibboAttachedCamera`](FibboAttachedCamera.md)
+[`FAttachedCamera`](FAttachedCamera.md)
 
 #### Overrides
 
-[FibboCamera](FibboCamera.md).[constructor](FibboCamera.md#constructor)
+[FCamera](FCamera.md).[constructor](FCamera.md#constructor)
 
 #### Defined in
 
-src/cameras/FibboAttachedCamera.ts:33
+src/cameras/FAttachedCamera.ts:33
 
 ## Methods
 
@@ -201,12 +201,12 @@ Any current parent on an object passed in here will be removed, since an Object3
 
 **`See`**
 
- - [attach](FibboAttachedCamera.md#attach)
+ - [attach](FAttachedCamera.md#attach)
  - THREE.Group | Group for info on manually grouping objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[add](FibboCamera.md#add)
+[FCamera](FCamera.md).[add](FCamera.md#add)
 
 #### Defined in
 
@@ -231,7 +231,7 @@ Adds a listener to an event type.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`[`T`], `T`, [`FibboAttachedCamera`](FibboAttachedCamera.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`[`T`], `T`, [`FAttachedCamera`](FAttachedCamera.md)\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -239,7 +239,7 @@ Adds a listener to an event type.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[addEventListener](FibboCamera.md#addeventlistener)
+[FCamera](FCamera.md).[addEventListener](FCamera.md#addeventlistener)
 
 #### Defined in
 
@@ -258,7 +258,7 @@ node_modules/@types/three/src/core/EventDispatcher.d.ts:52
 | Name | Type |
 | :------ | :------ |
 | `type` | `T` |
-| `listener` | `EventListener`\<{}, `T`, [`FibboAttachedCamera`](FibboAttachedCamera.md)\> |
+| `listener` | `EventListener`\<{}, `T`, [`FAttachedCamera`](FAttachedCamera.md)\> |
 
 #### Returns
 
@@ -266,7 +266,7 @@ node_modules/@types/three/src/core/EventDispatcher.d.ts:52
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[addEventListener](FibboCamera.md#addeventlistener)
+[FCamera](FCamera.md).[addEventListener](FCamera.md#addeventlistener)
 
 #### Defined in
 
@@ -292,7 +292,7 @@ Applies the matrix transform to the object and updates the object's position, ro
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[applyMatrix4](FibboCamera.md#applymatrix4)
+[FCamera](FCamera.md).[applyMatrix4](FCamera.md#applymatrix4)
 
 #### Defined in
 
@@ -318,7 +318,7 @@ Applies the rotation represented by the quaternion to the object.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[applyQuaternion](FibboCamera.md#applyquaternion)
+[FCamera](FCamera.md).[applyQuaternion](FCamera.md#applyquaternion)
 
 #### Defined in
 
@@ -348,11 +348,11 @@ Note: This method does not support scene graphs having non-uniformly-scaled node
 
 **`See`**
 
-[add](FibboAttachedCamera.md#add)
+[add](FAttachedCamera.md#add)
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[attach](FibboCamera.md#attach)
+[FCamera](FCamera.md).[attach](FCamera.md#attach)
 
 #### Defined in
 
@@ -372,7 +372,7 @@ Removes all child objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[clear](FibboCamera.md#clear)
+[FCamera](FCamera.md).[clear](FCamera.md#clear)
 
 #### Defined in
 
@@ -384,7 +384,7 @@ ___
 
 ▸ **clearViewOffset**(): `void`
 
-Removes any offset set by the [.setViewOffset](FibboCamera.md#setviewoffset) method.
+Removes any offset set by the [.setViewOffset](FCamera.md#setviewoffset) method.
 
 #### Returns
 
@@ -392,7 +392,7 @@ Removes any offset set by the [.setViewOffset](FibboCamera.md#setviewoffset) met
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[clearViewOffset](FibboCamera.md#clearviewoffset)
+[FCamera](FCamera.md).[clearViewOffset](FCamera.md#clearviewoffset)
 
 #### Defined in
 
@@ -418,7 +418,7 @@ Returns a clone of `this` object and optionally all descendants.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[clone](FibboCamera.md#clone)
+[FCamera](FCamera.md).[clone](FCamera.md#clone)
 
 #### Defined in
 
@@ -449,7 +449,7 @@ Event listeners and user-defined callbacks (.onAfterRender and .onBeforeRender) 
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[copy](FibboCamera.md#copy)
+[FCamera](FCamera.md).[copy](FCamera.md#copy)
 
 #### Defined in
 
@@ -481,7 +481,7 @@ Fire an event type.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[dispatchEvent](FibboCamera.md#dispatchevent)
+[FCamera](FCamera.md).[dispatchEvent](FCamera.md#dispatchevent)
 
 #### Defined in
 
@@ -493,7 +493,7 @@ ___
 
 ▸ **getEffectiveFOV**(): `number`
 
-Returns the current vertical field of view angle in degrees considering [.zoom](FibboCamera.md#zoom).
+Returns the current vertical field of view angle in degrees considering [.zoom](FCamera.md#zoom).
 
 #### Returns
 
@@ -501,7 +501,7 @@ Returns the current vertical field of view angle in degrees considering [.zoom](
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getEffectiveFOV](FibboCamera.md#geteffectivefov)
+[FCamera](FCamera.md).[getEffectiveFOV](FCamera.md#geteffectivefov)
 
 #### Defined in
 
@@ -521,11 +521,11 @@ Returns the height of the image on the film
 
 **`Remarks`**
 
-If [.aspect](FibboCamera.md#aspect). is less than or equal to one (portrait format), the result equals [.filmGauge](FibboCamera.md#filmgauge).
+If [.aspect](FCamera.md#aspect). is less than or equal to one (portrait format), the result equals [.filmGauge](FCamera.md#filmgauge).
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getFilmHeight](FibboCamera.md#getfilmheight)
+[FCamera](FCamera.md).[getFilmHeight](FCamera.md#getfilmheight)
 
 #### Defined in
 
@@ -545,11 +545,11 @@ Returns the width of the image on the film
 
 **`Remarks`**
 
-If [.aspect](FibboCamera.md#aspect). is greater than or equal to one (landscape format), the result equals [.filmGauge](FibboCamera.md#filmgauge).
+If [.aspect](FCamera.md#aspect). is greater than or equal to one (landscape format), the result equals [.filmGauge](FCamera.md#filmgauge).
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getFilmWidth](FibboCamera.md#getfilmwidth)
+[FCamera](FCamera.md).[getFilmWidth](FCamera.md#getfilmwidth)
 
 #### Defined in
 
@@ -561,7 +561,7 @@ ___
 
 ▸ **getFocalLength**(): `number`
 
-Returns the focal length of the current .fov | fov in respect to [.filmGauge](FibboCamera.md#filmgauge).
+Returns the focal length of the current .fov | fov in respect to [.filmGauge](FCamera.md#filmgauge).
 
 #### Returns
 
@@ -569,7 +569,7 @@ Returns the focal length of the current .fov | fov in respect to [.filmGauge](Fi
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getFocalLength](FibboCamera.md#getfocallength)
+[FCamera](FCamera.md).[getFocalLength](FCamera.md#getfocallength)
 
 #### Defined in
 
@@ -603,7 +603,7 @@ id
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getObjectById](FibboCamera.md#getobjectbyid)
+[FCamera](FCamera.md).[getObjectById](FCamera.md#getobjectbyid)
 
 #### Defined in
 
@@ -634,7 +634,7 @@ You will have to set it manually to make use of this method.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getObjectByName](FibboCamera.md#getobjectbyname)
+[FCamera](FCamera.md).[getObjectByName](FCamera.md#getobjectbyname)
 
 #### Defined in
 
@@ -662,7 +662,7 @@ and returns the first with a property that matches the value given.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getObjectByProperty](FibboCamera.md#getobjectbyproperty)
+[FCamera](FCamera.md).[getObjectByProperty](FCamera.md#getobjectbyproperty)
 
 #### Defined in
 
@@ -691,7 +691,7 @@ and returns the first with a property that matches the value given.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getObjectsByProperty](FibboCamera.md#getobjectsbyproperty)
+[FCamera](FCamera.md).[getObjectsByProperty](FCamera.md#getobjectsbyproperty)
 
 #### Defined in
 
@@ -720,7 +720,7 @@ Sets minTarget and maxTarget to the coordinates of the lower-left and upper-righ
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getViewBounds](FibboCamera.md#getviewbounds)
+[FCamera](FCamera.md).[getViewBounds](FCamera.md#getviewbounds)
 
 #### Defined in
 
@@ -748,7 +748,7 @@ Copies the result into the target Vector2, where x is width and y is height.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getViewSize](FibboCamera.md#getviewsize)
+[FCamera](FCamera.md).[getViewSize](FCamera.md#getviewsize)
 
 #### Defined in
 
@@ -778,7 +778,7 @@ Note: A Camera looks down its local, negative z-axis.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getWorldDirection](FibboCamera.md#getworlddirection)
+[FCamera](FCamera.md).[getWorldDirection](FCamera.md#getworlddirection)
 
 #### Defined in
 
@@ -804,7 +804,7 @@ Returns a vector representing the position of the object in world space.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getWorldPosition](FibboCamera.md#getworldposition)
+[FCamera](FCamera.md).[getWorldPosition](FCamera.md#getworldposition)
 
 #### Defined in
 
@@ -830,7 +830,7 @@ Returns a quaternion representing the rotation of the object in world space.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getWorldQuaternion](FibboCamera.md#getworldquaternion)
+[FCamera](FCamera.md).[getWorldQuaternion](FCamera.md#getworldquaternion)
 
 #### Defined in
 
@@ -856,7 +856,7 @@ Returns a vector of the scaling factors applied to the object for each axis in w
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[getWorldScale](FibboCamera.md#getworldscale)
+[FCamera](FCamera.md).[getWorldScale](FCamera.md#getworldscale)
 
 #### Defined in
 
@@ -881,7 +881,7 @@ Checks if listener is added to an event type.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`[`T`], `T`, [`FibboAttachedCamera`](FibboAttachedCamera.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`[`T`], `T`, [`FAttachedCamera`](FAttachedCamera.md)\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -889,7 +889,7 @@ Checks if listener is added to an event type.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[hasEventListener](FibboCamera.md#haseventlistener)
+[FCamera](FCamera.md).[hasEventListener](FCamera.md#haseventlistener)
 
 #### Defined in
 
@@ -908,7 +908,7 @@ node_modules/@types/three/src/core/EventDispatcher.d.ts:63
 | Name | Type |
 | :------ | :------ |
 | `type` | `T` |
-| `listener` | `EventListener`\<{}, `T`, [`FibboAttachedCamera`](FibboAttachedCamera.md)\> |
+| `listener` | `EventListener`\<{}, `T`, [`FAttachedCamera`](FAttachedCamera.md)\> |
 
 #### Returns
 
@@ -916,7 +916,7 @@ node_modules/@types/three/src/core/EventDispatcher.d.ts:63
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[hasEventListener](FibboCamera.md#haseventlistener)
+[FCamera](FCamera.md).[hasEventListener](FCamera.md#haseventlistener)
 
 #### Defined in
 
@@ -942,7 +942,7 @@ Converts the vector from this object's local space to world space.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[localToWorld](FibboCamera.md#localtoworld)
+[FCamera](FCamera.md).[localToWorld](FCamera.md#localtoworld)
 
 #### Defined in
 
@@ -972,7 +972,7 @@ This method does not support objects having non-uniformly-scaled parent(s).
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[lookAt](FibboCamera.md#lookat)
+[FCamera](FCamera.md).[lookAt](FCamera.md#lookat)
 
 #### Defined in
 
@@ -1000,7 +1000,7 @@ This method does not support objects having non-uniformly-scaled parent(s).
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[lookAt](FibboCamera.md#lookat)
+[FCamera](FCamera.md).[lookAt](FCamera.md#lookat)
 
 #### Defined in
 
@@ -1039,7 +1039,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[onAfterRender](FibboCamera.md#onafterrender)
+[FCamera](FCamera.md).[onAfterRender](FCamera.md#onafterrender)
 
 #### Defined in
 
@@ -1079,7 +1079,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[onAfterShadow](FibboCamera.md#onaftershadow)
+[FCamera](FCamera.md).[onAfterShadow](FCamera.md#onaftershadow)
 
 #### Defined in
 
@@ -1118,7 +1118,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[onBeforeRender](FibboCamera.md#onbeforerender)
+[FCamera](FCamera.md).[onBeforeRender](FCamera.md#onbeforerender)
 
 #### Defined in
 
@@ -1158,7 +1158,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[onBeforeShadow](FibboCamera.md#onbeforeshadow)
+[FCamera](FCamera.md).[onBeforeShadow](FCamera.md#onbeforeshadow)
 
 #### Defined in
 
@@ -1182,11 +1182,11 @@ ___
 
 #### Overrides
 
-[FibboCamera](FibboCamera.md).[onFrame](FibboCamera.md#onframe)
+[FCamera](FCamera.md).[onFrame](FCamera.md#onframe)
 
 #### Defined in
 
-src/cameras/FibboAttachedCamera.ts:38
+src/cameras/FAttachedCamera.ts:38
 
 ___
 
@@ -1221,7 +1221,7 @@ THREE.Raycaster | Raycaster
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[raycast](FibboCamera.md#raycast)
+[FCamera](FCamera.md).[raycast](FCamera.md#raycast)
 
 #### Defined in
 
@@ -1255,7 +1255,7 @@ THREE.Group | Group for info on manually grouping objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[remove](FibboCamera.md#remove)
+[FCamera](FCamera.md).[remove](FCamera.md#remove)
 
 #### Defined in
 
@@ -1280,7 +1280,7 @@ Removes a listener from an event type.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `type` | `T` | The type of the listener that gets removed. |
-| `listener` | `EventListener`\<`Object3DEventMap`[`T`], `T`, [`FibboAttachedCamera`](FibboAttachedCamera.md)\> | The listener function that gets removed. |
+| `listener` | `EventListener`\<`Object3DEventMap`[`T`], `T`, [`FAttachedCamera`](FAttachedCamera.md)\> | The listener function that gets removed. |
 
 #### Returns
 
@@ -1288,7 +1288,7 @@ Removes a listener from an event type.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[removeEventListener](FibboCamera.md#removeeventlistener)
+[FCamera](FCamera.md).[removeEventListener](FCamera.md#removeeventlistener)
 
 #### Defined in
 
@@ -1307,7 +1307,7 @@ node_modules/@types/three/src/core/EventDispatcher.d.ts:74
 | Name | Type |
 | :------ | :------ |
 | `type` | `T` |
-| `listener` | `EventListener`\<{}, `T`, [`FibboAttachedCamera`](FibboAttachedCamera.md)\> |
+| `listener` | `EventListener`\<{}, `T`, [`FAttachedCamera`](FAttachedCamera.md)\> |
 
 #### Returns
 
@@ -1315,7 +1315,7 @@ node_modules/@types/three/src/core/EventDispatcher.d.ts:74
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[removeEventListener](FibboCamera.md#removeeventlistener)
+[FCamera](FCamera.md).[removeEventListener](FCamera.md#removeeventlistener)
 
 #### Defined in
 
@@ -1335,7 +1335,7 @@ Removes this object from its current parent.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[removeFromParent](FibboCamera.md#removefromparent)
+[FCamera](FCamera.md).[removeFromParent](FCamera.md#removefromparent)
 
 #### Defined in
 
@@ -1366,7 +1366,7 @@ The axis is assumed to be normalized.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[rotateOnAxis](FibboCamera.md#rotateonaxis)
+[FCamera](FCamera.md).[rotateOnAxis](FCamera.md#rotateonaxis)
 
 #### Defined in
 
@@ -1398,7 +1398,7 @@ Method Assumes no rotated parent.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[rotateOnWorldAxis](FibboCamera.md#rotateonworldaxis)
+[FCamera](FCamera.md).[rotateOnWorldAxis](FCamera.md#rotateonworldaxis)
 
 #### Defined in
 
@@ -1424,7 +1424,7 @@ Rotates the object around _x_ axis in local space.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[rotateX](FibboCamera.md#rotatex)
+[FCamera](FCamera.md).[rotateX](FCamera.md#rotatex)
 
 #### Defined in
 
@@ -1450,7 +1450,7 @@ Rotates the object around _y_ axis in local space.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[rotateY](FibboCamera.md#rotatey)
+[FCamera](FCamera.md).[rotateY](FCamera.md#rotatey)
 
 #### Defined in
 
@@ -1476,7 +1476,7 @@ Rotates the object around _z_ axis in local space.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[rotateZ](FibboCamera.md#rotatez)
+[FCamera](FCamera.md).[rotateZ](FCamera.md#rotatez)
 
 #### Defined in
 
@@ -1488,7 +1488,7 @@ ___
 
 ▸ **setFocalLength**(`focalLength`): `void`
 
-Sets the FOV by focal length in respect to the current [.filmGauge](FibboCamera.md#filmgauge).
+Sets the FOV by focal length in respect to the current [.filmGauge](FCamera.md#filmgauge).
 
 #### Parameters
 
@@ -1506,7 +1506,7 @@ By default, the focal length is specified for a `35mm` (full frame) camera.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[setFocalLength](FibboCamera.md#setfocallength)
+[FCamera](FCamera.md).[setFocalLength](FCamera.md#setfocallength)
 
 #### Defined in
 
@@ -1531,11 +1531,11 @@ ___
 
 **`Deprecated`**
 
-Use [.setFocalLength()](FibboCamera.md#setfocallength) and [.filmGauge](FibboCamera.md#filmgauge) instead.
+Use [.setFocalLength()](FCamera.md#setfocallength) and [.filmGauge](FCamera.md#filmgauge) instead.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[setLens](FibboCamera.md#setlens)
+[FCamera](FCamera.md).[setLens](FCamera.md#setlens)
 
 #### Defined in
 
@@ -1547,7 +1547,7 @@ ___
 
 ▸ **setRotationFromAxisAngle**(`axis`, `angle`): `void`
 
-Calls THREE.Quaternion.setFromAxisAngle | setFromAxisAngle(axis, angle) on the [.quaternion](FibboCamera.md#quaternion).
+Calls THREE.Quaternion.setFromAxisAngle | setFromAxisAngle(axis, angle) on the [.quaternion](FCamera.md#quaternion).
 
 #### Parameters
 
@@ -1562,7 +1562,7 @@ Calls THREE.Quaternion.setFromAxisAngle | setFromAxisAngle(axis, angle) on the [
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[setRotationFromAxisAngle](FibboCamera.md#setrotationfromaxisangle)
+[FCamera](FCamera.md).[setRotationFromAxisAngle](FCamera.md#setrotationfromaxisangle)
 
 #### Defined in
 
@@ -1574,7 +1574,7 @@ ___
 
 ▸ **setRotationFromEuler**(`euler`): `void`
 
-Calls THREE.Quaternion.setFromEuler | setFromEuler(euler) on the [.quaternion](FibboCamera.md#quaternion).
+Calls THREE.Quaternion.setFromEuler | setFromEuler(euler) on the [.quaternion](FCamera.md#quaternion).
 
 #### Parameters
 
@@ -1588,7 +1588,7 @@ Calls THREE.Quaternion.setFromEuler | setFromEuler(euler) on the [.quaternion](F
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[setRotationFromEuler](FibboCamera.md#setrotationfromeuler)
+[FCamera](FCamera.md).[setRotationFromEuler](FCamera.md#setrotationfromeuler)
 
 #### Defined in
 
@@ -1600,7 +1600,7 @@ ___
 
 ▸ **setRotationFromMatrix**(`m`): `void`
 
-Calls THREE.Quaternion.setFromRotationMatrix | setFromRotationMatrix(m) on the [.quaternion](FibboCamera.md#quaternion).
+Calls THREE.Quaternion.setFromRotationMatrix | setFromRotationMatrix(m) on the [.quaternion](FCamera.md#quaternion).
 
 #### Parameters
 
@@ -1618,7 +1618,7 @@ Note that this assumes that the upper 3x3 of m is a pure rotation matrix (i.e, u
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[setRotationFromMatrix](FibboCamera.md#setrotationfrommatrix)
+[FCamera](FCamera.md).[setRotationFromMatrix](FCamera.md#setrotationfrommatrix)
 
 #### Defined in
 
@@ -1630,7 +1630,7 @@ ___
 
 ▸ **setRotationFromQuaternion**(`q`): `void`
 
-Copy the given THREE.Quaternion | Quaternion into [.quaternion](FibboCamera.md#quaternion).
+Copy the given THREE.Quaternion | Quaternion into [.quaternion](FCamera.md#quaternion).
 
 #### Parameters
 
@@ -1644,7 +1644,7 @@ Copy the given THREE.Quaternion | Quaternion into [.quaternion](FibboCamera.md#q
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[setRotationFromQuaternion](FibboCamera.md#setrotationfromquaternion)
+[FCamera](FCamera.md).[setRotationFromQuaternion](FCamera.md#setrotationfromquaternion)
 
 #### Defined in
 
@@ -1710,7 +1710,7 @@ Note there is no reason monitors have to be the same size or in a grid.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[setViewOffset](FibboCamera.md#setviewoffset)
+[FCamera](FCamera.md).[setViewOffset](FCamera.md#setviewoffset)
 
 #### Defined in
 
@@ -1740,7 +1740,7 @@ Convert the object to three.js [JSON Object/Scene format](https://github.com/mrd
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[toJSON](FibboCamera.md#tojson)
+[FCamera](FCamera.md).[toJSON](FCamera.md#tojson)
 
 #### Defined in
 
@@ -1771,7 +1771,7 @@ The axis is assumed to be normalized.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[translateOnAxis](FibboCamera.md#translateonaxis)
+[FCamera](FCamera.md).[translateOnAxis](FCamera.md#translateonaxis)
 
 #### Defined in
 
@@ -1797,7 +1797,7 @@ Translates object along x axis in object space by distance units.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[translateX](FibboCamera.md#translatex)
+[FCamera](FCamera.md).[translateX](FCamera.md#translatex)
 
 #### Defined in
 
@@ -1823,7 +1823,7 @@ Translates object along _y_ axis in object space by distance units.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[translateY](FibboCamera.md#translatey)
+[FCamera](FCamera.md).[translateY](FCamera.md#translatey)
 
 #### Defined in
 
@@ -1849,7 +1849,7 @@ Translates object along _z_ axis in object space by distance units.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[translateZ](FibboCamera.md#translatez)
+[FCamera](FCamera.md).[translateZ](FCamera.md#translatez)
 
 #### Defined in
 
@@ -1879,7 +1879,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[traverse](FibboCamera.md#traverse)
+[FCamera](FCamera.md).[traverse](FCamera.md#traverse)
 
 #### Defined in
 
@@ -1909,7 +1909,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[traverseAncestors](FibboCamera.md#traverseancestors)
+[FCamera](FCamera.md).[traverseAncestors](FCamera.md#traverseancestors)
 
 #### Defined in
 
@@ -1940,7 +1940,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[traverseVisible](FibboCamera.md#traversevisible)
+[FCamera](FCamera.md).[traverseVisible](FCamera.md#traversevisible)
 
 #### Defined in
 
@@ -1960,7 +1960,7 @@ Updates local transform.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[updateMatrix](FibboCamera.md#updatematrix)
+[FCamera](FCamera.md).[updateMatrix](FCamera.md#updatematrix)
 
 #### Defined in
 
@@ -1973,13 +1973,13 @@ ___
 ▸ **updateMatrixWorld**(`force?`): `void`
 
 Updates the global transform of the object.
-And will update the object descendants if [.matrixWorldNeedsUpdate](FibboCamera.md#matrixworldneedsupdate) is set to true or if the force parameter is set to `true`.
+And will update the object descendants if [.matrixWorldNeedsUpdate](FCamera.md#matrixworldneedsupdate) is set to true or if the force parameter is set to `true`.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `force?` | `boolean` | A boolean that can be used to bypass [.matrixWorldAutoUpdate](FibboCamera.md#matrixworldautoupdate), to recalculate the world matrix of the object and descendants on the current frame. Useful if you cannot wait for the renderer to update it on the next frame, assuming [.matrixWorldAutoUpdate](FibboCamera.md#matrixworldautoupdate) set to `true`. |
+| `force?` | `boolean` | A boolean that can be used to bypass [.matrixWorldAutoUpdate](FCamera.md#matrixworldautoupdate), to recalculate the world matrix of the object and descendants on the current frame. Useful if you cannot wait for the renderer to update it on the next frame, assuming [.matrixWorldAutoUpdate](FCamera.md#matrixworldautoupdate) set to `true`. |
 
 #### Returns
 
@@ -1987,7 +1987,7 @@ And will update the object descendants if [.matrixWorldNeedsUpdate](FibboCamera.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[updateMatrixWorld](FibboCamera.md#updatematrixworld)
+[FCamera](FCamera.md).[updateMatrixWorld](FCamera.md#updatematrixworld)
 
 #### Defined in
 
@@ -2011,7 +2011,7 @@ Must be called after any change of parameters.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[updateProjectionMatrix](FibboCamera.md#updateprojectionmatrix)
+[FCamera](FCamera.md).[updateProjectionMatrix](FCamera.md#updateprojectionmatrix)
 
 #### Defined in
 
@@ -2038,7 +2038,7 @@ Updates the global transform of the object.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[updateWorldMatrix](FibboCamera.md#updateworldmatrix)
+[FCamera](FCamera.md).[updateWorldMatrix](FCamera.md#updateworldmatrix)
 
 #### Defined in
 
@@ -2064,7 +2064,7 @@ Converts the vector from world space to this object's local space.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[worldToLocal](FibboCamera.md#worldtolocal)
+[FCamera](FCamera.md).[worldToLocal](FCamera.md#worldtolocal)
 
 #### Defined in
 
@@ -2084,7 +2084,7 @@ Array with object's animation clips.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[animations](FibboCamera.md#animations)
+[FCamera](FCamera.md).[animations](FCamera.md#animations)
 
 #### Defined in
 
@@ -2108,7 +2108,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[aspect](FibboCamera.md#aspect)
+[FCamera](FCamera.md).[aspect](FCamera.md#aspect)
 
 #### Defined in
 
@@ -2118,11 +2118,11 @@ ___
 
 ### attachedModel
 
-• **attachedModel**: [`FibboModel`](FibboModel.md)
+• **attachedModel**: [`FModel`](FModel.md)
 
 #### Defined in
 
-src/cameras/FibboAttachedCamera.ts:26
+src/cameras/FAttachedCamera.ts:26
 
 ___
 
@@ -2138,7 +2138,7 @@ Whether the object gets rendered into shadow map.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[castShadow](FibboCamera.md#castshadow)
+[FCamera](FCamera.md).[castShadow](FCamera.md#castshadow)
 
 #### Defined in
 
@@ -2162,7 +2162,7 @@ THREE.Object3DGroup | Group for info on manually grouping objects.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[children](FibboCamera.md#children)
+[FCamera](FCamera.md).[children](FCamera.md#children)
 
 #### Defined in
 
@@ -2176,7 +2176,7 @@ ___
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[coordinateSystem](FibboCamera.md#coordinatesystem)
+[FCamera](FCamera.md).[coordinateSystem](FCamera.md#coordinatesystem)
 
 #### Defined in
 
@@ -2202,7 +2202,7 @@ if you are modifying vertex positions in the vertex shader you must specify a cu
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[customDepthMaterial](FibboCamera.md#customdepthmaterial)
+[FCamera](FCamera.md).[customDepthMaterial](FCamera.md#customdepthmaterial)
 
 #### Defined in
 
@@ -2214,7 +2214,7 @@ ___
 
 • `Optional` **customDistanceMaterial**: `Material`
 
-Same as [customDepthMaterial](FibboCamera.md#customdepthmaterial), but used with THREE.Object3DPointLight | PointLight.
+Same as [customDepthMaterial](FCamera.md#customdepthmaterial), but used with THREE.Object3DPointLight | PointLight.
 
 **`Default Value`**
 
@@ -2222,7 +2222,7 @@ Same as [customDepthMaterial](FibboCamera.md#customdepthmaterial), but used with
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[customDistanceMaterial](FibboCamera.md#customdistancematerial)
+[FCamera](FCamera.md).[customDistanceMaterial](FCamera.md#customdistancematerial)
 
 #### Defined in
 
@@ -2238,7 +2238,7 @@ Camera frustum far plane.
 
 **`Remarks`**
 
-Must be greater than the current value of [.near](FibboCamera.md#near) plane.
+Must be greater than the current value of [.near](FCamera.md#near) plane.
 
 **`Default Value`**
 
@@ -2246,7 +2246,7 @@ Must be greater than the current value of [.near](FibboCamera.md#near) plane.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[far](FibboCamera.md#far)
+[FCamera](FCamera.md).[far](FCamera.md#far)
 
 #### Defined in
 
@@ -2259,7 +2259,7 @@ ___
 • **filmGauge**: `number`
 
 Film size used for the larger axis.
-This parameter does not influence the projection matrix unless [.filmOffset](FibboCamera.md#filmoffset) is set to a nonzero value.
+This parameter does not influence the projection matrix unless [.filmOffset](FCamera.md#filmoffset) is set to a nonzero value.
 
 **`Remarks`**
 
@@ -2271,7 +2271,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[filmGauge](FibboCamera.md#filmgauge)
+[FCamera](FCamera.md).[filmGauge](FCamera.md#filmgauge)
 
 #### Defined in
 
@@ -2283,7 +2283,7 @@ ___
 
 • **filmOffset**: `number`
 
-Horizontal off-center offset in the same unit as [.filmGauge](FibboCamera.md#filmgauge).
+Horizontal off-center offset in the same unit as [.filmGauge](FCamera.md#filmgauge).
 
 **`Remarks`**
 
@@ -2295,7 +2295,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[filmOffset](FibboCamera.md#filmoffset)
+[FCamera](FCamera.md).[filmOffset](FCamera.md#filmoffset)
 
 #### Defined in
 
@@ -2319,7 +2319,7 @@ This parameter does not influence the projection matrix unless a THREE.StereoCam
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[focus](FibboCamera.md#focus)
+[FCamera](FCamera.md).[focus](FCamera.md#focus)
 
 #### Defined in
 
@@ -2343,7 +2343,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[fov](FibboCamera.md#fov)
+[FCamera](FCamera.md).[fov](FCamera.md#fov)
 
 #### Defined in
 
@@ -2364,7 +2364,7 @@ If set to `false` the object gets rendered every frame even if it is not in the 
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[frustumCulled](FibboCamera.md#frustumculled)
+[FCamera](FCamera.md).[frustumCulled](FCamera.md#frustumculled)
 
 #### Defined in
 
@@ -2385,7 +2385,7 @@ Expects a `Integer`
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[id](FibboCamera.md#id)
+[FCamera](FCamera.md).[id](FCamera.md#id)
 
 #### Defined in
 
@@ -2409,7 +2409,7 @@ This is a _constant_ value
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[isCamera](FibboCamera.md#iscamera)
+[FCamera](FCamera.md).[isCamera](FCamera.md#iscamera)
 
 #### Defined in
 
@@ -2433,7 +2433,7 @@ This is a _constant_ value
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[isObject3D](FibboCamera.md#isobject3d)
+[FCamera](FCamera.md).[isObject3D](FCamera.md#isobject3d)
 
 #### Defined in
 
@@ -2457,7 +2457,7 @@ This is a _constant_ value
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[isPerspectiveCamera](FibboCamera.md#isperspectivecamera)
+[FCamera](FCamera.md).[isPerspectiveCamera](FCamera.md#isperspectivecamera)
 
 #### Defined in
 
@@ -2481,7 +2481,7 @@ Objects must share at least one layer with the Camera to be n when the camera's 
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[layers](FibboCamera.md#layers)
+[FCamera](FCamera.md).[layers](FCamera.md#layers)
 
 #### Defined in
 
@@ -2501,7 +2501,7 @@ The local transform matrix.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[matrix](FibboCamera.md#matrix)
+[FCamera](FCamera.md).[matrix](FCamera.md#matrix)
 
 #### Defined in
 
@@ -2518,11 +2518,11 @@ scale every frame and also recalculates the matrixWorld property.
 
 **`Default Value`**
 
-[DEFAULT_MATRIX_AUTO_UPDATE](FibboCamera.md#default_matrix_auto_update) - that is `(true)`.
+[DEFAULT_MATRIX_AUTO_UPDATE](FCamera.md#default_matrix_auto_update) - that is `(true)`.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[matrixAutoUpdate](FibboCamera.md#matrixautoupdate)
+[FCamera](FCamera.md).[matrixAutoUpdate](FCamera.md#matrixautoupdate)
 
 #### Defined in
 
@@ -2546,7 +2546,7 @@ If the Object3D has no parent, then it's identical to the local transform THREE.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[matrixWorld](FibboCamera.md#matrixworld)
+[FCamera](FCamera.md).[matrixWorld](FCamera.md#matrixworld)
 
 #### Defined in
 
@@ -2563,11 +2563,11 @@ When it isn't, then you have to maintain all matrices in the object and its chil
 
 **`Default Value`**
 
-[DEFAULT_MATRIX_WORLD_AUTO_UPDATE](FibboCamera.md#default_matrix_world_auto_update) - that is `(true)`.
+[DEFAULT_MATRIX_WORLD_AUTO_UPDATE](FCamera.md#default_matrix_world_auto_update) - that is `(true)`.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[matrixWorldAutoUpdate](FibboCamera.md#matrixworldautoupdate)
+[FCamera](FCamera.md).[matrixWorldAutoUpdate](FCamera.md#matrixworldautoupdate)
 
 #### Defined in
 
@@ -2593,7 +2593,7 @@ MatrixWorld contains the Matrix which has the world transform of the Camera .
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[matrixWorldInverse](FibboCamera.md#matrixworldinverse)
+[FCamera](FCamera.md).[matrixWorldInverse](FCamera.md#matrixworldinverse)
 
 #### Defined in
 
@@ -2613,7 +2613,7 @@ When this is set, it calculates the matrixWorld in that frame and resets this pr
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[matrixWorldNeedsUpdate](FibboCamera.md#matrixworldneedsupdate)
+[FCamera](FCamera.md).[matrixWorldNeedsUpdate](FCamera.md#matrixworldneedsupdate)
 
 #### Defined in
 
@@ -2631,7 +2631,7 @@ ___
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[modelViewMatrix](FibboCamera.md#modelviewmatrix)
+[FCamera](FCamera.md).[modelViewMatrix](FCamera.md#modelviewmatrix)
 
 #### Defined in
 
@@ -2655,7 +2655,7 @@ _(doesn't need to be unique)_.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[name](FibboCamera.md#name)
+[FCamera](FCamera.md).[name](FCamera.md#name)
 
 #### Defined in
 
@@ -2671,7 +2671,7 @@ Camera frustum near plane.
 
 **`Remarks`**
 
-The valid range is greater than `0` and less than the current value of the [.far](FibboCamera.md#far) plane.
+The valid range is greater than `0` and less than the current value of the [.far](FCamera.md#far) plane.
 
 **`Default Value`**
 
@@ -2679,7 +2679,7 @@ The valid range is greater than `0` and less than the current value of the [.far
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[near](FibboCamera.md#near)
+[FCamera](FCamera.md).[near](FCamera.md#near)
 
 #### Defined in
 
@@ -2697,7 +2697,7 @@ ___
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[normalMatrix](FibboCamera.md#normalmatrix)
+[FCamera](FCamera.md).[normalMatrix](FCamera.md#normalmatrix)
 
 #### Defined in
 
@@ -2707,11 +2707,11 @@ ___
 
 ### offset
 
-• **offset**: [`FibboVector3`](../interfaces/FibboVector3.md)
+• **offset**: [`FVector3`](../interfaces/FVector3.md)
 
 #### Defined in
 
-src/cameras/FibboAttachedCamera.ts:28
+src/cameras/FAttachedCamera.ts:28
 
 ___
 
@@ -2731,7 +2731,7 @@ An object can have at most one parent.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[parent](FibboCamera.md#parent)
+[FCamera](FCamera.md).[parent](FCamera.md#parent)
 
 #### Defined in
 
@@ -2751,7 +2751,7 @@ Object's local position.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[position](FibboCamera.md#position)
+[FCamera](FCamera.md).[position](FCamera.md#position)
 
 #### Defined in
 
@@ -2773,7 +2773,7 @@ This is the matrix which contains the projection.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[projectionMatrix](FibboCamera.md#projectionmatrix)
+[FCamera](FCamera.md).[projectionMatrix](FCamera.md#projectionmatrix)
 
 #### Defined in
 
@@ -2795,7 +2795,7 @@ This is the inverse of projectionMatrix.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[projectionMatrixInverse](FibboCamera.md#projectionmatrixinverse)
+[FCamera](FCamera.md).[projectionMatrixInverse](FCamera.md#projectionmatrixinverse)
 
 #### Defined in
 
@@ -2815,7 +2815,7 @@ Object's local rotation as a THREE.Quaternion | Quaternion.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[quaternion](FibboCamera.md#quaternion)
+[FCamera](FCamera.md).[quaternion](FCamera.md#quaternion)
 
 #### Defined in
 
@@ -2835,7 +2835,7 @@ Whether the material receives shadows.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[receiveShadow](FibboCamera.md#receiveshadow)
+[FCamera](FCamera.md).[receiveShadow](FCamera.md#receiveshadow)
 
 #### Defined in
 
@@ -2861,7 +2861,7 @@ Sorting is from lowest to highest renderOrder.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[renderOrder](FibboCamera.md#renderorder)
+[FCamera](FCamera.md).[renderOrder](FCamera.md#renderorder)
 
 #### Defined in
 
@@ -2881,7 +2881,7 @@ Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angl
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[rotation](FibboCamera.md#rotation)
+[FCamera](FCamera.md).[rotation](FCamera.md#rotation)
 
 #### Defined in
 
@@ -2901,7 +2901,7 @@ The object's local scale.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[scale](FibboCamera.md#scale)
+[FCamera](FCamera.md).[scale](FCamera.md#scale)
 
 #### Defined in
 
@@ -2919,7 +2919,7 @@ ___
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[type](FibboCamera.md#type)
+[FCamera](FCamera.md).[type](FCamera.md#type)
 
 #### Defined in
 
@@ -2931,15 +2931,15 @@ ___
 
 • **up**: `Vector3`
 
-This is used by the [lookAt](FibboAttachedCamera.md#lookat) method, for example, to determine the orientation of the result.
+This is used by the [lookAt](FAttachedCamera.md#lookat) method, for example, to determine the orientation of the result.
 
 **`Default Value`**
 
-[Object3D.DEFAULT_UP](FibboCamera.md#default_up) - that is `(0, 1, 0)`.
+[Object3D.DEFAULT_UP](FCamera.md#default_up) - that is `(0, 1, 0)`.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[up](FibboCamera.md#up)
+[FCamera](FCamera.md).[up](FCamera.md#up)
 
 #### Defined in
 
@@ -2963,7 +2963,7 @@ It should not hold references to _functions_ as these **will not** be cloned.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[userData](FibboCamera.md#userdata)
+[FCamera](FCamera.md).[userData](FCamera.md#userdata)
 
 #### Defined in
 
@@ -2983,7 +2983,7 @@ This gets automatically assigned and shouldn't be edited.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[uuid](FibboCamera.md#uuid)
+[FCamera](FCamera.md).[uuid](FCamera.md#uuid)
 
 #### Defined in
 
@@ -2996,7 +2996,7 @@ ___
 • **view**: ``null`` \| \{ `enabled`: `boolean` ; `fullHeight`: `number` ; `fullWidth`: `number` ; `height`: `number` ; `offsetX`: `number` ; `offsetY`: `number` ; `width`: `number`  }
 
 Frustum window specification or null.
-This is set using the [.setViewOffset](FibboCamera.md#setviewoffset) method and cleared using [.clearViewOffset](FibboCamera.md#clearviewoffset).
+This is set using the [.setViewOffset](FCamera.md#setviewoffset) method and cleared using [.clearViewOffset](FCamera.md#clearviewoffset).
 
 **`Default Value`**
 
@@ -3004,7 +3004,7 @@ This is set using the [.setViewOffset](FibboCamera.md#setviewoffset) method and 
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[view](FibboCamera.md#view)
+[FCamera](FCamera.md).[view](FCamera.md#view)
 
 #### Defined in
 
@@ -3018,7 +3018,7 @@ ___
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[viewport](FibboCamera.md#viewport)
+[FCamera](FCamera.md).[viewport](FCamera.md#viewport)
 
 #### Defined in
 
@@ -3038,7 +3038,7 @@ Object gets rendered if `true`.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[visible](FibboCamera.md#visible)
+[FCamera](FCamera.md).[visible](FCamera.md#visible)
 
 #### Defined in
 
@@ -3058,7 +3058,7 @@ Gets or sets the zoom factor of the camera.
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[zoom](FibboCamera.md#zoom)
+[FCamera](FCamera.md).[zoom](FCamera.md#zoom)
 
 #### Defined in
 
@@ -3070,7 +3070,7 @@ ___
 
 ▪ `Static` **DEFAULT\_MATRIX\_AUTO\_UPDATE**: `boolean`
 
-The default setting for [matrixAutoUpdate](FibboCamera.md#matrixautoupdate) for newly created Object3Ds.
+The default setting for [matrixAutoUpdate](FCamera.md#matrixautoupdate) for newly created Object3Ds.
 
 **`Default Value`**
 
@@ -3078,7 +3078,7 @@ The default setting for [matrixAutoUpdate](FibboCamera.md#matrixautoupdate) for 
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[DEFAULT_MATRIX_AUTO_UPDATE](FibboCamera.md#default_matrix_auto_update)
+[FCamera](FCamera.md).[DEFAULT_MATRIX_AUTO_UPDATE](FCamera.md#default_matrix_auto_update)
 
 #### Defined in
 
@@ -3090,7 +3090,7 @@ ___
 
 ▪ `Static` **DEFAULT\_MATRIX\_WORLD\_AUTO\_UPDATE**: `boolean`
 
-The default setting for [matrixWorldAutoUpdate](FibboCamera.md#matrixworldautoupdate) for newly created Object3Ds.
+The default setting for [matrixWorldAutoUpdate](FCamera.md#matrixworldautoupdate) for newly created Object3Ds.
 
 **`Default Value`**
 
@@ -3098,7 +3098,7 @@ The default setting for [matrixWorldAutoUpdate](FibboCamera.md#matrixworldautoup
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[DEFAULT_MATRIX_WORLD_AUTO_UPDATE](FibboCamera.md#default_matrix_world_auto_update)
+[FCamera](FCamera.md).[DEFAULT_MATRIX_WORLD_AUTO_UPDATE](FCamera.md#default_matrix_world_auto_update)
 
 #### Defined in
 
@@ -3110,7 +3110,7 @@ ___
 
 ▪ `Static` **DEFAULT\_UP**: `Vector3`
 
-The default [up](FibboCamera.md#up) direction for objects, also used as the default position for THREE.DirectionalLight | DirectionalLight,
+The default [up](FCamera.md#up) direction for objects, also used as the default position for THREE.DirectionalLight | DirectionalLight,
 THREE.HemisphereLight | HemisphereLight and THREE.Spotlight | Spotlight (which creates lights shining from the top down).
 
 **`Default Value`**
@@ -3119,7 +3119,7 @@ THREE.HemisphereLight | HemisphereLight and THREE.Spotlight | Spotlight (which c
 
 #### Inherited from
 
-[FibboCamera](FibboCamera.md).[DEFAULT_UP](FibboCamera.md#default_up)
+[FCamera](FCamera.md).[DEFAULT_UP](FCamera.md#default_up)
 
 #### Defined in
 

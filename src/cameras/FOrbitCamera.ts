@@ -1,18 +1,18 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import type { FibboScene } from '../core/FibboScene'
-import type { FibboModel } from '../model/FibboModel'
-import { FibboCamera } from './FibboCamera'
+import type { FScene } from '../core/FScene'
+import type { FModel } from '../model/FModel'
+import { FCamera } from './FCamera'
 
 /**
- * @description A camera that can be attached to a FibboModel and orbits around it.
+ * @description A camera that can be attached to a FModel and orbits around it.
  * @category Camera
  * @example
  * ```ts
- * import { FibboOrbitCamera } from '@fibbojs/fibbo'
- * import type { FibboModel, FibboScene } from '@fibbojs/fibbo'
+ * import { FOrbitCamera } from '@fibbojs/fibbo'
+ * import type { FModel, FScene } from '@fibbojs/fibbo'
  *
- * export default class MyOrbitCamera extends FibboOrbitCamera {
- *  constructor(attachedModel: FibboModel, scene: FibboScene) {
+ * export default class MyOrbitCamera extends FOrbitCamera {
+ *  constructor(attachedModel: FModel, scene: FScene) {
  *   super(attachedModel, scene)
  *  }
  *
@@ -22,9 +22,9 @@ import { FibboCamera } from './FibboCamera'
  * }
  * ```
  */
-export class FibboOrbitCamera extends FibboCamera {
+export class FOrbitCamera extends FCamera {
   // Model that the camera is attached to
-  attachedModel: FibboModel
+  attachedModel: FModel
   // Orbit controls
   controls: OrbitControls
 
@@ -32,7 +32,7 @@ export class FibboOrbitCamera extends FibboCamera {
    * @param attachedModel Model that the camera is attached to
    * @param scene Scene that the camera is in
    */
-  constructor(attachedModel: FibboModel, scene: FibboScene) {
+  constructor(attachedModel: FModel, scene: FScene) {
     super()
     this.attachedModel = attachedModel
 

@@ -1,5 +1,5 @@
-import type { FibboCamera } from '../cameras/FibboCamera'
-import type { FibboVector3 } from '../types/FibboVector3'
+import type { FCamera } from '../cameras/FCamera'
+import type { FVector3 } from '../types/FVector3'
 
 /**
  * @description This decorator is used to make a camera look at a specific position.
@@ -7,10 +7,10 @@ import type { FibboVector3 } from '../types/FibboVector3'
  * @returns {Function} The class with the look at behavior added.
  * @example
  * ```ts
- * import { FibboFixedCamera, useLookAt } from '@fibbojs/fibbo'
+ * import { FFixedCamera, useLookAt } from '@fibbojs/fibbo'
  *
  * @useLookAt({ x: 1, y: 1, z: 1 })
- * export class MyCamera extends FibboFixedCamera {
+ * export class MyCamera extends FFixedCamera {
  *  constructor() {
  *   super()
  *  }
@@ -22,9 +22,9 @@ import type { FibboVector3 } from '../types/FibboVector3'
  */
 export function useLookAt(
   // Default position
-  position: FibboVector3 = { x: 1, y: 1, z: 1 },
+  position: FVector3 = { x: 1, y: 1, z: 1 },
 ): Function {
-  return function <T extends { new(...args: any[]): FibboCamera }>(constructor: T) {
+  return function <T extends { new(...args: any[]): FCamera }>(constructor: T) {
     // Store original onFrame method
     const originalOnFrame = constructor.prototype.onFrame
 
