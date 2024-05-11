@@ -164,7 +164,7 @@ THREE.PerspectiveCamera.constructor
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L9)
+[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L9)
 
 ## Methods
 
@@ -1176,7 +1176,7 @@ FCamera.onFrame
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:13](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L13)
+[packages/3d/src/cameras/FCamera3d.ts:13](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L13)
 
 ___
 
@@ -1555,7 +1555,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L18)
+[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L18)
 
 ___
 
@@ -1581,7 +1581,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L32)
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ___
 
@@ -1716,7 +1716,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L25)
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ___
 

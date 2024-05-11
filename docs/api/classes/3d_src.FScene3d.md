@@ -11,12 +11,12 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 **`Example`**
 
 ```ts
-import { FScene } from './FScene'
-import { MyCube } from './model/MyCube'
+import { FScene } from '@fibbojs/3d'
+import { MyCube } from './classes/MyCube'
 
 const scene = new FScene()
 const cube = new MyCube(scene)
-scene.addModel(cube)
+scene.addComponent(cube)
 ```
 
 ## Hierarchy
@@ -36,6 +36,7 @@ scene.addModel(cube)
 - [addComponent](3d_src.FScene3d.md#addcomponent)
 - [addDebugPanel](3d_src.FScene3d.md#adddebugpanel)
 - [debug](3d_src.FScene3d.md#debug)
+- [onFrame](3d_src.FScene3d.md#onframe)
 
 ### Properties
 
@@ -44,6 +45,7 @@ scene.addModel(cube)
 - [controls](3d_src.FScene3d.md#controls)
 - [debugCamera](3d_src.FScene3d.md#debugcamera)
 - [gravity](3d_src.FScene3d.md#gravity)
+- [onFrameCallbacks](3d_src.FScene3d.md#onframecallbacks)
 - [renderer](3d_src.FScene3d.md#renderer)
 - [scene](3d_src.FScene3d.md#scene)
 - [world](3d_src.FScene3d.md#world)
@@ -70,7 +72,7 @@ FScene.constructor
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:36](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L36)
+[packages/3d/src/FScene3d.ts:36](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L36)
 
 ## Methods
 
@@ -94,7 +96,7 @@ FScene.addComponent
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:150](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L150)
+[packages/3d/src/FScene3d.ts:131](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L131)
 
 ___
 
@@ -108,7 +110,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:166](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L166)
+[packages/3d/src/FScene3d.ts:147](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L147)
 
 ___
 
@@ -122,7 +124,35 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:296](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L296)
+[packages/3d/src/FScene3d.ts:277](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L277)
+
+___
+
+### onFrame
+
+▸ **onFrame**(`callback`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | (`delta`: `number`) => `void` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Add a callback to the onFrame event.
+
+#### Inherited from
+
+FScene.onFrame
+
+#### Defined in
+
+packages/core/dist/index.d.ts:41
 
 ## Properties
 
@@ -136,7 +166,7 @@ FScene.camera
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:29](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L29)
+[packages/3d/src/FScene3d.ts:29](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L29)
 
 ___
 
@@ -150,7 +180,7 @@ FScene.components
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:25](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L25)
+[packages/3d/src/FScene3d.ts:25](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L25)
 
 ___
 
@@ -160,7 +190,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:31](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L31)
+[packages/3d/src/FScene3d.ts:31](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L31)
 
 ___
 
@@ -170,7 +200,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:30](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L30)
+[packages/3d/src/FScene3d.ts:30](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L30)
 
 ___
 
@@ -192,7 +222,21 @@ FScene.gravity
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:33](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L33)
+[packages/3d/src/FScene3d.ts:33](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L33)
+
+___
+
+### onFrameCallbacks
+
+• **onFrameCallbacks**: (`delta`: `number`) => `void`[]
+
+#### Inherited from
+
+FScene.onFrameCallbacks
+
+#### Defined in
+
+packages/core/dist/index.d.ts:32
 
 ___
 
@@ -202,7 +246,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:28](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L28)
+[packages/3d/src/FScene3d.ts:28](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L28)
 
 ___
 
@@ -212,7 +256,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L27)
+[packages/3d/src/FScene3d.ts:27](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L27)
 
 ___
 
@@ -226,4 +270,4 @@ FScene.world
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:34](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L34)
+[packages/3d/src/FScene3d.ts:34](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/FScene3d.ts#L34)

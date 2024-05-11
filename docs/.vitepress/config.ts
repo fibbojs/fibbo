@@ -33,8 +33,13 @@ export default defineConfig({
           { text: 'Index', link: '/api/index.md' },
           { text: 'Modules', items: [
             { text: '2D', link: '/api/modules/2d_src', collapsed: true, items: [
-              { text: 'FComponent2d', link: '/api/classes/2d_src.FComponent2d' },
-              { text: 'FScene2d', link: '/api/classes/2d_src.FScene2d' },
+              { text: 'Core Classes', items: [
+                { text: 'FComponent2d', link: '/api/classes/2d_src.FComponent2d' },
+                { text: 'FScene2d', link: '/api/classes/2d_src.FScene2d' },
+              ] },
+              { text: 'Polygons Classes', items: [
+                { text: 'FSquare', link: '/api/classes/2d_src.FSquare' },
+              ] },
             ] },
             { text: '3D', link: '/api/modules/3d_src', collapsed: true, items: [
               { text: 'Camera Classes', items: [

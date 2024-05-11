@@ -6,7 +6,7 @@ import type { FComponent3d } from '../FComponent3d'
 import { F3dShapes } from '../types/F3dShapes'
 
 /**
- * @description The base class for all models in FibboJS.
+ * @description The base class for all 3D objects in FibboJS.
  * @category Model
  */
 export abstract class FModel implements FComponent3d {

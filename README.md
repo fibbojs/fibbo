@@ -19,13 +19,22 @@ Core package for the Fibbo web game engine, based on [three.js](https://threejs.
 npm install
 ```
 
-- Run the playground
+- To develop on the 3D package, run the 3D playground :
 
 ```bash
 # In one terminal
 nx dev @fibbojs/playground-3d
 # In another terminal
 nx watch --projects=@fibbojs/3d -- nx build @fibbojs/3d
+```
+
+- To develop on the 2D package, run the 2D playground :
+
+```bash
+# In one terminal
+nx dev @fibbojs/playground-2d
+# In another terminal
+nx watch --projects=@fibbojs/2d -- nx build @fibbojs/2d
 ```
 
 You can now open your browser and navigate to `http://localhost:5173/`.

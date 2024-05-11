@@ -7,18 +7,14 @@ import { FCamera3d } from './FCamera3d'
  * @category Camera
  * @example
  * ```ts
- * import { FAttachedCamera } from '@fibbojs/fibbo'
- * import type { FModel } from '@fibbojs/fibbo'
+ * import { FScene3d, FAttachedCamera, FCube } from '@fibbojs/3d'
  *
- * export default class MyAttachedCamera extends FAttachedCamera {
- *  constructor(attachedModel: FModel) {
- *   super(attachedModel)
- *  }
+ * const scene = new FScene3d()
  *
- *  onFrame(delta: number) {
- *   super.onFrame(delta)
- *  }
- * }
+ * const cube = new FCube(scene)
+ * scene.addComponent(cube)
+ *
+ * scene.camera = new FAttachedCamera(cube)
  * ```
  */
 export class FAttachedCamera extends FCamera3d {

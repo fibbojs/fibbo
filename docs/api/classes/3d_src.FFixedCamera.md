@@ -11,19 +11,13 @@ A fixed camera that does not move.
 **`Example`**
 
 ```ts
-import { FFixedCamera, } from '@fibbojs/fibbo'
+import { FScene3d, FFixedCamera } from '@fibbojs/3d'
 
-export default class MyCamera extends FFixedCamera {
- constructor() {
-  super()
-  this.setPosition(5, 5, 5)
-  this.lookAt(0, 0, 0)
- }
+const scene = new FScene3d()
 
- onFrame(delta: number) {
-   super.onFrame(delta)
- }
-}
+scene.camera = new FFixedCamera()
+scene.camera.setPosition(0, 5, 5)
+scene.camera.lookAt(0, 0, 0)
 ```
 
 ## Hierarchy
@@ -172,7 +166,7 @@ export default class MyCamera extends FFixedCamera {
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FFixedCamera.ts#L24)
+[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FFixedCamera.ts#L18)
 
 ## Methods
 
@@ -1184,7 +1178,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:28](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FFixedCamera.ts#L28)
+[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FFixedCamera.ts#L22)
 
 ___
 
@@ -1567,7 +1561,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L18)
+[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L18)
 
 ___
 
@@ -1597,7 +1591,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L32)
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ___
 
@@ -1736,7 +1730,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L25)
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ___
 

@@ -8,18 +8,12 @@ import { FModel } from './FModel'
  * @category Model
  * @example
  * ```ts
- * import { FSphere } from './FSphere'
- * import type { FScene } from '../FScene'
+ * import { FScene3d, FSphere } from '@fibbojs/3d'
  *
- * export class MySphere extends FSphere {
- *  constructor(scene: FScene) {
- *    super(scene)
- *  }
+ * const scene = new FScene3d()
  *
- *  onFrame(delta: number) {
- *    super.onFrame(delta)
- *  }
- * }
+ * const cube = new FSphere(scene)
+ * scene.addComponent(cube)
  * ```
  */
 export class FSphere extends FModel {

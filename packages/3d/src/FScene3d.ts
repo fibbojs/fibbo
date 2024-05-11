@@ -13,12 +13,12 @@ import { FFixedCamera } from './cameras/FFixedCamera'
  * @category Core
  * @example
  * ```ts
- * import { FScene } from './FScene'
- * import { MyCube } from './model/MyCube'
+ * import { FScene } from '@fibbojs/3d'
+ * import { MyCube } from './classes/MyCube'
  *
  * const scene = new FScene()
  * const cube = new MyCube(scene)
- * scene.addModel(cube)
+ * scene.addComponent(cube)
  * ```
  */
 export class FScene3d extends FScene {
@@ -30,7 +30,7 @@ export class FScene3d extends FScene {
   debugCamera: FCamera3d
   declare controls?: OrbitControls
   // Rapier
-  gravity: { x: number, y: number, z: number } = { x: 0, y: -30, z: 0 }
+  gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
   world: World
 
   constructor(debug = false) {
@@ -76,13 +76,6 @@ export class FScene3d extends FScene {
     // Add renderer to DOM
     document.body.appendChild(this.renderer.domElement)
 
-    /**
-     * Time management
-     */
-    let lastTime = (new Date()).getTime()
-    let currentTime = 0
-    let delta = 0
-
     // Initialize Rapier world
     this.world = new RAPIER.World(this.gravity)
 
@@ -90,17 +83,8 @@ export class FScene3d extends FScene {
     const groundColliderDesc = RAPIER.ColliderDesc.cuboid(10.0, 0.1, 10.0)
     this.world.createCollider(groundColliderDesc)
 
-    /**
-     * Animation loop
-     */
-    const animate = () => {
-      requestAnimationFrame(animate)
-
-      // Calculate delta time
-      currentTime = (new Date()).getTime()
-      delta = (currentTime - lastTime) / 1000
-      lastTime = currentTime
-
+    // onFrame loop
+    this.onFrame((delta) => {
       // Call onFrame for each model
       this.components.forEach(model => model.onFrame(delta))
 
@@ -141,10 +125,7 @@ export class FScene3d extends FScene {
       this.camera.onFrame(delta)
 
       this.renderer.render(this.scene, this.camera)
-    }
-
-    // Start animation loop
-    animate()
+    })
   }
 
   addComponent(model: FModel) {

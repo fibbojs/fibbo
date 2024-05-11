@@ -14,6 +14,8 @@ The base class for all 2D components in FibboJS.
 
   ↳ **`FComponent2d`**
 
+  ↳↳ [`FSquare`](2d_src.FSquare.md)
+
 ## Table of contents
 
 ### Constructors
@@ -26,6 +28,10 @@ The base class for all 2D components in FibboJS.
 - [setPosition](2d_src.FComponent2d.md#setposition)
 - [setRotation](2d_src.FComponent2d.md#setrotation)
 - [setScale](2d_src.FComponent2d.md#setscale)
+
+### Properties
+
+- [container](2d_src.FComponent2d.md#container)
 
 ## Constructors
 
@@ -43,7 +49,7 @@ FComponent.constructor
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:8](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L8)
+[packages/2d/src/FComponent2d.ts:14](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/2d/src/FComponent2d.ts#L14)
 
 ## Methods
 
@@ -67,7 +73,7 @@ FComponent.onFrame
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:12](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L12)
+[packages/2d/src/FComponent2d.ts:19](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/2d/src/FComponent2d.ts#L19)
 
 ___
 
@@ -92,7 +98,7 @@ Set the position of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:17](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L17)
+[packages/2d/src/FComponent2d.ts:24](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/2d/src/FComponent2d.ts#L24)
 
 ___
 
@@ -117,7 +123,7 @@ Set the rotation of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L27)
+[packages/2d/src/FComponent2d.ts:34](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/2d/src/FComponent2d.ts#L34)
 
 ___
 
@@ -142,4 +148,16 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L22)
+[packages/2d/src/FComponent2d.ts:29](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/2d/src/FComponent2d.ts#L29)
+
+## Properties
+
+### container
+
+• **container**: `Container`\<`ContainerChild`\>
+
+container is the PIXI container that holds the square.
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:12](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/2d/src/FComponent2d.ts#L12)

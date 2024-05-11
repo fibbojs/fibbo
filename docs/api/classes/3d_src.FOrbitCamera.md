@@ -11,18 +11,14 @@ A camera that can be attached to a FModel and orbits around it.
 **`Example`**
 
 ```ts
-import { FOrbitCamera } from '@fibbojs/fibbo'
-import type { FModel, FScene } from '@fibbojs/fibbo'
+import { FScene3d, FOrbitCamera, FCube } from '@fibbojs/3d'
 
-export default class MyOrbitCamera extends FOrbitCamera {
- constructor(attachedModel: FModel, scene: FScene) {
-  super(attachedModel, scene)
- }
+const scene = new FScene3d()
 
- onFrame(delta: number) {
-  super.onFrame(delta)
- }
-}
+const cube = new FCube(scene)
+scene.addComponent(cube)
+
+scene.camera = new FOrbitCamera(cube, scene)
 ```
 
 ## Hierarchy
@@ -182,7 +178,7 @@ export default class MyOrbitCamera extends FOrbitCamera {
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:35](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L35)
+[packages/3d/src/cameras/FOrbitCamera.ts:31](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FOrbitCamera.ts#L31)
 
 ## Methods
 
@@ -1194,7 +1190,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:43](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L43)
+[packages/3d/src/cameras/FOrbitCamera.ts:39](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FOrbitCamera.ts#L39)
 
 ___
 
@@ -1577,7 +1573,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:51](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L51)
+[packages/3d/src/cameras/FOrbitCamera.ts:47](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FOrbitCamera.ts#L47)
 
 ___
 
@@ -1607,7 +1603,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L32)
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ___
 
@@ -1746,7 +1742,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L25)
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ___
 
@@ -2220,7 +2216,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L27)
+[packages/3d/src/cameras/FOrbitCamera.ts:23](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FOrbitCamera.ts#L23)
 
 ___
 
@@ -2274,7 +2270,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L29)
+[packages/3d/src/cameras/FOrbitCamera.ts:25](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/3d/src/cameras/FOrbitCamera.ts#L25)
 
 ___
 

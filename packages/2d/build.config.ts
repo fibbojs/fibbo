@@ -10,6 +10,7 @@ export default defineBuildConfig({
     emitCJS: true,
   },
   externals: [
+    'pixi.js',
     '@dimforge/rapier2d',
   ],
 })

@@ -8,18 +8,14 @@ import { FOrbitCamera } from './FOrbitCamera'
  * @category Camera
  * @example
  * ```ts
- * import { FGameCamera } from '@fibbojs/fibbo'
- * import type { FModel, FScene } from '@fibbojs/fibbo'
+ * import { FScene3d, FGameCamera, FCube } from '@fibbojs/3d'
  *
- * export default class MyGameCamera extends FGameCamera {
- *  constructor(attachedModel: FModel, scene: FScene) {
- *   super(attachedModel, scene)
- *  }
+ * const scene = new FScene3d()
  *
- *  onFrame(delta: number) {
- *   super.onFrame(delta)
- *  }
- * }
+ * const cube = new FCube(scene)
+ * scene.addComponent(cube)
+ *
+ * scene.camera = new FGameCamera(cube, scene)
  * ```
  */
 export class FGameCamera extends FOrbitCamera {

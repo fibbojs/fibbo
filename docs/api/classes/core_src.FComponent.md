@@ -36,7 +36,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:5](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FComponent.ts#L5)
+[packages/core/src/FComponent.ts:5](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/core/src/FComponent.ts#L5)
 
 ## Methods
 
@@ -56,4 +56,4 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:8](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FComponent.ts#L8)
+[packages/core/src/FComponent.ts:8](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/core/src/FComponent.ts#L8)

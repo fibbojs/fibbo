@@ -22,18 +22,12 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * @category Model
  * @example
  * ```ts
- * import { FGLTF } from './FGLTF'
- * import type { FScene } from '../FScene'
+ * import { FScene3d, FGLTF } from '@fibbojs/3d'
  *
- * export class MyGltfModel extends FGLTF {
- *  constructor(scene: FScene) {
- *    super(scene, 'Cube.gltf')
- *  }
+ * const scene = new FScene3d()
  *
- *  onFrame(delta: number) {
- *    super.onFrame(delta)
- *  }
- * }
+ * const gltf = new FGLTF(scene, 'model.glb')
+ * scene.addComponent(gltf)
  * ```
  */
 export class FGLTF extends FModel {

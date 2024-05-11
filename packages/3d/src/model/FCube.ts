@@ -7,18 +7,12 @@ import { FModel } from './FModel'
  * @category Model
  * @example
  * ```ts
- * import { FCube } from './FCube'
- * import type { FScene } from '../FScene'
+ * import { FScene3d, FCube } from '@fibbojs/3d'
  *
- * export class MyCube extends FCube {
- *  constructor(scene: FScene) {
- *    super(scene)
- *  }
+ * const scene = new FScene3d()
  *
- *  onFrame(delta: number) {
- *    super.onFrame(delta)
- *  }
- * }
+ * const cube = new FCube(scene)
+ * scene.addComponent(cube)
  * ```
  */
 export class FCube extends FModel {

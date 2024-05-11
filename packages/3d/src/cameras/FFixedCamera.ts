@@ -5,19 +5,13 @@ import { FCamera3d } from './FCamera3d'
  * @category Camera
  * @example
  * ```ts
- * import { FFixedCamera, } from '@fibbojs/fibbo'
+ * import { FScene3d, FFixedCamera } from '@fibbojs/3d'
  *
- * export default class MyCamera extends FFixedCamera {
- *  constructor() {
- *   super()
- *   this.setPosition(5, 5, 5)
- *   this.lookAt(0, 0, 0)
- *  }
+ * const scene = new FScene3d()
  *
- *  onFrame(delta: number) {
- *    super.onFrame(delta)
- *  }
- * }
+ * scene.camera = new FFixedCamera()
+ * scene.camera.setPosition(0, 5, 5)
+ * scene.camera.lookAt(0, 0, 0)
  * ```
  */
 export class FFixedCamera extends FCamera3d {
