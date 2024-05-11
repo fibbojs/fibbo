@@ -48,7 +48,7 @@ jobs:
       - name: Build with VitePress
         run: npm run docs:build
       - name: Move test reports to the docs folder
-        run: mv html docs/.vitepress/dist/test-reports && mv fibbo/test-reports/coverage docs/.vitepress/dist/coverage
+        run: mv html docs/.vitepress/dist/test-reports && mv fibbo/coverage docs/.vitepress/dist/coverage
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
