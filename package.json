@@ -14,7 +14,7 @@
   "keywords": [],
   "scripts": {
     "test:ui": "vitest --ui --coverage --coverage.include=packages",
-    "test:report": "vitest run --coverage --coverage.include=packages --config ./docs/vitest.config.ts",
+    "test:report": "vitest run --config ./docs/vitest.config.ts",
     "docs:dev": "vitepress dev docs",
     "docs:dev:host": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
