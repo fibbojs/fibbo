@@ -28,5 +28,5 @@ jobs:
             node-version: 18
             registry-url: https://registry.npmjs.org/
         - run: npm ci
-        - name: Test package
-          run: npm run test
+        - name: Test all packages
+          run: npx nx run-many --target=test --all

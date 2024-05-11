@@ -31,25 +31,38 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Index', link: '/api/index.md' },
-          { text: 'Camera Classes', items: [
-            { text: 'FAttachedCamera', link: '/api/classes/FAttachedCamera' },
-            { text: 'FCamera', link: '/api/classes/FCamera' },
-            { text: 'FFixedCamera', link: '/api/classes/FFixedCamera' },
-            { text: 'FGameCamera', link: '/api/classes/FGameCamera' },
-            { text: 'FOrbitCamera', link: '/api/classes/FOrbitCamera' },
-          ] },
-          { text: 'Core Classes', items: [
-            { text: 'FComponent', link: '/api/classes/FComponent' },
-            { text: 'FScene', link: '/api/classes/FScene' },
-          ] },
-          { text: 'Model Classes', items: [
-            { text: 'FCube', link: '/api/classes/FCube' },
-            { text: 'FGLTF', link: '/api/classes/FGLTF' },
-            { text: 'FModel', link: '/api/classes/FModel' },
-            { text: 'FSphere', link: '/api/classes/FSphere' },
-          ] },
-          { text: 'Enumerations', items: [
-            { text: 'F3dShapes', link: '/api/enums/F3dShapes' },
+          { text: 'Modules', items: [
+            { text: '2D', link: '/api/modules/2d_src', collapsed: true, items: [
+              { text: 'FComponent2d', link: '/api/classes/2d_src.FComponent2d' },
+              { text: 'FScene2d', link: '/api/classes/2d_src.FScene2d' },
+            ] },
+            { text: '3D', link: '/api/modules/3d_src', collapsed: true, items: [
+              { text: 'Camera Classes', items: [
+                { text: 'FAttachedCamera', link: '/api/classes/3d_src.FAttachedCamera' },
+                { text: 'FCamera3d', link: '/api/classes/3d_src.FCamera3d' },
+                { text: 'FFixedCamera', link: '/api/classes/3d_src.FFixedCamera' },
+                { text: 'FGameCamera', link: '/api/classes/3d_src.FGameCamera' },
+                { text: 'FOrbitCamera', link: '/api/classes/3d_src.FOrbitCamera' },
+              ] },
+              { text: 'Core Classes', items: [
+                { text: 'FComponent3d', link: '/api/classes/3d_src.FComponent3d' },
+                { text: 'FScene3d', link: '/api/classes/3d_src.FScene3d' },
+              ] },
+              { text: 'Model Classes', items: [
+                { text: 'FCube', link: '/api/classes/3d_src.FCube' },
+                { text: 'FGLTF', link: '/api/classes/3d_src.FGLTF' },
+                { text: 'FModel', link: '/api/classes/3d_src.FModel' },
+                { text: 'FSphere', link: '/api/classes/3d_src.FSphere' },
+              ] },
+              { text: 'Enumerations', items: [
+                { text: 'F3dShapes', link: '/api/enums/3d_src.F3dShapes' },
+              ] },
+            ] },
+            { text: 'Core', link: '/api/modules/core_src', collapsed: true, items: [
+              { text: 'FCamera', link: '/api/classes/core_src.FCamera' },
+              { text: 'FComponent', link: '/api/classes/core_src.FComponent' },
+              { text: 'FScene', link: '/api/classes/core_src.FScene' },
+            ] },
           ] },
         ],
       },

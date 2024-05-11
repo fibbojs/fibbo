@@ -1,29 +1,11 @@
-[@fibbojs/fibbo](/api/index) 
+[fibbojs](README.md) / Modules
 
-# @fibbojs/fibbo
+# fibbojs
 
 ## Table of contents
 
-### Camera Classes
+### Modules
 
-- [FAttachedCamera](classes/FAttachedCamera.md)
-- [FCamera](classes/FCamera.md)
-- [FFixedCamera](classes/FFixedCamera.md)
-- [FGameCamera](classes/FGameCamera.md)
-- [FOrbitCamera](classes/FOrbitCamera.md)
-
-### Core Classes
-
-- [FComponent](classes/FComponent.md)
-- [FScene](classes/FScene.md)
-
-### Model Classes
-
-- [FCube](classes/FCube.md)
-- [FGLTF](classes/FGLTF.md)
-- [FModel](classes/FModel.md)
-- [FSphere](classes/FSphere.md)
-
-### Enumerations
-
-- [F3dShapes](enums/F3dShapes.md)
+- [2d/src](modules/2d_src.md)
+- [3d/src](modules/3d_src.md)
+- [core/src](modules/core_src.md)

@@ -1,5 +1,5 @@
 {
-  "name": "@fibbojs/fibbo",
+  "name": "fibbojs",
   "type": "module",
   "version": "0.0.1",
   "description": "A web game engine written in TypeScript",
@@ -12,45 +12,20 @@
   },
   "bugs": "https://github.com/fibbojs/fibbo/issues",
   "keywords": [],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "nodemon -w src -e ts -x ./node_modules/.bin/unbuild",
-    "lint": "eslint .",
-    "prepublishOnly": "nr build",
-    "start": "esno src/index.ts",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
+    "test:ui": "vitest --ui",
+    "test:report": "vitest run --config ./docs/vitest.config.ts",
     "docs:dev": "vitepress dev docs",
     "docs:dev:host": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
-    "docs:generate": "./scripts/docs:generate.sh",
-    "playground:install": "cd playground && npm install",
-    "playground:dev": "cd playground && vite",
-    "playground:dev:host": "cd playground && vite --host"
+    "docs:generate": "./scripts/docs:generate.sh"
   },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "dependencies": {
+    "@dimforge/rapier2d": "^0.13.1",
     "@dimforge/rapier3d": "^0.12.0",
     "three": "^0.164.1"
   },
@@ -58,11 +33,14 @@
     "@antfu/eslint-config": "^2.14.0",
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
+    "@nx/eslint": "19.0.2",
+    "@nx/vite": "19.0.2",
+    "@nx/web": "19.0.2",
     "@types/node": "^20.12.7",
     "@types/three": "^0.164.0",
+    "@vitest/ui": "^1.3.1",
     "eslint": "^9.0.0",
-    "esno": "^4.7.0",
-    "nodemon": "^3.1.0",
+    "nx": "19.0.2",
     "rimraf": "^5.0.5",
     "typedoc": "^0.25.13",
     "typedoc-plugin-markdown": "^3.17.1",
@@ -71,5 +49,6 @@
     "vite": "^5.2.9",
     "vitepress": "^1.1.4",
     "vitest": "^1.5.0"
-  }
+  },
+  "nx": {}
 }

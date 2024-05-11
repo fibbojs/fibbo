@@ -43,8 +43,12 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
+      - name: Run Vitest to generate test reports
+        run: npm run test:report
       - name: Build with VitePress
         run: npm run docs:build
+      - name: Move test reports to the docs folder
+        run: mv html docs/.vitepress/dist/test-reports
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

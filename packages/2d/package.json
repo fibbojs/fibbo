@@ -1,0 +1,46 @@
+{
+  "name": "@fibbojs/2d",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "2D package for Fibbo",
+  "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
+  "license": "Apache-2.0",
+  "homepage": "https://fibbojs.github.io/fibbo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibbojs/fibbo.git"
+  },
+  "bugs": "https://github.com/fibbojs/fibbo/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fibbojs/core": "^0.0.1"
+  }
+}
