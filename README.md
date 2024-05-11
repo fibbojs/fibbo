@@ -3,6 +3,7 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
+[![Test][test-src]][test-href]
 
 Core package for the Fibbo web game engine, based on [three.js](https://threejs.org/) and [Rappier](https://rapier.rs/).
 
@@ -55,3 +56,6 @@ You can now open your browser and navigate to `http://localhost:5173/`.
 
 [license-src]: https://img.shields.io/npm/l/@fibbojs/fibbo.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://npmjs.com/package/@fibbojs/fibbo
+
+[test-src]: https://img.shields.io/badge/test-report-28CF8D?style=flat&colorA=18181B&colorB=28CF8D
+[test-href]: https://fibbojs.github.io/fibbo/test-reports
