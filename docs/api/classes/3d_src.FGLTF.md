@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [3d/src](../modules/3d_src.md) / FGLTF
+[@fibbojs](/api/index)  / [3d](/api/modules/3d_src) / FGLTF
 
 # Class: FGLTF
 
-[3d/src](../modules/3d_src.md).FGLTF
+[3d](/api/modules/3d_src).FGLTF
 
 **`Description`**
 
@@ -83,7 +83,7 @@ export class MyGltfModel extends FGLTF {
 
 #### Defined in
 
-packages/3d/src/model/FGLTF.ts:48
+[packages/3d/src/model/FGLTF.ts:48](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FGLTF.ts#L48)
 
 ## Methods
 
@@ -97,7 +97,7 @@ packages/3d/src/model/FGLTF.ts:48
 
 #### Defined in
 
-packages/3d/src/model/FGLTF.ts:102
+[packages/3d/src/model/FGLTF.ts:102](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FGLTF.ts#L102)
 
 ___
 
@@ -128,7 +128,7 @@ Init a rigid body for the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:96
+[packages/3d/src/model/FModel.ts:96](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L96)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FGLTF.ts:94
+[packages/3d/src/model/FGLTF.ts:94](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FGLTF.ts#L94)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FGLTF.ts:98
+[packages/3d/src/model/FGLTF.ts:98](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FGLTF.ts#L98)
 
 ___
 
@@ -202,7 +202,7 @@ Set the position of the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:49
+[packages/3d/src/model/FModel.ts:49](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L49)
 
 ___
 
@@ -232,7 +232,7 @@ Set the rotation of the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:69
+[packages/3d/src/model/FModel.ts:69](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L69)
 
 ___
 
@@ -262,7 +262,7 @@ Set the rotation of the model from degrees.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:78
+[packages/3d/src/model/FModel.ts:78](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L78)
 
 ___
 
@@ -292,7 +292,7 @@ Set the scale of the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:60
+[packages/3d/src/model/FModel.ts:60](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L60)
 
 ## Properties
 
@@ -306,7 +306,7 @@ packages/3d/src/model/FModel.ts:60
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:22
+[packages/3d/src/model/FModel.ts:22](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L22)
 
 ___
 
@@ -320,7 +320,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:19
+[packages/3d/src/model/FModel.ts:19](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L19)
 
 ___
 
@@ -330,7 +330,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FGLTF.ts:41
+[packages/3d/src/model/FGLTF.ts:41](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FGLTF.ts#L41)
 
 ___
 
@@ -344,7 +344,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:15
+[packages/3d/src/model/FModel.ts:15](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L15)
 
 ___
 
@@ -358,7 +358,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:21
+[packages/3d/src/model/FModel.ts:21](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L21)
 
 ___
 
@@ -372,7 +372,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:17
+[packages/3d/src/model/FModel.ts:17](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L17)
 
 ___
 
@@ -386,7 +386,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:16
+[packages/3d/src/model/FModel.ts:16](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L16)
 
 ___
 
@@ -400,7 +400,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:14
+[packages/3d/src/model/FModel.ts:14](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L14)
 
 ___
 
@@ -410,4 +410,4 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FGLTF.ts:40
+[packages/3d/src/model/FGLTF.ts:40](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FGLTF.ts#L40)

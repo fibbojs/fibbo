@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [3d/src](../modules/3d_src.md) / FScene3d
+[@fibbojs](/api/index)  / [3d](/api/modules/3d_src) / FScene3d
 
 # Class: FScene3d
 
-[3d/src](../modules/3d_src.md).FScene3d
+[3d](/api/modules/3d_src).FScene3d
 
 **`Description`**
 
@@ -70,7 +70,7 @@ FScene.constructor
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:36
+[packages/3d/src/FScene3d.ts:36](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L36)
 
 ## Methods
 
@@ -94,7 +94,7 @@ FScene.addComponent
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:150
+[packages/3d/src/FScene3d.ts:150](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L150)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:166
+[packages/3d/src/FScene3d.ts:166](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L166)
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:296
+[packages/3d/src/FScene3d.ts:296](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L296)
 
 ## Properties
 
@@ -136,7 +136,7 @@ FScene.camera
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:29
+[packages/3d/src/FScene3d.ts:29](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L29)
 
 ___
 
@@ -150,7 +150,7 @@ FScene.components
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:25
+[packages/3d/src/FScene3d.ts:25](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L25)
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:31
+[packages/3d/src/FScene3d.ts:31](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L31)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:30
+[packages/3d/src/FScene3d.ts:30](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L30)
 
 ___
 
@@ -192,7 +192,7 @@ FScene.gravity
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:33
+[packages/3d/src/FScene3d.ts:33](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L33)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:28
+[packages/3d/src/FScene3d.ts:28](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L28)
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:27
+[packages/3d/src/FScene3d.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L27)
 
 ___
 
@@ -226,4 +226,4 @@ FScene.world
 
 #### Defined in
 
-packages/3d/src/FScene3d.ts:34
+[packages/3d/src/FScene3d.ts:34](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FScene3d.ts#L34)

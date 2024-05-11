@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [3d/src](../modules/3d_src.md) / F3dShapes
+[@fibbojs](/api/index)  / [3d](/api/modules/3d_src) / F3dShapes
 
 # Enumeration: F3dShapes
 
-[3d/src](../modules/3d_src.md).F3dShapes
+[3d](/api/modules/3d_src).F3dShapes
 
 ## Table of contents
 
@@ -19,7 +19,7 @@
 
 #### Defined in
 
-packages/3d/src/types/F3dShapes.ts:3
+[packages/3d/src/types/F3dShapes.ts:3](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/types/F3dShapes.ts#L3)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-packages/3d/src/types/F3dShapes.ts:4
+[packages/3d/src/types/F3dShapes.ts:4](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/types/F3dShapes.ts#L4)

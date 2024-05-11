@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [core/src](../modules/core_src.md) / FScene
+[@fibbojs](/api/index)  / [core](/api/modules/core_src) / FScene
 
 # Class: FScene
 
-[core/src](../modules/core_src.md).FScene
+[core](/api/modules/core_src).FScene
 
 **`Description`**
 
@@ -38,7 +38,7 @@ Also contains the Rapier world if physics is enabled.
 
 #### Defined in
 
-packages/core/src/FScene.ts:17
+[packages/core/src/FScene.ts:17](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FScene.ts#L17)
 
 ## Methods
 
@@ -62,7 +62,7 @@ Add a component to the scene.
 
 #### Defined in
 
-packages/core/src/FScene.ts:23
+[packages/core/src/FScene.ts:23](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FScene.ts#L23)
 
 ## Properties
 
@@ -72,7 +72,7 @@ packages/core/src/FScene.ts:23
 
 #### Defined in
 
-packages/core/src/FScene.ts:12
+[packages/core/src/FScene.ts:12](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FScene.ts#L12)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-packages/core/src/FScene.ts:11
+[packages/core/src/FScene.ts:11](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FScene.ts#L11)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-packages/core/src/FScene.ts:14
+[packages/core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FScene.ts#L14)
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-packages/core/src/FScene.ts:15
+[packages/core/src/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FScene.ts#L15)

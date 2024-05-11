@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [3d/src](../modules/3d_src.md) / FGameCamera
+[@fibbojs](/api/index)  / [3d](/api/modules/3d_src) / FGameCamera
 
 # Class: FGameCamera
 
-[3d/src](../modules/3d_src.md).FGameCamera
+[3d](/api/modules/3d_src).FGameCamera
 
 **`Description`**
 
@@ -181,7 +181,7 @@ export default class MyGameCamera extends FGameCamera {
 
 #### Defined in
 
-packages/3d/src/cameras/FGameCamera.ts:33
+[packages/3d/src/cameras/FGameCamera.ts:33](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FGameCamera.ts#L33)
 
 ## Methods
 
@@ -1193,7 +1193,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/cameras/FGameCamera.ts:38
+[packages/3d/src/cameras/FGameCamera.ts:38](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FGameCamera.ts#L38)
 
 ___
 
@@ -1576,7 +1576,7 @@ Set the position of the camera.
 
 #### Defined in
 
-packages/3d/src/cameras/FOrbitCamera.ts:51
+[packages/3d/src/cameras/FOrbitCamera.ts:51](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L51)
 
 ___
 
@@ -1606,7 +1606,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-packages/3d/src/cameras/FCamera3d.ts:32
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ___
 
@@ -1745,7 +1745,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-packages/3d/src/cameras/FCamera3d.ts:25
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ___
 
@@ -2223,7 +2223,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/cameras/FOrbitCamera.ts:27
+[packages/3d/src/cameras/FOrbitCamera.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L27)
 
 ___
 
@@ -2281,7 +2281,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/cameras/FOrbitCamera.ts:29
+[packages/3d/src/cameras/FOrbitCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FOrbitCamera.ts#L29)
 
 ___
 
@@ -2870,7 +2870,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/cameras/FGameCamera.ts:27
+[packages/3d/src/cameras/FGameCamera.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FGameCamera.ts#L27)
 
 ___
 

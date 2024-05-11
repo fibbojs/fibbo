@@ -1,6 +1,6 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / 2d/src
+[@fibbojs](/api/index)  / 2d
 
-# Module: 2d/src
+# Module: 2d
 
 ## Table of contents
 

@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [3d/src](../modules/3d_src.md) / FFixedCamera
+[@fibbojs](/api/index)  / [3d](/api/modules/3d_src) / FFixedCamera
 
 # Class: FFixedCamera
 
-[3d/src](../modules/3d_src.md).FFixedCamera
+[3d](/api/modules/3d_src).FFixedCamera
 
 **`Description`**
 
@@ -172,7 +172,7 @@ export default class MyCamera extends FFixedCamera {
 
 #### Defined in
 
-packages/3d/src/cameras/FFixedCamera.ts:24
+[packages/3d/src/cameras/FFixedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FFixedCamera.ts#L24)
 
 ## Methods
 
@@ -1184,7 +1184,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/cameras/FFixedCamera.ts:28
+[packages/3d/src/cameras/FFixedCamera.ts:28](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FFixedCamera.ts#L28)
 
 ___
 
@@ -1567,7 +1567,7 @@ Set the position of the camera.
 
 #### Defined in
 
-packages/3d/src/cameras/FCamera3d.ts:18
+[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L18)
 
 ___
 
@@ -1597,7 +1597,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-packages/3d/src/cameras/FCamera3d.ts:32
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ___
 
@@ -1736,7 +1736,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-packages/3d/src/cameras/FCamera3d.ts:25
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ___
 

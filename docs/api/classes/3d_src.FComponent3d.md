@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [3d/src](../modules/3d_src.md) / FComponent3d
+[@fibbojs](/api/index)  / [3d](/api/modules/3d_src) / FComponent3d
 
 # Class: FComponent3d
 
-[3d/src](../modules/3d_src.md).FComponent3d
+[3d](/api/modules/3d_src).FComponent3d
 
 **`Description`**
 
@@ -41,7 +41,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-packages/3d/src/FComponent3d.ts:8
+[packages/3d/src/FComponent3d.ts:8](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FComponent3d.ts#L8)
 
 ## Methods
 
@@ -65,7 +65,7 @@ FComponent.onFrame
 
 #### Defined in
 
-packages/3d/src/FComponent3d.ts:11
+[packages/3d/src/FComponent3d.ts:11](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FComponent3d.ts#L11)
 
 ___
 
@@ -91,7 +91,7 @@ Set the position of the component.
 
 #### Defined in
 
-packages/3d/src/FComponent3d.ts:16
+[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FComponent3d.ts#L16)
 
 ___
 
@@ -117,7 +117,7 @@ Set the rotation of the component.
 
 #### Defined in
 
-packages/3d/src/FComponent3d.ts:26
+[packages/3d/src/FComponent3d.ts:26](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FComponent3d.ts#L26)
 
 ___
 
@@ -143,4 +143,4 @@ Set the scale of the component.
 
 #### Defined in
 
-packages/3d/src/FComponent3d.ts:21
+[packages/3d/src/FComponent3d.ts:21](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/FComponent3d.ts#L21)

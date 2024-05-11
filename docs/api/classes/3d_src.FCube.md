@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [3d/src](../modules/3d_src.md) / FCube
+[@fibbojs](/api/index)  / [3d](/api/modules/3d_src) / FCube
 
 # Class: FCube
 
-[3d/src](../modules/3d_src.md).FCube
+[3d](/api/modules/3d_src).FCube
 
 **`Description`**
 
@@ -78,7 +78,7 @@ export class MyCube extends FCube {
 
 #### Defined in
 
-packages/3d/src/model/FCube.ts:31
+[packages/3d/src/model/FCube.ts:31](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FCube.ts#L31)
 
 ## Methods
 
@@ -109,7 +109,7 @@ Init a rigid body for the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:96
+[packages/3d/src/model/FModel.ts:96](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L96)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FCube.ts:39
+[packages/3d/src/model/FCube.ts:39](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FCube.ts#L39)
 
 ___
 
@@ -163,7 +163,7 @@ Set the position of the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:49
+[packages/3d/src/model/FModel.ts:49](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L49)
 
 ___
 
@@ -193,7 +193,7 @@ Set the rotation of the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:69
+[packages/3d/src/model/FModel.ts:69](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L69)
 
 ___
 
@@ -223,7 +223,7 @@ Set the rotation of the model from degrees.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:78
+[packages/3d/src/model/FModel.ts:78](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L78)
 
 ___
 
@@ -253,7 +253,7 @@ Set the scale of the model.
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:60
+[packages/3d/src/model/FModel.ts:60](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L60)
 
 ## Properties
 
@@ -267,7 +267,7 @@ packages/3d/src/model/FModel.ts:60
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:22
+[packages/3d/src/model/FModel.ts:22](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L22)
 
 ___
 
@@ -284,7 +284,7 @@ directly available after the constructor, as the cube is created synchronously.
 
 #### Defined in
 
-packages/3d/src/model/FCube.ts:29
+[packages/3d/src/model/FCube.ts:29](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FCube.ts#L29)
 
 ___
 
@@ -298,7 +298,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:15
+[packages/3d/src/model/FModel.ts:15](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L15)
 
 ___
 
@@ -312,7 +312,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:21
+[packages/3d/src/model/FModel.ts:21](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L21)
 
 ___
 
@@ -326,7 +326,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:17
+[packages/3d/src/model/FModel.ts:17](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L17)
 
 ___
 
@@ -340,7 +340,7 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:16
+[packages/3d/src/model/FModel.ts:16](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L16)
 
 ___
 
@@ -354,4 +354,4 @@ ___
 
 #### Defined in
 
-packages/3d/src/model/FModel.ts:14
+[packages/3d/src/model/FModel.ts:14](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/3d/src/model/FModel.ts#L14)

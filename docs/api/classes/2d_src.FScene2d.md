@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [2d/src](../modules/2d_src.md) / FScene2d
+[@fibbojs](/api/index)  / [2d](/api/modules/2d_src) / FScene2d
 
 # Class: FScene2d
 
-[2d/src](../modules/2d_src.md).FScene2d
+[2d](/api/modules/2d_src).FScene2d
 
 **`Description`**
 
@@ -58,7 +58,7 @@ FScene.constructor
 
 #### Defined in
 
-packages/2d/src/FScene2d.ts:22
+[packages/2d/src/FScene2d.ts:22](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FScene2d.ts#L22)
 
 ## Methods
 
@@ -82,7 +82,7 @@ FScene.addComponent
 
 #### Defined in
 
-packages/2d/src/FScene2d.ts:27
+[packages/2d/src/FScene2d.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FScene2d.ts#L27)
 
 ## Properties
 
@@ -96,7 +96,7 @@ FScene.camera
 
 #### Defined in
 
-packages/core/dist/index.d.ts:28
+packages/core/dist/index.d.ts:25
 
 ___
 
@@ -110,7 +110,7 @@ FScene.components
 
 #### Defined in
 
-packages/2d/src/FScene2d.ts:19
+[packages/2d/src/FScene2d.ts:19](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FScene2d.ts#L19)
 
 ___
 
@@ -132,7 +132,7 @@ FScene.gravity
 
 #### Defined in
 
-packages/core/dist/index.d.ts:29
+packages/core/dist/index.d.ts:26
 
 ___
 
@@ -146,4 +146,4 @@ FScene.world
 
 #### Defined in
 
-packages/2d/src/FScene2d.ts:20
+[packages/2d/src/FScene2d.ts:20](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FScene2d.ts#L20)

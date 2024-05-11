@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [core/src](../modules/core_src.md) / FComponent
+[@fibbojs](/api/index)  / [core](/api/modules/core_src) / FComponent
 
 # Class: FComponent
 
-[core/src](../modules/core_src.md).FComponent
+[core](/api/modules/core_src).FComponent
 
 **`Description`**
 
@@ -36,7 +36,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-packages/core/src/FComponent.ts:5
+[packages/core/src/FComponent.ts:5](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FComponent.ts#L5)
 
 ## Methods
 
@@ -56,4 +56,4 @@ packages/core/src/FComponent.ts:5
 
 #### Defined in
 
-packages/core/src/FComponent.ts:8
+[packages/core/src/FComponent.ts:8](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/core/src/FComponent.ts#L8)

@@ -1,8 +1,8 @@
-[fibbojs](../README.md) / [Modules](../modules.md) / [2d/src](../modules/2d_src.md) / FComponent2d
+[@fibbojs](/api/index)  / [2d](/api/modules/2d_src) / FComponent2d
 
 # Class: FComponent2d
 
-[2d/src](../modules/2d_src.md).FComponent2d
+[2d](/api/modules/2d_src).FComponent2d
 
 **`Description`**
 
@@ -43,7 +43,7 @@ FComponent.constructor
 
 #### Defined in
 
-packages/2d/src/FComponent2d.ts:8
+[packages/2d/src/FComponent2d.ts:8](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L8)
 
 ## Methods
 
@@ -67,7 +67,7 @@ FComponent.onFrame
 
 #### Defined in
 
-packages/2d/src/FComponent2d.ts:12
+[packages/2d/src/FComponent2d.ts:12](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L12)
 
 ___
 
@@ -92,7 +92,7 @@ Set the position of the component.
 
 #### Defined in
 
-packages/2d/src/FComponent2d.ts:17
+[packages/2d/src/FComponent2d.ts:17](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L17)
 
 ___
 
@@ -117,7 +117,7 @@ Set the rotation of the component.
 
 #### Defined in
 
-packages/2d/src/FComponent2d.ts:27
+[packages/2d/src/FComponent2d.ts:27](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L27)
 
 ___
 
@@ -142,4 +142,4 @@ Set the scale of the component.
 
 #### Defined in
 
-packages/2d/src/FComponent2d.ts:22
+[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/ccc6e3847dd911058d63a251d216974de127e8af/packages/2d/src/FComponent2d.ts#L22)
