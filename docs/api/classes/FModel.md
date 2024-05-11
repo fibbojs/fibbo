@@ -28,7 +28,12 @@ The base class for all models in FibboJS.
 
 ### Methods
 
+- [initRigidBody](FModel.md#initrigidbody)
 - [onFrame](FModel.md#onframe)
+- [setPosition](FModel.md#setposition)
+- [setRotation](FModel.md#setrotation)
+- [setRotationDegree](FModel.md#setrotationdegree)
+- [setScale](FModel.md#setscale)
 
 ### Properties
 
@@ -58,9 +63,36 @@ The base class for all models in FibboJS.
 
 #### Defined in
 
-src/model/FModel.ts:25
+[src/model/FModel.ts:27](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L27)
 
 ## Methods
+
+### initRigidBody
+
+▸ **initRigidBody**(`position?`, `scale?`, `rotation?`, `shape?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `position?` | `Vector3` |
+| `scale?` | `Vector3` |
+| `rotation?` | `Vector3` |
+| `shape?` | [`F3dShapes`](../enums/F3dShapes.md) |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Init a rigid body for the model.
+
+#### Defined in
+
+[src/model/FModel.ts:96](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L96)
+
+___
 
 ### onFrame
 
@@ -82,7 +114,123 @@ src/model/FModel.ts:25
 
 #### Defined in
 
-src/model/FModel.ts:38
+[src/model/FModel.ts:36](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L36)
+
+___
+
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the model.
+
+#### Implementation of
+
+[FComponent](FComponent.md).[setPosition](FComponent.md#setposition)
+
+#### Defined in
+
+[src/model/FModel.ts:49](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L49)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the model.
+
+#### Implementation of
+
+[FComponent](FComponent.md).[setRotation](FComponent.md#setrotation)
+
+#### Defined in
+
+[src/model/FModel.ts:69](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L69)
+
+___
+
+### setRotationDegree
+
+▸ **setRotationDegree**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the model from degrees.
+
+#### Defined in
+
+[src/model/FModel.ts:78](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L78)
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the model.
+
+#### Implementation of
+
+[FComponent](FComponent.md).[setScale](FComponent.md#setscale)
+
+#### Defined in
+
+[src/model/FModel.ts:60](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L60)
 
 ## Properties
 
@@ -92,7 +240,7 @@ src/model/FModel.ts:38
 
 #### Defined in
 
-src/model/FModel.ts:20
+[src/model/FModel.ts:22](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L22)
 
 ___
 
@@ -102,7 +250,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:17
+[src/model/FModel.ts:19](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L19)
 
 ___
 
@@ -112,7 +260,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:13
+[src/model/FModel.ts:15](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L15)
 
 ___
 
@@ -122,7 +270,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:19
+[src/model/FModel.ts:21](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L21)
 
 ___
 
@@ -132,7 +280,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:15
+[src/model/FModel.ts:17](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L17)
 
 ___
 
@@ -142,7 +290,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:14
+[src/model/FModel.ts:16](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L16)
 
 ___
 
@@ -152,4 +300,4 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:12
+[src/model/FModel.ts:14](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L14)

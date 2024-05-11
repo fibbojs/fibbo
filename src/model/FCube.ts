@@ -37,5 +37,6 @@ export class FCube extends FModel {
   }
 
   onFrame(_delta: number): void {
+    super.onFrame(_delta)
   }
 }

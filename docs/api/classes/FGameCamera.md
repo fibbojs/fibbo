@@ -80,10 +80,13 @@ export default class MyGameCamera extends FGameCamera {
 - [rotateZ](FGameCamera.md#rotatez)
 - [setFocalLength](FGameCamera.md#setfocallength)
 - [setLens](FGameCamera.md#setlens)
+- [setPosition](FGameCamera.md#setposition)
+- [setRotation](FGameCamera.md#setrotation)
 - [setRotationFromAxisAngle](FGameCamera.md#setrotationfromaxisangle)
 - [setRotationFromEuler](FGameCamera.md#setrotationfromeuler)
 - [setRotationFromMatrix](FGameCamera.md#setrotationfrommatrix)
 - [setRotationFromQuaternion](FGameCamera.md#setrotationfromquaternion)
+- [setScale](FGameCamera.md#setscale)
 - [setViewOffset](FGameCamera.md#setviewoffset)
 - [toJSON](FGameCamera.md#tojson)
 - [translateOnAxis](FGameCamera.md#translateonaxis)
@@ -176,7 +179,7 @@ export default class MyGameCamera extends FGameCamera {
 
 #### Defined in
 
-src/cameras/FGameCamera.ts:33
+[src/cameras/FGameCamera.ts:33](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FGameCamera.ts#L33)
 
 ## Methods
 
@@ -1188,7 +1191,7 @@ ___
 
 #### Defined in
 
-src/cameras/FGameCamera.ts:38
+[src/cameras/FGameCamera.ts:38](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FGameCamera.ts#L38)
 
 ___
 
@@ -1545,6 +1548,66 @@ node_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:222
 
 ___
 
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the camera.
+
+#### Inherited from
+
+[FOrbitCamera](FOrbitCamera.md).[setPosition](FOrbitCamera.md#setposition)
+
+#### Defined in
+
+[src/cameras/FOrbitCamera.ts:51](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L51)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the camera.
+
+#### Inherited from
+
+[FOrbitCamera](FOrbitCamera.md).[setRotation](FOrbitCamera.md#setrotation)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:32](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L32)
+
+___
+
 ### setRotationFromAxisAngle
 
 ▸ **setRotationFromAxisAngle**(`axis`, `angle`): `void`
@@ -1651,6 +1714,36 @@ Copy the given THREE.Quaternion | Quaternion into [.quaternion](FCamera.md#quate
 #### Defined in
 
 node_modules/@types/three/src/core/Object3D.d.ts:370
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the camera.
+
+#### Inherited from
+
+[FOrbitCamera](FOrbitCamera.md).[setScale](FOrbitCamera.md#setscale)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L25)
 
 ___
 
@@ -2128,7 +2221,7 @@ ___
 
 #### Defined in
 
-src/cameras/FOrbitCamera.ts:27
+[src/cameras/FOrbitCamera.ts:27](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L27)
 
 ___
 
@@ -2186,7 +2279,7 @@ ___
 
 #### Defined in
 
-src/cameras/FOrbitCamera.ts:29
+[src/cameras/FOrbitCamera.ts:29](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L29)
 
 ___
 
@@ -2775,7 +2868,7 @@ ___
 
 #### Defined in
 
-src/cameras/FGameCamera.ts:27
+[src/cameras/FGameCamera.ts:27](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FGameCamera.ts#L27)
 
 ___
 

@@ -37,7 +37,12 @@ export class MySphere extends FSphere {
 
 ### Methods
 
+- [initRigidBody](FSphere.md#initrigidbody)
 - [onFrame](FSphere.md#onframe)
+- [setPosition](FSphere.md#setposition)
+- [setRotation](FSphere.md#setrotation)
+- [setRotationDegree](FSphere.md#setrotationdegree)
+- [setScale](FSphere.md#setscale)
 
 ### Properties
 
@@ -71,9 +76,40 @@ export class MySphere extends FSphere {
 
 #### Defined in
 
-src/model/FSphere.ts:31
+[src/model/FSphere.ts:32](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FSphere.ts#L32)
 
 ## Methods
+
+### initRigidBody
+
+▸ **initRigidBody**(`position?`, `scale?`, `rotation?`, `shape?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `position?` | `Vector3` |
+| `scale?` | `Vector3` |
+| `rotation?` | `Vector3` |
+| `shape?` | [`F3dShapes`](../enums/F3dShapes.md) |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Init a rigid body for the model.
+
+#### Overrides
+
+[FModel](FModel.md).[initRigidBody](FModel.md#initrigidbody)
+
+#### Defined in
+
+[src/model/FSphere.ts:44](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FSphere.ts#L44)
+
+___
 
 ### onFrame
 
@@ -95,7 +131,127 @@ src/model/FSphere.ts:31
 
 #### Defined in
 
-src/model/FSphere.ts:39
+[src/model/FSphere.ts:40](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FSphere.ts#L40)
+
+___
+
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the model.
+
+#### Inherited from
+
+[FModel](FModel.md).[setPosition](FModel.md#setposition)
+
+#### Defined in
+
+[src/model/FModel.ts:49](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L49)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the model.
+
+#### Inherited from
+
+[FModel](FModel.md).[setRotation](FModel.md#setrotation)
+
+#### Defined in
+
+[src/model/FModel.ts:69](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L69)
+
+___
+
+### setRotationDegree
+
+▸ **setRotationDegree**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the model from degrees.
+
+#### Inherited from
+
+[FModel](FModel.md).[setRotationDegree](FModel.md#setrotationdegree)
+
+#### Defined in
+
+[src/model/FModel.ts:78](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L78)
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the model.
+
+#### Inherited from
+
+[FModel](FModel.md).[setScale](FModel.md#setscale)
+
+#### Defined in
+
+[src/model/FModel.ts:60](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L60)
 
 ## Properties
 
@@ -109,7 +265,7 @@ src/model/FSphere.ts:39
 
 #### Defined in
 
-src/model/FModel.ts:20
+[src/model/FModel.ts:22](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L22)
 
 ___
 
@@ -126,7 +282,7 @@ directly available after the constructor, as the cube is created synchronously.
 
 #### Defined in
 
-src/model/FSphere.ts:29
+[src/model/FSphere.ts:30](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FSphere.ts#L30)
 
 ___
 
@@ -140,7 +296,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:13
+[src/model/FModel.ts:15](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L15)
 
 ___
 
@@ -154,7 +310,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:19
+[src/model/FModel.ts:21](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L21)
 
 ___
 
@@ -168,7 +324,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:15
+[src/model/FModel.ts:17](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L17)
 
 ___
 
@@ -182,7 +338,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:14
+[src/model/FModel.ts:16](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L16)
 
 ___
 
@@ -196,4 +352,4 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:12
+[src/model/FModel.ts:14](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L14)

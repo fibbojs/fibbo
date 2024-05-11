@@ -73,10 +73,13 @@ The base class for cameras in FibboJS.
 - [rotateZ](FCamera.md#rotatez)
 - [setFocalLength](FCamera.md#setfocallength)
 - [setLens](FCamera.md#setlens)
+- [setPosition](FCamera.md#setposition)
+- [setRotation](FCamera.md#setrotation)
 - [setRotationFromAxisAngle](FCamera.md#setrotationfromaxisangle)
 - [setRotationFromEuler](FCamera.md#setrotationfromeuler)
 - [setRotationFromMatrix](FCamera.md#setrotationfrommatrix)
 - [setRotationFromQuaternion](FCamera.md#setrotationfromquaternion)
+- [setScale](FCamera.md#setscale)
 - [setViewOffset](FCamera.md#setviewoffset)
 - [toJSON](FCamera.md#tojson)
 - [translateOnAxis](FCamera.md#translateonaxis)
@@ -159,7 +162,7 @@ THREE.PerspectiveCamera.constructor
 
 #### Defined in
 
-src/cameras/FCamera.ts:9
+[src/cameras/FCamera.ts:9](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L9)
 
 ## Methods
 
@@ -1171,7 +1174,7 @@ ___
 
 #### Defined in
 
-src/cameras/FCamera.ts:13
+[src/cameras/FCamera.ts:13](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L13)
 
 ___
 
@@ -1528,6 +1531,66 @@ node_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:222
 
 ___
 
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the camera.
+
+#### Implementation of
+
+[FComponent](FComponent.md).[setPosition](FComponent.md#setposition)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L18)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the camera.
+
+#### Implementation of
+
+[FComponent](FComponent.md).[setRotation](FComponent.md#setrotation)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:32](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L32)
+
+___
+
 ### setRotationFromAxisAngle
 
 ▸ **setRotationFromAxisAngle**(`axis`, `angle`): `void`
@@ -1634,6 +1697,36 @@ THREE.PerspectiveCamera.setRotationFromQuaternion
 #### Defined in
 
 node_modules/@types/three/src/core/Object3D.d.ts:370
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the camera.
+
+#### Implementation of
+
+[FComponent](FComponent.md).[setScale](FComponent.md#setscale)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L25)
 
 ___
 

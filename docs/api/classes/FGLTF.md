@@ -38,8 +38,13 @@ export class MyGltfModel extends FGLTF {
 ### Methods
 
 - [emitOnLoaded](FGLTF.md#emitonloaded)
+- [initRigidBody](FGLTF.md#initrigidbody)
 - [onFrame](FGLTF.md#onframe)
 - [onLoaded](FGLTF.md#onloaded)
+- [setPosition](FGLTF.md#setposition)
+- [setRotation](FGLTF.md#setrotation)
+- [setRotationDegree](FGLTF.md#setrotationdegree)
+- [setScale](FGLTF.md#setscale)
 
 ### Properties
 
@@ -76,7 +81,7 @@ export class MyGltfModel extends FGLTF {
 
 #### Defined in
 
-src/model/FGLTF.ts:48
+[src/model/FGLTF.ts:48](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FGLTF.ts#L48)
 
 ## Methods
 
@@ -90,7 +95,38 @@ src/model/FGLTF.ts:48
 
 #### Defined in
 
-src/model/FGLTF.ts:93
+[src/model/FGLTF.ts:102](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FGLTF.ts#L102)
+
+___
+
+### initRigidBody
+
+▸ **initRigidBody**(`position?`, `scale?`, `rotation?`, `shape?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `position?` | `Vector3` |
+| `scale?` | `Vector3` |
+| `rotation?` | `Vector3` |
+| `shape?` | [`F3dShapes`](../enums/F3dShapes.md) |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Init a rigid body for the model.
+
+#### Inherited from
+
+[FModel](FModel.md).[initRigidBody](FModel.md#initrigidbody)
+
+#### Defined in
+
+[src/model/FModel.ts:96](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L96)
 
 ___
 
@@ -114,7 +150,7 @@ ___
 
 #### Defined in
 
-src/model/FGLTF.ts:86
+[src/model/FGLTF.ts:94](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FGLTF.ts#L94)
 
 ___
 
@@ -134,7 +170,127 @@ ___
 
 #### Defined in
 
-src/model/FGLTF.ts:89
+[src/model/FGLTF.ts:98](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FGLTF.ts#L98)
+
+___
+
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the model.
+
+#### Inherited from
+
+[FModel](FModel.md).[setPosition](FModel.md#setposition)
+
+#### Defined in
+
+[src/model/FModel.ts:49](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L49)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the model.
+
+#### Inherited from
+
+[FModel](FModel.md).[setRotation](FModel.md#setrotation)
+
+#### Defined in
+
+[src/model/FModel.ts:69](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L69)
+
+___
+
+### setRotationDegree
+
+▸ **setRotationDegree**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the model from degrees.
+
+#### Inherited from
+
+[FModel](FModel.md).[setRotationDegree](FModel.md#setrotationdegree)
+
+#### Defined in
+
+[src/model/FModel.ts:78](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L78)
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the model.
+
+#### Inherited from
+
+[FModel](FModel.md).[setScale](FModel.md#setscale)
+
+#### Defined in
+
+[src/model/FModel.ts:60](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L60)
 
 ## Properties
 
@@ -148,7 +304,7 @@ src/model/FGLTF.ts:89
 
 #### Defined in
 
-src/model/FModel.ts:20
+[src/model/FModel.ts:22](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L22)
 
 ___
 
@@ -162,7 +318,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:17
+[src/model/FModel.ts:19](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L19)
 
 ___
 
@@ -172,7 +328,7 @@ ___
 
 #### Defined in
 
-src/model/FGLTF.ts:41
+[src/model/FGLTF.ts:41](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FGLTF.ts#L41)
 
 ___
 
@@ -186,7 +342,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:13
+[src/model/FModel.ts:15](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L15)
 
 ___
 
@@ -200,7 +356,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:19
+[src/model/FModel.ts:21](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L21)
 
 ___
 
@@ -214,7 +370,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:15
+[src/model/FModel.ts:17](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L17)
 
 ___
 
@@ -228,7 +384,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:14
+[src/model/FModel.ts:16](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L16)
 
 ___
 
@@ -242,7 +398,7 @@ ___
 
 #### Defined in
 
-src/model/FModel.ts:12
+[src/model/FModel.ts:14](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FModel.ts#L14)
 
 ___
 
@@ -252,4 +408,4 @@ ___
 
 #### Defined in
 
-src/model/FGLTF.ts:40
+[src/model/FGLTF.ts:40](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/model/FGLTF.ts#L40)

@@ -17,7 +17,7 @@
 
 #### Defined in
 
-src/types/F3dShapes.ts:3
+[src/types/F3dShapes.ts:3](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/types/F3dShapes.ts#L3)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-src/types/F3dShapes.ts:4
+[src/types/F3dShapes.ts:4](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/types/F3dShapes.ts#L4)

@@ -48,19 +48,8 @@ export default defineConfig({
             { text: 'FModel', link: '/api/classes/FModel' },
             { text: 'FSphere', link: '/api/classes/FSphere' },
           ] },
-          { text: 'Functions', items: [
-            { text: 'useLookAt', link: '/api/functions/useLookAt' },
-            { text: 'usePosition', link: '/api/functions/usePosition' },
-            { text: 'useRigidBody', link: '/api/functions/useRigidBody' },
-            { text: 'useRotation', link: '/api/functions/useRotation' },
-            { text: 'useRotationDegree', link: '/api/functions/useRotationDegree' },
-            { text: 'useScale', link: '/api/functions/useScale' },
-          ] },
           { text: 'Enumerations', items: [
             { text: 'F3dShapes', link: '/api/enums/F3dShapes' },
-          ] },
-          { text: 'Interfaces', items: [
-            { text: 'FVector3', link: '/api/interfaces/FVector3' },
           ] },
         ],
       },

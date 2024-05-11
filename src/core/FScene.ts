@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { World } from '@dimforge/rapier3d'
-import type { FVector3 } from '../types/FVector3'
 import type { FModel } from '../model/FModel'
 import { FGLTF } from '../model/FGLTF'
 import { FCamera } from '../cameras/FCamera'
@@ -26,7 +25,6 @@ export class FScene {
   scene: THREE.Scene
   renderer: THREE.WebGLRenderer
   camera: THREE.Camera
-  cameraOffset: FVector3 = { x: -5, y: 5, z: 5 }
   debugCamera: THREE.PerspectiveCamera
   controls: OrbitControls | undefined
   // Rapier
@@ -207,6 +205,8 @@ export class FScene {
           border: 1px solid white;
           border-radius: 10px;
           color: white;
+          max-height: 90vh;
+          overflow-y: auto;
         }
 
         #camera-panel {

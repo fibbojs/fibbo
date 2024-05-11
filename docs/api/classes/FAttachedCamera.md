@@ -80,10 +80,13 @@ export default class MyAttachedCamera extends FAttachedCamera {
 - [rotateZ](FAttachedCamera.md#rotatez)
 - [setFocalLength](FAttachedCamera.md#setfocallength)
 - [setLens](FAttachedCamera.md#setlens)
+- [setPosition](FAttachedCamera.md#setposition)
+- [setRotation](FAttachedCamera.md#setrotation)
 - [setRotationFromAxisAngle](FAttachedCamera.md#setrotationfromaxisangle)
 - [setRotationFromEuler](FAttachedCamera.md#setrotationfromeuler)
 - [setRotationFromMatrix](FAttachedCamera.md#setrotationfrommatrix)
 - [setRotationFromQuaternion](FAttachedCamera.md#setrotationfromquaternion)
+- [setScale](FAttachedCamera.md#setscale)
 - [setViewOffset](FAttachedCamera.md#setviewoffset)
 - [toJSON](FAttachedCamera.md#tojson)
 - [translateOnAxis](FAttachedCamera.md#translateonaxis)
@@ -174,7 +177,7 @@ export default class MyAttachedCamera extends FAttachedCamera {
 
 #### Defined in
 
-src/cameras/FAttachedCamera.ts:33
+[src/cameras/FAttachedCamera.ts:33](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FAttachedCamera.ts#L33)
 
 ## Methods
 
@@ -1186,7 +1189,7 @@ ___
 
 #### Defined in
 
-src/cameras/FAttachedCamera.ts:38
+[src/cameras/FAttachedCamera.ts:38](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FAttachedCamera.ts#L38)
 
 ___
 
@@ -1543,6 +1546,66 @@ node_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:222
 
 ___
 
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the camera.
+
+#### Overrides
+
+[FCamera](FCamera.md).[setPosition](FCamera.md#setposition)
+
+#### Defined in
+
+[src/cameras/FAttachedCamera.ts:50](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FAttachedCamera.ts#L50)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the camera.
+
+#### Inherited from
+
+[FCamera](FCamera.md).[setRotation](FCamera.md#setrotation)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:32](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L32)
+
+___
+
 ### setRotationFromAxisAngle
 
 ▸ **setRotationFromAxisAngle**(`axis`, `angle`): `void`
@@ -1649,6 +1712,36 @@ Copy the given THREE.Quaternion | Quaternion into [.quaternion](FCamera.md#quate
 #### Defined in
 
 node_modules/@types/three/src/core/Object3D.d.ts:370
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the camera.
+
+#### Inherited from
+
+[FCamera](FCamera.md).[setScale](FCamera.md#setscale)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L25)
 
 ___
 
@@ -2122,7 +2215,7 @@ ___
 
 #### Defined in
 
-src/cameras/FAttachedCamera.ts:26
+[src/cameras/FAttachedCamera.ts:26](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FAttachedCamera.ts#L26)
 
 ___
 
@@ -2707,11 +2800,11 @@ ___
 
 ### offset
 
-• **offset**: [`FVector3`](../interfaces/FVector3.md)
+• **offset**: `Vector3`
 
 #### Defined in
 
-src/cameras/FAttachedCamera.ts:28
+[src/cameras/FAttachedCamera.ts:28](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FAttachedCamera.ts#L28)
 
 ___
 

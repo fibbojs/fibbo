@@ -11,4 +11,25 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCompon
   }
 
   abstract onFrame(_delta: number): void
+
+  /**
+   * @description Set the position of the camera.
+   */
+  setPosition(x: number, y: number, z: number): void {
+    this.position.set(x, y, z)
+  }
+
+  /**
+   * @description Set the scale of the camera.
+   */
+  setScale(x: number, y: number, z: number): void {
+    this.scale.set(x, y, z)
+  }
+
+  /**
+   * @description Set the rotation of the camera.
+   */
+  setRotation(x: number, y: number, z: number): void {
+    this.rotation.set(x, y, z)
+  }
 }

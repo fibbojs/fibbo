@@ -32,7 +32,6 @@ scene.addModel(cube)
 ### Properties
 
 - [camera](FScene.md#camera)
-- [cameraOffset](FScene.md#cameraoffset)
 - [controls](FScene.md#controls)
 - [debugCamera](FScene.md#debugcamera)
 - [gravity](FScene.md#gravity)
@@ -59,7 +58,7 @@ scene.addModel(cube)
 
 #### Defined in
 
-src/core/FScene.ts:36
+[src/core/FScene.ts:34](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L34)
 
 ## Methods
 
@@ -73,7 +72,7 @@ src/core/FScene.ts:36
 
 #### Defined in
 
-src/core/FScene.ts:166
+[src/core/FScene.ts:164](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L164)
 
 ___
 
@@ -93,7 +92,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:150
+[src/core/FScene.ts:148](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L148)
 
 ___
 
@@ -107,7 +106,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:294
+[src/core/FScene.ts:294](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L294)
 
 ## Properties
 
@@ -117,17 +116,7 @@ src/core/FScene.ts:294
 
 #### Defined in
 
-src/core/FScene.ts:28
-
-___
-
-### cameraOffset
-
-• **cameraOffset**: [`FVector3`](../interfaces/FVector3.md)
-
-#### Defined in
-
-src/core/FScene.ts:29
+[src/core/FScene.ts:27](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L27)
 
 ___
 
@@ -137,7 +126,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:31
+[src/core/FScene.ts:29](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L29)
 
 ___
 
@@ -147,7 +136,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:30
+[src/core/FScene.ts:28](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L28)
 
 ___
 
@@ -165,7 +154,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:33
+[src/core/FScene.ts:31](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L31)
 
 ___
 
@@ -175,7 +164,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:24
+[src/core/FScene.ts:23](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L23)
 
 ___
 
@@ -185,7 +174,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:27
+[src/core/FScene.ts:26](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L26)
 
 ___
 
@@ -195,7 +184,7 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:26
+[src/core/FScene.ts:25](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L25)
 
 ___
 
@@ -205,4 +194,4 @@ ___
 
 #### Defined in
 
-src/core/FScene.ts:34
+[src/core/FScene.ts:32](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/core/FScene.ts#L32)

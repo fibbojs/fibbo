@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
+import { F3dShapes } from '../types/F3dShapes'
 import { FModel } from './FModel'
 
 /**
@@ -37,5 +38,17 @@ export class FSphere extends FModel {
   }
 
   onFrame(_delta: number): void {
+    super.onFrame(_delta)
+  }
+
+  initRigidBody(
+    position?: THREE.Vector3,
+    scale?: THREE.Vector3,
+    rotation?: THREE.Vector3,
+    shape?: F3dShapes,
+  ): void {
+    if (!shape)
+      shape = F3dShapes.SPHERE
+    super.initRigidBody(position, scale, rotation, shape)
   }
 }

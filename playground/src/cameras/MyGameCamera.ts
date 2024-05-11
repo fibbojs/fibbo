@@ -1,10 +1,10 @@
-import { FGameCamera, usePosition } from '@fibbojs/fibbo'
+import { FGameCamera } from '@fibbojs/fibbo'
 import type { FModel, FScene } from '@fibbojs/fibbo'
 
-@usePosition({ x: 0, y: 5, z: 5 })
 export default class MyGameCamera extends FGameCamera {
   constructor(attachedModel: FModel, scene: FScene) {
     super(attachedModel, scene)
+    this.setPosition(0, 5, 5)
   }
 
   onFrame(delta: number) {

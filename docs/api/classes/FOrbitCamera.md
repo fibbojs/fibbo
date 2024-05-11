@@ -82,10 +82,13 @@ export default class MyOrbitCamera extends FOrbitCamera {
 - [rotateZ](FOrbitCamera.md#rotatez)
 - [setFocalLength](FOrbitCamera.md#setfocallength)
 - [setLens](FOrbitCamera.md#setlens)
+- [setPosition](FOrbitCamera.md#setposition)
+- [setRotation](FOrbitCamera.md#setrotation)
 - [setRotationFromAxisAngle](FOrbitCamera.md#setrotationfromaxisangle)
 - [setRotationFromEuler](FOrbitCamera.md#setrotationfromeuler)
 - [setRotationFromMatrix](FOrbitCamera.md#setrotationfrommatrix)
 - [setRotationFromQuaternion](FOrbitCamera.md#setrotationfromquaternion)
+- [setScale](FOrbitCamera.md#setscale)
 - [setViewOffset](FOrbitCamera.md#setviewoffset)
 - [toJSON](FOrbitCamera.md#tojson)
 - [translateOnAxis](FOrbitCamera.md#translateonaxis)
@@ -177,7 +180,7 @@ export default class MyOrbitCamera extends FOrbitCamera {
 
 #### Defined in
 
-src/cameras/FOrbitCamera.ts:35
+[src/cameras/FOrbitCamera.ts:35](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L35)
 
 ## Methods
 
@@ -1189,7 +1192,7 @@ ___
 
 #### Defined in
 
-src/cameras/FOrbitCamera.ts:43
+[src/cameras/FOrbitCamera.ts:43](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L43)
 
 ___
 
@@ -1546,6 +1549,66 @@ node_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:222
 
 ___
 
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the camera.
+
+#### Overrides
+
+[FCamera](FCamera.md).[setPosition](FCamera.md#setposition)
+
+#### Defined in
+
+[src/cameras/FOrbitCamera.ts:51](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L51)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the camera.
+
+#### Inherited from
+
+[FCamera](FCamera.md).[setRotation](FCamera.md#setrotation)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:32](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L32)
+
+___
+
 ### setRotationFromAxisAngle
 
 ▸ **setRotationFromAxisAngle**(`axis`, `angle`): `void`
@@ -1652,6 +1715,36 @@ Copy the given THREE.Quaternion | Quaternion into [.quaternion](FCamera.md#quate
 #### Defined in
 
 node_modules/@types/three/src/core/Object3D.d.ts:370
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the camera.
+
+#### Inherited from
+
+[FCamera](FCamera.md).[setScale](FCamera.md#setscale)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L25)
 
 ___
 
@@ -2125,7 +2218,7 @@ ___
 
 #### Defined in
 
-src/cameras/FOrbitCamera.ts:27
+[src/cameras/FOrbitCamera.ts:27](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L27)
 
 ___
 
@@ -2179,7 +2272,7 @@ ___
 
 #### Defined in
 
-src/cameras/FOrbitCamera.ts:29
+[src/cameras/FOrbitCamera.ts:29](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FOrbitCamera.ts#L29)
 
 ___
 

@@ -65,9 +65,17 @@ export class FGLTF extends FModel {
         // Add the object to the scene
         this.object3D = gltf.scene
 
+        // If a position is defined, apply it
+        if (this.position)
+          this.object3D.position.set(this.position.x, this.position.y, this.position.z)
+
         // If a scale is defined, apply it
         if (this.scale)
           this.object3D.scale.set(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2)
+
+        // If a rotation is defined, apply it
+        if (this.rotation)
+          this.object3D.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
 
         // Call the onLoaded method
         this.emitOnLoaded()
@@ -84,6 +92,7 @@ export class FGLTF extends FModel {
   }
 
   onFrame(_delta: number) {
+    super.onFrame(_delta)
   }
 
   onLoaded(fn: () => void) {

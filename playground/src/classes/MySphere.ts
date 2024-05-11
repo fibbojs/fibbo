@@ -1,11 +1,11 @@
-import { FSphere, usePosition, useRigidBody } from '@fibbojs/fibbo'
+import { FSphere } from '@fibbojs/fibbo'
 import type { FScene } from '@fibbojs/fibbo'
 
-@useRigidBody()
-@usePosition({ x: -2, y: 3, z: -2 })
 export default class MySphere extends FSphere {
   constructor(scene: FScene) {
     super(scene)
+    this.setPosition(-2, 3, -2)
+    this.initRigidBody()
   }
 
   onFrame(delta: number) {

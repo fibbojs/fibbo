@@ -9,13 +9,13 @@ A fixed camera that does not move.
 **`Example`**
 
 ```ts
-import { FFixedCamera, usePosition, useLookAt } from '@fibbojs/fibbo'
+import { FFixedCamera, } from '@fibbojs/fibbo'
 
-@useLookAt({ x: 0, y: 0, z: 0 })
-@usePosition({ x: 5, y: 5, z: 5 })
 export default class MyCamera extends FFixedCamera {
  constructor() {
   super()
+  this.setPosition(5, 5, 5)
+  this.lookAt(0, 0, 0)
  }
 
  onFrame(delta: number) {
@@ -81,10 +81,13 @@ export default class MyCamera extends FFixedCamera {
 - [rotateZ](FFixedCamera.md#rotatez)
 - [setFocalLength](FFixedCamera.md#setfocallength)
 - [setLens](FFixedCamera.md#setlens)
+- [setPosition](FFixedCamera.md#setposition)
+- [setRotation](FFixedCamera.md#setrotation)
 - [setRotationFromAxisAngle](FFixedCamera.md#setrotationfromaxisangle)
 - [setRotationFromEuler](FFixedCamera.md#setrotationfromeuler)
 - [setRotationFromMatrix](FFixedCamera.md#setrotationfrommatrix)
 - [setRotationFromQuaternion](FFixedCamera.md#setrotationfromquaternion)
+- [setScale](FFixedCamera.md#setscale)
 - [setViewOffset](FFixedCamera.md#setviewoffset)
 - [toJSON](FFixedCamera.md#tojson)
 - [translateOnAxis](FFixedCamera.md#translateonaxis)
@@ -167,7 +170,7 @@ export default class MyCamera extends FFixedCamera {
 
 #### Defined in
 
-src/cameras/FFixedCamera.ts:24
+[src/cameras/FFixedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FFixedCamera.ts#L24)
 
 ## Methods
 
@@ -1179,7 +1182,7 @@ ___
 
 #### Defined in
 
-src/cameras/FFixedCamera.ts:28
+[src/cameras/FFixedCamera.ts:28](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FFixedCamera.ts#L28)
 
 ___
 
@@ -1536,6 +1539,66 @@ node_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:222
 
 ___
 
+### setPosition
+
+▸ **setPosition**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the position of the camera.
+
+#### Inherited from
+
+[FCamera](FCamera.md).[setPosition](FCamera.md#setposition)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L18)
+
+___
+
+### setRotation
+
+▸ **setRotation**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the camera.
+
+#### Inherited from
+
+[FCamera](FCamera.md).[setRotation](FCamera.md#setrotation)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:32](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L32)
+
+___
+
 ### setRotationFromAxisAngle
 
 ▸ **setRotationFromAxisAngle**(`axis`, `angle`): `void`
@@ -1642,6 +1705,36 @@ Copy the given THREE.Quaternion | Quaternion into [.quaternion](FCamera.md#quate
 #### Defined in
 
 node_modules/@types/three/src/core/Object3D.d.ts:370
+
+___
+
+### setScale
+
+▸ **setScale**(`x`, `y`, `z`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `x` | `number` |
+| `y` | `number` |
+| `z` | `number` |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the scale of the camera.
+
+#### Inherited from
+
+[FCamera](FCamera.md).[setScale](FCamera.md#setscale)
+
+#### Defined in
+
+[src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/4d4543b0732388b4480d2785a954ccaf7d85811f/src/cameras/FCamera.ts#L25)
 
 ___
 
