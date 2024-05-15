@@ -91,7 +91,7 @@ export class FScene2d extends FScene {
         helpGrid.lineTo(1000, i)
       }
       // Apply style
-      helpGrid.stroke({ width: 1, color: new PIXI.Color({
+      helpGrid.stroke({ width: 4, color: new PIXI.Color({
         r: 70,
         g: 70,
         b: 70,
