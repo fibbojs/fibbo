@@ -4,5 +4,5 @@ import MySquare from './classes/MySquare'
 
 const scene = new FScene2d()
 
-const square = new MySquare()
+const square = new MySquare(scene)
 scene.addComponent(square)

@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js'
 import { FComponent2d } from '../FComponent2d'
+import type { FScene2d } from '../FScene2d'
 
 /**
  * @description A simple square in FibboJS.
@@ -15,33 +16,15 @@ import { FComponent2d } from '../FComponent2d'
  * ```
  */
 export class FSquare extends FComponent2d {
-  constructor() {
-    super()
+  constructor(scene: FScene2d) {
+    super(scene)
     // Create a square
     this.container = new PIXI.Graphics()
-      .rect(0, 0, 100, 100)
+      .rect(this.position.x, this.position.y, this.scale.x * 100, this.scale.y * 100)
       .fill(0xFF0000)
-    // Set the pivot point to the center of the square
-    this.container.pivot.set(50, 50)
-    // Move the square to 50, 50
-    this.container.position.set(50, 50)
   }
 
   onFrame(delta: number): void {
-    // Make the square rotate
-    this.container.rotation += 1 * delta
-  }
-
-  setPosition(x: number, y: number): void {
-    this.container.position.set(x, y)
-  }
-
-  setScale(x: number, y: number): void {
-    this.container.scale.set(x, y)
-  }
-
-  setRotation(x: number, y: number): void {
-    this.container.rotation = x
-    this.container.rotation = y
+    super.onFrame(delta)
   }
 }

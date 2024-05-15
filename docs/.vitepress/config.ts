@@ -40,6 +40,9 @@ export default defineConfig({
               { text: 'Polygons Classes', items: [
                 { text: 'FSquare', link: '/api/classes/2d_src.FSquare' },
               ] },
+              { text: 'Enumerations', items: [
+                { text: 'F2dShapes', link: '/api/enums/2d_src.F2dShapes' },
+              ] },
             ] },
             { text: '3D', link: '/api/modules/3d_src', collapsed: true, items: [
               { text: 'Camera Classes', items: [

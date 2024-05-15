@@ -33,6 +33,8 @@ scene.addComponent(square)
 
 ### Methods
 
+- [initCollider](2d_src.FSquare.md#initcollider)
+- [initRigidBody](2d_src.FSquare.md#initrigidbody)
 - [onFrame](2d_src.FSquare.md#onframe)
 - [setPosition](2d_src.FSquare.md#setposition)
 - [setRotation](2d_src.FSquare.md#setrotation)
@@ -40,13 +42,25 @@ scene.addComponent(square)
 
 ### Properties
 
+- [collider](2d_src.FSquare.md#collider)
 - [container](2d_src.FSquare.md#container)
+- [position](2d_src.FSquare.md#position)
+- [rigidBody](2d_src.FSquare.md#rigidbody)
+- [rotation](2d_src.FSquare.md#rotation)
+- [scale](2d_src.FSquare.md#scale)
+- [scene](2d_src.FSquare.md#scene)
 
 ## Constructors
 
 ### constructor
 
-• **new FSquare**(): [`FSquare`](2d_src.FSquare.md)
+• **new FSquare**(`scene`): [`FSquare`](2d_src.FSquare.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `scene` | [`FScene2d`](2d_src.FScene2d.md) |
 
 #### Returns
 
@@ -58,9 +72,71 @@ scene.addComponent(square)
 
 #### Defined in
 
-packages/2d/src/polygons/FSquare.ts:18
+[packages/2d/src/polygons/FSquare.ts:19](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/polygons/FSquare.ts#L19)
 
 ## Methods
+
+### initCollider
+
+▸ **initCollider**(`position?`, `scale?`, `shape?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `position?` | `PointData` |
+| `scale?` | `PointData` |
+| `shape?` | [`F2dShapes`](../enums/2d_src.F2dShapes.md) |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Only init a collider for the model, without a rigid body.
+This is useful for static objects.
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[initCollider](2d_src.FComponent2d.md#initcollider)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:142](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L142)
+
+___
+
+### initRigidBody
+
+▸ **initRigidBody**(`position?`, `scale?`, `rotation?`, `shape?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `position?` | `PointData` |
+| `scale?` | `PointData` |
+| `rotation?` | `number` |
+| `shape?` | [`F2dShapes`](../enums/2d_src.F2dShapes.md) |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Init a rigid body for the model.
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[initRigidBody](2d_src.FComponent2d.md#initrigidbody)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:80](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L80)
+
+___
 
 ### onFrame
 
@@ -82,7 +158,7 @@ packages/2d/src/polygons/FSquare.ts:18
 
 #### Defined in
 
-packages/2d/src/polygons/FSquare.ts:30
+[packages/2d/src/polygons/FSquare.ts:27](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/polygons/FSquare.ts#L27)
 
 ___
 
@@ -105,26 +181,25 @@ ___
 
 Set the position of the component.
 
-#### Overrides
+#### Inherited from
 
 [FComponent2d](2d_src.FComponent2d.md).[setPosition](2d_src.FComponent2d.md#setposition)
 
 #### Defined in
 
-packages/2d/src/polygons/FSquare.ts:35
+[packages/2d/src/FComponent2d.ts:56](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L56)
 
 ___
 
 ### setRotation
 
-▸ **setRotation**(`x`, `y`): `void`
+▸ **setRotation**(`x`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `x` | `number` |
-| `y` | `number` |
 
 #### Returns
 
@@ -134,13 +209,13 @@ ___
 
 Set the rotation of the component.
 
-#### Overrides
+#### Inherited from
 
 [FComponent2d](2d_src.FComponent2d.md).[setRotation](2d_src.FComponent2d.md#setrotation)
 
 #### Defined in
 
-packages/2d/src/polygons/FSquare.ts:43
+[packages/2d/src/FComponent2d.ts:72](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L72)
 
 ___
 
@@ -163,15 +238,29 @@ ___
 
 Set the scale of the component.
 
-#### Overrides
+#### Inherited from
 
 [FComponent2d](2d_src.FComponent2d.md).[setScale](2d_src.FComponent2d.md#setscale)
 
 #### Defined in
 
-packages/2d/src/polygons/FSquare.ts:39
+[packages/2d/src/FComponent2d.ts:64](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L64)
 
 ## Properties
+
+### collider
+
+• `Optional` **collider**: `Collider`
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[collider](2d_src.FComponent2d.md#collider)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:25](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L25)
+
+___
 
 ### container
 
@@ -185,4 +274,74 @@ container is the PIXI container that holds the square.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:12](https://github.com/fibbojs/fibbo/blob/b3efc33731eef5a3996c7b1f098740f83fa3ec10/packages/2d/src/FComponent2d.ts#L12)
+[packages/2d/src/FComponent2d.ts:19](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L19)
+
+___
+
+### position
+
+• **position**: `PointData`
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[position](2d_src.FComponent2d.md#position)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:20](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L20)
+
+___
+
+### rigidBody
+
+• `Optional` **rigidBody**: `RigidBody`
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[rigidBody](2d_src.FComponent2d.md#rigidbody)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:24](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L24)
+
+___
+
+### rotation
+
+• **rotation**: `number`
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[rotation](2d_src.FComponent2d.md#rotation)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L22)
+
+___
+
+### scale
+
+• **scale**: `PointData`
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[scale](2d_src.FComponent2d.md#scale)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:21](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L21)
+
+___
+
+### scene
+
+• **scene**: [`FScene2d`](2d_src.FScene2d.md)
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[scene](2d_src.FComponent2d.md#scene)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:15](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L15)

@@ -11,6 +11,7 @@ export default defineBuildConfig({
   },
   externals: [
     'pixi.js',
+    'pixi-viewport',
     '@dimforge/rapier2d',
   ],
 })

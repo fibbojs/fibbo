@@ -12,3 +12,7 @@
 ### Polygons Classes
 
 - [FSquare](../classes/2d_src.FSquare.md)
+
+### Enumerations
+
+- [F2dShapes](../enums/2d_src.F2dShapes.md)
