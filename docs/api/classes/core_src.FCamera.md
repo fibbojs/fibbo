@@ -40,7 +40,7 @@ The base class for cameras in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/core/src/FCamera.ts#L7)
+[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/core/src/FCamera.ts#L7)
 
 ## Methods
 
@@ -64,4 +64,4 @@ The base class for cameras in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:8](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/core/src/FComponent.ts#L8)
+[packages/core/src/FComponent.ts:8](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/core/src/FComponent.ts#L8)

@@ -72,7 +72,7 @@ FScene.constructor
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:36](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L36)
+[packages/3d/src/FScene3d.ts:36](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L36)
 
 ## Methods
 
@@ -96,7 +96,7 @@ FScene.addComponent
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:131](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L131)
+[packages/3d/src/FScene3d.ts:131](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L131)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:147](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L147)
+[packages/3d/src/FScene3d.ts:147](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L147)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:277](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L277)
+[packages/3d/src/FScene3d.ts:277](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L277)
 
 ___
 
@@ -166,7 +166,7 @@ FScene.camera
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:29](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L29)
+[packages/3d/src/FScene3d.ts:29](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L29)
 
 ___
 
@@ -180,7 +180,7 @@ FScene.components
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:25](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L25)
+[packages/3d/src/FScene3d.ts:25](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L25)
 
 ___
 
@@ -190,7 +190,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:31](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L31)
+[packages/3d/src/FScene3d.ts:31](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L31)
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:30](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L30)
+[packages/3d/src/FScene3d.ts:30](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L30)
 
 ___
 
@@ -222,7 +222,7 @@ FScene.gravity
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:33](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L33)
+[packages/3d/src/FScene3d.ts:33](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L33)
 
 ___
 
@@ -246,7 +246,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:28](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L28)
+[packages/3d/src/FScene3d.ts:28](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L28)
 
 ___
 
@@ -256,7 +256,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:27](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L27)
+[packages/3d/src/FScene3d.ts:27](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L27)
 
 ___
 
@@ -270,4 +270,4 @@ FScene.world
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:34](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/3d/src/FScene3d.ts#L34)
+[packages/3d/src/FScene3d.ts:34](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FScene3d.ts#L34)

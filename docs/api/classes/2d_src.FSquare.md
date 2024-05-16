@@ -38,6 +38,7 @@ scene.addComponent(square)
 - [onFrame](2d_src.FSquare.md#onframe)
 - [setPosition](2d_src.FSquare.md#setposition)
 - [setRotation](2d_src.FSquare.md#setrotation)
+- [setRotationDegree](2d_src.FSquare.md#setrotationdegree)
 - [setScale](2d_src.FSquare.md#setscale)
 
 ### Properties
@@ -72,13 +73,13 @@ scene.addComponent(square)
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:19](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/polygons/FSquare.ts#L19)
+[packages/2d/src/polygons/FSquare.ts:19](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/polygons/FSquare.ts#L19)
 
 ## Methods
 
 ### initCollider
 
-▸ **initCollider**(`position?`, `scale?`, `shape?`): `void`
+▸ **initCollider**(`position?`, `scale?`, `rotation?`, `shape?`): `void`
 
 #### Parameters
 
@@ -86,6 +87,7 @@ scene.addComponent(square)
 | :------ | :------ |
 | `position?` | `PointData` |
 | `scale?` | `PointData` |
+| `rotation?` | `number` |
 | `shape?` | [`F2dShapes`](../enums/2d_src.F2dShapes.md) |
 
 #### Returns
@@ -103,7 +105,7 @@ This is useful for static objects.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:142](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L142)
+[packages/2d/src/FComponent2d.ts:159](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L159)
 
 ___
 
@@ -134,7 +136,7 @@ Init a rigid body for the model.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:80](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L80)
+[packages/2d/src/FComponent2d.ts:97](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L97)
 
 ___
 
@@ -158,7 +160,7 @@ ___
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:27](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/polygons/FSquare.ts#L27)
+[packages/2d/src/polygons/FSquare.ts:29](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/polygons/FSquare.ts#L29)
 
 ___
 
@@ -187,19 +189,19 @@ Set the position of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:56](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L56)
+[packages/2d/src/FComponent2d.ts:63](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L63)
 
 ___
 
 ### setRotation
 
-▸ **setRotation**(`x`): `void`
+▸ **setRotation**(`r`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `x` | `number` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `r` | `number` | The rotation in radians. |
 
 #### Returns
 
@@ -215,7 +217,35 @@ Set the rotation of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:72](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L72)
+[packages/2d/src/FComponent2d.ts:80](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L80)
+
+___
+
+### setRotationDegree
+
+▸ **setRotationDegree**(`r`): `void`
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `r` | `number` | The rotation in degrees. |
+
+#### Returns
+
+`void`
+
+**`Description`**
+
+Set the rotation of the component in degrees.
+
+#### Inherited from
+
+[FComponent2d](2d_src.FComponent2d.md).[setRotationDegree](2d_src.FComponent2d.md#setrotationdegree)
+
+#### Defined in
+
+[packages/2d/src/FComponent2d.ts:89](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L89)
 
 ___
 
@@ -244,7 +274,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:64](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L64)
+[packages/2d/src/FComponent2d.ts:71](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L71)
 
 ## Properties
 
@@ -258,7 +288,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:25](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L25)
+[packages/2d/src/FComponent2d.ts:25](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L25)
 
 ___
 
@@ -274,7 +304,7 @@ container is the PIXI container that holds the square.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:19](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L19)
+[packages/2d/src/FComponent2d.ts:19](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L19)
 
 ___
 
@@ -288,7 +318,7 @@ ___
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:20](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L20)
+[packages/2d/src/FComponent2d.ts:20](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L20)
 
 ___
 
@@ -302,7 +332,7 @@ ___
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:24](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L24)
+[packages/2d/src/FComponent2d.ts:24](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L24)
 
 ___
 
@@ -316,7 +346,7 @@ ___
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L22)
+[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L22)
 
 ___
 
@@ -330,7 +360,7 @@ ___
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:21](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L21)
+[packages/2d/src/FComponent2d.ts:21](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L21)
 
 ___
 
@@ -344,4 +374,4 @@ ___
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:15](https://github.com/fibbojs/fibbo/blob/9584d07c63ad13d7f8125433d0b79fffa747f5c1/packages/2d/src/FComponent2d.ts#L15)
+[packages/2d/src/FComponent2d.ts:15](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/2d/src/FComponent2d.ts#L15)

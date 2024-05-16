@@ -75,10 +75,20 @@ export abstract class FComponent2d extends FComponent {
 
   /**
    * @description Set the rotation of the component.
+   * @param r The rotation in radians.
    */
-  setRotation(x: number): void {
-    this.rotation = x
-    this.container.rotation = x
+  setRotation(r: number): void {
+    this.rotation = r
+    this.container.rotation = r
+  }
+
+  /**
+   * @description Set the rotation of the component in degrees.
+   * @param r The rotation in degrees.
+   */
+  setRotationDegree(r: number): void {
+    this.rotation = r * (Math.PI / 180)
+    this.container.rotation = this.rotation
   }
 
   /**
@@ -149,6 +159,7 @@ export abstract class FComponent2d extends FComponent {
   initCollider(
     position?: PIXI.PointData,
     scale?: PIXI.PointData,
+    rotation?: number,
     shape?: F2dShapes,
   ): void {
     // Check if the world exists
@@ -157,11 +168,18 @@ export abstract class FComponent2d extends FComponent {
 
     let colliderPosition: PIXI.PointData | undefined = position
     let colliderScale: PIXI.PointData | undefined = scale
+    let colliderRotation: number | undefined = rotation
 
     // If position is not defined
     if (!colliderPosition) {
       // Use default position of the FModel
       colliderPosition = new PIXI.Point(this.position.x, this.position.y)
+    }
+
+    // If rotation is not defined
+    if (!colliderRotation) {
+      // Use default rotation of the FModel
+      colliderRotation = this.rotation
     }
 
     // If scale is not defined
@@ -187,6 +205,7 @@ export abstract class FComponent2d extends FComponent {
       ? RAPIER.ColliderDesc.cuboid(colliderScale.x, colliderScale.y)
       : RAPIER.ColliderDesc.ball(colliderScale.x)
     colliderDesc.setTranslation(colliderPosition.x, colliderPosition.y)
+    colliderDesc.setRotation(colliderRotation)
     this.collider = this.scene.world.createCollider(colliderDesc)
   }
 }
