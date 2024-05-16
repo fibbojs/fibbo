@@ -22,6 +22,8 @@ export class FSquare extends FComponent2d {
     this.container = new PIXI.Graphics()
       .rect(this.position.x, this.position.y, this.scale.x * 100, this.scale.y * 100)
       .fill(0xFF0000)
+    // Set the pivot of the container to the center
+    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
   }
 
   onFrame(delta: number): void {

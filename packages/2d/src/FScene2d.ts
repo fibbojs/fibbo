@@ -54,16 +54,28 @@ export class FScene2d extends FScene {
       // Wait for the Renderer to be available
       await this.app.init()
 
+      // Get the screen size
+      const SCREEN_HEIGHT = window.innerHeight
+      const SCREEN_WIDTH = window.innerWidth
+
       // The application will create a canvas element for you that you
       // can then insert into the DOM
       document.body.appendChild(this.app.canvas)
+
+      // Resize the renderer
+      this.app.renderer.resize(SCREEN_WIDTH, SCREEN_HEIGHT)
+
+      // Modify background color to 0x121212
+      const backgroundSystem = new PIXI.BackgroundSystem()
+      backgroundSystem.color = new PIXI.Color(0x121212)
+      this.app.renderer.background = backgroundSystem
 
       /**
        * Create Viewport
        */
       this.viewport = new Viewport({
-        screenWidth: window.innerWidth,
-        screenHeight: window.innerHeight,
+        screenWidth: SCREEN_WIDTH,
+        screenHeight: SCREEN_HEIGHT,
         worldWidth: 1000,
         worldHeight: 1000,
         events: this.app.renderer.events,

@@ -27,26 +27,33 @@ export abstract class FComponent2d extends FComponent {
   constructor(scene: FScene2d) {
     super()
     this.scene = scene
+    // Create a new PIXI container
     this.container = new Container()
-    this.container.pivot.set(0.5, 0.5)
+    // Set the default values
     this.position = new PIXI.Point(0, 5)
     this.scale = new PIXI.Point(1, 1)
     this.rotation = 0
+    // Set the container values
+    this.container.position.set(this.position.x, this.position.y)
+    this.container.scale.set(this.scale.x, this.scale.y)
+    this.container.rotation = this.rotation
+    // Set the pivot of the container to the center
+    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
   }
 
   onFrame(_delta: number): void {
     // If the rigid body and container exist, update the container position and rotation according to the rigid body
     if (this.rigidBody && this.container) {
       const newRigidBodyPosition = this.rigidBody.translation()
-      this.container.position.set(newRigidBodyPosition.x * 10 - this.container.width / 2, -newRigidBodyPosition.y * 100 - this.container.height / 2)
+      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       const newRigidBodyRotation = this.rigidBody.rotation()
-      this.container.rotation = newRigidBodyRotation
+      this.container.rotation = -newRigidBodyRotation
     }
     else if (this.collider) {
-      const newColliderPosition = this.collider.translation()
-      this.container.position.set(newColliderPosition.x * 10 - this.container.width / 2, -newColliderPosition.y * 10 - this.container.height / 2)
-      const newColliderRotation = this.collider.rotation()
-      this.container.rotation = newColliderRotation
+      const newRigidBodyPosition = this.collider.translation()
+      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
+      const newRigidBodyRotation = this.collider.rotation()
+      this.container.rotation = -newRigidBodyRotation
     }
   }
 
