@@ -1,7 +1,7 @@
 import type { FComponent } from '@fibbojs/core'
 
 /**
- * @description The base class for all 2D and 3D components in FibboJS.
+ * @description The base class for all 3D components in FibboJS.
  * @category Core
  */
 export abstract class FComponent3d implements FComponent {

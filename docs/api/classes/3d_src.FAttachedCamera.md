@@ -175,7 +175,7 @@ scene.camera = new FAttachedCamera(cube)
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:29](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/cameras/FAttachedCamera.ts#L29)
+[packages/3d/src/cameras/FAttachedCamera.ts:29](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/cameras/FAttachedCamera.ts#L29)
 
 ## Methods
 
@@ -1187,7 +1187,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:34](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/cameras/FAttachedCamera.ts#L34)
+[packages/3d/src/cameras/FAttachedCamera.ts:34](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/cameras/FAttachedCamera.ts#L34)
 
 ___
 
@@ -1570,7 +1570,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:46](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/cameras/FAttachedCamera.ts#L46)
+[packages/3d/src/cameras/FAttachedCamera.ts:46](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/cameras/FAttachedCamera.ts#L46)
 
 ___
 
@@ -1600,7 +1600,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/cameras/FCamera3d.ts#L32)
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ___
 
@@ -1739,7 +1739,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/cameras/FCamera3d.ts#L25)
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ___
 
@@ -2213,7 +2213,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/cameras/FAttachedCamera.ts#L22)
+[packages/3d/src/cameras/FAttachedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/cameras/FAttachedCamera.ts#L22)
 
 ___
 
@@ -2802,7 +2802,7 @@ ___
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/cameras/FAttachedCamera.ts#L24)
+[packages/3d/src/cameras/FAttachedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/cameras/FAttachedCamera.ts#L24)
 
 ___
 

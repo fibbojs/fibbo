@@ -6,7 +6,7 @@
 
 **`Description`**
 
-The base class for all 2D and 3D components in FibboJS.
+The base class for all 3D components in FibboJS.
 
 ## Implements
 
@@ -41,7 +41,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:8](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FComponent3d.ts#L8)
+[packages/3d/src/FComponent3d.ts:8](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/FComponent3d.ts#L8)
 
 ## Methods
 
@@ -65,7 +65,7 @@ FComponent.onFrame
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:11](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FComponent3d.ts#L11)
+[packages/3d/src/FComponent3d.ts:11](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/FComponent3d.ts#L11)
 
 ___
 
@@ -91,7 +91,7 @@ Set the position of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FComponent3d.ts#L16)
+[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/FComponent3d.ts#L16)
 
 ___
 
@@ -117,7 +117,7 @@ Set the rotation of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:26](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FComponent3d.ts#L26)
+[packages/3d/src/FComponent3d.ts:26](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/FComponent3d.ts#L26)
 
 ___
 
@@ -143,4 +143,4 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:21](https://github.com/fibbojs/fibbo/blob/8715037cde0ad11f9fdaddea6b077f941aa8ead4/packages/3d/src/FComponent3d.ts#L21)
+[packages/3d/src/FComponent3d.ts:21](https://github.com/fibbojs/fibbo/blob/0d3489d2e4ad78e4ea66790ef822964befd36906/packages/3d/src/FComponent3d.ts#L21)
