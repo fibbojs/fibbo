@@ -14,7 +14,7 @@ export abstract class FComponent2d extends FComponent {
   // Scene
   scene: FScene2d
   /**
-   * container is the PIXI container that holds the square.
+   * container is the PIXI container that holds the component (can be a square or circle for exemple).
    */
   container: Container
   position: PIXI.PointData
@@ -48,9 +48,10 @@ export abstract class FComponent2d extends FComponent {
       const newRigidBodyRotation = this.rigidBody.rotation()
       // If it's a circle
       if (this.collider && this.collider.shape && this.collider.shape.type === RAPIER.ShapeType.Ball) {
+        // Also move the circle by its radius
         this.container.position.set(
-          newRigidBodyPosition.x * 100 + this.scale.x * 100,
-          -newRigidBodyPosition.y * 100 + this.scale.x * 100,
+          newRigidBodyPosition.x * 100 + this.scale.x * 50,
+          -newRigidBodyPosition.y * 100 + this.scale.x * 50,
         )
         this.container.rotation = -newRigidBodyRotation
       }
@@ -64,9 +65,10 @@ export abstract class FComponent2d extends FComponent {
       const newRigidBodyRotation = this.collider.rotation()
       // If it's a circle
       if (this.collider && this.collider.shape && this.collider.shape.type === RAPIER.ShapeType.Ball) {
+        // Also move the circle by its radius
         this.container.position.set(
-          newRigidBodyPosition.x * 100 + this.scale.x * 100,
-          -newRigidBodyPosition.y * 100 + this.scale.x * 100,
+          newRigidBodyPosition.x * 100 + this.scale.x * 50,
+          -newRigidBodyPosition.y * 100 + this.scale.x * 50,
         )
         this.container.rotation = -newRigidBodyRotation
       }
@@ -153,7 +155,7 @@ export abstract class FComponent2d extends FComponent {
     }
 
     // Devide scale by 2 (RAPIER uses half-extents)
-    if (rigidBodyScale && shape === F2dShapes.SQUARE) {
+    if (rigidBodyScale) {
       rigidBodyScale.x /= 2
       rigidBodyScale.y /= 2
     }
@@ -215,7 +217,7 @@ export abstract class FComponent2d extends FComponent {
     }
 
     // Devide scale by 2 (RAPIER uses half-extents)
-    if (colliderScale && shape === F2dShapes.SQUARE) {
+    if (colliderScale) {
       colliderScale.x /= 2
       colliderScale.y /= 2
     }

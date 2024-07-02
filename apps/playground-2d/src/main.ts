@@ -14,9 +14,14 @@ square2.setRotationDegree(45)
 square2.initCollider()
 scene.addComponent(square2)
 
+const square3 = new FSquare(scene)
+square3.setPosition(4, 1)
+square3.initCollider()
+scene.addComponent(square3)
+
 const circle = new FCircle(scene)
-circle.setPosition(2, 3)
-circle.setScale(0.5, 0.5)
+circle.setPosition(0, 3)
+circle.setScale(1, 1)
 circle.initRigidBody()
 scene.addComponent(circle)
 
@@ -25,3 +30,10 @@ circle2.setPosition(-2, 1)
 circle2.setScale(0.5, 0.5)
 circle2.initCollider()
 scene.addComponent(circle2)
+
+/*
+const circle3 = new FCircle(scene)
+circle3.setPosition(3, 1)
+circle3.setScale(0.5, 0.5)
+scene.addComponent(circle3)
+*/
