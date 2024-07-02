@@ -45,15 +45,35 @@ export abstract class FComponent2d extends FComponent {
     // If the rigid body and container exist, update the container position and rotation according to the rigid body
     if (this.rigidBody && this.container) {
       const newRigidBodyPosition = this.rigidBody.translation()
-      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       const newRigidBodyRotation = this.rigidBody.rotation()
-      this.container.rotation = -newRigidBodyRotation
+      // If it's a circle
+      if (this.collider && this.collider.shape && this.collider.shape.type === RAPIER.ShapeType.Ball) {
+        this.container.position.set(
+          newRigidBodyPosition.x * 100 + this.scale.x * 100,
+          -newRigidBodyPosition.y * 100 + this.scale.x * 100,
+        )
+        this.container.rotation = -newRigidBodyRotation
+      }
+      else {
+        this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
+        this.container.rotation = -newRigidBodyRotation
+      }
     }
     else if (this.collider) {
       const newRigidBodyPosition = this.collider.translation()
-      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       const newRigidBodyRotation = this.collider.rotation()
-      this.container.rotation = -newRigidBodyRotation
+      // If it's a circle
+      if (this.collider && this.collider.shape && this.collider.shape.type === RAPIER.ShapeType.Ball) {
+        this.container.position.set(
+          newRigidBodyPosition.x * 100 + this.scale.x * 100,
+          -newRigidBodyPosition.y * 100 + this.scale.x * 100,
+        )
+        this.container.rotation = -newRigidBodyRotation
+      }
+      else {
+        this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
+        this.container.rotation = -newRigidBodyRotation
+      }
     }
   }
 
@@ -120,12 +140,6 @@ export abstract class FComponent2d extends FComponent {
       rigidBodyScale = new PIXI.Point(this.scale.x, this.scale.y)
     }
 
-    // Devide scale by 2 (RAPIER uses half-extents)
-    if (rigidBodyScale) {
-      rigidBodyScale.x /= 2
-      rigidBodyScale.y /= 2
-    }
-
     // If rotation is not defined
     if (!rigidBodyRotation) {
       // Use default rotation of the FModel
@@ -136,6 +150,12 @@ export abstract class FComponent2d extends FComponent {
     if (!shape) {
       // Default to cube
       shape = F2dShapes.SQUARE
+    }
+
+    // Devide scale by 2 (RAPIER uses half-extents)
+    if (rigidBodyScale && shape === F2dShapes.SQUARE) {
+      rigidBodyScale.x /= 2
+      rigidBodyScale.y /= 2
     }
 
     // Create a dynamic rigid-body.
@@ -188,16 +208,16 @@ export abstract class FComponent2d extends FComponent {
       colliderScale = new PIXI.Point(this.scale.x, this.scale.y)
     }
 
-    // Devide scale by 2 (RAPIER uses half-extents)
-    if (colliderScale) {
-      colliderScale.x /= 2
-      colliderScale.y /= 2
-    }
-
     // If a shape wasn't defined
     if (!shape) {
       // Default to cube
       shape = F2dShapes.SQUARE
+    }
+
+    // Devide scale by 2 (RAPIER uses half-extents)
+    if (colliderScale && shape === F2dShapes.SQUARE) {
+      colliderScale.x /= 2
+      colliderScale.y /= 2
     }
 
     // Create a cuboid collider attached to the dynamic rigidBody.
