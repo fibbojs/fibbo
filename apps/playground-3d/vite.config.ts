@@ -7,4 +7,5 @@ export default defineConfig({
     wasm(),
     topLevelAwait(),
   ],
+  base: '/fibbo/playground-3d/',
 })

@@ -43,12 +43,25 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
+      # Run tests and generate reports
       - name: Run Vitest to generate test reports
         run: npm run test:report
+      # Build doc
       - name: Build with VitePress
         run: npm run docs:build
+      # Build 2D playground
+      - name: Build playgrounds
+        run: ./node_modules/.bin/nx build @fibbojs/playground-2d
+      # Build 3D playground
+      - name: Build playgrounds
+        run: ./node_modules/.bin/nx build @fibbojs/playground-3d
+      # Move test reports to the docs folder
       - name: Move test reports to the docs folder
         run: mv html docs/.vitepress/dist/test-reports && mv fibbo/coverage docs/.vitepress/dist/coverage
+      # Move playgrounds to the docs folder
+      - name: Move playgrounds to the docs folder
+        run: mv apps/playground-2d/dist docs/.vitepress/dist/playground-2d && mv apps/playground-3d/dist docs/.vitepress/dist/playground-3d
+      # Upload artifacts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
