@@ -23,8 +23,6 @@ export class FCircle extends FComponent2d {
     this.container = new PIXI.Graphics()
       .circle(this.position.x, this.position.y, this.scale.x * 100 / 2)
       .fill(new PIXI.FillGradient(0, 0, 10, 10).addColorStop(0, 0x0000FF).addColorStop(1, 0xFFFF00))
-    // Set the pivot of the container to the center
-    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
   }
 
   onFrame(delta: number): void {

@@ -46,36 +46,14 @@ export abstract class FComponent2d extends FComponent {
     if (this.rigidBody && this.container) {
       const newRigidBodyPosition = this.rigidBody.translation()
       const newRigidBodyRotation = this.rigidBody.rotation()
-      // If it's a circle
-      if (this.collider && this.collider.shape && this.collider.shape.type === RAPIER.ShapeType.Ball) {
-        // Also move the circle by its radius
-        this.container.position.set(
-          newRigidBodyPosition.x * 100 + this.scale.x * 50,
-          -newRigidBodyPosition.y * 100 + this.scale.x * 50,
-        )
-        this.container.rotation = -newRigidBodyRotation
-      }
-      else {
-        this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
-        this.container.rotation = -newRigidBodyRotation
-      }
+      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
+      this.container.rotation = -newRigidBodyRotation
     }
     else if (this.collider) {
       const newRigidBodyPosition = this.collider.translation()
       const newRigidBodyRotation = this.collider.rotation()
-      // If it's a circle
-      if (this.collider && this.collider.shape && this.collider.shape.type === RAPIER.ShapeType.Ball) {
-        // Also move the circle by its radius
-        this.container.position.set(
-          newRigidBodyPosition.x * 100 + this.scale.x * 50,
-          -newRigidBodyPosition.y * 100 + this.scale.x * 50,
-        )
-        this.container.rotation = -newRigidBodyRotation
-      }
-      else {
-        this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
-        this.container.rotation = -newRigidBodyRotation
-      }
+      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
+      this.container.rotation = -newRigidBodyRotation
     }
   }
 

@@ -19,17 +19,17 @@ square3.setPosition(4, 1)
 square3.initCollider()
 scene.addComponent(square3)
 
+const square4 = new FSquare(scene)
+square4.setPosition(-2.2, 1)
+square4.setScale(0.5, 0.5)
+square4.initCollider()
+scene.addComponent(square4)
+
 const circle = new FCircle(scene)
 circle.setPosition(0, 3)
 circle.setScale(1, 1)
 circle.initRigidBody()
 scene.addComponent(circle)
-
-const circle2 = new FCircle(scene)
-circle2.setPosition(-2, 1)
-circle2.setScale(0.5, 0.5)
-circle2.initCollider()
-scene.addComponent(circle2)
 
 /*
 const circle3 = new FCircle(scene)
