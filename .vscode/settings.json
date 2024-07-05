@@ -1,4 +1,7 @@
 {
+  // Tab size
+  "editor.tabSize": 2,
+
   // Enable the ESlint flat config support
   "eslint.experimental.useFlatConfig": true,
 

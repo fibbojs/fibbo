@@ -1,5 +1,5 @@
 import './style.css'
-import { FCircle, FScene2d, FSquare } from '@fibbojs/2d'
+import { FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
 import MySquare from './classes/MySquare'
 
 const scene = new FScene2d()
@@ -31,9 +31,10 @@ circle.setScale(1, 1)
 circle.initRigidBody()
 scene.addComponent(circle)
 
-/*
-const circle3 = new FCircle(scene)
-circle3.setPosition(3, 1)
-circle3.setScale(0.5, 0.5)
-scene.addComponent(circle3)
-*/
+const sprite = new FSprite(scene, '/bunny.png')
+sprite.setPosition(2, 3)
+sprite.initRigidBody(undefined, {
+  x: 0.3,
+  y: 0.5,
+})
+scene.addComponent(sprite)

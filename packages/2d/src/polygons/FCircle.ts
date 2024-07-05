@@ -12,7 +12,7 @@ import { F2dShapes } from '../types/F2dShapes'
  *
  * const scene = new FScene2d()
  *
- * const square = new FCircle()
+ * const square = new FCircle(scene)
  * scene.addComponent(square)
  * ```
  */

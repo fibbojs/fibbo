@@ -5,6 +5,7 @@ import { Viewport } from 'pixi-viewport'
 import * as RAPIER from '@dimforge/rapier2d'
 import type { FComponent2d } from './FComponent2d'
 import { FSquare } from './polygons/FSquare'
+import { FSprite } from './sprite/FSprite'
 
 /**
  * @description A scene which contains the models, the Three.js scene and the Rapier world.
@@ -139,11 +140,32 @@ export class FScene2d extends FScene {
 
   addComponent(component: FComponent2d) {
     this.components.push(component)
-    this.app.stage.addChild(component.container)
-    if (!this.viewport) {
-      this.onReady(() => {
-        this.viewport?.addChild(component.container)
+    // Detect if the FComponent2d is a FSprite instance
+    if (component instanceof FSprite) {
+      // Wait for the sprite to be loaded before adding it to the scene
+      component.onLoaded(() => {
+        this.app.stage.addChild(component.container)
+        if (!this.viewport) {
+          this.onReady(() => {
+            this.viewport?.addChild(component.container)
+          })
+        }
+        else {
+          this.viewport?.addChild(component.container)
+        }
       })
+    }
+    else {
+      // The component is not a FSprite instance, it can be added directly
+      this.app.stage.addChild(component.container)
+      if (!this.viewport) {
+        this.onReady(() => {
+          this.viewport?.addChild(component.container)
+        })
+      }
+      else {
+        this.viewport?.addChild(component.container)
+      }
     }
   }
 

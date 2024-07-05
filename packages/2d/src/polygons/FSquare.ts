@@ -11,7 +11,7 @@ import type { FScene2d } from '../FScene2d'
  *
  * const scene = new FScene2d()
  *
- * const square = new FSquare()
+ * const square = new FSquare(scene)
  * scene.addComponent(square)
  * ```
  */
