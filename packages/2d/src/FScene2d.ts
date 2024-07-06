@@ -123,31 +123,26 @@ export class FScene2d extends FScene {
   }
 
   async initPhysics() {
-    return new Promise<void>((resolve) => {
-      // Import Rapier
-      import('@dimforge/rapier2d').then((RAPIER) => {
-        // Initialize Rapier world
-        this.world = new RAPIER.World(this.gravity)
+    // Import Rapier
+    const RAPIER = await import('@dimforge/rapier2d')
 
-        // Create the ground
-        const ground = new FSquare(this)
-        ground.setPosition(0, 0)
-        ground.setScale(10, 0.1)
-        ground.initCollider()
-        this.addComponent(ground)
+    // Initialize Rapier world
+    this.world = new RAPIER.World(this.gravity)
 
-        // onFrame
-        this.onFrame((delta) => {
-          // Physics
-          if (this.world) {
-            this.world.timestep = delta
-            this.world.step()
-          }
-        })
+    // Create the ground
+    const ground = new FSquare(this)
+    ground.setPosition(0, 0)
+    ground.setScale(10, 0.1)
+    ground.initCollider()
+    this.addComponent(ground)
 
-        // Resolve the promise
-        resolve()
-      })
+    // onFrame
+    this.onFrame((delta) => {
+      // Physics
+      if (this.world) {
+        this.world.timestep = delta
+        this.world.step()
+      }
     })
   }
 
