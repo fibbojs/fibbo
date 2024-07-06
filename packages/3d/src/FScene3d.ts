@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import * as RAPIER from '@dimforge/rapier3d'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { World } from '@dimforge/rapier3d'
 import { FScene } from '@fibbojs/core'
@@ -24,24 +23,29 @@ import { FFixedCamera } from './cameras/FFixedCamera'
 export class FScene3d extends FScene {
   components: FModel[]
   // Three.js
-  scene: THREE.Scene
-  renderer: THREE.WebGLRenderer
-  camera: FCamera3d
-  debugCamera: FCamera3d
+  declare scene: THREE.Scene
+  declare renderer: THREE.WebGLRenderer
+  declare camera: FCamera3d
+  declare debugCamera: FCamera3d
   declare controls?: OrbitControls
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
-  world: World
+  declare world: World
+  // Debug
+  debugMode: boolean
 
   constructor(debug = false) {
     super()
     // Initialize models array
     this.components = []
+    this.debugMode = debug
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
       throw new Error('FScene must be instantiated in a browser environment')
+  }
 
+  init() {
     // Create scene, camera, and renderer
     this.scene = new THREE.Scene()
     this.scene.background = new THREE.Color(0x121212)
@@ -56,7 +60,7 @@ export class FScene3d extends FScene {
     this.scene.add(light)
 
     // Debug mode
-    if (debug) {
+    if (this.debugMode) {
       // Grid helper
       const gridHelper = new THREE.GridHelper(10, 10)
       this.scene.add(gridHelper)
@@ -76,6 +80,31 @@ export class FScene3d extends FScene {
     // Add renderer to DOM
     document.body.appendChild(this.renderer.domElement)
 
+    // onFrame loop
+    this.onFrame((delta) => {
+      // Call onFrame for each model
+      this.components.forEach(model => model.onFrame(delta))
+
+      // Debug mode
+      if (this.debugMode) {
+        // Update controls
+        this.controls?.update()
+
+        // Debug info
+        this.debug()
+      }
+
+      // Camera
+      this.camera.onFrame(delta)
+
+      this.renderer.render(this.scene, this.camera)
+    })
+  }
+
+  async initPhysics() {
+    // Import Rapier
+    const RAPIER = await import('@dimforge/rapier3d')
+
     // Initialize Rapier world
     this.world = new RAPIER.World(this.gravity)
 
@@ -85,46 +114,26 @@ export class FScene3d extends FScene {
 
     // onFrame loop
     this.onFrame((delta) => {
-      // Call onFrame for each model
-      this.components.forEach(model => model.onFrame(delta))
-
       // Debug mode
-      if (debug) {
-        // Update controls
-        this.controls?.update()
+      if (this.debugMode) {
+        // Remove previous debug lines
+        const previousLines = this.scene.getObjectByName('debugLines')
+        if (previousLines)
+          this.scene.remove(previousLines)
 
-        // Debug info
-        this.debug()
-
-        // Rapier debug
-        if (this.world) {
-          // Remove previous debug lines
-          const previousLines = this.scene.getObjectByName('debugLines')
-          if (previousLines)
-            this.scene.remove(previousLines)
-
-          // Render new debug lines
-          const { vertices, colors } = this.world.debugRender()
-          const geometry = new THREE.BufferGeometry()
-          geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
-          geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3))
-          const material = new THREE.LineBasicMaterial({ vertexColors: true })
-          const lines = new THREE.LineSegments(geometry, material)
-          lines.name = 'debugLines'
-          this.scene.add(lines)
-        }
+        // Render new debug lines
+        const { vertices, colors } = this.world.debugRender()
+        const geometry = new THREE.BufferGeometry()
+        geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
+        geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3))
+        const material = new THREE.LineBasicMaterial({ vertexColors: true })
+        const lines = new THREE.LineSegments(geometry, material)
+        lines.name = 'debugLines'
+        this.scene.add(lines)
       }
-
-      // Physics
-      if (this.world) {
-        this.world.timestep = delta
-        this.world.step()
-      }
-
-      // Camera
-      this.camera.onFrame(delta)
-
-      this.renderer.render(this.scene, this.camera)
+      // Step the physics world
+      this.world.timestep = delta
+      this.world.step()
     })
   }
 

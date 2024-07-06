@@ -35,6 +35,12 @@ export class FScene2d extends FScene {
   constructor() {
     super()
     this.components = []
+
+    // Verify window and document are available
+    if (typeof window === 'undefined' || typeof document === 'undefined')
+      throw new Error('FScene must be instantiated in a browser environment')
+
+    // Create a new PIXI application
     this.app = new PIXI.Application()
   }
 

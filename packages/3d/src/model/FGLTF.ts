@@ -52,8 +52,9 @@ export class FGLTF extends FModel {
     const modelName = model.split('.')[0]
     // Load the glTF resource
     loader.load(
-      // Resource URL
-      `/models/${modelName}/${model}`,
+      // Resource URL (if it starts with / or http, treat as a URL)
+      // Otherwise, treat as a relative path to the models folder
+      model.startsWith('/') || model.startsWith('http') ? model : `${window.location.href}/models/${modelName}/${model}`,
       // Called when the resource is loaded
       (gltf) => {
         // Add the object to the scene
