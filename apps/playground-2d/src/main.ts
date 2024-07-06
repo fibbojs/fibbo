@@ -27,6 +27,11 @@ square4.setScale(0.5, 0.5)
 square4.initCollider()
 scene.addComponent(square4)
 
+const square5 = new FSquare(scene)
+square5.setPosition(1, 2)
+square5.setScale(0.5, 0.5)
+scene.addComponent(square5)
+
 const circle = new FCircle(scene)
 circle.setPosition(0, 3)
 circle.setScale(1, 1)

@@ -57,7 +57,8 @@ export abstract class FComponent2d extends FComponent {
     }
     else {
       // If the rigid body doesn't exist, update the container position and rotation according to the default values
-      this.container.position.set(this.position.x * 100, this.position.y * 100)
+      // The y position is inverted because the y axis is inverted in PIXI.js compared to Rapier
+      this.container.position.set(this.position.x * 100, -this.position.y * 100)
       this.container.scale.set(this.scale.x, this.scale.y)
       this.container.rotation = this.rotation
     }
