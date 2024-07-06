@@ -3,6 +3,8 @@ import { FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
 import MySquare from './classes/MySquare'
 
 const scene = new FScene2d()
+await scene.init()
+await scene.initPhysics()
 
 const square = new MySquare(scene)
 scene.addComponent(square)
@@ -31,7 +33,7 @@ circle.setScale(1, 1)
 circle.initRigidBody()
 scene.addComponent(circle)
 
-const sprite = new FSprite(scene, '/bunny.png')
+const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png')
 sprite.setPosition(2, 3)
 sprite.initRigidBody(undefined, {
   x: 0.3,

@@ -55,6 +55,12 @@ export abstract class FComponent2d extends FComponent {
       this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       this.container.rotation = -newRigidBodyRotation
     }
+    else {
+      // If the rigid body doesn't exist, update the container position and rotation according to the default values
+      this.container.position.set(this.position.x * 100, this.position.y * 100)
+      this.container.scale.set(this.scale.x, this.scale.y)
+      this.container.rotation = this.rotation
+    }
   }
 
   /**
