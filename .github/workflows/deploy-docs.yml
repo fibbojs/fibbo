@@ -9,6 +9,8 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - 'docs/**'
+      - 'apps/playground-2d/**'
+      - 'apps/playground-3d/**'
 
   # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:
