@@ -1,5 +1,5 @@
 {
-  "name": "@fibbojs/playground-3d",
+  "name": "@fibbojs/playground-2d-webrtc",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -17,8 +17,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@fibbojs/3d": "*",
+    "@fibbojs/2d": "*",
     "@fibbojs/core": "*",
+    "@fibbojs/webrtc": "*",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-top-level-await": "^1.4.1",

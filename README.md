@@ -40,6 +40,15 @@ nx dev @fibbojs/playground-2d
 nx watch --projects=@fibbojs/2d -- nx build @fibbojs/2d
 ```
 
+- To develop on the 2D WebRTC package, run the 2D WebRTC playground :
+
+```bash
+# In one terminal
+nx dev @fibbojs/playground-2d
+# In another terminal
+nx watch --projects=@fibbojs/2d,@fibbojs/webrtc -- nx build @fibbojs/2d && nx build @fibbojs/webrtc
+```
+
 You can now open your browser and navigate to `http://localhost:5173/`.
 
 ## Documentation

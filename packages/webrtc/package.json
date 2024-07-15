@@ -1,8 +1,8 @@
 {
-  "name": "@fibbojs/2d",
+  "name": "@fibbojs/webrtc",
   "type": "module",
   "version": "0.0.1",
-  "description": "2D package for Fibbo",
+  "description": "Core package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
   "homepage": "https://fibbojs.github.io/fibbo",
@@ -41,6 +41,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/core": "*"
+    "@fibbojs/2d": "*"
   }
 }

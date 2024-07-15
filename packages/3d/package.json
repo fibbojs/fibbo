@@ -41,6 +41,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/core": "^0.0.1"
+    "@fibbojs/core": "*"
   }
 }
