@@ -3,11 +3,10 @@ import { FCircle, FSprite, FSquare } from '@fibbojs/2d'
 import { FScene2d } from '@fibbojs/webrtc'
 import MySquare from './classes/MySquare'
 
-(async () => {
-  const scene = new FScene2d()
-  await scene.init()
-  await scene.initPhysics()
-
+async function createRoom(scene: FScene2d) {
+  /**
+   * Create objects
+   */
   const square = new MySquare(scene)
   scene.addComponent(square)
 
@@ -47,4 +46,48 @@ import MySquare from './classes/MySquare'
     y: 0.5,
   })
   scene.addComponent(sprite)
+
+  /**
+   * Init connection
+   */
+  const webrtcToken = await scene.createRoom()
+  console.log('webrtcToken', webrtcToken)
+  console.log('peerLink', `${window.location.href}?webrtcToken=${webrtcToken}`)
+}
+
+async function joinRoom(scene: FScene2d, webrtcToken: string) {
+  await scene.joinRoom(webrtcToken)
+  scene.sendData('Hello from joiner')
+}
+
+(async () => {
+  const scene = new FScene2d()
+  await scene.init()
+  await scene.initPhysics()
+
+  // Get WebRTCToken from URL (if any)
+  const urlParams = new URLSearchParams(window.location.search)
+  const webrtcToken = urlParams.get('webrtcToken')
+  if (webrtcToken) {
+    // Join room
+    await joinRoom(scene, webrtcToken)
+  }
+  else {
+    // Create room
+    await createRoom(scene)
+  }
+
+  /**
+   * DEBUG
+   */
+  function sendData(scene: FScene2d) {
+    scene.sendData('Hello from creator')
+  }
+  const button = document.createElement('button')
+  button.textContent = 'Send data'
+  button.style.position = 'absolute'
+  button.style.bottom = '10px'
+  button.style.right = '10px'
+  button.onclick = () => sendData(scene)
+  document.body.appendChild(button)
 })()
