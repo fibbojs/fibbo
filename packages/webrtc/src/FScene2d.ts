@@ -62,10 +62,11 @@ export class FScene2d extends FScene2dLegacy {
         .then((offer) => {
           // Set local description
           peerConnection.setLocalDescription(offer)
-          resolve(offer)
+            .then(() => resolve(offer))
+            .catch(error => reject(error))
         })
         .catch(error => reject(error))
-    })
+    }) as Promise<RTCSessionDescriptionInit>
 
     // Gather ICE candidates
     const gatherCandidatesPromise = new Promise((resolve, reject) => {
@@ -75,14 +76,17 @@ export class FScene2d extends FScene2dLegacy {
 
       peerConnection.onicecandidate = (event) => {
         if (event.candidate) {
+          // Add the ICE candidate to the list
           candidates.push(event.candidate)
         }
         else {
+          // Clear the timeout
           clearTimeout(timer)
-          resolve({ candidates })
+          // Resolve the candidates
+          resolve(candidates)
         }
       }
-    })
+    }) as Promise<RTCIceCandidate[]>
 
     // Wait for the offer to be created
     await createOfferPromise
@@ -119,7 +123,8 @@ export class FScene2d extends FScene2dLegacy {
           peerConnection.createAnswer()
             .then((answer) => {
               peerConnection.setLocalDescription(answer)
-              resolve(answer)
+                .then(() => resolve(answer))
+                .catch(error => reject(error))
             })
             .catch(error => reject(error))
         })
