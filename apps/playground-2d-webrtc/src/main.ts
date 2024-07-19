@@ -56,14 +56,45 @@ async function createRoom(scene: FScene2d) {
 }
 
 async function joinRoom(scene: FScene2d, webrtcToken: string) {
-  await scene.joinRoom(webrtcToken)
-  scene.sendData('Hello from joiner')
+  await scene.tryJoinRoom(webrtcToken)
 }
 
 (async () => {
   const scene = new FScene2d()
   await scene.init()
   await scene.initPhysics()
+
+  /**
+   * DEBUG
+   */
+  let webrtcAnswerToken = ''
+  function acceptPeer(scene: FScene2d) {
+    scene.acceptPeer(webrtcAnswerToken)
+  }
+  // Create a button to accept the pear
+  const button = document.createElement('button')
+  button.textContent = 'Accept Peer'
+  button.style.position = 'absolute'
+  button.style.bottom = '10px'
+  button.style.right = '10px'
+  button.onclick = () => acceptPeer(scene)
+  // Create a text input to fill the WebRTC Answer Token
+  const input = document.createElement('input')
+  input.type = 'text'
+  input.style.position = 'absolute'
+  input.style.bottom = '60px'
+  input.style.right = '10px'
+  input.style.width = '200px'
+  input.style.height = '30px'
+  input.value = ''
+  input.placeholder = 'WebRTC Answer Token'
+  input.onchange = (event) => {
+    webrtcAnswerToken = (event.target as HTMLInputElement).value
+  }
+  input.style.zIndex = '100'
+  // Add the elements to the DOM
+  document.body.appendChild(input)
+  document.body.appendChild(button)
 
   // Get WebRTCToken from URL (if any)
   const urlParams = new URLSearchParams(window.location.search)
@@ -76,18 +107,4 @@ async function joinRoom(scene: FScene2d, webrtcToken: string) {
     // Create room
     await createRoom(scene)
   }
-
-  /**
-   * DEBUG
-   */
-  function sendData(scene: FScene2d) {
-    scene.sendData('Hello from creator')
-  }
-  const button = document.createElement('button')
-  button.textContent = 'Send data'
-  button.style.position = 'absolute'
-  button.style.bottom = '10px'
-  button.style.right = '10px'
-  button.onclick = () => sendData(scene)
-  document.body.appendChild(button)
 })()
