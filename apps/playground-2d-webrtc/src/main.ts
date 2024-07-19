@@ -56,7 +56,8 @@ async function createRoom(scene: FScene2d) {
 }
 
 async function joinRoom(scene: FScene2d, webrtcToken: string) {
-  await scene.tryJoinRoom(webrtcToken)
+  const webRtcAnswerToken = await scene.tryJoinRoom(webrtcToken)
+  console.log(webRtcAnswerToken)
 }
 
 (async () => {
@@ -99,6 +100,10 @@ async function joinRoom(scene: FScene2d, webrtcToken: string) {
   // Get WebRTCToken from URL (if any)
   const urlParams = new URLSearchParams(window.location.search)
   const webrtcToken = urlParams.get('webrtcToken')
+  // Listen for event on the scene
+  scene.on('peer-accepted', (message) => {
+    console.log('peer-accepted', message)
+  })
   if (webrtcToken) {
     // Join room
     await joinRoom(scene, webrtcToken)

@@ -23,7 +23,13 @@ export class FScene2d extends FScene2dLegacy {
   constructor(iceConfiguration: RTCConfiguration = {
     iceServers: [
       {
-        urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
+        urls: [
+          'stun:stun.l.google.com:19302',
+          'stun:stun1.l.google.com:19302',
+          'stun:stun2.l.google.com:19302',
+          'stun:stun3.l.google.com:19302',
+          'stun:stun4.l.google.com:19302',
+        ],
       },
     ],
     iceCandidatePoolSize: 10,
@@ -51,10 +57,16 @@ export class FScene2d extends FScene2dLegacy {
    * @returns The WebRTC offer token as a base64 encoded string.
    */
   async createRoom(): Promise<string> {
+    // Create a new peer connection
     const peerConnection = new RTCPeerConnection(this.iceConfiguration) as CustomRTCPeerConnection
     peerConnection.identity = 'local'
     this.peerConnections[peerConnection.identity] = peerConnection
-    const candidates: RTCIceCandidate[] = []
+    // Add a data channel
+    const dataChannel = this.createDataChannel(peerConnection)
+    this.dataChannels[peerConnection.identity] = dataChannel
+
+    // Create an array to store the gathered ICE candidates
+    const gatheredCandidates: RTCIceCandidate[] = []
 
     // Create offer
     const createOfferPromise = new Promise((resolve, reject) => {
@@ -71,20 +83,19 @@ export class FScene2d extends FScene2dLegacy {
     // Gather ICE candidates
     const gatherCandidatesPromise = new Promise((resolve, reject) => {
       const timer = setTimeout(() => {
-        reject(new Error('ICE candidate gathering timed out'))
+        // If no ICE candidates are gathered after 2 seconds, reject the promise
+        if (gatheredCandidates.length > 0) {
+          resolve(gatheredCandidates)
+        }
+        else {
+          clearTimeout(timer)
+          reject(new Error('Failed to gather ICE candidates'))
+        }
       }, 2000) // Timeout after 2 seconds
 
       peerConnection.onicecandidate = (event) => {
-        if (event.candidate) {
-          // Add the ICE candidate to the list
-          candidates.push(event.candidate)
-        }
-        else {
-          // Clear the timeout
-          clearTimeout(timer)
-          // Resolve the candidates
-          resolve(candidates)
-        }
+        if (event.candidate)
+          gatheredCandidates.push(event.candidate)
       }
     }) as Promise<RTCIceCandidate[]>
 
@@ -96,7 +107,7 @@ export class FScene2d extends FScene2dLegacy {
     // Return the offer and the ICE candidates
     return btoa(JSON.stringify({
       offer: peerConnection.localDescription,
-      candidates,
+      candidates: gatheredCandidates,
     }))
   }
 
@@ -106,14 +117,18 @@ export class FScene2d extends FScene2dLegacy {
    * @returns The WebRTC answer token as a base64 encoded string.
    */
   async tryJoinRoom(token: string): Promise<string> {
+    // Decode the token
     const { candidates, offer } = JSON.parse(atob(token))
 
-    const peerConnection = new RTCPeerConnection(this.iceConfiguration)
-    // const dataChannel = peerConnection.createDataChannel('my-channel')
+    // Create a new peer connection
+    const peerConnection = new RTCPeerConnection(this.iceConfiguration) as CustomRTCPeerConnection
+    peerConnection.identity = 'local'
+    this.peerConnections[peerConnection.identity] = peerConnection
+    // Add the data channel
+    this.dataChannels[peerConnection.identity] = this.createDataChannel(peerConnection)
 
-    // Add the given ICE candidates
-    for (const candidate of candidates)
-      peerConnection.addIceCandidate(new RTCIceCandidate(candidate)).catch(error => console.error(error))
+    // Create an array to store the gathered ICE candidates
+    const gatheredCandidates: RTCIceCandidate[] = []
 
     // Set remote description
     const createAnswerPromise = new Promise((resolve, reject) => {
@@ -139,7 +154,7 @@ export class FScene2d extends FScene2dLegacy {
 
       peerConnection.onicecandidate = (event) => {
         if (event.candidate) {
-          candidates.push(event.candidate)
+          gatheredCandidates.push(event.candidate)
         }
         else {
           clearTimeout(timer)
@@ -153,10 +168,14 @@ export class FScene2d extends FScene2dLegacy {
     // Wait for ICE candidates to be gathered
     await gatherCandidatesPromise
 
+    // Add the given ICE candidates
+    for (const candidate of candidates)
+      peerConnection.addIceCandidate(new RTCIceCandidate(candidate)).catch(error => console.error(error))
+
     // Return the answer and the ICE candidates
     return btoa(JSON.stringify({
       answer: peerConnection.localDescription,
-      candidates,
+      candidates: gatheredCandidates,
     }))
   }
 
@@ -164,18 +183,29 @@ export class FScene2d extends FScene2dLegacy {
    * @description Accept a peer connection using the WebRTC answer token.
    * @param token The WebRTC answer token as a base64 encoded string.
    */
-  acceptPeer(token: string) {
+  async acceptPeer(token: string) {
     const { candidates, answer } = JSON.parse(atob(token))
 
     const peerConnection = this.peerConnections.local
 
-    // Add the given ICE candidates
-    for (const candidate of candidates)
-      peerConnection.addIceCandidate(new RTCIceCandidate(candidate)).catch(error => console.error(error))
-
     // Set remote description
-    peerConnection.setRemoteDescription(new RTCSessionDescription(answer))
-      .catch(error => console.error(error))
+    const setRemoteDescriptionPromise = peerConnection.setRemoteDescription(new RTCSessionDescription(answer))
+
+    // Wait for the remote description to be set
+    await setRemoteDescriptionPromise
+
+    // Add the given ICE candidates
+    const addCandidatesPromise = candidates.map((candidate: RTCIceCandidateInit) => {
+      return peerConnection.addIceCandidate(new RTCIceCandidate(candidate))
+    })
+
+    // Wait for all ICE candidates to be added
+    await Promise.all(addCandidatesPromise)
+
+    // Wait one second and send a message to the peer
+    setTimeout(() => {
+      this.send('peer-accepted', 'hello peer !')
+    }, 1000)
   }
 
   /**
@@ -186,6 +216,7 @@ export class FScene2d extends FScene2dLegacy {
   createDataChannel(peerConnection: CustomRTCPeerConnection): RTCDataChannel {
     const dataChannel = peerConnection.createDataChannel('dataChannel')
     dataChannel.onmessage = (event) => {
+      console.log('Received event:', event)
       const receivedData = JSON.parse(event.data)
       this.emit(receivedData.event, { peerId: peerConnection.identity, data: receivedData.data })
     }
