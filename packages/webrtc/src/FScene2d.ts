@@ -104,7 +104,7 @@ export class FScene2d extends FScene2dLegacy {
     // Wait for ICE candidates to be gathered
     await gatherCandidatesPromise
 
-    // Return the offer and the ICE candidates
+    // Return the WebRTC offer token
     return btoa(JSON.stringify({
       offer: peerConnection.localDescription,
       candidates: gatheredCandidates,
@@ -172,7 +172,7 @@ export class FScene2d extends FScene2dLegacy {
     for (const candidate of candidates)
       peerConnection.addIceCandidate(new RTCIceCandidate(candidate)).catch(error => console.error(error))
 
-    // Return the answer and the ICE candidates
+    // Return the WebRTC answer token
     return btoa(JSON.stringify({
       answer: peerConnection.localDescription,
       candidates: gatheredCandidates,
