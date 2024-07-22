@@ -169,8 +169,12 @@ export class FScene2d extends FScene2dLegacy {
     await gatherCandidatesPromise
 
     // Add the given ICE candidates
-    for (const candidate of candidates)
-      peerConnection.addIceCandidate(new RTCIceCandidate(candidate)).catch(error => console.error(error))
+    const addCandidatesPromise = candidates.map((candidate: RTCIceCandidateInit) => {
+      return peerConnection.addIceCandidate(new RTCIceCandidate(candidate))
+    })
+
+    // Wait for all ICE candidates to be added
+    await Promise.all(addCandidatesPromise)
 
     // Return the WebRTC answer token
     return btoa(JSON.stringify({
@@ -202,7 +206,7 @@ export class FScene2d extends FScene2dLegacy {
     // Wait for all ICE candidates to be added
     await Promise.all(addCandidatesPromise)
 
-    // Wait one second and send a message to the peer
+    // Wait one second and send a test message to the peer
     setTimeout(() => {
       this.send('peer-accepted', 'hello peer !')
     }, 1000)
