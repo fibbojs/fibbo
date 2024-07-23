@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js'
 import { FComponent2d } from '../FComponent2d'
 import type { FScene2d } from '../FScene2d'
+import type { F2dShapes } from '../types/F2dShapes'
 
 /**
  * @description A simple sprite in FibboJS.
@@ -41,8 +42,19 @@ export class FSprite extends FComponent2d {
     this.container = new PIXI.Sprite(this.texture)
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
+    // Set the scale of the component so it fits the texture by its width
+    // Width will be 1 unit, height will be calculated according to the aspect ratio
+    this.scale = new PIXI.Point(1, this.texture.height / this.texture.width)
     // Call the onLoaded method
     this.emitOnLoaded()
+  }
+
+  setScaleWidth(width: number) {
+    this.setScale(width, width * this.texture.height / this.texture.width)
+  }
+
+  setScaleHeight(height: number) {
+    this.setScale(height * this.texture.width / this.texture.height, height)
   }
 
   onFrame(delta: number): void {

@@ -78,6 +78,9 @@ export abstract class FComponent2d extends FComponent {
   setScale(x: number, y: number): void {
     this.scale = new PIXI.Point(x, y)
     this.container.scale.set(x, y)
+    // If a collider exists, update its half-extents
+    if (this.collider)
+      this.collider.setHalfExtents(new RAPIER.Vector2(x / 2, y / 2))
   }
 
   /**

@@ -40,10 +40,10 @@ import MySquare from './classes/MySquare'
   scene.addComponent(circle)
 
   const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png')
-  sprite.setPosition(2, 3)
-  sprite.initRigidBody(undefined, {
-    x: 0.3,
-    y: 0.5,
+  sprite.onLoaded(() => {
+    sprite.setPosition(2, 3)
+    sprite.initRigidBody()
+    sprite.setScaleWidth(0.5)
   })
   scene.addComponent(sprite)
 })()
