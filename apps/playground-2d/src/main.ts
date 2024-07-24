@@ -3,7 +3,7 @@ import { FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
 import MySquare from './classes/MySquare'
 
 (async () => {
-  const scene = new FScene2d({ debug: false })
+  const scene = new FScene2d({ debug: true })
   await scene.init()
   await scene.initPhysics()
 
