@@ -7,7 +7,7 @@ import GltfCube from './classes/GltfCube'
 import MyGameCamera from './cameras/MyGameCamera'
 
 (async () => {
-  const scene = new FScene3d(true)
+  const scene = new FScene3d({ debug: true })
   scene.init()
   await scene.initPhysics()
 

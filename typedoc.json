@@ -7,7 +7,9 @@
   ],
   "out": "./docs/api",
   "categorizeByGroup": true,
-  "allReflectionsHaveOwnDocument": true,
   "groupOrder": ["Classes", "Functions", "Enumerations", "Interfaces", "*"],
-  "plugin": ["typedoc-plugin-markdown"]
+  "plugin": ["typedoc-plugin-markdown"],
+  "hidePageHeader": true,
+  "entryFileName": "index",
+  "modulesFileName": "index"
 }

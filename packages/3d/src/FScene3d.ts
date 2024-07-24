@@ -32,13 +32,13 @@ export class FScene3d extends FScene {
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
   declare world: World
   // Debug
-  debugMode: boolean
+  DEBUG_MODE: boolean
 
-  constructor(debug = false) {
+  constructor(options: { debug?: boolean } = { debug: false }) {
     super()
     // Initialize models array
     this.components = []
-    this.debugMode = debug
+    this.DEBUG_MODE = options.debug || false
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
@@ -60,7 +60,7 @@ export class FScene3d extends FScene {
     this.scene.add(light)
 
     // Debug mode
-    if (this.debugMode) {
+    if (this.DEBUG_MODE) {
       // Grid helper
       const gridHelper = new THREE.GridHelper(10, 10)
       this.scene.add(gridHelper)
@@ -86,7 +86,7 @@ export class FScene3d extends FScene {
       this.components.forEach(model => model.onFrame(delta))
 
       // Debug mode
-      if (this.debugMode) {
+      if (this.DEBUG_MODE) {
         // Update controls
         this.controls?.update()
 
@@ -115,7 +115,7 @@ export class FScene3d extends FScene {
     // onFrame loop
     this.onFrame((delta) => {
       // Debug mode
-      if (this.debugMode) {
+      if (this.DEBUG_MODE) {
         // Remove previous debug lines
         const previousLines = this.scene.getObjectByName('debugLines')
         if (previousLines)

@@ -31,8 +31,10 @@ export class FScene2d extends FScene {
   public onReadyCallbacks: (() => void)[] = []
   // Debug lines
   DEBUG_LINES: PIXI.Graphics[] = []
+  // Debug mode
+  DEBUG_MODE: boolean = false
 
-  constructor() {
+  constructor(options: { debug?: boolean } = { debug: false }) {
     super()
     this.components = []
 
@@ -42,6 +44,9 @@ export class FScene2d extends FScene {
 
     // Create a new PIXI application
     this.app = new PIXI.Application()
+
+    // Store the debug mode
+    this.DEBUG_MODE = options.debug || false
   }
 
   /**
@@ -93,23 +98,25 @@ export class FScene2d extends FScene {
     this.viewport.setZoom(0.8, true)
 
     // Add help grid
-    const helpGrid = new PIXI.Graphics()
-    // Draw the grid
-    for (let i = -1000; i <= 1000; i += 100) {
-      helpGrid.moveTo(i, -1000)
-      helpGrid.lineTo(i, 1000)
-      helpGrid.moveTo(-1000, i)
-      helpGrid.lineTo(1000, i)
+    if (this.DEBUG_MODE) {
+      const helpGrid = new PIXI.Graphics()
+      // Draw the grid
+      for (let i = -1000; i <= 1000; i += 100) {
+        helpGrid.moveTo(i, -1000)
+        helpGrid.lineTo(i, 1000)
+        helpGrid.moveTo(-1000, i)
+        helpGrid.lineTo(1000, i)
+      }
+      // Apply style
+      helpGrid.stroke({ width: 4, color: new PIXI.Color({
+        r: 70,
+        g: 70,
+        b: 70,
+        a: 1,
+      }) })
+      // Add the grid to the viewport
+      this.viewport.addChild(helpGrid)
     }
-    // Apply style
-    helpGrid.stroke({ width: 4, color: new PIXI.Color({
-      r: 70,
-      g: 70,
-      b: 70,
-      a: 1,
-    }) })
-    // Add the grid to the viewport
-    this.viewport.addChild(helpGrid)
 
     // onFrame
     this.onFrame((delta) => {
@@ -119,7 +126,8 @@ export class FScene2d extends FScene {
       })
 
       // Debug
-      this.debug()
+      if (this.DEBUG_MODE)
+        this.debug()
     })
 
     // Call the onReady callbacks
