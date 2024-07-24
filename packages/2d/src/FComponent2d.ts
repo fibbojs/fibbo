@@ -59,7 +59,6 @@ export abstract class FComponent2d extends FComponent {
       // If the rigid body doesn't exist, update the container position and rotation according to the default values
       // The y position is inverted because the y axis is inverted in PIXI.js compared to Rapier
       this.container.position.set(this.position.x * 100, -this.position.y * 100)
-      this.container.scale.set(this.scale.x, this.scale.y)
       this.container.rotation = this.rotation
     }
   }
@@ -77,7 +76,8 @@ export abstract class FComponent2d extends FComponent {
    */
   setScale(x: number, y: number): void {
     this.scale = new PIXI.Point(x, y)
-    this.container.scale.set(x, y)
+    this.container.height = y * 100
+    this.container.width = x * 100
     // If a collider exists, update its half-extents
     if (this.collider)
       this.collider.setHalfExtents(new RAPIER.Vector2(x / 2, y / 2))
