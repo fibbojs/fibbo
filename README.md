@@ -14,13 +14,11 @@ An open-source, web-based game engine.
 
 ## Tech stack
 
-- [three.js](https://threejs.org/)
+- [Three.js](https://threejs.org/)
 - [Rappier](https://rapier.rs/)
 - [PixiJS](https://pixijs.com/)
 
 ## Development
-
-3D Models used for development purpose are from [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) and [Kenney](https://kenney.nl/assets?q=3d).
 
 - Install dependencies
 
@@ -64,6 +62,10 @@ npm run docs:generate
 ```
 
 You can now open your browser and navigate to `http://localhost:5173/`.
+
+## Credits
+
+3D Models used for development purpose are from [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) and [Kenney](https://kenney.nl/assets?q=3d).
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@fibbojs/fibbo/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
