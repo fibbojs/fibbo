@@ -5,12 +5,18 @@
 [![License][license-src]][license-href]
 [![Test][test-src]][test-href]
 
-Core package for the Fibbo web game engine, based on [three.js](https://threejs.org/) and [Rappier](https://rapier.rs/).
+An open-source, web-based game engine.
 
 - [🏡 Documentation](https://fibbojs.github.io/fibbo/)
 - [🧪 Test Report](https://fibbojs.github.io/fibbo/test-reports)
 - [🎮 2D Playground](https://fibbojs.github.io/fibbo/playground-2d)
 - [🎮 3D Playground](https://fibbojs.github.io/fibbo/playground-3d)
+
+## Tech stack
+
+- [three.js](https://threejs.org/)
+- [Rappier](https://rapier.rs/)
+- [PixiJS](https://pixijs.com/)
 
 ## Development
 
