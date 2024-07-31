@@ -32,7 +32,7 @@ export default defineConfig({
         items: [
           { text: 'Index', link: '/api/index.md' },
           { text: 'Modules', items: [
-            { text: '2D', link: '/api/2d/index.md', collapsed: true, items: [
+            { text: '2d', link: '/api/2d/index.md', collapsed: true, items: [
               { text: 'Core Classes', items: [
                 { text: 'FComponent2d', link: '/api/2d/classes/FComponent2d' },
                 { text: 'FScene2d', link: '/api/2d/classes/FScene2d' },
@@ -48,7 +48,7 @@ export default defineConfig({
                 { text: 'F2dShapes', link: '/api/2d/enumerations/F2dShapes' },
               ] },
             ] },
-            { text: '3D', link: '/api/3d/index.md', collapsed: true, items: [
+            { text: '3d', link: '/api/3d/index.md', collapsed: true, items: [
               { text: 'Camera Classes', items: [
                 { text: 'FAttachedCamera', link: '/api/3d/classes/FAttachedCamera' },
                 { text: 'FCamera3d', link: '/api/3d/classes/FCamera3d' },
@@ -70,9 +70,10 @@ export default defineConfig({
                 { text: 'F3dShapes', link: '/api/3d/enumerations/F3dShapes' },
               ] },
             ] },
-            { text: 'Core', link: '/api/core/index.md', collapsed: true, items: [
+            { text: 'core', link: '/api/core/index.md', collapsed: true, items: [
               { text: 'FCamera', link: '/api/core/classes/FCamera' },
               { text: 'FComponent', link: '/api/core/classes/FComponent' },
+              { text: 'FGroup', link: '/api/core/classes/FGroup' },
               { text: 'FScene', link: '/api/core/classes/FScene' },
             ] },
           ] },

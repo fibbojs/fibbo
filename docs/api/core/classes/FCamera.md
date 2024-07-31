@@ -26,7 +26,7 @@ The base class for cameras in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/core/src/FCamera.ts#L7)
+[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/core/src/FCamera.ts#L7)
 
 ## Methods
 
@@ -38,9 +38,16 @@ The base class for cameras in FibboJS.
 
 • **delta**: `number`
 
+The time since the last frame.
+
 #### Returns
 
 `void`
+
+#### Description
+
+Update the component.
+Should be called every frame.
 
 #### Inherited from
 
@@ -48,4 +55,4 @@ The base class for cameras in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:8](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/core/src/FComponent.ts#L8)
+[packages/core/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/core/src/FComponent.ts#L13)

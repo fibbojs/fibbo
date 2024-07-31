@@ -22,7 +22,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:5](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/core/src/FComponent.ts#L5)
+[packages/core/src/FComponent.ts:5](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/core/src/FComponent.ts#L5)
 
 ## Methods
 
@@ -34,10 +34,17 @@ The base class for all 2D and 3D components in FibboJS.
 
 • **delta**: `number`
 
+The time since the last frame.
+
 #### Returns
 
 `void`
 
+#### Description
+
+Update the component.
+Should be called every frame.
+
 #### Defined in
 
-[packages/core/src/FComponent.ts:8](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/core/src/FComponent.ts#L8)
+[packages/core/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/core/src/FComponent.ts#L13)

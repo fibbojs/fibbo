@@ -48,7 +48,7 @@ Should be a GLTF or GLB file.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:42](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FGLTF.ts#L42)
+[packages/3d/src/model/FGLTF.ts:42](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FGLTF.ts#L42)
 
 ## Methods
 
@@ -62,7 +62,7 @@ Should be a GLTF or GLB file.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:97](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FGLTF.ts#L97)
+[packages/3d/src/model/FGLTF.ts:97](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FGLTF.ts#L97)
 
 ***
 
@@ -94,7 +94,7 @@ Init a rigid body for the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:96](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L96)
+[packages/3d/src/model/FModel.ts:96](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L96)
 
 ***
 
@@ -116,7 +116,7 @@ Init a rigid body for the model.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:89](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FGLTF.ts#L89)
+[packages/3d/src/model/FGLTF.ts:89](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FGLTF.ts#L89)
 
 ***
 
@@ -134,7 +134,7 @@ Init a rigid body for the model.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:93](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FGLTF.ts#L93)
+[packages/3d/src/model/FGLTF.ts:93](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FGLTF.ts#L93)
 
 ***
 
@@ -164,7 +164,7 @@ Set the position of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:49](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L49)
+[packages/3d/src/model/FModel.ts:49](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L49)
 
 ***
 
@@ -194,7 +194,7 @@ Set the rotation of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:69](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L69)
+[packages/3d/src/model/FModel.ts:69](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L69)
 
 ***
 
@@ -224,7 +224,7 @@ Set the rotation of the model from degrees.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:78](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L78)
+[packages/3d/src/model/FModel.ts:78](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L78)
 
 ***
 
@@ -254,7 +254,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:60](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L60)
+[packages/3d/src/model/FModel.ts:60](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L60)
 
 ## Properties
 
@@ -268,7 +268,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:22](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L22)
+[packages/3d/src/model/FModel.ts:22](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L22)
 
 ***
 
@@ -282,7 +282,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:19](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L19)
+[packages/3d/src/model/FModel.ts:19](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L19)
 
 ***
 
@@ -292,7 +292,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:35](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FGLTF.ts#L35)
+[packages/3d/src/model/FGLTF.ts:35](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FGLTF.ts#L35)
 
 ***
 
@@ -306,7 +306,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:15](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L15)
+[packages/3d/src/model/FModel.ts:15](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L15)
 
 ***
 
@@ -320,7 +320,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:21](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L21)
+[packages/3d/src/model/FModel.ts:21](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L21)
 
 ***
 
@@ -334,7 +334,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:17](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L17)
+[packages/3d/src/model/FModel.ts:17](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L17)
 
 ***
 
@@ -348,7 +348,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:16](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L16)
+[packages/3d/src/model/FModel.ts:16](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L16)
 
 ***
 
@@ -362,7 +362,7 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:14](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FModel.ts#L14)
+[packages/3d/src/model/FModel.ts:14](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FModel.ts#L14)
 
 ***
 
@@ -372,4 +372,4 @@ Set the scale of the model.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:34](https://github.com/fibbojs/fibbo/blob/944d69b0cc66d95350cb5724765ad71ca7d3b375/packages/3d/src/model/FGLTF.ts#L34)
+[packages/3d/src/model/FGLTF.ts:34](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/model/FGLTF.ts#L34)
