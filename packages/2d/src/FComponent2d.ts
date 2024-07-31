@@ -24,6 +24,9 @@ export abstract class FComponent2d extends FComponent {
   rigidBody?: RigidBody
   collider?: Collider
 
+  /**
+   * @param scene The 2D scene where the component will be added.
+   */
   constructor(scene: FScene2d) {
     super()
     this.scene = scene
@@ -65,6 +68,12 @@ export abstract class FComponent2d extends FComponent {
 
   /**
    * @description Set the position of the component.
+   * @param x The x position.
+   * @param y The y position.
+   * @example
+   * ```ts
+   * component.setPosition(0, 0)
+   * ```
    */
   setPosition(x: number, y: number): void {
     this.position = new PIXI.Point(x, y)
@@ -73,6 +82,12 @@ export abstract class FComponent2d extends FComponent {
 
   /**
    * @description Set the scale of the component.
+   * @param x The x scale.
+   * @param y The y scale.
+   * @example
+   * ```ts
+   * component.setScale(1, 1)
+   * ```
    */
   setScale(x: number, y: number): void {
     this.scale = new PIXI.Point(x, y)
@@ -84,8 +99,12 @@ export abstract class FComponent2d extends FComponent {
   }
 
   /**
-   * @description Set the rotation of the component.
+   * @description Set the rotation of the component in radians.
    * @param r The rotation in radians.
+   * @example
+   * ```ts
+   * component.setRotation(Math.PI / 2)
+   * ```
    */
   setRotation(r: number): void {
     this.rotation = r
@@ -95,6 +114,10 @@ export abstract class FComponent2d extends FComponent {
   /**
    * @description Set the rotation of the component in degrees.
    * @param r The rotation in degrees.
+   * @example
+   * ```ts
+   * component.setRotationDegree(90)
+   * ```
    */
   setRotationDegree(r: number): void {
     this.rotation = r * (Math.PI / 180)
@@ -103,6 +126,18 @@ export abstract class FComponent2d extends FComponent {
 
   /**
    * @description Init a rigid body for the model.
+   * @param position The position of the rigid body.
+   * @param scale The scale of the rigid body.
+   * @param rotation The rotation of the rigid body.
+   * @param shape The shape of the rigid body.
+   * @example
+   * ```ts
+   * component.initRigidBody(
+   *  new PIXI.Point(0, 0),
+   *  new PIXI.Point(1, 1),
+   *  0,
+   *  F2dShapes.SQUARE
+   * )
    */
   initRigidBody(
     position?: PIXI.PointData,
@@ -163,8 +198,21 @@ export abstract class FComponent2d extends FComponent {
   }
 
   /**
-   * @description Only init a collider for the model, without a rigid body.
+   * @description Only init a collider for the component, without a rigid body.
    * This is useful for static objects.
+   * @param position The position of the collider.
+   * @param scale The scale of the collider.
+   * @param rotation The rotation of the collider.
+   * @param shape The shape of the collider.
+   * @example
+   * ```ts
+   * component.initCollider(
+   *  new PIXI.Point(0, 0),
+   *  new PIXI.Point(1, 1),
+   *  0,
+   *  F2dShapes.SQUARE
+   * )
+   * ```
    */
   initCollider(
     position?: PIXI.PointData,

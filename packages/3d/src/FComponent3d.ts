@@ -22,7 +22,7 @@ export abstract class FComponent3d implements FComponent {
   collider?: Collider
 
   /**
-   * @param scene The 3D scene where the model will be added.
+   * @param scene The 3D scene where the component will be added.
    */
   constructor(scene: FScene3d) {
     this.scene = scene
@@ -56,7 +56,14 @@ export abstract class FComponent3d implements FComponent {
   }
 
   /**
-   * @description Set the position of the model.
+   * @description Set the position of the component.
+   * @param x The position on the x-axis.
+   * @param y The position on the y-axis.
+   * @param z The position on the z-axis.
+   * @example
+   * ```ts
+   * component.setPosition(0, 1, 0)
+   * ```
    */
   setPosition(x: number, y: number, z: number): void {
     this.position.set(x, y, z)
@@ -69,7 +76,10 @@ export abstract class FComponent3d implements FComponent {
   }
 
   /**
-   * @description Set the scale of the model.
+   * @description Set the scale of the component.
+   * @param x The scale on the x-axis.
+   * @param y The scale on the y-axis.
+   * @param z The scale on the z-axis.
    */
   setScale(x: number, y: number, z: number): void {
     this.scale.set(x, y, z)
@@ -78,7 +88,14 @@ export abstract class FComponent3d implements FComponent {
   }
 
   /**
-   * @description Set the rotation of the model.
+   * @description Set the rotation of the component from radians.
+   * @param x The rotation in radians on the x-axis.
+   * @param y The rotation in radians on the y-axis.
+   * @param z The rotation in radians on the z-axis.
+   * @example
+   * ```ts
+   * component.setRotation(0, Math.PI / 2, 0)
+   * ```
    */
   setRotation(x: number, y: number, z: number): void {
     this.rotation.set(x, y, z)
@@ -91,7 +108,14 @@ export abstract class FComponent3d implements FComponent {
   }
 
   /**
-   * @description Set the rotation of the model from degrees.
+   * @description Set the rotation of the component from degrees.
+   * @param x The rotation in degrees on the x-axis.
+   * @param y The rotation in degrees on the y-axis.
+   * @param z The rotation in degrees on the z-axis.
+   * @example
+   * ```ts
+   * component.setRotationDegree(0, 90, 0)
+   * ```
    */
   setRotationDegree(
     x: number,
@@ -110,6 +134,14 @@ export abstract class FComponent3d implements FComponent {
 
   /**
    * @description Init a rigid body for the component.
+   * @param position The position of the rigid body. If not defined, it will use the default position of the FComponent3d.
+   * @param scale The scale of the rigid body. If not defined, it will use the default scale of the FComponent3d.
+   * @param rotation The rotation of the rigid body. If not defined, it will use the default rotation of the FComponent3d.
+   * @param shape The shape of the rigid body. If not defined, it will default to F3dShapes.CUBE.
+   * @example
+   * ```ts
+   * component.initRigidBody(new THREE.Vector3(0, 1, 0), new THREE.Vector3(1, 1, 1), new THREE.Vector3(0, 0, 0), F3dShapes.CUBE)
+   * ```
    */
   initRigidBody(
     position?: THREE.Vector3,
@@ -174,7 +206,21 @@ export abstract class FComponent3d implements FComponent {
   }
 
   /**
-   * @description Init a collider for the component.
+   * @description Only init a collider for the component, without a rigid body.
+   * This is useful for static objects.
+   * @param position The position of the collider. If not defined, it will use the default position of the FComponent3d.
+   * @param scale The scale of the collider. If not defined, it will use the default scale of the FComponent3d.
+   * @param rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent3d.
+   * @param shape The shape of the collider. If not defined, it will default to F3dShapes.CUBE.
+   * @example
+   * ```ts
+   * component.initCollider(
+   *  new THREE.Vector3(0, 1, 0),
+   *  new THREE.Vector3(1, 1, 1),
+   *  new THREE.Vector3(0, 0, 0),
+   *  F3dShapes.CUBE
+   * )
+   * ```
    */
   initCollider(
     position?: THREE.Vector3,
