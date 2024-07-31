@@ -38,8 +38,8 @@ export default defineConfig({
                 { text: 'FScene2d', link: '/api/2d/classes/FScene2d' },
               ] },
               { text: 'Polygons Classes', items: [
-                { text: 'FSquare', link: '/api/2d/classes/FSquare' },
                 { text: 'FCircle', link: '/api/2d/classes/FCircle' },
+                { text: 'FSquare', link: '/api/2d/classes/FSquare' },
               ] },
               { text: 'Sprite Classes', items: [
                 { text: 'FSprite', link: '/api/2d/classes/FSprite' },
@@ -63,6 +63,7 @@ export default defineConfig({
               { text: 'Model Classes', items: [
                 { text: 'FCube', link: '/api/3d/classes/FCube' },
                 { text: 'FGLTF', link: '/api/3d/classes/FGLTF' },
+                { text: 'FPolyhedron', link: '/api/3d/classes/FPolyhedron' },
                 { text: 'FSphere', link: '/api/3d/classes/FSphere' },
               ] },
               { text: 'Enumerations', items: [
