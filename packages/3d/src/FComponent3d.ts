@@ -10,15 +10,38 @@ import { F3dShapes } from './types/F3dShapes'
  * @category Core
  */
 export abstract class FComponent3d implements FComponent {
-  // Scene
+  /**
+   * The scene which the component is in.
+   */
   scene: FScene3d
-  position: THREE.Vector3
-  scale: THREE.Vector3
-  rotation: THREE.Vector3
-  // Mesh
+
+  /**
+   * Mesh
+   */
   mesh?: THREE.Mesh
-  // Physics
+
+  // Transform
+  /**
+   * The position of the component.
+   */
+  position: THREE.Vector3
+  /**
+   * The scale of the component.
+   */
+  scale: THREE.Vector3
+  /**
+   * The rotation of the component.
+   */
+  rotation: THREE.Vector3
+
+  // Physics & collision
+  /**
+   * RAPIER RigidBody
+   */
   rigidBody?: RigidBody
+  /**
+   * RAPIER Collider
+   */
   collider?: Collider
 
   /**
@@ -85,6 +108,9 @@ export abstract class FComponent3d implements FComponent {
     this.scale.set(x, y, z)
     if (this.mesh)
       this.mesh.scale.set(x, y, z)
+    // If a collider exists, update its half-extents
+    if (this.collider)
+      this.collider.setHalfExtents(new RAPIER.Vector3(x / 2, y / 2, z / 2))
   }
 
   /**

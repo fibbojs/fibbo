@@ -11,17 +11,38 @@ import type { FScene2d } from './FScene2d'
  * @category Core
  */
 export abstract class FComponent2d extends FComponent {
-  // Scene
-  scene: FScene2d
   /**
-   * container is the PIXI container that holds the component (can be a square or circle for exemple).
+   * The scene which the component is in.
+   */
+  scene: FScene2d
+
+  /**
+   * PIXI container
    */
   container: Container
+
+  // Transform
+  /**
+   * Position of the component.
+   */
   position: PIXI.PointData
+  /**
+   * Scale of the component.
+   */
   scale: PIXI.PointData
+  /**
+   * Rotation of the component.
+   */
   rotation: number
-  // Physics
+
+  // Physics & collision
+  /**
+   * RAPIER RigidBody
+   */
   rigidBody?: RigidBody
+  /**
+   * RAPIER Collider
+   */
   collider?: Collider
 
   /**
@@ -52,14 +73,15 @@ export abstract class FComponent2d extends FComponent {
       this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       this.container.rotation = -newRigidBodyRotation
     }
-    else if (this.collider) {
+    // Else if the collider and the container exist, update the container position and rotation according to the collider
+    else if (this.collider && this.container) {
       const newRigidBodyPosition = this.collider.translation()
       const newRigidBodyRotation = this.collider.rotation()
       this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       this.container.rotation = -newRigidBodyRotation
     }
     else {
-      // If the rigid body doesn't exist, update the container position and rotation according to the default values
+      // If the rigid body and collider doesn't exist, update the container position and rotation according to the default values
       // The y position is inverted because the y axis is inverted in PIXI.js compared to Rapier
       this.container.position.set(this.position.x * 100, -this.position.y * 100)
       this.container.rotation = this.rotation
@@ -120,8 +142,7 @@ export abstract class FComponent2d extends FComponent {
    * ```
    */
   setRotationDegree(r: number): void {
-    this.rotation = r * (Math.PI / 180)
-    this.container.rotation = this.rotation
+    this.setRotation(r * (Math.PI / 180))
   }
 
   /**
