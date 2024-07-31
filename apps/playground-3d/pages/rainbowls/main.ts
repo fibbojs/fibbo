@@ -22,20 +22,20 @@ import * as THREE from 'three'
     // Create the sphere to display
       const sphere = new FSphere(scene)
       sphere.setPosition(i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, 1, j * GRID_GAP - GRID_COLS * GRID_GAP / 2)
-      // @ts-expect-error Disable typing for the object3D property
-      sphere.object3D.material.color.set(new THREE.Color(0x2C2C2C))
+      // @ts-expect-error Disable typing for the mesh property
+      sphere.mesh.material.color.set(new THREE.Color(0x2C2C2C))
 
       // Create a cube for the hitbox
       const cube = new FCube(scene)
       cube.setPosition(i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, 1, j * GRID_GAP - GRID_COLS * GRID_GAP / 2)
       cube.setScale(GRID_GAP, 1, GRID_GAP)
       // Make the cube invisible
-      // @ts-expect-error Disable typing for the object3D property
-      cube.object3D.material.transparent = true
-      // @ts-expect-error Disable typing for the object3D property
-      cube.object3D.material.opacity = 0
+      // @ts-expect-error Disable typing for the mesh property
+      cube.mesh.material.transparent = true
+      // @ts-expect-error Disable typing for the mesh property
+      cube.mesh.material.opacity = 0
       // Attach coordinates to the cube
-      cube.object3D.userData = { x: i, y: j }
+      cube.mesh.userData = { x: i, y: j }
 
       // Add the sphere to the scene
       scene.addComponent(sphere)
@@ -80,11 +80,11 @@ import * as THREE from 'three'
       // Move the spheres back to their original position
         for (let i = 0; i < GRID_ROWS; i++) {
           for (let j = 0; j < GRID_COLS; j++) {
-            grid[i][j].object3D.position.lerp(
+            grid[i][j].mesh.position.lerp(
               new THREE.Vector3(
-                grid[i][j].object3D.position.x,
+                grid[i][j].mesh.position.x,
                 1,
-                grid[i][j].object3D.position.z,
+                grid[i][j].mesh.position.z,
               )
               , 0.1,
             )
@@ -102,20 +102,20 @@ import * as THREE from 'three'
             const distance = Math.sqrt((mousePoint.x - i) ** 2 + (mousePoint.z - j) ** 2)
             if (distance < RADIUS) {
             // Change the color of the sphere based on the distance
-            // @ts-expect-error Disable typing for the object3D property
-              sphere.object3D.material.color.set(new THREE.Color(`hsl(${(distance / RADIUS) * 360}, 90%, 70%)`))
+            // @ts-expect-error Disable typing for the mesh property
+              sphere.mesh.material.color.set(new THREE.Color(`hsl(${(distance / RADIUS) * 360}, 90%, 70%)`))
               // Elevate the sphere based on the distance
-              sphere.object3D.position.lerp(
+              sphere.mesh.position.lerp(
                 new THREE.Vector3(
-                  sphere.object3D.position.x,
+                  sphere.mesh.position.x,
                   1 + ELEVATION * (1 - distance / RADIUS),
-                  sphere.object3D.position.z,
+                  sphere.mesh.position.z,
                 )
                 , 0.1,
               )
             }
-            // @ts-expect-error Disable typing for the object3D property
-            else { sphere.object3D.material.color.set(new THREE.Color(0x2C2C2C)) }
+            // @ts-expect-error Disable typing for the mesh property
+            else { sphere.mesh.material.color.set(new THREE.Color(0x2C2C2C)) }
           }
         }
       }

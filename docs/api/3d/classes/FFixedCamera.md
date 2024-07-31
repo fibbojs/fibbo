@@ -38,7 +38,7 @@ scene.camera.lookAt(0, 0, 0)
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/cameras/FFixedCamera.ts#L18)
+[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/cameras/FFixedCamera.ts#L18)
 
 ## Methods
 
@@ -242,7 +242,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:486
 
 > **clearViewOffset**(): `void`
 
-Removes any offset set by the [.setViewOffset](FCamera3d.md#setviewoffset) method.
+Removes any offset set by the [.setViewOffset](FAttachedCamera.md#setviewoffset) method.
 
 #### Returns
 
@@ -351,7 +351,7 @@ node\_modules/@types/three/src/core/EventDispatcher.d.ts:84
 
 > **getEffectiveFOV**(): `number`
 
-Returns the current vertical field of view angle in degrees considering [.zoom](FCamera3d.md#zoom).
+Returns the current vertical field of view angle in degrees considering [.zoom](FAttachedCamera.md#zoom).
 
 #### Returns
 
@@ -379,7 +379,7 @@ Returns the height of the image on the film
 
 #### Remarks
 
-If [.aspect](FCamera3d.md#aspect). is less than or equal to one (portrait format), the result equals [.filmGauge](FCamera3d.md#filmgauge).
+If [.aspect](FAttachedCamera.md#aspect). is less than or equal to one (portrait format), the result equals [.filmGauge](FAttachedCamera.md#filmgauge).
 
 #### Inherited from
 
@@ -403,7 +403,7 @@ Returns the width of the image on the film
 
 #### Remarks
 
-If [.aspect](FCamera3d.md#aspect). is greater than or equal to one (landscape format), the result equals [.filmGauge](FCamera3d.md#filmgauge).
+If [.aspect](FAttachedCamera.md#aspect). is greater than or equal to one (landscape format), the result equals [.filmGauge](FAttachedCamera.md#filmgauge).
 
 #### Inherited from
 
@@ -419,7 +419,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:143
 
 > **getFocalLength**(): `number`
 
-Returns the focal length of the current .fov | fov in respect to [.filmGauge](FCamera3d.md#filmgauge).
+Returns the focal length of the current .fov | fov in respect to [.filmGauge](FAttachedCamera.md#filmgauge).
 
 #### Returns
 
@@ -1069,13 +1069,18 @@ node\_modules/@types/three/src/core/Object3D.d.ts:254
 
 `void`
 
+#### Description
+
+Update the component.
+Should be called every frame.
+
 #### Overrides
 
 [`FCamera3d`](FCamera3d.md).[`onFrame`](FCamera3d.md#onframe)
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/cameras/FFixedCamera.ts#L22)
+[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/cameras/FFixedCamera.ts#L22)
 
 ***
 
@@ -1376,7 +1381,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:405
 
 > **setFocalLength**(`focalLength`): `void`
 
-Sets the FOV by focal length in respect to the current [.filmGauge](FCamera3d.md#filmgauge).
+Sets the FOV by focal length in respect to the current [.filmGauge](FAttachedCamera.md#filmgauge).
 
 #### Parameters
 
@@ -1418,7 +1423,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:131
 
 #### Deprecated
 
-Use [.setFocalLength()](FCamera3d.md#setfocallength) and [.filmGauge](FCamera3d.md#filmgauge) instead.
+Use [.setFocalLength()](FAttachedCamera.md#setfocallength) and [.filmGauge](FAttachedCamera.md#filmgauge) instead.
 
 #### Inherited from
 
@@ -1456,7 +1461,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/cameras/FCamera3d.ts#L18)
+[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/cameras/FCamera3d.ts#L18)
 
 ***
 
@@ -1486,7 +1491,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/cameras/FCamera3d.ts#L32)
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ***
 
@@ -1494,7 +1499,7 @@ Set the rotation of the camera.
 
 > **setRotationFromAxisAngle**(`axis`, `angle`): `void`
 
-Calls THREE.Quaternion.setFromAxisAngle | setFromAxisAngle(axis, angle) on the [.quaternion](FCamera3d.md#quaternion).
+Calls THREE.Quaternion.setFromAxisAngle | setFromAxisAngle(axis, angle) on the [.quaternion](FAttachedCamera.md#quaternion).
 
 #### Parameters
 
@@ -1524,7 +1529,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:351
 
 > **setRotationFromEuler**(`euler`): `void`
 
-Calls THREE.Quaternion.setFromEuler | setFromEuler(euler) on the [.quaternion](FCamera3d.md#quaternion).
+Calls THREE.Quaternion.setFromEuler | setFromEuler(euler) on the [.quaternion](FAttachedCamera.md#quaternion).
 
 #### Parameters
 
@@ -1550,7 +1555,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:357
 
 > **setRotationFromMatrix**(`m`): `void`
 
-Calls THREE.Quaternion.setFromRotationMatrix | setFromRotationMatrix(m) on the [.quaternion](FCamera3d.md#quaternion).
+Calls THREE.Quaternion.setFromRotationMatrix | setFromRotationMatrix(m) on the [.quaternion](FAttachedCamera.md#quaternion).
 
 #### Parameters
 
@@ -1580,7 +1585,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:364
 
 > **setRotationFromQuaternion**(`q`): `void`
 
-Copy the given THREE.Quaternion | Quaternion into [.quaternion](FCamera3d.md#quaternion).
+Copy the given THREE.Quaternion | Quaternion into [.quaternion](FAttachedCamera.md#quaternion).
 
 #### Parameters
 
@@ -1628,7 +1633,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/3d/src/cameras/FCamera3d.ts#L25)
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ***
 
@@ -1975,14 +1980,14 @@ node\_modules/@types/three/src/core/Object3D.d.ts:590
 > **updateMatrixWorld**(`force`?): `void`
 
 Updates the global transform of the object.
-And will update the object descendants if [.matrixWorldNeedsUpdate](FCamera3d.md#matrixworldneedsupdate) is set to true or if the force parameter is set to `true`.
+And will update the object descendants if [.matrixWorldNeedsUpdate](FAttachedCamera.md#matrixworldneedsupdate) is set to true or if the force parameter is set to `true`.
 
 #### Parameters
 
 • **force?**: `boolean`
 
-A boolean that can be used to bypass [.matrixWorldAutoUpdate](FCamera3d.md#matrixworldautoupdate), to recalculate the world matrix of the object and descendants on the current frame.
-Useful if you cannot wait for the renderer to update it on the next frame, assuming [.matrixWorldAutoUpdate](FCamera3d.md#matrixworldautoupdate) set to `true`.
+A boolean that can be used to bypass [.matrixWorldAutoUpdate](FAttachedCamera.md#matrixworldautoupdate), to recalculate the world matrix of the object and descendants on the current frame.
+Useful if you cannot wait for the renderer to update it on the next frame, assuming [.matrixWorldAutoUpdate](FAttachedCamera.md#matrixworldautoupdate) set to `true`.
 
 #### Returns
 
@@ -2210,7 +2215,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:237
 
 > `optional` **customDistanceMaterial**: `Material`
 
-Same as [customDepthMaterial](FCamera3d.md#customdepthmaterial), but used with THREE.Object3DPointLight | PointLight.
+Same as [customDepthMaterial](FAttachedCamera.md#customdepthmaterial), but used with THREE.Object3DPointLight | PointLight.
 
 #### Default Value
 
@@ -2234,7 +2239,7 @@ Camera frustum far plane.
 
 #### Remarks
 
-Must be greater than the current value of [.near](FCamera3d.md#near) plane.
+Must be greater than the current value of [.near](FAttachedCamera.md#near) plane.
 
 #### Default Value
 
@@ -2255,7 +2260,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:81
 > **filmGauge**: `number`
 
 Film size used for the larger axis.
-This parameter does not influence the projection matrix unless [.filmOffset](FCamera3d.md#filmoffset) is set to a nonzero value.
+This parameter does not influence the projection matrix unless [.filmOffset](FAttachedCamera.md#filmoffset) is set to a nonzero value.
 
 #### Remarks
 
@@ -2279,7 +2284,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:112
 
 > **filmOffset**: `number`
 
-Horizontal off-center offset in the same unit as [.filmGauge](FCamera3d.md#filmgauge).
+Horizontal off-center offset in the same unit as [.filmGauge](FAttachedCamera.md#filmgauge).
 
 #### Remarks
 
@@ -2514,7 +2519,7 @@ scale every frame and also recalculates the matrixWorld property.
 
 #### Default Value
 
-[DEFAULT_MATRIX_AUTO_UPDATE](FCamera3d.md#default_matrix_auto_update) - that is `(true)`.
+[DEFAULT_MATRIX_AUTO_UPDATE](FAttachedCamera.md#default_matrix_auto_update) - that is `(true)`.
 
 #### Inherited from
 
@@ -2559,7 +2564,7 @@ When it isn't, then you have to maintain all matrices in the object and its chil
 
 #### Default Value
 
-[DEFAULT_MATRIX_WORLD_AUTO_UPDATE](FCamera3d.md#default_matrix_world_auto_update) - that is `(true)`.
+[DEFAULT_MATRIX_WORLD_AUTO_UPDATE](FAttachedCamera.md#default_matrix_world_auto_update) - that is `(true)`.
 
 #### Inherited from
 
@@ -2665,7 +2670,7 @@ Camera frustum near plane.
 
 #### Remarks
 
-The valid range is greater than `0` and less than the current value of the [.far](FCamera3d.md#far) plane.
+The valid range is greater than `0` and less than the current value of the [.far](FAttachedCamera.md#far) plane.
 
 #### Default Value
 
@@ -2915,7 +2920,7 @@ This is used by the [lookAt](FFixedCamera.md#lookat) method, for example, to det
 
 #### Default Value
 
-[Object3D.DEFAULT_UP](FCamera3d.md#default_up) - that is `(0, 1, 0)`.
+[Object3D.DEFAULT_UP](FAttachedCamera.md#default_up) - that is `(0, 1, 0)`.
 
 #### Inherited from
 
@@ -2976,7 +2981,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:70
 > **view**: `null` \| `object`
 
 Frustum window specification or null.
-This is set using the [.setViewOffset](FCamera3d.md#setviewoffset) method and cleared using [.clearViewOffset](FCamera3d.md#clearviewoffset).
+This is set using the [.setViewOffset](FAttachedCamera.md#setviewoffset) method and cleared using [.clearViewOffset](FAttachedCamera.md#clearviewoffset).
 
 #### Default Value
 
@@ -3050,7 +3055,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:50
 
 > `static` **DEFAULT\_MATRIX\_AUTO\_UPDATE**: `boolean`
 
-The default setting for [matrixAutoUpdate](FCamera3d.md#matrixautoupdate) for newly created Object3Ds.
+The default setting for [matrixAutoUpdate](FAttachedCamera.md#matrixautoupdate) for newly created Object3Ds.
 
 #### Default Value
 
@@ -3070,7 +3075,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:326
 
 > `static` **DEFAULT\_MATRIX\_WORLD\_AUTO\_UPDATE**: `boolean`
 
-The default setting for [matrixWorldAutoUpdate](FCamera3d.md#matrixworldautoupdate) for newly created Object3Ds.
+The default setting for [matrixWorldAutoUpdate](FAttachedCamera.md#matrixworldautoupdate) for newly created Object3Ds.
 
 #### Default Value
 
@@ -3090,7 +3095,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:332
 
 > `static` **DEFAULT\_UP**: `Vector3`
 
-The default [up](FCamera3d.md#up) direction for objects, also used as the default position for THREE.DirectionalLight | DirectionalLight,
+The default [up](FAttachedCamera.md#up) direction for objects, also used as the default position for THREE.DirectionalLight | DirectionalLight,
 THREE.HemisphereLight | HemisphereLight and THREE.Spotlight | Spotlight (which creates lights shining from the top down).
 
 #### Default Value

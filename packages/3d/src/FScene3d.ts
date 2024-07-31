@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { World } from '@dimforge/rapier3d'
 import { FScene } from '@fibbojs/core'
-import type { FModel } from './model/FModel'
+import type { FComponent3d } from './FComponent3d'
 import { FGLTF } from './model/FGLTF'
 import type { FCamera3d } from './cameras/FCamera3d'
 import { FFixedCamera } from './cameras/FFixedCamera'
@@ -21,7 +21,7 @@ import { FFixedCamera } from './cameras/FFixedCamera'
  * ```
  */
 export class FScene3d extends FScene {
-  components: FModel[]
+  components: FComponent3d[]
   // Three.js
   declare scene: THREE.Scene
   declare renderer: THREE.WebGLRenderer
@@ -36,7 +36,7 @@ export class FScene3d extends FScene {
 
   constructor(options: { debug?: boolean } = { debug: false }) {
     super()
-    // Initialize models array
+    // Initialize components array
     this.components = []
     this.DEBUG_MODE = options.debug || false
 
@@ -82,8 +82,8 @@ export class FScene3d extends FScene {
 
     // onFrame loop
     this.onFrame((delta) => {
-      // Call onFrame for each model
-      this.components.forEach(model => model.onFrame(delta))
+      // Call onFrame for each component
+      this.components.forEach(component => component.onFrame(delta))
 
       // Debug mode
       if (this.DEBUG_MODE) {
@@ -107,10 +107,6 @@ export class FScene3d extends FScene {
 
     // Initialize Rapier world
     this.world = new RAPIER.World(this.gravity)
-
-    // Create the ground
-    const groundColliderDesc = RAPIER.ColliderDesc.cuboid(10.0, 0.1, 10.0)
-    this.world.createCollider(groundColliderDesc)
 
     // onFrame loop
     this.onFrame((delta) => {
@@ -137,19 +133,19 @@ export class FScene3d extends FScene {
     })
   }
 
-  addComponent(model: FModel) {
-    this.components.push(model)
-    // Detect if the FModel is a FGLTF instance
-    if (model instanceof FGLTF) {
+  addComponent(component: FComponent3d) {
+    this.components.push(component)
+    // Detect if the FComponent3d is a FGLTF instance
+    if (component instanceof FGLTF) {
       // Wait for the model to be loaded before adding it to the scene
-      model.onLoaded(() => {
-        if (model.object3D)
-          this.scene.add(model.object3D)
+      component.onLoaded(() => {
+        if (component.mesh)
+          this.scene.add(component.mesh)
       })
     }
     else {
-      if (model.object3D)
-        this.scene.add(model.object3D)
+      if (component.mesh)
+        this.scene.add(component.mesh)
     }
   }
 
@@ -291,17 +287,17 @@ export class FScene3d extends FScene {
     const objectsDOM = document.getElementById('objects')
     if (objectsDOM) {
       objectsDOM.innerHTML = ''
-      this.components.forEach((model, i) => {
-        if (!objectsDOM || !model.object3D)
+      this.components.forEach((component, i) => {
+        if (!objectsDOM || !component.mesh)
           return
 
         const objectInfoDOM = document.createElement('div')
         objectInfoDOM.className = 'object-info'
         objectInfoDOM.id = `object${i}`
         objectInfoDOM.innerHTML = `
-          <span>${model.constructor.name}${i} position: ${model.object3D.position.x.toFixed(2)}, ${model.object3D.position.y.toFixed(2)}, ${model.object3D.position.z.toFixed(2)}</span>
-          <span>${model.constructor.name}${i} rotation: ${model.object3D.rotation.x.toFixed(2)}, ${model.object3D.rotation.y.toFixed(2)}, ${model.object3D.rotation.z.toFixed(2)}</span>
-          <span>${model.constructor.name}${i} scale: ${model.object3D.scale.x.toFixed(2)}, ${model.object3D.scale.y.toFixed(2)}, ${model.object3D.scale.z.toFixed(2)}</span>
+          <span>${component.constructor.name}${i} position: ${component.mesh.position.x.toFixed(2)}, ${component.mesh.position.y.toFixed(2)}, ${component.mesh.position.z.toFixed(2)}</span>
+          <span>${component.constructor.name}${i} rotation: ${component.mesh.rotation.x.toFixed(2)}, ${component.mesh.rotation.y.toFixed(2)}, ${component.mesh.rotation.z.toFixed(2)}</span>
+          <span>${component.constructor.name}${i} scale: ${component.mesh.scale.x.toFixed(2)}, ${component.mesh.scale.y.toFixed(2)}, ${component.mesh.scale.z.toFixed(2)}</span>
         `
         objectsDOM.appendChild(objectInfoDOM)
       })

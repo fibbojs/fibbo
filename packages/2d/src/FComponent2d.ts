@@ -120,19 +120,19 @@ export abstract class FComponent2d extends FComponent {
 
     // If position is not defined
     if (!rigidBodyPosition) {
-      // Use default position of the FModel
+      // Use default position of the FComponent3d
       rigidBodyPosition = new PIXI.Point(this.position.x, this.position.y)
     }
 
     // If scale is not defined
     if (!rigidBodyScale) {
-      // Use default scale of the FModel
+      // Use default scale of the FComponent3d
       rigidBodyScale = new PIXI.Point(this.scale.x, this.scale.y)
     }
 
     // If rotation is not defined
     if (!rigidBodyRotation) {
-      // Use default rotation of the FModel
+      // Use default rotation of the FComponent3d
       rigidBodyRotation = this.rotation
     }
 
@@ -155,7 +155,7 @@ export abstract class FComponent2d extends FComponent {
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
-    // Create a cuboid collider attached to the dynamic rigidBody.
+    // Create a collider for the rigid body
     const colliderDesc = shape === F2dShapes.SQUARE
       ? RAPIER.ColliderDesc.cuboid(rigidBodyScale.x, rigidBodyScale.y)
       : RAPIER.ColliderDesc.ball(rigidBodyScale.x)
@@ -182,19 +182,19 @@ export abstract class FComponent2d extends FComponent {
 
     // If position is not defined
     if (!colliderPosition) {
-      // Use default position of the FModel
+      // Use default position of the FComponent3d
       colliderPosition = new PIXI.Point(this.position.x, this.position.y)
     }
 
     // If rotation is not defined
     if (!colliderRotation) {
-      // Use default rotation of the FModel
+      // Use default rotation of the FComponent3d
       colliderRotation = this.rotation
     }
 
     // If scale is not defined
     if (!colliderScale) {
-      // Use default scale of the FModel
+      // Use default scale of the FComponent3d
       colliderScale = new PIXI.Point(this.scale.x, this.scale.y)
     }
 
@@ -210,7 +210,7 @@ export abstract class FComponent2d extends FComponent {
       colliderScale.y /= 2
     }
 
-    // Create a cuboid collider attached to the dynamic rigidBody.
+    // Create the collider
     const colliderDesc = shape === F2dShapes.SQUARE
       ? RAPIER.ColliderDesc.cuboid(colliderScale.x, colliderScale.y)
       : RAPIER.ColliderDesc.ball(colliderScale.x)

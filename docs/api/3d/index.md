@@ -23,7 +23,7 @@
 
 - [FCube](classes/FCube.md)
 - [FGLTF](classes/FGLTF.md)
-- [FModel](classes/FModel.md)
+- [FPolyhedron](classes/FPolyhedron.md)
 - [FSphere](classes/FSphere.md)
 
 ### Enumerations

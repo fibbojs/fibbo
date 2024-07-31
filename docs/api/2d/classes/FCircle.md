@@ -41,7 +41,7 @@ scene.addComponent(square)
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:20](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/polygons/FCircle.ts#L20)
+[packages/2d/src/polygons/FCircle.ts:20](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/polygons/FCircle.ts#L20)
 
 ## Methods
 
@@ -74,7 +74,7 @@ This is useful for static objects.
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:43](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/polygons/FCircle.ts#L43)
+[packages/2d/src/polygons/FCircle.ts:43](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/polygons/FCircle.ts#L43)
 
 ***
 
@@ -106,7 +106,7 @@ Init a rigid body for the model.
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:32](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/polygons/FCircle.ts#L32)
+[packages/2d/src/polygons/FCircle.ts:32](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/polygons/FCircle.ts#L32)
 
 ***
 
@@ -122,13 +122,18 @@ Init a rigid body for the model.
 
 `void`
 
+#### Description
+
+Update the component.
+Should be called every frame.
+
 #### Overrides
 
 [`FComponent2d`](FComponent2d.md).[`onFrame`](FComponent2d.md#onframe)
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:28](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/polygons/FCircle.ts#L28)
+[packages/2d/src/polygons/FCircle.ts:28](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/polygons/FCircle.ts#L28)
 
 ***
 
@@ -156,7 +161,7 @@ Set the position of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:69](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L69)
+[packages/2d/src/FComponent2d.ts:69](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L69)
 
 ***
 
@@ -184,7 +189,7 @@ Set the rotation of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:90](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L90)
+[packages/2d/src/FComponent2d.ts:90](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L90)
 
 ***
 
@@ -212,7 +217,7 @@ Set the rotation of the component in degrees.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:99](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L99)
+[packages/2d/src/FComponent2d.ts:99](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L99)
 
 ***
 
@@ -240,7 +245,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:77](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L77)
+[packages/2d/src/FComponent2d.ts:77](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L77)
 
 ## Properties
 
@@ -254,7 +259,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:25](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L25)
+[packages/2d/src/FComponent2d.ts:25](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L25)
 
 ***
 
@@ -270,7 +275,7 @@ container is the PIXI container that holds the component (can be a square or cir
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:19](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L19)
+[packages/2d/src/FComponent2d.ts:19](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L19)
 
 ***
 
@@ -284,7 +289,7 @@ container is the PIXI container that holds the component (can be a square or cir
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:20](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L20)
+[packages/2d/src/FComponent2d.ts:20](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L20)
 
 ***
 
@@ -298,7 +303,7 @@ container is the PIXI container that holds the component (can be a square or cir
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:24](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L24)
+[packages/2d/src/FComponent2d.ts:24](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L24)
 
 ***
 
@@ -312,7 +317,7 @@ container is the PIXI container that holds the component (can be a square or cir
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L22)
+[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L22)
 
 ***
 
@@ -326,7 +331,7 @@ container is the PIXI container that holds the component (can be a square or cir
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:21](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L21)
+[packages/2d/src/FComponent2d.ts:21](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L21)
 
 ***
 
@@ -340,4 +345,4 @@ container is the PIXI container that holds the component (can be a square or cir
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:15](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/2d/src/FComponent2d.ts#L15)
+[packages/2d/src/FComponent2d.ts:15](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/2d/src/FComponent2d.ts#L15)

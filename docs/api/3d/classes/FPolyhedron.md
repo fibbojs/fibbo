@@ -1,46 +1,45 @@
-[@fibbojs](/api/index) / [3d](/api/3d) / FGLTF
+[@fibbojs](/api/index) / [3d](/api/3d) / FPolyhedron
 
-# Class: FGLTF
+# Class: `abstract` FPolyhedron
 
 ## Description
 
-A GLTF model in FibboJS.
+A simple polyhedron model in FibboJS.
+Defaults to a cube.
 
 ## Example
 
 ```ts
-import { FScene3d, FGLTF } from '@fibbojs/3d'
+import { FScene3d, FPolyhedron } from '@fibbojs/3d'
 
 const scene = new FScene3d()
 
-const gltf = new FGLTF(scene, 'model.glb')
-scene.addComponent(gltf)
+const cube = new FPolyhedron(scene)
+scene.addComponent(cube)
 ```
 
 ## Extends
 
 - [`FComponent3d`](FComponent3d.md)
 
+## Extended by
+
+- [`FCube`](FCube.md)
+- [`FSphere`](FSphere.md)
+
 ## Constructors
 
-### new FGLTF()
+### new FPolyhedron()
 
-> **new FGLTF**(`scene`, `model`): [`FGLTF`](FGLTF.md)
+> **new FPolyhedron**(`scene`): [`FPolyhedron`](FPolyhedron.md)
 
 #### Parameters
 
 • **scene**: [`FScene3d`](FScene3d.md)
 
-The 3D scene where the model will be added.
-
-• **model**: `string`
-
-The name of the model file to load.
-Should be a GLTF or GLB file.
-
 #### Returns
 
-[`FGLTF`](FGLTF.md)
+[`FPolyhedron`](FPolyhedron.md)
 
 #### Overrides
 
@@ -48,23 +47,9 @@ Should be a GLTF or GLB file.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:43](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/model/FGLTF.ts#L43)
+packages/3d/src/model/FPolyhedron.ts:26
 
 ## Methods
-
-### emitOnLoaded()
-
-> **emitOnLoaded**(): `void`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[packages/3d/src/model/FGLTF.ts:98](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/model/FGLTF.ts#L98)
-
-***
 
 ### initCollider()
 
@@ -153,25 +138,37 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:90](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/model/FGLTF.ts#L90)
+packages/3d/src/model/FPolyhedron.ts:34
 
 ***
 
-### onLoaded()
+### setColor()
 
-> **onLoaded**(`fn`): `void`
+> **setColor**(`color`): `void`
 
 #### Parameters
 
-• **fn**
+• **color**: `number`
+
+The color of the polyhedron.
 
 #### Returns
 
 `void`
 
+#### Description
+
+Change the color of the polyhedron.
+
+#### Example
+
+```ts
+cube.setColor(0xff0000)
+```
+
 #### Defined in
 
-[packages/3d/src/model/FGLTF.ts:94](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/model/FGLTF.ts#L94)
+packages/3d/src/model/FPolyhedron.ts:46
 
 ***
 
@@ -309,27 +306,20 @@ Set the scale of the model.
 
 ***
 
-### mesh?
+### mesh
 
-> `optional` **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
+> **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
 
-#### Inherited from
+mesh is redefined from FComponent3d without the ? because it is
+directly available after the constructor, as a polyhedron is created synchronously.
+
+#### Overrides
 
 [`FComponent3d`](FComponent3d.md).[`mesh`](FComponent3d.md#mesh)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:19](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/FComponent3d.ts#L19)
-
-***
-
-### onLoadedCallbacks
-
-> **onLoadedCallbacks**: () => `void`[] = `[]`
-
-#### Defined in
-
-[packages/3d/src/model/FGLTF.ts:36](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/model/FGLTF.ts#L36)
+packages/3d/src/model/FPolyhedron.ts:24
 
 ***
 
@@ -400,13 +390,3 @@ Set the scale of the model.
 #### Defined in
 
 [packages/3d/src/FComponent3d.ts:14](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/FComponent3d.ts#L14)
-
-***
-
-### type
-
-> **type**: `string` = `'FGLTF'`
-
-#### Defined in
-
-[packages/3d/src/model/FGLTF.ts:35](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/3d/src/model/FGLTF.ts#L35)

@@ -11,6 +11,13 @@ import MyGameCamera from './cameras/MyGameCamera'
   scene.init()
   await scene.initPhysics()
 
+  const ground = new FCube(scene)
+  ground.setScale(15, 0.1, 15)
+  ground.setPosition(0, -0.1, 0)
+  ground.initCollider()
+  ground.setColor(0x1F1F1F)
+  scene.addComponent(ground)
+
   const cube = new MyCube(scene)
   scene.addComponent(cube)
 

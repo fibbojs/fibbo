@@ -63,7 +63,6 @@ export default defineConfig({
               { text: 'Model Classes', items: [
                 { text: 'FCube', link: '/api/3d/classes/FCube' },
                 { text: 'FGLTF', link: '/api/3d/classes/FGLTF' },
-                { text: 'FModel', link: '/api/3d/classes/FModel' },
                 { text: 'FSphere', link: '/api/3d/classes/FSphere' },
               ] },
               { text: 'Enumerations', items: [

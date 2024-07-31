@@ -1,6 +1,7 @@
+import type * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import type { FScene3d } from '../FScene3d'
-import { FModel } from './FModel'
+import { FComponent3d } from '../FComponent3d'
 
 /*
 import * as THREE from 'three'
@@ -30,7 +31,7 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * scene.addComponent(gltf)
  * ```
  */
-export class FGLTF extends FModel {
+export class FGLTF extends FComponent3d {
   public type: string = 'FGLTF'
   public onLoadedCallbacks: (() => void)[] = []
 
@@ -58,19 +59,19 @@ export class FGLTF extends FModel {
       // Called when the resource is loaded
       (gltf) => {
         // Add the object to the scene
-        this.object3D = gltf.scene
+        this.mesh = gltf.scene as unknown as THREE.Mesh
 
         // If a position is defined, apply it
         if (this.position)
-          this.object3D.position.set(this.position.x, this.position.y, this.position.z)
+          this.mesh.position.set(this.position.x, this.position.y, this.position.z)
 
         // If a scale is defined, apply it
         if (this.scale)
-          this.object3D.scale.set(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2)
+          this.mesh.scale.set(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2)
 
         // If a rotation is defined, apply it
         if (this.rotation)
-          this.object3D.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
+          this.mesh.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
 
         // Call the onLoaded method
         this.emitOnLoaded()

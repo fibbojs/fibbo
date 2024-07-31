@@ -22,7 +22,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:5](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/core/src/FComponent.ts#L5)
+[packages/core/src/FComponent.ts:5](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/core/src/FComponent.ts#L5)
 
 ## Methods
 
@@ -47,4 +47,4 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/3bef0bf91c3e7db5b4ea3649ad46b9ed67e6f935/packages/core/src/FComponent.ts#L13)
+[packages/core/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/29cafb1855352d51829178769ad4b8831f2b3e1b/packages/core/src/FComponent.ts#L13)
