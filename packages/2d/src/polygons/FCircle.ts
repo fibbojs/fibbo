@@ -4,7 +4,7 @@ import type { FScene2d } from '../FScene2d'
 import { F2dShapes } from '../types/F2dShapes'
 
 /**
- * @description A simple square in FibboJS.
+ * @description A simple circle in FibboJS.
  * @category Polygons
  * @example
  * ```ts
@@ -12,14 +12,14 @@ import { F2dShapes } from '../types/F2dShapes'
  *
  * const scene = new FScene2d()
  *
- * const square = new FCircle(scene)
- * scene.addComponent(square)
+ * const circle = new FCircle(scene)
+ * scene.addComponent(circle)
  * ```
  */
 export class FCircle extends FComponent2d {
   constructor(scene: FScene2d) {
     super(scene)
-    // Create a square
+    // Create a circle
     this.container = new PIXI.Graphics()
       .circle(this.position.x, this.position.y, this.scale.x * 100 / 2)
       .fill(new PIXI.FillGradient(0, 0, 10, 10).addColorStop(0, 0x0000FF).addColorStop(1, 0xFFFF00))
@@ -33,10 +33,8 @@ export class FCircle extends FComponent2d {
     position?: PIXI.PointData,
     scale?: PIXI.PointData,
     rotation?: number,
-    shape?: F2dShapes,
+    shape: F2dShapes = F2dShapes.CIRCLE,
   ): void {
-    if (!shape)
-      shape = F2dShapes.CIRCLE
     super.initRigidBody(position, scale, rotation, shape)
   }
 
@@ -44,10 +42,8 @@ export class FCircle extends FComponent2d {
     position?: PIXI.PointData,
     scale?: PIXI.PointData,
     rotation?: number,
-    shape?: F2dShapes,
+    shape: F2dShapes = F2dShapes.CIRCLE,
   ): void {
-    if (!shape)
-      shape = F2dShapes.CIRCLE
     super.initCollider(position, scale, rotation, shape)
   }
 }

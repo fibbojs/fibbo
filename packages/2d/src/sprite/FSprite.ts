@@ -1,7 +1,6 @@
 import * as PIXI from 'pixi.js'
 import { FComponent2d } from '../FComponent2d'
 import type { FScene2d } from '../FScene2d'
-import type { F2dShapes } from '../types/F2dShapes'
 
 /**
  * @description A simple sprite in FibboJS.
@@ -12,14 +11,18 @@ import type { F2dShapes } from '../types/F2dShapes'
  *
  * const scene = new FScene2d()
  *
- * const sprite = new FSprite(scene)
+ * const sprite = new FSprite(scene, '/my-texture.png')
  * scene.addComponent(sprite)
  * ```
  */
 export class FSprite extends FComponent2d {
-  // Texture
+  /**
+   * The texture of the sprite.
+   */
   texture: PIXI.Texture
-  // Callbacks for when the texture is loaded
+  /**
+   * Callbacks for when the texture is loaded
+   */
   public onLoadedCallbacks: (() => void)[] = []
 
   constructor(scene: FScene2d, texture: string) {
@@ -36,7 +39,12 @@ export class FSprite extends FComponent2d {
     this.loadTexture(texture)
   }
 
+  /**
+   * @description Load a texture from a path.
+   * @param texture The path to the texture.
+   */
   async loadTexture(texture: string) {
+    // Load the texture
     this.texture = await PIXI.Assets.load(texture)
     // Create a sprite
     this.container = new PIXI.Sprite(this.texture)
@@ -49,10 +57,20 @@ export class FSprite extends FComponent2d {
     this.emitOnLoaded()
   }
 
+  /**
+   * @description Set the scale of the sprite to a specific width.
+   * The height will be calculated according to the aspect ratio of the texture.
+   * @param width The width of the sprite.
+   */
   setScaleWidth(width: number) {
     this.setScale(width, width * this.texture.height / this.texture.width)
   }
 
+  /**
+   * @description Set the scale of the sprite to a specific height.
+   * The width will be calculated according to the aspect ratio of the texture.
+   * @param height The height of the sprite.
+   */
   setScaleHeight(height: number) {
     this.setScale(height * this.texture.width / this.texture.height, height)
   }
@@ -61,10 +79,17 @@ export class FSprite extends FComponent2d {
     super.onFrame(delta)
   }
 
+  /**
+   * @description Add a callback to be called when the texture is loaded.
+   * @param fn The callback function.
+   */
   onLoaded(fn: () => void) {
     this.onLoadedCallbacks.push(fn)
   }
 
+  /**
+   * @description Emit the onLoaded callbacks.
+   */
   emitOnLoaded() {
     this.onLoadedCallbacks.forEach((callback) => {
       callback()

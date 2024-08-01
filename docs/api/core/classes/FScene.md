@@ -19,7 +19,7 @@ Also contains the Rapier world if physics is enabled.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:19](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L19)
+[packages/core/src/FScene.ts:19](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L19)
 
 ## Methods
 
@@ -41,7 +41,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:48](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L48)
+[packages/core/src/FScene.ts:48](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L48)
 
 ***
 
@@ -63,7 +63,7 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:53](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L53)
+[packages/core/src/FScene.ts:53](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L53)
 
 ## Properties
 
@@ -73,7 +73,7 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:12](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L12)
+[packages/core/src/FScene.ts:12](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L12)
 
 ***
 
@@ -83,7 +83,7 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:11](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L11)
+[packages/core/src/FScene.ts:11](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L11)
 
 ***
 
@@ -105,7 +105,7 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L14)
+[packages/core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L14)
 
 ***
 
@@ -115,7 +115,7 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:17](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L17)
+[packages/core/src/FScene.ts:17](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L17)
 
 ***
 
@@ -125,4 +125,4 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/10787392517d7c42542c836b0fad578d96d8c1ac/packages/core/src/FScene.ts#L15)
+[packages/core/src/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/3bfecee9c2a4f3f6d193d8bfdda5d3ae6585b4f9/packages/core/src/FScene.ts#L15)

@@ -13,10 +13,15 @@ import { FSprite } from './sprite/FSprite'
  * ```ts
  * import { FScene2d, FSquare } from '@fibbojs/2d'
  *
- * const scene = new FScene2d()
+ * (async () => {
+ *  const scene = new FScene2d()
+ *  await scene.init()
+ *  await scene.initPhysics()
  *
- * const square = new FSquare()
- * scene.addComponent(square)
+ *  const square = new FSquare(scene)
+ *  square.initRigidBody()
+ *  scene.addComponent(square)
+ * })()
  * ```
  */
 export class FScene2d extends FScene {

@@ -29,6 +29,7 @@ export class FGameCamera extends FOrbitCamera {
   constructor(attachedComponent: FComponent3d, scene: FScene3d) {
     super(attachedComponent, scene)
     this.previousModelPosition = attachedComponent.position.clone()
+    this.setPosition(0, 5, 5)
   }
 
   onFrame(delta: number): void {

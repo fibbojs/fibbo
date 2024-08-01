@@ -6,15 +6,6 @@ import { FComponent3d } from '../FComponent3d'
  * @description A simple polyhedron model in FibboJS.
  * Defaults to a cube.
  * @category Model
- * @example
- * ```ts
- * import { FScene3d, FPolyhedron } from '@fibbojs/3d'
- *
- * const scene = new FScene3d()
- *
- * const cube = new FPolyhedron(scene)
- * scene.addComponent(cube)
- * ```
  */
 export abstract class FPolyhedron extends FComponent3d {
   /**

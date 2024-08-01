@@ -66,15 +66,15 @@ export abstract class FComponent2d extends FComponent {
   }
 
   onFrame(_delta: number): void {
-    // If the rigid body and container exist, update the container position and rotation according to the rigid body
-    if (this.rigidBody && this.container) {
+    // If the rigid body exist, update the container position and rotation according to the rigid body
+    if (this.rigidBody) {
       const newRigidBodyPosition = this.rigidBody.translation()
       const newRigidBodyRotation = this.rigidBody.rotation()
       this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       this.container.rotation = -newRigidBodyRotation
     }
-    // Else if the collider and the container exist, update the container position and rotation according to the collider
-    else if (this.collider && this.container) {
+    // Else if the collider exist, update the container position and rotation according to the collider
+    else if (this.collider) {
       const newRigidBodyPosition = this.collider.translation()
       const newRigidBodyRotation = this.collider.rotation()
       this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
@@ -161,60 +161,26 @@ export abstract class FComponent2d extends FComponent {
    * )
    */
   initRigidBody(
-    position?: PIXI.PointData,
-    scale?: PIXI.PointData,
-    rotation?: number,
-    shape?: F2dShapes,
+    position: PIXI.PointData = new PIXI.Point(this.position.x, this.position.y),
+    scale: PIXI.PointData = new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
+    rotation: number = this.rotation,
+    shape: F2dShapes = F2dShapes.SQUARE,
   ): void {
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
-    let rigidBodyPosition: PIXI.PointData | undefined = position
-    let rigidBodyScale: PIXI.PointData | undefined = scale
-    let rigidBodyRotation: number | undefined = rotation
-
-    // If position is not defined
-    if (!rigidBodyPosition) {
-      // Use default position of the FComponent3d
-      rigidBodyPosition = new PIXI.Point(this.position.x, this.position.y)
-    }
-
-    // If scale is not defined
-    if (!rigidBodyScale) {
-      // Use default scale of the FComponent3d
-      rigidBodyScale = new PIXI.Point(this.scale.x, this.scale.y)
-    }
-
-    // If rotation is not defined
-    if (!rigidBodyRotation) {
-      // Use default rotation of the FComponent3d
-      rigidBodyRotation = this.rotation
-    }
-
-    // If a shape wasn't defined
-    if (!shape) {
-      // Default to cube
-      shape = F2dShapes.SQUARE
-    }
-
-    // Devide scale by 2 (RAPIER uses half-extents)
-    if (rigidBodyScale) {
-      rigidBodyScale.x /= 2
-      rigidBodyScale.y /= 2
-    }
-
     // Create a dynamic rigid-body.
     const rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-      .setTranslation(rigidBodyPosition.x, rigidBodyPosition.y)
-      .setRotation(rigidBodyRotation)
+      .setTranslation(position.x, position.y)
+      .setRotation(rotation)
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
     // Create a collider for the rigid body
     const colliderDesc = shape === F2dShapes.SQUARE
-      ? RAPIER.ColliderDesc.cuboid(rigidBodyScale.x, rigidBodyScale.y)
-      : RAPIER.ColliderDesc.ball(rigidBodyScale.x)
+      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y)
+      : RAPIER.ColliderDesc.ball(scale.x)
     this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
   }
 
@@ -236,55 +202,21 @@ export abstract class FComponent2d extends FComponent {
    * ```
    */
   initCollider(
-    position?: PIXI.PointData,
-    scale?: PIXI.PointData,
-    rotation?: number,
-    shape?: F2dShapes,
+    position: PIXI.PointData = new PIXI.Point(this.position.x, this.position.y),
+    scale: PIXI.PointData = new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
+    rotation: number = this.rotation,
+    shape: F2dShapes = F2dShapes.SQUARE,
   ): void {
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a collider')
 
-    let colliderPosition: PIXI.PointData | undefined = position
-    let colliderScale: PIXI.PointData | undefined = scale
-    let colliderRotation: number | undefined = rotation
-
-    // If position is not defined
-    if (!colliderPosition) {
-      // Use default position of the FComponent3d
-      colliderPosition = new PIXI.Point(this.position.x, this.position.y)
-    }
-
-    // If rotation is not defined
-    if (!colliderRotation) {
-      // Use default rotation of the FComponent3d
-      colliderRotation = this.rotation
-    }
-
-    // If scale is not defined
-    if (!colliderScale) {
-      // Use default scale of the FComponent3d
-      colliderScale = new PIXI.Point(this.scale.x, this.scale.y)
-    }
-
-    // If a shape wasn't defined
-    if (!shape) {
-      // Default to cube
-      shape = F2dShapes.SQUARE
-    }
-
-    // Devide scale by 2 (RAPIER uses half-extents)
-    if (colliderScale) {
-      colliderScale.x /= 2
-      colliderScale.y /= 2
-    }
-
     // Create the collider
     const colliderDesc = shape === F2dShapes.SQUARE
-      ? RAPIER.ColliderDesc.cuboid(colliderScale.x, colliderScale.y)
-      : RAPIER.ColliderDesc.ball(colliderScale.x)
-    colliderDesc.setTranslation(colliderPosition.x, colliderPosition.y)
-    colliderDesc.setRotation(colliderRotation)
+      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y)
+      : RAPIER.ColliderDesc.ball(scale.x)
+    colliderDesc.setTranslation(position.x, position.y)
+    colliderDesc.setRotation(rotation)
     this.collider = this.scene.world.createCollider(colliderDesc)
   }
 }

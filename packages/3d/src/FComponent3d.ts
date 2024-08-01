@@ -72,10 +72,11 @@ export abstract class FComponent3d implements FComponent {
       this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newColliderRotation.x, newColliderRotation.y, newColliderRotation.z, newColliderRotation.w))
     }
     // If the rigid body and collider doesn't exist, update the mesh position and rotation according to the default values
-    else {
-      this.mesh?.position.set(this.position.x, this.position.y, this.position.z)
-      this.mesh?.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
+    else if (this.mesh) {
+      this.mesh.position.set(this.position.x, this.position.y, this.position.z)
+      this.mesh.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
     }
+    // If the mesh still doesn't exist, do nothing
   }
 
   /**
@@ -170,64 +171,29 @@ export abstract class FComponent3d implements FComponent {
    * ```
    */
   initRigidBody(
-    position?: THREE.Vector3,
-    scale?: THREE.Vector3,
-    rotation?: THREE.Vector3,
-    shape?: F3dShapes,
+    position: THREE.Vector3 = new THREE.Vector3(this.position.x, this.position.y, this.position.z),
+    scale: THREE.Vector3 = new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
+    rotation: THREE.Vector3 = new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
+    shape: F3dShapes = F3dShapes.CUBE,
   ): void {
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
-    let rigidBodyPosition: THREE.Vector3 | undefined = position
-    let rigidBodyScale: THREE.Vector3 | undefined = scale
-    let rigidBodyRotation: THREE.Vector3 | undefined = rotation
-
-    // If position is not defined
-    if (!rigidBodyPosition) {
-      // Use default position of the FComponent3d
-      rigidBodyPosition = new THREE.Vector3(this.position.x, this.position.y, this.position.z)
-    }
-
-    // If scale is not defined
-    if (!rigidBodyScale) {
-      // Use default scale of the FComponent3d
-      rigidBodyScale = new THREE.Vector3(this.scale.x, this.scale.y, this.scale.z)
-    }
-
-    // Devide scale by 2 (RAPIER uses half-extents)
-    if (rigidBodyScale) {
-      rigidBodyScale.x /= 2
-      rigidBodyScale.y /= 2
-      rigidBodyScale.z /= 2
-    }
-
-    // If rotation is not defined
-    if (!rigidBodyRotation) {
-      // Use default rotation of the FComponent3d
-      rigidBodyRotation = new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z)
-    }
-
-    // If a shape wasn't defined
-    if (!shape) {
-      // Default to cube
-      shape = F3dShapes.CUBE
-    }
-
     // Create a dynamic rigid-body.
     const rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-      .setTranslation(rigidBodyPosition.x, rigidBodyPosition.y, rigidBodyPosition.z)
+      .setTranslation(position.x, position.y, position.z)
       .setRotation(
         // Create quaternion from Euler angles
-        new THREE.Quaternion().setFromEuler(new THREE.Euler(rigidBodyRotation.x, rigidBodyRotation.y, rigidBodyRotation.z)),
+        new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, rotation.z)),
       )
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
     // Create a cuboid collider attached to the dynamic rigidBody.
     const colliderDesc = shape === F3dShapes.CUBE
-      ? RAPIER.ColliderDesc.cuboid(rigidBodyScale.x, rigidBodyScale.y, rigidBodyScale.z)
-      : RAPIER.ColliderDesc.ball(rigidBodyScale.x)
+      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y, scale.z)
+      : RAPIER.ColliderDesc.ball(scale.x)
     this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
   }
 
@@ -249,58 +215,23 @@ export abstract class FComponent3d implements FComponent {
    * ```
    */
   initCollider(
-    position?: THREE.Vector3,
-    scale?: THREE.Vector3,
-    rotation?: THREE.Vector3,
-    shape?: F3dShapes,
+    position: THREE.Vector3 = new THREE.Vector3(this.position.x, this.position.y, this.position.z),
+    scale: THREE.Vector3 = new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
+    rotation: THREE.Vector3 = new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
+    shape: F3dShapes = F3dShapes.CUBE,
   ): void {
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
-    let colliderPosition: THREE.Vector3 | undefined = position
-    let colliderScale: THREE.Vector3 | undefined = scale
-    let colliderRotation: THREE.Vector3 | undefined = rotation
-
-    // If position is not defined
-    if (!colliderPosition) {
-      // Use default position of the FComponent3d
-      colliderPosition = new THREE.Vector3(this.position.x, this.position.y, this.position.z)
-    }
-
-    // If scale is not defined
-    if (!colliderScale) {
-      // Use default scale of the FComponent3d
-      colliderScale = new THREE.Vector3(this.scale.x, this.scale.y, this.scale.z)
-    }
-
-    // Devide scale by 2 (RAPIER uses half-extents)
-    if (colliderScale) {
-      colliderScale.x /= 2
-      colliderScale.y /= 2
-      colliderScale.z /= 2
-    }
-
-    // If rotation is not defined
-    if (!colliderRotation) {
-      // Use default rotation of the FComponent3d
-      colliderRotation = new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z)
-    }
-
-    // If a shape wasn't defined
-    if (!shape) {
-      // Default to cube
-      shape = F3dShapes.CUBE
-    }
-
     // Create a cuboid collider attached to the dynamic rigidBody.
     const colliderDesc = shape === F3dShapes.CUBE
-      ? RAPIER.ColliderDesc.cuboid(colliderScale.x, colliderScale.y, colliderScale.z)
-      : RAPIER.ColliderDesc.ball(colliderScale.x)
-    colliderDesc.setTranslation(colliderPosition.x, colliderPosition.y, colliderPosition.z)
+      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y, scale.z)
+      : RAPIER.ColliderDesc.ball(scale.x)
+    colliderDesc.setTranslation(position.x, position.y, position.z)
     colliderDesc.setRotation(
       // Create quaternion from Euler angles
-      new THREE.Quaternion().setFromEuler(new THREE.Euler(colliderRotation.x, colliderRotation.y, colliderRotation.z)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, rotation.z)),
     )
     this.collider = this.scene.world.createCollider(colliderDesc)
   }

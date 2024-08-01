@@ -33,10 +33,8 @@ export class FSphere extends FPolyhedron {
     position?: THREE.Vector3,
     scale?: THREE.Vector3,
     rotation?: THREE.Vector3,
-    shape?: F3dShapes,
+    shape: F3dShapes = F3dShapes.SPHERE,
   ): void {
-    if (!shape)
-      shape = F3dShapes.SPHERE
     super.initRigidBody(position, scale, rotation, shape)
   }
 }
