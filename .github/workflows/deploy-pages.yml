@@ -1,6 +1,6 @@
-# Sample workflow for building and deploying a VitePress site to GitHub Pages
+# Workflow to deploy documentation, test reports, and playgrounds to GitHub Pages
 #
-name: Deploy VitePress site to Pages
+name: Deploy Docs, Test Reports, and Playgrounds
 
 on:
   push:
@@ -46,17 +46,17 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
-      # Run tests and generate reports
+      # Run tests and generate reports with Vitest
       - name: Run Vitest to generate test reports
         run: npm run test:report
-      # Build doc
+      # Build documentation with VitePress
       - name: Build with VitePress
         run: npm run docs:build
-      # Build 2D playground
-      - name: Build playgrounds
+      # Build 2D playground with Nx and Vite
+      - name: Build 2D playground
         run: ./node_modules/.bin/nx build @fibbojs/playground-2d
-      # Build 3D playground
-      - name: Build playgrounds
+      # Build 3D playground with Nx and Vite
+      - name: Build 3D playground
         run: ./node_modules/.bin/nx build @fibbojs/playground-3d
       # Move test reports to the docs folder
       - name: Move test reports to the docs folder

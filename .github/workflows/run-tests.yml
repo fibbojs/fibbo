@@ -1,3 +1,5 @@
+# Workflow to run the tests on every push or pull request
+#
 name: Run Tests
 
 on:

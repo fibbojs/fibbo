@@ -1,3 +1,5 @@
+# Workflow to publish a new release to NPM
+#
 name: Publish to NPM
 
 on:
