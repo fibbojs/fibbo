@@ -159,6 +159,7 @@ export abstract class FComponent2d extends FComponent {
    *  0,
    *  F2dShapes.SQUARE
    * )
+   * ```
    */
   initRigidBody(
     position: PIXI.PointData = new PIXI.Point(this.position.x, this.position.y),
