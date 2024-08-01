@@ -23,7 +23,7 @@ export class FSprite extends FComponent2d {
   /**
    * Callbacks for when the texture is loaded
    */
-  public onLoadedCallbacks: (() => void)[] = []
+  public CALLBACKS_ONLOADED: (() => void)[] = []
 
   constructor(scene: FScene2d, texture: string) {
     super(scene)
@@ -84,14 +84,14 @@ export class FSprite extends FComponent2d {
    * @param fn The callback function.
    */
   onLoaded(fn: () => void) {
-    this.onLoadedCallbacks.push(fn)
+    this.CALLBACKS_ONLOADED.push(fn)
   }
 
   /**
    * @description Emit the onLoaded callbacks.
    */
   emitOnLoaded() {
-    this.onLoadedCallbacks.forEach((callback) => {
+    this.CALLBACKS_ONLOADED.forEach((callback) => {
       callback()
     })
   }

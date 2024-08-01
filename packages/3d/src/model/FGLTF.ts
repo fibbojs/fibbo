@@ -32,8 +32,10 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * ```
  */
 export class FGLTF extends FComponent3d {
-  public type: string = 'FGLTF'
-  public onLoadedCallbacks: (() => void)[] = []
+  /**
+   * Callbacks for when the model is loaded
+   */
+  public CALLBACKS_ONLOADED: (() => void)[] = []
 
   /**
    * @param scene The 3D scene where the model will be added.
@@ -91,12 +93,19 @@ export class FGLTF extends FComponent3d {
     super.onFrame(_delta)
   }
 
+  /**
+   * @description Add a callback to be called when the model is loaded.
+   * @param fn The callback function.
+   */
   onLoaded(fn: () => void) {
-    this.onLoadedCallbacks.push(fn)
+    this.CALLBACKS_ONLOADED.push(fn)
   }
 
+  /**
+   * @description Emit the onLoaded callbacks.
+   */
   emitOnLoaded() {
-    this.onLoadedCallbacks.forEach((callback) => {
+    this.CALLBACKS_ONLOADED.forEach((callback) => {
       callback()
     })
   }
