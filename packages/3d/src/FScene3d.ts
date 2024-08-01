@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import type { World } from '@dimforge/rapier3d'
 import { FScene } from '@fibbojs/core'
+import type RAPIER from '@dimforge/rapier3d'
 import type { FComponent3d } from './FComponent3d'
 import { FGLTF } from './model/FGLTF'
 import type { FCamera3d } from './cameras/FCamera3d'
@@ -17,7 +17,7 @@ import { FFixedCamera } from './cameras/FFixedCamera'
  * (async () => {
  *  // Initialize the scene
  *  const scene = new FScene3d()
- *  await scene.init()
+ *  scene.init()
  *  await scene.initPhysics()
  *
  *  // Create a ground
@@ -48,7 +48,9 @@ export class FScene3d extends FScene {
   declare controls?: OrbitControls
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
-  declare world: World
+  declare world: RAPIER.World
+  declare eventQueue: RAPIER.EventQueue
+  rapierToComponent: Map<number, FComponent3d> = new Map()
   // Debug
   DEBUG_MODE: boolean
 
@@ -126,12 +128,15 @@ export class FScene3d extends FScene {
     // Initialize Rapier world
     this.world = new RAPIER.World(this.gravity)
 
+    // Initialize Rapier event queue
+    this.eventQueue = new RAPIER.EventQueue(true)
+
     // onFrame loop
     this.onFrame((delta) => {
       // Debug mode
       if (this.DEBUG_MODE) {
         // Remove previous debug lines
-        const previousLines = this.scene.getObjectByName('debugLines')
+        const previousLines = this.scene.getObjectByName('DEBUG_LINES')
         if (previousLines)
           this.scene.remove(previousLines)
 
@@ -142,17 +147,38 @@ export class FScene3d extends FScene {
         geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3))
         const material = new THREE.LineBasicMaterial({ vertexColors: true })
         const lines = new THREE.LineSegments(geometry, material)
-        lines.name = 'debugLines'
+        lines.name = 'DEBUG_LINES'
         this.scene.add(lines)
       }
       // Step the physics world
       this.world.timestep = delta
-      this.world.step()
+      this.world.step(this.eventQueue)
+
+      // Drain collision events
+      this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {
+        this.onCollision(handle1, handle2, started)
+      })
     })
+  }
+
+  onCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, _: boolean) {
+    // Get the components from the handles
+    const collider1 = this.rapierToComponent.get(handle1)
+    const collider2 = this.rapierToComponent.get(handle2)
+    // If both colliders are undefined, return
+    if (collider1 === undefined && collider2 === undefined)
+      return
+    // Call the onCollisionWith callback for the first collider
+    if (collider1)
+      collider1.emitCollisionWith(collider2?.constructor)
+    // Call the onCollisionWith callback for the second collider
+    if (collider2)
+      collider2.emitCollisionWith(collider1?.constructor)
   }
 
   addComponent(component: FComponent3d) {
     this.components.push(component)
+
     // Detect if the FComponent3d is a FGLTF instance
     if (component instanceof FGLTF) {
       // Wait for the model to be loaded before adding it to the scene
@@ -165,6 +191,10 @@ export class FScene3d extends FScene {
       if (component.mesh)
         this.scene.add(component.mesh)
     }
+
+    // If a collider is defined, add it's handle to the rapierToComponent map
+    if (component.collider?.handle !== undefined)
+      this.rapierToComponent.set(component.collider?.handle, component)
   }
 
   private addDebugPanel() {

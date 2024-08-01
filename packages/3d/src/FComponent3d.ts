@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import type { Collider, RigidBody } from '@dimforge/rapier3d'
 import * as RAPIER from '@dimforge/rapier3d'
-import type { FComponent } from '@fibbojs/core'
+import { FComponent } from '@fibbojs/core'
 import type { FScene3d } from './FScene3d'
 import { F3dShapes } from './types/F3dShapes'
 
@@ -9,7 +9,7 @@ import { F3dShapes } from './types/F3dShapes'
  * @description The base class for all 3D objects in FibboJS.
  * @category Core
  */
-export abstract class FComponent3d implements FComponent {
+export abstract class FComponent3d extends FComponent {
   /**
    * The scene which the component is in.
    */
@@ -48,6 +48,7 @@ export abstract class FComponent3d implements FComponent {
    * @param scene The 3D scene where the component will be added.
    */
   constructor(scene: FScene3d) {
+    super()
     this.scene = scene
 
     // Define default values for position, scale and rotation
@@ -208,10 +209,11 @@ export abstract class FComponent3d implements FComponent {
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
-    // Create a cuboid collider attached to the dynamic rigidBody.
+    // Create a collider description attached to the dynamic rigidBody
     const colliderDesc = options.shape === F3dShapes.CUBE
       ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
       : RAPIER.ColliderDesc.ball(options.scale.x)
+    // Create the collider
     this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
   }
 
@@ -255,7 +257,7 @@ export abstract class FComponent3d implements FComponent {
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
-    // Create a cuboid collider attached to the dynamic rigidBody.
+    // Create a collider description
     const colliderDesc = options.shape === F3dShapes.CUBE
       ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
       : RAPIER.ColliderDesc.ball(options.scale.x)
@@ -264,6 +266,16 @@ export abstract class FComponent3d implements FComponent {
       // Create quaternion from Euler angles
       new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
     )
+    // Create the collider
     this.collider = this.scene.world.createCollider(colliderDesc)
+  }
+
+  onCollisionWith(class_: any, callback: () => void): void {
+    super.onCollisionWith(class_, callback)
+    // Activate collision events if they are not already activated
+    if (this.collider && this.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
+      // Set the active events
+      this.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
+    }
   }
 }

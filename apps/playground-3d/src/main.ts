@@ -6,7 +6,7 @@ import './style.css'
 (async () => {
   // Initialize the scene
   const scene = new FScene3d({ debug: true })
-  await scene.init()
+  scene.init()
   await scene.initPhysics()
 
   // Create a ground
@@ -23,6 +23,9 @@ import './style.css'
   cube.setPosition(-5, 5, 5)
   cube.initRigidBody({
     shape: F3dShapes.SPHERE,
+  })
+  cube.onCollisionWith(FSphere, () => {
+    console.log('Cube collided with sphere!')
   })
   scene.addComponent(cube)
 

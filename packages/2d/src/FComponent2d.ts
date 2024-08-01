@@ -191,10 +191,11 @@ export abstract class FComponent2d extends FComponent {
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
-    // Create a collider for the rigid body
+    // Create a collider description for the rigid body
     const colliderDesc = options.shape === F2dShapes.SQUARE
       ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y)
       : RAPIER.ColliderDesc.ball(options.scale.x)
+    // Create the collider
     this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
   }
 
@@ -238,12 +239,13 @@ export abstract class FComponent2d extends FComponent {
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a collider')
 
-    // Create the collider
+    // Create a collider description
     const colliderDesc = options.shape === F2dShapes.SQUARE
       ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y)
       : RAPIER.ColliderDesc.ball(options.scale.x)
     colliderDesc.setTranslation(options.position.x, options.position.y)
     colliderDesc.setRotation(options.rotation)
+    // Create the collider
     this.collider = this.scene.world.createCollider(colliderDesc)
   }
 }

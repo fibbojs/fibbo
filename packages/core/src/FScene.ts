@@ -8,6 +8,9 @@ import type { FComponent } from './FComponent'
  * Also contains the Rapier world if physics is enabled.
  */
 export abstract class FScene {
+  /**
+   * The components in the scene.
+   */
   components?: FComponent[]
   camera?: FCamera
   // Rapier

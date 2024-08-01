@@ -36,7 +36,7 @@ The base class for cameras in FibboJS.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/cameras/FCamera3d.ts#L9)
+[packages/3d/src/cameras/FCamera3d.ts:11](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L11)
 
 ## Methods
 
@@ -342,6 +342,49 @@ The event that gets fired.
 #### Defined in
 
 node\_modules/@types/three/src/core/EventDispatcher.d.ts:84
+
+***
+
+### emitCollisionWith()
+
+> **emitCollisionWith**\<`T`\>(`class_`): `void`
+
+#### Type Parameters
+
+• **T** *extends* `FComponent`
+
+#### Parameters
+
+• **class\_**
+
+The class to emit the
+
+#### Returns
+
+`void`
+
+#### Description
+
+Emit a collision event with a given class.
+
+#### Example
+
+```typescript
+const player = new Player()
+const enemy = new Enemy()
+player.onCollisionWith(Enemy, () => {
+console.log('Player collided with enemy!')
+})
+player.emitCollisionWith(Enemy)
+```
+
+#### Implementation of
+
+`FCamera.emitCollisionWith`
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera3d.ts:45](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L45)
 
 ***
 
@@ -1055,6 +1098,51 @@ node\_modules/@types/three/src/core/Object3D.d.ts:254
 
 ***
 
+### onCollisionWith()
+
+> **onCollisionWith**\<`T`\>(`class_`, `callback`): `void`
+
+#### Type Parameters
+
+• **T** *extends* `FComponent`
+
+#### Parameters
+
+• **class\_**
+
+The class to add the callback to.
+
+• **callback**
+
+The callback to add.
+
+#### Returns
+
+`void`
+
+#### Description
+
+Add a callback to be called when a collision occurs.
+
+#### Example
+
+```typescript
+const player = new Player()
+const enemy = new Enemy()
+player.onCollisionWith(Enemy, () => {
+ console.log('Player collided with enemy!')
+})
+
+#### Implementation of
+
+`FCamera.onCollisionWith`
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera3d.ts:38](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L38)
+
+***
+
 ### onFrame()
 
 > `abstract` **onFrame**(`_delta`): `void`
@@ -1078,7 +1166,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:13](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/cameras/FCamera3d.ts#L13)
+[packages/3d/src/cameras/FCamera3d.ts:15](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L15)
 
 ***
 
@@ -1455,7 +1543,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/cameras/FCamera3d.ts#L18)
+[packages/3d/src/cameras/FCamera3d.ts:20](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L20)
 
 ***
 
@@ -1481,7 +1569,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/cameras/FCamera3d.ts#L32)
+[packages/3d/src/cameras/FCamera3d.ts:34](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L34)
 
 ***
 
@@ -1619,7 +1707,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/cameras/FCamera3d.ts#L25)
+[packages/3d/src/cameras/FCamera3d.ts:27](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L27)
 
 ***
 
@@ -2068,6 +2156,27 @@ A vector representing a position in world space.
 node\_modules/@types/three/src/core/Object3D.d.ts:443
 
 ## Properties
+
+### CALLBACKS\_ONCOLLISION
+
+> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+
+Callbacks for when a collision occurs with a given class.
+It is a dictionary where the key is the class name and the value is the callback.
+
+#### Index Signature
+
+ \[`key`: `string`\]: () => `void`[]
+
+#### Implementation of
+
+`FCamera.CALLBACKS_ONCOLLISION`
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/cameras/FCamera3d.ts#L9)
+
+***
 
 ### animations
 

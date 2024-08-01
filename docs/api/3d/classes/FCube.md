@@ -41,9 +41,48 @@ scene.addComponent(cube)
 
 #### Defined in
 
-[packages/3d/src/model/FCube.ts:18](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/model/FCube.ts#L18)
+[packages/3d/src/model/FCube.ts:18](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/model/FCube.ts#L18)
 
 ## Methods
+
+### emitCollisionWith()
+
+> **emitCollisionWith**(`class_`): `void`
+
+#### Parameters
+
+• **class\_**: `any`
+
+The class to emit the
+
+#### Returns
+
+`void`
+
+#### Description
+
+Emit a collision event with a given class.
+
+#### Example
+
+```typescript
+const player = new Player()
+const enemy = new Enemy()
+player.onCollisionWith(Enemy, () => {
+console.log('Player collided with enemy!')
+})
+player.emitCollisionWith(Enemy)
+```
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`emitCollisionWith`](FPolyhedron.md#emitcollisionwith)
+
+#### Defined in
+
+packages/core/dist/index.d.ts:48
+
+***
 
 ### initCollider()
 
@@ -97,7 +136,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:236](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L236)
+[packages/3d/src/FComponent3d.ts:238](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L238)
 
 ***
 
@@ -152,7 +191,48 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:179](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L179)
+[packages/3d/src/FComponent3d.ts:180](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L180)
+
+***
+
+### onCollisionWith()
+
+> **onCollisionWith**(`class_`, `callback`): `void`
+
+#### Parameters
+
+• **class\_**: `any`
+
+The class to add the callback to.
+
+• **callback**
+
+The callback to add.
+
+#### Returns
+
+`void`
+
+#### Description
+
+Add a callback to be called when a collision occurs.
+
+#### Example
+
+```typescript
+const player = new Player()
+const enemy = new Enemy()
+player.onCollisionWith(Enemy, () => {
+ console.log('Player collided with enemy!')
+})
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`onCollisionWith`](FPolyhedron.md#oncollisionwith)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:273](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L273)
 
 ***
 
@@ -179,7 +259,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/model/FCube.ts:22](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/model/FCube.ts#L22)
+[packages/3d/src/model/FCube.ts:22](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/model/FCube.ts#L22)
 
 ***
 
@@ -213,7 +293,7 @@ cube.setColor(0xff0000)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:37](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/model/FPolyhedron.ts#L37)
+[packages/3d/src/model/FPolyhedron.ts:37](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/model/FPolyhedron.ts#L37)
 
 ***
 
@@ -255,7 +335,7 @@ component.setPosition(0, 1, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:92](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L92)
+[packages/3d/src/FComponent3d.ts:93](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L93)
 
 ***
 
@@ -297,7 +377,7 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:127](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L127)
+[packages/3d/src/FComponent3d.ts:128](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L128)
 
 ***
 
@@ -339,7 +419,7 @@ component.setRotationDegree(0, 90, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:147](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L147)
+[packages/3d/src/FComponent3d.ts:148](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L148)
 
 ***
 
@@ -375,9 +455,30 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:108](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L108)
+[packages/3d/src/FComponent3d.ts:109](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L109)
 
 ## Properties
+
+### CALLBACKS\_ONCOLLISION
+
+> **CALLBACKS\_ONCOLLISION**: `object`
+
+Callbacks for when a collision occurs with a given class.
+It is a dictionary where the key is the class name and the value is the callback.
+
+#### Index Signature
+
+ \[`key`: `string`\]: () => `void`[]
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`CALLBACKS_ONCOLLISION`](FPolyhedron.md#callbacks_oncollision)
+
+#### Defined in
+
+packages/core/dist/index.d.ts:12
+
+***
 
 ### collider?
 
@@ -391,7 +492,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L45)
+[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L45)
 
 ***
 
@@ -408,7 +509,7 @@ directly available after the constructor, as a polyhedron is created synchronous
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:15](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/model/FPolyhedron.ts#L15)
+[packages/3d/src/model/FPolyhedron.ts:15](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/model/FPolyhedron.ts#L15)
 
 ***
 
@@ -424,7 +525,7 @@ The position of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L27)
+[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L27)
 
 ***
 
@@ -440,7 +541,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L41)
+[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L41)
 
 ***
 
@@ -456,7 +557,7 @@ The rotation of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L35)
+[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L35)
 
 ***
 
@@ -472,7 +573,7 @@ The scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L31)
+[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L31)
 
 ***
 
@@ -488,4 +589,4 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/80b6fdf057f7308259e47b328813060ab5ca7088/packages/3d/src/FComponent3d.ts#L16)
+[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L16)
