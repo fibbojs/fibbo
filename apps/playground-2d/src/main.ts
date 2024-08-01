@@ -1,11 +1,18 @@
 import './style.css'
-import { FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
+import { F2dShapes, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
 import MySquare from './classes/MySquare'
 
 (async () => {
   const scene = new FScene2d({ debug: true })
   await scene.init()
   await scene.initPhysics()
+
+  // Create the ground
+  const ground = new FSquare(scene)
+  ground.setPosition(0, 0)
+  ground.setScale(10, 0.1)
+  ground.initCollider()
+  scene.addComponent(ground)
 
   const square = new MySquare(scene)
   scene.addComponent(square)
@@ -19,7 +26,9 @@ import MySquare from './classes/MySquare'
 
   const square3 = new FSquare(scene)
   square3.setPosition(4, 1)
-  square3.initCollider()
+  square3.initCollider({
+    shape: F2dShapes.CIRCLE,
+  })
   scene.addComponent(square3)
 
   const square4 = new FSquare(scene)

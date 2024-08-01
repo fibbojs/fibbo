@@ -147,77 +147,103 @@ export abstract class FComponent2d extends FComponent {
 
   /**
    * @description Init a rigid body for the model.
-   * @param position The position of the rigid body.
-   * @param scale The scale of the rigid body.
-   * @param rotation The rotation of the rigid body.
-   * @param shape The shape of the rigid body.
+   * @param options The options for the rigid body.
+   * @param options.position The position of the rigid body.
+   * @param options.scale The scale of the rigid body.
+   * @param options.rotation The rotation of the rigid body.
+   * @param options.shape The shape of the rigid body.
    * @example
    * ```ts
-   * component.initRigidBody(
-   *  new PIXI.Point(0, 0),
-   *  new PIXI.Point(1, 1),
-   *  0,
-   *  F2dShapes.SQUARE
-   * )
+   * component.initRigidBody({
+   *  position: new PIXI.Point(0, 0),
+   *  scale: new PIXI.Point(1, 1),
+   *  rotation: 0,
+   *  shape: F2dShapes.SQUARE
+   * })
    * ```
    */
-  initRigidBody(
-    position: PIXI.PointData = new PIXI.Point(this.position.x, this.position.y),
-    scale: PIXI.PointData = new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
-    rotation: number = this.rotation,
-    shape: F2dShapes = F2dShapes.SQUARE,
-  ): void {
+  initRigidBody(options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    shape?: F2dShapes
+  }): void {
+    // Apply default options
+    const DEFAULT_OPTIONS = {
+      position: new PIXI.Point(this.position.x, this.position.y),
+      scale: new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
+      rotation: this.rotation,
+      shape: F2dShapes.SQUARE,
+    }
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
+      throw new Error('initRigidBody requires position, scale, rotation and shape options')
+
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
     // Create a dynamic rigid-body.
     const rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-      .setTranslation(position.x, position.y)
-      .setRotation(rotation)
+      .setTranslation(options.position.x, options.position.y)
+      .setRotation(options.rotation)
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
     // Create a collider for the rigid body
-    const colliderDesc = shape === F2dShapes.SQUARE
-      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y)
-      : RAPIER.ColliderDesc.ball(scale.x)
+    const colliderDesc = options.shape === F2dShapes.SQUARE
+      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y)
+      : RAPIER.ColliderDesc.ball(options.scale.x)
     this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
   }
 
   /**
    * @description Only init a collider for the component, without a rigid body.
    * This is useful for static objects.
-   * @param position The position of the collider.
-   * @param scale The scale of the collider.
-   * @param rotation The rotation of the collider.
-   * @param shape The shape of the collider.
+   * @param options The options for the collider.
+   * @param options.position The position of the collider.
+   * @param options.scale The scale of the collider.
+   * @param options.rotation The rotation of the collider.
+   * @param options.shape The shape of the collider.
    * @example
    * ```ts
-   * component.initCollider(
-   *  new PIXI.Point(0, 0),
-   *  new PIXI.Point(1, 1),
-   *  0,
-   *  F2dShapes.SQUARE
-   * )
+   * component.initCollider({
+   *  position: new PIXI.Point(0, 0),
+   *  scale: new PIXI.Point(1, 1),
+   *  rotation: 0,
+   *  shape: F2dShapes.SQUARE
+   * })
    * ```
    */
-  initCollider(
-    position: PIXI.PointData = new PIXI.Point(this.position.x, this.position.y),
-    scale: PIXI.PointData = new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
-    rotation: number = this.rotation,
-    shape: F2dShapes = F2dShapes.SQUARE,
-  ): void {
+  initCollider(options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    shape?: F2dShapes
+  }): void {
+    // Apply default options
+    const DEFAULT_OPTIONS = {
+      position: new PIXI.Point(this.position.x, this.position.y),
+      scale: new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
+      rotation: this.rotation,
+      shape: F2dShapes.SQUARE,
+    }
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
+      throw new Error('initCollider requires position, scale, rotation and shape options')
+
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a collider')
 
     // Create the collider
-    const colliderDesc = shape === F2dShapes.SQUARE
-      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y)
-      : RAPIER.ColliderDesc.ball(scale.x)
-    colliderDesc.setTranslation(position.x, position.y)
-    colliderDesc.setRotation(rotation)
+    const colliderDesc = options.shape === F2dShapes.SQUARE
+      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y)
+      : RAPIER.ColliderDesc.ball(options.scale.x)
+    colliderDesc.setTranslation(options.position.x, options.position.y)
+    colliderDesc.setRotation(options.rotation)
     this.collider = this.scene.world.createCollider(colliderDesc)
   }
 }

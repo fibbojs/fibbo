@@ -29,21 +29,27 @@ export class FCircle extends FComponent2d {
     super.onFrame(delta)
   }
 
-  initRigidBody(
-    position?: PIXI.PointData,
-    scale?: PIXI.PointData,
-    rotation?: number,
-    shape: F2dShapes = F2dShapes.CIRCLE,
-  ): void {
-    super.initRigidBody(position, scale, rotation, shape)
+  initRigidBody(options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    shape?: F2dShapes
+  }): void {
+    super.initRigidBody({
+      ...options,
+      shape: F2dShapes.CIRCLE,
+    })
   }
 
-  initCollider(
-    position?: PIXI.PointData,
-    scale?: PIXI.PointData,
-    rotation?: number,
-    shape: F2dShapes = F2dShapes.CIRCLE,
-  ): void {
-    super.initCollider(position, scale, rotation, shape)
+  initCollider(options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    shape?: F2dShapes
+  }): void {
+    super.initCollider({
+      ...options,
+      shape: F2dShapes.CIRCLE,
+    })
   }
 }

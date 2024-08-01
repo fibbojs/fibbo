@@ -38,7 +38,7 @@ scene.camera.lookAt(0, 0, 0)
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/2fc7696bf6e72ce4d25b27bb8d1ec5dce7632448/packages/3d/src/cameras/FFixedCamera.ts#L18)
+[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/854b295adc4e4ce7db9ffee939bdf1bce33bc12e/packages/3d/src/cameras/FFixedCamera.ts#L18)
 
 ## Methods
 
@@ -1080,7 +1080,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/2fc7696bf6e72ce4d25b27bb8d1ec5dce7632448/packages/3d/src/cameras/FFixedCamera.ts#L22)
+[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/854b295adc4e4ce7db9ffee939bdf1bce33bc12e/packages/3d/src/cameras/FFixedCamera.ts#L22)
 
 ***
 
@@ -1461,7 +1461,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/2fc7696bf6e72ce4d25b27bb8d1ec5dce7632448/packages/3d/src/cameras/FCamera3d.ts#L18)
+[packages/3d/src/cameras/FCamera3d.ts:18](https://github.com/fibbojs/fibbo/blob/854b295adc4e4ce7db9ffee939bdf1bce33bc12e/packages/3d/src/cameras/FCamera3d.ts#L18)
 
 ***
 
@@ -1491,7 +1491,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/2fc7696bf6e72ce4d25b27bb8d1ec5dce7632448/packages/3d/src/cameras/FCamera3d.ts#L32)
+[packages/3d/src/cameras/FCamera3d.ts:32](https://github.com/fibbojs/fibbo/blob/854b295adc4e4ce7db9ffee939bdf1bce33bc12e/packages/3d/src/cameras/FCamera3d.ts#L32)
 
 ***
 
@@ -1633,7 +1633,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/2fc7696bf6e72ce4d25b27bb8d1ec5dce7632448/packages/3d/src/cameras/FCamera3d.ts#L25)
+[packages/3d/src/cameras/FCamera3d.ts:25](https://github.com/fibbojs/fibbo/blob/854b295adc4e4ce7db9ffee939bdf1bce33bc12e/packages/3d/src/cameras/FCamera3d.ts#L25)
 
 ***
 

@@ -29,12 +29,27 @@ export class FSphere extends FPolyhedron {
     super.onFrame(_delta)
   }
 
-  initRigidBody(
-    position?: THREE.Vector3,
-    scale?: THREE.Vector3,
-    rotation?: THREE.Vector3,
-    shape: F3dShapes = F3dShapes.SPHERE,
-  ): void {
-    super.initRigidBody(position, scale, rotation, shape)
+  initRigidBody(options?: {
+    position?: THREE.Vector3
+    scale?: THREE.Vector3
+    rotation?: THREE.Vector3
+    shape?: F3dShapes
+  }): void {
+    super.initRigidBody({
+      ...options,
+      shape: F3dShapes.SPHERE,
+    })
+  }
+
+  initCollider(options?: {
+    position?: THREE.Vector3
+    scale?: THREE.Vector3
+    rotation?: THREE.Vector3
+    shape?: F3dShapes
+  }): void {
+    super.initCollider({
+      ...options,
+      shape: F3dShapes.SPHERE,
+    })
   }
 }

@@ -148,13 +148,6 @@ export class FScene2d extends FScene {
     // Initialize Rapier world
     this.world = new RAPIER.World(this.gravity)
 
-    // Create the ground
-    const ground = new FSquare(this)
-    ground.setPosition(0, 0)
-    ground.setScale(10, 0.1)
-    ground.initCollider()
-    this.addComponent(ground)
-
     // onFrame
     this.onFrame((delta) => {
       // Physics

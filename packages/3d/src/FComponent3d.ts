@@ -161,77 +161,108 @@ export abstract class FComponent3d implements FComponent {
 
   /**
    * @description Init a rigid body for the component.
-   * @param position The position of the rigid body. If not defined, it will use the default position of the FComponent3d.
-   * @param scale The scale of the rigid body. If not defined, it will use the default scale of the FComponent3d.
-   * @param rotation The rotation of the rigid body. If not defined, it will use the default rotation of the FComponent3d.
-   * @param shape The shape of the rigid body. If not defined, it will default to F3dShapes.CUBE.
+   * @param options The options for the rigid body.
+   * @param options.position The position of the rigid body. If not defined, it will use the default position of the FComponent3d.
+   * @param options.scale The scale of the rigid body. If not defined, it will use the default scale of the FComponent3d.
+   * @param options.rotation The rotation of the rigid body. If not defined, it will use the default rotation of the FComponent3d.
+   * @param options.shape The shape of the rigid body. If not defined, it will default to F3dShapes.CUBE.
    * @example
    * ```ts
-   * component.initRigidBody(new THREE.Vector3(0, 1, 0), new THREE.Vector3(1, 1, 1), new THREE.Vector3(0, 0, 0), F3dShapes.CUBE)
+   * component.initRigidBody({
+   *  position: new THREE.Vector3(0, 1, 0),
+   *  scale: new THREE.Vector3(1, 1, 1),
+   *  rotation: new THREE.Vector3(0, 0, 0),
+   *  shape: F3dShapes.CUBE
+   * })
    * ```
    */
-  initRigidBody(
-    position: THREE.Vector3 = new THREE.Vector3(this.position.x, this.position.y, this.position.z),
-    scale: THREE.Vector3 = new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
-    rotation: THREE.Vector3 = new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
-    shape: F3dShapes = F3dShapes.CUBE,
-  ): void {
+  initRigidBody(options?: {
+    position?: THREE.Vector3
+    scale?: THREE.Vector3
+    rotation?: THREE.Vector3
+    shape?: F3dShapes
+  }): void {
+    // Apply default options
+    const DEFAULT_OPTIONS = {
+      position: new THREE.Vector3(this.position.x, this.position.y, this.position.z),
+      scale: new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
+      rotation: new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
+      shape: F3dShapes.CUBE,
+    }
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.position || !options.scale || !options.rotation || !options.shape)
+      throw new Error('initRigidBody requires position, scale, rotation and shape options')
+
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
     // Create a dynamic rigid-body.
     const rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-      .setTranslation(position.x, position.y, position.z)
+      .setTranslation(options.position.x, options.position.y, options.position.z)
       .setRotation(
         // Create quaternion from Euler angles
-        new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, rotation.z)),
+        new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
       )
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
     // Create a cuboid collider attached to the dynamic rigidBody.
-    const colliderDesc = shape === F3dShapes.CUBE
-      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y, scale.z)
-      : RAPIER.ColliderDesc.ball(scale.x)
+    const colliderDesc = options.shape === F3dShapes.CUBE
+      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
+      : RAPIER.ColliderDesc.ball(options.scale.x)
     this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
   }
 
   /**
    * @description Only init a collider for the component, without a rigid body.
    * This is useful for static objects.
-   * @param position The position of the collider. If not defined, it will use the default position of the FComponent3d.
-   * @param scale The scale of the collider. If not defined, it will use the default scale of the FComponent3d.
-   * @param rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent3d.
-   * @param shape The shape of the collider. If not defined, it will default to F3dShapes.CUBE.
+   * @param options The options for the collider.
+   * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent3d.
+   * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent3d.
+   * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent3d.
+   * @param options.shape The shape of the collider. If not defined, it will default to F3dShapes.CUBE.
    * @example
    * ```ts
-   * component.initCollider(
-   *  new THREE.Vector3(0, 1, 0),
-   *  new THREE.Vector3(1, 1, 1),
-   *  new THREE.Vector3(0, 0, 0),
-   *  F3dShapes.CUBE
-   * )
+   * component.initCollider({
+   *  position: new THREE.Vector3(0, 1, 0),
+   *  scale: new THREE.Vector3(1, 1, 1),
+   *  rotation: new THREE.Vector3(0, 0, 0),
+   *  shape: F3dShapes.CUBE
+   * })
    * ```
    */
-  initCollider(
-    position: THREE.Vector3 = new THREE.Vector3(this.position.x, this.position.y, this.position.z),
-    scale: THREE.Vector3 = new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
-    rotation: THREE.Vector3 = new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
-    shape: F3dShapes = F3dShapes.CUBE,
-  ): void {
+  initCollider(options?: {
+    position?: THREE.Vector3
+    scale?: THREE.Vector3
+    rotation?: THREE.Vector3
+    shape: F3dShapes
+  }): void {
+    // Apply default options
+    const DEFAULT_OPTIONS = {
+      position: new THREE.Vector3(this.position.x, this.position.y, this.position.z),
+      scale: new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
+      rotation: new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
+      shape: F3dShapes.CUBE,
+    }
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.position || !options.scale || !options.rotation || !options.shape)
+      throw new Error('initCollider requires position, scale, rotation and shape options')
+
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
     // Create a cuboid collider attached to the dynamic rigidBody.
-    const colliderDesc = shape === F3dShapes.CUBE
-      ? RAPIER.ColliderDesc.cuboid(scale.x, scale.y, scale.z)
-      : RAPIER.ColliderDesc.ball(scale.x)
-    colliderDesc.setTranslation(position.x, position.y, position.z)
+    const colliderDesc = options.shape === F3dShapes.CUBE
+      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
+      : RAPIER.ColliderDesc.ball(options.scale.x)
+    colliderDesc.setTranslation(options.position.x, options.position.y, options.position.z)
     colliderDesc.setRotation(
       // Create quaternion from Euler angles
-      new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, rotation.z)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
     )
     this.collider = this.scene.world.createCollider(colliderDesc)
   }
