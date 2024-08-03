@@ -33,7 +33,7 @@ If no components are provided, the group will be empty.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:18](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FGroup.ts#L18)
+[packages/core/src/FGroup.ts:18](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FGroup.ts#L18)
 
 ## Methods
 
@@ -55,7 +55,7 @@ Add a component to the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:25](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FGroup.ts#L25)
+[packages/core/src/FGroup.ts:25](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FGroup.ts#L25)
 
 ***
 
@@ -79,7 +79,7 @@ Update all components in the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:40](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FGroup.ts#L40)
+[packages/core/src/FGroup.ts:40](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FGroup.ts#L40)
 
 ***
 
@@ -101,7 +101,7 @@ Remove a component from the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:32](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FGroup.ts#L32)
+[packages/core/src/FGroup.ts:32](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FGroup.ts#L32)
 
 ## Properties
 
@@ -115,4 +115,4 @@ The components in the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:10](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FGroup.ts#L10)
+[packages/core/src/FGroup.ts:10](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FGroup.ts#L10)

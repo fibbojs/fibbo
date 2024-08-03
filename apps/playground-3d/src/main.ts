@@ -42,11 +42,18 @@ import './style.css'
 
   const gltfCube2 = new GltfCube(scene)
   gltfCube2.setPosition(2, 5, 2)
-  scene.addComponent(gltfCube)
+  scene.addComponent(gltfCube2)
 
   cube.onCollisionWith(gltfCube, () => {
     console.log('Cube collided with the gltfCube!')
   })
+
+  // After 3 seconds, add a third gltfCube
+  setTimeout(() => {
+    const gltfCube3 = new GltfCube(scene)
+    gltfCube3.setPosition(-2, 5, -2)
+    scene.addComponent(gltfCube3)
+  }, 3000)
 
   // Create 8 cubes dynamically in circle from 0 to 2PI
   for (let i = 0; i < 8; i++) {

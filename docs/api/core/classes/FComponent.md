@@ -22,7 +22,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L22)
+[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FComponent.ts#L22)
 
 ## Methods
 
@@ -60,7 +60,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:91](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L91)
+[packages/core/src/FComponent.ts:91](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FComponent.ts#L91)
 
 ***
 
@@ -106,7 +106,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L54)
+[packages/core/src/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FComponent.ts#L54)
 
 ***
 
@@ -131,7 +131,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L31)
+[packages/core/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FComponent.ts#L31)
 
 ## Properties
 
@@ -150,7 +150,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L20)
+[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FComponent.ts#L20)
 
 ***
 
@@ -165,4 +165,4 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L14)
+[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/core/src/FComponent.ts#L14)

@@ -60,7 +60,7 @@ export class FGLTF extends FComponent3d {
       model.startsWith('/') || model.startsWith('http') ? model : `${window.location.href}/models/${modelName}/${model}`,
       // Called when the resource is loaded
       (gltf) => {
-        // Add the object to the scene
+        // Get the mesh from the glTF scene
         this.mesh = gltf.scene as unknown as THREE.Mesh
 
         // If a position is defined, apply it
@@ -75,7 +75,7 @@ export class FGLTF extends FComponent3d {
         if (this.rotation)
           this.mesh.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
 
-        // Call the onLoaded method
+        // Call the onLoaded Callbacks
         this.emitOnLoaded()
       },
       // Called while loading is progressing
@@ -83,14 +83,10 @@ export class FGLTF extends FComponent3d {
       },
       // Called when loading has errors
       (error) => {
-        console.log('An error happened', error)
+        console.log(`An error happened while loading the model : ${model}`)
         console.log(error)
       },
     )
-  }
-
-  onFrame(_delta: number) {
-    super.onFrame(_delta)
   }
 
   /**

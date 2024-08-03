@@ -61,7 +61,7 @@ import { FCube, FGameCamera, FScene3d } from '@fibbojs/3d'
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:57](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L57)
+[packages/3d/src/FScene3d.ts:57](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L57)
 
 ## Methods
 
@@ -87,7 +87,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:187](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L187)
+[packages/3d/src/FScene3d.ts:187](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L187)
 
 ***
 
@@ -101,7 +101,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:68](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L68)
+[packages/3d/src/FScene3d.ts:68](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L68)
 
 ***
 
@@ -115,7 +115,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:124](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L124)
+[packages/3d/src/FScene3d.ts:124](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L124)
 
 ***
 
@@ -137,7 +137,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:164](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L164)
+[packages/3d/src/FScene3d.ts:164](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L164)
 
 ***
 
@@ -163,7 +163,7 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:129
+packages/core/dist/index.d.ts:132
 
 ## Properties
 
@@ -173,7 +173,7 @@ packages/core/dist/index.d.ts:129
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:55](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L55)
+[packages/3d/src/FScene3d.ts:55](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L55)
 
 ***
 
@@ -187,7 +187,7 @@ packages/core/dist/index.d.ts:129
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:46](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L46)
+[packages/3d/src/FScene3d.ts:46](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L46)
 
 ***
 
@@ -203,7 +203,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:42](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L42)
+[packages/3d/src/FScene3d.ts:42](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L42)
 
 ***
 
@@ -213,7 +213,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:48](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L48)
+[packages/3d/src/FScene3d.ts:48](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L48)
 
 ***
 
@@ -223,7 +223,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:47](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L47)
+[packages/3d/src/FScene3d.ts:47](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L47)
 
 ***
 
@@ -233,7 +233,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:52](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L52)
+[packages/3d/src/FScene3d.ts:52](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L52)
 
 ***
 
@@ -259,7 +259,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:50](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L50)
+[packages/3d/src/FScene3d.ts:50](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L50)
 
 ***
 
@@ -273,7 +273,7 @@ The components in the scene.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:120
+packages/core/dist/index.d.ts:123
 
 ***
 
@@ -283,7 +283,7 @@ packages/core/dist/index.d.ts:120
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:53](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L53)
+[packages/3d/src/FScene3d.ts:53](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L53)
 
 ***
 
@@ -293,7 +293,7 @@ packages/core/dist/index.d.ts:120
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:45](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L45)
+[packages/3d/src/FScene3d.ts:45](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L45)
 
 ***
 
@@ -303,7 +303,7 @@ packages/core/dist/index.d.ts:120
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:44](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L44)
+[packages/3d/src/FScene3d.ts:44](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L44)
 
 ***
 
@@ -317,4 +317,4 @@ packages/core/dist/index.d.ts:120
 
 #### Defined in
 
-[packages/3d/src/FScene3d.ts:51](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FScene3d.ts#L51)
+[packages/3d/src/FScene3d.ts:51](https://github.com/fibbojs/fibbo/blob/2b94dbe5ad7abc15b8f9f57b33427a79de05c36b/packages/3d/src/FScene3d.ts#L51)
