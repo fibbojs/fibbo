@@ -37,19 +37,19 @@ The 3D scene where the component will be added.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:50](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L50)
+[packages/3d/src/FComponent3d.ts:50](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L50)
 
 ## Methods
 
 ### emitCollisionWith()
 
-> **emitCollisionWith**(`class_`): `void`
+> **emitCollisionWith**(`classOrObject`): `void`
 
 #### Parameters
 
-• **class\_**: `any`
+• **classOrObject**: `any`
 
-The class to emit the
+The class or object to emit the collision event with.
 
 #### Returns
 
@@ -76,7 +76,7 @@ player.emitCollisionWith(Enemy)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:48
+packages/core/dist/index.d.ts:62
 
 ***
 
@@ -128,7 +128,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:238](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L238)
+[packages/3d/src/FComponent3d.ts:238](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L238)
 
 ***
 
@@ -179,19 +179,19 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:180](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L180)
+[packages/3d/src/FComponent3d.ts:180](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L180)
 
 ***
 
 ### onCollisionWith()
 
-> **onCollisionWith**(`class_`, `callback`): `void`
+> **onCollisionWith**(`classOrObject`, `callback`): `void`
 
 #### Parameters
 
-• **class\_**: `any`
+• **classOrObject**: `any`
 
-The class to add the callback to.
+The class or object to add the callback to.
 
 • **callback**
 
@@ -205,14 +205,23 @@ The callback to add.
 
 Add a callback to be called when a collision occurs.
 
-#### Example
+#### Examples
 
 ```typescript
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with enemy!')
+ console.log('Player collided with an Enemy!')
 })
+```
+
+```typescript
+const player = new Player()
+const enemy = new Enemy()
+player.onCollisionWith(enemy, () => {
+ console.log('Player collided with the enemy!')
+})
+```
 
 #### Overrides
 
@@ -220,7 +229,7 @@ player.onCollisionWith(Enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:273](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L273)
+[packages/3d/src/FComponent3d.ts:273](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L273)
 
 ***
 
@@ -247,7 +256,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:60](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L60)
+[packages/3d/src/FComponent3d.ts:60](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L60)
 
 ***
 
@@ -285,7 +294,7 @@ component.setPosition(0, 1, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:93](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L93)
+[packages/3d/src/FComponent3d.ts:93](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L93)
 
 ***
 
@@ -323,7 +332,7 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:128](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L128)
+[packages/3d/src/FComponent3d.ts:128](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L128)
 
 ***
 
@@ -361,7 +370,7 @@ component.setRotationDegree(0, 90, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:148](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L148)
+[packages/3d/src/FComponent3d.ts:148](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L148)
 
 ***
 
@@ -393,7 +402,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:109](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L109)
+[packages/3d/src/FComponent3d.ts:109](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L109)
 
 ## Properties
 
@@ -401,16 +410,37 @@ Set the scale of the component.
 
 > **CALLBACKS\_ONCOLLISION**: `object`
 
-Callbacks for when a collision occurs with a given class.
-It is a dictionary where the key is the class name and the value is the callback.
-
 #### Index Signature
 
  \[`key`: `string`\]: () => `void`[]
 
+#### Description
+
+Callbacks for when a collision occurs with a given class or object.
+It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
+
 #### Inherited from
 
 `FComponent.CALLBACKS_ONCOLLISION`
+
+#### Defined in
+
+packages/core/dist/index.d.ts:17
+
+***
+
+### ID
+
+> **ID**: `number`
+
+#### Description
+
+Unique identifier for the component.
+It is generated automatically.
+
+#### Inherited from
+
+`FComponent.ID`
 
 #### Defined in
 
@@ -426,7 +456,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L45)
+[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L45)
 
 ***
 
@@ -438,7 +468,7 @@ Mesh
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:21](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L21)
+[packages/3d/src/FComponent3d.ts:21](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L21)
 
 ***
 
@@ -450,7 +480,7 @@ The position of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L27)
+[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L27)
 
 ***
 
@@ -462,7 +492,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L41)
+[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L41)
 
 ***
 
@@ -474,7 +504,7 @@ The rotation of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L35)
+[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L35)
 
 ***
 
@@ -486,7 +516,7 @@ The scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L31)
+[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L31)
 
 ***
 
@@ -498,4 +528,4 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/FComponent3d.ts#L16)
+[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/FComponent3d.ts#L16)

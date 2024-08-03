@@ -168,12 +168,20 @@ export class FScene3d extends FScene {
     // If both colliders are undefined, return
     if (collider1 === undefined && collider2 === undefined)
       return
-    // Call the onCollisionWith callback for the first collider
-    if (collider1)
+    // Call the onCollisionWith callbacks for the first collider
+    if (collider1) {
+      // Call the callback for the class name
       collider1.emitCollisionWith(collider2?.constructor)
-    // Call the onCollisionWith callback for the second collider
-    if (collider2)
+      // Call the callback for the specific object
+      collider1.emitCollisionWith(collider2)
+    }
+    // Call the onCollisionWith callbacks for the second collider
+    if (collider2) {
+      // Call the callback for the class name
       collider2.emitCollisionWith(collider1?.constructor)
+      // Call the callback for the specific object
+      collider2?.emitCollisionWith(collider1)
+    }
   }
 
   addComponent(component: FComponent3d) {

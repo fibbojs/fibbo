@@ -26,19 +26,19 @@ The base class for cameras in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/core/src/FCamera.ts#L7)
+[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FCamera.ts#L7)
 
 ## Methods
 
 ### emitCollisionWith()
 
-> **emitCollisionWith**(`class_`): `void`
+> **emitCollisionWith**(`classOrObject`): `void`
 
 #### Parameters
 
-• **class\_**: `any`
+• **classOrObject**: `any`
 
-The class to emit the
+The class or object to emit the collision event with.
 
 #### Returns
 
@@ -48,15 +48,18 @@ The class to emit the
 
 Emit a collision event with a given class.
 
-#### Example
+#### Examples
 
 ```typescript
 const player = new Player()
 const enemy = new Enemy()
-player.onCollisionWith(Enemy, () => {
-console.log('Player collided with enemy!')
-})
 player.emitCollisionWith(Enemy)
+```
+
+```typescript
+const player = new Player()
+const enemy = new Enemy()
+player.emitCollisionWith(enemy)
 ```
 
 #### Inherited from
@@ -65,19 +68,19 @@ player.emitCollisionWith(Enemy)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:56](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/core/src/FComponent.ts#L56)
+[packages/core/src/FComponent.ts:91](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L91)
 
 ***
 
 ### onCollisionWith()
 
-> **onCollisionWith**(`class_`, `callback`): `void`
+> **onCollisionWith**(`classOrObject`, `callback`): `void`
 
 #### Parameters
 
-• **class\_**: `any`
+• **classOrObject**: `any`
 
-The class to add the callback to.
+The class or object to add the callback to.
 
 • **callback**
 
@@ -91,14 +94,23 @@ The callback to add.
 
 Add a callback to be called when a collision occurs.
 
-#### Example
+#### Examples
 
 ```typescript
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with enemy!')
+ console.log('Player collided with an Enemy!')
 })
+```
+
+```typescript
+const player = new Player()
+const enemy = new Enemy()
+player.onCollisionWith(enemy, () => {
+ console.log('Player collided with the enemy!')
+})
+```
 
 #### Inherited from
 
@@ -106,7 +118,7 @@ player.onCollisionWith(Enemy, () => {
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/core/src/FComponent.ts#L33)
+[packages/core/src/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L54)
 
 ***
 
@@ -135,7 +147,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:19](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/core/src/FComponent.ts#L19)
+[packages/core/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L31)
 
 ## Properties
 
@@ -143,12 +155,14 @@ Should be called every frame.
 
 > **CALLBACKS\_ONCOLLISION**: `object` = `{}`
 
-Callbacks for when a collision occurs with a given class.
-It is a dictionary where the key is the class name and the value is the callback.
-
 #### Index Signature
 
  \[`key`: `string`\]: () => `void`[]
+
+#### Description
+
+Callbacks for when a collision occurs with a given class or object.
+It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
 
 #### Inherited from
 
@@ -156,4 +170,23 @@ It is a dictionary where the key is the class name and the value is the callback
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:9](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/core/src/FComponent.ts#L9)
+[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L20)
+
+***
+
+### ID
+
+> **ID**: `number`
+
+#### Description
+
+Unique identifier for the component.
+It is generated automatically.
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`ID`](FComponent.md#id)
+
+#### Defined in
+
+[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/core/src/FComponent.ts#L14)

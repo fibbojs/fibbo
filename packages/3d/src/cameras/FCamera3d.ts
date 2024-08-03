@@ -1,11 +1,12 @@
 import * as THREE from 'three'
-import type { FCamera, FComponent } from '@fibbojs/core'
+import { FCamera } from '@fibbojs/core'
 
 /**
  * @description The base class for cameras in FibboJS.
  * @category Camera
  */
 export abstract class FCamera3d extends THREE.PerspectiveCamera implements FCamera {
+  declare public ID: number
   public CALLBACKS_ONCOLLISION: { [key: string]: (() => void)[] } = {}
 
   constructor() {
@@ -35,18 +36,14 @@ export abstract class FCamera3d extends THREE.PerspectiveCamera implements FCame
     this.rotation.set(x, y, z)
   }
 
-  onCollisionWith<T extends FComponent>(class_: { new(): T }, callback: () => void) {
-    if (!this.CALLBACKS_ONCOLLISION[class_.name]) {
-      this.CALLBACKS_ONCOLLISION[class_.name] = []
-    }
-    this.CALLBACKS_ONCOLLISION[class_.name].push(callback)
+  onCollisionWith(
+    classOrObject: any,
+    callback: () => void,
+  ) {
+    FCamera.prototype.onCollisionWith.call(this, classOrObject, callback)
   }
 
-  emitCollisionWith<T extends FComponent>(class_: { new(): T }) {
-    if (this.CALLBACKS_ONCOLLISION[class_.name]) {
-      this.CALLBACKS_ONCOLLISION[class_.name].forEach((callback) => {
-        callback()
-      })
-    }
+  emitCollisionWith(classOrObject: any) {
+    FCamera.prototype.emitCollisionWith.call(this, classOrObject)
   }
 }

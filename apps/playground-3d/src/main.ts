@@ -25,7 +25,7 @@ import './style.css'
     shape: F3dShapes.SPHERE,
   })
   cube.onCollisionWith(FSphere, () => {
-    console.log('Cube collided with sphere!')
+    console.log('Cube collided with a Sphere!')
   })
   scene.addComponent(cube)
 
@@ -39,6 +39,14 @@ import './style.css'
 
   const gltfCube = new GltfCube(scene)
   scene.addComponent(gltfCube)
+
+  const gltfCube2 = new GltfCube(scene)
+  gltfCube2.setPosition(2, 5, 2)
+  scene.addComponent(gltfCube)
+
+  cube.onCollisionWith(gltfCube, () => {
+    console.log('Cube collided with the gltfCube!')
+  })
 
   // Create 8 cubes dynamically in circle from 0 to 2PI
   for (let i = 0; i < 8; i++) {

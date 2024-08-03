@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[packages/3d/src/types/F3dShapes.ts:3](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/types/F3dShapes.ts#L3)
+[packages/3d/src/types/F3dShapes.ts:3](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/types/F3dShapes.ts#L3)
 
 ***
 
@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[packages/3d/src/types/F3dShapes.ts:4](https://github.com/fibbojs/fibbo/blob/b0ef6c5de7076d583a0c1746364b2ee4ba074b5e/packages/3d/src/types/F3dShapes.ts#L4)
+[packages/3d/src/types/F3dShapes.ts:4](https://github.com/fibbojs/fibbo/blob/e7d9273a28a254e3c2d88f8fb630ca0c812fc191/packages/3d/src/types/F3dShapes.ts#L4)
