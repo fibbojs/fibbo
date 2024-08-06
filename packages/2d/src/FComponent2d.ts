@@ -47,19 +47,42 @@ export abstract class FComponent2d extends FComponent {
 
   /**
    * @param scene The 2D scene where the component will be added.
+   * @param options The options for the component.
+   * @param options.position The position of the component.
+   * @param options.scale The scale of the component.
+   * @param options.rotation The rotation of the component.
+   * @param options.rotationDegree The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
    */
-  constructor(scene: FScene2d) {
+  constructor(scene: FScene2d, options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    rotationDegree?: number
+  }) {
     super()
     this.scene = scene
     // Create a new PIXI container
     this.container = new Container()
-    // Set the default values
-    this.position = new PIXI.Point(0, 5)
-    this.scale = new PIXI.Point(1, 1)
-    this.rotation = 0
+
+    // Define default options
+    const DEFAULT_OPTIONS = {
+      position: new PIXI.Point(0, 5),
+      scale: new PIXI.Point(1, 1),
+      rotation: 0,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.position || !options.scale || (options.rotation === undefined && options.rotationDegree === undefined))
+      throw new Error('FComponent2d requires position, scale and rotation options')
+
+    // Set the transform values
+    this.position = options.position
+    this.scale = options.scale
+    this.rotation = options.rotationDegree ? options.rotationDegree * (Math.PI / 180) : options.rotation ?? 0
     // Set the container values
     this.container.position.set(this.position.x, this.position.y)
-    this.container.scale.set(this.scale.x, this.scale.y)
+    this.container.scale.set(this.scale.x * 100, this.scale.y * 100)
     this.container.rotation = this.rotation
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)

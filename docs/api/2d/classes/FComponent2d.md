@@ -20,13 +20,33 @@ The base class for all 2D components in FibboJS.
 
 ### new FComponent2d()
 
-> **new FComponent2d**(`scene`): [`FComponent2d`](FComponent2d.md)
+> **new FComponent2d**(`scene`, `options`?): [`FComponent2d`](FComponent2d.md)
 
 #### Parameters
 
 • **scene**: [`FScene2d`](FScene2d.md)
 
 The 2D scene where the component will be added.
+
+• **options?**
+
+The options for the component.
+
+• **options.position?**: `PointData`
+
+The position of the component.
+
+• **options.rotation?**: `number`
+
+The rotation of the component.
+
+• **options.rotationDegree?**: `number`
+
+The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
+
+• **options.scale?**: `PointData`
+
+The scale of the component.
 
 #### Returns
 
@@ -38,7 +58,7 @@ The 2D scene where the component will be added.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:51](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L51)
+[packages/2d/src/FComponent2d.ts:56](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L56)
 
 ## Methods
 
@@ -132,7 +152,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:220](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L220)
+[packages/2d/src/FComponent2d.ts:243](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L243)
 
 ***
 
@@ -183,7 +203,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:165](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L165)
+[packages/2d/src/FComponent2d.ts:188](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L188)
 
 ***
 
@@ -233,7 +253,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:252](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L252)
+[packages/2d/src/FComponent2d.ts:275](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L275)
 
 ***
 
@@ -260,7 +280,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:68](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L68)
+[packages/2d/src/FComponent2d.ts:91](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L91)
 
 ***
 
@@ -294,7 +314,7 @@ component.setPosition(0, 0)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:100](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L100)
+[packages/2d/src/FComponent2d.ts:123](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L123)
 
 ***
 
@@ -324,7 +344,7 @@ component.setRotation(Math.PI / 2)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:131](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L131)
+[packages/2d/src/FComponent2d.ts:154](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L154)
 
 ***
 
@@ -354,7 +374,7 @@ component.setRotationDegree(90)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:144](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L144)
+[packages/2d/src/FComponent2d.ts:167](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L167)
 
 ***
 
@@ -388,7 +408,7 @@ component.setScale(1, 1)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:114](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L114)
+[packages/2d/src/FComponent2d.ts:137](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L137)
 
 ## Properties
 
@@ -442,7 +462,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:46](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L46)
+[packages/2d/src/FComponent2d.ts:46](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L46)
 
 ***
 
@@ -454,7 +474,7 @@ PIXI container
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L22)
+[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L22)
 
 ***
 
@@ -466,7 +486,7 @@ Position of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:28](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L28)
+[packages/2d/src/FComponent2d.ts:28](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L28)
 
 ***
 
@@ -478,7 +498,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:42](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L42)
+[packages/2d/src/FComponent2d.ts:42](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L42)
 
 ***
 
@@ -490,7 +510,7 @@ Rotation of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:36](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L36)
+[packages/2d/src/FComponent2d.ts:36](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L36)
 
 ***
 
@@ -502,7 +522,7 @@ Scale of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:32](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L32)
+[packages/2d/src/FComponent2d.ts:32](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L32)
 
 ***
 
@@ -514,4 +534,4 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:17](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/2d/src/FComponent2d.ts#L17)
+[packages/2d/src/FComponent2d.ts:17](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/2d/src/FComponent2d.ts#L17)

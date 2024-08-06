@@ -8,43 +8,49 @@ import MySquare from './classes/MySquare'
   await scene.initPhysics()
 
   // Create the ground
-  const ground = new FSquare(scene)
-  ground.setPosition(0, 0)
-  ground.setScale(10, 0.1)
+  const ground = new FSquare(scene, {
+    position: { x: 0, y: 0 },
+    scale: { x: 10, y: 0.1 },
+  })
   ground.initCollider()
   scene.addComponent(ground)
 
   const square = new MySquare(scene)
   scene.addComponent(square)
 
-  const square2 = new FSquare(scene)
-  square2.setPosition(0, 3)
-  square2.setScale(0.5, 0.5)
-  square2.setRotationDegree(45)
+  const square2 = new FSquare(scene, {
+    position: { x: 0, y: 3 },
+    scale: { x: 0.5, y: 0.5 },
+    rotationDegree: 45,
+  })
   square2.initCollider()
   scene.addComponent(square2)
 
-  const square3 = new FSquare(scene)
-  square3.setPosition(4, 1)
+  const square3 = new FSquare(scene, {
+    position: { x: 4, y: 1 },
+  })
   square3.initCollider({
     shape: F2dShapes.CIRCLE,
   })
   scene.addComponent(square3)
 
-  const square4 = new FSquare(scene)
-  square4.setPosition(-2.2, 1)
-  square4.setScale(0.5, 0.5)
+  const square4 = new FSquare(scene, {
+    position: { x: -2.2, y: 1 },
+    scale: { x: 0.5, y: 0.5 },
+  })
   square4.initCollider()
   scene.addComponent(square4)
 
-  const square5 = new FSquare(scene)
-  square5.setPosition(1, 2)
-  square5.setScale(0.5, 0.5)
+  const square5 = new FSquare(scene, {
+    position: { x: 1, y: 2 },
+    scale: { x: 0.5, y: 0.5 },
+  })
   scene.addComponent(square5)
 
-  const circle = new FCircle(scene)
-  circle.setPosition(0, 3)
-  circle.setScale(1, 1)
+  const circle = new FCircle(scene, {
+    position: { x: 0, y: 3 },
+    scale: { x: 1, y: 1 },
+  })
   circle.initRigidBody()
   scene.addComponent(circle)
 

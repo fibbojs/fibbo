@@ -41,9 +41,31 @@ export class FGLTF extends FComponent3d {
    * @param scene The 3D scene where the model will be added.
    * @param model The name of the model file to load.
    * Should be a GLTF or GLB file.
+   * @param options The options for the component.
+   * @param options.position The position of the component.
+   * @param options.position.x The position on the x-axis.
+   * @param options.position.y The position on the y-axis.
+   * @param options.position.z The position on the z-axis.
+   * @param options.scale The scale of the component.
+   * @param options.scale.x The scale on the x-axis.
+   * @param options.scale.y The scale on the y-axis.
+   * @param options.scale.z The scale on the z-axis.
+   * @param options.rotation The rotation of the component.
+   * @param options.rotation.x The rotation in radians on the x-axis.
+   * @param options.rotation.y The rotation in radians on the y-axis.
+   * @param options.rotation.z The rotation in radians on the z-axis.
+   * @param options.rotationDegree The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
+   * @param options.rotationDegree.x The rotation in degrees on the x-axis.
+   * @param options.rotationDegree.y The rotation in degrees on the y-axis.
+   * @param options.rotationDegree.z The rotation in degrees on the z-axis.
    */
-  constructor(scene: FScene3d, model: string) {
-    super(scene)
+  constructor(scene: FScene3d, model: string, options?: {
+    position?: { x: number, y: number, z: number }
+    scale?: { x: number, y: number, z: number }
+    rotation?: { x: number, y: number, z: number }
+    rotationDegree?: { x: number, y: number, z: number }
+  }) {
+    super(scene, options)
     // Create GLTF Loader
     const loader = new GLTFLoader()
     /*

@@ -10,24 +10,27 @@ import './style.css'
   await scene.initPhysics()
 
   // Create a ground
-  const ground = new FCube(scene)
-  ground.setScale(15, 0.1, 15)
-  ground.setPosition(0, -0.1, 0)
+  const ground = new FCube(scene, {
+    position: { x: 0, y: -0.1, z: 0 },
+    scale: { x: 15, y: 0.1, z: 15 },
+  })
   ground.initCollider()
   ground.setColor(0x1F1F1F)
   scene.addComponent(ground)
 
   // Create a cube
-  const cube = new FCube(scene)
+  const cube = new FCube(scene, {
+    position: { x: -5, y: 5, z: 5 },
+  })
   cube.setColor(0xA0FFA0)
-  cube.setPosition(-5, 5, 5)
   cube.initRigidBody({
     shape: F3dShapes.SPHERE,
   })
   scene.addComponent(cube)
 
-  const sphere = new FSphere(scene)
-  sphere.setPosition(2, 4, -2)
+  const sphere = new FSphere(scene, {
+    position: { x: 2, y: 4, z: -2 },
+  })
   sphere.initRigidBody()
   scene.addComponent(sphere)
 

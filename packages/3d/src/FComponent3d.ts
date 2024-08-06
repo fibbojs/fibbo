@@ -46,15 +46,55 @@ export abstract class FComponent3d extends FComponent {
 
   /**
    * @param scene The 3D scene where the component will be added.
+   * @param options The options for the component.
+   * @param options.position The position of the component.
+   * @param options.position.x The position on the x-axis.
+   * @param options.position.y The position on the y-axis.
+   * @param options.position.z The position on the z-axis.
+   * @param options.scale The scale of the component.
+   * @param options.scale.x The scale on the x-axis.
+   * @param options.scale.y The scale on the y-axis.
+   * @param options.scale.z The scale on the z-axis.
+   * @param options.rotation The rotation of the component.
+   * @param options.rotation.x The rotation in radians on the x-axis.
+   * @param options.rotation.y The rotation in radians on the y-axis.
+   * @param options.rotation.z The rotation in radians on the z-axis.
+   * @param options.rotationDegree The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
+   * @param options.rotationDegree.x The rotation in degrees on the x-axis.
+   * @param options.rotationDegree.y The rotation in degrees on the y-axis.
+   * @param options.rotationDegree.z The rotation in degrees on the z-axis.
    */
-  constructor(scene: FScene3d) {
+  constructor(scene: FScene3d, options?: {
+    position?: { x: number, y: number, z: number }
+    scale?: { x: number, y: number, z: number }
+    rotation?: { x: number, y: number, z: number }
+    rotationDegree?: { x: number, y: number, z: number }
+  }) {
     super()
     this.scene = scene
 
-    // Define default values for position, scale and rotation
-    this.position = new THREE.Vector3(0, 1, 0)
-    this.scale = new THREE.Vector3(1, 1, 1)
-    this.rotation = new THREE.Vector3(0, 0, 0)
+    // Define default values
+    const DEFAULT_OPTIONS = {
+      position: new THREE.Vector3(0, 1, 0),
+      scale: new THREE.Vector3(1, 1, 1),
+      rotation: new THREE.Vector3(0, 0, 0),
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.position || !options.scale || (!options.rotation && !options.rotationDegree))
+      throw new Error('FComponent3d requires position, scale and rotation options')
+
+    // Set the transform values
+    this.position = new THREE.Vector3(options.position.x, options.position.y, options.position.z)
+    this.scale = new THREE.Vector3(options.scale.x, options.scale.y, options.scale.z)
+    this.rotation = options.rotationDegree
+      ? new THREE.Vector3(
+        THREE.MathUtils.degToRad(options.rotationDegree.x),
+        THREE.MathUtils.degToRad(options.rotationDegree.y),
+        THREE.MathUtils.degToRad(options.rotationDegree.z),
+      )
+      : options.rotation ? new THREE.Vector3(options.rotation.x, options.rotation.y, options.rotation.z) : new THREE.Vector3(0, 0, 0)
   }
 
   onFrame(_delta: number): void {

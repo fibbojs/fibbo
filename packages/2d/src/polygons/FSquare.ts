@@ -16,12 +16,17 @@ import type { FScene2d } from '../FScene2d'
  * ```
  */
 export class FSquare extends FComponent2d {
-  constructor(scene: FScene2d) {
-    super(scene)
+  constructor(scene: FScene2d, options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    rotationDegree?: number
+  }) {
+    super(scene, options)
     // Create a square
     this.container = new PIXI.Graphics()
       .rect(this.position.x, this.position.y, this.scale.x * 100, this.scale.y * 100)
-      .fill(new PIXI.FillGradient(0, 0, 100, 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
+      .fill(new PIXI.FillGradient(0, 0, this.scale.x * 100, this.scale.y * 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
   }

@@ -19,13 +19,57 @@ The base class for all 3D objects in FibboJS.
 
 ### new FComponent3d()
 
-> **new FComponent3d**(`scene`): [`FComponent3d`](FComponent3d.md)
+> **new FComponent3d**(`scene`, `options`?): [`FComponent3d`](FComponent3d.md)
 
 #### Parameters
 
 • **scene**: [`FScene3d`](FScene3d.md)
 
 The 3D scene where the component will be added.
+
+• **options?**
+
+The options for the component.
+
+• **options.position?**
+
+The position of the component.
+
+• **options.position.x?**: `number`
+
+• **options.position.y?**: `number`
+
+• **options.position.z?**: `number`
+
+• **options.rotation?**
+
+The rotation of the component.
+
+• **options.rotation.x?**: `number`
+
+• **options.rotation.y?**: `number`
+
+• **options.rotation.z?**: `number`
+
+• **options.rotationDegree?**
+
+The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
+
+• **options.rotationDegree.x?**: `number`
+
+• **options.rotationDegree.y?**: `number`
+
+• **options.rotationDegree.z?**: `number`
+
+• **options.scale?**
+
+The scale of the component.
+
+• **options.scale.x?**: `number`
+
+• **options.scale.y?**: `number`
+
+• **options.scale.z?**: `number`
 
 #### Returns
 
@@ -37,7 +81,7 @@ The 3D scene where the component will be added.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:50](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L50)
+[packages/3d/src/FComponent3d.ts:67](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L67)
 
 ## Methods
 
@@ -131,7 +175,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:238](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L238)
+[packages/3d/src/FComponent3d.ts:278](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L278)
 
 ***
 
@@ -182,7 +226,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:180](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L180)
+[packages/3d/src/FComponent3d.ts:220](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L220)
 
 ***
 
@@ -232,7 +276,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:273](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L273)
+[packages/3d/src/FComponent3d.ts:313](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L313)
 
 ***
 
@@ -259,7 +303,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:60](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L60)
+[packages/3d/src/FComponent3d.ts:100](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L100)
 
 ***
 
@@ -297,7 +341,7 @@ component.setPosition(0, 1, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:93](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L93)
+[packages/3d/src/FComponent3d.ts:133](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L133)
 
 ***
 
@@ -335,7 +379,7 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:128](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L128)
+[packages/3d/src/FComponent3d.ts:168](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L168)
 
 ***
 
@@ -373,7 +417,7 @@ component.setRotationDegree(0, 90, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:148](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L148)
+[packages/3d/src/FComponent3d.ts:188](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L188)
 
 ***
 
@@ -405,7 +449,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:109](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L109)
+[packages/3d/src/FComponent3d.ts:149](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L149)
 
 ## Properties
 
@@ -459,7 +503,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L45)
+[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L45)
 
 ***
 
@@ -471,7 +515,7 @@ Mesh
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:21](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L21)
+[packages/3d/src/FComponent3d.ts:21](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L21)
 
 ***
 
@@ -483,7 +527,7 @@ The position of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L27)
+[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L27)
 
 ***
 
@@ -495,7 +539,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L41)
+[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L41)
 
 ***
 
@@ -507,7 +551,7 @@ The rotation of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L35)
+[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L35)
 
 ***
 
@@ -519,7 +563,7 @@ The scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L31)
+[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L31)
 
 ***
 
@@ -531,4 +575,4 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/1870009ccb8291e46b08992d55a2056e8625aa96/packages/3d/src/FComponent3d.ts#L16)
+[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/8d1d863e977b4e67cd08aa4b38688ea89d320e56/packages/3d/src/FComponent3d.ts#L16)

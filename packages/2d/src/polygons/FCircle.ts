@@ -17,8 +17,13 @@ import { F2dShapes } from '../types/F2dShapes'
  * ```
  */
 export class FCircle extends FComponent2d {
-  constructor(scene: FScene2d) {
-    super(scene)
+  constructor(scene: FScene2d, options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    rotationDegree?: number
+  }) {
+    super(scene, options)
     // Create a circle
     this.container = new PIXI.Graphics()
       .circle(this.position.x, this.position.y, this.scale.x * 100 / 2)

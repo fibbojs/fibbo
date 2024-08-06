@@ -14,10 +14,15 @@ export abstract class FPolyhedron extends FComponent3d {
    */
   mesh: THREE.Mesh
 
-  constructor(scene: FScene3d) {
-    super(scene)
+  constructor(scene: FScene3d, options?: {
+    position?: { x: number, y: number, z: number }
+    scale?: { x: number, y: number, z: number }
+    rotation?: { x: number, y: number, z: number }
+    rotationDegree?: { x: number, y: number, z: number }
+  }) {
+    super(scene, options)
     // Create a cube
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
+    const geometry = new THREE.BoxGeometry(this.scale.x, this.scale.y, this.scale.z)
     const material = new THREE.MeshBasicMaterial({ color: 0x666666 })
     this.mesh = new THREE.Mesh(geometry, material)
   }

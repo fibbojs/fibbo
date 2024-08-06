@@ -25,8 +25,13 @@ export class FSprite extends FComponent2d {
    */
   public CALLBACKS_ONLOADED: (() => void)[] = []
 
-  constructor(scene: FScene2d, texture: string) {
-    super(scene)
+  constructor(scene: FScene2d, texture: string, options?: {
+    position?: PIXI.PointData
+    scale?: PIXI.PointData
+    rotation?: number
+    rotationDegree?: number
+  }) {
+    super(scene, options)
     // Define the texture and container while loading
     this.texture = PIXI.Texture.EMPTY
     this.container = new PIXI.Graphics()

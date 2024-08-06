@@ -17,8 +17,13 @@ import { FPolyhedron } from './FPolyhedron'
  * ```
  */
 export class FSphere extends FPolyhedron {
-  constructor(scene: FScene3d) {
-    super(scene)
+  constructor(scene: FScene3d, options?: {
+    position?: { x: number, y: number, z: number }
+    scale?: { x: number, y: number, z: number }
+    rotation?: { x: number, y: number, z: number }
+    rotationDegree?: { x: number, y: number, z: number }
+  }) {
+    super(scene, options)
     // Create a cube
     const geometry = new THREE.SphereGeometry(0.5, 32, 32)
     const material = new THREE.MeshBasicMaterial({ color: 0x666666 })
