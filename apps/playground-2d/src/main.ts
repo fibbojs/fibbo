@@ -53,6 +53,12 @@ import MySquare from './classes/MySquare'
     sprite.setPosition(2, 3)
     sprite.initRigidBody()
     sprite.setScaleWidth(0.5)
+    sprite.onCollisionWith(FSquare, () => {
+      console.log('Sprite collided with a square!')
+    })
+    sprite.onCollisionWith(circle, () => {
+      console.log('Sprite collided with the circle!')
+    })
   })
   scene.addComponent(sprite)
 

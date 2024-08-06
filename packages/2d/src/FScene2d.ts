@@ -2,8 +2,8 @@ import type { DebugRenderBuffers, World } from '@dimforge/rapier2d'
 import { FScene } from '@fibbojs/core'
 import * as PIXI from 'pixi.js'
 import { Viewport } from 'pixi-viewport'
+import type RAPIER from '@dimforge/rapier2d'
 import type { FComponent2d } from './FComponent2d'
-import { FSquare } from './polygons/FSquare'
 import { FSprite } from './sprite/FSprite'
 
 /**
@@ -26,17 +26,18 @@ import { FSprite } from './sprite/FSprite'
  */
 export class FScene2d extends FScene {
   components: FComponent2d[]
-  declare world?: World
-  // Pixi.js application
+  // Pixi.js
   app: PIXI.Application
   viewport?: Viewport
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
+  declare world?: World
+  declare eventQueue: RAPIER.EventQueue
+  rapierToComponent: Map<number, FComponent2d> = new Map()
   // onReadyCallbacks
   public onReadyCallbacks: (() => void)[] = []
-  // Debug lines
+  // Debug
   DEBUG_LINES: PIXI.Graphics[] = []
-  // Debug mode
   DEBUG_MODE: boolean = false
 
   constructor(options: { debug?: boolean } = { debug: false }) {
@@ -148,18 +149,59 @@ export class FScene2d extends FScene {
     // Initialize Rapier world
     this.world = new RAPIER.World(this.gravity)
 
+    // Initialize Rapier event queue
+    this.eventQueue = new RAPIER.EventQueue(true)
+
     // onFrame
     this.onFrame((delta) => {
       // Physics
       if (this.world) {
         this.world.timestep = delta
-        this.world.step()
+        this.world.step(this.eventQueue)
+
+        // Drain collision events
+        this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {
+          this.handleCollision(handle1, handle2, started)
+        })
       }
     })
   }
 
+  /**
+   * @description Handle a collision event between two colliders.
+   * @param handle1 The handle of the first collider
+   * @param handle2 The handle of the second collider
+   * @param start If the collision has started or ended
+   */
+  handleCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, start: boolean) {
+    // Get the components from the handles
+    const collider1 = this.rapierToComponent.get(handle1)
+    const collider2 = this.rapierToComponent.get(handle2)
+    // If both colliders are undefined, return
+    if (collider1 === undefined && collider2 === undefined)
+      return
+    // If the collision is a start event, a collision has started
+    if (start) {
+      // Call the onCollisionWith callbacks for the first collider
+      if (collider1) {
+        // Call the callback for the class name
+        collider1.emitCollisionWith(collider2?.constructor)
+        // Call the callback for the specific object
+        collider1.emitCollisionWith(collider2)
+      }
+      // Call the onCollisionWith callbacks for the second collider
+      if (collider2) {
+        // Call the callback for the class name
+        collider2.emitCollisionWith(collider1?.constructor)
+        // Call the callback for the specific object
+        collider2?.emitCollisionWith(collider1)
+      }
+    }
+  }
+
   addComponent(component: FComponent2d) {
     this.components.push(component)
+
     // Detect if the FComponent2d is a FSprite instance
     if (component instanceof FSprite) {
       // Wait for the sprite to be loaded before adding it to the scene
@@ -173,6 +215,10 @@ export class FScene2d extends FScene {
         else {
           this.viewport?.addChild(component.container)
         }
+
+        // If a collider is defined, add it's handle to the rapierToComponent map
+        if (component.collider?.handle !== undefined)
+          this.rapierToComponent.set(component.collider?.handle, component)
       })
     }
     else {
@@ -187,6 +233,10 @@ export class FScene2d extends FScene {
         this.viewport?.addChild(component.container)
       }
     }
+
+    // If a collider is defined, add it's handle to the rapierToComponent map
+    if (component.collider?.handle !== undefined)
+      this.rapierToComponent.set(component.collider?.handle, component)
   }
 
   onReady(callback: () => void) {

@@ -24,9 +24,6 @@ import './style.css'
   cube.initRigidBody({
     shape: F3dShapes.SPHERE,
   })
-  cube.onCollisionWith(FSphere, () => {
-    console.log('Cube collided with a Sphere!')
-  })
   scene.addComponent(cube)
 
   const sphere = new FSphere(scene)
@@ -44,8 +41,11 @@ import './style.css'
   gltfCube2.setPosition(2, 5, 2)
   scene.addComponent(gltfCube2)
 
-  cube.onCollisionWith(gltfCube, () => {
-    console.log('Cube collided with the gltfCube!')
+  cube.onCollisionWith(GltfCube, () => {
+    console.log('Cube collided with a GltfCube !')
+  })
+  cube.onCollisionWith(sphere, () => {
+    console.log('Cube collided with the sphere!')
   })
 
   // After 3 seconds, add a third gltfCube

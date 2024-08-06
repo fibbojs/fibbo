@@ -156,31 +156,40 @@ export class FScene3d extends FScene {
 
       // Drain collision events
       this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {
-        this.onCollision(handle1, handle2, started)
+        this.handleCollision(handle1, handle2, started)
       })
     })
   }
 
-  onCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, _: boolean) {
+  /**
+   * @description Handle a collision event between two colliders.
+   * @param handle1 The handle of the first collider
+   * @param handle2 The handle of the second collider
+   * @param start If the collision has started or ended
+   */
+  handleCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, start: boolean) {
     // Get the components from the handles
     const collider1 = this.rapierToComponent.get(handle1)
     const collider2 = this.rapierToComponent.get(handle2)
     // If both colliders are undefined, return
     if (collider1 === undefined && collider2 === undefined)
       return
-    // Call the onCollisionWith callbacks for the first collider
-    if (collider1) {
-      // Call the callback for the class name
-      collider1.emitCollisionWith(collider2?.constructor)
-      // Call the callback for the specific object
-      collider1.emitCollisionWith(collider2)
-    }
-    // Call the onCollisionWith callbacks for the second collider
-    if (collider2) {
-      // Call the callback for the class name
-      collider2.emitCollisionWith(collider1?.constructor)
-      // Call the callback for the specific object
-      collider2?.emitCollisionWith(collider1)
+    // If the collision is a start event, a collision has started
+    if (start) {
+      // Call the onCollisionWith callbacks for the first collider
+      if (collider1) {
+        // Call the callback for the class name
+        collider1.emitCollisionWith(collider2?.constructor)
+        // Call the callback for the specific object
+        collider1.emitCollisionWith(collider2)
+      }
+      // Call the onCollisionWith callbacks for the second collider
+      if (collider2) {
+        // Call the callback for the class name
+        collider2.emitCollisionWith(collider1?.constructor)
+        // Call the callback for the specific object
+        collider2?.emitCollisionWith(collider1)
+      }
     }
   }
 

@@ -248,4 +248,13 @@ export abstract class FComponent2d extends FComponent {
     // Create the collider
     this.collider = this.scene.world.createCollider(colliderDesc)
   }
+
+  onCollisionWith(classOrObject: any, callback: () => void): void {
+    super.onCollisionWith(classOrObject, callback)
+    // Activate collision events if they are not already activated
+    if (this.collider && this.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
+      // Set the active events
+      this.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
+    }
+  }
 }
