@@ -39,6 +39,18 @@ export class FSphere extends FPolyhedron {
     scale?: THREE.Vector3
     rotation?: THREE.Vector3
     shape?: F3dShapes
+    lockTranslations?: boolean
+    lockRotations?: boolean
+    enabledTranslations?: {
+      enableX: boolean
+      enableY: boolean
+      enableZ: boolean
+    }
+    enabledRotations?: {
+      enableX: boolean
+      enableY: boolean
+      enableZ: boolean
+    }
   }): void {
     super.initRigidBody({
       ...options,

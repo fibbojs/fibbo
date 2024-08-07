@@ -24,7 +24,7 @@ import './style.css'
   })
   cube.setColor(0xA0FFA0)
   cube.initRigidBody({
-    shape: F3dShapes.SPHERE,
+    lockRotations: true,
   })
   scene.addComponent(cube)
 
@@ -65,7 +65,9 @@ import './style.css'
     const z = Math.sin(angle) * 4
     const cube = new FCube(scene)
     cube.setPosition(x, 1, z)
-    cube.initRigidBody()
+    cube.initRigidBody({
+      shape: i === 0 ? F3dShapes.SPHERE : F3dShapes.CUBE,
+    })
     scene.addComponent(cube)
   }
 

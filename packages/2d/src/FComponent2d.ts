@@ -175,6 +175,11 @@ export abstract class FComponent2d extends FComponent {
    * @param options.scale The scale of the rigid body.
    * @param options.rotation The rotation of the rigid body.
    * @param options.shape The shape of the rigid body.
+   * @param options.lockTranslations Lock the translations of the rigid body.
+   * @param options.lockRotations Lock the rotations of the rigid body.
+   * @param options.enabledTranslations Enable only specific translations of the rigid body.
+   * @param options.enabledTranslations.enableX Enable the x translation of the rigid body.
+   * @param options.enabledTranslations.enableY Enable the y translation of the rigid body.
    * @example
    * ```ts
    * component.initRigidBody({
@@ -190,6 +195,12 @@ export abstract class FComponent2d extends FComponent {
     scale?: PIXI.PointData
     rotation?: number
     shape?: F2dShapes
+    lockTranslations?: boolean
+    lockRotations?: boolean
+    enabledTranslations?: {
+      enableX: boolean
+      enableY: boolean
+    }
   }): void {
     // Apply default options
     const DEFAULT_OPTIONS = {
@@ -197,6 +208,9 @@ export abstract class FComponent2d extends FComponent {
       scale: new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
       rotation: this.rotation,
       shape: F2dShapes.SQUARE,
+      lockTranslations: false,
+      lockRotations: false,
+      enabledTranslations: undefined,
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
@@ -213,6 +227,16 @@ export abstract class FComponent2d extends FComponent {
       .setRotation(options.rotation)
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
+
+    // Lock the translation if needed
+    if (options.lockTranslations)
+      this.rigidBody.lockTranslations(true, true)
+    // Lock the rotation if needed
+    if (options.lockRotations)
+      this.rigidBody.lockRotations(true, true)
+    // Enable only specific translations if needed
+    if (options.enabledTranslations)
+      this.rigidBody.setEnabledTranslations(options.enabledTranslations.enableX, options.enabledTranslations.enableY, true)
 
     // Create a collider description for the rigid body
     const colliderDesc = options.shape === F2dShapes.SQUARE

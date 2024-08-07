@@ -57,7 +57,9 @@ import MySquare from './classes/MySquare'
   const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png')
   sprite.onLoaded(() => {
     sprite.setPosition(2, 3)
-    sprite.initRigidBody()
+    sprite.initRigidBody({
+      lockRotations: true,
+    })
     sprite.setScaleWidth(0.5)
     sprite.onCollisionWith(FSquare, () => {
       console.log('Sprite collided with a square!')

@@ -39,6 +39,12 @@ export class FCircle extends FComponent2d {
     scale?: PIXI.PointData
     rotation?: number
     shape?: F2dShapes
+    lockTranslations?: boolean
+    lockRotations?: boolean
+    enabledTranslations?: {
+      enableX: boolean
+      enableY: boolean
+    }
   }): void {
     super.initRigidBody({
       ...options,
