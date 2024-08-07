@@ -50,6 +50,7 @@
     "**/dist": true,
     "**/node_modules": true,
     "**/tsconfig.json": true,
-    "**/.gitignore": true
+    "**/.gitignore": true,
+    "**/vite-env.d.ts": true
   }
 }
