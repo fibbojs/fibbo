@@ -1,5 +1,6 @@
 import './style.css'
 import { F2dShapes, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
+import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
 
 (async () => {
@@ -71,25 +72,19 @@ import MySquare from './classes/MySquare'
   scene.addComponent(sprite)
 
   // Detect inputs to move the cube
-  document.addEventListener('keydown', (event) => {
-    const impulse = { x: 0, y: 0, z: 0 }
-    switch (event.key) {
-      case 'ArrowUp':
-        impulse.y = 1
-        break
-      case 'ArrowDown':
-        impulse.y = -1
-        break
-      case 'ArrowLeft':
-        impulse.x = -1
-        break
-      case 'ArrowRight':
-        impulse.x = 1
-        break
-      case ' ':
-        sprite.rigidBody?.applyImpulse({ x: 0, y: 2 }, true)
-        break
-    }
-    sprite.rigidBody?.applyImpulse(impulse, true)
+  FKeyboard.on('ArrowUp', () => {
+    sprite.rigidBody?.applyImpulse({ x: 0, y: 1 }, true)
+  })
+  FKeyboard.on('ArrowDown', () => {
+    sprite.rigidBody?.applyImpulse({ x: 0, y: -1 }, true)
+  })
+  FKeyboard.on('ArrowLeft', () => {
+    sprite.rigidBody?.applyImpulse({ x: -1, y: 0 }, true)
+  })
+  FKeyboard.on('ArrowRight', () => {
+    sprite.rigidBody?.applyImpulse({ x: 1, y: 0 }, true)
+  })
+  FKeyboard.on(' ', () => {
+    sprite.rigidBody?.applyImpulse({ x: 0, y: 2 }, true)
   })
 })()
