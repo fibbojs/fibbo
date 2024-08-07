@@ -41,5 +41,15 @@
     "jsonc",
     "yaml"
   ],
-  "vitest.disableWorkspaceWarning": true
+  "vitest.disableWorkspaceWarning": true,
+
+  // Exclude files from the sidebar (makes it cleaner)
+  "files.exclude": {
+    ".nx": true,
+    ".idx": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/tsconfig.json": true,
+    "**/.gitignore": true
+  }
 }
