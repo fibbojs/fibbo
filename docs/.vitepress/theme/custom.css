@@ -1,9 +1,15 @@
 :root {
   /* Brand Primary Color */
-  --vp-c-brand-1: #6e15db;
-  --vp-c-brand-2: #6e15db;
+  --vp-c-brand-1: #B200FF;
+  --vp-c-brand-2: #B200FF;
 
-  --vp-button-brand-bg: #6e15db;
+  /* Primary Button */
+  --vp-button-brand-bg: var(--vp-c-bg-alt);
+  --vp-button-brand-hover-bg: var(--vp-c-bg-alt);
+  --vp-button-brand-active-bg: var(--vp-c-bg-alt);
+  --vp-button-brand-text: var(--vp-c-black);
+  --vp-button-brand-hover-text: var(--vp-c-black);
+  --vp-button-brand-active-text: var(--vp-c-black);
 
   /* Backgrounds */
   --vp-c-bg-alt: #faf8fc;
@@ -14,17 +20,31 @@
 
   /* Gray */
   --vp-c-gray-3: #faf8fc;
+
+  /* Black */
+  --vp-c-black: #111111;
 }
 
 .dark {
   /* Brand Primary Color */
-  --vp-c-brand-1: #700de9;
-  --vp-c-brand-2: #700de9;
+  --vp-c-brand-1: #B200FF;
+  --vp-c-brand-2: #B200FF;
 
-  --vp-button-brand-bg: #700de9;
+  /* Primary Button */
+  --vp-button-brand-bg: var(--vp-c-black);
+  --vp-button-brand-hover-bg: var(--vp-c-black);
+  --vp-button-brand-active-bg: var(--vp-c-black);
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-active-text: var(--vp-c-white);
+
+  /* Alt Button */
+  --vp-button-alt-bg: #1b1231;
+  --vp-button-alt-hover-bg: #1b1231;
+  --vp-button-alt-active-bg: #1b1231;
 
   /* Backgrounds */
-  --vp-c-bg: #120220;
+  --vp-c-bg: #111111;
   --vp-c-bg-alt: #1b1231;
   --vp-c-bg-elv: #120220;
   --vp-c-bg-soft: #1b1231;
@@ -35,10 +55,46 @@
   /* Gray */
   --vp-c-gray-3: #1b1231;
 
-  /* Primary Button */
-  --vp-button-brand-hover-bg: #5105ae;
-
   /* Hero Background Image */
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #700de96a 40%, #8f00dc1a 50%);
-  --vp-home-hero-image-filter: blur(44px);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #28DFFF 5%, #B200FF 80%);
+  --vp-home-hero-image-filter: blur(80px);
+}
+
+.VPButton.brand {
+  position: relative;
+}
+.VPButton.brand::before {
+  --border-width: 2px;
+  border-bottom-left-radius: calc(20px + var(--border-width));
+  border-bottom-right-radius: calc(20px + var(--border-width));
+  content: '';
+  background-image: linear-gradient(90deg, #FFFFFF 0%, #28DFFF 5%, #B200FF 51%, #CC09B8 81%, #FF6CB1 95%, #FFFFFF 100%);
+  top: 50%;
+  bottom: calc(0px - var(--border-width));
+  left: calc(0px - var(--border-width));
+  right: calc(0px - var(--border-width));
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.VPButton.brand::after {
+  content: '';
+  border-radius: 100%;
+  background-image: linear-gradient(90deg, #111111 0%, #28DFFF 5%, #B200FF 51%, #CC09B8 81%, #FF6CB1 95%, #111111 100%);
+  top: 80%;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  position: absolute;
+  z-index: -1;
+  filter: blur(30px);
+  opacity: 0.1;
+  transition: all 0.3s ease;
+}
+.VPButton.brand:hover::after {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.dark .VPButton.brand::before {
+  background-image: linear-gradient(90deg, #111111 0%, #28DFFF 5%, #B200FF 51%, #CC09B8 81%, #FF6CB1 95%, #111111 100%);
 }
