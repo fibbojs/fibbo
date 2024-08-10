@@ -71,8 +71,11 @@ import './style.css'
     console.log('Cube collided with the sphere!')
   })
 
+  // Initialize the keyboard
+  const keyboard = new FKeyboard()
+
   // Detect inputs to move the cube
-  FKeyboard.on('ArrowUp', () => {
+  keyboard.on('ArrowUp', () => {
     cube.rigidBody?.applyImpulse({ x: 0, y: 0, z: -1 }, true)
   })
   FKeyboard.on('ArrowDown', () => {
