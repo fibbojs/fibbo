@@ -11,7 +11,7 @@ export abstract class FScene {
   /**
    * The components in the scene.
    */
-  components?: FComponent[]
+  components: FComponent[]
   camera?: FCamera
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
@@ -43,6 +43,9 @@ export abstract class FScene {
     }
 
     animate()
+
+    // Initialize the components array
+    this.components = []
   }
 
   /**

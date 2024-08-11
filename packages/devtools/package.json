@@ -1,0 +1,46 @@
+{
+  "name": "@fibbojs/devtools",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Devtools package for Fibbo",
+  "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
+  "license": "Apache-2.0",
+  "homepage": "https://fibbojs.github.io/fibbo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibbojs/fibbo.git"
+  },
+  "bugs": "https://github.com/fibbojs/fibbo/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/types/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/temp/src dist/types && rm -rf dist/temp",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fibbojs/core": "^0.0.1"
+  }
+}

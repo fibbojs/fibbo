@@ -11,6 +11,9 @@ export default antfu(
     rules: {
       // overrides
       'no-console': 'off',
+      'vue/component-tags-order': ['error', {
+        order: ['template', 'script', 'style'],
+      }],
     },
   },
 )
