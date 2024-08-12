@@ -287,9 +287,9 @@ packages/core/dist/index.d.ts:123
 
 ***
 
-### rapierToComponent
+### __RAPIER_TO_COMPONENT__
 
-> **rapierToComponent**: `Map`\<`number`, [`FComponent3d`](FComponent3d.md)\>
+> **__RAPIER_TO_COMPONENT__**: `Map`\<`number`, [`FComponent3d`](FComponent3d.md)\>
 
 #### Defined in
 

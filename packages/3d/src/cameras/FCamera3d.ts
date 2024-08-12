@@ -6,8 +6,8 @@ import { FCamera } from '@fibbojs/core'
  * @category Camera
  */
 export abstract class FCamera3d extends THREE.PerspectiveCamera implements FCamera {
-  declare public ID: number
-  public CALLBACKS_ONCOLLISION: { [key: string]: (() => void)[] } = {}
+  declare public __ID__: number
+  public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 
   constructor() {
     super(75, window.innerWidth / window.innerHeight, 0.1, 1000)

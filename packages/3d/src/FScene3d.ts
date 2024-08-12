@@ -39,7 +39,8 @@ import { FFixedCamera } from './cameras/FFixedCamera'
  * ```
  */
 export class FScene3d extends FScene {
-  components: FComponent3d[]
+  // Components can be declared as it will be initialized by the parent class
+  declare components: FComponent3d[]
   // Three.js
   declare scene: THREE.Scene
   declare renderer: THREE.WebGLRenderer
@@ -50,15 +51,13 @@ export class FScene3d extends FScene {
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
   declare world: RAPIER.World
   declare eventQueue: RAPIER.EventQueue
-  rapierToComponent: Map<number, FComponent3d> = new Map()
+  __RAPIER_TO_COMPONENT__: Map<number, FComponent3d> = new Map()
   // Debug
-  DEBUG_MODE: boolean
+  __DEBUG_MODE__: boolean
 
   constructor(options: { debug?: boolean } = { debug: false }) {
     super()
-    // Initialize components array
-    this.components = []
-    this.DEBUG_MODE = options.debug || false
+    this.__DEBUG_MODE__ = options.debug || false
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
@@ -80,7 +79,7 @@ export class FScene3d extends FScene {
     this.scene.add(light)
 
     // Debug mode
-    if (this.DEBUG_MODE) {
+    if (this.__DEBUG_MODE__) {
       // Grid helper
       const gridHelper = new THREE.GridHelper(10, 10)
       this.scene.add(gridHelper)
@@ -106,7 +105,7 @@ export class FScene3d extends FScene {
       this.components.forEach(component => component.onFrame(delta))
 
       // Debug mode
-      if (this.DEBUG_MODE) {
+      if (this.__DEBUG_MODE__) {
         // Update controls
         this.controls?.update()
 
@@ -134,7 +133,7 @@ export class FScene3d extends FScene {
     // onFrame loop
     this.onFrame((delta) => {
       // Debug mode
-      if (this.DEBUG_MODE) {
+      if (this.__DEBUG_MODE__) {
         // Remove previous debug lines
         const previousLines = this.scene.getObjectByName('DEBUG_LINES')
         if (previousLines)
@@ -169,8 +168,8 @@ export class FScene3d extends FScene {
    */
   handleCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, start: boolean) {
     // Get the components from the handles
-    const collider1 = this.rapierToComponent.get(handle1)
-    const collider2 = this.rapierToComponent.get(handle2)
+    const collider1 = this.__RAPIER_TO_COMPONENT__.get(handle1)
+    const collider2 = this.__RAPIER_TO_COMPONENT__.get(handle2)
     // If both colliders are undefined, return
     if (collider1 === undefined && collider2 === undefined)
       return
@@ -194,7 +193,7 @@ export class FScene3d extends FScene {
   }
 
   addComponent(component: FComponent3d) {
-    this.components.push(component)
+    super.addComponent(component)
 
     // Detect if the FComponent3d is a FGLTF instance
     if (component instanceof FGLTF) {
@@ -209,9 +208,9 @@ export class FScene3d extends FScene {
         this.scene.add(component.mesh)
     }
 
-    // If a collider is defined, add it's handle to the rapierToComponent map
+    // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     if (component.collider?.handle !== undefined)
-      this.rapierToComponent.set(component.collider?.handle, component)
+      this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
   }
 
   private addDebugPanel() {

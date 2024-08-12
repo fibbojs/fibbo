@@ -35,7 +35,7 @@ export class FGLTF extends FComponent3d {
   /**
    * Callbacks for when the model is loaded
    */
-  public CALLBACKS_ONLOADED: (() => void)[] = []
+  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
 
   /**
    * @param scene The 3D scene where the model will be added.
@@ -113,17 +113,17 @@ export class FGLTF extends FComponent3d {
 
   /**
    * @description Add a callback to be called when the model is loaded.
-   * @param fn The callback function.
+   * @param callback The callback function.
    */
-  onLoaded(fn: () => void) {
-    this.CALLBACKS_ONLOADED.push(fn)
+  onLoaded(callback: () => void) {
+    this.__CALLBACKS_ON_LOADED__.push(callback)
   }
 
   /**
    * @description Emit the onLoaded callbacks.
    */
   emitOnLoaded() {
-    this.CALLBACKS_ONLOADED.forEach((callback) => {
+    this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
       callback()
     })
   }

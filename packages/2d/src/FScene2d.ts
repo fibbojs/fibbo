@@ -25,7 +25,8 @@ import { FSprite } from './sprite/FSprite'
  * ```
  */
 export class FScene2d extends FScene {
-  components: FComponent2d[]
+  // Components can be declared as it will be initialized by the parent class
+  declare components: FComponent2d[]
   // Pixi.js
   app: PIXI.Application
   viewport?: Viewport
@@ -33,16 +34,15 @@ export class FScene2d extends FScene {
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
   declare world?: World
   declare eventQueue: RAPIER.EventQueue
-  rapierToComponent: Map<number, FComponent2d> = new Map()
+  __RAPIER_TO_COMPONENT__: Map<number, FComponent2d> = new Map()
   // onReadyCallbacks
   public onReadyCallbacks: (() => void)[] = []
   // Debug
   DEBUG_LINES: PIXI.Graphics[] = []
-  DEBUG_MODE: boolean = false
+  __DEBUG_MODE__: boolean = false
 
   constructor(options: { debug?: boolean } = { debug: false }) {
     super()
-    this.components = []
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
@@ -52,7 +52,7 @@ export class FScene2d extends FScene {
     this.app = new PIXI.Application()
 
     // Store the debug mode
-    this.DEBUG_MODE = options.debug || false
+    this.__DEBUG_MODE__ = options.debug || false
   }
 
   /**
@@ -104,7 +104,7 @@ export class FScene2d extends FScene {
     this.viewport.setZoom(0.8, true)
 
     // Add help grid
-    if (this.DEBUG_MODE) {
+    if (this.__DEBUG_MODE__) {
       const helpGrid = new PIXI.Graphics()
       // Draw the grid
       for (let i = -1000; i <= 1000; i += 100) {
@@ -132,7 +132,7 @@ export class FScene2d extends FScene {
       })
 
       // Debug
-      if (this.DEBUG_MODE)
+      if (this.__DEBUG_MODE__)
         this.debug()
     })
 
@@ -175,8 +175,8 @@ export class FScene2d extends FScene {
    */
   handleCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, start: boolean) {
     // Get the components from the handles
-    const collider1 = this.rapierToComponent.get(handle1)
-    const collider2 = this.rapierToComponent.get(handle2)
+    const collider1 = this.__RAPIER_TO_COMPONENT__.get(handle1)
+    const collider2 = this.__RAPIER_TO_COMPONENT__.get(handle2)
     // If both colliders are undefined, return
     if (collider1 === undefined && collider2 === undefined)
       return
@@ -200,7 +200,7 @@ export class FScene2d extends FScene {
   }
 
   addComponent(component: FComponent2d) {
-    this.components.push(component)
+    super.addComponent(component)
 
     // Detect if the FComponent2d is a FSprite instance
     if (component instanceof FSprite) {
@@ -216,9 +216,9 @@ export class FScene2d extends FScene {
           this.viewport?.addChild(component.container)
         }
 
-        // If a collider is defined, add it's handle to the rapierToComponent map
+        // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
         if (component.collider?.handle !== undefined)
-          this.rapierToComponent.set(component.collider?.handle, component)
+          this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
       })
     }
     else {
@@ -234,9 +234,9 @@ export class FScene2d extends FScene {
       }
     }
 
-    // If a collider is defined, add it's handle to the rapierToComponent map
+    // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     if (component.collider?.handle !== undefined)
-      this.rapierToComponent.set(component.collider?.handle, component)
+      this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
   }
 
   onReady(callback: () => void) {

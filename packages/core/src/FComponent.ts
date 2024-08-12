@@ -11,16 +11,16 @@ export abstract class FComponent {
    * @description Unique identifier for the component.
    * It is generated automatically.
    */
-  public ID: number
+  public __ID__: number
 
   /**
    * @description Callbacks for when a collision occurs with a given class or object.
    * It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
    */
-  public CALLBACKS_ONCOLLISION: { [key: string]: (() => void)[] } = {}
+  public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 
   constructor() {
-    this.ID = ID_COUNTER++
+    this.__ID__ = ID_COUNTER++
   }
 
   /**
@@ -58,18 +58,18 @@ export abstract class FComponent {
     let eventKey = ''
     // If the classOrObject is an object, use the class name + ID
     if (classOrObject instanceof FComponent) {
-      eventKey = `${classOrObject.constructor.name}@${classOrObject.ID}`
+      eventKey = `${classOrObject.constructor.name}@${classOrObject.__ID__}`
     }
     // Else, it should be a class, use the class name
     else {
       eventKey = classOrObject.name
     }
     // Create the array if it doesn't exist
-    if (!this.CALLBACKS_ONCOLLISION[eventKey]) {
-      this.CALLBACKS_ONCOLLISION[eventKey] = []
+    if (!this.__CALLBACKS_ON_COLLISION__[eventKey]) {
+      this.__CALLBACKS_ON_COLLISION__[eventKey] = []
     }
     // Add the callback
-    this.CALLBACKS_ONCOLLISION[eventKey].push(callback)
+    this.__CALLBACKS_ON_COLLISION__[eventKey].push(callback)
   }
 
   /**
@@ -92,15 +92,15 @@ export abstract class FComponent {
     let eventKey = ''
     // If the classOrObject is an object, use the class name + ID
     if (classOrObject instanceof FComponent) {
-      eventKey = `${classOrObject.constructor.name}@${classOrObject.ID}`
+      eventKey = `${classOrObject.constructor.name}@${classOrObject.__ID__}`
     }
     // Else, it should be a class, use the class name
     else {
       eventKey = classOrObject.name
     }
     // Check if the event key exists and call the callbacks
-    if (this.CALLBACKS_ONCOLLISION[eventKey]) {
-      this.CALLBACKS_ONCOLLISION[eventKey].forEach((callback) => {
+    if (this.__CALLBACKS_ON_COLLISION__[eventKey]) {
+      this.__CALLBACKS_ON_COLLISION__[eventKey].forEach((callback) => {
         callback()
       })
     }

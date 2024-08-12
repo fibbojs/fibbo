@@ -109,6 +109,12 @@ export abstract class FComponent2d extends FComponent {
       this.container.position.set(this.position.x * 100, -this.position.y * 100)
       this.container.rotation = this.rotation
     }
+    // Update position and rotation properties of the component
+    this.position = {
+      x: this.container.position.x / 100,
+      y: -this.container.position.y / 100,
+    }
+    this.rotation = this.container.rotation
   }
 
   /**

@@ -2176,7 +2176,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Implementation of
 
-`FCamera.CALLBACKS_ONCOLLISION`
+`FCamera.__CALLBACKS_ON_COLLISION__`
 
 #### Defined in
 
@@ -2195,7 +2195,7 @@ It is generated automatically.
 
 #### Implementation of
 
-`FCamera.ID`
+`FCamera.__ID__`
 
 #### Defined in
 

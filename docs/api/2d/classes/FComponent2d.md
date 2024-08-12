@@ -443,7 +443,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-`FComponent.CALLBACKS_ONCOLLISION`
+`FComponent.__CALLBACKS_ON_COLLISION__`
 
 #### Defined in
 
@@ -462,7 +462,7 @@ It is generated automatically.
 
 #### Inherited from
 
-`FComponent.ID`
+`FComponent.__ID__`
 
 #### Defined in
 

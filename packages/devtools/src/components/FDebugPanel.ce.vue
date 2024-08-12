@@ -2,9 +2,9 @@
   <div class="f-debug-panel">
     <h1>{{ title }}</h1>
     <div v-if="scene">
-      <div v-for="component in scene.components" :key="component.ID">
+      <div v-for="component in scene.components" :key="component.__ID__">
         <!-- @vue-skip -->
-        <p>{{ component.ID }} : {{ component.position.x }} - {{ component.position.y }}</p>
+        <p>{{ component.__ID__ }} / {{ String(component.position.x).slice(0, 5) }} : {{ String(component.position.y).slice(0, 5) }}</p>
       </div>
     </div>
   </div>

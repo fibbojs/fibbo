@@ -16,8 +16,17 @@ export abstract class FScene {
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
   world?: World3d | World2d
-  // Animation
-  public onFrameCallbacks: ((delta: number) => void)[] = []
+  // Callbacks
+  /**
+   * @description Callbacks for when a frame is rendered.
+   * It is an array of functions that take the delta time as an argument.
+   */
+  public __CALLBACKS_ON_FRAME__: ((delta: number) => void)[] = []
+  /**
+   * @description Callbacks for when a component is added to the scene.
+   * It is an array of functions that take the component as an argument.
+   */
+  public __CALLBACKS_ON_COMPONENT_ADDED__: ((component: FComponent) => void)[] = []
 
   constructor() {
     /**
@@ -39,7 +48,7 @@ export abstract class FScene {
       lastTime = currentTime
 
       // Call onFrame callbacks
-      this.onFrameCallbacks.forEach(callback => callback(delta))
+      this.__CALLBACKS_ON_FRAME__.forEach(callback => callback(delta))
     }
 
     animate()
@@ -51,12 +60,22 @@ export abstract class FScene {
   /**
    * @description Add a component to the scene.
    */
-  abstract addComponent(component: FComponent): void
+  addComponent(component: FComponent): void {
+    this.components.push(component)
+    this.__CALLBACKS_ON_COMPONENT_ADDED__.forEach(callback => callback(component))
+  }
 
   /**
-   * @description Add a callback to the onFrame event.
+   * @description Add a callback to be called when a frame is rendered.
    */
   onFrame(callback: (delta: number) => void) {
-    this.onFrameCallbacks.push(callback)
+    this.__CALLBACKS_ON_FRAME__.push(callback)
+  }
+
+  /**
+   * @description Add a callback to be called when a component is added to the scene.
+   */
+  onComponentAdded(callback: (component: FComponent) => void) {
+    this.__CALLBACKS_ON_COMPONENT_ADDED__.push(callback)
   }
 }
