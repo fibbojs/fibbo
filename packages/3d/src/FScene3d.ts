@@ -93,7 +93,7 @@ export class FScene3d extends FScene {
       this.scene.add(axesHelper)
 
       // Add debug panel
-      this.addDebugPanel()
+      // this.addDebugPanel()
     }
 
     // Add renderer to DOM
@@ -110,7 +110,7 @@ export class FScene3d extends FScene {
         this.controls?.update()
 
         // Debug info
-        this.debug()
+        // this.debug()
       }
 
       // Camera

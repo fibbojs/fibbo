@@ -95,13 +95,25 @@ export abstract class FComponent2d extends FComponent {
       const newRigidBodyRotation = this.rigidBody.rotation()
       this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
       this.container.rotation = -newRigidBodyRotation
+      // Update position and rotation properties of the component according to the rigid body
+      this.position = {
+        x: this.container.position.x / 100,
+        y: -this.container.position.y / 100,
+      }
+      this.rotation = this.container.rotation
     }
     // Else if the collider exist, update the container position and rotation according to the collider
     else if (this.collider) {
-      const newRigidBodyPosition = this.collider.translation()
-      const newRigidBodyRotation = this.collider.rotation()
-      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
-      this.container.rotation = -newRigidBodyRotation
+      const newColliderPosition = this.collider.translation()
+      const newColliderRotation = this.collider.rotation()
+      this.container.position.set(newColliderPosition.x * 100, -newColliderPosition.y * 100)
+      this.container.rotation = -newColliderRotation
+      // Update position and rotation properties of the component according to the collider
+      this.position = {
+        x: this.container.position.x / 100,
+        y: -this.container.position.y / 100,
+      }
+      this.rotation = this.container.rotation
     }
     else {
       // If the rigid body and collider doesn't exist, update the container position and rotation according to the default values
@@ -109,12 +121,6 @@ export abstract class FComponent2d extends FComponent {
       this.container.position.set(this.position.x * 100, -this.position.y * 100)
       this.container.rotation = this.rotation
     }
-    // Update position and rotation properties of the component
-    this.position = {
-      x: this.container.position.x / 100,
-      y: -this.container.position.y / 100,
-    }
-    this.rotation = this.container.rotation
   }
 
   /**

@@ -104,6 +104,9 @@ export abstract class FComponent3d extends FComponent {
       const newRigidBodyRotation = this.rigidBody.rotation()
       this.mesh.position.set(newRigidBodyPosition.x, newRigidBodyPosition.y, newRigidBodyPosition.z)
       this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z, newRigidBodyRotation.w))
+      // Update position and rotation properties of the component according to the rigid body
+      this.position.set(newRigidBodyPosition.x, newRigidBodyPosition.y, newRigidBodyPosition.z)
+      this.rotation.set(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z)
     }
     // If the collider and mesh exist, update the mesh position and rotation according to the collider
     else if (this.collider && this.mesh) {
@@ -111,6 +114,9 @@ export abstract class FComponent3d extends FComponent {
       const newColliderRotation = this.collider.rotation()
       this.mesh.position.set(newColliderPosition.x, newColliderPosition.y, newColliderPosition.z)
       this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newColliderRotation.x, newColliderRotation.y, newColliderRotation.z, newColliderRotation.w))
+      // Update position and rotation properties of the component according to the collider
+      this.position.set(newColliderPosition.x, newColliderPosition.y, newColliderPosition.z)
+      this.rotation.set(newColliderRotation.x, newColliderRotation.y, newColliderRotation.z)
     }
     // If the rigid body and collider doesn't exist, update the mesh position and rotation according to the default values
     else if (this.mesh) {
