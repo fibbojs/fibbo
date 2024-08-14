@@ -46,6 +46,7 @@
     "eslint": "^9.7.0",
     "nx": "19.0.2",
     "rimraf": "^5.0.5",
+    "sass": "^1.77.8",
     "typedoc": "^0.26.5",
     "typedoc-plugin-markdown": "^4.2.2",
     "typescript": "^5.5.4",

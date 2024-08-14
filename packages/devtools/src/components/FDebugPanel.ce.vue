@@ -2,11 +2,11 @@
   <div class="f-debug-panel">
     <h1>{{ title }}</h1>
     <div v-if="scene">
-      <FDebugPanel2d
+      <FComponents2d
         v-if="is2dComponent(scene.components[0])"
         :components="scene.components as FComponent2d[]"
       />
-      <FDebugPanel3d
+      <FComponents3d
         v-if="is3dComponent(scene.components[0])"
         :components="scene.components as FComponent3d[]"
       />
@@ -20,10 +20,13 @@ import { defineProps } from 'vue'
 import type { FComponent, FScene } from '@fibbojs/core'
 import type { FComponent2d } from '@fibbojs/2d'
 import type { FComponent3d } from '@fibbojs/3d'
-import FDebugPanel2d from './FDebugPanel2d.vue'
-import FDebugPanel3d from './FDebugPanel3d.vue'
+import FComponents2d from './2d/FComponents2d.ce.vue'
+import FComponents3d from './3d/FComponents3d.ce.vue'
 
-// Explore prototype chain of given FComponent to get all the classes in the chain
+/**
+ * Explore prototype chain of given FComponent to get all the classes in the chain.
+ * For some reason, `instanceof` doesn't work in this context, so we have to do this.
+ */
 function getPrototypeChain(component: FComponent) {
   let proto = component;
   const names = [];
@@ -53,43 +56,28 @@ defineProps({
 })
 </script>
 
-<style scoped>
-.f-component-id {
-  color: #fff;
-  margin: 0;
-}
-
+<style lang="scss" scoped>
 .f-debug-panel {
   position: absolute;
   top: 10px;
   left: 10px;
   bottom: 10px;
   width: 300px;
-  background: #0000009f;
+  background: #171518;
   border-radius: 8px;
   overflow: auto;
-}
-
-.f-debug-properties--hidden {
-  display: none;
-}
-
-h1 {
-  color: red;
-}
-
-.f-debug-properties {
   padding: 10px;
-  border-bottom: 1px solid #fff;
-}
 
-.f-debug-property {
-  display: flex;
-  justify-content: space-between;
-}
+  * {
+    color: #c2c1c3;
+  }
 
-.f-debug-property p {
-  margin: 0;
-  color: #fff;
+  h1 {
+    margin: 0 0 10px;
+  }
+
+  .f-components {
+    margin: 10px;
+  }
 }
 </style>

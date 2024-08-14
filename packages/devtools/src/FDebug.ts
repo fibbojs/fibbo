@@ -30,7 +30,7 @@ export class FDebug {
     customElements.define('f-debug-panel', FDebugPanelElement)
     // Create and inject the custom element into the DOM
     const debugPanel = new FDebugPanelElement({
-      title: 'Debug Panel Prop Test',
+      title: 'Fibbo',
       scene: this.scene,
     })
     document.body.appendChild(debugPanel)
