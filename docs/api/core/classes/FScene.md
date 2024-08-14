@@ -19,13 +19,13 @@ Also contains the Rapier world if physics is enabled.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L22)
+[packages/core/src/FScene.ts:31](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L31)
 
 ## Methods
 
 ### addComponent()
 
-> `abstract` **addComponent**(`component`): `void`
+> **addComponent**(`component`): `void`
 
 #### Parameters
 
@@ -41,7 +41,29 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:51](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L51)
+[packages/core/src/FScene.ts:63](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L63)
+
+***
+
+### onComponentAdded()
+
+> **onComponentAdded**(`callback`): `void`
+
+#### Parameters
+
+• **callback**
+
+#### Returns
+
+`void`
+
+#### Description
+
+Add a callback to be called when a component is added to the scene.
+
+#### Defined in
+
+[packages/core/src/FScene.ts:78](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L78)
 
 ***
 
@@ -59,13 +81,43 @@ Add a component to the scene.
 
 #### Description
 
-Add a callback to the onFrame event.
+Add a callback to be called when a frame is rendered.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:56](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L56)
+[packages/core/src/FScene.ts:71](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L71)
 
 ## Properties
+
+### \_\_CALLBACKS\_ON\_COMPONENT\_ADDED\_\_
+
+> **\_\_CALLBACKS\_ON\_COMPONENT\_ADDED\_\_**: (`component`) => `void`[] = `[]`
+
+#### Description
+
+Callbacks for when a component is added to the scene.
+It is an array of functions that take the component as an argument.
+
+#### Defined in
+
+[packages/core/src/FScene.ts:29](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L29)
+
+***
+
+### \_\_CALLBACKS\_ON\_FRAME\_\_
+
+> **\_\_CALLBACKS\_ON\_FRAME\_\_**: (`delta`) => `void`[] = `[]`
+
+#### Description
+
+Callbacks for when a frame is rendered.
+It is an array of functions that take the delta time as an argument.
+
+#### Defined in
+
+[packages/core/src/FScene.ts:24](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L24)
+
+***
 
 ### camera?
 
@@ -73,19 +125,19 @@ Add a callback to the onFrame event.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L15)
+[packages/core/src/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L15)
 
 ***
 
-### components?
+### components
 
-> `optional` **components**: [`FComponent`](FComponent.md)[]
+> **components**: [`FComponent`](FComponent.md)[]
 
 The components in the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L14)
+[packages/core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L14)
 
 ***
 
@@ -107,17 +159,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:17](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L17)
-
-***
-
-### onFrameCallbacks
-
-> **onFrameCallbacks**: (`delta`) => `void`[] = `[]`
-
-#### Defined in
-
-[packages/core/src/FScene.ts:20](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L20)
+[packages/core/src/FScene.ts:17](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L17)
 
 ***
 
@@ -127,4 +169,4 @@ The components in the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:18](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FScene.ts#L18)
+[packages/core/src/FScene.ts:18](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FScene.ts#L18)

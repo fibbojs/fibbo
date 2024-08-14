@@ -22,7 +22,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L22)
+[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FComponent.ts#L22)
 
 ## Methods
 
@@ -60,7 +60,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:91](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L91)
+[packages/core/src/FComponent.ts:91](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FComponent.ts#L91)
 
 ***
 
@@ -92,7 +92,7 @@ Add a callback to be called when a collision occurs.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
-  console.log('Player collided with an Enemy!')
+ console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -100,13 +100,13 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
-  console.log('Player collided with the enemy!')
+ console.log('Player collided with the enemy!')
 })
 ```
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L54)
+[packages/core/src/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FComponent.ts#L54)
 
 ***
 
@@ -131,13 +131,13 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L31)
+[packages/core/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FComponent.ts#L31)
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
@@ -150,13 +150,13 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L20)
+[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FComponent.ts#L20)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -165,4 +165,4 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L14)
+[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/core/src/FComponent.ts#L14)

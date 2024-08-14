@@ -53,7 +53,7 @@ scene.addComponent(sprite)
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:28](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L28)
+[packages/2d/src/sprite/FSprite.ts:28](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L28)
 
 ## Methods
 
@@ -113,7 +113,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:98](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L98)
+[packages/2d/src/sprite/FSprite.ts:98](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L98)
 
 ***
 
@@ -156,10 +156,10 @@ This is useful for static objects.
 
 ```ts
 component.initCollider({
-  position: new PIXI.Point(0, 0),
-  scale: new PIXI.Point(1, 1),
-  rotation: 0,
-  shape: F2dShapes.SQUARE
+ position: new PIXI.Point(0, 0),
+ scale: new PIXI.Point(1, 1),
+ rotation: 0,
+ shape: F2dShapes.SQUARE
 })
 ```
 
@@ -169,7 +169,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:267](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L267)
+[packages/2d/src/FComponent2d.ts:279](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L279)
 
 ***
 
@@ -227,10 +227,10 @@ Init a rigid body for the model.
 
 ```ts
 component.initRigidBody({
-  position: new PIXI.Point(0, 0),
-  scale: new PIXI.Point(1, 1),
-  rotation: 0,
-  shape: F2dShapes.SQUARE
+ position: new PIXI.Point(0, 0),
+ scale: new PIXI.Point(1, 1),
+ rotation: 0,
+ shape: F2dShapes.SQUARE
 })
 ```
 
@@ -240,7 +240,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:193](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L193)
+[packages/2d/src/FComponent2d.ts:205](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L205)
 
 ***
 
@@ -264,7 +264,7 @@ Load a texture from a path.
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:51](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L51)
+[packages/2d/src/sprite/FSprite.ts:51](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L51)
 
 ***
 
@@ -296,7 +296,7 @@ Add a callback to be called when a collision occurs.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
-  console.log('Player collided with an Enemy!')
+ console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -304,7 +304,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
-  console.log('Player collided with the enemy!')
+ console.log('Player collided with the enemy!')
 })
 ```
 
@@ -314,7 +314,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:299](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L299)
+[packages/2d/src/FComponent2d.ts:311](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L311)
 
 ***
 
@@ -341,17 +341,17 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:83](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L83)
+[packages/2d/src/sprite/FSprite.ts:83](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L83)
 
 ***
 
 ### onLoaded()
 
-> **onLoaded**(`fn`): `void`
+> **onLoaded**(`callback`): `void`
 
 #### Parameters
 
-• **fn**
+• **callback**
 
 The callback function.
 
@@ -365,7 +365,7 @@ Add a callback to be called when the texture is loaded.
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:91](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L91)
+[packages/2d/src/sprite/FSprite.ts:91](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L91)
 
 ***
 
@@ -403,7 +403,7 @@ component.setPosition(0, 0)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:123](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L123)
+[packages/2d/src/FComponent2d.ts:135](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L135)
 
 ***
 
@@ -437,7 +437,7 @@ component.setRotation(Math.PI / 2)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:154](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L154)
+[packages/2d/src/FComponent2d.ts:166](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L166)
 
 ***
 
@@ -471,7 +471,7 @@ component.setRotationDegree(90)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:167](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L167)
+[packages/2d/src/FComponent2d.ts:179](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L179)
 
 ***
 
@@ -509,7 +509,7 @@ component.setScale(1, 1)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:137](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L137)
+[packages/2d/src/FComponent2d.ts:149](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L149)
 
 ***
 
@@ -534,7 +534,7 @@ The width will be calculated according to the aspect ratio of the texture.
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:79](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L79)
+[packages/2d/src/sprite/FSprite.ts:79](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L79)
 
 ***
 
@@ -559,13 +559,13 @@ The height will be calculated according to the aspect ratio of the texture.
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:70](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L70)
+[packages/2d/src/sprite/FSprite.ts:70](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L70)
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object`
 
 #### Index Signature
 
@@ -578,7 +578,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`CALLBACKS_ONCOLLISION`](FComponent2d.md#callbacks_oncollision)
+[`FComponent2d`](FComponent2d.md).[`__CALLBACKS_ON_COLLISION__`](FComponent2d.md#__callbacks_on_collision__)
 
 #### Defined in
 
@@ -586,21 +586,21 @@ packages/core/dist/index.d.ts:17
 
 ***
 
-### CALLBACKS\_ONLOADED
+### \_\_CALLBACKS\_ON\_LOADED\_\_
 
-> **CALLBACKS\_ONLOADED**: () => `void`[] = `[]`
+> **\_\_CALLBACKS\_ON\_LOADED\_\_**: () => `void`[] = `[]`
 
 Callbacks for when the texture is loaded
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:26](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L26)
+[packages/2d/src/sprite/FSprite.ts:26](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L26)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -609,7 +609,7 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`ID`](FComponent2d.md#id)
+[`FComponent2d`](FComponent2d.md).[`__ID__`](FComponent2d.md#__id__)
 
 #### Defined in
 
@@ -629,7 +629,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:46](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L46)
+[packages/2d/src/FComponent2d.ts:46](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L46)
 
 ***
 
@@ -645,7 +645,7 @@ PIXI container
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L22)
+[packages/2d/src/FComponent2d.ts:22](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L22)
 
 ***
 
@@ -661,7 +661,7 @@ Position of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:28](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L28)
+[packages/2d/src/FComponent2d.ts:28](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L28)
 
 ***
 
@@ -677,7 +677,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:42](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L42)
+[packages/2d/src/FComponent2d.ts:42](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L42)
 
 ***
 
@@ -693,7 +693,7 @@ Rotation of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:36](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L36)
+[packages/2d/src/FComponent2d.ts:36](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L36)
 
 ***
 
@@ -709,7 +709,7 @@ Scale of the component.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:32](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L32)
+[packages/2d/src/FComponent2d.ts:32](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L32)
 
 ***
 
@@ -725,7 +725,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:17](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/FComponent2d.ts#L17)
+[packages/2d/src/FComponent2d.ts:17](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FComponent2d.ts#L17)
 
 ***
 
@@ -737,4 +737,4 @@ The texture of the sprite.
 
 #### Defined in
 
-[packages/2d/src/sprite/FSprite.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/2d/src/sprite/FSprite.ts#L22)
+[packages/2d/src/sprite/FSprite.ts:22](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/sprite/FSprite.ts#L22)

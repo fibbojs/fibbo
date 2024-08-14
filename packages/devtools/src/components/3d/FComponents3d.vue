@@ -1,6 +1,6 @@
 <template>
   <div class="f-components">
-    <FComponent2dDom
+    <FComponent3dDom
       v-for="component in components"
       :key="component.__ID__"
       :component="component"
@@ -11,12 +11,12 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { defineProps } from 'vue'
-import type { FComponent2d } from '@fibbojs/2d'
-import FComponent2dDom from './FComponent2d.ce.vue'
+import type { FComponent3d } from '@fibbojs/3d'
+import FComponent3dDom from './FComponent3d.vue'
 
 defineProps({
   components: {
-    type: Array as PropType<FComponent2d[]>,
+    type: Array as PropType<FComponent3d[]>,
     default: () => [],
   },
 })

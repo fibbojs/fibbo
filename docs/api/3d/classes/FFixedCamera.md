@@ -9,7 +9,7 @@ A fixed camera that does not move.
 ## Example
 
 ```ts
-import { FFixedCamera, FScene3d } from '@fibbojs/3d'
+import { FScene3d, FFixedCamera } from '@fibbojs/3d'
 
 const scene = new FScene3d()
 
@@ -38,7 +38,7 @@ scene.camera.lookAt(0, 0, 0)
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FFixedCamera.ts#L18)
+[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FFixedCamera.ts#L18)
 
 ## Methods
 
@@ -385,7 +385,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:46](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L46)
+[packages/3d/src/cameras/FCamera3d.ts:46](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FCamera3d.ts#L46)
 
 ***
 
@@ -1127,7 +1127,7 @@ Add a callback to be called when a collision occurs.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
-  console.log('Player collided with an Enemy!')
+ console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -1135,7 +1135,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
-  console.log('Player collided with the enemy!')
+ console.log('Player collided with the enemy!')
 })
 ```
 
@@ -1145,7 +1145,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:39](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L39)
+[packages/3d/src/cameras/FCamera3d.ts:39](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FCamera3d.ts#L39)
 
 ***
 
@@ -1172,7 +1172,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FFixedCamera.ts#L22)
+[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FFixedCamera.ts#L22)
 
 ***
 
@@ -1553,7 +1553,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:21](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L21)
+[packages/3d/src/cameras/FCamera3d.ts:21](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FCamera3d.ts#L21)
 
 ***
 
@@ -1583,7 +1583,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:35](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L35)
+[packages/3d/src/cameras/FCamera3d.ts:35](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FCamera3d.ts#L35)
 
 ***
 
@@ -1725,7 +1725,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:28](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L28)
+[packages/3d/src/cameras/FCamera3d.ts:28](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FCamera3d.ts#L28)
 
 ***
 
@@ -1780,23 +1780,23 @@ the monitors are in grid like this
 ```
 then for each monitor you would call it like this
 ```typescript
-const w = 1920
-const h = 1080
-const fullWidth = w * 3
-const fullHeight = h * 2
+  const w = 1920;
+  const h = 1080;
+  const fullWidth = w * 3;
+  const fullHeight = h * 2;
 
-// Monitor - A
-camera.setViewOffset(fullWidth, fullHeight, w * 0, h * 0, w, h)
-// Monitor - B
-camera.setViewOffset(fullWidth, fullHeight, w * 1, h * 0, w, h)
-// Monitor - C
-camera.setViewOffset(fullWidth, fullHeight, w * 2, h * 0, w, h)
-// Monitor - D
-camera.setViewOffset(fullWidth, fullHeight, w * 0, h * 1, w, h)
-// Monitor - E
-camera.setViewOffset(fullWidth, fullHeight, w * 1, h * 1, w, h)
-// Monitor - F
-camera.setViewOffset(fullWidth, fullHeight, w * 2, h * 1, w, h)
+  // Monitor - A
+  camera.setViewOffset( fullWidth, fullHeight, w * 0, h * 0, w, h );
+  // Monitor - B
+  camera.setViewOffset( fullWidth, fullHeight, w * 1, h * 0, w, h );
+  // Monitor - C
+  camera.setViewOffset( fullWidth, fullHeight, w * 2, h * 0, w, h );
+  // Monitor - D
+  camera.setViewOffset( fullWidth, fullHeight, w * 0, h * 1, w, h );
+  // Monitor - E
+  camera.setViewOffset( fullWidth, fullHeight, w * 1, h * 1, w, h );
+  // Monitor - F
+  camera.setViewOffset( fullWidth, fullHeight, w * 2, h * 1, w, h );
 ```
 Note there is no reason monitors have to be the same size or in a grid.
 
@@ -2175,9 +2175,9 @@ node\_modules/@types/three/src/core/Object3D.d.ts:443
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
@@ -2190,17 +2190,17 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`CALLBACKS_ONCOLLISION`](FCamera3d.md#callbacks_oncollision)
+[`FCamera3d`](FCamera3d.md).[`__CALLBACKS_ON_COLLISION__`](FCamera3d.md#__callbacks_on_collision__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:10](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L10)
+[packages/3d/src/cameras/FCamera3d.ts:10](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FCamera3d.ts#L10)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -2209,11 +2209,11 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`ID`](FCamera3d.md#id)
+[`FCamera3d`](FCamera3d.md).[`__ID__`](FCamera3d.md#__id__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L9)
+[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/cameras/FCamera3d.ts#L9)
 
 ***
 
@@ -2520,7 +2520,7 @@ Expects a `Integer`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`id`](FCamera3d.md#id-1)
+[`FCamera3d`](FCamera3d.md).[`id`](FCamera3d.md#id)
 
 #### Defined in
 
