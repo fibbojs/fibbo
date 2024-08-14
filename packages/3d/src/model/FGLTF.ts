@@ -11,10 +11,10 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js'
 const MANAGER = new THREE.LoadingManager()
 const THREE_PATH = `https://unpkg.com/three@0.${THREE.REVISION}.x`
 const DRACO_LOADER = new DRACOLoader(MANAGER).setDecoderPath(
-	`${THREE_PATH}/examples/jsm/libs/draco/gltf/`,
+`${THREE_PATH}/examples/jsm/libs/draco/gltf/`,
 )
 const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
-	`${THREE_PATH}/examples/jsm/libs/basis/`,
+`${THREE_PATH}/examples/jsm/libs/basis/`,
 )
 */
 

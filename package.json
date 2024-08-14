@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "description": "A web game engine written in TypeScript",
-  "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
+  "author": "Augustin Mercier 'Gugustinette' <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
   "homepage": "https://fibbojs.github.io/fibbo",
   "repository": {
@@ -13,6 +13,8 @@
   "bugs": "https://github.com/fibbojs/fibbo/issues",
   "keywords": [],
   "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint --fix .",
     "test:ui": "vitest --ui --coverage --coverage.include=packages",
     "test:report": "vitest run --config ./docs/vitest.config.ts",
     "docs:dev": "vitepress dev docs",

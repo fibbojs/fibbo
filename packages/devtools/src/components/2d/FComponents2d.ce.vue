@@ -11,13 +11,13 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { defineProps } from 'vue'
-import type { FComponent2d } from '@fibbojs/2d';
-import FComponent2dDom from './FComponent2d.ce.vue';
+import type { FComponent2d } from '@fibbojs/2d'
+import FComponent2dDom from './FComponent2d.ce.vue'
 
 defineProps({
   components: {
     type: Array as PropType<FComponent2d[]>,
-    default: () => []
-  }
+    default: () => [],
+  },
 })
 </script>

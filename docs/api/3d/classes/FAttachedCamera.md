@@ -9,7 +9,7 @@ A camera that can be attached to a FComponent3d.
 ## Example
 
 ```ts
-import { FScene3d, FAttachedCamera, FCube } from '@fibbojs/3d'
+import { FAttachedCamera, FCube, FScene3d } from '@fibbojs/3d'
 
 const scene = new FScene3d()
 
@@ -1134,7 +1134,7 @@ Add a callback to be called when a collision occurs.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with an Enemy!')
+  console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -1142,7 +1142,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
- console.log('Player collided with the enemy!')
+  console.log('Player collided with the enemy!')
 })
 ```
 
@@ -1787,23 +1787,23 @@ the monitors are in grid like this
 ```
 then for each monitor you would call it like this
 ```typescript
-  const w = 1920;
-  const h = 1080;
-  const fullWidth = w * 3;
-  const fullHeight = h * 2;
+const w = 1920
+const h = 1080
+const fullWidth = w * 3
+const fullHeight = h * 2
 
-  // Monitor - A
-  camera.setViewOffset( fullWidth, fullHeight, w * 0, h * 0, w, h );
-  // Monitor - B
-  camera.setViewOffset( fullWidth, fullHeight, w * 1, h * 0, w, h );
-  // Monitor - C
-  camera.setViewOffset( fullWidth, fullHeight, w * 2, h * 0, w, h );
-  // Monitor - D
-  camera.setViewOffset( fullWidth, fullHeight, w * 0, h * 1, w, h );
-  // Monitor - E
-  camera.setViewOffset( fullWidth, fullHeight, w * 1, h * 1, w, h );
-  // Monitor - F
-  camera.setViewOffset( fullWidth, fullHeight, w * 2, h * 1, w, h );
+// Monitor - A
+camera.setViewOffset(fullWidth, fullHeight, w * 0, h * 0, w, h)
+// Monitor - B
+camera.setViewOffset(fullWidth, fullHeight, w * 1, h * 0, w, h)
+// Monitor - C
+camera.setViewOffset(fullWidth, fullHeight, w * 2, h * 0, w, h)
+// Monitor - D
+camera.setViewOffset(fullWidth, fullHeight, w * 0, h * 1, w, h)
+// Monitor - E
+camera.setViewOffset(fullWidth, fullHeight, w * 1, h * 1, w, h)
+// Monitor - F
+camera.setViewOffset(fullWidth, fullHeight, w * 2, h * 1, w, h)
 ```
 Note there is no reason monitors have to be the same size or in a grid.
 

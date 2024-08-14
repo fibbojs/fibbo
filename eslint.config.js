@@ -14,6 +14,9 @@ export default antfu(
       'vue/component-tags-order': ['error', {
         order: ['template', 'script', 'style'],
       }],
+      'vue/block-order': ['error', {
+        order: ['template', 'script', 'style'],
+      }],
     },
   },
 )

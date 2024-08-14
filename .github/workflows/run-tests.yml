@@ -7,28 +7,28 @@ on:
     branches:
       - main
     paths:
-      - 'package.json'
-      - 'package-lock.json'
+      - package.json
+      - package-lock.json
       - 'src/**'
       - 'test/**'
   pull_request:
     branches:
       - main
     paths:
-      - 'package.json'
-      - 'package-lock.json'
+      - package.json
+      - package-lock.json
       - 'src/**'
       - 'test/**'
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v2
-          with:
-            node-version: 18
-            registry-url: https://registry.npmjs.org/
-        - run: npm ci
-        - name: Test all packages
-          run: npx nx run-many --target=test --all
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - name: Test all packages
+        run: npx nx run-many --target=test --all

@@ -6,8 +6,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'package.json'
-      - 'package-lock.json'
+      - package.json
+      - package-lock.json
       - 'docs/**'
       - 'apps/playground-2d/**'
       - 'apps/playground-3d/**'

@@ -23,37 +23,37 @@ import type { FComponent3d } from '@fibbojs/3d'
 import FComponents2d from './2d/FComponents2d.ce.vue'
 import FComponents3d from './3d/FComponents3d.ce.vue'
 
+defineProps({
+  title: String,
+  scene: {
+    type: Object as PropType<FScene>,
+    default: null,
+  },
+})
+
 /**
  * Explore prototype chain of given FComponent to get all the classes in the chain.
  * For some reason, `instanceof` doesn't work in this context, so we have to do this.
  */
 function getPrototypeChain(component: FComponent) {
-  let proto = component;
-  const names = [];
+  let proto = component
+  const names = []
   while (proto) {
-    names.push(proto.constructor.name);
-    proto = Object.getPrototypeOf(proto);
+    names.push(proto.constructor.name)
+    proto = Object.getPrototypeOf(proto)
   }
-  return names;
+  return names
 }
 
 // Tell if a given FComponent is an instance of FComponent2d
 function is2dComponent(component: FComponent) {
-  return getPrototypeChain(component).includes('FComponent2d');
+  return getPrototypeChain(component).includes('FComponent2d')
 }
 
 // Tell if a given FComponent is an instance of FComponent3d
 function is3dComponent(component: FComponent) {
-  return getPrototypeChain(component).includes('FComponent3d');
+  return getPrototypeChain(component).includes('FComponent3d')
 }
-
-defineProps({
-  title: String,
-  scene: {
-    type: Object as PropType<FScene>,
-    default: null
-  }
-})
 </script>
 
 <style lang="scss" scoped>
