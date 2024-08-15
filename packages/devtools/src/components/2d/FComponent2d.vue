@@ -1,33 +1,41 @@
 <template>
   <div class="f-component f-component-2d">
-    <FComponentIcon :icon-name="iconName" />
-    <h4 class="f-component-id">
-      {{ component.constructor.name }} ({{ component.__ID__ }})
-    </h4>
-    <div class="f-component-property">
-      <div class="f-component-property-group">
+    <FComponentHeader
+      :component="component"
+      :show-details="showDetails"
+      @click="showDetails = !showDetails"
+    />
+    <div class="f-component-properties" :class="{ 'f-component-properties--hidden': !showDetails }">
+      <div class="f-component-property">
         <p>Position</p>
-        <p>x : {{ component.position.x }}</p>
-        <p>y : {{ component.position.y }}</p>
+        <div class="f-component-property-group">
+          <p>x : {{ cropValue(component.position.x) }}</p>
+          <p>y : {{ cropValue(component.position.y) }}</p>
+        </div>
       </div>
-      <p>r : {{ component.rotation }}</p>
+      <div class="f-component-property">
+        <p>Rotation</p>
+        <div class="f-component-property-group">
+          <p>r : {{ cropValue(component.rotation) }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps } from 'vue'
+import { defineProps, ref } from 'vue'
 import type { FComponent2d } from '@fibbojs/2d'
-import FComponentIcon from '../icons/FComponentIcon.vue'
-import { useComponentIcon } from '../../composables/useComponentIcon'
+import FComponentHeader from '../common/FComponentHeader.vue'
+import { cropValue } from '../../utils/cropValue'
 
-const props = defineProps({
+defineProps({
   component: {
     type: Object as PropType<FComponent2d>,
     required: true,
   },
 })
 
-const iconName = useComponentIcon(props.component)
+const showDetails = ref(false)
 </script>

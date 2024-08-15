@@ -1,21 +1,26 @@
 <template>
   <div class="f-component f-component-3d">
-    <FComponentIcon :icon-name="iconName" />
-    <h4 class="f-component-id">
-      {{ component.constructor.name }} ({{ component.__ID__ }})
-    </h4>
-    <div class="f-component-property">
-      <div class="f-component-property-group">
+    <FComponentHeader
+      :component="component"
+      :show-details="showDetails"
+      @click="showDetails = !showDetails"
+    />
+    <div class="f-component-properties" :class="{ 'f-component-properties--hidden': !showDetails }">
+      <div class="f-component-property">
         <p>Position</p>
-        <p>x : {{ component.position.x }}</p>
-        <p>y : {{ component.position.y }}</p>
-        <p>z : {{ component.position.z }}</p>
+        <div class="f-component-property-group">
+          <p>x : {{ cropValue(component.position.x) }}</p>
+          <p>y : {{ cropValue(component.position.y) }}</p>
+          <p>z : {{ cropValue(component.position.z) }}</p>
+        </div>
       </div>
-      <div class="f-component-property-group">
+      <div class="f-component-property">
         <p>Rotation</p>
-        <p>x : {{ component.rotation.x }}</p>
-        <p>y : {{ component.rotation.y }}</p>
-        <p>z : {{ component.rotation.z }}</p>
+        <div class="f-component-property-group">
+          <p>x : {{ cropValue(component.rotation.x) }}</p>
+          <p>y : {{ cropValue(component.rotation.y) }}</p>
+          <p>z : {{ cropValue(component.rotation.z) }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -23,17 +28,17 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps } from 'vue'
+import { defineProps, ref } from 'vue'
 import type { FComponent3d } from '@fibbojs/3d'
-import FComponentIcon from '../icons/FComponentIcon.vue'
-import { useComponentIcon } from '../../composables/useComponentIcon'
+import FComponentHeader from '../common/FComponentHeader.vue'
+import { cropValue } from '../../utils/cropValue'
 
-const props = defineProps({
+defineProps({
   component: {
     type: Object as PropType<FComponent3d>,
     required: true,
   },
 })
 
-const iconName = useComponentIcon(props.component)
+const showDetails = ref(false)
 </script>

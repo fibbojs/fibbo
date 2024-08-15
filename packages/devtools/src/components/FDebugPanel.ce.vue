@@ -34,7 +34,7 @@ defineProps({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .f-debug-panel {
   position: absolute;
   top: 10px;
@@ -55,7 +55,83 @@ defineProps({
   }
 
   .f-components {
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    row-gap: 2px;
+  }
+
+  .f-component {
+    .f-component-header {
+      display: flex;
+      flex-direction: row;
+      column-gap: 8px;
+      align-items: center;
+      border-radius: 8px;
+      transition: background 0.1s;
+      cursor: pointer;
+
+      .f-component-header-arrow {
+        display: grid;
+        place-items: center;
+        width: 16px;
+        transition: transform 0.1s;
+      }
+
+      .f-component-name {
+        margin: 0;
+      }
+
+      .f-component-id {
+        color: #4d4e4e;
+      }
+
+      &:hover {
+        background: #1E1F20;
+      }
+    }
+
+    .f-component-header--open {
+      .f-component-header-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    .f-component-properties {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        margin: 0;
+      }
+
+      .f-component-property {
+        margin-left: 24px;
+
+        .f-component-property-group {
+          display: flex;
+          flex-direction: row;
+          column-gap: 2px;
+
+          > p {
+            padding: 0 4px;
+            border-radius: 4px;
+            background: #1E1F20;
+          }
+        }
+      }
+    }
+
+    .f-component-properties--hidden {
+      display: none;
+    }
+  }
+
+  .f-component-icon {
+    width: 16px;
+    height: 16px;
+    display: grid;
+    place-items: center;
   }
 }
 </style>

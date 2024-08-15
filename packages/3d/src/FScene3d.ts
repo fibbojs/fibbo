@@ -67,7 +67,7 @@ export class FScene3d extends FScene {
   init() {
     // Create scene, camera, and renderer
     this.scene = new THREE.Scene()
-    this.scene.background = new THREE.Color(0x121212)
+    this.scene.background = new THREE.Color(0x222324)
     this.debugCamera = new FFixedCamera()
     this.debugCamera.position.set(5, 5, 5)
     this.camera = this.debugCamera

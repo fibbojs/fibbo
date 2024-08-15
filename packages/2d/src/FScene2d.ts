@@ -75,9 +75,9 @@ export class FScene2d extends FScene {
     // Resize the renderer
     this.app.renderer.resize(SCREEN_WIDTH, SCREEN_HEIGHT)
 
-    // Modify background color to 0x121212
+    // Modify background color to 0x222324
     const backgroundSystem = new PIXI.BackgroundSystem()
-    backgroundSystem.color = new PIXI.Color(0x121212)
+    backgroundSystem.color = new PIXI.Color(0x222324)
     this.app.renderer.background = backgroundSystem
 
     /**
