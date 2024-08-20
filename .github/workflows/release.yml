@@ -13,16 +13,16 @@ jobs:
       contents: read
       id-token: write # Needed for provenance data generation
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - name: Test package
-        run: npm run test
+        run: npx nx run-many --target=test --all
       - name: Build
-        run: npm run build
+        run: npx nx run-many --target=build --all
       # Configure Git for automated commits
       - name: Configuring Git
         run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@users.noreply.github.com"
