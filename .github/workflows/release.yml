@@ -30,10 +30,10 @@ jobs:
         run: npx nx release --first-release --skip-publish ${{ github.event.release.tag_name }}
       # Publish packages to NPM
       - name: Publish package to NPM
-        run: npx nx release publish ${{ github.event.release.tag_name }} --access public
+        run: npx nx release publish ${{ github.event.release.tag_name }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+          NPM_CONFIG_PROVENANCE: false
       # Push changes to GitHub (updated package.json,...)
       - name: Push changes to GitHub
         run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
