@@ -9,6 +9,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Needed for provenance data generation
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -28,6 +31,7 @@ jobs:
         run: nx release version ${{ github.event.release.tag_name }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
       # Push changes to GitHub (updated package.json,...)
       - name: Push changes to GitHub
         run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
