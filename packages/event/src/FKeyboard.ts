@@ -1,8 +1,8 @@
+import type { FScene } from '@fibbojs/core'
+
 /**
  * @description A helper class to manage keyboard events.
- * Can be instantiated or used statically.
- * Instantiate this class will let you manage the keyboard events for a specific instance.
- * Using this class statically will let you manage the keyboard events globally.
+ * Events will be triggered on each frame.
  * @example
  * ```ts
  * // Static usage
@@ -18,57 +18,39 @@
  */
 export class FKeyboard {
   /**
-   * @description An array of all the listeners among all the instances of FKeyboard
+   * @description A map of all the keys being pressed
    */
-  static STATIC_LISTENERS: Array<(event: KeyboardEvent) => void> = []
+  keys: Record<string, boolean>
   /**
-   * @description An array of all the keys among the current instance of FKeyboard
+   * @description An map of all the callbacks for each key being pressed
    */
-  listeners: Array<(event: KeyboardEvent) => void> = []
+  callback: Record<string, Array<() => void>>
 
-  constructor() {
-    // Initialize the listeners array
-    this.listeners = []
-  }
+  constructor(scene: FScene) {
+    // Initialize the keys map
+    this.keys = {}
+    // Initialize the callbacks map
+    this.callback = {}
 
-  /**
-   * @description Add a listener to a given key event
-   * @param key The key to listen to
-   * @param callback The callback to call when the key is pressed
-   * @returns The callback function that removes the listener
-   * @example Basic usage
-   * ```ts
-   * FKeyboard.on('ArrowUp', () => {
-   *  console.log('ArrowUp key pressed!')
-   * })
-   * ```
-   * @example Removing a listener
-   * ```ts
-   * // Get the remove listener function from the on method
-   * const removeListener = FKeyboard.on('ArrowUp', () => {
-   *  console.log('ArrowUp key pressed!')
-   * })
-   * // Remove the listener
-   * removeListener()
-   * ```
-   */
-  static on(key: string, callback: () => void): () => void {
-    // Create a listener for the keydown event
-    const listener = (event: KeyboardEvent) => {
-      if (event.key === key) {
-        callback()
+    // Detect keys being pressed
+    document.addEventListener('keydown', (event: KeyboardEvent) => {
+      this.keys[event.key] = true
+    })
+    // Detect keys being released
+    document.addEventListener('keyup', (event: KeyboardEvent) => {
+      this.keys[event.key] = false
+    })
+
+    // On each frame, call the callback for each key being pressed
+    scene.onFrame(() => {
+      for (const key in this.keys) {
+        if (this.keys[key] && this.callback[key]) {
+          for (const cb of this.callback[key]) {
+            cb()
+          }
+        }
       }
-    }
-    // Attach the listener to the document
-    document.addEventListener('keydown', listener)
-
-    // Attach the listener to the static listeners array
-    this.STATIC_LISTENERS.push(listener)
-
-    // Return a function to remove the listener if needed
-    return () => {
-      document.removeEventListener('keydown', listener)
-    }
+    })
   }
 
   /**
@@ -83,33 +65,25 @@ export class FKeyboard {
    *  console.log('ArrowUp key pressed!')
    * })
    * ```
-   * @example Removing a listener
+   * @example Remove the listener
    * ```ts
    * const keyboard = new FKeyboard()
-   * // Get the remove listener function from the on method
    * const removeListener = keyboard.on('ArrowUp', () => {
    *  console.log('ArrowUp key pressed!')
    * })
-   * // Remove the listener
    * removeListener()
    * ```
    */
   on(key: string, callback: () => void): () => void {
-    // Create a listener for the keydown event
-    const listener = (event: KeyboardEvent) => {
-      if (event.key === key) {
-        callback()
-      }
+    // If the key does not exist in the callback map, create it
+    if (!this.callback[key]) {
+      this.callback[key] = []
     }
-    // Attach the listener to the document
-    document.addEventListener('keydown', listener)
-
-    // Attach the listener to the static listeners array
-    this.listeners.push(listener)
-
-    // Return a function to remove the listener if needed
+    // Add the callback to the key
+    this.callback[key].push(callback)
+    // Return a function to remove the listener
     return () => {
-      document.removeEventListener('keydown', listener)
+      this.callback[key] = this.callback[key].filter(cb => cb !== callback)
     }
   }
 
@@ -117,23 +91,7 @@ export class FKeyboard {
    * @description Remove all the listeners
    * @example
    * ```ts
-   * Keyboard.clear()
-   * ```
-   */
-  static clear() {
-    // Remove all the static listeners
-    for (const listener of this.STATIC_LISTENERS) {
-      document.removeEventListener('keydown', listener)
-    }
-    // Clear the static listeners array
-    this.STATIC_LISTENERS = []
-  }
-
-  /**
-   * @description Remove all the listeners
-   * @example
-   * ```ts
-   * const keyboard = new FKeyboard()
+   * const keyboard = new FKeyboard(scene)
    * keyboard.on('ArrowUp', () => {
    *  console.log('ArrowUp key pressed!')
    * })
@@ -141,11 +99,6 @@ export class FKeyboard {
    * ```
    */
   clear() {
-    // Remove all the listeners
-    for (const listener of this.listeners) {
-      document.removeEventListener('keydown', listener)
-    }
-    // Clear the listeners array
-    this.listeners = []
+    this.callback = {}
   }
 }

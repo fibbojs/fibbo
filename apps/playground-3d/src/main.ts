@@ -74,21 +74,23 @@ import './style.css'
     console.log('Cube collided with the sphere!')
   })
 
+  // Create a keyboard instance
+  const fKeyboard = new FKeyboard(scene)
   // Detect inputs to move the cube
-  FKeyboard.on('ArrowUp', () => {
-    cube.rigidBody?.applyImpulse({ x: 0, y: 0, z: -1 }, true)
+  fKeyboard.on('ArrowUp', () => {
+    cube.rigidBody?.applyImpulse({ x: 0, y: 0, z: -0.2 }, true)
   })
-  FKeyboard.on('ArrowDown', () => {
-    cube.rigidBody?.applyImpulse({ x: 0, y: 0, z: 1 }, true)
+  fKeyboard.on('ArrowDown', () => {
+    cube.rigidBody?.applyImpulse({ x: 0, y: 0, z: 0.2 }, true)
   })
-  FKeyboard.on('ArrowLeft', () => {
-    cube.rigidBody?.applyImpulse({ x: -1, y: 0, z: 0 }, true)
+  fKeyboard.on('ArrowLeft', () => {
+    cube.rigidBody?.applyImpulse({ x: -0.2, y: 0, z: 0 }, true)
   })
-  FKeyboard.on('ArrowRight', () => {
-    cube.rigidBody?.applyImpulse({ x: 1, y: 0, z: 0 }, true)
+  fKeyboard.on('ArrowRight', () => {
+    cube.rigidBody?.applyImpulse({ x: 0.2, y: 0, z: 0 }, true)
   })
-  FKeyboard.on(' ', () => {
-    cube.rigidBody?.applyImpulse({ x: 0, y: 5, z: 0 }, true)
+  fKeyboard.on(' ', () => {
+    cube.rigidBody?.applyImpulse({ x: 0, y: 1, z: 0 }, true)
   })
 
   // Attach a camera to the cube

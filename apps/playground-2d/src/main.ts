@@ -74,20 +74,22 @@ import MySquare from './classes/MySquare'
   })
   scene.addComponent(sprite)
 
+  // Create a keyboard instance
+  const fKeyboard = new FKeyboard(scene)
   // Detect inputs to move the cube
-  FKeyboard.on('ArrowUp', () => {
-    sprite.rigidBody?.applyImpulse({ x: 0, y: 1 }, true)
+  fKeyboard.on('ArrowUp', () => {
+    sprite.rigidBody?.applyImpulse({ x: 0, y: 0.1 }, true)
   })
-  FKeyboard.on('ArrowDown', () => {
-    sprite.rigidBody?.applyImpulse({ x: 0, y: -1 }, true)
+  fKeyboard.on('ArrowDown', () => {
+    sprite.rigidBody?.applyImpulse({ x: 0, y: -0.1 }, true)
   })
-  FKeyboard.on('ArrowLeft', () => {
-    sprite.rigidBody?.applyImpulse({ x: -1, y: 0 }, true)
+  fKeyboard.on('ArrowLeft', () => {
+    sprite.rigidBody?.applyImpulse({ x: -0.1, y: 0 }, true)
   })
-  FKeyboard.on('ArrowRight', () => {
-    sprite.rigidBody?.applyImpulse({ x: 1, y: 0 }, true)
+  fKeyboard.on('ArrowRight', () => {
+    sprite.rigidBody?.applyImpulse({ x: 0.1, y: 0 }, true)
   })
-  FKeyboard.on(' ', () => {
-    sprite.rigidBody?.applyImpulse({ x: 0, y: 2 }, true)
+  fKeyboard.on(' ', () => {
+    sprite.rigidBody?.applyImpulse({ x: 0, y: 0.5 }, true)
   })
 })()
