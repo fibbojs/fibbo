@@ -46,7 +46,6 @@ export class FScene3d extends FScene {
   declare scene: THREE.Scene
   declare renderer: THREE.WebGLRenderer
   declare camera: FCamera3d
-  declare debugCamera: FCamera3d
   declare controls?: OrbitControls
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
@@ -63,22 +62,20 @@ export class FScene3d extends FScene {
   }
 
   init() {
-    // Create scene, camera, and renderer
+    // Create scene and renderer
     this.scene = new THREE.Scene()
     this.scene.background = new THREE.Color(0x222324)
-    this.debugCamera = new FFixedCamera()
-    this.debugCamera.position.set(5, 5, 5)
-    this.camera = this.debugCamera
     this.renderer = new THREE.WebGLRenderer()
     this.renderer.setSize((window as any).innerWidth, (window as any).innerHeight)
+    // Create a default camera
+    this.camera = new FFixedCamera()
+    this.camera.position.set(5, 5, 5)
+    // Orbit controls for the camera
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
-    // Add ambient lights
+    // Add ambient light
     const light = new THREE.AmbientLight(0xFFFFFF)
     this.scene.add(light)
-
-    // Orbit controls
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement)
-    this.controls.update()
 
     // Add renderer to DOM
     document.body.appendChild(this.renderer.domElement)
@@ -88,12 +85,10 @@ export class FScene3d extends FScene {
       // Call onFrame for each component
       this.components.forEach(component => component.onFrame(delta))
 
-      // Update controls
-      this.controls?.update()
-
       // Camera
       this.camera.onFrame(delta)
 
+      // Render the scene
       this.renderer.render(this.scene, this.camera)
     })
   }
