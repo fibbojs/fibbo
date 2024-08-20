@@ -33,7 +33,7 @@ jobs:
         run: npx nx release publish ${{ github.event.release.tag_name }} --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: false
+          NPM_CONFIG_PROVENANCE: true
       # Push changes to GitHub (updated package.json,...)
       - name: Push changes to GitHub
         run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main

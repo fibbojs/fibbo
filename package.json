@@ -5,6 +5,9 @@
   "description": "A web game engine written in TypeScript",
   "author": "Augustin Mercier 'Gugustinette' <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://fibbojs.github.io/fibbo",
   "repository": {
     "type": "git",
