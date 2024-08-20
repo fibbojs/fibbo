@@ -115,8 +115,23 @@ defineProps({
 
           > p {
             padding: 0 4px;
+          }
+          > input {
+            padding: 0 4px;
             border-radius: 4px;
             background: #1E1F20;
+            border: none;
+            width: 32px;
+
+            // Hide arrows
+            &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            // Hide focus
+            &:focus {
+              outline: none;
+            }
           }
         }
       }

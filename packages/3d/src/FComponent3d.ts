@@ -138,12 +138,15 @@ export abstract class FComponent3d extends FComponent {
    */
   setPosition(x: number, y: number, z: number): void {
     this.position.set(x, y, z)
+    // If a mesh exists, update its position
     if (this.mesh)
       this.mesh.position.set(x, y, z)
-    if (this.rigidBody)
-      this.rigidBody.setTranslation({ x, y, z }, true)
+    // If a collider exists, update its translation
     if (this.collider)
       this.collider.setTranslation({ x, y, z })
+    // If a rigid body exists, update its translation
+    if (this.rigidBody)
+      this.rigidBody.setTranslation({ x, y, z }, true)
   }
 
   /**
@@ -154,11 +157,32 @@ export abstract class FComponent3d extends FComponent {
    */
   setScale(x: number, y: number, z: number): void {
     this.scale.set(x, y, z)
-    if (this.mesh)
-      this.mesh.scale.set(x, y, z)
-    // If a collider exists, update its half-extents
-    if (this.collider)
-      this.collider.setHalfExtents(new RAPIER.Vector3(x / 2, y / 2, z / 2))
+    // If a mesh exists
+    if (this.mesh) {
+      // If the mesh is a classic polyhedron
+      if (this.mesh.geometry instanceof THREE.BoxGeometry || this.mesh.geometry instanceof THREE.SphereGeometry) {
+        this.mesh.scale.set(x, y, z)
+      }
+      // We don't know the type of the mesh, probably a custom mesh
+      else {
+        // I don't really know why the scale should be devided by 2 for custom meshes, but it works
+        this.mesh.scale.set(x / 2, y / 2, z / 2)
+      }
+    }
+    // If a collider exists
+    if (this.collider) {
+      // If the collider is a cuboid, update its half extents
+      if (this.collider.shape.type === RAPIER.ShapeType.Cuboid) {
+        this.collider.setHalfExtents(new RAPIER.Vector3(x / 2, y / 2, z / 2))
+      }
+      // If the collider is a ball, update its radius
+      else if (this.collider.shape.type === RAPIER.ShapeType.Ball) {
+        this.collider.setRadius(
+          // Get the maximum value of x, y and z
+          Math.max(x, y, z) / 2,
+        )
+      }
+    }
   }
 
   /**
@@ -173,12 +197,15 @@ export abstract class FComponent3d extends FComponent {
    */
   setRotation(x: number, y: number, z: number): void {
     this.rotation.set(x, y, z)
+    // If a mesh exists, update its rotation
     if (this.mesh)
       this.mesh.rotation.set(x, y, z)
-    if (this.rigidBody)
-      this.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z)), true)
+    // If a collider exists, update its rotation
     if (this.collider)
       this.collider.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z)))
+    // If a rigid body exists, update its rotation
+    if (this.rigidBody)
+      this.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z)), true)
   }
 
   /**
@@ -196,7 +223,7 @@ export abstract class FComponent3d extends FComponent {
     y: number,
     z: number,
   ): void {
-  // Convert degrees to radians
+    // Convert degrees to radians
     const radRotation = {
       x: THREE.MathUtils.degToRad(x),
       y: THREE.MathUtils.degToRad(y),
@@ -374,5 +401,104 @@ export abstract class FComponent3d extends FComponent {
       // Set the active events
       this.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
+  }
+
+  /**
+   * Setters & getters for transform properties
+   */
+  get x(): number {
+    return this.position.x
+  }
+
+  set x(x: number) {
+    this.setPosition(x, this.position.y, this.position.z)
+  }
+
+  get y(): number {
+    return this.position.y
+  }
+
+  set y(y: number) {
+    this.setPosition(this.position.x, y, this.position.z)
+  }
+
+  get z(): number {
+    return this.position.z
+  }
+
+  set z(z: number) {
+    this.setPosition(this.position.x, this.position.y, z)
+  }
+
+  get rotationX(): number {
+    return this.rotation.x
+  }
+
+  set rotationX(x: number) {
+    this.setRotation(x, this.rotation.y, this.rotation.z)
+  }
+
+  get rotationY(): number {
+    return this.rotation.y
+  }
+
+  set rotationY(y: number) {
+    this.setRotation(this.rotation.x, y, this.rotation.z)
+  }
+
+  get rotationZ(): number {
+    return this.rotation.z
+  }
+
+  set rotationZ(z: number) {
+    this.setRotation(this.rotation.x, this.rotation.y, z)
+  }
+
+  get rotationDegreeX(): number {
+    return THREE.MathUtils.radToDeg(this.rotation.x)
+  }
+
+  set rotationDegreeX(x: number) {
+    this.setRotationDegree(x, this.rotationDegreeY, this.rotationDegreeZ)
+  }
+
+  get rotationDegreeY(): number {
+    return THREE.MathUtils.radToDeg(this.rotation.y)
+  }
+
+  set rotationDegreeY(y: number) {
+    this.setRotationDegree(this.rotationDegreeX, y, this.rotationDegreeZ)
+  }
+
+  get rotationDegreeZ(): number {
+    return THREE.MathUtils.radToDeg(this.rotation.z)
+  }
+
+  set rotationDegreeZ(z: number) {
+    this.setRotationDegree(this.rotationDegreeX, this.rotationDegreeY, z)
+  }
+
+  get scaleX(): number {
+    return this.scale.x
+  }
+
+  set scaleX(x: number) {
+    this.setScale(x, this.scale.y, this.scale.z)
+  }
+
+  get scaleY(): number {
+    return this.scale.y
+  }
+
+  set scaleY(y: number) {
+    this.setScale(this.scale.x, y, this.scale.z)
+  }
+
+  get scaleZ(): number {
+    return this.scale.z
+  }
+
+  set scaleZ(z: number) {
+    this.setScale(this.scale.x, this.scale.y, z)
   }
 }

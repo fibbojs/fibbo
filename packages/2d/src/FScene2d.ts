@@ -1,4 +1,4 @@
-import type { DebugRenderBuffers, World } from '@dimforge/rapier2d'
+import type { World } from '@dimforge/rapier2d'
 import { FScene } from '@fibbojs/core'
 import * as PIXI from 'pixi.js'
 import { Viewport } from 'pixi-viewport'
@@ -28,6 +28,7 @@ export class FScene2d extends FScene {
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent2d[]
   // Pixi.js
+  PIXI: typeof PIXI = PIXI
   app: PIXI.Application
   viewport?: Viewport
   // Rapier
@@ -38,7 +39,6 @@ export class FScene2d extends FScene {
   // onReadyCallbacks
   public onReadyCallbacks: (() => void)[] = []
   // Debug
-  DEBUG_LINES: PIXI.Graphics[] = []
   __DEBUG_MODE__: boolean = false
 
   constructor(options: { debug?: boolean } = { debug: false }) {
@@ -130,10 +130,6 @@ export class FScene2d extends FScene {
       this.components.forEach((component) => {
         component.onFrame(delta)
       })
-
-      // Debug
-      if (this.__DEBUG_MODE__)
-        this.debug()
     })
 
     // Call the onReady callbacks
@@ -241,46 +237,5 @@ export class FScene2d extends FScene {
 
   onReady(callback: () => void) {
     this.onReadyCallbacks.push(callback)
-  }
-
-  debug() {
-    const debugWorld = () => {
-      if (!this.world || !this.viewport)
-        return
-
-      const buffers: DebugRenderBuffers = this.world.debugRender()
-      const debugVerticies: Float32Array = buffers.vertices
-      const debugColors: Float32Array = buffers.colors
-
-      // Remove the previous debug lines
-      this.DEBUG_LINES.forEach((line) => {
-        this.viewport?.removeChild(line)
-      })
-
-      // For each line (a line is represented by 4 numbers in the vertices array)
-      for (let i = 0; i < debugVerticies.length / 4; i += 1) {
-        // Create a new debug line
-        const newDebugLine = new PIXI.Graphics()
-
-        // Use the vertices to draw the line
-        newDebugLine.moveTo(debugVerticies[i * 4] * 100, -debugVerticies[i * 4 + 1] * 100)
-        newDebugLine.lineTo(debugVerticies[i * 4 + 2] * 100, -debugVerticies[i * 4 + 3] * 100)
-
-        // Create a color array for the linear gradient
-        const newDebugColor = new PIXI.Color({
-          r: debugColors[i * 4] * 255,
-          g: debugColors[i * 4 + 1] * 255,
-          b: debugColors[i * 4 + 2] * 255,
-          a: debugColors[i * 4 + 3] * 255,
-        })
-        // Apply the gradient fill to the graphics object
-        newDebugLine.stroke({ width: 4, color: newDebugColor })
-        // Add the line to the viewport and the DEBUG_LINES array
-        this.viewport.addChild(newDebugLine)
-        this.DEBUG_LINES.push(newDebugLine)
-      }
-    }
-
-    debugWorld()
   }
 }

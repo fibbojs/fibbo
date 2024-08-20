@@ -135,6 +135,12 @@ export abstract class FComponent2d extends FComponent {
   setPosition(x: number, y: number): void {
     this.position = new PIXI.Point(x, y)
     this.container.position.set(x, y)
+    // If a collider exists, update its translation
+    if (this.collider)
+      this.collider.setTranslation(new RAPIER.Vector2(x, y))
+    // If a rigid body exists, update its translation
+    if (this.rigidBody)
+      this.rigidBody.setTranslation(new RAPIER.Vector2(x, y), true)
   }
 
   /**
@@ -150,9 +156,20 @@ export abstract class FComponent2d extends FComponent {
     this.scale = new PIXI.Point(x, y)
     this.container.height = y * 100
     this.container.width = x * 100
-    // If a collider exists, update its half-extents
-    if (this.collider)
-      this.collider.setHalfExtents(new RAPIER.Vector2(x / 2, y / 2))
+    // If a collider exists
+    if (this.collider) {
+      // If the collider is a cuboid, update its half extents
+      if (this.collider.shape.type === RAPIER.ShapeType.Cuboid) {
+        this.collider.setHalfExtents(new RAPIER.Vector2(x / 2, y / 2))
+      }
+      // If the collider is a ball, update its radius
+      else if (this.collider.shape.type === RAPIER.ShapeType.Ball) {
+        this.collider.setRadius(
+          // Get the maximum value of x and y
+          Math.max(x, y) / 2,
+        )
+      }
+    }
   }
 
   /**
@@ -166,6 +183,12 @@ export abstract class FComponent2d extends FComponent {
   setRotation(r: number): void {
     this.rotation = r
     this.container.rotation = r
+    // If a collider exists, update its rotation
+    if (this.collider)
+      this.collider.setRotation(r)
+    // If a rigid body exists, update its rotation
+    if (this.rigidBody)
+      this.rigidBody.setRotation(r, true)
   }
 
   /**
@@ -315,5 +338,48 @@ export abstract class FComponent2d extends FComponent {
       // Set the active events
       this.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
+  }
+
+  /**
+   * Setters & getters for transform properties
+   */
+  get x(): number {
+    return this.position.x
+  }
+
+  set x(x: number) {
+    this.setPosition(x, this.position.y)
+  }
+
+  get y(): number {
+    return this.position.y
+  }
+
+  set y(y: number) {
+    this.setPosition(this.position.x, y)
+  }
+
+  get rotationDegree(): number {
+    return this.rotation * (180 / Math.PI)
+  }
+
+  set rotationDegree(r: number) {
+    this.setRotationDegree(r)
+  }
+
+  get scaleX(): number {
+    return this.scale.x
+  }
+
+  set scaleX(x: number) {
+    this.setScale(x, this.scale.y)
+  }
+
+  get scaleY(): number {
+    return this.scale.y
+  }
+
+  set scaleY(y: number) {
+    this.setScale(this.scale.x, y)
   }
 }
