@@ -36,4 +36,4 @@ jobs:
           NPM_CONFIG_PROVENANCE: true
       # Push changes to GitHub (updated package.json,...)
       - name: Push changes to GitHub
-        run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
+        run: git push origin HEAD:main
