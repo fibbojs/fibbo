@@ -45,7 +45,7 @@ Model that the camera is attached to
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:29](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L29)
+[packages/3d/src/cameras/FAttachedCamera.ts:29](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FAttachedCamera.ts#L29)
 
 ## Methods
 
@@ -392,7 +392,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:46](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L46)
+[packages/3d/src/cameras/FCamera3d.ts:46](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FCamera3d.ts#L46)
 
 ***
 
@@ -1152,7 +1152,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:39](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L39)
+[packages/3d/src/cameras/FCamera3d.ts:39](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FCamera3d.ts#L39)
 
 ***
 
@@ -1179,7 +1179,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:34](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L34)
+[packages/3d/src/cameras/FAttachedCamera.ts:34](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FAttachedCamera.ts#L34)
 
 ***
 
@@ -1560,7 +1560,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:46](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L46)
+[packages/3d/src/cameras/FAttachedCamera.ts:46](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FAttachedCamera.ts#L46)
 
 ***
 
@@ -1590,7 +1590,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:35](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L35)
+[packages/3d/src/cameras/FCamera3d.ts:35](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FCamera3d.ts#L35)
 
 ***
 
@@ -1732,7 +1732,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:28](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L28)
+[packages/3d/src/cameras/FCamera3d.ts:28](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FCamera3d.ts#L28)
 
 ***
 
@@ -2182,9 +2182,9 @@ node\_modules/@types/three/src/core/Object3D.d.ts:443
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
@@ -2197,17 +2197,17 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`CALLBACKS_ONCOLLISION`](FCamera3d.md#callbacks_oncollision)
+[`FCamera3d`](FCamera3d.md).[`__CALLBACKS_ON_COLLISION__`](FCamera3d.md#__callbacks_on_collision__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:10](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L10)
+[packages/3d/src/cameras/FCamera3d.ts:10](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FCamera3d.ts#L10)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -2216,11 +2216,11 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`ID`](FCamera3d.md#id)
+[`FCamera3d`](FCamera3d.md).[`__ID__`](FCamera3d.md#__id__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L9)
+[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FCamera3d.ts#L9)
 
 ***
 
@@ -2274,7 +2274,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:64
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L22)
+[packages/3d/src/cameras/FAttachedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FAttachedCamera.ts#L22)
 
 ***
 
@@ -2537,7 +2537,7 @@ Expects a `Integer`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`id`](FCamera3d.md#id-1)
+[`FCamera3d`](FCamera3d.md).[`id`](FCamera3d.md#id)
 
 #### Defined in
 
@@ -2861,7 +2861,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:140
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L24)
+[packages/3d/src/cameras/FAttachedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/cameras/FAttachedCamera.ts#L24)
 
 ***
 

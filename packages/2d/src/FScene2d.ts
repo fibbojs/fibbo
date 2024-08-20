@@ -1,4 +1,4 @@
-import type { DebugRenderBuffers, World } from '@dimforge/rapier2d'
+import type { World } from '@dimforge/rapier2d'
 import { FScene } from '@fibbojs/core'
 import * as PIXI from 'pixi.js'
 import { Viewport } from 'pixi-viewport'
@@ -25,24 +25,22 @@ import { FSprite } from './sprite/FSprite'
  * ```
  */
 export class FScene2d extends FScene {
-  components: FComponent2d[]
+  // Components can be declared as it will be initialized by the parent class
+  declare components: FComponent2d[]
   // Pixi.js
+  PIXI: typeof PIXI = PIXI
   app: PIXI.Application
-  viewport?: Viewport
+  declare viewport: Viewport
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
-  declare world?: World
+  declare world: World
   declare eventQueue: RAPIER.EventQueue
-  rapierToComponent: Map<number, FComponent2d> = new Map()
+  __RAPIER_TO_COMPONENT__: Map<number, FComponent2d> = new Map()
   // onReadyCallbacks
   public onReadyCallbacks: (() => void)[] = []
-  // Debug
-  DEBUG_LINES: PIXI.Graphics[] = []
-  DEBUG_MODE: boolean = false
 
-  constructor(options: { debug?: boolean } = { debug: false }) {
+  constructor(_options: object = {}) {
     super()
-    this.components = []
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
@@ -50,9 +48,6 @@ export class FScene2d extends FScene {
 
     // Create a new PIXI application
     this.app = new PIXI.Application()
-
-    // Store the debug mode
-    this.DEBUG_MODE = options.debug || false
   }
 
   /**
@@ -75,9 +70,9 @@ export class FScene2d extends FScene {
     // Resize the renderer
     this.app.renderer.resize(SCREEN_WIDTH, SCREEN_HEIGHT)
 
-    // Modify background color to 0x121212
+    // Modify background color to 0x222324
     const backgroundSystem = new PIXI.BackgroundSystem()
-    backgroundSystem.color = new PIXI.Color(0x121212)
+    backgroundSystem.color = new PIXI.Color(0x222324)
     this.app.renderer.background = backgroundSystem
 
     /**
@@ -103,37 +98,12 @@ export class FScene2d extends FScene {
     // Set the zoom level
     this.viewport.setZoom(0.8, true)
 
-    // Add help grid
-    if (this.DEBUG_MODE) {
-      const helpGrid = new PIXI.Graphics()
-      // Draw the grid
-      for (let i = -1000; i <= 1000; i += 100) {
-        helpGrid.moveTo(i, -1000)
-        helpGrid.lineTo(i, 1000)
-        helpGrid.moveTo(-1000, i)
-        helpGrid.lineTo(1000, i)
-      }
-      // Apply style
-      helpGrid.stroke({ width: 4, color: new PIXI.Color({
-        r: 70,
-        g: 70,
-        b: 70,
-        a: 1,
-      }) })
-      // Add the grid to the viewport
-      this.viewport.addChild(helpGrid)
-    }
-
     // onFrame
     this.onFrame((delta) => {
       // Call the onFrame method of each component
       this.components.forEach((component) => {
         component.onFrame(delta)
       })
-
-      // Debug
-      if (this.DEBUG_MODE)
-        this.debug()
     })
 
     // Call the onReady callbacks
@@ -175,8 +145,8 @@ export class FScene2d extends FScene {
    */
   handleCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, start: boolean) {
     // Get the components from the handles
-    const collider1 = this.rapierToComponent.get(handle1)
-    const collider2 = this.rapierToComponent.get(handle2)
+    const collider1 = this.__RAPIER_TO_COMPONENT__.get(handle1)
+    const collider2 = this.__RAPIER_TO_COMPONENT__.get(handle2)
     // If both colliders are undefined, return
     if (collider1 === undefined && collider2 === undefined)
       return
@@ -200,7 +170,7 @@ export class FScene2d extends FScene {
   }
 
   addComponent(component: FComponent2d) {
-    this.components.push(component)
+    super.addComponent(component)
 
     // Detect if the FComponent2d is a FSprite instance
     if (component instanceof FSprite) {
@@ -216,9 +186,9 @@ export class FScene2d extends FScene {
           this.viewport?.addChild(component.container)
         }
 
-        // If a collider is defined, add it's handle to the rapierToComponent map
+        // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
         if (component.collider?.handle !== undefined)
-          this.rapierToComponent.set(component.collider?.handle, component)
+          this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
       })
     }
     else {
@@ -234,53 +204,12 @@ export class FScene2d extends FScene {
       }
     }
 
-    // If a collider is defined, add it's handle to the rapierToComponent map
+    // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     if (component.collider?.handle !== undefined)
-      this.rapierToComponent.set(component.collider?.handle, component)
+      this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
   }
 
   onReady(callback: () => void) {
     this.onReadyCallbacks.push(callback)
-  }
-
-  debug() {
-    const debugWorld = () => {
-      if (!this.world || !this.viewport)
-        return
-
-      const buffers: DebugRenderBuffers = this.world.debugRender()
-      const debugVerticies: Float32Array = buffers.vertices
-      const debugColors: Float32Array = buffers.colors
-
-      // Remove the previous debug lines
-      this.DEBUG_LINES.forEach((line) => {
-        this.viewport?.removeChild(line)
-      })
-
-      // For each line (a line is represented by 4 numbers in the vertices array)
-      for (let i = 0; i < debugVerticies.length / 4; i += 1) {
-        // Create a new debug line
-        const newDebugLine = new PIXI.Graphics()
-
-        // Use the vertices to draw the line
-        newDebugLine.moveTo(debugVerticies[i * 4] * 100, -debugVerticies[i * 4 + 1] * 100)
-        newDebugLine.lineTo(debugVerticies[i * 4 + 2] * 100, -debugVerticies[i * 4 + 3] * 100)
-
-        // Create a color array for the linear gradient
-        const newDebugColor = new PIXI.Color({
-          r: debugColors[i * 4] * 255,
-          g: debugColors[i * 4 + 1] * 255,
-          b: debugColors[i * 4 + 2] * 255,
-          a: debugColors[i * 4 + 3] * 255,
-        })
-        // Apply the gradient fill to the graphics object
-        newDebugLine.stroke({ width: 4, color: newDebugColor })
-        // Add the line to the viewport and the DEBUG_LINES array
-        this.viewport.addChild(newDebugLine)
-        this.DEBUG_LINES.push(newDebugLine)
-      }
-    }
-
-    debugWorld()
   }
 }

@@ -1,4 +1,3 @@
-import type * as THREE from 'three'
 import type { FScene3d } from '../FScene3d'
 import { FPolyhedron } from './FPolyhedron'
 

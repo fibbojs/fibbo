@@ -17,11 +17,7 @@
     "noUnusedParameters": true,
     "noEmit": true,
     "isolatedModules": true,
-    "skipLibCheck": true,
-
-    /* Enable decorators */
-    // eslint-disable-next-line jsonc/sort-keys
-    "experimentalDecorators": true
+    "skipLibCheck": true
   },
   "include": ["src"]
 }

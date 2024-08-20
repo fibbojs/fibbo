@@ -16,4 +16,12 @@ export default defineConfig({
       treeshake: false,
     },
   },
+  define: {
+    // Enable hydration mismatch details in production build
+    __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+    // Enable Vue Option API
+    __VUE_OPTIONS_API__: false,
+    // Enable Vue Devtools
+    __VUE_PROD_DEVTOOLS__: false,
+  },
 })

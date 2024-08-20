@@ -3,7 +3,7 @@
   "editor.tabSize": 2,
 
   // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
 
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
@@ -50,7 +50,7 @@
     "**/dist": true,
     "**/node_modules": true,
     "**/tsconfig.json": true,
-    "**/.gitignore": true,
-    "**/vite-env.d.ts": true
+    "**/*.d.ts": true,
+    "**/.gitignore": true
   }
 }

@@ -76,6 +76,12 @@ export default defineConfig({
               { text: 'FGroup', link: '/api/core/classes/FGroup' },
               { text: 'FScene', link: '/api/core/classes/FScene' },
             ] },
+            { text: 'devtools', link: '/api/devtools/index.md', collapsed: true, items: [
+              { text: 'FDebug', link: '/api/devtools/classes/FDebug' },
+            ] },
+            { text: 'event', link: '/api/event/index.md', collapsed: true, items: [
+              { text: 'FKeyboard', link: '/api/event/classes/FKeyboard' },
+            ] },
           ] },
         ],
       },
