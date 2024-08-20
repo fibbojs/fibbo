@@ -28,7 +28,7 @@ jobs:
         run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@users.noreply.github.com"
       # Publish package to NPM
       - name: Publish package to NPM
-        run: nx release version ${{ github.event.release.tag_name }}
+        run: npx nx release version ${{ github.event.release.tag_name }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
