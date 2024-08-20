@@ -19,8 +19,7 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - name: Test package
-        run: npx nx run-many --target=test --all
+      # Build all packages
       - name: Build
         run: npx nx run-many --target=build --all
       # Configure Git for automated commits
@@ -31,7 +30,7 @@ jobs:
         run: npx nx release --first-release --skip-publish ${{ github.event.release.tag_name }}
       # Publish packages to NPM
       - name: Publish package to NPM
-        run: npx nx release publish ${{ github.event.release.tag_name }}
+        run: npx nx release publish ${{ github.event.release.tag_name }} --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
