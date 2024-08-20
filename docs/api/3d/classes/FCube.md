@@ -9,7 +9,7 @@ A simple cube model in FibboJS.
 ## Example
 
 ```ts
-import { FScene3d, FCube } from '@fibbojs/3d'
+import { FCube, FScene3d } from '@fibbojs/3d'
 
 const scene = new FScene3d()
 
@@ -450,10 +450,10 @@ This is useful for static objects.
 
 ```ts
 component.initCollider({
- position: new THREE.Vector3(0, 1, 0),
- scale: new THREE.Vector3(1, 1, 1),
- rotation: new THREE.Vector3(0, 0, 0),
- shape: F3dShapes.CUBE
+  position: new THREE.Vector3(0, 1, 0),
+  scale: new THREE.Vector3(1, 1, 1),
+  rotation: new THREE.Vector3(0, 0, 0),
+  shape: F3dShapes.CUBE
 })
 ```
 
@@ -533,10 +533,10 @@ Init a rigid body for the component.
 
 ```ts
 component.initRigidBody({
- position: new THREE.Vector3(0, 1, 0),
- scale: new THREE.Vector3(1, 1, 1),
- rotation: new THREE.Vector3(0, 0, 0),
- shape: F3dShapes.CUBE
+  position: new THREE.Vector3(0, 1, 0),
+  scale: new THREE.Vector3(1, 1, 1),
+  rotation: new THREE.Vector3(0, 0, 0),
+  shape: F3dShapes.CUBE
 })
 ```
 
@@ -578,7 +578,7 @@ Add a callback to be called when a collision occurs.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with an Enemy!')
+  console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -586,7 +586,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
- console.log('Player collided with the enemy!')
+  console.log('Player collided with the enemy!')
 })
 ```
 
@@ -648,7 +648,7 @@ Change the color of the polyhedron.
 #### Example
 
 ```ts
-cube.setColor(0xff0000)
+cube.setColor(0xFF0000)
 ```
 
 #### Inherited from

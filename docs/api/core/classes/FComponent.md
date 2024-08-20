@@ -92,7 +92,7 @@ Add a callback to be called when a collision occurs.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with an Enemy!')
+  console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -100,7 +100,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
- console.log('Player collided with the enemy!')
+  console.log('Player collided with the enemy!')
 })
 ```
 

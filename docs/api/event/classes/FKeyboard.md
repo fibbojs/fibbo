@@ -14,12 +14,12 @@ Using this class statically will let you manage the keyboard events globally.
 ```ts
 // Static usage
 FKeyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 // Instance usage
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 ```
 
@@ -56,7 +56,7 @@ Remove all the listeners
 ```ts
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 keyboard.clear()
 ```
@@ -100,7 +100,7 @@ Add a listener to a given key event
 ```ts
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 ```
 
@@ -108,7 +108,7 @@ keyboard.on('ArrowUp', () => {
 const keyboard = new FKeyboard()
 // Get the remove listener function from the on method
 const removeListener = keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 // Remove the listener
 removeListener()
@@ -176,14 +176,14 @@ Add a listener to a given key event
 
 ```ts
 FKeyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 ```
 
 ```ts
 // Get the remove listener function from the on method
 const removeListener = FKeyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 // Remove the listener
 removeListener()

@@ -12,13 +12,13 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 import { FScene2d, FSquare } from '@fibbojs/2d'
 
 (async () => {
- const scene = new FScene2d()
- await scene.init()
- await scene.initPhysics()
+  const scene = new FScene2d()
+  await scene.init()
+  await scene.initPhysics()
 
- const square = new FSquare(scene)
- square.initRigidBody()
- scene.addComponent(square)
+  const square = new FSquare(scene)
+  square.initRigidBody()
+  scene.addComponent(square)
 })()
 ```
 

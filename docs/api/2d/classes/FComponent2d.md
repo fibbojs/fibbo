@@ -245,10 +245,10 @@ This is useful for static objects.
 
 ```ts
 component.initCollider({
- position: new PIXI.Point(0, 0),
- scale: new PIXI.Point(1, 1),
- rotation: 0,
- shape: F2dShapes.SQUARE
+  position: new PIXI.Point(0, 0),
+  scale: new PIXI.Point(1, 1),
+  rotation: 0,
+  shape: F2dShapes.SQUARE
 })
 ```
 
@@ -312,10 +312,10 @@ Init a rigid body for the model.
 
 ```ts
 component.initRigidBody({
- position: new PIXI.Point(0, 0),
- scale: new PIXI.Point(1, 1),
- rotation: 0,
- shape: F2dShapes.SQUARE
+  position: new PIXI.Point(0, 0),
+  scale: new PIXI.Point(1, 1),
+  rotation: 0,
+  shape: F2dShapes.SQUARE
 })
 ```
 
@@ -353,7 +353,7 @@ Add a callback to be called when a collision occurs.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with an Enemy!')
+  console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -361,7 +361,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
- console.log('Player collided with the enemy!')
+  console.log('Player collided with the enemy!')
 })
 ```
 
