@@ -35,7 +35,7 @@ keyboard.on('ArrowUp', () => {
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:29](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/event/src/FKeyboard.ts#L29)
+[packages/event/src/FKeyboard.ts:29](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L29)
 
 ## Methods
 
@@ -63,7 +63,7 @@ keyboard.clear()
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:143](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/event/src/FKeyboard.ts#L143)
+[packages/event/src/FKeyboard.ts:143](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L143)
 
 ***
 
@@ -116,7 +116,7 @@ removeListener()
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:97](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/event/src/FKeyboard.ts#L97)
+[packages/event/src/FKeyboard.ts:97](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L97)
 
 ***
 
@@ -140,7 +140,7 @@ Keyboard.clear()
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:123](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/event/src/FKeyboard.ts#L123)
+[packages/event/src/FKeyboard.ts:123](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L123)
 
 ***
 
@@ -191,7 +191,7 @@ removeListener()
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:55](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/event/src/FKeyboard.ts#L55)
+[packages/event/src/FKeyboard.ts:55](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L55)
 
 ## Properties
 
@@ -205,7 +205,7 @@ An array of all the keys among the current instance of FKeyboard
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:27](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/event/src/FKeyboard.ts#L27)
+[packages/event/src/FKeyboard.ts:27](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L27)
 
 ***
 
@@ -219,4 +219,4 @@ An array of all the listeners among all the instances of FKeyboard
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:23](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/event/src/FKeyboard.ts#L23)
+[packages/event/src/FKeyboard.ts:23](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L23)

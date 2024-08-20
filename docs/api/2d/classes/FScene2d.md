@@ -30,13 +30,11 @@ import { FScene2d, FSquare } from '@fibbojs/2d'
 
 ### new FScene2d()
 
-> **new FScene2d**(`options`): [`FScene2d`](FScene2d.md)
+> **new FScene2d**(`_options`): [`FScene2d`](FScene2d.md)
 
 #### Parameters
 
-• **options** = `...`
-
-• **options.debug?**: `boolean`
+• **\_options**: `object` = `{}`
 
 #### Returns
 
@@ -48,7 +46,7 @@ import { FScene2d, FSquare } from '@fibbojs/2d'
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:44](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L44)
+[packages/2d/src/FScene2d.ts:42](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L42)
 
 ## Methods
 
@@ -74,21 +72,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:202](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L202)
-
-***
-
-### debug()
-
-> **debug**(): `void`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[packages/2d/src/FScene2d.ts:246](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L246)
+[packages/2d/src/FScene2d.ts:172](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L172)
 
 ***
 
@@ -120,7 +104,7 @@ Handle a collision event between two colliders.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:176](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L176)
+[packages/2d/src/FScene2d.ts:146](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L146)
 
 ***
 
@@ -141,7 +125,7 @@ and the root stage PIXI.Container.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:64](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L64)
+[packages/2d/src/FScene2d.ts:59](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L59)
 
 ***
 
@@ -155,7 +139,7 @@ and the root stage PIXI.Container.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:145](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L145)
+[packages/2d/src/FScene2d.ts:115](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L115)
 
 ***
 
@@ -225,17 +209,17 @@ packages/core/dist/index.d.ts:141
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:242](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L242)
+[packages/2d/src/FScene2d.ts:212](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L212)
 
 ## Properties
 
-### DEBUG\_LINES
+### PIXI
 
-> **DEBUG\_LINES**: `Graphics`[] = `[]`
+> **PIXI**: `__module`
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:41](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L41)
+[packages/2d/src/FScene2d.ts:31](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L31)
 
 ***
 
@@ -277,23 +261,13 @@ packages/core/dist/index.d.ts:127
 
 ***
 
-### \_\_DEBUG\_MODE\_\_
-
-> **\_\_DEBUG\_MODE\_\_**: `boolean` = `false`
-
-#### Defined in
-
-[packages/2d/src/FScene2d.ts:42](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L42)
-
-***
-
 ### \_\_RAPIER\_TO\_COMPONENT\_\_
 
 > **\_\_RAPIER\_TO\_COMPONENT\_\_**: `Map`\<`number`, [`FComponent2d`](FComponent2d.md)\>
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:37](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L37)
+[packages/2d/src/FScene2d.ts:38](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L38)
 
 ***
 
@@ -303,7 +277,7 @@ packages/core/dist/index.d.ts:127
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:31](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L31)
+[packages/2d/src/FScene2d.ts:32](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L32)
 
 ***
 
@@ -333,7 +307,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:29](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L29)
+[packages/2d/src/FScene2d.ts:29](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L29)
 
 ***
 
@@ -343,7 +317,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:36](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L36)
+[packages/2d/src/FScene2d.ts:37](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L37)
 
 ***
 
@@ -369,7 +343,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:34](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L34)
+[packages/2d/src/FScene2d.ts:35](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L35)
 
 ***
 
@@ -379,23 +353,23 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:39](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L39)
+[packages/2d/src/FScene2d.ts:40](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L40)
 
 ***
 
-### viewport?
+### viewport
 
-> `optional` **viewport**: `Viewport`
+> **viewport**: `Viewport`
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:32](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L32)
+[packages/2d/src/FScene2d.ts:33](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L33)
 
 ***
 
-### world?
+### world
 
-> `optional` **world**: `World`
+> **world**: `World`
 
 #### Overrides
 
@@ -403,4 +377,4 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:35](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/2d/src/FScene2d.ts#L35)
+[packages/2d/src/FScene2d.ts:36](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L36)

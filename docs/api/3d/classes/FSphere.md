@@ -21,6 +21,296 @@ scene.addComponent(cube)
 
 - [`FPolyhedron`](FPolyhedron.md)
 
+## Accessors
+
+### rotationDegreeX
+
+> `get` **rotationDegreeX**(): `number`
+
+> `set` **rotationDegreeX**(`x`): `void`
+
+#### Parameters
+
+• **x**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeX`](FPolyhedron.md#rotationdegreex)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:457](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L457)
+
+***
+
+### rotationDegreeY
+
+> `get` **rotationDegreeY**(): `number`
+
+> `set` **rotationDegreeY**(`y`): `void`
+
+#### Parameters
+
+• **y**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeY`](FPolyhedron.md#rotationdegreey)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:465](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L465)
+
+***
+
+### rotationDegreeZ
+
+> `get` **rotationDegreeZ**(): `number`
+
+> `set` **rotationDegreeZ**(`z`): `void`
+
+#### Parameters
+
+• **z**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeZ`](FPolyhedron.md#rotationdegreez)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:473](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L473)
+
+***
+
+### rotationX
+
+> `get` **rotationX**(): `number`
+
+> `set` **rotationX**(`x`): `void`
+
+#### Parameters
+
+• **x**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`rotationX`](FPolyhedron.md#rotationx)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:433](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L433)
+
+***
+
+### rotationY
+
+> `get` **rotationY**(): `number`
+
+> `set` **rotationY**(`y`): `void`
+
+#### Parameters
+
+• **y**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`rotationY`](FPolyhedron.md#rotationy)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:441](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L441)
+
+***
+
+### rotationZ
+
+> `get` **rotationZ**(): `number`
+
+> `set` **rotationZ**(`z`): `void`
+
+#### Parameters
+
+• **z**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`rotationZ`](FPolyhedron.md#rotationz)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:449](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L449)
+
+***
+
+### scaleX
+
+> `get` **scaleX**(): `number`
+
+> `set` **scaleX**(`x`): `void`
+
+#### Parameters
+
+• **x**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`scaleX`](FPolyhedron.md#scalex)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:481](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L481)
+
+***
+
+### scaleY
+
+> `get` **scaleY**(): `number`
+
+> `set` **scaleY**(`y`): `void`
+
+#### Parameters
+
+• **y**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`scaleY`](FPolyhedron.md#scaley)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:489](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L489)
+
+***
+
+### scaleZ
+
+> `get` **scaleZ**(): `number`
+
+> `set` **scaleZ**(`z`): `void`
+
+#### Parameters
+
+• **z**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`scaleZ`](FPolyhedron.md#scalez)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:497](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L497)
+
+***
+
+### x
+
+> `get` **x**(): `number`
+
+Setters & getters for transform properties
+
+> `set` **x**(`x`): `void`
+
+#### Parameters
+
+• **x**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`x`](FPolyhedron.md#x)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:409](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L409)
+
+***
+
+### y
+
+> `get` **y**(): `number`
+
+> `set` **y**(`y`): `void`
+
+#### Parameters
+
+• **y**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`y`](FPolyhedron.md#y)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:417](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L417)
+
+***
+
+### z
+
+> `get` **z**(): `number`
+
+> `set` **z**(`z`): `void`
+
+#### Parameters
+
+• **z**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`z`](FPolyhedron.md#z)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:425](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L425)
+
 ## Constructors
 
 ### new FSphere()
@@ -75,7 +365,7 @@ scene.addComponent(cube)
 
 #### Defined in
 
-[packages/3d/src/model/FSphere.ts:20](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/model/FSphere.ts#L20)
+[packages/3d/src/model/FSphere.ts:20](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/model/FSphere.ts#L20)
 
 ## Methods
 
@@ -173,7 +463,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/3d/src/model/FSphere.ts:61](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/model/FSphere.ts#L61)
+[packages/3d/src/model/FSphere.ts:61](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/model/FSphere.ts#L61)
 
 ***
 
@@ -256,7 +546,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/3d/src/model/FSphere.ts:37](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/model/FSphere.ts#L37)
+[packages/3d/src/model/FSphere.ts:37](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/model/FSphere.ts#L37)
 
 ***
 
@@ -306,7 +596,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:370](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L370)
+[packages/3d/src/FComponent3d.ts:397](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L397)
 
 ***
 
@@ -333,7 +623,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/model/FSphere.ts:33](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/model/FSphere.ts#L33)
+[packages/3d/src/model/FSphere.ts:33](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/model/FSphere.ts#L33)
 
 ***
 
@@ -367,7 +657,7 @@ cube.setColor(0xff0000)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:42](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/model/FPolyhedron.ts#L42)
+[packages/3d/src/model/FPolyhedron.ts:42](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/model/FPolyhedron.ts#L42)
 
 ***
 
@@ -409,7 +699,7 @@ component.setPosition(0, 1, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:139](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L139)
+[packages/3d/src/FComponent3d.ts:139](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L139)
 
 ***
 
@@ -451,7 +741,7 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:174](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L174)
+[packages/3d/src/FComponent3d.ts:198](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L198)
 
 ***
 
@@ -493,7 +783,7 @@ component.setRotationDegree(0, 90, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:194](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L194)
+[packages/3d/src/FComponent3d.ts:221](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L221)
 
 ***
 
@@ -529,7 +819,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:155](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L155)
+[packages/3d/src/FComponent3d.ts:158](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L158)
 
 ## Properties
 
@@ -587,7 +877,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L45)
+[packages/3d/src/FComponent3d.ts:45](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L45)
 
 ***
 
@@ -604,7 +894,7 @@ directly available after the constructor, as a polyhedron is created synchronous
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:15](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/model/FPolyhedron.ts#L15)
+[packages/3d/src/model/FPolyhedron.ts:15](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/model/FPolyhedron.ts#L15)
 
 ***
 
@@ -620,7 +910,7 @@ The position of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L27)
+[packages/3d/src/FComponent3d.ts:27](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L27)
 
 ***
 
@@ -636,7 +926,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L41)
+[packages/3d/src/FComponent3d.ts:41](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L41)
 
 ***
 
@@ -652,7 +942,7 @@ The rotation of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L35)
+[packages/3d/src/FComponent3d.ts:35](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L35)
 
 ***
 
@@ -668,7 +958,7 @@ The scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L31)
+[packages/3d/src/FComponent3d.ts:31](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L31)
 
 ***
 
@@ -684,4 +974,4 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/3d/src/FComponent3d.ts#L16)
+[packages/3d/src/FComponent3d.ts:16](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/3d/src/FComponent3d.ts#L16)

@@ -9,7 +9,7 @@ A helper class to debug a given scene
 ## Example
 
 ```ts
-const scene = FDebug(FScene2d)
+const fDebugger = FDebug(scene)
 ```
 
 ## Constructors
@@ -30,9 +30,33 @@ The scene to be debugged
 
 #### Defined in
 
-[packages/devtools/src/FDebug.ts:24](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/devtools/src/FDebug.ts#L24)
+[packages/devtools/src/FDebug.ts:40](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/devtools/src/FDebug.ts#L40)
 
 ## Properties
+
+### debugger2d
+
+> **debugger2d**: `FDebug2d`
+
+2d debugger
+
+#### Defined in
+
+[packages/devtools/src/FDebug.ts:35](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/devtools/src/FDebug.ts#L35)
+
+***
+
+### debugger3d
+
+> **debugger3d**: `FDebug3d`
+
+3d debugger
+
+#### Defined in
+
+[packages/devtools/src/FDebug.ts:30](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/devtools/src/FDebug.ts#L30)
+
+***
 
 ### scene
 
@@ -44,4 +68,4 @@ The scene being debugged by this instance
 
 #### Defined in
 
-[packages/devtools/src/FDebug.ts:19](https://github.com/fibbojs/fibbo/blob/037932c67cd8fc486977eea739246a0cee17f938/packages/devtools/src/FDebug.ts#L19)
+[packages/devtools/src/FDebug.ts:25](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/devtools/src/FDebug.ts#L25)
