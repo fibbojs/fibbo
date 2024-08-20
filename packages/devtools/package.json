@@ -5,6 +5,9 @@
   "description": "Devtools package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://fibbojs.github.io/fibbo",
   "repository": {
     "type": "git",
