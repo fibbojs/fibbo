@@ -30,18 +30,16 @@ export class FScene2d extends FScene {
   // Pixi.js
   PIXI: typeof PIXI = PIXI
   app: PIXI.Application
-  viewport?: Viewport
+  declare viewport: Viewport
   // Rapier
   gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
-  declare world?: World
+  declare world: World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent2d> = new Map()
   // onReadyCallbacks
   public onReadyCallbacks: (() => void)[] = []
-  // Debug
-  __DEBUG_MODE__: boolean = false
 
-  constructor(options: { debug?: boolean } = { debug: false }) {
+  constructor(_options: object = {}) {
     super()
 
     // Verify window and document are available
@@ -50,9 +48,6 @@ export class FScene2d extends FScene {
 
     // Create a new PIXI application
     this.app = new PIXI.Application()
-
-    // Store the debug mode
-    this.__DEBUG_MODE__ = options.debug || false
   }
 
   /**
@@ -102,27 +97,6 @@ export class FScene2d extends FScene {
     this.viewport.moveCenter(0, 0)
     // Set the zoom level
     this.viewport.setZoom(0.8, true)
-
-    // Add help grid
-    if (this.__DEBUG_MODE__) {
-      const helpGrid = new PIXI.Graphics()
-      // Draw the grid
-      for (let i = -1000; i <= 1000; i += 100) {
-        helpGrid.moveTo(i, -1000)
-        helpGrid.lineTo(i, 1000)
-        helpGrid.moveTo(-1000, i)
-        helpGrid.lineTo(1000, i)
-      }
-      // Apply style
-      helpGrid.stroke({ width: 4, color: new PIXI.Color({
-        r: 70,
-        g: 70,
-        b: 70,
-        a: 1,
-      }) })
-      // Add the grid to the viewport
-      this.viewport.addChild(helpGrid)
-    }
 
     // onFrame
     this.onFrame((delta) => {

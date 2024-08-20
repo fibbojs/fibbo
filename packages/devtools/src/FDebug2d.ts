@@ -17,17 +17,36 @@ export class FDebug2d {
     // Initialize the array for the debug lines
     const DEBUG_LINES: PIXI.Graphics[] = []
 
-    scene.onFrame(() => {
-      if (!scene.world || !scene.viewport)
-        throw new Error('FScene2d must be initialized before debugging')
+    // Add help grid
+    const helpGrid = new scene.PIXI.Graphics()
+    // Draw the grid
+    for (let i = -1000; i <= 1000; i += 100) {
+      helpGrid.moveTo(i, -1000)
+      helpGrid.lineTo(i, 1000)
+      helpGrid.moveTo(-1000, i)
+      helpGrid.lineTo(1000, i)
+    }
+    // Apply style
+    helpGrid.stroke({ width: 4, color: new scene.PIXI.Color({
+      r: 70,
+      g: 70,
+      b: 70,
+      a: 1,
+    }) })
+    // Add the grid to the viewport
+    scene.viewport.addChild(helpGrid)
 
+    /**
+     * Display debug lines on each frame
+     */
+    scene.onFrame(() => {
       const buffers: DebugRenderBuffers = scene.world.debugRender()
       const debugVerticies: Float32Array = buffers.vertices
       const debugColors: Float32Array = buffers.colors
 
       // Remove the previous debug lines
       DEBUG_LINES.forEach((line) => {
-        scene.viewport?.removeChild(line)
+        scene.viewport.removeChild(line)
       })
 
       // For each line (a line is represented by 4 numbers in the vertices array)

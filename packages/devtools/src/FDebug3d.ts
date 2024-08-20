@@ -12,6 +12,17 @@ export class FDebug3d {
    * @param scene The scene to be debugged
    */
   constructor(scene: FScene3d) {
+    // Add grid helper
+    const gridHelper = new scene.THREE.GridHelper(10, 10)
+    scene.scene.add(gridHelper)
+
+    // Axes helper
+    const axesHelper = new scene.THREE.AxesHelper(5)
+    scene.scene.add(axesHelper)
+
+    /**
+     * Display debug lines on each frame
+     */
     scene.onFrame(() => {
       // Remove previous debug lines
       const previousLines = scene.scene.getObjectByName('DEBUG_LINES')

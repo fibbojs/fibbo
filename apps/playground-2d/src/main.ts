@@ -5,7 +5,7 @@ import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
 
 (async () => {
-  const scene = new FScene2d({ debug: true })
+  const scene = new FScene2d()
   await scene.init()
   await scene.initPhysics()
   // Create the debugger

@@ -7,7 +7,7 @@ import './style.css'
 
 (async () => {
   // Initialize the scene
-  const scene = new FScene3d({ debug: true })
+  const scene = new FScene3d()
   scene.init()
   await scene.initPhysics()
   // Create the debugger

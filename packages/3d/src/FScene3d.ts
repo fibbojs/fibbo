@@ -42,7 +42,7 @@ export class FScene3d extends FScene {
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent3d[]
   // Three.js
-  declare THREE: typeof THREE
+  THREE: typeof THREE = THREE
   declare scene: THREE.Scene
   declare renderer: THREE.WebGLRenderer
   declare camera: FCamera3d
@@ -53,12 +53,9 @@ export class FScene3d extends FScene {
   declare world: RAPIER.World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent3d> = new Map()
-  // Debug
-  __DEBUG_MODE__: boolean
 
-  constructor(options: { debug?: boolean } = { debug: false }) {
+  constructor(_options: object = {}) {
     super()
-    this.__DEBUG_MODE__ = options.debug || false
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
@@ -66,8 +63,6 @@ export class FScene3d extends FScene {
   }
 
   init() {
-    // Attach THREE to the scene
-    this.THREE = THREE
     // Create scene, camera, and renderer
     this.scene = new THREE.Scene()
     this.scene.background = new THREE.Color(0x222324)
@@ -81,20 +76,9 @@ export class FScene3d extends FScene {
     const light = new THREE.AmbientLight(0xFFFFFF)
     this.scene.add(light)
 
-    // Debug mode
-    if (this.__DEBUG_MODE__) {
-      // Grid helper
-      const gridHelper = new THREE.GridHelper(10, 10)
-      this.scene.add(gridHelper)
-
-      // Orbit controls
-      this.controls = new OrbitControls(this.camera, this.renderer.domElement)
-      this.controls.update()
-
-      // Axes helper
-      const axesHelper = new THREE.AxesHelper(5)
-      this.scene.add(axesHelper)
-    }
+    // Orbit controls
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement)
+    this.controls.update()
 
     // Add renderer to DOM
     document.body.appendChild(this.renderer.domElement)
@@ -104,11 +88,8 @@ export class FScene3d extends FScene {
       // Call onFrame for each component
       this.components.forEach(component => component.onFrame(delta))
 
-      // Debug mode
-      if (this.__DEBUG_MODE__) {
-        // Update controls
-        this.controls?.update()
-      }
+      // Update controls
+      this.controls?.update()
 
       // Camera
       this.camera.onFrame(delta)
