@@ -67,3 +67,15 @@ export class FDebug {
     document.body.appendChild(debugPanel)
   }
 }
+
+/**
+ * @description A helper function to debug a given scene
+ * @param scene The scene to be debugged
+ * @example
+ * ```ts
+ * fDebug(scene)
+ * ```
+ */
+export function fDebug(scene: FScene): FDebug {
+  return new FDebug(scene)
+}

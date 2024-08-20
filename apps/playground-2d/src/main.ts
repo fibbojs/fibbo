@@ -1,6 +1,6 @@
 import './style.css'
 import { F2dShapes, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
-import { FDebug } from '@fibbojs/devtools'
+import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
 
@@ -8,9 +8,8 @@ import MySquare from './classes/MySquare'
   const scene = new FScene2d()
   await scene.init()
   await scene.initPhysics()
-  // Create the debugger
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const fDebugger = new FDebug(scene)
+  // Debug the scene
+  fDebug(scene)
 
   // Create the ground
   const ground = new FSquare(scene, {

@@ -1,4 +1,4 @@
 /**
  * Export Debug classes
  */
-export { FDebug } from './FDebug'
+export { FDebug, fDebug } from './FDebug'

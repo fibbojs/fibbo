@@ -1,5 +1,5 @@
 import { F3dShapes, FCube, FGameCamera, FScene3d, FSphere } from '@fibbojs/3d'
-import { FDebug } from '@fibbojs/devtools'
+import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -10,9 +10,8 @@ import './style.css'
   const scene = new FScene3d()
   scene.init()
   await scene.initPhysics()
-  // Create the debugger
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const fDebugger = new FDebug(scene)
+  // Debug the scene
+  fDebug(scene)
 
   // Create a ground
   const ground = new FCube(scene, {
