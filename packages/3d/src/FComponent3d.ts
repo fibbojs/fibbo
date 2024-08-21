@@ -5,6 +5,13 @@ import { FComponent } from '@fibbojs/core'
 import type { FScene3d } from './FScene3d'
 import { F3dShapes } from './types/F3dShapes'
 
+export interface FComponent3dOptions {
+  position?: { x: number, y: number, z: number }
+  scale?: { x: number, y: number, z: number }
+  rotation?: { x: number, y: number, z: number }
+  rotationDegree?: { x: number, y: number, z: number }
+}
+
 /**
  * @description The base class for all 3D objects in FibboJS.
  * @category Core
@@ -64,12 +71,7 @@ export abstract class FComponent3d extends FComponent {
    * @param options.rotationDegree.y The rotation in degrees on the y-axis.
    * @param options.rotationDegree.z The rotation in degrees on the z-axis.
    */
-  constructor(scene: FScene3d, options?: {
-    position?: { x: number, y: number, z: number }
-    scale?: { x: number, y: number, z: number }
-    rotation?: { x: number, y: number, z: number }
-    rotationDegree?: { x: number, y: number, z: number }
-  }) {
+  constructor(scene: FScene3d, options?: FComponent3dOptions) {
     super()
     this.scene = scene
 

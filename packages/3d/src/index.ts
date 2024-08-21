@@ -21,3 +21,4 @@ export { FOrbitCamera } from './cameras/FOrbitCamera'
 
 // Types
 export { F3dShapes } from './types/F3dShapes'
+export { FComponent3dOptions } from './FComponent3d'

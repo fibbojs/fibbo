@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import type { FScene3d } from '../FScene3d'
 import { FComponent3d } from '../FComponent3d'
+import type { FComponent3dOptions } from '../FComponent3d'
 
 /**
  * @description A simple polyhedron model in FibboJS.
@@ -14,12 +15,7 @@ export abstract class FPolyhedron extends FComponent3d {
    */
   mesh: THREE.Mesh
 
-  constructor(scene: FScene3d, options?: {
-    position?: { x: number, y: number, z: number }
-    scale?: { x: number, y: number, z: number }
-    rotation?: { x: number, y: number, z: number }
-    rotationDegree?: { x: number, y: number, z: number }
-  }) {
+  constructor(scene: FScene3d, options?: FComponent3dOptions) {
     super(scene, options)
     // Create a cube
     const geometry = new THREE.BoxGeometry(this.scale.x, this.scale.y, this.scale.z)

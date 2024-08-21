@@ -2,6 +2,7 @@ import type * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import type { FScene3d } from '../FScene3d'
 import { FComponent3d } from '../FComponent3d'
+import type { FComponent3dOptions } from '../FComponent3d'
 
 /*
 import * as THREE from 'three'
@@ -59,12 +60,7 @@ export class FGLTF extends FComponent3d {
    * @param options.rotationDegree.y The rotation in degrees on the y-axis.
    * @param options.rotationDegree.z The rotation in degrees on the z-axis.
    */
-  constructor(scene: FScene3d, model: string, options?: {
-    position?: { x: number, y: number, z: number }
-    scale?: { x: number, y: number, z: number }
-    rotation?: { x: number, y: number, z: number }
-    rotationDegree?: { x: number, y: number, z: number }
-  }) {
+  constructor(scene: FScene3d, model: string, options?: FComponent3dOptions) {
     super(scene, options)
     // Create GLTF Loader
     const loader = new GLTFLoader()

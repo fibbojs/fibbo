@@ -1,4 +1,5 @@
 import type { FScene3d } from '../FScene3d'
+import type { FComponent3dOptions } from '../FComponent3d'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -15,12 +16,7 @@ import { FPolyhedron } from './FPolyhedron'
  * ```
  */
 export class FCube extends FPolyhedron {
-  constructor(scene: FScene3d, options?: {
-    position?: { x: number, y: number, z: number }
-    scale?: { x: number, y: number, z: number }
-    rotation?: { x: number, y: number, z: number }
-    rotationDegree?: { x: number, y: number, z: number }
-  }) {
+  constructor(scene: FScene3d, options?: FComponent3dOptions) {
     super(scene, options)
   }
 
