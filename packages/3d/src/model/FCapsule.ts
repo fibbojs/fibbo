@@ -5,19 +5,19 @@ import { F3dShapes } from '../types/F3dShapes'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
- * @description A simple sphere model in FibboJS.
+ * @description A simple capsule model in FibboJS.
  * @category Model
  * @example
  * ```ts
- * import { FScene3d, FSphere } from '@fibbojs/3d'
+ * import { FScene3d, FCapsule } from '@fibbojs/3d'
  *
  * const scene = new FScene3d()
  *
- * const sphere = new FSphere(scene)
- * scene.addComponent(sphere)
+ * const capsule = new FCapsule(scene)
+ * scene.addComponent(capsule)
  * ```
  */
-export class FSphere extends FPolyhedron {
+export class FCapsule extends FPolyhedron {
   constructor(scene: FScene3d, options?: {
     position?: { x: number, y: number, z: number }
     scale?: { x: number, y: number, z: number }
@@ -25,8 +25,8 @@ export class FSphere extends FPolyhedron {
     rotationDegree?: { x: number, y: number, z: number }
   }) {
     super(scene, options)
-    // Create a sphere
-    const geometry = new THREE.SphereGeometry(0.5, 32, 32)
+    // Create a capsule
+    const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
     const material = new THREE.MeshBasicMaterial({ color: 0x666666 })
     this.mesh = new THREE.Mesh(geometry, material)
   }
@@ -56,7 +56,7 @@ export class FSphere extends FPolyhedron {
   }): void {
     super.initRigidBody({
       ...options,
-      shape: F3dShapes.SPHERE,
+      shape: F3dShapes.CAPSULE,
     })
   }
 
@@ -68,7 +68,7 @@ export class FSphere extends FPolyhedron {
   }): void {
     super.initCollider({
       ...options,
-      shape: F3dShapes.SPHERE,
+      shape: F3dShapes.CAPSULE,
     })
   }
 }

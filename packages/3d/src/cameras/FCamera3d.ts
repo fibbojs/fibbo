@@ -46,4 +46,16 @@ export abstract class FCamera3d extends THREE.PerspectiveCamera implements FCame
   emitCollisionWith(classOrObject: any) {
     FCamera.prototype.emitCollisionWith.call(this, classOrObject)
   }
+
+  /**
+   * @description Get the direction of the camera.
+   * This method is useful to get the direction of the camera to apply forces in the direction of the camera.
+   * @returns The direction of the camera. It is a normalized vector.
+   */
+  getCameraDirection() {
+    const direction = new THREE.Vector3()
+    this.getWorldDirection(direction)
+    direction.normalize()
+    return direction
+  }
 }

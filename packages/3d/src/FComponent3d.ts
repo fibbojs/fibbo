@@ -240,6 +240,7 @@ export abstract class FComponent3d extends FComponent {
    * @param options.scale The scale of the rigid body. If not defined, it will use the default scale of the FComponent3d.
    * @param options.rotation The rotation of the rigid body. If not defined, it will use the default rotation of the FComponent3d.
    * @param options.shape The shape of the rigid body. If not defined, it will default to F3dShapes.CUBE.
+   * @param options.rigidBodyType The type of the rigid body. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
    * @param options.lockTranslations If true, the rigid body will not be able to move.
    * @param options.lockRotations If true, the rigid body will not be able to rotate.
    * @param options.enabledTranslations If defined, it will enable or disable translations on the x and y axis.
@@ -265,6 +266,7 @@ export abstract class FComponent3d extends FComponent {
     scale?: THREE.Vector3
     rotation?: THREE.Vector3
     shape?: F3dShapes
+    rigidBodyType?: RAPIER.RigidBodyType
     lockTranslations?: boolean
     lockRotations?: boolean
     enabledTranslations?: {
@@ -284,6 +286,7 @@ export abstract class FComponent3d extends FComponent {
       scale: new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
       rotation: new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
       shape: F3dShapes.CUBE,
+      rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockTranslations: false,
       lockRotations: false,
       enabledTranslations: undefined,
@@ -292,19 +295,20 @@ export abstract class FComponent3d extends FComponent {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || !options.rotation || !options.shape)
-      throw new Error('initRigidBody requires position, scale, rotation and shape options')
+      throw new Error('initRigidBody requires position, scale, rotation, shape and rigidBodyType options')
 
     // Check if the world exists
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
-    // Create a dynamic rigid-body.
-    const rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-      .setTranslation(options.position.x, options.position.y, options.position.z)
-      .setRotation(
-        // Create quaternion from Euler angles
-        new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
-      )
+    // Create a rigid body description according to the type
+    const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
+    // Set translation and rotation for the rigid body
+    rigidBodyDesc.setTranslation(options.position.x, options.position.y, options.position.z)
+    rigidBodyDesc.setRotation(
+      // Create quaternion from Euler angles
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
+    )
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
@@ -333,10 +337,27 @@ export abstract class FComponent3d extends FComponent {
       )
     }
 
-    // Create a collider description attached to the dynamic rigidBody
-    const colliderDesc = options.shape === F3dShapes.CUBE
-      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
-      : RAPIER.ColliderDesc.ball(options.scale.x)
+    // Create a collider description attached to the rigid body, according to the shape given
+    let colliderDesc
+    switch (options.shape) {
+      case F3dShapes.CUBE:
+        colliderDesc = RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
+        break
+      case F3dShapes.SPHERE:
+        colliderDesc = RAPIER.ColliderDesc.ball(options.scale.x)
+        break
+      case F3dShapes.CAPSULE:
+        colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.x, options.scale.y)
+        break
+      case F3dShapes.MESH:
+        colliderDesc = RAPIER.ColliderDesc.trimesh(
+          this.mesh?.geometry.attributes.position.array as Float32Array,
+          this.mesh?.geometry.index?.array as Uint32Array,
+        )
+        break
+      default:
+        throw new Error(`Shape not supported : ${options.shape}`)
+    }
     // Create the collider
     this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
   }

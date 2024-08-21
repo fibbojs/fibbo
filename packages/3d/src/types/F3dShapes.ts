@@ -2,4 +2,6 @@
 export enum F3dShapes {
   CUBE = 'Cube',
   SPHERE = 'Sphere',
+  CAPSULE = 'Capsule',
+  MESH = 'Mesh',
 }

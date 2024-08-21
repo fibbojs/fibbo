@@ -6,6 +6,7 @@ export { FScene3d } from './FScene3d'
 export { FComponent3d } from './FComponent3d'
 
 // Models
+export { FCapsule } from './model/FCapsule'
 export { FCube } from './model/FCube'
 export { FGLTF } from './model/FGLTF'
 export { FPolyhedron } from './model/FPolyhedron'
