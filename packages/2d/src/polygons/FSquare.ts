@@ -1,4 +1,5 @@
 import * as PIXI from 'pixi.js'
+import type { FComponent2dOptions } from '../FComponent2d'
 import { FComponent2d } from '../FComponent2d'
 import type { FScene2d } from '../FScene2d'
 
@@ -16,12 +17,7 @@ import type { FScene2d } from '../FScene2d'
  * ```
  */
 export class FSquare extends FComponent2d {
-  constructor(scene: FScene2d, options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    rotationDegree?: number
-  }) {
+  constructor(scene: FScene2d, options?: FComponent2dOptions) {
     super(scene, options)
     // Create a square
     this.container = new PIXI.Graphics()

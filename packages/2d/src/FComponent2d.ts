@@ -6,6 +6,13 @@ import * as PIXI from 'pixi.js'
 import { F2dShapes } from './types/F2dShapes'
 import type { FScene2d } from './FScene2d'
 
+export interface FComponent2dOptions {
+  position?: PIXI.PointData
+  scale?: PIXI.PointData
+  rotation?: number
+  rotationDegree?: number
+}
+
 /**
  * @description The base class for all 2D components in FibboJS.
  * @category Core
@@ -53,12 +60,7 @@ export abstract class FComponent2d extends FComponent {
    * @param options.rotation The rotation of the component.
    * @param options.rotationDegree The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
    */
-  constructor(scene: FScene2d, options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    rotationDegree?: number
-  }) {
+  constructor(scene: FScene2d, options?: FComponent2dOptions) {
     super()
     this.scene = scene
     // Create a new PIXI container

@@ -1,4 +1,5 @@
 import * as PIXI from 'pixi.js'
+import type { FComponent2dOptions } from '../FComponent2d'
 import { FComponent2d } from '../FComponent2d'
 import type { FScene2d } from '../FScene2d'
 
@@ -25,12 +26,7 @@ export class FSprite extends FComponent2d {
    */
   public __CALLBACKS_ON_LOADED__: (() => void)[] = []
 
-  constructor(scene: FScene2d, texture: string, options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    rotationDegree?: number
-  }) {
+  constructor(scene: FScene2d, texture: string, options?: FComponent2dOptions) {
     super(scene, options)
     // Define the texture and container while loading
     this.texture = PIXI.Texture.EMPTY

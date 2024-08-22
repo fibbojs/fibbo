@@ -5,6 +5,8 @@ import { Viewport } from 'pixi-viewport'
 import type RAPIER from '@dimforge/rapier2d'
 import type { FComponent2d } from './FComponent2d'
 import { FSprite } from './sprite/FSprite'
+import type { FCamera2d } from './cameras/FCamera2d'
+import { FFreeCamera } from './cameras/FFreeCamera'
 
 /**
  * @description A scene which contains the models, the Three.js scene and the Rapier world.
@@ -27,6 +29,8 @@ import { FSprite } from './sprite/FSprite'
 export class FScene2d extends FScene {
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent2d[]
+  // Camera
+  declare __CAMERA__: FCamera2d
   // Pixi.js
   PIXI: typeof PIXI = PIXI
   app: PIXI.Application
@@ -98,12 +102,17 @@ export class FScene2d extends FScene {
     // Set the zoom level
     this.viewport.setZoom(0.8, true)
 
+    // Create a default free camera
+    this.camera = new FFreeCamera(this)
+
     // onFrame
     this.onFrame((delta) => {
       // Call the onFrame method of each component
       this.components.forEach((component) => {
         component.onFrame(delta)
       })
+      // Call the onFrame method of the camera
+      this.camera.onFrame(delta)
     })
 
     // Call the onReady callbacks
@@ -176,15 +185,7 @@ export class FScene2d extends FScene {
     if (component instanceof FSprite) {
       // Wait for the sprite to be loaded before adding it to the scene
       component.onLoaded(() => {
-        this.app.stage.addChild(component.container)
-        if (!this.viewport) {
-          this.onReady(() => {
-            this.viewport?.addChild(component.container)
-          })
-        }
-        else {
-          this.viewport?.addChild(component.container)
-        }
+        this.viewport.addChild(component.container)
 
         // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
         if (component.collider?.handle !== undefined)
@@ -193,15 +194,7 @@ export class FScene2d extends FScene {
     }
     else {
       // The component is not a FSprite instance, it can be added directly
-      this.app.stage.addChild(component.container)
-      if (!this.viewport) {
-        this.onReady(() => {
-          this.viewport?.addChild(component.container)
-        })
-      }
-      else {
-        this.viewport?.addChild(component.container)
-      }
+      this.viewport.addChild(component.container)
     }
 
     // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
@@ -211,5 +204,22 @@ export class FScene2d extends FScene {
 
   onReady(callback: () => void) {
     this.onReadyCallbacks.push(callback)
+  }
+
+  /**
+   * @description Getter for the camera.
+   * This is required because the camera is a private property.
+   */
+  get camera() {
+    return this.__CAMERA__
+  }
+
+  /**
+   * @description Setter for the camera.
+   * This is required so when the camera is set, its method to defined the viewport behavior is called.
+   */
+  set camera(camera: FCamera2d) {
+    this.__CAMERA__ = camera
+    camera.__ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__()
   }
 }

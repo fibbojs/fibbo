@@ -1,5 +1,5 @@
 import './style.css'
-import { F2dShapes, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
+import { F2dShapes, FAttachedCamera, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
@@ -73,6 +73,11 @@ import MySquare from './classes/MySquare'
     })
   })
   scene.addComponent(sprite)
+
+  // Attach a camera to the cube
+  scene.camera = new FAttachedCamera(scene, {
+    target: sprite,
+  })
 
   // Create a keyboard instance
   const fKeyboard = new FKeyboard(scene)
