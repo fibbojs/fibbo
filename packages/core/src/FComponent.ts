@@ -89,19 +89,42 @@ export abstract class FComponent {
    * ```
    */
   emitCollisionWith(classOrObject: any) {
-    let eventKey = ''
     // If the classOrObject is an object, use the class name + ID
     if (classOrObject instanceof FComponent) {
-      eventKey = `${classOrObject.constructor.name}@${classOrObject.__ID__}`
+      const eventKey = `${classOrObject.constructor.name}@${classOrObject.__ID__}`
+
+      // Check if the event key exists and call the callbacks
+      if (this.__CALLBACKS_ON_COLLISION__[eventKey]) {
+        this.__CALLBACKS_ON_COLLISION__[eventKey].forEach((callback) => {
+          callback()
+        })
+      }
     }
     // Else, it should be a class, use the class name
     else {
-      eventKey = classOrObject.name
-    }
-    // Check if the event key exists and call the callbacks
-    if (this.__CALLBACKS_ON_COLLISION__[eventKey]) {
-      this.__CALLBACKS_ON_COLLISION__[eventKey].forEach((callback) => {
-        callback()
+      // Get the prototype chain for a given class
+      const getPrototypeChain = (obj: any) => {
+        const protoChain = []
+        let currentProto = obj.prototype
+        while (currentProto) {
+          protoChain.push(currentProto.constructor.name)
+          currentProto = Object.getPrototypeOf(currentProto)
+        }
+        return protoChain
+      }
+      // Get the prototype chain for the classOrObject
+      const thisChain = getPrototypeChain(classOrObject)
+
+      /**
+       * For each class in the prototype chain, check if there are any callbacks.
+       * If there are, call them.
+       */
+      thisChain.forEach((className) => {
+        if (this.__CALLBACKS_ON_COLLISION__[className]) {
+          this.__CALLBACKS_ON_COLLISION__[className].forEach((callback) => {
+            callback()
+          })
+        }
       })
     }
   }

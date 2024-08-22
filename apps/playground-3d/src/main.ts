@@ -4,6 +4,7 @@ import { FKeyboard } from '@fibbojs/event'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 import './style.css'
+import MyCustomCube from './classes/MyCustomCube'
 
 (async () => {
   // Initialize the scene
@@ -76,20 +77,30 @@ import './style.css'
     const angle = i * Math.PI / 4
     const x = Math.cos(angle) * 4
     const z = Math.sin(angle) * 4
-    const cube = new FCube(scene)
-    cube.setPosition(x, 3, z - 17)
-    cube.initRigidBody({
-      // First one gets a sphere collider, the others get a cube collider
-      shape: i === 0 ? F3dShapes.SPHERE : F3dShapes.CUBE,
-    })
+    // Create cube variable
+    let cube
+    if (i === 0) {
+      // First one is an instance of MyCustomCube
+      cube = new MyCustomCube(scene)
+      cube.setPosition(x, 3, z - 17)
+      cube.initRigidBody({
+        // First one gets a sphere collider, the others get a cube collider
+        shape: F3dShapes.SPHERE,
+      })
+    }
+    else {
+      cube = new FCube(scene)
+      cube.setPosition(x, 3, z - 17)
+      cube.initRigidBody()
+    }
     scene.addComponent(cube)
   }
 
   /**
    * Add collision events
    */
-  capsule.onCollisionWith(GltfCube, () => {
-    console.log('Cube collided with a GltfCube !')
+  capsule.onCollisionWith(FCube, () => {
+    console.log('Cube collided with a FCube !')
   })
   capsule.onCollisionWith(sphere, () => {
     console.log('Cube collided with the sphere!')
