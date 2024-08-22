@@ -3,7 +3,7 @@ import { FCube, FOrbitCamera, FScene3d, FSphere } from '@fibbojs/3d'
 import * as THREE from 'three'
 
 (async () => {
-  const scene = new FScene3d({ debug: false })
+  const scene = new FScene3d()
   scene.init()
 
   // Define the radius for the rainbow effect

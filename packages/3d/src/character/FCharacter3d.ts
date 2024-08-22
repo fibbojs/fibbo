@@ -1,29 +1,22 @@
 import * as THREE from 'three'
 import { FKeyboard } from '@fibbojs/event'
-import type RAPIER from '@dimforge/rapier3d'
 import type { FScene3d } from '../FScene3d'
 import { F3dShapes } from '../types/F3dShapes'
 import type { FComponent3dOptions, FComponent3dOptions__initCollider, FComponent3dOptions__initRigidBody } from '../FComponent3d'
 import { FComponent3d } from '../FComponent3d'
 
+export interface FCharacter3dOptions extends FComponent3dOptions {
+  /**
+   * The speed of the character.
+   */
+  speed?: number
+}
+
 /**
- * @description A pre-defined character controller.
- * @category Model
- * @example
- * ```ts
- * import { FScene3d, FCharacter } from '@fibbojs/3d'
- *
- * const scene = new FScene3d()
- *
- * const capsule = new FCharacter(scene)
- * scene.addComponent(capsule)
- * ```
+ * @description An abstract pre-defined character controller.
+ * @category Character
  */
 export abstract class FCharacter3d extends FComponent3d {
-  /**
-   * The character controller that will be used to move the character.
-   */
-  characterController: RAPIER.KinematicCharacterController
   /**
    * The inputs that will be used to move the character.
    */
@@ -34,20 +27,26 @@ export abstract class FCharacter3d extends FComponent3d {
     right: boolean
   }
 
-  constructor(scene: FScene3d, options?: FComponent3dOptions) {
+  /**
+   * The speed of the character.
+   */
+  speed: number
+
+  constructor(scene: FScene3d, options?: FCharacter3dOptions) {
     super(scene, options)
-    // Create a capsule
-    const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
-    const material = new THREE.MeshBasicMaterial({ color: 0xA0FFA0 })
-    this.mesh = new THREE.Mesh(geometry, material)
 
-    // Create a keyboard instance
-    const fKeyboard = new FKeyboard(scene)
+    // Define default values
+    const DEFAULT_OPTIONS = {
+      speed: 1,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.speed)
+      throw new Error('FCharacter3d requires speed option')
 
-    // The gap the controller will leave between the character and its environment
-    const offset = 0.01
-    // Create the character controller
-    this.characterController = scene.world.createCharacterController(offset)
+    // Store speed
+    this.speed = options.speed
 
     // Map of the movements (will be updated by the keyboard)
     this.inputs = {
@@ -56,6 +55,14 @@ export abstract class FCharacter3d extends FComponent3d {
       left: false,
       right: false,
     }
+
+    // Create a capsule mesh
+    const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
+    const material = new THREE.MeshBasicMaterial({ color: 0xA0FFA0 })
+    this.mesh = new THREE.Mesh(geometry, material)
+
+    // Create a keyboard instance
+    const fKeyboard = new FKeyboard(scene)
 
     // Key down
     fKeyboard.onKeyDown('ArrowUp', () => {

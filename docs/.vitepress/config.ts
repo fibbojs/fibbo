@@ -12,6 +12,10 @@ export default defineConfig({
       { text: 'Quick Start', link: '/getting-started/installation' },
     ],
 
+    search: {
+      provider: 'local',
+    },
+
     sidebar: [
       {
         text: 'Getting Started',
@@ -33,6 +37,12 @@ export default defineConfig({
           { text: 'Index', link: '/api/index.md' },
           { text: 'Modules', items: [
             { text: '2d', link: '/api/2d/index.md', collapsed: true, items: [
+              { text: 'Camera Classes', items: [
+                { text: 'FAttachedCamera', link: '/api/2d/classes/FAttachedCamera' },
+                { text: 'FCamera2d', link: '/api/2d/classes/FCamera2d' },
+                { text: 'FFixedCamera', link: '/api/3d/classes/FFixedCamera' },
+                { text: 'FFreeCamera', link: '/api/3d/classes/FFreeCamera' },
+              ] },
               { text: 'Core Classes', items: [
                 { text: 'FComponent2d', link: '/api/2d/classes/FComponent2d' },
                 { text: 'FScene2d', link: '/api/2d/classes/FScene2d' },
@@ -47,6 +57,11 @@ export default defineConfig({
               { text: 'Enumerations', items: [
                 { text: 'F2dShapes', link: '/api/2d/enumerations/F2dShapes' },
               ] },
+              { text: 'Interfaces', items: [
+                { text: 'FCamera2dOptions', link: '/api/2d/interfaces/FCamera2dOptions' },
+                { text: 'FComponent2dOptions', link: '/api/2d/interfaces/FComponent2dOptions' },
+                { text: 'FScene2dOptions', link: '/api/2d/interfaces/FScene2dOptions' },
+              ] },
             ] },
             { text: '3d', link: '/api/3d/index.md', collapsed: true, items: [
               { text: 'Camera Classes', items: [
@@ -56,11 +71,19 @@ export default defineConfig({
                 { text: 'FGameCamera', link: '/api/3d/classes/FGameCamera' },
                 { text: 'FOrbitCamera', link: '/api/3d/classes/FOrbitCamera' },
               ] },
+              { text: 'Character Classes', items: [
+                { text: 'FCharacter3d', link: '/api/3d/classes/FCharacter3d' },
+                { text: 'FCharacter3dDynamic', link: '/api/3d/classes/FCharacter3dDynamic' },
+                { text: 'FCharacter3dKinematic', link: '/api/3d/classes/FCharacter3dKinematic' },
+                { text: 'FCharacter3dKP', link: '/api/3d/classes/FCharacter3dKP' },
+                { text: 'FCharacter3dKV', link: '/api/3d/classes/FCharacter3dKV' },
+              ] },
               { text: 'Core Classes', items: [
                 { text: 'FComponent3d', link: '/api/3d/classes/FComponent3d' },
                 { text: 'FScene3d', link: '/api/3d/classes/FScene3d' },
               ] },
               { text: 'Model Classes', items: [
+                { text: 'FCapsule', link: '/api/3d/classes/FCapsule' },
                 { text: 'FCube', link: '/api/3d/classes/FCube' },
                 { text: 'FGLTF', link: '/api/3d/classes/FGLTF' },
                 { text: 'FPolyhedron', link: '/api/3d/classes/FPolyhedron' },
@@ -68,6 +91,13 @@ export default defineConfig({
               ] },
               { text: 'Enumerations', items: [
                 { text: 'F3dShapes', link: '/api/3d/enumerations/F3dShapes' },
+              ] },
+              { text: 'Interfaces', items: [
+                { text: 'FCharacter3dOptions', link: '/api/3d/interfaces/FCharacter3dOptions' },
+                { text: 'FComponent3dOptions__initCollider', link: '/api/3d/interfaces/FComponent3dOptions__initCollider' },
+                { text: 'FComponent3dOptions__initRigidBody', link: '/api/3d/interfaces/FComponent3dOptions__initRigidBody' },
+                { text: 'FComponent3dOptions', link: '/api/3d/interfaces/FComponent3dOptions' },
+                { text: 'FScene3dOptions', link: '/api/3d/interfaces/FScene3dOptions' },
               ] },
             ] },
             { text: 'core', link: '/api/core/index.md', collapsed: true, items: [
@@ -78,6 +108,7 @@ export default defineConfig({
             ] },
             { text: 'devtools', link: '/api/devtools/index.md', collapsed: true, items: [
               { text: 'FDebug', link: '/api/devtools/classes/FDebug' },
+              { text: 'fDebug', link: '/api/devtools/functions/fDebug' },
             ] },
             { text: 'event', link: '/api/event/index.md', collapsed: true, items: [
               { text: 'FKeyboard', link: '/api/event/classes/FKeyboard' },

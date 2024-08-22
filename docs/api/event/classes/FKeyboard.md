@@ -5,21 +5,19 @@
 ## Description
 
 A helper class to manage keyboard events.
-Can be instantiated or used statically.
-Instantiate this class will let you manage the keyboard events for a specific instance.
-Using this class statically will let you manage the keyboard events globally.
+Events will be triggered on each frame.
 
 ## Example
 
 ```ts
 // Static usage
 FKeyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
+ console.log('ArrowUp key pressed!')
 })
 // Instance usage
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
+ console.log('ArrowUp key pressed!')
 })
 ```
 
@@ -27,7 +25,11 @@ keyboard.on('ArrowUp', () => {
 
 ### new FKeyboard()
 
-> **new FKeyboard**(): [`FKeyboard`](FKeyboard.md)
+> **new FKeyboard**(`scene`): [`FKeyboard`](FKeyboard.md)
+
+#### Parameters
+
+• **scene**: `FScene`
 
 #### Returns
 
@@ -35,7 +37,7 @@ keyboard.on('ArrowUp', () => {
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:29](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L29)
+[packages/event/src/FKeyboard.ts:37](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L37)
 
 ## Methods
 
@@ -54,16 +56,16 @@ Remove all the listeners
 #### Example
 
 ```ts
-const keyboard = new FKeyboard()
+const keyboard = new FKeyboard(scene)
 keyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
+ console.log('ArrowUp key pressed!')
 })
 keyboard.clear()
 ```
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:143](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L143)
+[packages/event/src/FKeyboard.ts:191](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L191)
 
 ***
 
@@ -93,60 +95,36 @@ The callback function that removes the listener
 
 #### Description
 
-Add a listener to a given key event
+Add a listener to a given key event.
+This is a small wrapper around the native `addEventListener` method, which helps listen to key events continuously.
+Basically, this prevents keyboard "debounce" delay by firing the given callback on each frame if the key is pressed.
 
 #### Examples
 
 ```ts
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
+ console.log('ArrowUp key pressed!')
 })
 ```
 
 ```ts
 const keyboard = new FKeyboard()
-// Get the remove listener function from the on method
 const removeListener = keyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
+ console.log('ArrowUp key pressed!')
 })
-// Remove the listener
 removeListener()
 ```
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:97](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L97)
+[packages/event/src/FKeyboard.ts:99](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L99)
 
 ***
 
-### clear()
+### onKeyDown()
 
-> `static` **clear**(): `void`
-
-#### Returns
-
-`void`
-
-#### Description
-
-Remove all the listeners
-
-#### Example
-
-```ts
-Keyboard.clear()
-```
-
-#### Defined in
-
-[packages/event/src/FKeyboard.ts:123](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L123)
-
-***
-
-### on()
-
-> `static` **on**(`key`, `callback`): () => `void`
+> **onKeyDown**(`key`, `callback`): () => `void`
 
 #### Parameters
 
@@ -170,53 +148,132 @@ The callback function that removes the listener
 
 #### Description
 
-Add a listener to a given key event
+Add a listener to a given key event when the key is pressed
 
 #### Examples
 
 ```ts
-FKeyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
+const keyboard = new FKeyboard()
+keyboard.onKeyDown('ArrowUp', () => {
+ console.log('ArrowUp key pressed!')
 })
 ```
 
 ```ts
-// Get the remove listener function from the on method
-const removeListener = FKeyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
+const keyboard = new FKeyboard()
+const removeListener = keyboard.onKeyDown('ArrowUp', () => {
+ console.log('ArrowUp key pressed!')
 })
-// Remove the listener
 removeListener()
 ```
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:55](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L55)
-
-## Properties
-
-### listeners
-
-> **listeners**: (`event`) => `void`[] = `[]`
-
-#### Description
-
-An array of all the keys among the current instance of FKeyboard
-
-#### Defined in
-
-[packages/event/src/FKeyboard.ts:27](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L27)
+[packages/event/src/FKeyboard.ts:133](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L133)
 
 ***
 
-### STATIC\_LISTENERS
+### onKeyUp()
 
-> `static` **STATIC\_LISTENERS**: (`event`) => `void`[] = `[]`
+> **onKeyUp**(`key`, `callback`): () => `void`
+
+#### Parameters
+
+• **key**: `string`
+
+The key to listen to
+
+• **callback**
+
+The callback to call when the key is released
+
+#### Returns
+
+`Function`
+
+The callback function that removes the listener
+
+##### Returns
+
+`void`
 
 #### Description
 
-An array of all the listeners among all the instances of FKeyboard
+Add a listener to a given key event when the key is released
+
+#### Examples
+
+```ts
+const keyboard = new FKeyboard()
+keyboard.onKeyUp('ArrowUp', () => {
+ console.log('ArrowUp key released!')
+})
+```
+
+```ts
+const keyboard = new FKeyboard()
+const removeListener = keyboard.onKeyUp('ArrowUp', () => {
+ console.log('ArrowUp key released!')
+})
+removeListener()
+```
 
 #### Defined in
 
-[packages/event/src/FKeyboard.ts:23](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/event/src/FKeyboard.ts#L23)
+[packages/event/src/FKeyboard.ts:167](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L167)
+
+## Properties
+
+### callback
+
+> **callback**: `Record`\<`string`, () => `void`[]\>
+
+#### Description
+
+An map of all the callbacks for each key being pressed
+
+#### Defined in
+
+[packages/event/src/FKeyboard.ts:27](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L27)
+
+***
+
+### callbackKeyDown
+
+> **callbackKeyDown**: `Record`\<`string`, () => `void`[]\>
+
+#### Description
+
+An map of all the callbacks for each key being released
+
+#### Defined in
+
+[packages/event/src/FKeyboard.ts:31](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L31)
+
+***
+
+### callbackKeyUp
+
+> **callbackKeyUp**: `Record`\<`string`, () => `void`[]\>
+
+#### Description
+
+An map of all the callbacks for each key being released
+
+#### Defined in
+
+[packages/event/src/FKeyboard.ts:35](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L35)
+
+***
+
+### keys
+
+> **keys**: `Record`\<`string`, `boolean`\>
+
+#### Description
+
+A map of all the keys being pressed
+
+#### Defined in
+
+[packages/event/src/FKeyboard.ts:23](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/event/src/FKeyboard.ts#L23)

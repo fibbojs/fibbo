@@ -1,4 +1,4 @@
-import { F3dShapes, FCapsule, FCharacter3dKinematic, FCube, FGameCamera, FScene3d, FSphere } from '@fibbojs/3d'
+import { F3dShapes, FCapsule, FCharacter3dKV, FCube, FGameCamera, FScene3d, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -43,7 +43,7 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(ground2)
 
   // Create a character
-  const character = new FCharacter3dKinematic(scene)
+  const character = new FCharacter3dKV(scene)
   scene.addComponent(character)
 
   // Attach a camera to the character

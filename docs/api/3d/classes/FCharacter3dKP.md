@@ -1,21 +1,25 @@
-[@fibbojs](/api/index) / [3d](/api/3d) / FPolyhedron
+[@fibbojs](/api/index) / [3d](/api/3d) / FCharacter3dKP
 
-# Class: `abstract` FPolyhedron
+# Class: FCharacter3dKP
 
 ## Description
 
-A simple polyhedron model in FibboJS.
-Defaults to a cube.
+A pre-defined character controller based on Kinematic Position rigidbodies.
+
+## Example
+
+```ts
+import { FScene3d, FCharacter3dKP } from '@fibbojs/3d'
+
+const scene = new FScene3d()
+
+const capsule = new FCharacter3dKP(scene)
+scene.addComponent(capsule)
+```
 
 ## Extends
 
-- [`FComponent3d`](FComponent3d.md)
-
-## Extended by
-
-- [`FCapsule`](FCapsule.md)
-- [`FCube`](FCube.md)
-- [`FSphere`](FSphere.md)
+- [`FCharacter3dKinematic`](FCharacter3dKinematic.md)
 
 ## Accessors
 
@@ -35,7 +39,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeX`](FComponent3d.md#rotationdegreex)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rotationDegreeX`](FCharacter3dKinematic.md#rotationdegreex)
 
 #### Defined in
 
@@ -59,7 +63,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeY`](FComponent3d.md#rotationdegreey)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rotationDegreeY`](FCharacter3dKinematic.md#rotationdegreey)
 
 #### Defined in
 
@@ -83,7 +87,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeZ`](FComponent3d.md#rotationdegreez)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rotationDegreeZ`](FCharacter3dKinematic.md#rotationdegreez)
 
 #### Defined in
 
@@ -107,7 +111,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationX`](FComponent3d.md#rotationx)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rotationX`](FCharacter3dKinematic.md#rotationx)
 
 #### Defined in
 
@@ -131,7 +135,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationY`](FComponent3d.md#rotationy)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rotationY`](FCharacter3dKinematic.md#rotationy)
 
 #### Defined in
 
@@ -155,7 +159,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationZ`](FComponent3d.md#rotationz)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rotationZ`](FCharacter3dKinematic.md#rotationz)
 
 #### Defined in
 
@@ -179,7 +183,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleX`](FComponent3d.md#scalex)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`scaleX`](FCharacter3dKinematic.md#scalex)
 
 #### Defined in
 
@@ -203,7 +207,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleY`](FComponent3d.md#scaley)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`scaleY`](FCharacter3dKinematic.md#scaley)
 
 #### Defined in
 
@@ -227,7 +231,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleZ`](FComponent3d.md#scalez)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`scaleZ`](FCharacter3dKinematic.md#scalez)
 
 #### Defined in
 
@@ -253,7 +257,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`x`](FComponent3d.md#x)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`x`](FCharacter3dKinematic.md#x)
 
 #### Defined in
 
@@ -277,7 +281,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`y`](FComponent3d.md#y)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`y`](FCharacter3dKinematic.md#y)
 
 #### Defined in
 
@@ -301,7 +305,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`z`](FComponent3d.md#z)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`z`](FCharacter3dKinematic.md#z)
 
 #### Defined in
 
@@ -309,9 +313,9 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FPolyhedron()
+### new FCharacter3dKP()
 
-> **new FPolyhedron**(`scene`, `options`?): [`FPolyhedron`](FPolyhedron.md)
+> **new FCharacter3dKP**(`scene`, `options`?): [`FCharacter3dKP`](FCharacter3dKP.md)
 
 #### Parameters
 
@@ -321,15 +325,15 @@ Setters & getters for transform properties
 
 #### Returns
 
-[`FPolyhedron`](FPolyhedron.md)
+[`FCharacter3dKP`](FCharacter3dKP.md)
 
 #### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`constructor`](FComponent3d.md#constructors)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`constructor`](FCharacter3dKinematic.md#constructors)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:18](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L18)
+packages/3d/src/character/FCharacter3dKP.ts:21
 
 ## Methods
 
@@ -367,7 +371,7 @@ player.emitCollisionWith(enemy)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`emitCollisionWith`](FComponent3d.md#emitcollisionwith)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`emitCollisionWith`](FCharacter3dKinematic.md#emitcollisionwith)
 
 #### Defined in
 
@@ -407,11 +411,11 @@ component.initCollider({
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`initCollider`](FComponent3d.md#initcollider)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`initCollider`](FCharacter3dKinematic.md#initcollider)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:394](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L394)
+[packages/3d/src/character/FCharacter3dKinematic.ts:34](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3dKinematic.ts#L34)
 
 ***
 
@@ -444,13 +448,13 @@ component.initRigidBody({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`initRigidBody`](FComponent3d.md#initrigidbody)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`initRigidBody`](FCharacter3dKinematic.md#initrigidbody)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:293](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L293)
+packages/3d/src/character/FCharacter3dKP.ts:65
 
 ***
 
@@ -496,7 +500,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`onCollisionWith`](FComponent3d.md#oncollisionwith)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`onCollisionWith`](FCharacter3dKinematic.md#oncollisionwith)
 
 #### Defined in
 
@@ -521,43 +525,13 @@ player.onCollisionWith(enemy, () => {
 Update the component.
 Should be called every frame.
 
-#### Overrides
+#### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`onFrame`](FComponent3d.md#onframe)
-
-#### Defined in
-
-[packages/3d/src/model/FPolyhedron.ts:26](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L26)
-
-***
-
-### setColor()
-
-> **setColor**(`color`): `void`
-
-#### Parameters
-
-• **color**: `number`
-
-The color of the polyhedron.
-
-#### Returns
-
-`void`
-
-#### Description
-
-Change the color of the polyhedron.
-
-#### Example
-
-```ts
-cube.setColor(0xff0000)
-```
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`onFrame`](FCharacter3dKinematic.md#onframe)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:38](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L38)
+[packages/3d/src/FComponent3d.ts:129](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L129)
 
 ***
 
@@ -595,7 +569,7 @@ component.setPosition(0, 1, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setPosition`](FComponent3d.md#setposition)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`setPosition`](FCharacter3dKinematic.md#setposition)
 
 #### Defined in
 
@@ -637,7 +611,7 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setRotation`](FComponent3d.md#setrotation)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`setRotation`](FCharacter3dKinematic.md#setrotation)
 
 #### Defined in
 
@@ -679,7 +653,7 @@ component.setRotationDegree(0, 90, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setRotationDegree`](FComponent3d.md#setrotationdegree)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`setRotationDegree`](FCharacter3dKinematic.md#setrotationdegree)
 
 #### Defined in
 
@@ -715,7 +689,7 @@ Set the scale of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setScale`](FComponent3d.md#setscale)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`setScale`](FCharacter3dKinematic.md#setscale)
 
 #### Defined in
 
@@ -738,7 +712,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`__CALLBACKS_ON_COLLISION__`](FComponent3d.md#__callbacks_on_collision__)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`__CALLBACKS_ON_COLLISION__`](FCharacter3dKinematic.md#__callbacks_on_collision__)
 
 #### Defined in
 
@@ -757,11 +731,27 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`__ID__`](FComponent3d.md#__id__)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`__ID__`](FCharacter3dKinematic.md#__id__)
 
 #### Defined in
 
 packages/core/dist/index.d.ts:12
+
+***
+
+### characterController
+
+> **characterController**: `KinematicCharacterController`
+
+The character controller that will be used to move the character.
+
+#### Inherited from
+
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`characterController`](FCharacter3dKinematic.md#charactercontroller)
+
+#### Defined in
+
+[packages/3d/src/character/FCharacter3dKinematic.ts:16](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3dKinematic.ts#L16)
 
 ***
 
@@ -773,7 +763,7 @@ RAPIER Collider
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`collider`](FComponent3d.md#collider)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`collider`](FCharacter3dKinematic.md#collider)
 
 #### Defined in
 
@@ -781,20 +771,51 @@ RAPIER Collider
 
 ***
 
-### mesh
+### inputs
 
-> **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
+> **inputs**: `object`
 
-mesh is redefined from FComponent3d without the ? because it is
-directly available after the constructor, as a polyhedron is created synchronously.
+The inputs that will be used to move the character.
 
-#### Overrides
+#### backward
 
-[`FComponent3d`](FComponent3d.md).[`mesh`](FComponent3d.md#mesh)
+> **backward**: `boolean`
+
+#### forward
+
+> **forward**: `boolean`
+
+#### left
+
+> **left**: `boolean`
+
+#### right
+
+> **right**: `boolean`
+
+#### Inherited from
+
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`inputs`](FCharacter3dKinematic.md#inputs)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L16)
+[packages/3d/src/character/FCharacter3d.ts:23](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3d.ts#L23)
+
+***
+
+### mesh?
+
+> `optional` **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
+
+Mesh
+
+#### Inherited from
+
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`mesh`](FCharacter3dKinematic.md#mesh)
+
+#### Defined in
+
+[packages/3d/src/FComponent3d.ts:55](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L55)
 
 ***
 
@@ -806,7 +827,7 @@ The position of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`position`](FComponent3d.md#position)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`position`](FCharacter3dKinematic.md#position)
 
 #### Defined in
 
@@ -822,7 +843,7 @@ RAPIER RigidBody
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rigidBody`](FComponent3d.md#rigidbody)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rigidBody`](FCharacter3dKinematic.md#rigidbody)
 
 #### Defined in
 
@@ -838,7 +859,7 @@ The rotation of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotation`](FComponent3d.md#rotation)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`rotation`](FCharacter3dKinematic.md#rotation)
 
 #### Defined in
 
@@ -854,7 +875,7 @@ The scale of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scale`](FComponent3d.md#scale)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`scale`](FCharacter3dKinematic.md#scale)
 
 #### Defined in
 
@@ -870,8 +891,24 @@ The scene which the component is in.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scene`](FComponent3d.md#scene)
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`scene`](FCharacter3dKinematic.md#scene)
 
 #### Defined in
 
 [packages/3d/src/FComponent3d.ts:50](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L50)
+
+***
+
+### speed
+
+> **speed**: `number`
+
+The speed of the character.
+
+#### Inherited from
+
+[`FCharacter3dKinematic`](FCharacter3dKinematic.md).[`speed`](FCharacter3dKinematic.md#speed)
+
+#### Defined in
+
+[packages/3d/src/character/FCharacter3d.ts:33](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3d.ts#L33)

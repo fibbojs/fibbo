@@ -1,21 +1,25 @@
-[@fibbojs](/api/index) / [3d](/api/3d) / FPolyhedron
+[@fibbojs](/api/index) / [3d](/api/3d) / FCapsule
 
-# Class: `abstract` FPolyhedron
+# Class: FCapsule
 
 ## Description
 
-A simple polyhedron model in FibboJS.
-Defaults to a cube.
+A simple capsule model in FibboJS.
+
+## Example
+
+```ts
+import { FScene3d, FCapsule } from '@fibbojs/3d'
+
+const scene = new FScene3d()
+
+const capsule = new FCapsule(scene)
+scene.addComponent(capsule)
+```
 
 ## Extends
 
-- [`FComponent3d`](FComponent3d.md)
-
-## Extended by
-
-- [`FCapsule`](FCapsule.md)
-- [`FCube`](FCube.md)
-- [`FSphere`](FSphere.md)
+- [`FPolyhedron`](FPolyhedron.md)
 
 ## Accessors
 
@@ -35,7 +39,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeX`](FComponent3d.md#rotationdegreex)
+[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeX`](FPolyhedron.md#rotationdegreex)
 
 #### Defined in
 
@@ -59,7 +63,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeY`](FComponent3d.md#rotationdegreey)
+[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeY`](FPolyhedron.md#rotationdegreey)
 
 #### Defined in
 
@@ -83,7 +87,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeZ`](FComponent3d.md#rotationdegreez)
+[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeZ`](FPolyhedron.md#rotationdegreez)
 
 #### Defined in
 
@@ -107,7 +111,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationX`](FComponent3d.md#rotationx)
+[`FPolyhedron`](FPolyhedron.md).[`rotationX`](FPolyhedron.md#rotationx)
 
 #### Defined in
 
@@ -131,7 +135,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationY`](FComponent3d.md#rotationy)
+[`FPolyhedron`](FPolyhedron.md).[`rotationY`](FPolyhedron.md#rotationy)
 
 #### Defined in
 
@@ -155,7 +159,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationZ`](FComponent3d.md#rotationz)
+[`FPolyhedron`](FPolyhedron.md).[`rotationZ`](FPolyhedron.md#rotationz)
 
 #### Defined in
 
@@ -179,7 +183,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleX`](FComponent3d.md#scalex)
+[`FPolyhedron`](FPolyhedron.md).[`scaleX`](FPolyhedron.md#scalex)
 
 #### Defined in
 
@@ -203,7 +207,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleY`](FComponent3d.md#scaley)
+[`FPolyhedron`](FPolyhedron.md).[`scaleY`](FPolyhedron.md#scaley)
 
 #### Defined in
 
@@ -227,7 +231,7 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleZ`](FComponent3d.md#scalez)
+[`FPolyhedron`](FPolyhedron.md).[`scaleZ`](FPolyhedron.md#scalez)
 
 #### Defined in
 
@@ -253,7 +257,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`x`](FComponent3d.md#x)
+[`FPolyhedron`](FPolyhedron.md).[`x`](FPolyhedron.md#x)
 
 #### Defined in
 
@@ -277,7 +281,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`y`](FComponent3d.md#y)
+[`FPolyhedron`](FPolyhedron.md).[`y`](FPolyhedron.md#y)
 
 #### Defined in
 
@@ -301,7 +305,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`z`](FComponent3d.md#z)
+[`FPolyhedron`](FPolyhedron.md).[`z`](FPolyhedron.md#z)
 
 #### Defined in
 
@@ -309,9 +313,9 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FPolyhedron()
+### new FCapsule()
 
-> **new FPolyhedron**(`scene`, `options`?): [`FPolyhedron`](FPolyhedron.md)
+> **new FCapsule**(`scene`, `options`?): [`FCapsule`](FCapsule.md)
 
 #### Parameters
 
@@ -321,15 +325,15 @@ Setters & getters for transform properties
 
 #### Returns
 
-[`FPolyhedron`](FPolyhedron.md)
+[`FCapsule`](FCapsule.md)
 
 #### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`constructor`](FComponent3d.md#constructors)
+[`FPolyhedron`](FPolyhedron.md).[`constructor`](FPolyhedron.md#constructors)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:18](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L18)
+[packages/3d/src/model/FCapsule.ts:21](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FCapsule.ts#L21)
 
 ## Methods
 
@@ -367,7 +371,7 @@ player.emitCollisionWith(enemy)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`emitCollisionWith`](FComponent3d.md#emitcollisionwith)
+[`FPolyhedron`](FPolyhedron.md).[`emitCollisionWith`](FPolyhedron.md#emitcollisionwith)
 
 #### Defined in
 
@@ -405,13 +409,13 @@ component.initCollider({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`initCollider`](FComponent3d.md#initcollider)
+[`FPolyhedron`](FPolyhedron.md).[`initCollider`](FPolyhedron.md#initcollider)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:394](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L394)
+[packages/3d/src/model/FCapsule.ts:40](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FCapsule.ts#L40)
 
 ***
 
@@ -444,13 +448,13 @@ component.initRigidBody({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`initRigidBody`](FComponent3d.md#initrigidbody)
+[`FPolyhedron`](FPolyhedron.md).[`initRigidBody`](FPolyhedron.md#initrigidbody)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:293](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L293)
+[packages/3d/src/model/FCapsule.ts:33](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FCapsule.ts#L33)
 
 ***
 
@@ -496,7 +500,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`onCollisionWith`](FComponent3d.md#oncollisionwith)
+[`FPolyhedron`](FPolyhedron.md).[`onCollisionWith`](FPolyhedron.md#oncollisionwith)
 
 #### Defined in
 
@@ -523,11 +527,11 @@ Should be called every frame.
 
 #### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`onFrame`](FComponent3d.md#onframe)
+[`FPolyhedron`](FPolyhedron.md).[`onFrame`](FPolyhedron.md#onframe)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:26](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L26)
+[packages/3d/src/model/FCapsule.ts:29](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FCapsule.ts#L29)
 
 ***
 
@@ -554,6 +558,10 @@ Change the color of the polyhedron.
 ```ts
 cube.setColor(0xff0000)
 ```
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`setColor`](FPolyhedron.md#setcolor)
 
 #### Defined in
 
@@ -595,7 +603,7 @@ component.setPosition(0, 1, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setPosition`](FComponent3d.md#setposition)
+[`FPolyhedron`](FPolyhedron.md).[`setPosition`](FPolyhedron.md#setposition)
 
 #### Defined in
 
@@ -637,7 +645,7 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setRotation`](FComponent3d.md#setrotation)
+[`FPolyhedron`](FPolyhedron.md).[`setRotation`](FPolyhedron.md#setrotation)
 
 #### Defined in
 
@@ -679,7 +687,7 @@ component.setRotationDegree(0, 90, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setRotationDegree`](FComponent3d.md#setrotationdegree)
+[`FPolyhedron`](FPolyhedron.md).[`setRotationDegree`](FPolyhedron.md#setrotationdegree)
 
 #### Defined in
 
@@ -715,7 +723,7 @@ Set the scale of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setScale`](FComponent3d.md#setscale)
+[`FPolyhedron`](FPolyhedron.md).[`setScale`](FPolyhedron.md#setscale)
 
 #### Defined in
 
@@ -738,7 +746,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`__CALLBACKS_ON_COLLISION__`](FComponent3d.md#__callbacks_on_collision__)
+[`FPolyhedron`](FPolyhedron.md).[`__CALLBACKS_ON_COLLISION__`](FPolyhedron.md#__callbacks_on_collision__)
 
 #### Defined in
 
@@ -757,7 +765,7 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`__ID__`](FComponent3d.md#__id__)
+[`FPolyhedron`](FPolyhedron.md).[`__ID__`](FPolyhedron.md#__id__)
 
 #### Defined in
 
@@ -773,7 +781,7 @@ RAPIER Collider
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`collider`](FComponent3d.md#collider)
+[`FPolyhedron`](FPolyhedron.md).[`collider`](FPolyhedron.md#collider)
 
 #### Defined in
 
@@ -788,9 +796,9 @@ RAPIER Collider
 mesh is redefined from FComponent3d without the ? because it is
 directly available after the constructor, as a polyhedron is created synchronously.
 
-#### Overrides
+#### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`mesh`](FComponent3d.md#mesh)
+[`FPolyhedron`](FPolyhedron.md).[`mesh`](FPolyhedron.md#mesh)
 
 #### Defined in
 
@@ -806,7 +814,7 @@ The position of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`position`](FComponent3d.md#position)
+[`FPolyhedron`](FPolyhedron.md).[`position`](FPolyhedron.md#position)
 
 #### Defined in
 
@@ -822,7 +830,7 @@ RAPIER RigidBody
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rigidBody`](FComponent3d.md#rigidbody)
+[`FPolyhedron`](FPolyhedron.md).[`rigidBody`](FPolyhedron.md#rigidbody)
 
 #### Defined in
 
@@ -838,7 +846,7 @@ The rotation of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotation`](FComponent3d.md#rotation)
+[`FPolyhedron`](FPolyhedron.md).[`rotation`](FPolyhedron.md#rotation)
 
 #### Defined in
 
@@ -854,7 +862,7 @@ The scale of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scale`](FComponent3d.md#scale)
+[`FPolyhedron`](FPolyhedron.md).[`scale`](FPolyhedron.md#scale)
 
 #### Defined in
 
@@ -870,7 +878,7 @@ The scene which the component is in.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scene`](FComponent3d.md#scene)
+[`FPolyhedron`](FPolyhedron.md).[`scene`](FPolyhedron.md#scene)
 
 #### Defined in
 

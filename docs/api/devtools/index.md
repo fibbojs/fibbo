@@ -7,3 +7,7 @@
 ### Classes
 
 - [FDebug](classes/FDebug.md)
+
+### Functions
+
+- [fDebug](functions/fDebug.md)

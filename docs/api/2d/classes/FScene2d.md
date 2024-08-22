@@ -12,13 +12,13 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 import { FScene2d, FSquare } from '@fibbojs/2d'
 
 (async () => {
-  const scene = new FScene2d()
-  await scene.init()
-  await scene.initPhysics()
+ const scene = new FScene2d()
+ await scene.init()
+ await scene.initPhysics()
 
-  const square = new FSquare(scene)
-  square.initRigidBody()
-  scene.addComponent(square)
+ const square = new FSquare(scene)
+ square.initRigidBody()
+ scene.addComponent(square)
 })()
 ```
 
@@ -26,15 +26,45 @@ import { FScene2d, FSquare } from '@fibbojs/2d'
 
 - `FScene`
 
+## Accessors
+
+### camera
+
+> `get` **camera**(): [`FCamera2d`](FCamera2d.md)
+
+#### Description
+
+Getter for the camera.
+This is required because the camera is a private property.
+
+> `set` **camera**(`camera`): `void`
+
+#### Description
+
+Setter for the camera.
+This is required so when the camera is set, its method to defined the viewport behavior is called.
+
+#### Parameters
+
+• **camera**: [`FCamera2d`](FCamera2d.md)
+
+#### Returns
+
+[`FCamera2d`](FCamera2d.md)
+
+#### Defined in
+
+[packages/2d/src/FScene2d.ts:238](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L238)
+
 ## Constructors
 
 ### new FScene2d()
 
-> **new FScene2d**(`_options`): [`FScene2d`](FScene2d.md)
+> **new FScene2d**(`options`?): [`FScene2d`](FScene2d.md)
 
 #### Parameters
 
-• **\_options**: `object` = `{}`
+• **options?**: [`FScene2dOptions`](../interfaces/FScene2dOptions.md)
 
 #### Returns
 
@@ -46,7 +76,7 @@ import { FScene2d, FSquare } from '@fibbojs/2d'
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:42](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L42)
+[packages/2d/src/FScene2d.ts:55](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L55)
 
 ## Methods
 
@@ -72,7 +102,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:172](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L172)
+[packages/2d/src/FScene2d.ts:206](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L206)
 
 ***
 
@@ -104,7 +134,7 @@ Handle a collision event between two colliders.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:146](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L146)
+[packages/2d/src/FScene2d.ts:180](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L180)
 
 ***
 
@@ -125,7 +155,7 @@ and the root stage PIXI.Container.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:59](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L59)
+[packages/2d/src/FScene2d.ts:88](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L88)
 
 ***
 
@@ -139,7 +169,7 @@ and the root stage PIXI.Container.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:115](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L115)
+[packages/2d/src/FScene2d.ts:149](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L149)
 
 ***
 
@@ -165,7 +195,7 @@ Add a callback to be called when a component is added to the scene.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:145
+packages/core/dist/index.d.ts:144
 
 ***
 
@@ -191,7 +221,7 @@ Add a callback to be called when a frame is rendered.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:141
+packages/core/dist/index.d.ts:140
 
 ***
 
@@ -209,7 +239,7 @@ packages/core/dist/index.d.ts:141
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:212](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L212)
+[packages/2d/src/FScene2d.ts:230](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L230)
 
 ## Properties
 
@@ -219,7 +249,7 @@ packages/core/dist/index.d.ts:141
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:31](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L31)
+[packages/2d/src/FScene2d.ts:44](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L44)
 
 ***
 
@@ -238,7 +268,7 @@ It is an array of functions that take the component as an argument.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:132
+packages/core/dist/index.d.ts:131
 
 ***
 
@@ -257,7 +287,29 @@ It is an array of functions that take the delta time as an argument.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:127
+packages/core/dist/index.d.ts:126
+
+***
+
+### \_\_CAMERA\_\_
+
+> **\_\_CAMERA\_\_**: [`FCamera2d`](FCamera2d.md)
+
+#### Defined in
+
+[packages/2d/src/FScene2d.ts:38](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L38)
+
+***
+
+### \_\_DOM\_NODE\_\_
+
+> **\_\_DOM\_NODE\_\_**: `HTMLElement`
+
+DOM element that the renderer will be appended to
+
+#### Defined in
+
+[packages/2d/src/FScene2d.ts:42](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L42)
 
 ***
 
@@ -267,7 +319,7 @@ packages/core/dist/index.d.ts:127
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:38](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L38)
+[packages/2d/src/FScene2d.ts:51](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L51)
 
 ***
 
@@ -277,21 +329,7 @@ packages/core/dist/index.d.ts:127
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:32](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L32)
-
-***
-
-### camera?
-
-> `optional` **camera**: `FCamera`
-
-#### Inherited from
-
-`FScene.camera`
-
-#### Defined in
-
-packages/core/dist/index.d.ts:116
+[packages/2d/src/FScene2d.ts:45](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L45)
 
 ***
 
@@ -307,7 +345,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:29](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L29)
+[packages/2d/src/FScene2d.ts:36](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L36)
 
 ***
 
@@ -317,7 +355,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:37](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L37)
+[packages/2d/src/FScene2d.ts:50](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L50)
 
 ***
 
@@ -343,7 +381,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:35](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L35)
+[packages/2d/src/FScene2d.ts:48](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L48)
 
 ***
 
@@ -353,7 +391,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:40](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L40)
+[packages/2d/src/FScene2d.ts:53](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L53)
 
 ***
 
@@ -363,7 +401,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:33](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L33)
+[packages/2d/src/FScene2d.ts:46](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L46)
 
 ***
 
@@ -377,4 +415,4 @@ The components in the scene.
 
 #### Defined in
 
-[packages/2d/src/FScene2d.ts:36](https://github.com/fibbojs/fibbo/blob/0adbc560caeec29b0e6104421f527824bddd8320/packages/2d/src/FScene2d.ts#L36)
+[packages/2d/src/FScene2d.ts:49](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/FScene2d.ts#L49)

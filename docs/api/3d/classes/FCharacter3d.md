@@ -1,11 +1,10 @@
-[@fibbojs](/api/index) / [3d](/api/3d) / FPolyhedron
+[@fibbojs](/api/index) / [3d](/api/3d) / FCharacter3d
 
-# Class: `abstract` FPolyhedron
+# Class: `abstract` FCharacter3d
 
 ## Description
 
-A simple polyhedron model in FibboJS.
-Defaults to a cube.
+An abstract pre-defined character controller.
 
 ## Extends
 
@@ -13,9 +12,8 @@ Defaults to a cube.
 
 ## Extended by
 
-- [`FCapsule`](FCapsule.md)
-- [`FCube`](FCube.md)
-- [`FSphere`](FSphere.md)
+- [`FCharacter3dDynamic`](FCharacter3dDynamic.md)
+- [`FCharacter3dKinematic`](FCharacter3dKinematic.md)
 
 ## Accessors
 
@@ -309,19 +307,19 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FPolyhedron()
+### new FCharacter3d()
 
-> **new FPolyhedron**(`scene`, `options`?): [`FPolyhedron`](FPolyhedron.md)
+> **new FCharacter3d**(`scene`, `options`?): [`FCharacter3d`](FCharacter3d.md)
 
 #### Parameters
 
 • **scene**: [`FScene3d`](FScene3d.md)
 
-• **options?**: [`FComponent3dOptions`](../interfaces/FComponent3dOptions.md)
+• **options?**: [`FCharacter3dOptions`](../interfaces/FCharacter3dOptions.md)
 
 #### Returns
 
-[`FPolyhedron`](FPolyhedron.md)
+[`FCharacter3d`](FCharacter3d.md)
 
 #### Overrides
 
@@ -329,7 +327,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:18](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L18)
+[packages/3d/src/character/FCharacter3d.ts:35](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3d.ts#L35)
 
 ## Methods
 
@@ -405,13 +403,13 @@ component.initCollider({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
 [`FComponent3d`](FComponent3d.md).[`initCollider`](FComponent3d.md#initcollider)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:394](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L394)
+[packages/3d/src/character/FCharacter3d.ts:103](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3d.ts#L103)
 
 ***
 
@@ -444,13 +442,13 @@ component.initRigidBody({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
 [`FComponent3d`](FComponent3d.md).[`initRigidBody`](FComponent3d.md#initrigidbody)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:293](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L293)
+[packages/3d/src/character/FCharacter3d.ts:96](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3d.ts#L96)
 
 ***
 
@@ -521,43 +519,13 @@ player.onCollisionWith(enemy, () => {
 Update the component.
 Should be called every frame.
 
-#### Overrides
+#### Inherited from
 
 [`FComponent3d`](FComponent3d.md).[`onFrame`](FComponent3d.md#onframe)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:26](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L26)
-
-***
-
-### setColor()
-
-> **setColor**(`color`): `void`
-
-#### Parameters
-
-• **color**: `number`
-
-The color of the polyhedron.
-
-#### Returns
-
-`void`
-
-#### Description
-
-Change the color of the polyhedron.
-
-#### Example
-
-```ts
-cube.setColor(0xff0000)
-```
-
-#### Defined in
-
-[packages/3d/src/model/FPolyhedron.ts:38](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L38)
+[packages/3d/src/FComponent3d.ts:129](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L129)
 
 ***
 
@@ -781,20 +749,47 @@ RAPIER Collider
 
 ***
 
-### mesh
+### inputs
 
-> **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
+> **inputs**: `object`
 
-mesh is redefined from FComponent3d without the ? because it is
-directly available after the constructor, as a polyhedron is created synchronously.
+The inputs that will be used to move the character.
 
-#### Overrides
+#### backward
+
+> **backward**: `boolean`
+
+#### forward
+
+> **forward**: `boolean`
+
+#### left
+
+> **left**: `boolean`
+
+#### right
+
+> **right**: `boolean`
+
+#### Defined in
+
+[packages/3d/src/character/FCharacter3d.ts:23](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3d.ts#L23)
+
+***
+
+### mesh?
+
+> `optional` **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
+
+Mesh
+
+#### Inherited from
 
 [`FComponent3d`](FComponent3d.md).[`mesh`](FComponent3d.md#mesh)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/model/FPolyhedron.ts#L16)
+[packages/3d/src/FComponent3d.ts:55](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L55)
 
 ***
 
@@ -875,3 +870,15 @@ The scene which the component is in.
 #### Defined in
 
 [packages/3d/src/FComponent3d.ts:50](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/FComponent3d.ts#L50)
+
+***
+
+### speed
+
+> **speed**: `number`
+
+The speed of the character.
+
+#### Defined in
+
+[packages/3d/src/character/FCharacter3d.ts:33](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/3d/src/character/FCharacter3d.ts#L33)
