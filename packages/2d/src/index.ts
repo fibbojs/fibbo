@@ -20,3 +20,5 @@ export { FSprite } from './sprite/FSprite'
 
 // Types
 export { F2dShapes } from './types/F2dShapes'
+export type { FComponent2dOptions } from './FComponent2d'
+export type { FCamera2dOptions } from './cameras/FCamera2d'
