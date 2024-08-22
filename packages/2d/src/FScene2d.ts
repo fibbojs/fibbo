@@ -8,6 +8,11 @@ import { FSprite } from './sprite/FSprite'
 import type { FCamera2d } from './cameras/FCamera2d'
 import { FFreeCamera } from './cameras/FFreeCamera'
 
+export interface FScene2dOptions {
+  gravity?: { x: number, y: number, z: number }
+  domNode?: HTMLElement
+}
+
 /**
  * @description A scene which contains the models, the Three.js scene and the Rapier world.
  * @category Core
@@ -31,19 +36,23 @@ export class FScene2d extends FScene {
   declare components: FComponent2d[]
   // Camera
   declare __CAMERA__: FCamera2d
+  /**
+   * DOM element that the renderer will be appended to
+   */
+  __DOM_NODE__: HTMLElement
   // Pixi.js
   PIXI: typeof PIXI = PIXI
   app: PIXI.Application
   declare viewport: Viewport
   // Rapier
-  gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
+  gravity: { x: number, y: number, z: number }
   declare world: World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent2d> = new Map()
   // onReadyCallbacks
   public onReadyCallbacks: (() => void)[] = []
 
-  constructor(_options: object = {}) {
+  constructor(options?: FScene2dOptions) {
     super()
 
     // Verify window and document are available
@@ -52,6 +61,22 @@ export class FScene2d extends FScene {
 
     // Create a new PIXI application
     this.app = new PIXI.Application()
+
+    // Define default values for the options
+    const DEFAULT_OPTIONS = {
+      gravity: { x: 0, y: -9.81, z: 0 },
+      domNode: document.body,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate the options
+    if (options.domNode === undefined || options.gravity === undefined)
+      throw new Error('The gravity option must be defined')
+
+    // Store the DOM node
+    this.__DOM_NODE__ = options.domNode
+    // Store the gravity
+    this.gravity = options.gravity
   }
 
   /**
@@ -69,7 +94,7 @@ export class FScene2d extends FScene {
     const SCREEN_WIDTH = window.innerWidth
 
     // The application will create a canvas element that can then inserted into the DOM
-    document.body.appendChild(this.app.canvas)
+    this.__DOM_NODE__.appendChild(this.app.canvas)
 
     // Resize the renderer
     this.app.renderer.resize(SCREEN_WIDTH, SCREEN_HEIGHT)

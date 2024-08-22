@@ -7,6 +7,11 @@ import { FGLTF } from './model/FGLTF'
 import type { FCamera3d } from './cameras/FCamera3d'
 import { FFixedCamera } from './cameras/FFixedCamera'
 
+export interface FScene3dOptions {
+  gravity?: { x: number, y: number, z: number }
+  domNode?: HTMLElement
+}
+
 /**
  * @description A scene which contains the models, the Three.js scene and the Rapier world.
  * @category Core
@@ -41,6 +46,10 @@ import { FFixedCamera } from './cameras/FFixedCamera'
 export class FScene3d extends FScene {
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent3d[]
+  /**
+   * DOM element that the renderer will be appended to
+   */
+  __DOM_NODE__: HTMLElement
   // Three.js
   THREE: typeof THREE = THREE
   declare scene: THREE.Scene
@@ -48,17 +57,33 @@ export class FScene3d extends FScene {
   declare camera: FCamera3d
   declare controls?: OrbitControls
   // Rapier
-  gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
+  gravity: { x: number, y: number, z: number }
   declare world: RAPIER.World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent3d> = new Map()
 
-  constructor(_options: object = {}) {
+  constructor(options?: FScene3dOptions) {
     super()
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
       throw new Error('FScene must be instantiated in a browser environment')
+
+    // Define default values for the options
+    const DEFAULT_OPTIONS = {
+      gravity: { x: 0, y: -9.81, z: 0 },
+      domNode: document.body,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate the options
+    if (options.domNode === undefined || options.gravity === undefined)
+      throw new Error('The gravity option must be defined')
+
+    // Store the DOM node
+    this.__DOM_NODE__ = options.domNode
+    // Store the gravity
+    this.gravity = options.gravity
   }
 
   init() {
@@ -78,7 +103,7 @@ export class FScene3d extends FScene {
     this.scene.add(light)
 
     // Add renderer to DOM
-    document.body.appendChild(this.renderer.domElement)
+    this.__DOM_NODE__.appendChild(this.renderer.domElement)
 
     // onFrame loop
     this.onFrame((delta) => {
