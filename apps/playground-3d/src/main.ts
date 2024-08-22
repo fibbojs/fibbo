@@ -22,6 +22,26 @@ import './style.css'
   ground.setColor(0x1F1F1F)
   scene.addComponent(ground)
 
+  // Add "stairs"
+  for (let i = 0; i < 10; i++) {
+    const cube = new FCube(scene, {
+      scale: { x: 2, y: 1, z: 1 },
+      position: { x: 6, y: i / 4 - 0.5, z: -i },
+    })
+    cube.initCollider()
+    cube.setColor(0x1F1F1F)
+    scene.addComponent(cube)
+  }
+
+  // Create a second ground
+  const ground2 = new FCube(scene, {
+    position: { x: 0, y: 2.2, z: -17 },
+    scale: { x: 15, y: 0.1, z: 15 },
+  })
+  ground2.initCollider()
+  ground2.setColor(0x1F1F1F)
+  scene.addComponent(ground2)
+
   // Create a capsule that will be controlled by the player
   const capsule = new FCapsule(scene, {
     position: { x: -5, y: 5, z: 5 },
@@ -51,14 +71,15 @@ import './style.css'
   gltfCube2.setPosition(2, 5, 2)
   scene.addComponent(gltfCube2)
 
-  // Create 8 cubes dynamically in circle from 0 to 2PI
+  // Create 8 cubes dynamically in circle from 0 to 2PI on the second ground
   for (let i = 0; i < 8; i++) {
     const angle = i * Math.PI / 4
     const x = Math.cos(angle) * 4
     const z = Math.sin(angle) * 4
     const cube = new FCube(scene)
-    cube.setPosition(x, 1, z)
+    cube.setPosition(x, 3, z - 17)
     cube.initRigidBody({
+      // First one gets a sphere collider, the others get a cube collider
       shape: i === 0 ? F3dShapes.SPHERE : F3dShapes.CUBE,
     })
     scene.addComponent(cube)
