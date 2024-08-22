@@ -1,8 +1,7 @@
 import * as THREE from 'three'
-import type * as RAPIER from '@dimforge/rapier3d'
 import type { FScene3d } from '../FScene3d'
 import { F3dShapes } from '../types/F3dShapes'
-import type { FComponent3dOptions } from '../FComponent3d'
+import type { FComponent3dOptions, FComponent3dOptions__initCollider, FComponent3dOptions__initRigidBody } from '../FComponent3d'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -31,37 +30,14 @@ export class FCapsule extends FPolyhedron {
     super.onFrame(_delta)
   }
 
-  initRigidBody(options?: {
-    position?: THREE.Vector3
-    scale?: THREE.Vector3
-    rotation?: THREE.Vector3
-    shape?: F3dShapes
-    rigidBodyType?: RAPIER.RigidBodyType
-    lockTranslations?: boolean
-    lockRotations?: boolean
-    enabledTranslations?: {
-      enableX: boolean
-      enableY: boolean
-      enableZ: boolean
-    }
-    enabledRotations?: {
-      enableX: boolean
-      enableY: boolean
-      enableZ: boolean
-    }
-  }): void {
+  initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
     super.initRigidBody({
       ...options,
       shape: F3dShapes.CAPSULE,
     })
   }
 
-  initCollider(options?: {
-    position?: THREE.Vector3
-    scale?: THREE.Vector3
-    rotation?: THREE.Vector3
-    shape?: F3dShapes
-  }): void {
+  initCollider(options?: FComponent3dOptions__initCollider): void {
     super.initCollider({
       ...options,
       shape: F3dShapes.CAPSULE,

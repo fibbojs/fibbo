@@ -1,6 +1,5 @@
-import { F3dShapes, FCapsule, FCube, FGameCamera, FScene3d, FSphere } from '@fibbojs/3d'
+import { F3dShapes, FCapsule, FCharacter3d, FCube, FGameCamera, FScene3d, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
-import { FKeyboard } from '@fibbojs/event'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 import './style.css'
@@ -43,15 +42,12 @@ import MyCustomCube from './classes/MyCustomCube'
   ground2.setColor(0x1F1F1F)
   scene.addComponent(ground2)
 
-  // Create a capsule that will be controlled by the player
-  const capsule = new FCapsule(scene, {
-    position: { x: -5, y: 5, z: 5 },
-  })
-  capsule.setColor(0xA0FFA0)
-  capsule.initRigidBody({
-    lockRotations: true,
-  })
-  scene.addComponent(capsule)
+  // Create a character
+  const character = new FCharacter3d(scene)
+  scene.addComponent(character)
+
+  // Attach a camera to the character
+  scene.camera = new FGameCamera(character, scene)
 
   /**
    * Create other objects
@@ -62,7 +58,16 @@ import MyCustomCube from './classes/MyCustomCube'
   sphere.initRigidBody()
   scene.addComponent(sphere)
 
+  const capsule = new FCapsule(scene, {
+    position: { x: -5, y: 5, z: 5 },
+    rotationDegree: { x: 0, y: 45, z: 0 },
+  })
+  capsule.initRigidBody()
+  scene.addComponent(capsule)
+
   const duck = new Duck(scene)
+  duck.setPosition(-5, 1, -5)
+  duck.initRigidBody()
   scene.addComponent(duck)
 
   const gltfCube = new GltfCube(scene)
@@ -99,42 +104,12 @@ import MyCustomCube from './classes/MyCustomCube'
   /**
    * Add collision events
    */
-  capsule.onCollisionWith(FCube, () => {
-    console.log('Cube collided with a FCube !')
+  character.onCollisionWith(FCube, () => {
+    console.log('Character collided with a FCube !')
   })
-  capsule.onCollisionWith(sphere, () => {
-    console.log('Cube collided with the sphere!')
+  character.onCollisionWith(sphere, () => {
+    console.log('Character collided with the sphere!')
   })
-
-  // Create a keyboard instance
-  const fKeyboard = new FKeyboard(scene)
-  // Detect inputs to move the cube
-  fKeyboard.on('ArrowUp', () => {
-    const cameraDirection = scene.camera.getCameraDirection()
-    cameraDirection.y = 0
-    capsule.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(0.4), true)
-  })
-  fKeyboard.on('ArrowDown', () => {
-    const cameraDirection = scene.camera.getCameraDirection()
-    cameraDirection.y = 0
-    capsule.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(-0.4), true)
-  })
-  fKeyboard.on('ArrowLeft', () => {
-    const cameraDirection = scene.camera.getCameraDirection()
-    cameraDirection.y = 0
-    capsule.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(0.4).applyAxisAngle(new scene.THREE.Vector3(0, 1, 0), Math.PI / 2), true)
-  })
-  fKeyboard.on('ArrowRight', () => {
-    const cameraDirection = scene.camera.getCameraDirection()
-    cameraDirection.y = 0
-    capsule.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(-0.4).applyAxisAngle(new scene.THREE.Vector3(0, 1, 0), Math.PI / 2), true)
-  })
-  fKeyboard.on(' ', () => {
-    capsule.rigidBody?.applyImpulse({ x: 0, y: 1, z: 0 }, true)
-  })
-
-  // Attach a camera to the cube
-  scene.camera = new FGameCamera(capsule, scene)
 
   // After 3 seconds, add a third gltfCube
   setTimeout(() => {

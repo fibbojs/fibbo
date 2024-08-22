@@ -4,6 +4,7 @@
 // Core 3d Classes
 export { FScene3d } from './FScene3d'
 export { FComponent3d } from './FComponent3d'
+export { FCharacter3d } from './FCharacter3d'
 
 // Models
 export { FCapsule } from './model/FCapsule'
@@ -21,5 +22,5 @@ export { FOrbitCamera } from './cameras/FOrbitCamera'
 
 // Types
 export { F3dShapes } from './types/F3dShapes'
-export type { FComponent3dOptions } from './FComponent3d'
+export type { FComponent3dOptions, FComponent3dOptions__initRigidBody, FComponent3dOptions__initCollider } from './FComponent3d'
 export type { FScene3dOptions } from './FScene3d'

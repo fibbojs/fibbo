@@ -12,6 +12,33 @@ export interface FComponent3dOptions {
   rotationDegree?: { x: number, y: number, z: number }
 }
 
+export interface FComponent3dOptions__initRigidBody {
+  position?: THREE.Vector3
+  scale?: THREE.Vector3
+  rotation?: THREE.Vector3
+  shape?: F3dShapes
+  rigidBodyType?: RAPIER.RigidBodyType
+  lockTranslations?: boolean
+  lockRotations?: boolean
+  enabledTranslations?: {
+    enableX: boolean
+    enableY: boolean
+    enableZ: boolean
+  }
+  enabledRotations?: {
+    enableX: boolean
+    enableY: boolean
+    enableZ: boolean
+  }
+}
+
+export interface FComponent3dOptions__initCollider {
+  position?: THREE.Vector3
+  scale?: THREE.Vector3
+  rotation?: THREE.Vector3
+  shape: F3dShapes
+}
+
 /**
  * @description The base class for all 3D objects in FibboJS.
  * @category Core
@@ -263,25 +290,7 @@ export abstract class FComponent3d extends FComponent {
    * })
    * ```
    */
-  initRigidBody(options?: {
-    position?: THREE.Vector3
-    scale?: THREE.Vector3
-    rotation?: THREE.Vector3
-    shape?: F3dShapes
-    rigidBodyType?: RAPIER.RigidBodyType
-    lockTranslations?: boolean
-    lockRotations?: boolean
-    enabledTranslations?: {
-      enableX: boolean
-      enableY: boolean
-      enableZ: boolean
-    }
-    enabledRotations?: {
-      enableX: boolean
-      enableY: boolean
-      enableZ: boolean
-    }
-  }): void {
+  initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
     // Apply default options
     const DEFAULT_OPTIONS = {
       position: new THREE.Vector3(this.position.x, this.position.y, this.position.z),
@@ -382,12 +391,7 @@ export abstract class FComponent3d extends FComponent {
    * })
    * ```
    */
-  initCollider(options?: {
-    position?: THREE.Vector3
-    scale?: THREE.Vector3
-    rotation?: THREE.Vector3
-    shape: F3dShapes
-  }): void {
+  initCollider(options?: FComponent3dOptions__initCollider): void {
     // Apply default options
     const DEFAULT_OPTIONS = {
       position: new THREE.Vector3(this.position.x, this.position.y, this.position.z),
