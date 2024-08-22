@@ -32,7 +32,8 @@ npm install
 # In one terminal
 nx dev @fibbojs/playground-3d
 # In another terminal
-nx watch --projects=@fibbojs/3d -- nx build @fibbojs/3d
+nx watch --projects=@fibbojs/3d,@fibbojs/devtools --includeDependentProjects -- nx run \$NX_PROJECT_NAME:build
+# or on Windows : nx watch --projects=@fibbojs/3d,@fibbojs/devtools --includeDependentProjects -- nx run %NX_PROJECT_NAME%:build
 ```
 
 - To develop on the 2D package, run the 2D playground :
@@ -41,7 +42,8 @@ nx watch --projects=@fibbojs/3d -- nx build @fibbojs/3d
 # In one terminal
 nx dev @fibbojs/playground-2d
 # In another terminal
-nx watch --projects=@fibbojs/2d -- nx build @fibbojs/2d
+nx watch --projects=@fibbojs/2d,@fibbojs/devtools --includeDependentProjects -- nx run \$NX_PROJECT_NAME:build
+# or on Windows : nx watch --projects=@fibbojs/2d,@fibbojs/devtools --includeDependentProjects -- nx run %NX_PROJECT_NAME%:build
 ```
 
 You can now open your browser and navigate to `http://localhost:5173/`.
