@@ -1,25 +1,19 @@
-[@fibbojs](/api/index) / [2d](/api/2d) / FSquare
+[@fibbojs](/api/index) / [2d](/api/2d) / FCharacter2d
 
-# Class: FSquare
+# Class: `abstract` FCharacter2d
 
 ## Description
 
-A simple square in FibboJS.
-
-## Example
-
-```ts
-import { FScene2d, FSquare } from '@fibbojs/2d'
-
-const scene = new FScene2d()
-
-const square = new FSquare(scene)
-scene.addComponent(square)
-```
+An abstract pre-defined character controller.
 
 ## Extends
 
 - [`FComponent2d`](FComponent2d.md)
+
+## Extended by
+
+- [`FCharacter2dDynamic`](FCharacter2dDynamic.md)
+- [`FCharacter2dKinematic`](FCharacter2dKinematic.md)
 
 ## Accessors
 
@@ -145,19 +139,19 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FSquare()
+### new FCharacter2d()
 
-> **new FSquare**(`scene`, `options`?): [`FSquare`](FSquare.md)
+> **new FCharacter2d**(`scene`, `options`?): [`FCharacter2d`](FCharacter2d.md)
 
 #### Parameters
 
 • **scene**: [`FScene2d`](FScene2d.md)
 
-• **options?**: [`FComponent2dOptions`](../interfaces/FComponent2dOptions.md)
+• **options?**: [`FCharacter2dOptions`](../interfaces/FCharacter2dOptions.md)
 
 #### Returns
 
-[`FSquare`](FSquare.md)
+[`FCharacter2d`](FCharacter2d.md)
 
 #### Overrides
 
@@ -165,7 +159,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:20](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/polygons/FSquare.ts#L20)
+[packages/2d/src/character/FCharacter2d.ts:35](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2d.ts#L35)
 
 ## Methods
 
@@ -241,13 +235,13 @@ component.initCollider({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
 [`FComponent2d`](FComponent2d.md).[`initCollider`](FComponent2d.md#initcollider)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:315](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L315)
+[packages/2d/src/character/FCharacter2d.ts:108](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2d.ts#L108)
 
 ***
 
@@ -280,13 +274,13 @@ component.initRigidBody({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
 [`FComponent2d`](FComponent2d.md).[`initRigidBody`](FComponent2d.md#initrigidbody)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:251](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L251)
+[packages/2d/src/character/FCharacter2d.ts:101](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2d.ts#L101)
 
 ***
 
@@ -342,11 +336,11 @@ player.onCollisionWith(enemy, () => {
 
 ### onFrame()
 
-> **onFrame**(`delta`): `void`
+> **onFrame**(`_delta`): `void`
 
 #### Parameters
 
-• **delta**: `number`
+• **\_delta**: `number`
 
 #### Returns
 
@@ -357,13 +351,13 @@ player.onCollisionWith(enemy, () => {
 Update the component.
 Should be called every frame.
 
-#### Overrides
+#### Inherited from
 
 [`FComponent2d`](FComponent2d.md).[`onFrame`](FComponent2d.md#onframe)
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:30](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/polygons/FSquare.ts#L30)
+[packages/2d/src/FComponent2d.ts:114](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L114)
 
 ***
 
@@ -585,6 +579,34 @@ PIXI container
 
 ***
 
+### inputs
+
+> **inputs**: `object`
+
+The inputs that will be used to move the character.
+
+#### down
+
+> **down**: `boolean`
+
+#### left
+
+> **left**: `boolean`
+
+#### right
+
+> **right**: `boolean`
+
+#### up
+
+> **up**: `boolean`
+
+#### Defined in
+
+[packages/2d/src/character/FCharacter2d.ts:23](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2d.ts#L23)
+
+***
+
 ### position
 
 > **position**: `PointData`
@@ -662,3 +684,15 @@ The scene which the component is in.
 #### Defined in
 
 [packages/2d/src/FComponent2d.ts:45](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L45)
+
+***
+
+### speed
+
+> **speed**: `number`
+
+The speed of the character.
+
+#### Defined in
+
+[packages/2d/src/character/FCharacter2d.ts:33](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2d.ts#L33)

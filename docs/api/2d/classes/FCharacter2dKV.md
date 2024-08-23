@@ -1,25 +1,25 @@
-[@fibbojs](/api/index) / [2d](/api/2d) / FSquare
+[@fibbojs](/api/index) / [2d](/api/2d) / FCharacter2dKV
 
-# Class: FSquare
+# Class: FCharacter2dKV
 
 ## Description
 
-A simple square in FibboJS.
+A pre-defined character controller based on Kinematic Velocity rigidbodies.
 
 ## Example
 
 ```ts
-import { FScene2d, FSquare } from '@fibbojs/2d'
+import { FScene2d, FCharacter2dKV } from '@fibbojs/2d'
 
 const scene = new FScene2d()
 
-const square = new FSquare(scene)
-scene.addComponent(square)
+const capsule = new FCharacter2dKV(scene)
+scene.addComponent(capsule)
 ```
 
 ## Extends
 
-- [`FComponent2d`](FComponent2d.md)
+- [`FCharacter2dKinematic`](FCharacter2dKinematic.md)
 
 ## Accessors
 
@@ -39,7 +39,7 @@ scene.addComponent(square)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`rotationDegree`](FComponent2d.md#rotationdegree)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`rotationDegree`](FCharacter2dKinematic.md#rotationdegree)
 
 #### Defined in
 
@@ -63,7 +63,7 @@ scene.addComponent(square)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`scaleX`](FComponent2d.md#scalex)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`scaleX`](FCharacter2dKinematic.md#scalex)
 
 #### Defined in
 
@@ -87,7 +87,7 @@ scene.addComponent(square)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`scaleY`](FComponent2d.md#scaley)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`scaleY`](FCharacter2dKinematic.md#scaley)
 
 #### Defined in
 
@@ -113,7 +113,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`x`](FComponent2d.md#x)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`x`](FCharacter2dKinematic.md#x)
 
 #### Defined in
 
@@ -137,7 +137,7 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`y`](FComponent2d.md#y)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`y`](FCharacter2dKinematic.md#y)
 
 #### Defined in
 
@@ -145,9 +145,9 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FSquare()
+### new FCharacter2dKV()
 
-> **new FSquare**(`scene`, `options`?): [`FSquare`](FSquare.md)
+> **new FCharacter2dKV**(`scene`, `options`?): [`FCharacter2dKV`](FCharacter2dKV.md)
 
 #### Parameters
 
@@ -157,15 +157,15 @@ Setters & getters for transform properties
 
 #### Returns
 
-[`FSquare`](FSquare.md)
+[`FCharacter2dKV`](FCharacter2dKV.md)
 
 #### Overrides
 
-[`FComponent2d`](FComponent2d.md).[`constructor`](FComponent2d.md#constructors)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`constructor`](FCharacter2dKinematic.md#constructors)
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:20](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/polygons/FSquare.ts#L20)
+[packages/2d/src/character/FCharacter2dKV.ts:20](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2dKV.ts#L20)
 
 ## Methods
 
@@ -203,7 +203,7 @@ player.emitCollisionWith(enemy)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`emitCollisionWith`](FComponent2d.md#emitcollisionwith)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`emitCollisionWith`](FCharacter2dKinematic.md#emitcollisionwith)
 
 #### Defined in
 
@@ -243,11 +243,11 @@ component.initCollider({
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`initCollider`](FComponent2d.md#initcollider)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`initCollider`](FCharacter2dKinematic.md#initcollider)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:315](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L315)
+[packages/2d/src/character/FCharacter2dKinematic.ts:34](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2dKinematic.ts#L34)
 
 ***
 
@@ -280,13 +280,13 @@ component.initRigidBody({
 })
 ```
 
-#### Inherited from
+#### Overrides
 
-[`FComponent2d`](FComponent2d.md).[`initRigidBody`](FComponent2d.md#initrigidbody)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`initRigidBody`](FCharacter2dKinematic.md#initrigidbody)
 
 #### Defined in
 
-[packages/2d/src/FComponent2d.ts:251](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L251)
+[packages/2d/src/character/FCharacter2dKV.ts:58](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2dKV.ts#L58)
 
 ***
 
@@ -332,7 +332,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`onCollisionWith`](FComponent2d.md#oncollisionwith)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`onCollisionWith`](FCharacter2dKinematic.md#oncollisionwith)
 
 #### Defined in
 
@@ -342,11 +342,11 @@ player.onCollisionWith(enemy, () => {
 
 ### onFrame()
 
-> **onFrame**(`delta`): `void`
+> **onFrame**(`_delta`): `void`
 
 #### Parameters
 
-• **delta**: `number`
+• **\_delta**: `number`
 
 #### Returns
 
@@ -357,13 +357,13 @@ player.onCollisionWith(enemy, () => {
 Update the component.
 Should be called every frame.
 
-#### Overrides
+#### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`onFrame`](FComponent2d.md#onframe)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`onFrame`](FCharacter2dKinematic.md#onframe)
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:30](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/polygons/FSquare.ts#L30)
+[packages/2d/src/FComponent2d.ts:114](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L114)
 
 ***
 
@@ -397,7 +397,7 @@ component.setPosition(0, 0)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`setPosition`](FComponent2d.md#setposition)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`setPosition`](FCharacter2dKinematic.md#setposition)
 
 #### Defined in
 
@@ -431,7 +431,7 @@ component.setRotation(Math.PI / 2)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`setRotation`](FComponent2d.md#setrotation)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`setRotation`](FCharacter2dKinematic.md#setrotation)
 
 #### Defined in
 
@@ -465,7 +465,7 @@ component.setRotationDegree(90)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`setRotationDegree`](FComponent2d.md#setrotationdegree)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`setRotationDegree`](FCharacter2dKinematic.md#setrotationdegree)
 
 #### Defined in
 
@@ -503,7 +503,7 @@ component.setScale(1, 1)
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`setScale`](FComponent2d.md#setscale)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`setScale`](FCharacter2dKinematic.md#setscale)
 
 #### Defined in
 
@@ -526,7 +526,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`__CALLBACKS_ON_COLLISION__`](FComponent2d.md#__callbacks_on_collision__)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`__CALLBACKS_ON_COLLISION__`](FCharacter2dKinematic.md#__callbacks_on_collision__)
 
 #### Defined in
 
@@ -545,11 +545,27 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`__ID__`](FComponent2d.md#__id__)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`__ID__`](FCharacter2dKinematic.md#__id__)
 
 #### Defined in
 
 packages/core/dist/index.d.ts:12
+
+***
+
+### characterController
+
+> **characterController**: `KinematicCharacterController`
+
+The character controller that will be used to move the character.
+
+#### Inherited from
+
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`characterController`](FCharacter2dKinematic.md#charactercontroller)
+
+#### Defined in
+
+[packages/2d/src/character/FCharacter2dKinematic.ts:16](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2dKinematic.ts#L16)
 
 ***
 
@@ -561,7 +577,7 @@ RAPIER Collider
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`collider`](FComponent2d.md#collider)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`collider`](FCharacter2dKinematic.md#collider)
 
 #### Defined in
 
@@ -577,11 +593,43 @@ PIXI container
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`container`](FComponent2d.md#container)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`container`](FCharacter2dKinematic.md#container)
 
 #### Defined in
 
 [packages/2d/src/FComponent2d.ts:50](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L50)
+
+***
+
+### inputs
+
+> **inputs**: `object`
+
+The inputs that will be used to move the character.
+
+#### down
+
+> **down**: `boolean`
+
+#### left
+
+> **left**: `boolean`
+
+#### right
+
+> **right**: `boolean`
+
+#### up
+
+> **up**: `boolean`
+
+#### Inherited from
+
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`inputs`](FCharacter2dKinematic.md#inputs)
+
+#### Defined in
+
+[packages/2d/src/character/FCharacter2d.ts:23](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2d.ts#L23)
 
 ***
 
@@ -593,7 +641,7 @@ Position of the component.
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`position`](FComponent2d.md#position)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`position`](FCharacter2dKinematic.md#position)
 
 #### Defined in
 
@@ -609,7 +657,7 @@ RAPIER RigidBody
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`rigidBody`](FComponent2d.md#rigidbody)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`rigidBody`](FCharacter2dKinematic.md#rigidbody)
 
 #### Defined in
 
@@ -625,7 +673,7 @@ Rotation of the component.
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`rotation`](FComponent2d.md#rotation)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`rotation`](FCharacter2dKinematic.md#rotation)
 
 #### Defined in
 
@@ -641,7 +689,7 @@ Scale of the component.
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`scale`](FComponent2d.md#scale)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`scale`](FCharacter2dKinematic.md#scale)
 
 #### Defined in
 
@@ -657,8 +705,24 @@ The scene which the component is in.
 
 #### Inherited from
 
-[`FComponent2d`](FComponent2d.md).[`scene`](FComponent2d.md#scene)
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`scene`](FCharacter2dKinematic.md#scene)
 
 #### Defined in
 
 [packages/2d/src/FComponent2d.ts:45](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/FComponent2d.ts#L45)
+
+***
+
+### speed
+
+> **speed**: `number`
+
+The speed of the character.
+
+#### Inherited from
+
+[`FCharacter2dKinematic`](FCharacter2dKinematic.md).[`speed`](FCharacter2dKinematic.md#speed)
+
+#### Defined in
+
+[packages/2d/src/character/FCharacter2d.ts:33](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/character/FCharacter2d.ts#L33)

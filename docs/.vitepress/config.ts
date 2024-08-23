@@ -43,6 +43,13 @@ export default defineConfig({
                 { text: 'FFixedCamera', link: '/api/3d/classes/FFixedCamera' },
                 { text: 'FFreeCamera', link: '/api/3d/classes/FFreeCamera' },
               ] },
+              { text: 'Character Classes', items: [
+                { text: 'FCharacter2d', link: '/api/2d/classes/FCharacter2d' },
+                { text: 'FCharacter2dDynamic', link: '/api/2d/classes/FCharacter2dDynamic' },
+                { text: 'FCharacter2dKinematic', link: '/api/2d/classes/FCharacter2dKinematic' },
+                { text: 'FCharacter2dKP', link: '/api/2d/classes/FCharacter2dKP' },
+                { text: 'FCharacter2dKV', link: '/api/2d/classes/FCharacter2dKV' },
+              ] },
               { text: 'Core Classes', items: [
                 { text: 'FComponent2d', link: '/api/2d/classes/FComponent2d' },
                 { text: 'FScene2d', link: '/api/2d/classes/FScene2d' },
@@ -59,7 +66,10 @@ export default defineConfig({
               ] },
               { text: 'Interfaces', items: [
                 { text: 'FCamera2dOptions', link: '/api/2d/interfaces/FCamera2dOptions' },
+                { text: 'FCharacter2dOptions', link: '/api/2d/interfaces/FCharacter2dOptions' },
                 { text: 'FComponent2dOptions', link: '/api/2d/interfaces/FComponent2dOptions' },
+                { text: 'FComponent2dOptions__initCollider', link: '/api/2d/interfaces/FComponent2dOptions__initCollider' },
+                { text: 'FComponent2dOptions__initRigidBody', link: '/api/2d/interfaces/FComponent2dOptions__initRigidBody' },
                 { text: 'FScene2dOptions', link: '/api/2d/interfaces/FScene2dOptions' },
               ] },
             ] },
@@ -94,9 +104,9 @@ export default defineConfig({
               ] },
               { text: 'Interfaces', items: [
                 { text: 'FCharacter3dOptions', link: '/api/3d/interfaces/FCharacter3dOptions' },
+                { text: 'FComponent3dOptions', link: '/api/3d/interfaces/FComponent3dOptions' },
                 { text: 'FComponent3dOptions__initCollider', link: '/api/3d/interfaces/FComponent3dOptions__initCollider' },
                 { text: 'FComponent3dOptions__initRigidBody', link: '/api/3d/interfaces/FComponent3dOptions__initRigidBody' },
-                { text: 'FComponent3dOptions', link: '/api/3d/interfaces/FComponent3dOptions' },
                 { text: 'FScene3dOptions', link: '/api/3d/interfaces/FScene3dOptions' },
               ] },
             ] },

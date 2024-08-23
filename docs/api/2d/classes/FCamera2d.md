@@ -46,7 +46,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera2d.ts:30](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/cameras/FCamera2d.ts#L30)
+[packages/2d/src/cameras/FCamera2d.ts:30](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FCamera2d.ts#L30)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera2d.ts:51](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/cameras/FCamera2d.ts#L51)
+[packages/2d/src/cameras/FCamera2d.ts:51](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FCamera2d.ts#L51)
 
 ***
 
@@ -179,7 +179,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera2d.ts:49](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/cameras/FCamera2d.ts#L49)
+[packages/2d/src/cameras/FCamera2d.ts:49](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FCamera2d.ts#L49)
 
 ## Properties
 
@@ -233,7 +233,7 @@ Position of the camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera2d.ts:23](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/cameras/FCamera2d.ts#L23)
+[packages/2d/src/cameras/FCamera2d.ts:23](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FCamera2d.ts#L23)
 
 ***
 
@@ -247,4 +247,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera2d.ts:17](https://github.com/fibbojs/fibbo/blob/cb7d92d6e3e9106d66f5bb89ed29f3d87739ca2e/packages/2d/src/cameras/FCamera2d.ts#L17)
+[packages/2d/src/cameras/FCamera2d.ts:17](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FCamera2d.ts#L17)

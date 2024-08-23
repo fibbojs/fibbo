@@ -13,6 +13,14 @@
 - [FFixedCamera](classes/FFixedCamera.md)
 - [FFreeCamera](classes/FFreeCamera.md)
 
+#### Character
+
+- [FCharacter2d](classes/FCharacter2d.md)
+- [FCharacter2dDynamic](classes/FCharacter2dDynamic.md)
+- [FCharacter2dKP](classes/FCharacter2dKP.md)
+- [FCharacter2dKV](classes/FCharacter2dKV.md)
+- [FCharacter2dKinematic](classes/FCharacter2dKinematic.md)
+
 #### Core
 
 - [FComponent2d](classes/FComponent2d.md)
@@ -34,5 +42,8 @@
 ### Interfaces
 
 - [FCamera2dOptions](interfaces/FCamera2dOptions.md)
+- [FCharacter2dOptions](interfaces/FCharacter2dOptions.md)
 - [FComponent2dOptions](interfaces/FComponent2dOptions.md)
+- [FComponent2dOptions\_\_initCollider](interfaces/FComponent2dOptions__initCollider.md)
+- [FComponent2dOptions\_\_initRigidBody](interfaces/FComponent2dOptions__initRigidBody.md)
 - [FScene2dOptions](interfaces/FScene2dOptions.md)
