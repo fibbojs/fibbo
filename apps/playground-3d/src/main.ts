@@ -11,7 +11,8 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.init()
   await scene.initPhysics()
   // Debug the scene
-  fDebug(scene)
+  if (import.meta.env.DEV)
+    fDebug(scene)
 
   // Create a ground
   const ground = new FCube(scene, {

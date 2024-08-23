@@ -8,7 +8,8 @@ import MySquare from './classes/MySquare'
   await scene.init()
   await scene.initPhysics()
   // Debug the scene
-  fDebug(scene)
+  if (import.meta.env.DEV)
+    fDebug(scene)
 
   // Create the ground
   const ground = new FSquare(scene, {
