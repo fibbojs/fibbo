@@ -2,6 +2,8 @@
   <div class="f-component-icon">
     <FIconCube v-if="iconName === FComponentIconSet.Cube" />
     <FIconSphere v-else-if="iconName === FComponentIconSet.Sphere" />
+    <FIconCapsule v-else-if="iconName === FComponentIconSet.Capsule" />
+    <FIconCharacter v-else-if="iconName === FComponentIconSet.Character" />
     <FIconCamera v-else-if="iconName === FComponentIconSet.Camera" />
     <FIconLight v-else-if="iconName === FComponentIconSet.Light" />
     <FIconMesh v-else-if="iconName === FComponentIconSet.Mesh" />
@@ -16,6 +18,8 @@ import type { PropType } from 'vue'
 import { defineProps } from 'vue'
 import FIconCube from './FIconCube.vue'
 import FIconSphere from './FIconSphere.vue'
+import FIconCapsule from './FIconCapsule.vue'
+import FIconCharacter from './FIconCharacter.vue'
 import FIconCamera from './FIconCamera.vue'
 import FIconLight from './FIconLight.vue'
 import FIconMesh from './FIconMesh.vue'
