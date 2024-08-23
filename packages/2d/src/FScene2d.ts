@@ -14,7 +14,7 @@ export interface FScene2dOptions {
 }
 
 /**
- * @description A scene which contains the models, the Three.js scene and the Rapier world.
+ * @description A scene which contains the models, the Pixi.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts

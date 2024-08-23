@@ -13,6 +13,27 @@ export interface FComponent2dOptions {
   rotationDegree?: number
 }
 
+export interface FComponent2dOptions__initRigidBody {
+  position?: PIXI.PointData
+  scale?: PIXI.PointData
+  rotation?: number
+  shape?: F2dShapes
+  rigidBodyType?: RAPIER.RigidBodyType
+  lockTranslations?: boolean
+  lockRotations?: boolean
+  enabledTranslations?: {
+    enableX: boolean
+    enableY: boolean
+  }
+}
+
+export interface FComponent2dOptions__initCollider {
+  position?: PIXI.PointData
+  scale?: PIXI.PointData
+  rotation?: number
+  shape?: F2dShapes
+}
+
 /**
  * @description The base class for all 2D components in FibboJS.
  * @category Core
@@ -227,18 +248,7 @@ export abstract class FComponent2d extends FComponent {
    * })
    * ```
    */
-  initRigidBody(options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    shape?: F2dShapes
-    lockTranslations?: boolean
-    lockRotations?: boolean
-    enabledTranslations?: {
-      enableX: boolean
-      enableY: boolean
-    }
-  }): void {
+  initRigidBody(options?: FComponent2dOptions__initRigidBody): void {
     // Apply default options
     const DEFAULT_OPTIONS = {
       position: new PIXI.Point(this.position.x, this.position.y),
@@ -258,10 +268,11 @@ export abstract class FComponent2d extends FComponent {
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
-    // Create a dynamic rigid-body.
-    const rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-      .setTranslation(options.position.x, options.position.y)
-      .setRotation(options.rotation)
+    // Create a rigid body description according to the type
+    const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
+    // Set translation and rotation for the rigid body
+    rigidBodyDesc.setTranslation(options.position.x, options.position.y)
+    rigidBodyDesc.setRotation(options.rotation)
 
     this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
 
@@ -301,12 +312,7 @@ export abstract class FComponent2d extends FComponent {
    * })
    * ```
    */
-  initCollider(options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    shape?: F2dShapes
-  }): void {
+  initCollider(options?: FComponent2dOptions__initCollider): void {
     // Apply default options
     const DEFAULT_OPTIONS = {
       position: new PIXI.Point(this.position.x, this.position.y),

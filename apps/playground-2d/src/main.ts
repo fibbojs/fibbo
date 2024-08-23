@@ -1,7 +1,6 @@
 import './style.css'
-import { F2dShapes, FAttachedCamera, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
+import { F2dShapes, FAttachedCamera, FCharacter2dKV, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
-import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
 
 (async () => {
@@ -58,6 +57,7 @@ import MySquare from './classes/MySquare'
   circle.initRigidBody()
   scene.addComponent(circle)
 
+  // Create a sprite
   const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png')
   sprite.onLoaded(() => {
     sprite.setPosition(2, 3)
@@ -65,36 +65,23 @@ import MySquare from './classes/MySquare'
       lockRotations: true,
     })
     sprite.setScaleWidth(0.5)
-    sprite.onCollisionWith(FSquare, () => {
-      console.log('Sprite collided with a square!')
-    })
-    sprite.onCollisionWith(circle, () => {
-      console.log('Sprite collided with the circle!')
-    })
   })
   scene.addComponent(sprite)
 
-  // Attach a camera to the cube
-  scene.camera = new FAttachedCamera(scene, {
-    target: sprite,
+  /**
+   * Create character
+   */
+  const character = new FCharacter2dKV(scene)
+  character.onCollisionWith(FSquare, () => {
+    console.log('Sprite collided with a square!')
   })
+  character.onCollisionWith(circle, () => {
+    console.log('Sprite collided with the circle!')
+  })
+  scene.addComponent(character)
 
-  // Create a keyboard instance
-  const fKeyboard = new FKeyboard(scene)
-  // Detect inputs to move the cube
-  fKeyboard.on('ArrowUp', () => {
-    sprite.rigidBody?.applyImpulse({ x: 0, y: 0.1 }, true)
-  })
-  fKeyboard.on('ArrowDown', () => {
-    sprite.rigidBody?.applyImpulse({ x: 0, y: -0.1 }, true)
-  })
-  fKeyboard.on('ArrowLeft', () => {
-    sprite.rigidBody?.applyImpulse({ x: -0.1, y: 0 }, true)
-  })
-  fKeyboard.on('ArrowRight', () => {
-    sprite.rigidBody?.applyImpulse({ x: 0.1, y: 0 }, true)
-  })
-  fKeyboard.on(' ', () => {
-    sprite.rigidBody?.applyImpulse({ x: 0, y: 0.5 }, true)
+  // Attach a camera to the character
+  scene.camera = new FAttachedCamera(scene, {
+    target: character,
   })
 })()

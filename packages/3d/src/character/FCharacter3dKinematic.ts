@@ -33,8 +33,8 @@ export abstract class FCharacter3dKinematic extends FCharacter3d {
 
   initCollider(options?: FComponent3dOptions__initCollider): void {
     super.initCollider({
-      ...options,
       shape: F3dShapes.CAPSULE,
+      ...options,
     })
   }
 }

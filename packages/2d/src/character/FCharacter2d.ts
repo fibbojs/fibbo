@@ -1,11 +1,11 @@
-import * as THREE from 'three'
+import * as PIXI from 'pixi.js'
 import { FKeyboard } from '@fibbojs/event'
-import type { FScene3d } from '../FScene3d'
-import { F3dShapes } from '../types/F3dShapes'
-import type { FComponent3dOptions, FComponent3dOptions__initCollider, FComponent3dOptions__initRigidBody } from '../FComponent3d'
-import { FComponent3d } from '../FComponent3d'
+import type { FScene2d } from '../FScene2d'
+import { F2dShapes } from '../types/F2dShapes'
+import type { FComponent2dOptions, FComponent2dOptions__initCollider, FComponent2dOptions__initRigidBody } from '../FComponent2d'
+import { FComponent2d } from '../FComponent2d'
 
-export interface FCharacter3dOptions extends FComponent3dOptions {
+export interface FCharacter2dOptions extends FComponent2dOptions {
   /**
    * The speed of the character.
    */
@@ -16,13 +16,13 @@ export interface FCharacter3dOptions extends FComponent3dOptions {
  * @description An abstract pre-defined character controller.
  * @category Character
  */
-export abstract class FCharacter3d extends FComponent3d {
+export abstract class FCharacter2d extends FComponent2d {
   /**
    * The inputs that will be used to move the character.
    */
   inputs: {
-    forward: boolean
-    backward: boolean
+    up: boolean
+    down: boolean
     left: boolean
     right: boolean
   }
@@ -32,8 +32,11 @@ export abstract class FCharacter3d extends FComponent3d {
    */
   speed: number
 
-  constructor(scene: FScene3d, options?: FCharacter3dOptions) {
-    super(scene, options)
+  constructor(scene: FScene2d, options?: FCharacter2dOptions) {
+    super(scene, {
+      scale: { x: 0.5, y: 1 },
+      ...options,
+    })
 
     // Define default values
     const DEFAULT_OPTIONS = {
@@ -43,33 +46,35 @@ export abstract class FCharacter3d extends FComponent3d {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.speed)
-      throw new Error('FCharacter3d requires speed option')
+      throw new Error('FCharacter2d requires speed option')
 
     // Store speed
     this.speed = options.speed
 
     // Map of the movements (will be updated by the keyboard)
     this.inputs = {
-      forward: false,
-      backward: false,
+      up: false,
+      down: false,
       left: false,
       right: false,
     }
 
-    // Create a capsule mesh
-    const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
-    const material = new THREE.MeshBasicMaterial({ color: 0xA0FFA0 })
-    this.mesh = new THREE.Mesh(geometry, material)
+    // Create a square
+    this.container = new PIXI.Graphics()
+      .rect(this.position.x, this.position.y, this.scale.x * 100, this.scale.y * 100)
+      .fill(new PIXI.FillGradient(0, 0, this.scale.x * 100, this.scale.y * 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
+    // Set the pivot of the container to the center
+    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
 
     // Create a keyboard instance
     const fKeyboard = new FKeyboard(scene)
 
     // Key down
     fKeyboard.onKeyDown('ArrowUp', () => {
-      this.inputs.forward = true
+      this.inputs.up = true
     })
     fKeyboard.onKeyDown('ArrowDown', () => {
-      this.inputs.backward = true
+      this.inputs.down = true
     })
     fKeyboard.onKeyDown('ArrowLeft', () => {
       this.inputs.left = true
@@ -80,10 +85,10 @@ export abstract class FCharacter3d extends FComponent3d {
 
     // Key up
     fKeyboard.onKeyUp('ArrowUp', () => {
-      this.inputs.forward = false
+      this.inputs.up = false
     })
     fKeyboard.onKeyUp('ArrowDown', () => {
-      this.inputs.backward = false
+      this.inputs.down = false
     })
     fKeyboard.onKeyUp('ArrowLeft', () => {
       this.inputs.left = false
@@ -93,16 +98,16 @@ export abstract class FCharacter3d extends FComponent3d {
     })
   }
 
-  initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
+  initRigidBody(options?: FComponent2dOptions__initRigidBody): void {
     super.initRigidBody({
-      shape: F3dShapes.CAPSULE,
+      shape: F2dShapes.SQUARE,
       ...options,
     })
   }
 
-  initCollider(options?: FComponent3dOptions__initCollider): void {
+  initCollider(options?: FComponent2dOptions__initCollider): void {
     super.initCollider({
-      shape: F3dShapes.CAPSULE,
+      shape: F2dShapes.SQUARE,
       ...options,
     })
   }

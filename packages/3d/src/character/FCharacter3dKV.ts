@@ -64,8 +64,8 @@ export class FCharacter3dKV extends FCharacter3dKinematic {
 
   initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
     super.initRigidBody({
-      ...options,
       rigidBodyType: RAPIER.RigidBodyType.KinematicVelocityBased,
+      ...options,
     })
   }
 }

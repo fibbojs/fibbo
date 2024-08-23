@@ -47,15 +47,14 @@ export class FCharacter3dDynamic extends FCharacter3d {
     })
 
     // Initialize the rigid body
-    this.initRigidBody({
-      lockRotations: true,
-    })
+    this.initRigidBody()
   }
 
   initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
     super.initRigidBody({
-      ...options,
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
+      lockRotations: true,
+      ...options,
     })
   }
 }
