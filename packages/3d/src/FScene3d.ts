@@ -6,6 +6,7 @@ import type { FComponent3d } from './FComponent3d'
 import { FGLTF } from './model/FGLTF'
 import type { FCamera3d } from './cameras/FCamera3d'
 import { FFixedCamera } from './cameras/FFixedCamera'
+import { FOBJ } from './model/FOBJ'
 
 export interface FScene3dOptions {
   gravity?: { x: number, y: number, z: number }
@@ -177,7 +178,7 @@ export class FScene3d extends FScene {
     super.addComponent(component)
 
     // Detect if the FComponent3d is a FGLTF instance
-    if (component instanceof FGLTF) {
+    if (component instanceof FGLTF || component instanceof FOBJ) {
       // Wait for the model to be loaded before adding it to the scene
       component.onLoaded(() => {
         if (component.mesh)
