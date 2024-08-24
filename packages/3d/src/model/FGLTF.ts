@@ -51,7 +51,7 @@ export class FGLTF extends FModel {
       // Called when the resource is loaded
       (gltf) => {
         // Get the mesh from the glTF scene
-        this.mesh = gltf.scene as unknown as THREE.Mesh
+        this.mesh = gltf.scene
 
         // If a position is defined, apply it
         if (this.position)

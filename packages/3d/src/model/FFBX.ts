@@ -1,4 +1,4 @@
-import type * as THREE from 'three'
+import * as THREE from 'three'
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js'
 import type { FScene3d } from '../FScene3d'
 import { FModel } from './FModel'
@@ -32,7 +32,23 @@ export class FFBX extends FModel {
       // Called when the resource is loaded
       (fbx) => {
         // Get the mesh from the FBX scene
-        this.mesh = fbx as unknown as THREE.Mesh
+        this.mesh = fbx
+
+        // Apply textures if available
+        fbx.traverse((child) => {
+          if (child instanceof THREE.Mesh && child.material) {
+            const textureLoader = new THREE.TextureLoader()
+            // Check if the material has texture properties
+            if (child.material.name) {
+              // Load the texture
+              textureLoader.load(`models/block-grass-large/colormap.png`, (texture) => {
+                texture.colorSpace = THREE.SRGBColorSpace
+                // Apply the texture to the material
+                child.material = new THREE.MeshBasicMaterial({ map: texture })
+              })
+            }
+          }
+        })
 
         // If a position is defined, apply it
         if (this.position) {
@@ -41,7 +57,7 @@ export class FFBX extends FModel {
 
         // If a scale is defined, apply it
         if (this.scale) {
-          this.mesh.scale.set(this.scale.x, this.scale.y, this.scale.z)
+          this.mesh.scale.set(this.scale.x / 200, this.scale.y / 200, this.scale.z / 200)
         }
 
         // If a rotation is defined, apply it

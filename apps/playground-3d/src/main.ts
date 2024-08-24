@@ -1,4 +1,4 @@
-import { F3dShapes, FCapsule, FCharacter3dKV, FCube, FGLB, FGameCamera, FOBJ, FScene3d, FSphere } from '@fibbojs/3d'
+import { F3dShapes, FCapsule, FCharacter3dKV, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene3d, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -31,12 +31,26 @@ import MyCustomCube from './classes/MyCustomCube'
   blockGrassOverhangLargeTall.initCollider()
   scene.addComponent(blockGrassOverhangLargeTall)
 
+  const blockGrassCorner = new FOBJ(scene, {
+    path: 'block-grass-corner.obj',
+    position: { x: -4, y: 0, z: -10 },
+  })
+  blockGrassCorner.initCollider()
+  scene.addComponent(blockGrassCorner)
+
   const blockGrassLargeSlope = new FGLB(scene, {
     path: 'block-grass-large-slope.glb',
     position: { x: 0, y: 0, z: -10 },
   })
   blockGrassLargeSlope.initCollider()
   scene.addComponent(blockGrassLargeSlope)
+
+  const blockGrassLarge = new FFBX(scene, {
+    path: 'block-grass-large.fbx',
+    position: { x: 2, y: 0, z: -10 },
+  })
+  blockGrassLarge.initCollider()
+  scene.addComponent(blockGrassLarge)
 
   // Add "stairs"
   for (let i = 0; i < 10; i++) {

@@ -32,30 +32,23 @@ export class FOBJ extends FModel {
       // Called when the resource is loaded
       (obj) => {
         // Get the mesh from the OBJ object
-        if (obj instanceof THREE.Group) {
-          this.mesh = obj as THREE.Group
-        }
-        else {
-          this.mesh = obj as THREE.Mesh
-        }
+        this.mesh = obj
 
         // Apply textures if available
-        if (obj.children.length > 0) {
-          const textureLoader = new THREE.TextureLoader()
-          obj.children.forEach((child) => {
-            if (child instanceof THREE.Mesh && child.material) {
-              // Check if the material has texture properties
-              if (child.material.name) {
-                // Load the texture
-                textureLoader.load(`models/block-grass-overhang-large-tall/${child.material.name}.png`, (texture) => {
-                  texture.colorSpace = THREE.SRGBColorSpace
-                  // Apply the texture to the material
-                  child.material = new THREE.MeshBasicMaterial({ map: texture })
-                })
-              }
+        obj.traverse((child) => {
+          if (child instanceof THREE.Mesh && child.material) {
+            const textureLoader = new THREE.TextureLoader()
+            // Check if the material has texture properties
+            if (child.material.name) {
+              // Load the texture
+              textureLoader.load(`models/${child.name}/${child.material.name}.png`, (texture) => {
+                texture.colorSpace = THREE.SRGBColorSpace
+                // Apply the texture to the material
+                child.material = new THREE.MeshBasicMaterial({ map: texture })
+              })
             }
-          })
-        }
+          }
+        })
 
         // If a position is defined, apply it
         if (this.position) {

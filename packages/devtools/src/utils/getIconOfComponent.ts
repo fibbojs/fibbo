@@ -23,7 +23,7 @@ export function getIconOfComponent(component: FComponent): FComponentIconSet {
     return FComponentIconSet.Camera
   if (chain.includes('FLight'))
     return FComponentIconSet.Light
-  if (chain.includes('FGLTF'))
+  if (chain.includes('FModel'))
     return FComponentIconSet.Mesh
   if (chain.includes('FSquare'))
     return FComponentIconSet.Square
