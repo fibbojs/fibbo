@@ -20,7 +20,7 @@ import type { FModelOptions } from './FModel'
  * ```
  */
 export class FOBJ extends FModel {
-  constructor(scene: FScene3d, options?: FModelOptions) {
+  constructor(scene: FScene3d, options: FModelOptions) {
     super(scene, options)
 
     // Create OBJ Loader
@@ -34,36 +34,15 @@ export class FOBJ extends FModel {
         // Get the mesh from the OBJ object
         this.mesh = obj
 
-        // Apply textures if available
+        // Load textures
         obj.traverse((child) => {
           if (child instanceof THREE.Mesh && child.material) {
-            const textureLoader = new THREE.TextureLoader()
-            // Check if the material has texture properties
-            if (child.material.name) {
-              // Load the texture
-              textureLoader.load(`models/${child.name}/${child.material.name}.png`, (texture) => {
-                texture.colorSpace = THREE.SRGBColorSpace
-                // Apply the texture to the material
-                child.material = new THREE.MeshBasicMaterial({ map: texture })
-              })
-            }
+            this.loadTextureForMesh(child)
           }
         })
 
-        // If a position is defined, apply it
-        if (this.position) {
-          this.mesh.position.set(this.position.x, this.position.y, this.position.z)
-        }
-
-        // If a scale is defined, apply it
-        if (this.scale) {
-          this.mesh.scale.set(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2)
-        }
-
-        // If a rotation is defined, apply it
-        if (this.rotation) {
-          this.mesh.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
-        }
+        // Define mesh transforms
+        this.defineMeshTransforms()
 
         // Call the onLoaded Callbacks
         this.emitOnLoaded()

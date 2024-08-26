@@ -25,28 +25,28 @@ import MyCustomCube from './classes/MyCustomCube'
 
   // Import 3d models
   const blockGrassOverhangLargeTall = new FOBJ(scene, {
-    path: 'block-grass-overhang-large-tall.obj',
+    name: 'block-grass-overhang-large-tall',
     position: { x: -2, y: 0, z: -10 },
   })
   blockGrassOverhangLargeTall.initCollider()
   scene.addComponent(blockGrassOverhangLargeTall)
 
   const blockGrassCorner = new FOBJ(scene, {
-    path: 'block-grass-corner.obj',
+    name: 'block-grass-corner',
     position: { x: -4, y: 0, z: -10 },
   })
   blockGrassCorner.initCollider()
   scene.addComponent(blockGrassCorner)
 
   const blockGrassLargeSlope = new FGLB(scene, {
-    path: 'block-grass-large-slope.glb',
+    name: 'block-grass-large-slope',
     position: { x: 0, y: 0, z: -10 },
   })
   blockGrassLargeSlope.initCollider()
   scene.addComponent(blockGrassLargeSlope)
 
   const blockGrassLarge = new FFBX(scene, {
-    path: 'block-grass-large.fbx',
+    name: 'block-grass-large',
     position: { x: 2, y: 0, z: -10 },
   })
   blockGrassLarge.initCollider()

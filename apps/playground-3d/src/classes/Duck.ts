@@ -1,10 +1,10 @@
-import { FGLTF } from '@fibbojs/3d'
+import { FGLB } from '@fibbojs/3d'
 import type { FScene3d } from '@fibbojs/3d'
 
-export default class Duck extends FGLTF {
+export default class Duck extends FGLB {
   constructor(scene: FScene3d) {
     super(scene, {
-      path: 'Duck.glb',
+      name: 'Duck',
     })
   }
 

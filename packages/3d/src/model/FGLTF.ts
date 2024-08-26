@@ -1,4 +1,3 @@
-import type * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import type { FScene3d } from '../FScene3d'
 import { FModel } from './FModel'
@@ -35,8 +34,11 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * ```
  */
 export class FGLTF extends FModel {
-  constructor(scene: FScene3d, options?: FModelOptions) {
-    super(scene, options)
+  constructor(scene: FScene3d, options: FModelOptions) {
+    super(scene, {
+      fileExtension: 'gltf',
+      ...options,
+    })
     // Create GLTF Loader
     const loader = new GLTFLoader()
     /*
@@ -53,17 +55,8 @@ export class FGLTF extends FModel {
         // Get the mesh from the glTF scene
         this.mesh = gltf.scene
 
-        // If a position is defined, apply it
-        if (this.position)
-          this.mesh.position.set(this.position.x, this.position.y, this.position.z)
-
-        // If a scale is defined, apply it
-        if (this.scale)
-          this.mesh.scale.set(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2)
-
-        // If a rotation is defined, apply it
-        if (this.rotation)
-          this.mesh.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
+        // Define mesh transforms
+        this.defineMeshTransforms()
 
         // Call the onLoaded Callbacks
         this.emitOnLoaded()

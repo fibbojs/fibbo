@@ -11,6 +11,7 @@ export { FCharacter3dKP } from './character/FCharacter3dKP'
 export { FCharacter3dKV } from './character/FCharacter3dKV'
 
 // Models
+export { FModel } from './model/FModel'
 export { FFBX } from './model/FFBX'
 export { FOBJ } from './model/FOBJ'
 export { FGLB } from './model/FGLB'
@@ -34,3 +35,4 @@ export { F3dShapes } from './types/F3dShapes'
 export type { FComponent3dOptions, FComponent3dOptions__initRigidBody, FComponent3dOptions__initCollider } from './FComponent3d'
 export type { FScene3dOptions } from './FScene3d'
 export type { FCharacter3dOptions } from './character/FCharacter3d'
+export type { FModelOptions } from './model/FModel'

@@ -19,7 +19,10 @@ import { FGLTF } from './FGLTF'
  * ```
  */
 export class FGLB extends FGLTF {
-  constructor(scene: FScene3d, options?: FModelOptions) {
-    super(scene, options)
+  constructor(scene: FScene3d, options: FModelOptions) {
+    super(scene, {
+      fileExtension: 'glb',
+      ...options,
+    })
   }
 }
