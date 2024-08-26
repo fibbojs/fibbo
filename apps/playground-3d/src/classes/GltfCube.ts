@@ -3,7 +3,9 @@ import type { FScene3d } from '@fibbojs/3d'
 
 export default class GltfCube extends FGLTF {
   constructor(scene: FScene3d) {
-    super(scene, 'Cube.gltf')
+    super(scene, {
+      name: 'Cube',
+    })
     this.setPosition(-4, 5, 2)
     this.setScale(2, 0.25, 2)
     this.setRotationDegree(20, 0, 0)

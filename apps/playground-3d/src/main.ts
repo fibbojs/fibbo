@@ -1,4 +1,4 @@
-import { F3dShapes, FCapsule, FCharacter3dKV, FCube, FGameCamera, FScene3d, FSphere } from '@fibbojs/3d'
+import { F3dShapes, FCapsule, FCharacter3dKV, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene3d, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -22,6 +22,40 @@ import MyCustomCube from './classes/MyCustomCube'
   ground.initCollider()
   ground.setColor(0x1F1F1F)
   scene.addComponent(ground)
+
+  // Import 3d models
+  const blockGrassCorner = new FOBJ(scene, {
+    name: 'block-grass-corner',
+    position: { x: -10, y: 0, z: -8 },
+    scale: { x: 4, y: 4, z: 4 },
+  })
+  blockGrassCorner.initCollider()
+  scene.addComponent(blockGrassCorner)
+
+  const blockGrassOverhangLargeTall = new FOBJ(scene, {
+    name: 'block-grass-overhang-large-tall',
+    position: { x: -10, y: -4, z: -4 },
+    scale: { x: 4, y: 4, z: 4 },
+  })
+  blockGrassOverhangLargeTall.initCollider()
+  scene.addComponent(blockGrassOverhangLargeTall)
+
+  const blockGrassLargeSlope = new FGLB(scene, {
+    name: 'block-grass-large-slope',
+    position: { x: -12, y: 0, z: -4 },
+    scale: { x: 2, y: 2, z: 2 },
+    rotationDegree: { x: 0, y: 90, z: 0 },
+  })
+  blockGrassLargeSlope.initCollider()
+  scene.addComponent(blockGrassLargeSlope)
+
+  const blockGrassLarge = new FFBX(scene, {
+    name: 'block-grass-large',
+    position: { x: -12, y: -4, z: 0 },
+    scale: { x: 4, y: 4, z: 4 },
+  })
+  blockGrassLarge.initCollider()
+  scene.addComponent(blockGrassLarge)
 
   // Add "stairs"
   for (let i = 0; i < 10; i++) {

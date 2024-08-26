@@ -11,11 +11,17 @@ export { FCharacter3dKP } from './character/FCharacter3dKP'
 export { FCharacter3dKV } from './character/FCharacter3dKV'
 
 // Models
-export { FCapsule } from './model/FCapsule'
-export { FCube } from './model/FCube'
+export { FModel } from './model/FModel'
+export { FFBX } from './model/FFBX'
+export { FOBJ } from './model/FOBJ'
+export { FGLB } from './model/FGLB'
 export { FGLTF } from './model/FGLTF'
-export { FPolyhedron } from './model/FPolyhedron'
-export { FSphere } from './model/FSphere'
+
+// Polyhedrons
+export { FPolyhedron } from './polyhedrons/FPolyhedron'
+export { FCapsule } from './polyhedrons/FCapsule'
+export { FCube } from './polyhedrons/FCube'
+export { FSphere } from './polyhedrons/FSphere'
 
 // Cameras
 export { FAttachedCamera } from './cameras/FAttachedCamera'
@@ -29,3 +35,4 @@ export { F3dShapes } from './types/F3dShapes'
 export type { FComponent3dOptions, FComponent3dOptions__initRigidBody, FComponent3dOptions__initCollider } from './FComponent3d'
 export type { FScene3dOptions } from './FScene3d'
 export type { FCharacter3dOptions } from './character/FCharacter3d'
+export type { FModelOptions } from './model/FModel'

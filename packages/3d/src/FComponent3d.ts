@@ -52,7 +52,7 @@ export abstract class FComponent3d extends FComponent {
   /**
    * Mesh
    */
-  mesh?: THREE.Mesh
+  mesh?: THREE.Mesh | THREE.Group
 
   // Transform
   /**
@@ -189,7 +189,7 @@ export abstract class FComponent3d extends FComponent {
     // If a mesh exists
     if (this.mesh) {
       // If the mesh is a classic polyhedron
-      if (this.mesh.geometry instanceof THREE.BoxGeometry || this.mesh.geometry instanceof THREE.SphereGeometry) {
+      if (this.mesh instanceof THREE.Mesh && (this.mesh.geometry instanceof THREE.BoxGeometry || this.mesh.geometry instanceof THREE.SphereGeometry)) {
         this.mesh.scale.set(x, y, z)
       }
       // We don't know the type of the mesh, probably a custom mesh
@@ -361,10 +361,15 @@ export abstract class FComponent3d extends FComponent {
         colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.x, options.scale.y)
         break
       case F3dShapes.MESH:
-        colliderDesc = RAPIER.ColliderDesc.trimesh(
-          this.mesh?.geometry.attributes.position.array as Float32Array,
-          this.mesh?.geometry.index?.array as Uint32Array,
-        )
+        if (this.mesh instanceof THREE.Mesh) {
+          colliderDesc = RAPIER.ColliderDesc.trimesh(
+            this.mesh?.geometry.attributes.position.array as Float32Array,
+            this.mesh?.geometry.index?.array as Uint32Array,
+          )
+        }
+        else {
+          throw new TypeError('Mesh collider can only be created from a THREE.Mesh')
+        }
         break
       default:
         throw new Error(`Shape not supported : ${options.shape}`)
@@ -408,10 +413,22 @@ export abstract class FComponent3d extends FComponent {
     if (!this.scene.world)
       throw new Error('FScene must have a world to create a rigid body')
 
-    // Create a collider description
-    const colliderDesc = options.shape === F3dShapes.CUBE
-      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
-      : RAPIER.ColliderDesc.ball(options.scale.x)
+    // Create a collider description according to the shape given
+    let colliderDesc
+    switch (options.shape) {
+      case F3dShapes.CUBE:
+        colliderDesc = RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
+        break
+      case F3dShapes.SPHERE:
+        colliderDesc = RAPIER.ColliderDesc.ball(options.scale.x)
+        break
+      case F3dShapes.CAPSULE:
+        colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.x, options.scale.y)
+        break
+      default:
+        throw new Error(`Shape not supported : ${options.shape}`)
+    }
+    // Set translation and rotation for the collider
     colliderDesc.setTranslation(options.position.x, options.position.y, options.position.z)
     colliderDesc.setRotation(
       // Create quaternion from Euler angles
