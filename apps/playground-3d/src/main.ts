@@ -24,30 +24,35 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(ground)
 
   // Import 3d models
-  const blockGrassOverhangLargeTall = new FOBJ(scene, {
-    name: 'block-grass-overhang-large-tall',
-    position: { x: -2, y: 0, z: -10 },
-  })
-  blockGrassOverhangLargeTall.initCollider()
-  scene.addComponent(blockGrassOverhangLargeTall)
-
   const blockGrassCorner = new FOBJ(scene, {
     name: 'block-grass-corner',
-    position: { x: -4, y: 0, z: -10 },
+    position: { x: -10, y: 0, z: -8 },
+    scale: { x: 4, y: 4, z: 4 },
   })
   blockGrassCorner.initCollider()
   scene.addComponent(blockGrassCorner)
 
+  const blockGrassOverhangLargeTall = new FOBJ(scene, {
+    name: 'block-grass-overhang-large-tall',
+    position: { x: -10, y: -4, z: -4 },
+    scale: { x: 4, y: 4, z: 4 },
+  })
+  blockGrassOverhangLargeTall.initCollider()
+  scene.addComponent(blockGrassOverhangLargeTall)
+
   const blockGrassLargeSlope = new FGLB(scene, {
     name: 'block-grass-large-slope',
-    position: { x: 0, y: 0, z: -10 },
+    position: { x: -12, y: 0, z: -4 },
+    scale: { x: 2, y: 2, z: 2 },
+    rotationDegree: { x: 0, y: 90, z: 0 },
   })
   blockGrassLargeSlope.initCollider()
   scene.addComponent(blockGrassLargeSlope)
 
   const blockGrassLarge = new FFBX(scene, {
     name: 'block-grass-large',
-    position: { x: 2, y: 0, z: -10 },
+    position: { x: -12, y: -4, z: 0 },
+    scale: { x: 4, y: 4, z: 4 },
   })
   blockGrassLarge.initCollider()
   scene.addComponent(blockGrassLarge)
