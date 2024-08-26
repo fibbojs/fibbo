@@ -106,4 +106,12 @@ export abstract class FCharacter3d extends FComponent3d {
       ...options,
     })
   }
+
+  initSensor(options?: FComponent3dOptions__initCollider): void {
+    super.initSensor({
+      scale: new THREE.Vector3(1.1, 1.1, 1.1),
+      shape: F3dShapes.CAPSULE,
+      ...options,
+    })
+  }
 }

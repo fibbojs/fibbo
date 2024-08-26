@@ -45,16 +45,16 @@ export class FCharacter3dKP extends FCharacter3dKinematic {
       }
       // Compute the desired movement
       this.characterController.computeColliderMovement(
-        this.collider as RAPIER.Collider,
+        this.collider?.collider as RAPIER.Collider,
         desiredMovement,
       )
       // Get the corrected movement
       const correctedMovement = this.characterController.computedMovement()
       // Apply the movement to the rigid body
-      this.rigidBody?.setNextKinematicTranslation({
-        x: this.rigidBody.translation().x + correctedMovement.x * delta * this.speed * 64,
-        y: this.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
-        z: this.rigidBody.translation().z + correctedMovement.z * delta * this.speed * 64,
+      this.rigidBody?.rigidBody.setNextKinematicTranslation({
+        x: this.rigidBody.rigidBody.translation().x + correctedMovement.x * delta * this.speed * 64,
+        y: this.rigidBody.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
+        z: this.rigidBody.rigidBody.translation().z + correctedMovement.z * delta * this.speed * 64,
       })
     })
 

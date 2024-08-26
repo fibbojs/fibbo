@@ -31,18 +31,18 @@ export class FCharacter3dDynamic extends FCharacter3d {
 
       // Apply movement on the x axis
       if (this.inputs.forward) {
-        this.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(0.4 * this.speed), true)
+        this.rigidBody?.rigidBody.applyImpulse(cameraDirection.multiplyScalar(0.4 * this.speed), true)
       }
       else if (this.inputs.backward) {
-        this.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(-0.4 * this.speed), true)
+        this.rigidBody?.rigidBody.applyImpulse(cameraDirection.multiplyScalar(-0.4 * this.speed), true)
       }
 
       // Apply movement on the z axis
       if (this.inputs.left) {
-        this.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(0.4 * this.speed).applyAxisAngle(new scene.THREE.Vector3(0, 1, 0), Math.PI / 2), true)
+        this.rigidBody?.rigidBody.applyImpulse(cameraDirection.multiplyScalar(0.4 * this.speed).applyAxisAngle(new scene.THREE.Vector3(0, 1, 0), Math.PI / 2), true)
       }
       else if (this.inputs.right) {
-        this.rigidBody?.applyImpulse(cameraDirection.multiplyScalar(-0.4 * this.speed).applyAxisAngle(new scene.THREE.Vector3(0, 1, 0), Math.PI / 2), true)
+        this.rigidBody?.rigidBody.applyImpulse(cameraDirection.multiplyScalar(-0.4 * this.speed).applyAxisAngle(new scene.THREE.Vector3(0, 1, 0), Math.PI / 2), true)
       }
     })
 

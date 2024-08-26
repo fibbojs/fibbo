@@ -22,6 +22,8 @@ export abstract class FCharacter3dKinematic extends FCharacter3d {
     const offset = 0.01
     // Create the character controller
     this.characterController = scene.world.createCharacterController(offset)
+    // Configure autostep
+    this.characterController.enableAutostep(0.5, 0.1, true)
   }
 
   initRigidBody(options?: FComponent3dOptions__initRigidBody): void {

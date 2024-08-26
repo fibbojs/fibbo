@@ -26,18 +26,23 @@ import MyCustomCube from './classes/MyCustomCube'
   // Import 3d models
   const blockGrassCorner = new FOBJ(scene, {
     name: 'block-grass-corner',
-    position: { x: -10, y: 0, z: -8 },
+    position: { x: -10, y: -1, z: -7 },
     scale: { x: 4, y: 4, z: 4 },
   })
-  blockGrassCorner.initCollider()
+  blockGrassCorner.initCollider({
+    position: { x: 0, y: 1, z: 0 },
+    scale: { x: 2, y: 2, z: 2 },
+  })
   scene.addComponent(blockGrassCorner)
 
   const blockGrassOverhangLargeTall = new FOBJ(scene, {
     name: 'block-grass-overhang-large-tall',
-    position: { x: -10, y: -4, z: -4 },
+    position: { x: -10, y: -7, z: -4 },
     scale: { x: 4, y: 4, z: 4 },
   })
-  blockGrassOverhangLargeTall.initCollider()
+  blockGrassOverhangLargeTall.initCollider({
+    position: { x: 0, y: 2, z: 0 },
+  })
   scene.addComponent(blockGrassOverhangLargeTall)
 
   const blockGrassLargeSlope = new FGLB(scene, {
@@ -46,15 +51,21 @@ import MyCustomCube from './classes/MyCustomCube'
     scale: { x: 2, y: 2, z: 2 },
     rotationDegree: { x: 0, y: 90, z: 0 },
   })
-  blockGrassLargeSlope.initCollider()
+  blockGrassLargeSlope.initCollider({
+    position: { x: 0, y: 0.5, z: 0 },
+    scale: { x: 2, y: 1, z: 2 },
+  })
   scene.addComponent(blockGrassLargeSlope)
 
   const blockGrassLarge = new FFBX(scene, {
     name: 'block-grass-large',
-    position: { x: -12, y: -4, z: 0 },
+    position: { x: -12, y: -5, z: 0 },
     scale: { x: 4, y: 4, z: 4 },
   })
-  blockGrassLarge.initCollider()
+  blockGrassLarge.initCollider({
+    position: { x: 0, y: 1, z: 0 },
+    scale: { x: 4, y: 2, z: 4 },
+  })
   scene.addComponent(blockGrassLarge)
 
   // Add "stairs"
@@ -79,6 +90,7 @@ import MyCustomCube from './classes/MyCustomCube'
 
   // Create a character
   const character = new FCharacter3dKV(scene)
+  character.initSensor()
   scene.addComponent(character)
 
   // Attach a camera to the character

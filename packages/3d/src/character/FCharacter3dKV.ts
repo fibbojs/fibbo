@@ -45,13 +45,19 @@ export class FCharacter3dKV extends FCharacter3dKinematic {
       }
       // Compute the desired movement
       this.characterController.computeColliderMovement(
-        this.collider as RAPIER.Collider,
+        this.collider?.collider as RAPIER.Collider,
         desiredMovement,
+        undefined,
+        undefined,
+        (collider) => {
+          // Ignore all sensors
+          return !collider.isSensor()
+        },
       )
       // Get the corrected movement
       const correctedMovement = this.characterController.computedMovement()
       // Apply the movement to the rigid body
-      this.rigidBody?.setLinvel({
+      this.rigidBody?.rigidBody.setLinvel({
         x: correctedMovement.x / delta,
         y: correctedMovement.y / delta,
         z: correctedMovement.z / delta,

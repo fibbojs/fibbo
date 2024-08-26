@@ -1,9 +1,10 @@
 import * as THREE from 'three'
-import type { Collider, RigidBody } from '@dimforge/rapier3d'
 import * as RAPIER from '@dimforge/rapier3d'
 import { FComponent } from '@fibbojs/core'
 import type { FScene3d } from './FScene3d'
-import { F3dShapes } from './types/F3dShapes'
+import type { F3dShapes } from './types/F3dShapes'
+import { FCollider3d } from './FCollider3d'
+import { FRigidBody3d } from './FRigidBody3d'
 
 export interface FComponent3dOptions {
   position?: { x: number, y: number, z: number }
@@ -13,9 +14,9 @@ export interface FComponent3dOptions {
 }
 
 export interface FComponent3dOptions__initRigidBody {
-  position?: THREE.Vector3
-  scale?: THREE.Vector3
-  rotation?: THREE.Vector3
+  position?: { x: number, y: number, z: number }
+  scale?: { x: number, y: number, z: number }
+  rotation?: { x: number, y: number, z: number }
   shape?: F3dShapes
   rigidBodyType?: RAPIER.RigidBodyType
   lockTranslations?: boolean
@@ -33,10 +34,10 @@ export interface FComponent3dOptions__initRigidBody {
 }
 
 export interface FComponent3dOptions__initCollider {
-  position?: THREE.Vector3
-  scale?: THREE.Vector3
-  rotation?: THREE.Vector3
-  shape: F3dShapes
+  position?: { x: number, y: number, z: number }
+  scale?: { x: number, y: number, z: number }
+  rotation?: { x: number, y: number, z: number }
+  shape?: F3dShapes
 }
 
 /**
@@ -70,13 +71,17 @@ export abstract class FComponent3d extends FComponent {
 
   // Physics & collision
   /**
-   * RAPIER RigidBody
+   * RigidBody
    */
-  rigidBody?: RigidBody
+  rigidBody?: FRigidBody3d
   /**
-   * RAPIER Collider
+   * Collider
    */
-  collider?: Collider
+  collider?: FCollider3d
+  /**
+   * Sensor (a collider that doesn't collide with other colliders, but still triggers events)
+   */
+  sensor?: FCollider3d
 
   /**
    * @param scene The 3D scene where the component will be added.
@@ -129,19 +134,24 @@ export abstract class FComponent3d extends FComponent {
   onFrame(_delta: number): void {
     // If the rigid body and mesh exist, update the mesh position and rotation according to the rigid body
     if (this.rigidBody && this.mesh) {
-      const newRigidBodyPosition = this.rigidBody.translation()
-      const newRigidBodyRotation = this.rigidBody.rotation()
+      const newRigidBodyPosition = this.rigidBody.rigidBody.translation()
+      const newRigidBodyRotation = this.rigidBody.rigidBody.rotation()
       this.mesh.position.set(newRigidBodyPosition.x, newRigidBodyPosition.y, newRigidBodyPosition.z)
       this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z, newRigidBodyRotation.w))
       // Update position and rotation properties of the component according to the rigid body
       this.position.set(newRigidBodyPosition.x, newRigidBodyPosition.y, newRigidBodyPosition.z)
       this.rotation.set(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z)
+      // If a sensor exists, update its position and rotation according to the rigid body
+      if (this.sensor) {
+        this.sensor.collider.setTranslation(newRigidBodyPosition)
+        this.sensor.collider.setRotation(new THREE.Quaternion(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z, newRigidBodyRotation.w))
+      }
     }
     // If the collider and mesh exist, update the mesh position and rotation according to the collider
     else if (this.collider && this.mesh) {
-      const newColliderPosition = this.collider.translation()
-      const newColliderRotation = this.collider.rotation()
-      this.mesh.position.set(newColliderPosition.x, newColliderPosition.y, newColliderPosition.z)
+      const newColliderPosition = this.collider.collider.translation()
+      const newColliderRotation = this.collider.collider.rotation()
+      this.mesh.position.set(newColliderPosition.x - this.collider.colliderOffset.x, newColliderPosition.y - this.collider.colliderOffset.y, newColliderPosition.z - this.collider.colliderOffset.z)
       this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newColliderRotation.x, newColliderRotation.y, newColliderRotation.z, newColliderRotation.w))
       // Update position and rotation properties of the component according to the collider
       this.position.set(newColliderPosition.x, newColliderPosition.y, newColliderPosition.z)
@@ -172,10 +182,10 @@ export abstract class FComponent3d extends FComponent {
       this.mesh.position.set(x, y, z)
     // If a collider exists, update its translation
     if (this.collider)
-      this.collider.setTranslation({ x, y, z })
+      this.collider.collider.setTranslation({ x, y, z })
     // If a rigid body exists, update its translation
     if (this.rigidBody)
-      this.rigidBody.setTranslation({ x, y, z }, true)
+      this.rigidBody.rigidBody.setTranslation({ x, y, z }, true)
   }
 
   /**
@@ -201,12 +211,12 @@ export abstract class FComponent3d extends FComponent {
     // If a collider exists
     if (this.collider) {
       // If the collider is a cuboid, update its half extents
-      if (this.collider.shape.type === RAPIER.ShapeType.Cuboid) {
-        this.collider.setHalfExtents(new RAPIER.Vector3(x / 2, y / 2, z / 2))
+      if (this.collider.collider.shape.type === RAPIER.ShapeType.Cuboid) {
+        this.collider.collider.setHalfExtents(new RAPIER.Vector3(x / 2, y / 2, z / 2))
       }
       // If the collider is a ball, update its radius
-      else if (this.collider.shape.type === RAPIER.ShapeType.Ball) {
-        this.collider.setRadius(
+      else if (this.collider.collider.shape.type === RAPIER.ShapeType.Ball) {
+        this.collider.collider.setRadius(
           // Get the maximum value of x, y and z
           Math.max(x, y, z) / 2,
         )
@@ -231,10 +241,10 @@ export abstract class FComponent3d extends FComponent {
       this.mesh.rotation.set(x, y, z)
     // If a collider exists, update its rotation
     if (this.collider)
-      this.collider.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z)))
+      this.collider.collider.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z)))
     // If a rigid body exists, update its rotation
     if (this.rigidBody)
-      this.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z)), true)
+      this.rigidBody.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(x, y, z)), true)
   }
 
   /**
@@ -291,91 +301,11 @@ export abstract class FComponent3d extends FComponent {
    * ```
    */
   initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
-    // Apply default options
-    const DEFAULT_OPTIONS = {
-      position: new THREE.Vector3(this.position.x, this.position.y, this.position.z),
-      scale: new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
-      rotation: new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
-      shape: F3dShapes.CUBE,
-      rigidBodyType: RAPIER.RigidBodyType.Dynamic,
-      lockTranslations: false,
-      lockRotations: false,
-      enabledTranslations: undefined,
-      enabledRotations: undefined,
-    }
-    options = { ...DEFAULT_OPTIONS, ...options }
-    // Validate options
-    if (!options.position || !options.scale || !options.rotation || !options.shape)
-      throw new Error('initRigidBody requires position, scale, rotation, shape and rigidBodyType options')
+    // Initialize the rigid body
+    this.rigidBody = new FRigidBody3d(this, options)
 
-    // Check if the world exists
-    if (!this.scene.world)
-      throw new Error('FScene must have a world to create a rigid body')
-
-    // Create a rigid body description according to the type
-    const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
-    // Set translation and rotation for the rigid body
-    rigidBodyDesc.setTranslation(options.position.x, options.position.y, options.position.z)
-    rigidBodyDesc.setRotation(
-      // Create quaternion from Euler angles
-      new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
-    )
-
-    this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
-
-    // Lock the translation if needed
-    if (options.lockTranslations)
-      this.rigidBody.lockTranslations(true, true)
-    // Lock the rotation if needed
-    if (options.lockRotations)
-      this.rigidBody.lockRotations(true, true)
-    // Enable only specific translations if needed
-    if (options.enabledTranslations) {
-      this.rigidBody.setEnabledTranslations(
-        options.enabledTranslations.enableX,
-        options.enabledTranslations.enableY,
-        options.enabledTranslations.enableZ,
-        true,
-      )
-    }
-    // Enable only specific rotations if needed
-    if (options.enabledRotations) {
-      this.rigidBody.setEnabledRotations(
-        options.enabledRotations.enableX,
-        options.enabledRotations.enableY,
-        options.enabledRotations.enableZ,
-        true,
-      )
-    }
-
-    // Create a collider description attached to the rigid body, according to the shape given
-    let colliderDesc
-    switch (options.shape) {
-      case F3dShapes.CUBE:
-        colliderDesc = RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
-        break
-      case F3dShapes.SPHERE:
-        colliderDesc = RAPIER.ColliderDesc.ball(options.scale.x)
-        break
-      case F3dShapes.CAPSULE:
-        colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.x, options.scale.y)
-        break
-      case F3dShapes.MESH:
-        if (this.mesh instanceof THREE.Mesh) {
-          colliderDesc = RAPIER.ColliderDesc.trimesh(
-            this.mesh?.geometry.attributes.position.array as Float32Array,
-            this.mesh?.geometry.index?.array as Uint32Array,
-          )
-        }
-        else {
-          throw new TypeError('Mesh collider can only be created from a THREE.Mesh')
-        }
-        break
-      default:
-        throw new Error(`Shape not supported : ${options.shape}`)
-    }
-    // Create the collider
-    this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
+    // Set the collider
+    this.collider = this.rigidBody?.collider
   }
 
   /**
@@ -386,6 +316,8 @@ export abstract class FComponent3d extends FComponent {
    * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent3d.
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent3d.
    * @param options.shape The shape of the collider. If not defined, it will default to F3dShapes.CUBE.
+   * @param options.rigidBody The rigid body to attach the collider to. (optional)
+   * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts
    * component.initCollider({
@@ -397,53 +329,43 @@ export abstract class FComponent3d extends FComponent {
    * ```
    */
   initCollider(options?: FComponent3dOptions__initCollider): void {
-    // Apply default options
-    const DEFAULT_OPTIONS = {
-      position: new THREE.Vector3(this.position.x, this.position.y, this.position.z),
-      scale: new THREE.Vector3(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2),
-      rotation: new THREE.Vector3(this.rotation.x, this.rotation.y, this.rotation.z),
-      shape: F3dShapes.CUBE,
-    }
-    options = { ...DEFAULT_OPTIONS, ...options }
-    // Validate options
-    if (!options.position || !options.scale || !options.rotation || !options.shape)
-      throw new Error('initCollider requires position, scale, rotation and shape options')
+    // Initialize the collider
+    this.collider = new FCollider3d(this, options)
+  }
 
-    // Check if the world exists
-    if (!this.scene.world)
-      throw new Error('FScene must have a world to create a rigid body')
-
-    // Create a collider description according to the shape given
-    let colliderDesc
-    switch (options.shape) {
-      case F3dShapes.CUBE:
-        colliderDesc = RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y, options.scale.z)
-        break
-      case F3dShapes.SPHERE:
-        colliderDesc = RAPIER.ColliderDesc.ball(options.scale.x)
-        break
-      case F3dShapes.CAPSULE:
-        colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.x, options.scale.y)
-        break
-      default:
-        throw new Error(`Shape not supported : ${options.shape}`)
-    }
-    // Set translation and rotation for the collider
-    colliderDesc.setTranslation(options.position.x, options.position.y, options.position.z)
-    colliderDesc.setRotation(
-      // Create quaternion from Euler angles
-      new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
-    )
-    // Create the collider
-    this.collider = this.scene.world.createCollider(colliderDesc)
+  /**
+   * @description Init a sensor for the component.
+   * This is useful for triggerings events when the component collides with other components.
+   * @param options The options for the collider.
+   * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent3d.
+   * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent3d.
+   * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent3d.
+   * @param options.shape The shape of the collider. If not defined, it will default to F3dShapes.CUBE.
+   * @param options.sensor If true, the collider will be a sensor.
+   * @example
+   * ```ts
+   * component.initSensor({
+   *  position: new THREE.Vector3(0, 1, 0),
+   *  scale: new THREE.Vector3(1, 1, 1),
+   *  rotation: new THREE.Vector3(0, 0, 0),
+   *  shape: F3dShapes.CUBE
+   * })
+   * ```
+   */
+  initSensor(options?: FComponent3dOptions__initCollider): void {
+    // Initialize the collider
+    this.sensor = new FCollider3d(this, {
+      ...options,
+      sensor: true,
+    })
   }
 
   onCollisionWith(classOrObject: any, callback: () => void): void {
     super.onCollisionWith(classOrObject, callback)
     // Activate collision events if they are not already activated
-    if (this.collider && this.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
+    if (this.sensor && this.sensor.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
       // Set the active events
-      this.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
+      this.sensor.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
   }
 

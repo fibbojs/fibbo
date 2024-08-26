@@ -151,26 +151,26 @@ export class FScene3d extends FScene {
    */
   handleCollision(handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, start: boolean) {
     // Get the components from the handles
-    const collider1 = this.__RAPIER_TO_COMPONENT__.get(handle1)
-    const collider2 = this.__RAPIER_TO_COMPONENT__.get(handle2)
+    const component1 = this.__RAPIER_TO_COMPONENT__.get(handle1)
+    const component2 = this.__RAPIER_TO_COMPONENT__.get(handle2)
     // If both colliders are undefined, return
-    if (collider1 === undefined && collider2 === undefined)
+    if (component1 === undefined && component2 === undefined)
       return
     // If the collision is a start event, a collision has started
     if (start) {
       // Call the onCollisionWith callbacks for the first collider
-      if (collider1) {
+      if (component1) {
         // Call the callback for the class name
-        collider1.emitCollisionWith(collider2?.constructor)
+        component1.emitCollisionWith(component2?.constructor)
         // Call the callback for the specific object
-        collider1.emitCollisionWith(collider2)
+        component1.emitCollisionWith(component2)
       }
       // Call the onCollisionWith callbacks for the second collider
-      if (collider2) {
+      if (component2) {
         // Call the callback for the class name
-        collider2.emitCollisionWith(collider1?.constructor)
+        component2.emitCollisionWith(component1?.constructor)
         // Call the callback for the specific object
-        collider2?.emitCollisionWith(collider1)
+        component2?.emitCollisionWith(component1)
       }
     }
   }
@@ -191,8 +191,11 @@ export class FScene3d extends FScene {
         this.scene.add(component.mesh)
     }
 
-    // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    if (component.collider?.handle !== undefined)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
+    // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    if (component.sensor)
+      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.handle, component)
+    // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    else if (component.collider)
+      this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
   }
 }
