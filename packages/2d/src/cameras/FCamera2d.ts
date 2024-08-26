@@ -40,7 +40,7 @@ export abstract class FCamera2d extends FCamera {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position)
-      throw new Error('FCamera2d requires position')
+      throw new Error('FibboError: FCamera2d requires position')
 
     // Store options
     this.position = options.position

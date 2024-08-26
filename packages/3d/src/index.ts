@@ -32,7 +32,9 @@ export { FOrbitCamera } from './cameras/FOrbitCamera'
 
 // Types
 export { F3dShapes } from './types/F3dShapes'
-export type { FComponent3dOptions, FComponent3dOptions__initRigidBody, FComponent3dOptions__initCollider } from './FComponent3d'
+export type { FComponent3dOptions } from './FComponent3d'
 export type { FScene3dOptions } from './FScene3d'
 export type { FCharacter3dOptions } from './character/FCharacter3d'
 export type { FModelOptions } from './model/FModel'
+export type { FRigidBody3dOptions } from './FRigidBody3d'
+export type { FCollider3dOptions } from './FCollider3d'

@@ -28,10 +28,12 @@ import MyCustomCube from './classes/MyCustomCube'
     name: 'block-grass-corner',
     position: { x: -10, y: -1, z: -7 },
     scale: { x: 4, y: 4, z: 4 },
+    rotationDegree: { x: 0, y: -45, z: 0 },
   })
   blockGrassCorner.initCollider({
     position: { x: 0, y: 1, z: 0 },
-    scale: { x: 2, y: 2, z: 2 },
+    scale: { x: 0.5, y: 0.5, z: 0.5 },
+    rotationDegree: { x: 0, y: 45, z: 0 },
   })
   scene.addComponent(blockGrassCorner)
 
@@ -47,24 +49,38 @@ import MyCustomCube from './classes/MyCustomCube'
 
   const blockGrassLargeSlope = new FGLB(scene, {
     name: 'block-grass-large-slope',
-    position: { x: -12, y: 0, z: -4 },
+    position: { x: -8.5, y: -1, z: -4 },
     scale: { x: 2, y: 2, z: 2 },
-    rotationDegree: { x: 0, y: 90, z: 0 },
+    rotationDegree: { x: 0, y: -90, z: 0 },
   })
-  blockGrassLargeSlope.initCollider({
-    position: { x: 0, y: 0.5, z: 0 },
-    scale: { x: 2, y: 1, z: 2 },
+  blockGrassLargeSlope.onLoaded(() => {
+    blockGrassLargeSlope.initCollider({
+      shape: F3dShapes.MESH,
+    })
   })
   scene.addComponent(blockGrassLargeSlope)
 
+  const blockGrassLargeSlope2 = new FGLB(scene, {
+    name: 'block-grass-large-slope',
+    position: { x: -13, y: -2, z: -3 },
+    scale: { x: 2, y: 2, z: 2 },
+    rotationDegree: { x: 0, y: -90, z: 0 },
+  })
+  blockGrassLargeSlope2.onLoaded(() => {
+    blockGrassLargeSlope2.initCollider({
+      shape: F3dShapes.MESH,
+    })
+  })
+  scene.addComponent(blockGrassLargeSlope2)
+
   const blockGrassLarge = new FFBX(scene, {
     name: 'block-grass-large',
-    position: { x: -12, y: -5, z: 0 },
-    scale: { x: 4, y: 4, z: 4 },
+    position: { x: -14, y: -8, z: 0 },
+    scale: { x: 8, y: 8, z: 8 },
   })
   blockGrassLarge.initCollider({
-    position: { x: 0, y: 1, z: 0 },
-    scale: { x: 4, y: 2, z: 4 },
+    position: { x: 0, y: 2, z: 0 },
+    scale: { x: 1, y: 0.5, z: 1 },
   })
   scene.addComponent(blockGrassLarge)
 

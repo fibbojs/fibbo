@@ -68,7 +68,7 @@ export abstract class FModel extends FComponent3d {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.path || !options.textures || !options.fileExtension)
-      throw new Error('FModel: path, texture, and fileExtension are required options.')
+      throw new Error('FibboError: path, texture, and fileExtension are required options to create a FModel')
 
     // Store options
     this.name = options.name
@@ -173,7 +173,7 @@ export abstract class FModel extends FComponent3d {
         // Apply the texture to the material
         mesh.material = new THREE.MeshBasicMaterial({ map: texture })
       }, undefined, (error) => {
-        console.error(`FibboError: An error happened while loading the texture for the FBX model: name(${this.name}) path(${this.path}) materialName(${mesh.material instanceof THREE.Mesh ? mesh.material.name : 'ERROR'}) texturePath(${texturePath})`)
+        console.error(`FibboError: An error happened while loading the texture for model: name(${this.name}) path(${this.path}) materialName(${mesh.material instanceof THREE.Mesh ? mesh.material.name : 'ERROR'}) texturePath(${texturePath})`)
         console.error(error)
       })
     }

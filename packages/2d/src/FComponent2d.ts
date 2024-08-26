@@ -97,7 +97,7 @@ export abstract class FComponent2d extends FComponent {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || (options.rotation === undefined && options.rotationDegree === undefined))
-      throw new Error('FComponent2d requires position, scale and rotation options')
+      throw new Error('FibboError: FComponent2d requires position, scale and rotation options')
 
     // Set the transform values
     this.position = options.position
@@ -262,11 +262,11 @@ export abstract class FComponent2d extends FComponent {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
-      throw new Error('initRigidBody requires position, scale, rotation and shape options')
+      throw new Error('FibboError: initRigidBody requires position, scale, rotation and shape options')
 
     // Check if the world exists
     if (!this.scene.world)
-      throw new Error('FScene must have a world to create a rigid body')
+      throw new Error('FibboError: FScene must have a world to create a rigid body')
 
     // Create a rigid body description according to the type
     const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
@@ -323,11 +323,11 @@ export abstract class FComponent2d extends FComponent {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
-      throw new Error('initCollider requires position, scale, rotation and shape options')
+      throw new Error('FibboError: initCollider requires position, scale, rotation and shape options')
 
     // Check if the world exists
     if (!this.scene.world)
-      throw new Error('FScene must have a world to create a collider')
+      throw new Error('FibboError: FScene must have a world to create a collider')
 
     // Create a collider description
     const colliderDesc = options.shape === F2dShapes.SQUARE

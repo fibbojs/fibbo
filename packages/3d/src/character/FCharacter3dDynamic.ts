@@ -1,6 +1,7 @@
 import RAPIER from '@dimforge/rapier3d'
 import type { FScene3d } from '../FScene3d'
-import type { FComponent3dOptions, FComponent3dOptions__initRigidBody } from '../FComponent3d'
+import type { FComponent3dOptions } from '../FComponent3d'
+import type { FRigidBody3dOptions } from '../FRigidBody3d'
 import { FCharacter3d } from './FCharacter3d'
 
 /**
@@ -50,7 +51,7 @@ export class FCharacter3dDynamic extends FCharacter3d {
     this.initRigidBody()
   }
 
-  initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBody3dOptions): void {
     super.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockRotations: true,

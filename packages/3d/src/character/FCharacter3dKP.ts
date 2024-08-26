@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import RAPIER from '@dimforge/rapier3d'
 import type { FScene3d } from '../FScene3d'
-import type { FComponent3dOptions, FComponent3dOptions__initRigidBody } from '../FComponent3d'
+import type { FComponent3dOptions } from '../FComponent3d'
+import type { FRigidBody3dOptions } from '../FRigidBody3d'
 import { FCharacter3dKinematic } from './FCharacter3dKinematic'
 
 /**
@@ -62,7 +63,7 @@ export class FCharacter3dKP extends FCharacter3dKinematic {
     this.initRigidBody()
   }
 
-  initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBody3dOptions): void {
     super.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.KinematicPositionBased,
       ...options,

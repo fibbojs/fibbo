@@ -8,6 +8,7 @@ export interface FRigidBody3dOptions {
   position?: { x: number, y: number, z: number }
   scale?: { x: number, y: number, z: number }
   rotation?: { x: number, y: number, z: number }
+  rotationDegree?: { x: number, y: number, z: number }
   shape?: F3dShapes
   rigidBodyType?: RAPIER.RigidBodyType
   lockTranslations?: boolean
@@ -70,9 +71,10 @@ export class FRigidBody3d {
   constructor(component: FComponent3d, options?: FRigidBody3dOptions) {
     // Apply default options
     const DEFAULT_OPTIONS = {
-      position: new THREE.Vector3(component.position.x, component.position.y, component.position.z),
-      scale: new THREE.Vector3(component.scale.x, component.scale.y, component.scale.z),
-      rotation: new THREE.Vector3(component.rotation.x, component.rotation.y, component.rotation.z),
+      position: { x: 0, y: 0, z: 0 },
+      scale: { x: 1, y: 1, z: 1 },
+      rotation: { x: 0, y: 0, z: 0 },
+      rotationDegree: undefined,
       shape: F3dShapes.CUBE,
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockTranslations: false,
@@ -83,20 +85,36 @@ export class FRigidBody3d {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || !options.rotation || !options.shape)
-      throw new Error('initRigidBody requires position, scale, rotation, shape and rigidBodyType options')
+      throw new Error('FibboError: initRigidBody requires position, scale, rotation, shape and rigidBodyType options')
 
     // Check if the world exists
     if (!component.scene.world)
-      throw new Error('FScene must have a world to create a rigid body')
+      throw new Error('FibboError: FScene must have a world to create a rigid body')
+
+    // If rotation degree is given, convert it to radians
+    if (options.rotationDegree) {
+      options.rotation.x = THREE.MathUtils.degToRad(options.rotationDegree.x)
+      options.rotation.y = THREE.MathUtils.degToRad(options.rotationDegree.y)
+      options.rotation.z = THREE.MathUtils.degToRad(options.rotationDegree.z)
+    }
 
     // Create a rigid body description according to the type
     const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
-    // Set translation and rotation for the rigid body
-    rigidBodyDesc.setTranslation(options.position.x, options.position.y, options.position.z)
-    rigidBodyDesc.setRotation(
-      // Create quaternion from Euler angles
-      new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
+    // Interprete the given position as relative to the component's position
+    rigidBodyDesc.setTranslation(
+      component.position.x + options.position.x,
+      component.position.y + options.position.y,
+      component.position.z + options.position.z,
     )
+
+    // Interprete the given rotation as relative to the component's rotation
+    rigidBodyDesc.setRotation(new THREE.Quaternion().setFromEuler(
+      new THREE.Euler(
+        component.rotation.x + options.rotation.x,
+        component.rotation.y + options.rotation.y,
+        component.rotation.z + options.rotation.z,
+      ),
+    ))
 
     // Create the rigid body
     this.rigidBody = component.scene.world.createRigidBody(rigidBodyDesc)

@@ -8,6 +8,7 @@ export interface FCollider3dOptions {
   position?: { x: number, y: number, z: number }
   scale?: { x: number, y: number, z: number }
   rotation?: { x: number, y: number, z: number }
+  rotationDegree?: { x: number, y: number, z: number }
   shape?: F3dShapes
   rigidBody?: RAPIER.RigidBody
   sensor?: boolean
@@ -23,10 +24,15 @@ export class FCollider3d {
    */
   collider: RAPIER.Collider
   /**
-   * Offset for the collider.
+   * Position Offset for the collider.
    * This is used to adjust the collider position relative to the mesh.
    */
-  colliderOffset: THREE.Vector3
+  colliderPositionOffset: THREE.Vector3
+  /**
+   * Rotation Offset for the collider.
+   * This is used to adjust the collider position relative to the mesh.
+   */
+  colliderRotationOffset: THREE.Vector3
 
   /**
    * @description Creates a collider for a given component.
@@ -35,6 +41,7 @@ export class FCollider3d {
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent3d.
    * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent3d.
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent3d.
+   * @param options.rotationDegree The rotation of the collider in degrees. If not defined, it will default to 0.
    * @param options.shape The shape of the collider. If not defined, it will default to F3dShapes.CUBE.
    * @param options.rigidBody The rigid body to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
@@ -51,9 +58,10 @@ export class FCollider3d {
   constructor(component: FComponent3d, options?: FCollider3dOptions) {
     // Apply default options
     const DEFAULT_OPTIONS = {
-      position: new THREE.Vector3(0, 0, 0),
-      scale: new THREE.Vector3(component.scale.x, component.scale.y, component.scale.z),
-      rotation: new THREE.Vector3(component.rotation.x, component.rotation.y, component.rotation.z),
+      position: { x: 0, y: 0, z: 0 },
+      scale: { x: 1, y: 1, z: 1 },
+      rotation: { x: 0, y: 0, z: 0 },
+      rotationDegree: undefined,
       shape: F3dShapes.CUBE,
       rigidBody: undefined,
       sensor: false,
@@ -61,17 +69,30 @@ export class FCollider3d {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || !options.rotation || !options.shape || options.sensor === undefined)
-      throw new Error('initCollider requires position, scale, rotation and shape options')
+      throw new Error('FibboError: initCollider requires position, scale, rotation and shape options')
 
     // Check if the world exists
     if (!component.scene.world)
-      throw new Error('FScene must have a world to create a rigid body')
+      throw new Error('FibboError: FScene must have a world to create a rigid body')
+
+    // If rotation degree is given, convert it to radians
+    if (options.rotationDegree) {
+      options.rotation.x = THREE.MathUtils.degToRad(options.rotationDegree.x)
+      options.rotation.y = THREE.MathUtils.degToRad(options.rotationDegree.y)
+      options.rotation.z = THREE.MathUtils.degToRad(options.rotationDegree.z)
+    }
 
     // Store the collider offset
-    this.colliderOffset = new THREE.Vector3(options.position.x, options.position.y, options.position.z)
+    this.colliderPositionOffset = new THREE.Vector3(options.position.x, options.position.y, options.position.z)
+    this.colliderRotationOffset = new THREE.Vector3(options.rotation.x, options.rotation.y, options.rotation.z)
 
-    // Devide the scale by 2 for the collider
-    options.scale = new THREE.Vector3(options.scale.x / 2, options.scale.y / 2, options.scale.z / 2)
+    // Devide the scale by 2 for the collider (RAPIER uses half-extents)
+    // Also interpete the scale as relative to the component's scale
+    options.scale = {
+      x: component.scale.x * (options.scale.x / 2),
+      y: component.scale.y * (options.scale.y / 2),
+      z: component.scale.z * (options.scale.z / 2),
+    }
 
     // Create a collider description according to the shape given
     let colliderDesc
@@ -86,19 +107,34 @@ export class FCollider3d {
         colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.x, options.scale.y)
         break
       case F3dShapes.MESH:
-        if (component.mesh instanceof THREE.Mesh) {
-          colliderDesc = RAPIER.ColliderDesc.trimesh(
-            component.mesh?.geometry.attributes.position.array as Float32Array,
-            component.mesh?.geometry.index?.array as Uint32Array,
-          )
-        }
-        else {
-          throw new TypeError('Mesh collider can only be created from a THREE.Mesh')
-        }
+      // If component.mesh isn't defined, throw an error
+      {
+        if (!component.mesh)
+          throw new Error('FibboError: Mesh collider can only be created from a THREE.Mesh')
+        // Flag to check if a THREE.Mesh was found
+        let found = false
+        // Traverse the mesh tree until we find a THREE.Mesh
+        component.mesh.traverse((child) => {
+          if (!found && child instanceof THREE.Mesh) {
+            colliderDesc = RAPIER.ColliderDesc.trimesh(
+              child.geometry.attributes.position.array as Float32Array,
+              child.geometry.index?.array as Uint32Array,
+            )
+            found = true
+          }
+        })
+        // If no THREE.Mesh was found, throw an error
+        if (!found)
+          throw new Error('FibboError: Mesh collider can only be created if a THREE.Mesh is found in the component')
         break
+      }
       default:
-        throw new Error(`Shape not supported : ${options.shape}`)
+        throw new Error(`FibboError: shape not supported : ${options.shape}`)
     }
+    // Verify the collider description was created
+    if (!colliderDesc)
+      throw new Error('FibboError: Collider description could not be created')
+
     // If no rigidbody given, the collider is free : set translation and rotation for the collider
     if (options.rigidBody === undefined) {
       // Interprete the given position as relative to the component's position
@@ -107,13 +143,18 @@ export class FCollider3d {
         component.position.y + options.position.y,
         component.position.z + options.position.z,
       )
-      finalPosition.add(this.colliderOffset)
-
+      finalPosition.add(this.colliderPositionOffset)
       colliderDesc.setTranslation(finalPosition.x, finalPosition.y, finalPosition.z)
-      colliderDesc.setRotation(
-        // Create quaternion from Euler angles
-        new THREE.Quaternion().setFromEuler(new THREE.Euler(options.rotation.x, options.rotation.y, options.rotation.z)),
+
+      // Interprete the given rotation as relative to the component's rotation
+      const finalRotation = new THREE.Quaternion().setFromEuler(
+        new THREE.Euler(
+          component.rotation.x + options.rotation.x / 2,
+          component.rotation.y + options.rotation.y / 2,
+          component.rotation.z + options.rotation.z / 2,
+        ),
       )
+      colliderDesc.setRotation(finalRotation)
     }
     // Set the sensor flag
     colliderDesc.setSensor(options.sensor)

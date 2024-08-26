@@ -69,7 +69,7 @@ export class FScene3d extends FScene {
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
-      throw new Error('FScene must be instantiated in a browser environment')
+      throw new Error('FibboError: FScene must be instantiated in a browser environment')
 
     // Define default values for the options
     const DEFAULT_OPTIONS = {
@@ -80,7 +80,7 @@ export class FScene3d extends FScene {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate the options
     if (options.domNode === undefined || options.gravity === undefined)
-      throw new Error('The gravity option must be defined')
+      throw new Error('FibboError: The gravity option must be defined')
 
     // Store the DOM node
     this.__DOM_NODE__ = options.domNode

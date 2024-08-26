@@ -2,8 +2,9 @@ import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import { FComponent } from '@fibbojs/core'
 import type { FScene3d } from './FScene3d'
-import type { F3dShapes } from './types/F3dShapes'
+import type { FCollider3dOptions } from './FCollider3d'
 import { FCollider3d } from './FCollider3d'
+import type { FRigidBody3dOptions } from './FRigidBody3d'
 import { FRigidBody3d } from './FRigidBody3d'
 
 export interface FComponent3dOptions {
@@ -11,33 +12,6 @@ export interface FComponent3dOptions {
   scale?: { x: number, y: number, z: number }
   rotation?: { x: number, y: number, z: number }
   rotationDegree?: { x: number, y: number, z: number }
-}
-
-export interface FComponent3dOptions__initRigidBody {
-  position?: { x: number, y: number, z: number }
-  scale?: { x: number, y: number, z: number }
-  rotation?: { x: number, y: number, z: number }
-  shape?: F3dShapes
-  rigidBodyType?: RAPIER.RigidBodyType
-  lockTranslations?: boolean
-  lockRotations?: boolean
-  enabledTranslations?: {
-    enableX: boolean
-    enableY: boolean
-    enableZ: boolean
-  }
-  enabledRotations?: {
-    enableX: boolean
-    enableY: boolean
-    enableZ: boolean
-  }
-}
-
-export interface FComponent3dOptions__initCollider {
-  position?: { x: number, y: number, z: number }
-  scale?: { x: number, y: number, z: number }
-  rotation?: { x: number, y: number, z: number }
-  shape?: F3dShapes
 }
 
 /**
@@ -117,7 +91,7 @@ export abstract class FComponent3d extends FComponent {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || (!options.rotation && !options.rotationDegree))
-      throw new Error('FComponent3d requires position, scale and rotation options')
+      throw new Error('FibboError: FComponent3d requires position, scale and rotation options')
 
     // Set the transform values
     this.position = new THREE.Vector3(options.position.x, options.position.y, options.position.z)
@@ -134,28 +108,35 @@ export abstract class FComponent3d extends FComponent {
   onFrame(_delta: number): void {
     // If the rigid body and mesh exist, update the mesh position and rotation according to the rigid body
     if (this.rigidBody && this.mesh) {
-      const newRigidBodyPosition = this.rigidBody.rigidBody.translation()
-      const newRigidBodyRotation = this.rigidBody.rigidBody.rotation()
-      this.mesh.position.set(newRigidBodyPosition.x, newRigidBodyPosition.y, newRigidBodyPosition.z)
-      this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z, newRigidBodyRotation.w))
+      // Get the new transforms from the rigid body
+      const newMeshPosition = this.rigidBody.rigidBody.translation()
+      const newMeshRotation = this.rigidBody.rigidBody.rotation()
+      // Apply the new transforms to the mesh
+      this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w))
       // Update position and rotation properties of the component according to the rigid body
-      this.position.set(newRigidBodyPosition.x, newRigidBodyPosition.y, newRigidBodyPosition.z)
-      this.rotation.set(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z)
+      this.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
       // If a sensor exists, update its position and rotation according to the rigid body
       if (this.sensor) {
-        this.sensor.collider.setTranslation(newRigidBodyPosition)
-        this.sensor.collider.setRotation(new THREE.Quaternion(newRigidBodyRotation.x, newRigidBodyRotation.y, newRigidBodyRotation.z, newRigidBodyRotation.w))
+        this.sensor.collider.setTranslation(newMeshPosition)
+        this.sensor.collider.setRotation(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w))
       }
     }
     // If the collider and mesh exist, update the mesh position and rotation according to the collider
     else if (this.collider && this.mesh) {
-      const newColliderPosition = this.collider.collider.translation()
-      const newColliderRotation = this.collider.collider.rotation()
-      this.mesh.position.set(newColliderPosition.x - this.collider.colliderOffset.x, newColliderPosition.y - this.collider.colliderOffset.y, newColliderPosition.z - this.collider.colliderOffset.z)
-      this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newColliderRotation.x, newColliderRotation.y, newColliderRotation.z, newColliderRotation.w))
+      // Get the new transforms from the collider
+      const newMeshPosition = this.collider.collider.translation()
+      newMeshPosition.x -= this.collider.colliderPositionOffset.x
+      newMeshPosition.y -= this.collider.colliderPositionOffset.y
+      newMeshPosition.z -= this.collider.colliderPositionOffset.z
+      const newMeshRotation = this.collider.collider.rotation()
+      // Apply the new transforms to the mesh
+      this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w))
       // Update position and rotation properties of the component according to the collider
-      this.position.set(newColliderPosition.x, newColliderPosition.y, newColliderPosition.z)
-      this.rotation.set(newColliderRotation.x, newColliderRotation.y, newColliderRotation.z)
+      this.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
     }
     // If the rigid body and collider doesn't exist, update the mesh position and rotation according to the default values
     else if (this.mesh) {
@@ -300,7 +281,7 @@ export abstract class FComponent3d extends FComponent {
    * })
    * ```
    */
-  initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBody3dOptions): void {
     // Initialize the rigid body
     this.rigidBody = new FRigidBody3d(this, options)
 
@@ -315,6 +296,7 @@ export abstract class FComponent3d extends FComponent {
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent3d.
    * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent3d.
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent3d.
+   * @param options.rotationDegree The rotation of the collider in degrees. If not defined, it will default to 0.
    * @param options.shape The shape of the collider. If not defined, it will default to F3dShapes.CUBE.
    * @param options.rigidBody The rigid body to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
@@ -328,7 +310,7 @@ export abstract class FComponent3d extends FComponent {
    * })
    * ```
    */
-  initCollider(options?: FComponent3dOptions__initCollider): void {
+  initCollider(options?: FCollider3dOptions): void {
     // Initialize the collider
     this.collider = new FCollider3d(this, options)
   }
@@ -352,7 +334,7 @@ export abstract class FComponent3d extends FComponent {
    * })
    * ```
    */
-  initSensor(options?: FComponent3dOptions__initCollider): void {
+  initSensor(options?: FCollider3dOptions): void {
     // Initialize the collider
     this.sensor = new FCollider3d(this, {
       ...options,

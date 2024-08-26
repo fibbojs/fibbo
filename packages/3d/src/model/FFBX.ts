@@ -56,7 +56,7 @@ export class FFBX extends FModel {
       },
       // Called when loading has errors
       (error) => {
-        console.error(`An error happened while loading the FBX model: ${this.path}`)
+        console.error(`FibboError: An error happened while loading the FBX model: ${this.path}`)
         console.error(error)
       },
     )

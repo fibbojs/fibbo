@@ -2,8 +2,10 @@ import * as THREE from 'three'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene3d } from '../FScene3d'
 import { F3dShapes } from '../types/F3dShapes'
-import type { FComponent3dOptions, FComponent3dOptions__initCollider, FComponent3dOptions__initRigidBody } from '../FComponent3d'
+import type { FComponent3dOptions } from '../FComponent3d'
 import { FComponent3d } from '../FComponent3d'
+import type { FRigidBody3dOptions } from '../FRigidBody3d'
+import type { FCollider3dOptions } from '../FCollider3d'
 
 export interface FCharacter3dOptions extends FComponent3dOptions {
   /**
@@ -43,7 +45,7 @@ export abstract class FCharacter3d extends FComponent3d {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.speed)
-      throw new Error('FCharacter3d requires speed option')
+      throw new Error('FibboError: FCharacter3d requires speed option')
 
     // Store speed
     this.speed = options.speed
@@ -93,21 +95,21 @@ export abstract class FCharacter3d extends FComponent3d {
     })
   }
 
-  initRigidBody(options?: FComponent3dOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBody3dOptions): void {
     super.initRigidBody({
       shape: F3dShapes.CAPSULE,
       ...options,
     })
   }
 
-  initCollider(options?: FComponent3dOptions__initCollider): void {
+  initCollider(options?: FCollider3dOptions): void {
     super.initCollider({
       shape: F3dShapes.CAPSULE,
       ...options,
     })
   }
 
-  initSensor(options?: FComponent3dOptions__initCollider): void {
+  initSensor(options?: FCollider3dOptions): void {
     super.initSensor({
       scale: new THREE.Vector3(1.1, 1.1, 1.1),
       shape: F3dShapes.CAPSULE,

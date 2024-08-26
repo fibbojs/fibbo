@@ -46,7 +46,7 @@ export abstract class FCharacter2d extends FComponent2d {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.speed)
-      throw new Error('FCharacter2d requires speed option')
+      throw new Error('FibboError: FCharacter2d requires speed option')
 
     // Store speed
     this.speed = options.speed

@@ -57,7 +57,7 @@ export class FScene2d extends FScene {
 
     // Verify window and document are available
     if (typeof window === 'undefined' || typeof document === 'undefined')
-      throw new Error('FScene must be instantiated in a browser environment')
+      throw new Error('FibboError: FScene must be instantiated in a browser environment')
 
     // Create a new PIXI application
     this.app = new PIXI.Application()
@@ -71,7 +71,7 @@ export class FScene2d extends FScene {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate the options
     if (options.domNode === undefined || options.gravity === undefined)
-      throw new Error('The gravity option must be defined')
+      throw new Error('FibboError: The gravity option must be defined')
 
     // Store the DOM node
     this.__DOM_NODE__ = options.domNode
