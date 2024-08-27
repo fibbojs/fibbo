@@ -78,5 +78,8 @@ export class FGameCamera extends FOrbitCamera {
       this.translateY(movementY * 0.01)
       this.lastMouseMoveEvent = undefined
     }
+
+    // Update the controls
+    this.controls.update()
   }
 }
