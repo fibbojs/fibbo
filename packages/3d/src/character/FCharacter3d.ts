@@ -67,31 +67,45 @@ export abstract class FCharacter3d extends FComponent3d {
     const fKeyboard = new FKeyboard(scene)
 
     // Key down
-    fKeyboard.onKeyDown('ArrowUp', () => {
+    fKeyboard.onKeyDown('w', () => {
       this.inputs.forward = true
     })
-    fKeyboard.onKeyDown('ArrowDown', () => {
+    fKeyboard.onKeyDown('s', () => {
       this.inputs.backward = true
     })
-    fKeyboard.onKeyDown('ArrowLeft', () => {
+    fKeyboard.onKeyDown('a', () => {
       this.inputs.left = true
     })
-    fKeyboard.onKeyDown('ArrowRight', () => {
+    fKeyboard.onKeyDown('d', () => {
       this.inputs.right = true
+    })
+    // For AZERTY keyboards
+    fKeyboard.onKeyDown('z', () => {
+      this.inputs.forward = true
+    })
+    fKeyboard.onKeyDown('q', () => {
+      this.inputs.left = true
     })
 
     // Key up
-    fKeyboard.onKeyUp('ArrowUp', () => {
+    fKeyboard.onKeyUp('w', () => {
       this.inputs.forward = false
     })
-    fKeyboard.onKeyUp('ArrowDown', () => {
+    fKeyboard.onKeyUp('s', () => {
       this.inputs.backward = false
     })
-    fKeyboard.onKeyUp('ArrowLeft', () => {
+    fKeyboard.onKeyUp('a', () => {
       this.inputs.left = false
     })
-    fKeyboard.onKeyUp('ArrowRight', () => {
+    fKeyboard.onKeyUp('d', () => {
       this.inputs.right = false
+    })
+    // For AZERTY keyboards
+    fKeyboard.onKeyUp('z', () => {
+      this.inputs.forward = false
+    })
+    fKeyboard.onKeyUp('q', () => {
+      this.inputs.left = false
     })
   }
 

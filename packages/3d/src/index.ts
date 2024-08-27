@@ -29,6 +29,7 @@ export { FCamera3d } from './cameras/FCamera3d'
 export { FFixedCamera } from './cameras/FFixedCamera'
 export { FGameCamera } from './cameras/FGameCamera'
 export { FOrbitCamera } from './cameras/FOrbitCamera'
+export { FPointerLockCamera } from './cameras/FPointerLockCamera'
 
 // Types
 export { F3dShapes } from './types/F3dShapes'

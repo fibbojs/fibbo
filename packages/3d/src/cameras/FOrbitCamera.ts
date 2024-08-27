@@ -1,5 +1,4 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import type { FScene3d } from '../FScene3d'
 import type { FComponent3d } from '../FComponent3d'
 import { FCamera3d } from './FCamera3d'
 
@@ -15,7 +14,7 @@ import { FCamera3d } from './FCamera3d'
  * const cube = new FCube(scene)
  * scene.addComponent(cube)
  *
- * scene.camera = new FOrbitCamera(cube, scene)
+ * scene.camera = new FOrbitCamera(cube)
  * ```
  */
 export class FOrbitCamera extends FCamera3d {
@@ -26,14 +25,13 @@ export class FOrbitCamera extends FCamera3d {
 
   /**
    * @param attachedComponent Component that the camera is attached to
-   * @param scene Scene that the camera is in
    */
-  constructor(attachedComponent: FComponent3d, scene: FScene3d) {
+  constructor(attachedComponent: FComponent3d) {
     super()
     this.attachedComponent = attachedComponent
 
     // Create orbit controls
-    this.controls = new OrbitControls(this, scene.renderer.domElement)
+    this.controls = new OrbitControls(this, attachedComponent.scene.renderer.domElement)
   }
 
   onFrame(_delta: number): void {

@@ -111,7 +111,7 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(character)
 
   // Attach a camera to the character
-  scene.camera = new FGameCamera(character, scene)
+  scene.camera = new FGameCamera(character)
 
   /**
    * Create other objects

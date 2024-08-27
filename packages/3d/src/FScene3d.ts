@@ -3,10 +3,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { FScene } from '@fibbojs/core'
 import type RAPIER from '@dimforge/rapier3d'
 import type { FComponent3d } from './FComponent3d'
-import { FGLTF } from './model/FGLTF'
 import type { FCamera3d } from './cameras/FCamera3d'
 import { FFixedCamera } from './cameras/FFixedCamera'
-import { FOBJ } from './model/FOBJ'
 import { FModel } from './model/FModel'
 
 export interface FScene3dOptions {
@@ -41,7 +39,7 @@ export interface FScene3dOptions {
  *  scene.addComponent(cube)
  *
  *  // Attach a camera to the cube
- *  scene.camera = new FGameCamera(cube, scene)
+ *  scene.camera = new FGameCamera(cube)
  * })()
  * ```
  */
@@ -86,6 +84,14 @@ export class FScene3d extends FScene {
     this.__DOM_NODE__ = options.domNode
     // Store the gravity
     this.gravity = options.gravity
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      this.camera.aspect = window.innerWidth / window.innerHeight
+      this.camera.updateProjectionMatrix()
+
+      this.renderer.setSize(window.innerWidth, window.innerHeight)
+    })
   }
 
   init() {

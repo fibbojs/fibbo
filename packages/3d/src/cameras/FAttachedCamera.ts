@@ -21,7 +21,7 @@ export class FAttachedCamera extends FCamera3d {
   // Component that the camera is attached to
   attachedComponent: FComponent3d
   // Offset from the component's position
-  offset: THREE.Vector3 = new THREE.Vector3(0, 5, 5)
+  offset: { x: number, y: number, z: number } = { x: 0, y: 5, z: 5 }
 
   /**
    * @param attachedComponent Model that the camera is attached to
