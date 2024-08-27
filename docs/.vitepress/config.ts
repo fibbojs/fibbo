@@ -52,17 +52,14 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Recipes',
-        items: [
-          { text: 'Character controller', link: '/recipes/character-controller' },
-        ],
-      },
-      {
         text: 'More',
         items: [
-          { text: 'Deployment', link: '/development/deployment' },
-          { text: 'Devtools', link: '/development/devtools' },
-          { text: 'Extending Fibbo', link: '/development/extending-fibbo' },
+          { text: 'Recipes', collapsed: true, items: [
+            { text: 'Character controller', link: '/more/recipes/character-controller' },
+          ] },
+          { text: 'Deployment', link: '/more/deployment' },
+          { text: 'Devtools', link: '/more/devtools' },
+          { text: 'Extending Fibbo', link: '/more/extending-fibbo' },
         ],
       },
       {
