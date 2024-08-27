@@ -14,9 +14,19 @@ An open-source, web-based game engine.
 
 ## Tech stack
 
-- [Three.js](https://threejs.org/)
-- [Rappier](https://rapier.rs/)
-- [PixiJS](https://pixijs.com/)
+- Game stuff
+  - [Three.js](https://threejs.org/) for 3D rendering
+  - [Rapier](https://rapier.rs/) for physics
+  - [PixiJS](https://pixijs.com/) for 2D rendering
+  - [Vue](https://vuejs.org/) for the devtools
+- Tooling
+  - [Nx](https://nx.dev/) for monorepo management
+  - [unbuild](https://github.com/unjs/unbuild) for building the packages
+  - [Vite](https://vitejs.dev/) for the playgrounds + building the devtools
+  - [VitePress](https://vitepress.dev/) for the documentation
+  - [Vitest](https://vitest.dev/) for testing
+  - [TypeDoc](https://typedoc.org/) for the API Reference part of the documentation
+  - [Eslint](https://eslint.org/) for linting
 
 ## Development
 
