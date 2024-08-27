@@ -67,6 +67,8 @@ export class FCharacter3dKV extends FCharacter3dKinematic {
 
     // Initialize the rigid body
     this.initRigidBody()
+    // Initialize a sensor
+    this.initSensor()
   }
 
   initRigidBody(options?: FRigidBody3dOptions): void {

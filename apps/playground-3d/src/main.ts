@@ -106,7 +106,6 @@ import MyCustomCube from './classes/MyCustomCube'
 
   // Create a character
   const character = new FCharacter3dKP(scene)
-  character.initSensor()
   scene.addComponent(character)
 
   // Attach a camera to the character

@@ -49,6 +49,8 @@ export class FCharacter3dDynamic extends FCharacter3d {
 
     // Initialize the rigid body
     this.initRigidBody()
+    // Initialize a sensor
+    this.initSensor()
   }
 
   initRigidBody(options?: FRigidBody3dOptions): void {
