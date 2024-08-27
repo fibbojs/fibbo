@@ -36,6 +36,8 @@ nx watch --projects=@fibbojs/3d,@fibbojs/devtools --includeDependentProjects -- 
 # or on Windows : nx watch --projects=@fibbojs/3d,@fibbojs/devtools --includeDependentProjects -- nx run %NX_PROJECT_NAME%:build
 ```
 
+You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-3d`.
+
 - To develop on the 2D package, run the 2D playground :
 
 ```bash
@@ -46,7 +48,7 @@ nx watch --projects=@fibbojs/2d,@fibbojs/devtools --includeDependentProjects -- 
 # or on Windows : nx watch --projects=@fibbojs/2d,@fibbojs/devtools --includeDependentProjects -- nx run %NX_PROJECT_NAME%:build
 ```
 
-You can now open your browser and navigate to `http://localhost:5173/`.
+You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-2d`.
 
 ## Documentation
 
@@ -63,7 +65,7 @@ Also, the API Reference part is generated using [TypeDoc](https://typedoc.org/).
 npm run docs:generate
 ```
 
-You can now open your browser and navigate to `http://localhost:5173/`.
+You can now open your browser and navigate to `http://localhost:5173/fibbo`.
 
 ## Credits
 
