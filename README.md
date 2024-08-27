@@ -26,7 +26,7 @@ An open-source, web-based game engine.
   - [VitePress](https://vitepress.dev/) for the documentation
   - [Vitest](https://vitest.dev/) for testing
   - [TypeDoc](https://typedoc.org/) for the API Reference part of the documentation
-  - [Eslint](https://eslint.org/) for linting
+  - [ESLint](https://eslint.org/) for linting
 
 ## Development
 
