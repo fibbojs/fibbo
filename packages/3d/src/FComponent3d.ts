@@ -119,6 +119,10 @@ export abstract class FComponent3d extends FComponent {
       this.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
       // If a sensor exists, update its position and rotation according to the rigid body
       if (this.sensor) {
+        // Apply offset to the sensor
+        newMeshPosition.x += this.sensor.colliderPositionOffset.x
+        newMeshPosition.y += this.sensor.colliderPositionOffset.y
+        newMeshPosition.z += this.sensor.colliderPositionOffset.z
         this.sensor.collider.setTranslation(newMeshPosition)
         this.sensor.collider.setRotation(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w))
       }
@@ -274,9 +278,9 @@ export abstract class FComponent3d extends FComponent {
    * @example
    * ```ts
    * component.initRigidBody({
-   *  position: new THREE.Vector3(0, 1, 0),
-   *  scale: new THREE.Vector3(1, 1, 1),
-   *  rotation: new THREE.Vector3(0, 0, 0),
+   *  position: { x: 0, y: 0, z: 0 },
+   *  scale: { x: 1, y: 1, z: 1 },
+   *  rotation: { x: 0, y: 0, z: 0 },
    *  shape: F3dShapes.CUBE
    * })
    * ```
@@ -303,9 +307,9 @@ export abstract class FComponent3d extends FComponent {
    * @example
    * ```ts
    * component.initCollider({
-   *  position: new THREE.Vector3(0, 1, 0),
-   *  scale: new THREE.Vector3(1, 1, 1),
-   *  rotation: new THREE.Vector3(0, 0, 0),
+   *  position: { x: 0, y: 0, z: 0 },
+   *  scale: { x: 1, y: 1, z: 1 },
+   *  rotation: { x: 0, y: 0, z: 0 },
    *  shape: F3dShapes.CUBE
    * })
    * ```
@@ -327,9 +331,9 @@ export abstract class FComponent3d extends FComponent {
    * @example
    * ```ts
    * component.initSensor({
-   *  position: new THREE.Vector3(0, 1, 0),
-   *  scale: new THREE.Vector3(1, 1, 1),
-   *  rotation: new THREE.Vector3(0, 0, 0),
+   *  position: { x: 0, y: 0, z: 0 },
+   *  scale: { x: 1, y: 1, z: 1 },
+   *  rotation: { x: 0, y: 0, z: 0 },
    *  shape: F3dShapes.CUBE
    * })
    * ```
