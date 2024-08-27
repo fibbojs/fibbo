@@ -20,14 +20,49 @@ export default defineConfig({
       {
         text: 'Getting Started',
         items: [
+          { text: 'Introduction', link: '/getting-started/introduction' },
           { text: 'Installation', link: '/getting-started/installation' },
-          { text: 'Usage', link: '/getting-started/usage' },
         ],
       },
       {
-        text: 'Guide',
+        text: 'Fundamentals',
         items: [
-          { text: 'Example Guide', link: '/guide/example-guide' },
+          { text: 'Components', link: '/fundamentals/components' },
+          { text: 'Scene', link: '/fundamentals/scene' },
+          { text: 'Transforms', link: '/fundamentals/transforms' },
+          { text: 'Cameras', link: '/fundamentals/cameras' },
+          { text: '2d', collapsed: true, items: [
+            { text: 'Container', link: '/fundamentals/2d/container' },
+            { text: 'Polygons', link: '/fundamentals/2d/polygons' },
+            { text: 'Sprites', link: '/fundamentals/2d/sprites' },
+          ] },
+          { text: '3d', collapsed: true, items: [
+            { text: 'Mesh', link: '/fundamentals/3d/mesh' },
+            { text: 'Polyhedrons', link: '/fundamentals/3d/polyhedrons' },
+            { text: 'Models', link: '/fundamentals/3d/models' },
+          ] },
+          { text: 'Physics', collapsed: true, items: [
+            { text: 'Collisions', link: '/fundamentals/physics/collisions' },
+            { text: 'Gravity', link: '/fundamentals/physics/gravity' },
+            { text: 'Sensor', link: '/fundamentals/physics/sensor' },
+          ] },
+          { text: 'Events', collapsed: true, items: [
+            { text: 'Keyboard', link: '/fundamentals/events/keyboard' },
+          ] },
+        ],
+      },
+      {
+        text: 'Recipes',
+        items: [
+          { text: 'Character controller', link: '/recipes/character-controller' },
+        ],
+      },
+      {
+        text: 'More',
+        items: [
+          { text: 'Deployment', link: '/development/deployment' },
+          { text: 'Devtools', link: '/development/devtools' },
+          { text: 'Extending Fibbo', link: '/development/extending-fibbo' },
         ],
       },
       {

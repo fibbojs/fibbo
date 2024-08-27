@@ -1,19 +1,35 @@
----
-outline: deep
----
-
 # Installation
 
-## Basic (Recommended)
+## New 2D game
 
+- Clone the [starter project](https://github.com/fibbojs/starter-2d) from the repository
 ```bash
-npx degit fibbojs/starter my-new-game
+npx degit fibbojs/starter-2d my-new-game
+```
+- Install the dependencies
+```bash
+cd my-new-game
+npm install
+```
+- Start the development server
+```bash
+npm run dev
 ```
 
-## Manual
+## New 3D game
 
-- Add `@fibbojs/fibbo` dependency to your project
-
+- Clone the [starter project](https://github.com/fibbojs/starter-3d) from the repository
 ```bash
-npm install @fibbojs/fibbo
+npx degit fibbojs/starter-3d my-new-game
 ```
+- Install the dependencies
+```bash
+cd my-new-game
+npm install
+```
+- Start the development server
+```bash
+npm run dev
+```
+
+## Manual installation (Coming soon)
