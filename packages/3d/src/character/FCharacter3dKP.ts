@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import RAPIER from '@dimforge/rapier3d'
+import { FKeyboard } from '@fibbojs/event'
 import type { FScene3d } from '../FScene3d'
 import type { FComponent3dOptions } from '../FComponent3d'
 import type { FRigidBody3dOptions } from '../FRigidBody3d'
@@ -22,6 +23,8 @@ export class FCharacter3dKP extends FCharacter3dKinematic {
   constructor(scene: FScene3d, options?: FComponent3dOptions) {
     super(scene, options)
 
+    let yVelocity = scene.world.gravity.y
+
     /**
      * Handle movements on each frame (gravity + character movement)
      * For some reason, using the onFrame method will result in weird behavior with gravity
@@ -41,7 +44,7 @@ export class FCharacter3dKP extends FCharacter3dKinematic {
       // Create movement vector
       const desiredMovement = {
         x: worldDirection.x * delta * 8,
-        y: this.scene.world.gravity.y * delta,
+        y: yVelocity * delta,
         z: worldDirection.z * delta * 8,
       }
       // Compute the desired movement
@@ -57,6 +60,21 @@ export class FCharacter3dKP extends FCharacter3dKinematic {
         y: this.rigidBody.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
         z: this.rigidBody.rigidBody.translation().z + correctedMovement.z * delta * this.speed * 64,
       })
+
+      // If yVelocity is not 0, apply gravity
+      if (yVelocity > scene.world.gravity.y) {
+        yVelocity += scene.world.gravity.y * delta * 4
+      }
+      else {
+        yVelocity = scene.world.gravity.y
+      }
+    })
+
+    // Create a keyboard instance
+    const fKeyboard = new FKeyboard(scene)
+    // Bind the keyboard events
+    fKeyboard.on(' ', () => {
+      yVelocity = 10
     })
 
     // Initialize the rigid body
