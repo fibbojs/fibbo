@@ -74,6 +74,10 @@ export class FGameCamera extends FOrbitCamera {
       const movementY = this.lastMouseMoveEvent.movementY || 0
 
       // Rotate the camera based on mouse movement
+      /**
+       * Let's be honest, I don't know why this works.
+       * But it does.
+       */
       this.translateX(-movementX * 0.01)
       this.translateY(movementY * 0.01)
       this.lastMouseMoveEvent = undefined

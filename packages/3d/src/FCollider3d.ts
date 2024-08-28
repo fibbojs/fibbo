@@ -27,12 +27,12 @@ export class FCollider3d {
    * Position Offset for the collider.
    * This is used to adjust the collider position relative to the mesh.
    */
-  colliderPositionOffset: THREE.Vector3
+  colliderPositionOffset: { x: number, y: number, z: number }
   /**
    * Rotation Offset for the collider.
    * This is used to adjust the collider position relative to the mesh.
    */
-  colliderRotationOffset: THREE.Vector3
+  colliderRotationOffset: { x: number, y: number, z: number }
 
   /**
    * @description Creates a collider for a given component.
@@ -48,9 +48,9 @@ export class FCollider3d {
    * @example
    * ```ts
    * component.initCollider(scene, component, {
-   *  position: new THREE.Vector3(0, 1, 0),
-   *  scale: new THREE.Vector3(1, 1, 1),
-   *  rotation: new THREE.Vector3(0, 0, 0),
+   *  position: { x: 0, y: 1, z: 0 },
+   *  scale: { x: 1, y: 1, z: 1 },
+   *  rotation: { x: 0, y: 0, z: 0 },
    *  shape: F3dShapes.CUBE
    * })
    * ```
@@ -77,14 +77,16 @@ export class FCollider3d {
 
     // If rotation degree is given, convert it to radians
     if (options.rotationDegree) {
-      options.rotation.x = THREE.MathUtils.degToRad(options.rotationDegree.x)
-      options.rotation.y = THREE.MathUtils.degToRad(options.rotationDegree.y)
-      options.rotation.z = THREE.MathUtils.degToRad(options.rotationDegree.z)
+      options.rotation = {
+        x: THREE.MathUtils.degToRad(options.rotationDegree.x),
+        y: THREE.MathUtils.degToRad(options.rotationDegree.y),
+        z: THREE.MathUtils.degToRad(options.rotationDegree.z),
+      }
     }
 
     // Store the collider offset
-    this.colliderPositionOffset = new THREE.Vector3(options.position.x, options.position.y, options.position.z)
-    this.colliderRotationOffset = new THREE.Vector3(options.rotation.x, options.rotation.y, options.rotation.z)
+    this.colliderPositionOffset = { x: options.position.x, y: options.position.y, z: options.position.z }
+    this.colliderRotationOffset = { x: options.rotation.x, y: options.rotation.y, z: options.rotation.z }
 
     // Devide the scale by 2 for the collider (RAPIER uses half-extents)
     // Also interpete the scale as relative to the component's scale
@@ -149,9 +151,9 @@ export class FCollider3d {
       // Interprete the given rotation as relative to the component's rotation
       const finalRotation = new THREE.Quaternion().setFromEuler(
         new THREE.Euler(
-          component.rotation.x + options.rotation.x / 2,
-          component.rotation.y + options.rotation.y / 2,
-          component.rotation.z + options.rotation.z / 2,
+          component.rotation.x + options.rotation.x,
+          component.rotation.y + options.rotation.y,
+          component.rotation.z + options.rotation.z,
         ),
       )
       colliderDesc.setRotation(finalRotation)

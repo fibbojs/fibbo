@@ -87,8 +87,8 @@ import MyCustomCube from './classes/MyCustomCube'
   // Add "stairs"
   for (let i = 0; i < 10; i++) {
     const cube = new FCube(scene, {
-      scale: { x: 2, y: 1, z: 1 },
-      position: { x: 6, y: i / 4 - 0.5, z: -i },
+      scale: { x: 2, y: 0.2, z: 1 },
+      position: { x: 6, y: i / 4, z: -i },
     })
     cube.initCollider()
     cube.setColor(0x1F1F1F)

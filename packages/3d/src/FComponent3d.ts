@@ -130,15 +130,32 @@ export abstract class FComponent3d extends FComponent {
     // If the collider and mesh exist, update the mesh position and rotation according to the collider
     else if (this.collider && this.mesh) {
       // Get the new transforms from the collider
+
+      // Translation
       const newMeshPosition = this.collider.collider.translation()
+      // Remove offset
       newMeshPosition.x -= this.collider.colliderPositionOffset.x
       newMeshPosition.y -= this.collider.colliderPositionOffset.y
       newMeshPosition.z -= this.collider.colliderPositionOffset.z
-      const newMeshRotation = this.collider.collider.rotation()
+
+      // Rotation
+      const newMeshRotation = new THREE.Euler().setFromQuaternion(
+        new THREE.Quaternion(
+          this.collider.collider.rotation().x,
+          this.collider.collider.rotation().y,
+          this.collider.collider.rotation().z,
+          this.collider.collider.rotation().w,
+        ),
+      )
+      // Remove offset
+      newMeshRotation.x -= this.collider.colliderRotationOffset.x
+      newMeshRotation.y -= this.collider.colliderRotationOffset.y
+      newMeshRotation.z -= this.collider.colliderRotationOffset.z
+
       // Apply the new transforms to the mesh
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w))
-      // Update position and rotation properties of the component according to the collider
+      this.mesh.setRotationFromEuler(newMeshRotation)
+      // Update position and rotation properties of the component
       this.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
     }
