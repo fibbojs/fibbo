@@ -1,23 +1,23 @@
-import type { FComponent2d } from '../FComponent2d'
-import type { FScene2d } from '../FScene2d'
-import type { FCamera2dOptions } from './FCamera2d'
-import { FCamera2d } from './FCamera2d'
+import type { FComponent } from '../FComponent'
+import type { FScene } from '../FScene'
+import type { FCameraOptions } from './FCamera'
+import { FCamera } from './FCamera'
 
-export interface FAttachedCameraOptions extends FCamera2dOptions {
-  target: FComponent2d
+export interface FAttachedCameraOptions extends FCameraOptions {
+  target: FComponent
 }
 
 /**
  * @description A camera attached to a given target.
  * @category Camera
  */
-export class FAttachedCamera extends FCamera2d {
+export class FAttachedCamera extends FCamera {
   /**
    * @description The target to follow.
    */
-  target: FComponent2d
+  target: FComponent
 
-  constructor(scene: FScene2d, options: FAttachedCameraOptions) {
+  constructor(scene: FScene, options: FAttachedCameraOptions) {
     super(scene, options)
     this.target = options.target
   }

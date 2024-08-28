@@ -9,9 +9,9 @@ A simple capsule model in FibboJS.
 ## Example
 
 ```ts
-import { FScene3d, FCapsule } from '@fibbojs/3d'
+import { FScene, FCapsule } from '@fibbojs/3d'
 
-const scene = new FScene3d()
+const scene = new FScene()
 
 const capsule = new FCapsule(scene)
 scene.addComponent(capsule)
@@ -43,7 +43,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:484](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L484)
+packages/3d/src/FComponent.ts:431
 
 ***
 
@@ -67,7 +67,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:492](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L492)
+packages/3d/src/FComponent.ts:439
 
 ***
 
@@ -91,7 +91,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:500](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L500)
+packages/3d/src/FComponent.ts:447
 
 ***
 
@@ -115,7 +115,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:460](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L460)
+packages/3d/src/FComponent.ts:407
 
 ***
 
@@ -139,7 +139,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:468](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L468)
+packages/3d/src/FComponent.ts:415
 
 ***
 
@@ -163,7 +163,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:476](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L476)
+packages/3d/src/FComponent.ts:423
 
 ***
 
@@ -187,7 +187,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:508](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L508)
+packages/3d/src/FComponent.ts:455
 
 ***
 
@@ -211,7 +211,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:516](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L516)
+packages/3d/src/FComponent.ts:463
 
 ***
 
@@ -235,7 +235,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:524](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L524)
+packages/3d/src/FComponent.ts:471
 
 ***
 
@@ -261,7 +261,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:436](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L436)
+packages/3d/src/FComponent.ts:383
 
 ***
 
@@ -285,7 +285,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:444](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L444)
+packages/3d/src/FComponent.ts:391
 
 ***
 
@@ -309,7 +309,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:452](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L452)
+packages/3d/src/FComponent.ts:399
 
 ## Constructors
 
@@ -319,9 +319,9 @@ Setters & getters for transform properties
 
 #### Parameters
 
-• **scene**: [`FScene3d`](FScene3d.md)
+• **scene**: [`FScene`](FScene.md)
 
-• **options?**: [`FComponent3dOptions`](../interfaces/FComponent3dOptions.md)
+• **options?**: [`FComponentOptions`](../interfaces/FComponentOptions.md)
 
 #### Returns
 
@@ -333,7 +333,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/3d/src/model/FCapsule.ts:21](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FCapsule.ts#L21)
+[packages/3d/src/polyhedrons/FCapsule.ts:23](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FCapsule.ts#L23)
 
 ## Methods
 
@@ -375,7 +375,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:65
+packages/core/dist/index.d.ts:70
 
 ***
 
@@ -385,7 +385,7 @@ packages/core/dist/index.d.ts:65
 
 #### Parameters
 
-• **options?**: [`FComponent3dOptions__initCollider`](../interfaces/FComponent3dOptions__initCollider.md)
+• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
 
 The options for the collider.
 
@@ -402,10 +402,10 @@ This is useful for static objects.
 
 ```ts
 component.initCollider({
- position: new THREE.Vector3(0, 1, 0),
- scale: new THREE.Vector3(1, 1, 1),
- rotation: new THREE.Vector3(0, 0, 0),
- shape: F3dShapes.CUBE
+ position: { x: 0, y: 0, z: 0 },
+ scale: { x: 1, y: 1, z: 1 },
+ rotation: { x: 0, y: 0, z: 0 },
+ shape: FShapes.CUBE
 })
 ```
 
@@ -415,7 +415,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/3d/src/model/FCapsule.ts:40](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FCapsule.ts#L40)
+[packages/3d/src/polyhedrons/FCapsule.ts:42](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FCapsule.ts#L42)
 
 ***
 
@@ -425,7 +425,7 @@ component.initCollider({
 
 #### Parameters
 
-• **options?**: [`FComponent3dOptions__initRigidBody`](../interfaces/FComponent3dOptions__initRigidBody.md)
+• **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
 The options for the rigid body.
 
@@ -441,10 +441,10 @@ Init a rigid body for the component.
 
 ```ts
 component.initRigidBody({
- position: new THREE.Vector3(0, 1, 0),
- scale: new THREE.Vector3(1, 1, 1),
- rotation: new THREE.Vector3(0, 0, 0),
- shape: F3dShapes.CUBE
+ position: { x: 0, y: 0, z: 0 },
+ scale: { x: 1, y: 1, z: 1 },
+ rotation: { x: 0, y: 0, z: 0 },
+ shape: FShapes.CUBE
 })
 ```
 
@@ -454,7 +454,47 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/3d/src/model/FCapsule.ts:33](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FCapsule.ts#L33)
+[packages/3d/src/polyhedrons/FCapsule.ts:35](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FCapsule.ts#L35)
+
+***
+
+### initSensor()
+
+> **initSensor**(`options`?): `void`
+
+#### Parameters
+
+• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
+
+The options for the collider.
+
+#### Returns
+
+`void`
+
+#### Description
+
+Init a sensor for the component.
+This is useful for triggerings events when the component collides with other components.
+
+#### Example
+
+```ts
+component.initSensor({
+ position: { x: 0, y: 0, z: 0 },
+ scale: { x: 1, y: 1, z: 1 },
+ rotation: { x: 0, y: 0, z: 0 },
+ shape: FShapes.CUBE
+})
+```
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`initSensor`](FPolyhedron.md#initsensor)
+
+#### Defined in
+
+packages/3d/src/FComponent.ts:363
 
 ***
 
@@ -504,7 +544,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:424](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L424)
+packages/3d/src/FComponent.ts:371
 
 ***
 
@@ -531,7 +571,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/model/FCapsule.ts:29](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FCapsule.ts#L29)
+[packages/3d/src/polyhedrons/FCapsule.ts:31](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FCapsule.ts#L31)
 
 ***
 
@@ -565,7 +605,7 @@ cube.setColor(0xff0000)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:38](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FPolyhedron.ts#L38)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:38](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FPolyhedron.ts#L38)
 
 ***
 
@@ -607,7 +647,7 @@ component.setPosition(0, 1, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:168](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L168)
+packages/3d/src/FComponent.ts:185
 
 ***
 
@@ -649,7 +689,7 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:227](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L227)
+packages/3d/src/FComponent.ts:244
 
 ***
 
@@ -691,7 +731,7 @@ component.setRotationDegree(0, 90, 0)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:250](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L250)
+packages/3d/src/FComponent.ts:267
 
 ***
 
@@ -727,7 +767,7 @@ Set the scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:187](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L187)
+packages/3d/src/FComponent.ts:204
 
 ## Properties
 
@@ -750,7 +790,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-packages/core/dist/index.d.ts:17
+packages/core/dist/index.d.ts:22
 
 ***
 
@@ -769,15 +809,45 @@ It is generated automatically.
 
 #### Defined in
 
+packages/core/dist/index.d.ts:17
+
+***
+
+### \_\_IS\_2D\_\_
+
+> **\_\_IS\_2D\_\_**: `boolean`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__IS_2D__`](FPolyhedron.md#__is_2d__)
+
+#### Defined in
+
 packages/core/dist/index.d.ts:12
+
+***
+
+### \_\_IS\_3D\_\_
+
+> **\_\_IS\_3D\_\_**: `boolean` = `true`
+
+Internal flags
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__IS_3D__`](FPolyhedron.md#__is_3d__)
+
+#### Defined in
+
+packages/3d/src/FComponent.ts:25
 
 ***
 
 ### collider?
 
-> `optional` **collider**: `Collider`
+> `optional` **collider**: `FCollider`
 
-RAPIER Collider
+Collider
 
 #### Inherited from
 
@@ -785,7 +855,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:79](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L79)
+packages/3d/src/FComponent.ts:59
 
 ***
 
@@ -793,7 +863,7 @@ RAPIER Collider
 
 > **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
 
-mesh is redefined from FComponent3d without the ? because it is
+mesh is redefined from FComponent without the ? because it is
 directly available after the constructor, as a polyhedron is created synchronously.
 
 #### Inherited from
@@ -802,7 +872,7 @@ directly available after the constructor, as a polyhedron is created synchronous
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FPolyhedron.ts#L16)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FPolyhedron.ts#L16)
 
 ***
 
@@ -818,15 +888,15 @@ The position of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:61](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L61)
+packages/3d/src/FComponent.ts:41
 
 ***
 
 ### rigidBody?
 
-> `optional` **rigidBody**: `RigidBody`
+> `optional` **rigidBody**: `FRigidBody`
 
-RAPIER RigidBody
+RigidBody
 
 #### Inherited from
 
@@ -834,7 +904,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:75](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L75)
+packages/3d/src/FComponent.ts:55
 
 ***
 
@@ -850,7 +920,7 @@ The rotation of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:69](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L69)
+packages/3d/src/FComponent.ts:49
 
 ***
 
@@ -866,13 +936,13 @@ The scale of the component.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:65](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L65)
+packages/3d/src/FComponent.ts:45
 
 ***
 
 ### scene
 
-> **scene**: [`FScene3d`](FScene3d.md)
+> **scene**: [`FScene`](FScene.md)
 
 The scene which the component is in.
 
@@ -882,4 +952,20 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:50](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L50)
+packages/3d/src/FComponent.ts:30
+
+***
+
+### sensor?
+
+> `optional` **sensor**: `FCollider`
+
+Sensor (a collider that doesn't collide with other colliders, but still triggers events)
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`sensor`](FPolyhedron.md#sensor)
+
+#### Defined in
+
+packages/3d/src/FComponent.ts:63

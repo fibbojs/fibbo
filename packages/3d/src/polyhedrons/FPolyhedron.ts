@@ -1,21 +1,21 @@
 import * as THREE from 'three'
-import type { FScene3d } from '../FScene3d'
-import { FComponent3d } from '../FComponent3d'
-import type { FComponent3dOptions } from '../FComponent3d'
+import type { FScene } from '../FScene'
+import { FComponent } from '../FComponent'
+import type { FComponentOptions } from '../FComponent'
 
 /**
  * @description A simple polyhedron model in FibboJS.
  * Defaults to a cube.
  * @category Model
  */
-export abstract class FPolyhedron extends FComponent3d {
+export abstract class FPolyhedron extends FComponent {
   /**
-   * mesh is redefined from FComponent3d without the ? because it is
+   * mesh is redefined from FComponent without the ? because it is
    * directly available after the constructor, as a polyhedron is created synchronously.
    */
   mesh: THREE.Mesh
 
-  constructor(scene: FScene3d, options?: FComponent3dOptions) {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a cube
     const geometry = new THREE.BoxGeometry(this.scale.x, this.scale.y, this.scale.z)

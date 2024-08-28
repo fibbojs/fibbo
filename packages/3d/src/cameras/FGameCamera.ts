@@ -1,15 +1,15 @@
 import type * as THREE from 'three'
-import type { FComponent3d } from '../FComponent3d'
+import type { FComponent } from '../FComponent'
 import { FOrbitCamera } from './FOrbitCamera'
 
 /**
- * @description A camera that can be attached to a FComponent3d and orbits around it in a more game-like way.
+ * @description A camera that can be attached to a FComponent and orbits around it in a more game-like way.
  * @category Camera
  * @example
  * ```ts
- * import { FScene3d, FGameCamera, FCube } from '@fibbojs/3d'
+ * import { FScene, FGameCamera, FCube } from '@fibbojs/3d'
  *
- * const scene = new FScene3d()
+ * const scene = new FScene()
  *
  * const cube = new FCube(scene)
  * scene.addComponent(cube)
@@ -28,7 +28,7 @@ export class FGameCamera extends FOrbitCamera {
   /**
    * @param attachedComponent Component that the camera is attached to
    */
-  constructor(attachedComponent: FComponent3d) {
+  constructor(attachedComponent: FComponent) {
     super(attachedComponent)
     this.previousModelPosition = attachedComponent.position.clone()
     this.setPosition(0, 5, 5)

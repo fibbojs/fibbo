@@ -1,5 +1,5 @@
-import type { FScene3d } from '../FScene3d'
-import type { FComponent3dOptions } from '../FComponent3d'
+import type { FScene } from '../FScene'
+import type { FComponentOptions } from '../FComponent'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -7,16 +7,16 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Model
  * @example
  * ```ts
- * import { FScene3d, FCube } from '@fibbojs/3d'
+ * import { FScene, FCube } from '@fibbojs/3d'
  *
- * const scene = new FScene3d()
+ * const scene = new FScene()
  *
  * const cube = new FCube(scene)
  * scene.addComponent(cube)
  * ```
  */
 export class FCube extends FPolyhedron {
-  constructor(scene: FScene3d, options?: FComponent3dOptions) {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
   }
 

@@ -8,6 +8,12 @@ let ID_COUNTER = 0
  */
 export abstract class FComponent {
   /**
+   * Internal flags
+   */
+  public __IS_3D__: boolean = false
+  public __IS_2D__: boolean = false
+
+  /**
    * @description Unique identifier for the component.
    * It is generated automatically.
    */

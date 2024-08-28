@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import type { FScene3d } from '../FScene3d'
-import { F3dShapes } from '../types/F3dShapes'
-import type { FComponent3dOptions } from '../FComponent3d'
-import type { FRigidBody3dOptions } from '../FRigidBody3d'
-import type { FCollider3dOptions } from '../FCollider3d'
+import type { FScene } from '../FScene'
+import { FShapes } from '../types/FShapes'
+import type { FComponentOptions } from '../FComponent'
+import type { FRigidBodyOptions } from '../FRigidBody'
+import type { FColliderOptions } from '../FCollider'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -11,16 +11,16 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Model
  * @example
  * ```ts
- * import { FScene3d, FSphere } from '@fibbojs/3d'
+ * import { FScene, FSphere } from '@fibbojs/3d'
  *
- * const scene = new FScene3d()
+ * const scene = new FScene()
  *
  * const sphere = new FSphere(scene)
  * scene.addComponent(sphere)
  * ```
  */
 export class FSphere extends FPolyhedron {
-  constructor(scene: FScene3d, options?: FComponent3dOptions) {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a sphere
     const geometry = new THREE.SphereGeometry(0.5, 32, 32)
@@ -32,16 +32,16 @@ export class FSphere extends FPolyhedron {
     super.onFrame(_delta)
   }
 
-  initRigidBody(options?: FRigidBody3dOptions): void {
+  initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
-      shape: F3dShapes.SPHERE,
+      shape: FShapes.SPHERE,
       ...options,
     })
   }
 
-  initCollider(options?: FCollider3dOptions): void {
+  initCollider(options?: FColliderOptions): void {
     super.initCollider({
-      shape: F3dShapes.SPHERE,
+      shape: FShapes.SPHERE,
       ...options,
     })
   }

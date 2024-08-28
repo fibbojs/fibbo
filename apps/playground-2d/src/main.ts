@@ -1,10 +1,10 @@
 import './style.css'
-import { F2dShapes, FAttachedCamera, FCharacter2dKV, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
+import { FAttachedCamera, FCharacterKV, FCircle, FScene, FShapes, FSprite, FSquare } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
 import MySquare from './classes/MySquare'
 
 (async () => {
-  const scene = new FScene2d()
+  const scene = new FScene()
   await scene.init()
   await scene.initPhysics()
   // Debug the scene
@@ -34,7 +34,7 @@ import MySquare from './classes/MySquare'
     position: { x: 4, y: 1 },
   })
   square3.initCollider({
-    shape: F2dShapes.CIRCLE,
+    shape: FShapes.CIRCLE,
   })
   scene.addComponent(square3)
 
@@ -72,7 +72,7 @@ import MySquare from './classes/MySquare'
   /**
    * Create character
    */
-  const character = new FCharacter2dKV(scene)
+  const character = new FCharacterKV(scene)
   character.onCollisionWith(FSquare, () => {
     console.log('Sprite collided with a square!')
   })

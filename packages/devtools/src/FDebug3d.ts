@@ -1,4 +1,4 @@
-import type { FScene3d } from '@fibbojs/3d'
+import type { FScene } from '@fibbojs/3d'
 
 /**
  * @description A helper class to debug a given 3d scene
@@ -11,7 +11,7 @@ export class FDebug3d {
   /**
    * @param scene The scene to be debugged
    */
-  constructor(scene: FScene3d) {
+  constructor(scene: FScene) {
     // Add grid helper
     const gridHelper = new scene.THREE.GridHelper(10, 10)
     scene.scene.add(gridHelper)

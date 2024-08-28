@@ -39,13 +39,13 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { defineProps, ref } from 'vue'
-import type { FComponent2d } from '@fibbojs/2d'
+import type { FComponent } from '@fibbojs/2d'
 import FComponentHeader from '../common/FComponentHeader.vue'
 import InputNumber from '../forms/InputNumber.vue'
 
 defineProps({
   component: {
-    type: Object as PropType<FComponent2d>,
+    type: Object as PropType<FComponent>,
     required: true,
   },
 })

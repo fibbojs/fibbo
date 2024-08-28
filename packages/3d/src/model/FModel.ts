@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import type { FScene3d } from '../FScene3d'
-import { FComponent3d } from '../FComponent3d'
-import type { FComponent3dOptions } from '../FComponent3d'
+import type { FScene } from '../FScene'
+import { FComponent } from '../FComponent'
+import type { FComponentOptions } from '../FComponent'
 
-export interface FModelOptions extends FComponent3dOptions {
+export interface FModelOptions extends FComponentOptions {
   name: string
   path?: string
   textures?: Record<string, string>
@@ -14,7 +14,7 @@ export interface FModelOptions extends FComponent3dOptions {
  * @description An abstract 3D Model base class.
  * @category Model
  */
-export abstract class FModel extends FComponent3d {
+export abstract class FModel extends FComponent {
   /**
    * Callbacks for when the model is loaded
    */
@@ -53,10 +53,10 @@ export abstract class FModel extends FComponent3d {
 
   /**
    * @param scene The 3D scene where the model will be added.
-   * @param options The options for the component (inherits from FComponent3d).
+   * @param options The options for the component (inherits from FComponent).
    * @param options.path The path for the model file to load.
    */
-  constructor(scene: FScene3d, options: FModelOptions) {
+  constructor(scene: FScene, options: FModelOptions) {
     super(scene, options)
 
     // Apply default options

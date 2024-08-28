@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js'
-import type { FScene3d } from '../FScene3d'
+import type { FScene } from '../FScene'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
@@ -9,9 +9,9 @@ import type { FModelOptions } from './FModel'
  * @category Model
  * @example
  * ```ts
- * import { FScene3d, FOBJ } from '@fibbojs/3d';
+ * import { FScene, FOBJ } from '@fibbojs/3d';
  *
- * const scene = new FScene3d();
+ * const scene = new FScene();
  *
  * const obj = new FOBJ(scene, {
  *   path: 'model.obj',
@@ -20,7 +20,7 @@ import type { FModelOptions } from './FModel'
  * ```
  */
 export class FOBJ extends FModel {
-  constructor(scene: FScene3d, options: FModelOptions) {
+  constructor(scene: FScene, options: FModelOptions) {
     super(scene, options)
 
     // Create OBJ Loader

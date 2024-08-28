@@ -8,7 +8,7 @@ A fixed camera.
 
 ## Extends
 
-- [`FCamera2d`](FCamera2d.md)
+- [`FCamera`](FCamera.md)
 
 ## Constructors
 
@@ -18,9 +18,9 @@ A fixed camera.
 
 #### Parameters
 
-• **scene**: [`FScene2d`](FScene2d.md)
+• **scene**: [`FScene`](FScene.md)
 
-• **options?**: [`FCamera2dOptions`](../interfaces/FCamera2dOptions.md)
+• **options?**: [`FCameraOptions`](../interfaces/FCameraOptions.md)
 
 #### Returns
 
@@ -28,11 +28,11 @@ A fixed camera.
 
 #### Overrides
 
-[`FCamera2d`](FCamera2d.md).[`constructor`](FCamera2d.md#constructors)
+[`FCamera`](FCamera.md).[`constructor`](FCamera.md#constructors)
 
 #### Defined in
 
-[packages/2d/src/cameras/FFixedCamera.ts:10](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FFixedCamera.ts#L10)
+[packages/2d/src/cameras/FFixedCamera.ts:10](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/2d/src/cameras/FFixedCamera.ts#L10)
 
 ## Methods
 
@@ -46,11 +46,11 @@ A fixed camera.
 
 #### Overrides
 
-[`FCamera2d`](FCamera2d.md).[`__ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__`](FCamera2d.md#__on_camera_added_to_scene_please_do_not_call_this_by_hand__)
+[`FCamera`](FCamera.md).[`__ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__`](FCamera.md#__on_camera_added_to_scene_please_do_not_call_this_by_hand__)
 
 #### Defined in
 
-[packages/2d/src/cameras/FFixedCamera.ts:17](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FFixedCamera.ts#L17)
+[packages/2d/src/cameras/FFixedCamera.ts:17](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/2d/src/cameras/FFixedCamera.ts#L17)
 
 ***
 
@@ -88,11 +88,11 @@ player.emitCollisionWith(enemy)
 
 #### Inherited from
 
-[`FCamera2d`](FCamera2d.md).[`emitCollisionWith`](FCamera2d.md#emitcollisionwith)
+[`FCamera`](FCamera.md).[`emitCollisionWith`](FCamera.md#emitcollisionwith)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:65
+packages/core/dist/index.d.ts:70
 
 ***
 
@@ -138,11 +138,11 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-[`FCamera2d`](FCamera2d.md).[`onCollisionWith`](FCamera2d.md#oncollisionwith)
+[`FCamera`](FCamera.md).[`onCollisionWith`](FCamera.md#oncollisionwith)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:48
+packages/core/dist/index.d.ts:53
 
 ***
 
@@ -165,11 +165,11 @@ Should be called every frame.
 
 #### Overrides
 
-[`FCamera2d`](FCamera2d.md).[`onFrame`](FCamera2d.md#onframe)
+[`FCamera`](FCamera.md).[`onFrame`](FCamera.md#onframe)
 
 #### Defined in
 
-[packages/2d/src/cameras/FFixedCamera.ts:14](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FFixedCamera.ts#L14)
+[packages/2d/src/cameras/FFixedCamera.ts:14](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/2d/src/cameras/FFixedCamera.ts#L14)
 
 ## Properties
 
@@ -188,11 +188,11 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FCamera2d`](FCamera2d.md).[`__CALLBACKS_ON_COLLISION__`](FCamera2d.md#__callbacks_on_collision__)
+[`FCamera`](FCamera.md).[`__CALLBACKS_ON_COLLISION__`](FCamera.md#__callbacks_on_collision__)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:17
+packages/core/dist/index.d.ts:22
 
 ***
 
@@ -207,11 +207,43 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FCamera2d`](FCamera2d.md).[`__ID__`](FCamera2d.md#__id__)
+[`FCamera`](FCamera.md).[`__ID__`](FCamera.md#__id__)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:12
+packages/core/dist/index.d.ts:17
+
+***
+
+### \_\_IS\_2D\_\_
+
+> **\_\_IS\_2D\_\_**: `boolean` = `true`
+
+Internal flags
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__IS_2D__`](FCamera.md#__is_2d__)
+
+#### Defined in
+
+packages/2d/src/cameras/FCamera.ts:17
+
+***
+
+### \_\_IS\_3D\_\_
+
+> **\_\_IS\_3D\_\_**: `boolean`
+
+Internal flags
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__IS_3D__`](FCamera.md#__is_3d__)
+
+#### Defined in
+
+packages/core/dist/index.d.ts:11
 
 ***
 
@@ -223,17 +255,17 @@ Position of the camera.
 
 #### Inherited from
 
-[`FCamera2d`](FCamera2d.md).[`position`](FCamera2d.md#position)
+[`FCamera`](FCamera.md).[`position`](FCamera.md#position)
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera2d.ts:23](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FCamera2d.ts#L23)
+packages/2d/src/cameras/FCamera.ts:28
 
 ***
 
 ### scene
 
-> **scene**: [`FScene2d`](FScene2d.md)
+> **scene**: [`FScene`](FScene.md)
 
 #### Description
 
@@ -241,8 +273,8 @@ The scene the camera is in.
 
 #### Inherited from
 
-[`FCamera2d`](FCamera2d.md).[`scene`](FCamera2d.md#scene)
+[`FCamera`](FCamera.md).[`scene`](FCamera.md#scene)
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera2d.ts:17](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/2d/src/cameras/FCamera2d.ts#L17)
+packages/2d/src/cameras/FCamera.ts:22

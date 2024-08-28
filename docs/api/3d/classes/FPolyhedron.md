@@ -9,7 +9,7 @@ Defaults to a cube.
 
 ## Extends
 
-- [`FComponent3d`](FComponent3d.md)
+- [`FComponent`](FComponent.md)
 
 ## Extended by
 
@@ -35,11 +35,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeX`](FComponent3d.md#rotationdegreex)
+[`FComponent`](FComponent.md).[`rotationDegreeX`](FComponent.md#rotationdegreex)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:484](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L484)
+packages/3d/src/FComponent.ts:431
 
 ***
 
@@ -59,11 +59,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeY`](FComponent3d.md#rotationdegreey)
+[`FComponent`](FComponent.md).[`rotationDegreeY`](FComponent.md#rotationdegreey)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:492](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L492)
+packages/3d/src/FComponent.ts:439
 
 ***
 
@@ -83,11 +83,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationDegreeZ`](FComponent3d.md#rotationdegreez)
+[`FComponent`](FComponent.md).[`rotationDegreeZ`](FComponent.md#rotationdegreez)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:500](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L500)
+packages/3d/src/FComponent.ts:447
 
 ***
 
@@ -107,11 +107,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationX`](FComponent3d.md#rotationx)
+[`FComponent`](FComponent.md).[`rotationX`](FComponent.md#rotationx)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:460](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L460)
+packages/3d/src/FComponent.ts:407
 
 ***
 
@@ -131,11 +131,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationY`](FComponent3d.md#rotationy)
+[`FComponent`](FComponent.md).[`rotationY`](FComponent.md#rotationy)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:468](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L468)
+packages/3d/src/FComponent.ts:415
 
 ***
 
@@ -155,11 +155,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotationZ`](FComponent3d.md#rotationz)
+[`FComponent`](FComponent.md).[`rotationZ`](FComponent.md#rotationz)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:476](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L476)
+packages/3d/src/FComponent.ts:423
 
 ***
 
@@ -179,11 +179,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleX`](FComponent3d.md#scalex)
+[`FComponent`](FComponent.md).[`scaleX`](FComponent.md#scalex)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:508](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L508)
+packages/3d/src/FComponent.ts:455
 
 ***
 
@@ -203,11 +203,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleY`](FComponent3d.md#scaley)
+[`FComponent`](FComponent.md).[`scaleY`](FComponent.md#scaley)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:516](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L516)
+packages/3d/src/FComponent.ts:463
 
 ***
 
@@ -227,11 +227,11 @@ Defaults to a cube.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scaleZ`](FComponent3d.md#scalez)
+[`FComponent`](FComponent.md).[`scaleZ`](FComponent.md#scalez)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:524](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L524)
+packages/3d/src/FComponent.ts:471
 
 ***
 
@@ -253,11 +253,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`x`](FComponent3d.md#x)
+[`FComponent`](FComponent.md).[`x`](FComponent.md#x)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:436](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L436)
+packages/3d/src/FComponent.ts:383
 
 ***
 
@@ -277,11 +277,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`y`](FComponent3d.md#y)
+[`FComponent`](FComponent.md).[`y`](FComponent.md#y)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:444](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L444)
+packages/3d/src/FComponent.ts:391
 
 ***
 
@@ -301,11 +301,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`z`](FComponent3d.md#z)
+[`FComponent`](FComponent.md).[`z`](FComponent.md#z)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:452](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L452)
+packages/3d/src/FComponent.ts:399
 
 ## Constructors
 
@@ -315,9 +315,9 @@ Setters & getters for transform properties
 
 #### Parameters
 
-• **scene**: [`FScene3d`](FScene3d.md)
+• **scene**: [`FScene`](FScene.md)
 
-• **options?**: [`FComponent3dOptions`](../interfaces/FComponent3dOptions.md)
+• **options?**: [`FComponentOptions`](../interfaces/FComponentOptions.md)
 
 #### Returns
 
@@ -325,11 +325,11 @@ Setters & getters for transform properties
 
 #### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`constructor`](FComponent3d.md#constructors)
+[`FComponent`](FComponent.md).[`constructor`](FComponent.md#constructors)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:18](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FPolyhedron.ts#L18)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:18](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FPolyhedron.ts#L18)
 
 ## Methods
 
@@ -367,11 +367,11 @@ player.emitCollisionWith(enemy)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`emitCollisionWith`](FComponent3d.md#emitcollisionwith)
+[`FComponent`](FComponent.md).[`emitCollisionWith`](FComponent.md#emitcollisionwith)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:65
+packages/core/dist/index.d.ts:70
 
 ***
 
@@ -381,7 +381,7 @@ packages/core/dist/index.d.ts:65
 
 #### Parameters
 
-• **options?**: [`FComponent3dOptions__initCollider`](../interfaces/FComponent3dOptions__initCollider.md)
+• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
 
 The options for the collider.
 
@@ -398,20 +398,20 @@ This is useful for static objects.
 
 ```ts
 component.initCollider({
- position: new THREE.Vector3(0, 1, 0),
- scale: new THREE.Vector3(1, 1, 1),
- rotation: new THREE.Vector3(0, 0, 0),
- shape: F3dShapes.CUBE
+ position: { x: 0, y: 0, z: 0 },
+ scale: { x: 1, y: 1, z: 1 },
+ rotation: { x: 0, y: 0, z: 0 },
+ shape: FShapes.CUBE
 })
 ```
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`initCollider`](FComponent3d.md#initcollider)
+[`FComponent`](FComponent.md).[`initCollider`](FComponent.md#initcollider)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:394](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L394)
+packages/3d/src/FComponent.ts:339
 
 ***
 
@@ -421,7 +421,7 @@ component.initCollider({
 
 #### Parameters
 
-• **options?**: [`FComponent3dOptions__initRigidBody`](../interfaces/FComponent3dOptions__initRigidBody.md)
+• **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
 The options for the rigid body.
 
@@ -437,20 +437,60 @@ Init a rigid body for the component.
 
 ```ts
 component.initRigidBody({
- position: new THREE.Vector3(0, 1, 0),
- scale: new THREE.Vector3(1, 1, 1),
- rotation: new THREE.Vector3(0, 0, 0),
- shape: F3dShapes.CUBE
+ position: { x: 0, y: 0, z: 0 },
+ scale: { x: 1, y: 1, z: 1 },
+ rotation: { x: 0, y: 0, z: 0 },
+ shape: FShapes.CUBE
 })
 ```
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`initRigidBody`](FComponent3d.md#initrigidbody)
+[`FComponent`](FComponent.md).[`initRigidBody`](FComponent.md#initrigidbody)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:293](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L293)
+packages/3d/src/FComponent.ts:310
+
+***
+
+### initSensor()
+
+> **initSensor**(`options`?): `void`
+
+#### Parameters
+
+• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
+
+The options for the collider.
+
+#### Returns
+
+`void`
+
+#### Description
+
+Init a sensor for the component.
+This is useful for triggerings events when the component collides with other components.
+
+#### Example
+
+```ts
+component.initSensor({
+ position: { x: 0, y: 0, z: 0 },
+ scale: { x: 1, y: 1, z: 1 },
+ rotation: { x: 0, y: 0, z: 0 },
+ shape: FShapes.CUBE
+})
+```
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`initSensor`](FComponent.md#initsensor)
+
+#### Defined in
+
+packages/3d/src/FComponent.ts:363
 
 ***
 
@@ -496,11 +536,11 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`onCollisionWith`](FComponent3d.md#oncollisionwith)
+[`FComponent`](FComponent.md).[`onCollisionWith`](FComponent.md#oncollisionwith)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:424](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L424)
+packages/3d/src/FComponent.ts:371
 
 ***
 
@@ -523,11 +563,11 @@ Should be called every frame.
 
 #### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`onFrame`](FComponent3d.md#onframe)
+[`FComponent`](FComponent.md).[`onFrame`](FComponent.md#onframe)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:26](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FPolyhedron.ts#L26)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:26](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FPolyhedron.ts#L26)
 
 ***
 
@@ -557,7 +597,7 @@ cube.setColor(0xff0000)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:38](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FPolyhedron.ts#L38)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:38](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FPolyhedron.ts#L38)
 
 ***
 
@@ -595,11 +635,11 @@ component.setPosition(0, 1, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setPosition`](FComponent3d.md#setposition)
+[`FComponent`](FComponent.md).[`setPosition`](FComponent.md#setposition)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:168](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L168)
+packages/3d/src/FComponent.ts:185
 
 ***
 
@@ -637,11 +677,11 @@ component.setRotation(0, Math.PI / 2, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setRotation`](FComponent3d.md#setrotation)
+[`FComponent`](FComponent.md).[`setRotation`](FComponent.md#setrotation)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:227](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L227)
+packages/3d/src/FComponent.ts:244
 
 ***
 
@@ -679,11 +719,11 @@ component.setRotationDegree(0, 90, 0)
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setRotationDegree`](FComponent3d.md#setrotationdegree)
+[`FComponent`](FComponent.md).[`setRotationDegree`](FComponent.md#setrotationdegree)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:250](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L250)
+packages/3d/src/FComponent.ts:267
 
 ***
 
@@ -715,11 +755,11 @@ Set the scale of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`setScale`](FComponent3d.md#setscale)
+[`FComponent`](FComponent.md).[`setScale`](FComponent.md#setscale)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:187](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L187)
+packages/3d/src/FComponent.ts:204
 
 ## Properties
 
@@ -738,11 +778,11 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`__CALLBACKS_ON_COLLISION__`](FComponent3d.md#__callbacks_on_collision__)
+[`FComponent`](FComponent.md).[`__CALLBACKS_ON_COLLISION__`](FComponent.md#__callbacks_on_collision__)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:17
+packages/core/dist/index.d.ts:22
 
 ***
 
@@ -757,7 +797,21 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`__ID__`](FComponent3d.md#__id__)
+[`FComponent`](FComponent.md).[`__ID__`](FComponent.md#__id__)
+
+#### Defined in
+
+packages/core/dist/index.d.ts:17
+
+***
+
+### \_\_IS\_2D\_\_
+
+> **\_\_IS\_2D\_\_**: `boolean`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`__IS_2D__`](FComponent.md#__is_2d__)
 
 #### Defined in
 
@@ -765,19 +819,35 @@ packages/core/dist/index.d.ts:12
 
 ***
 
-### collider?
+### \_\_IS\_3D\_\_
 
-> `optional` **collider**: `Collider`
+> **\_\_IS\_3D\_\_**: `boolean` = `true`
 
-RAPIER Collider
+Internal flags
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`collider`](FComponent3d.md#collider)
+[`FComponent`](FComponent.md).[`__IS_3D__`](FComponent.md#__is_3d__)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:79](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L79)
+packages/3d/src/FComponent.ts:25
+
+***
+
+### collider?
+
+> `optional` **collider**: `FCollider`
+
+Collider
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`collider`](FComponent.md#collider)
+
+#### Defined in
+
+packages/3d/src/FComponent.ts:59
 
 ***
 
@@ -785,16 +855,16 @@ RAPIER Collider
 
 > **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
 
-mesh is redefined from FComponent3d without the ? because it is
+mesh is redefined from FComponent without the ? because it is
 directly available after the constructor, as a polyhedron is created synchronously.
 
 #### Overrides
 
-[`FComponent3d`](FComponent3d.md).[`mesh`](FComponent3d.md#mesh)
+[`FComponent`](FComponent.md).[`mesh`](FComponent.md#mesh)
 
 #### Defined in
 
-[packages/3d/src/model/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/model/FPolyhedron.ts#L16)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/3d/src/polyhedrons/FPolyhedron.ts#L16)
 
 ***
 
@@ -806,27 +876,27 @@ The position of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`position`](FComponent3d.md#position)
+[`FComponent`](FComponent.md).[`position`](FComponent.md#position)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:61](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L61)
+packages/3d/src/FComponent.ts:41
 
 ***
 
 ### rigidBody?
 
-> `optional` **rigidBody**: `RigidBody`
+> `optional` **rigidBody**: `FRigidBody`
 
-RAPIER RigidBody
+RigidBody
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rigidBody`](FComponent3d.md#rigidbody)
+[`FComponent`](FComponent.md).[`rigidBody`](FComponent.md#rigidbody)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:75](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L75)
+packages/3d/src/FComponent.ts:55
 
 ***
 
@@ -838,11 +908,11 @@ The rotation of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`rotation`](FComponent3d.md#rotation)
+[`FComponent`](FComponent.md).[`rotation`](FComponent.md#rotation)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:69](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L69)
+packages/3d/src/FComponent.ts:49
 
 ***
 
@@ -854,24 +924,40 @@ The scale of the component.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scale`](FComponent3d.md#scale)
+[`FComponent`](FComponent.md).[`scale`](FComponent.md#scale)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:65](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L65)
+packages/3d/src/FComponent.ts:45
 
 ***
 
 ### scene
 
-> **scene**: [`FScene3d`](FScene3d.md)
+> **scene**: [`FScene`](FScene.md)
 
 The scene which the component is in.
 
 #### Inherited from
 
-[`FComponent3d`](FComponent3d.md).[`scene`](FComponent3d.md#scene)
+[`FComponent`](FComponent.md).[`scene`](FComponent.md#scene)
 
 #### Defined in
 
-[packages/3d/src/FComponent3d.ts:50](https://github.com/fibbojs/fibbo/blob/0743d3ecbe169ee26bac94fe1f739f65dc5abae3/packages/3d/src/FComponent3d.ts#L50)
+packages/3d/src/FComponent.ts:30
+
+***
+
+### sensor?
+
+> `optional` **sensor**: `FCollider`
+
+Sensor (a collider that doesn't collide with other colliders, but still triggers events)
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`sensor`](FComponent.md#sensor)
+
+#### Defined in
+
+packages/3d/src/FComponent.ts:63

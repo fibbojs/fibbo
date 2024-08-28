@@ -17,7 +17,7 @@ export function getIconOfComponent(component: FComponent): FComponentIconSet {
     return FComponentIconSet.Sphere
   if (chain.includes('FCapsule'))
     return FComponentIconSet.Capsule
-  if (chain.includes('FCharacter3d') || chain.includes('FCharacter2d'))
+  if (chain.includes('FCharacter') || chain.includes('FCharacter'))
     return FComponentIconSet.Character
   if (chain.includes('FCamera'))
     return FComponentIconSet.Camera

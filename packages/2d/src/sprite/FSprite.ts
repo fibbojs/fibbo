@@ -1,22 +1,22 @@
 import * as PIXI from 'pixi.js'
-import type { FComponent2dOptions } from '../FComponent2d'
-import { FComponent2d } from '../FComponent2d'
-import type { FScene2d } from '../FScene2d'
+import type { FComponentOptions } from '../FComponent'
+import { FComponent } from '../FComponent'
+import type { FScene } from '../FScene'
 
 /**
  * @description A simple sprite in FibboJS.
  * @category Sprite
  * @example
  * ```ts
- * import { FScene2d, FSprite } from '@fibbojs/2d'
+ * import { FScene, FSprite } from '@fibbojs/2d'
  *
- * const scene = new FScene2d()
+ * const scene = new FScene()
  *
  * const sprite = new FSprite(scene, '/my-texture.png')
  * scene.addComponent(sprite)
  * ```
  */
-export class FSprite extends FComponent2d {
+export class FSprite extends FComponent {
   /**
    * The texture of the sprite.
    */
@@ -26,7 +26,7 @@ export class FSprite extends FComponent2d {
    */
   public __CALLBACKS_ON_LOADED__: (() => void)[] = []
 
-  constructor(scene: FScene2d, texture: string, options?: FComponent2dOptions) {
+  constructor(scene: FScene, texture: string, options?: FComponentOptions) {
     super(scene, options)
     // Define the texture and container while loading
     this.texture = PIXI.Texture.EMPTY

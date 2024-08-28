@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import type { FScene3d } from '../FScene3d'
-import { F3dShapes } from '../types/F3dShapes'
-import type { FComponent3dOptions } from '../FComponent3d'
-import type { FCollider3dOptions } from '../FCollider3d'
-import type { FRigidBody3dOptions } from '../FRigidBody3d'
+import type { FScene } from '../FScene'
+import { FShapes } from '../types/FShapes'
+import type { FComponentOptions } from '../FComponent'
+import type { FColliderOptions } from '../FCollider'
+import type { FRigidBodyOptions } from '../FRigidBody'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -11,16 +11,16 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Model
  * @example
  * ```ts
- * import { FScene3d, FCapsule } from '@fibbojs/3d'
+ * import { FScene, FCapsule } from '@fibbojs/3d'
  *
- * const scene = new FScene3d()
+ * const scene = new FScene()
  *
  * const capsule = new FCapsule(scene)
  * scene.addComponent(capsule)
  * ```
  */
 export class FCapsule extends FPolyhedron {
-  constructor(scene: FScene3d, options?: FComponent3dOptions) {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a capsule
     const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
@@ -32,16 +32,16 @@ export class FCapsule extends FPolyhedron {
     super.onFrame(_delta)
   }
 
-  initRigidBody(options?: FRigidBody3dOptions): void {
+  initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
-      shape: F3dShapes.CAPSULE,
+      shape: FShapes.CAPSULE,
       ...options,
     })
   }
 
-  initCollider(options?: FCollider3dOptions): void {
+  initCollider(options?: FColliderOptions): void {
     super.initCollider({
-      shape: F3dShapes.CAPSULE,
+      shape: FShapes.CAPSULE,
       ...options,
     })
   }

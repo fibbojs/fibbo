@@ -9,40 +9,47 @@
 #### Camera
 
 - [FAttachedCamera](classes/FAttachedCamera.md)
-- [FCamera3d](classes/FCamera3d.md)
+- [FCamera](classes/FCamera.md)
 - [FFixedCamera](classes/FFixedCamera.md)
 - [FGameCamera](classes/FGameCamera.md)
 - [FOrbitCamera](classes/FOrbitCamera.md)
+- [FPointerLockCamera](classes/FPointerLockCamera.md)
 
 #### Character
 
-- [FCharacter3d](classes/FCharacter3d.md)
-- [FCharacter3dDynamic](classes/FCharacter3dDynamic.md)
-- [FCharacter3dKP](classes/FCharacter3dKP.md)
-- [FCharacter3dKV](classes/FCharacter3dKV.md)
-- [FCharacter3dKinematic](classes/FCharacter3dKinematic.md)
+- [FCharacter](classes/FCharacter.md)
+- [FCharacterDynamic](classes/FCharacterDynamic.md)
+- [FCharacterKP](classes/FCharacterKP.md)
+- [FCharacterKV](classes/FCharacterKV.md)
+- [FCharacterKinematic](classes/FCharacterKinematic.md)
 
 #### Core
 
-- [FComponent3d](classes/FComponent3d.md)
-- [FScene3d](classes/FScene3d.md)
+- [FComponent](classes/FComponent.md)
+- [FComponentEmpty](classes/FComponentEmpty.md)
+- [FScene](classes/FScene.md)
 
 #### Model
 
 - [FCapsule](classes/FCapsule.md)
 - [FCube](classes/FCube.md)
+- [FFBX](classes/FFBX.md)
+- [FGLB](classes/FGLB.md)
 - [FGLTF](classes/FGLTF.md)
+- [FModel](classes/FModel.md)
+- [FOBJ](classes/FOBJ.md)
 - [FPolyhedron](classes/FPolyhedron.md)
 - [FSphere](classes/FSphere.md)
 
 ### Enumerations
 
-- [F3dShapes](enumerations/F3dShapes.md)
+- [FShapes](enumerations/FShapes.md)
 
 ### Interfaces
 
-- [FCharacter3dOptions](interfaces/FCharacter3dOptions.md)
-- [FComponent3dOptions](interfaces/FComponent3dOptions.md)
-- [FComponent3dOptions\_\_initCollider](interfaces/FComponent3dOptions__initCollider.md)
-- [FComponent3dOptions\_\_initRigidBody](interfaces/FComponent3dOptions__initRigidBody.md)
-- [FScene3dOptions](interfaces/FScene3dOptions.md)
+- [FCharacterOptions](interfaces/FCharacterOptions.md)
+- [FColliderOptions](interfaces/FColliderOptions.md)
+- [FComponentOptions](interfaces/FComponentOptions.md)
+- [FModelOptions](interfaces/FModelOptions.md)
+- [FRigidBodyOptions](interfaces/FRigidBodyOptions.md)
+- [FSceneOptions](interfaces/FSceneOptions.md)

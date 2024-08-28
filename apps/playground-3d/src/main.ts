@@ -1,4 +1,4 @@
-import { F3dShapes, FCapsule, FCharacter3dKP, FComponentEmpty, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene3d, FSphere } from '@fibbojs/3d'
+import { FCapsule, FCharacterKP, FComponentEmpty, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -7,7 +7,7 @@ import MyCustomCube from './classes/MyCustomCube'
 
 (async () => {
   // Initialize the scene
-  const scene = new FScene3d()
+  const scene = new FScene()
   scene.init()
   await scene.initPhysics()
   // Debug the scene
@@ -63,7 +63,7 @@ import MyCustomCube from './classes/MyCustomCube'
   })
   blockGrassLargeSlope.onLoaded(() => {
     blockGrassLargeSlope.initCollider({
-      shape: F3dShapes.MESH,
+      shape: FShapes.MESH,
     })
   })
   scene.addComponent(blockGrassLargeSlope)
@@ -76,7 +76,7 @@ import MyCustomCube from './classes/MyCustomCube'
   })
   blockGrassLargeSlope2.onLoaded(() => {
     blockGrassLargeSlope2.initCollider({
-      shape: F3dShapes.MESH,
+      shape: FShapes.MESH,
     })
   })
   scene.addComponent(blockGrassLargeSlope2)
@@ -113,7 +113,7 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(ground2)
 
   // Create a character
-  const character = new FCharacter3dKP(scene, {
+  const character = new FCharacterKP(scene, {
     position: { x: 0, y: 10, z: 0 },
   })
   scene.addComponent(character)
@@ -162,7 +162,7 @@ import MyCustomCube from './classes/MyCustomCube'
       cube.setPosition(x, 3, z - 17)
       cube.initRigidBody({
         // First one gets a sphere collider, the others get a cube collider
-        shape: F3dShapes.SPHERE,
+        shape: FShapes.SPHERE,
       })
     }
     else {

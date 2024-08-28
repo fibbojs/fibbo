@@ -1,4 +1,4 @@
-import type { FScene2d } from '@fibbojs/2d'
+import type { FScene } from '@fibbojs/2d'
 import type { DebugRenderBuffers } from '@dimforge/rapier2d'
 import type PIXI from 'pixi.js'
 
@@ -13,7 +13,7 @@ export class FDebug2d {
   /**
    * @param scene The scene to be debugged
    */
-  constructor(scene: FScene2d) {
+  constructor(scene: FScene) {
     // Initialize the array for the debug lines
     const DEBUG_LINES: PIXI.Graphics[] = []
 

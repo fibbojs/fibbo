@@ -1,6 +1,5 @@
 import type { World as World3d } from '@dimforge/rapier3d'
 import type { World as World2d } from '@dimforge/rapier2d'
-import type { FCamera } from './FCamera'
 import type { FComponent } from './FComponent'
 
 /**
@@ -8,6 +7,12 @@ import type { FComponent } from './FComponent'
  * Also contains the Rapier world if physics is enabled.
  */
 export abstract class FScene {
+  /**
+   * Internal flags
+   */
+  public __IS_3D__: boolean = false
+  public __IS_2D__: boolean = false
+
   /**
    * The components in the scene.
    */

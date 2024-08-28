@@ -1,10 +1,8 @@
 import { defineCustomElement, reactive } from 'vue'
 import type { FScene } from '@fibbojs/core'
-import type { FScene3d } from '@fibbojs/3d'
-import type { FScene2d } from '@fibbojs/2d'
+import type { FScene as FScene3d } from '@fibbojs/3d'
+import type { FScene as FScene2d } from '@fibbojs/2d'
 import FDebugPanel from './components/FDebugPanel.ce.vue'
-import { is2dScene } from './utils/is2dScene'
-import { is3dScene } from './utils/is3dScene'
 import { FDebug2d } from './FDebug2d'
 import { FDebug3d } from './FDebug3d'
 
@@ -53,12 +51,12 @@ export class FDebug {
     })
 
     // 3D specific debug behavior
-    if (is3dScene(scene)) {
+    if (scene.__IS_3D__) {
       // Create 3d debugger
       this.debugger3d = new FDebug3d(scene as FScene3d)
     }
     // 2D specific debug behavior
-    if (is2dScene(scene)) {
+    if (scene.__IS_2D__) {
       // Create 2d debugger
       this.debugger2d = new FDebug2d(scene as FScene2d)
     }

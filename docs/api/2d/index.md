@@ -9,22 +9,22 @@
 #### Camera
 
 - [FAttachedCamera](classes/FAttachedCamera.md)
-- [FCamera2d](classes/FCamera2d.md)
+- [FCamera](classes/FCamera.md)
 - [FFixedCamera](classes/FFixedCamera.md)
 - [FFreeCamera](classes/FFreeCamera.md)
 
 #### Character
 
-- [FCharacter2d](classes/FCharacter2d.md)
-- [FCharacter2dDynamic](classes/FCharacter2dDynamic.md)
-- [FCharacter2dKP](classes/FCharacter2dKP.md)
-- [FCharacter2dKV](classes/FCharacter2dKV.md)
-- [FCharacter2dKinematic](classes/FCharacter2dKinematic.md)
+- [FCharacter](classes/FCharacter.md)
+- [FCharacterDynamic](classes/FCharacterDynamic.md)
+- [FCharacterKP](classes/FCharacterKP.md)
+- [FCharacterKV](classes/FCharacterKV.md)
+- [FCharacterKinematic](classes/FCharacterKinematic.md)
 
 #### Core
 
-- [FComponent2d](classes/FComponent2d.md)
-- [FScene2d](classes/FScene2d.md)
+- [FComponent](classes/FComponent.md)
+- [FScene](classes/FScene.md)
 
 #### Polygons
 
@@ -37,13 +37,13 @@
 
 ### Enumerations
 
-- [F2dShapes](enumerations/F2dShapes.md)
+- [FShapes](enumerations/FShapes.md)
 
 ### Interfaces
 
-- [FCamera2dOptions](interfaces/FCamera2dOptions.md)
-- [FCharacter2dOptions](interfaces/FCharacter2dOptions.md)
-- [FComponent2dOptions](interfaces/FComponent2dOptions.md)
-- [FComponent2dOptions\_\_initCollider](interfaces/FComponent2dOptions__initCollider.md)
-- [FComponent2dOptions\_\_initRigidBody](interfaces/FComponent2dOptions__initRigidBody.md)
-- [FScene2dOptions](interfaces/FScene2dOptions.md)
+- [FCameraOptions](interfaces/FCameraOptions.md)
+- [FCharacterOptions](interfaces/FCharacterOptions.md)
+- [FComponentOptions](interfaces/FComponentOptions.md)
+- [FComponentOptions\_\_initCollider](interfaces/FComponentOptions__initCollider.md)
+- [FComponentOptions\_\_initRigidBody](interfaces/FComponentOptions__initRigidBody.md)
+- [FSceneOptions](interfaces/FSceneOptions.md)

@@ -1,24 +1,24 @@
 import * as PIXI from 'pixi.js'
-import type { FComponent2dOptions } from '../FComponent2d'
-import { FComponent2d } from '../FComponent2d'
-import type { FScene2d } from '../FScene2d'
-import { F2dShapes } from '../types/F2dShapes'
+import type { FComponentOptions } from '../FComponent'
+import { FComponent } from '../FComponent'
+import type { FScene } from '../FScene'
+import { FShapes } from '../types/FShapes'
 
 /**
  * @description A simple circle in FibboJS.
  * @category Polygons
  * @example
  * ```ts
- * import { FScene2d, FCircle } from '@fibbojs/2d'
+ * import { FScene, FCircle } from '@fibbojs/2d'
  *
- * const scene = new FScene2d()
+ * const scene = new FScene()
  *
  * const circle = new FCircle(scene)
  * scene.addComponent(circle)
  * ```
  */
-export class FCircle extends FComponent2d {
-  constructor(scene: FScene2d, options?: FComponent2dOptions) {
+export class FCircle extends FComponent {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a circle
     this.container = new PIXI.Graphics()
@@ -34,7 +34,7 @@ export class FCircle extends FComponent2d {
     position?: PIXI.PointData
     scale?: PIXI.PointData
     rotation?: number
-    shape?: F2dShapes
+    shape?: FShapes
     lockTranslations?: boolean
     lockRotations?: boolean
     enabledTranslations?: {
@@ -44,7 +44,7 @@ export class FCircle extends FComponent2d {
   }): void {
     super.initRigidBody({
       ...options,
-      shape: F2dShapes.CIRCLE,
+      shape: FShapes.CIRCLE,
     })
   }
 
@@ -52,11 +52,11 @@ export class FCircle extends FComponent2d {
     position?: PIXI.PointData
     scale?: PIXI.PointData
     rotation?: number
-    shape?: F2dShapes
+    shape?: FShapes
   }): void {
     super.initCollider({
       ...options,
-      shape: F2dShapes.CIRCLE,
+      shape: FShapes.CIRCLE,
     })
   }
 }

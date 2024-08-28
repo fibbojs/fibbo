@@ -1,13 +1,13 @@
-import type { FScene2d } from '../FScene2d'
-import type { FCamera2dOptions } from './FCamera2d'
-import { FCamera2d } from './FCamera2d'
+import type { FScene } from '../FScene'
+import type { FCameraOptions } from './FCamera'
+import { FCamera } from './FCamera'
 
 /**
  * @description A free camera that can be moved around.
  * @category Camera
  */
-export class FFreeCamera extends FCamera2d {
-  constructor(scene: FScene2d, options?: FCamera2dOptions) {
+export class FFreeCamera extends FCamera {
+  constructor(scene: FScene, options?: FCameraOptions) {
     super(scene, options)
   }
 

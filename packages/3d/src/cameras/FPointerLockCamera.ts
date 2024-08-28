@@ -1,15 +1,15 @@
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'
-import type { FComponent3d } from '../FComponent3d'
-import { FCamera3d } from './FCamera3d'
+import type { FComponent } from '../FComponent'
+import { FCamera } from './FCamera'
 
 /**
- * @description A camera that can be attached to a FComponent3d and orbits around it.
+ * @description A camera that can be attached to a FComponent and orbits around it.
  * @category Camera
  * @example
  * ```ts
- * import { FScene3d, FPointerLockCamera, FCube } from '@fibbojs/3d'
+ * import { FScene, FPointerLockCamera, FCube } from '@fibbojs/3d'
  *
- * const scene = new FScene3d()
+ * const scene = new FScene()
  *
  * const cube = new FCube(scene)
  * scene.addComponent(cube)
@@ -17,16 +17,16 @@ import { FCamera3d } from './FCamera3d'
  * scene.camera = new FPointerLockCamera(cube)
  * ```
  */
-export class FPointerLockCamera extends FCamera3d {
+export class FPointerLockCamera extends FCamera {
   // Model that the camera is attached to
-  attachedComponent: FComponent3d
+  attachedComponent: FComponent
   // Pointer Lock controls
   controls: PointerLockControls
 
   /**
    * @param attachedComponent Component that the camera is attached to
    */
-  constructor(attachedComponent: FComponent3d) {
+  constructor(attachedComponent: FComponent) {
     super()
     this.attachedComponent = attachedComponent
 

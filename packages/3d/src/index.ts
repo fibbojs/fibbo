@@ -2,14 +2,14 @@
  * Export Core
  */
 // Core 3d Classes
-export { FScene3d } from './FScene3d'
-export { FComponent3d } from './FComponent3d'
+export { FScene } from './FScene'
+export { FComponent } from './FComponent'
 export { FComponentEmpty } from './FComponentEmpty'
-export { FCharacter3d } from './character/FCharacter3d'
-export { FCharacter3dDynamic } from './character/FCharacter3dDynamic'
-export { FCharacter3dKinematic } from './character/FCharacter3dKinematic'
-export { FCharacter3dKP } from './character/FCharacter3dKP'
-export { FCharacter3dKV } from './character/FCharacter3dKV'
+export { FCharacter } from './character/FCharacter'
+export { FCharacterDynamic } from './character/FCharacterDynamic'
+export { FCharacterKinematic } from './character/FCharacterKinematic'
+export { FCharacterKP } from './character/FCharacterKP'
+export { FCharacterKV } from './character/FCharacterKV'
 
 // Models
 export { FModel } from './model/FModel'
@@ -26,17 +26,17 @@ export { FSphere } from './polyhedrons/FSphere'
 
 // Cameras
 export { FAttachedCamera } from './cameras/FAttachedCamera'
-export { FCamera3d } from './cameras/FCamera3d'
+export { FCamera } from './cameras/FCamera'
 export { FFixedCamera } from './cameras/FFixedCamera'
 export { FGameCamera } from './cameras/FGameCamera'
 export { FOrbitCamera } from './cameras/FOrbitCamera'
 export { FPointerLockCamera } from './cameras/FPointerLockCamera'
 
 // Types
-export { F3dShapes } from './types/F3dShapes'
-export type { FComponent3dOptions } from './FComponent3d'
-export type { FScene3dOptions } from './FScene3d'
-export type { FCharacter3dOptions } from './character/FCharacter3d'
+export { FShapes } from './types/FShapes'
+export type { FComponentOptions } from './FComponent'
+export type { FSceneOptions } from './FScene'
+export type { FCharacterOptions } from './character/FCharacter'
 export type { FModelOptions } from './model/FModel'
-export type { FRigidBody3dOptions } from './FRigidBody3d'
-export type { FCollider3dOptions } from './FCollider3d'
+export type { FRigidBodyOptions } from './FRigidBody'
+export type { FColliderOptions } from './FCollider'

@@ -1,23 +1,23 @@
 import * as PIXI from 'pixi.js'
-import type { FComponent2dOptions } from '../FComponent2d'
-import { FComponent2d } from '../FComponent2d'
-import type { FScene2d } from '../FScene2d'
+import type { FComponentOptions } from '../FComponent'
+import { FComponent } from '../FComponent'
+import type { FScene } from '../FScene'
 
 /**
  * @description A simple square in FibboJS.
  * @category Polygons
  * @example
  * ```ts
- * import { FScene2d, FSquare } from '@fibbojs/2d'
+ * import { FScene, FSquare } from '@fibbojs/2d'
  *
- * const scene = new FScene2d()
+ * const scene = new FScene()
  *
  * const square = new FSquare(scene)
  * scene.addComponent(square)
  * ```
  */
-export class FSquare extends FComponent2d {
-  constructor(scene: FScene2d, options?: FComponent2dOptions) {
+export class FSquare extends FComponent {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a square
     this.container = new PIXI.Graphics()

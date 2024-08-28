@@ -1,13 +1,13 @@
-import type { FScene3d } from './FScene3d'
-import { FComponent3d } from './FComponent3d'
-import type { FComponent3dOptions } from './FComponent3d'
+import type { FScene } from './FScene'
+import { FComponent } from './FComponent'
+import type { FComponentOptions } from './FComponent'
 
 /**
  * @description An empty component. No mesh is created.
  * @category Core
  */
-export class FComponentEmpty extends FComponent3d {
-  constructor(scene: FScene3d, options?: FComponent3dOptions) {
+export class FComponentEmpty extends FComponent {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
   }
 

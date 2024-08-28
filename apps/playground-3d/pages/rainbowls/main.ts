@@ -1,9 +1,9 @@
 import '../../src/style.css'
-import { FCube, FOrbitCamera, FScene3d, FSphere } from '@fibbojs/3d'
+import { FCube, FOrbitCamera, FScene, FSphere } from '@fibbojs/3d'
 import * as THREE from 'three'
 
 (async () => {
-  const scene = new FScene3d()
+  const scene = new FScene()
   scene.init()
 
   // Define the radius for the rainbow effect
@@ -51,10 +51,7 @@ import * as THREE from 'three'
   const cameraTarget = new FCube(scene)
   cameraTarget.setPosition(0, 1, 0)
   // Create a camera
-  const camera = new FOrbitCamera(
-    cameraTarget,
-    scene,
-  )
+  const camera = new FOrbitCamera(cameraTarget)
   camera.setPosition(14, 12, 14)
   camera.lookAt(0, 0, 0)
   scene.camera = camera

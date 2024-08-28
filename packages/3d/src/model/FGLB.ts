@@ -1,4 +1,4 @@
-import type { FScene3d } from '../FScene3d'
+import type { FScene } from '../FScene'
 import type { FModelOptions } from './FModel'
 import { FGLTF } from './FGLTF'
 
@@ -8,9 +8,9 @@ import { FGLTF } from './FGLTF'
  * @category Model
  * @example
  * ```ts
- * import { FScene3d, FGLB } from '@fibbojs/3d'
+ * import { FScene, FGLB } from '@fibbojs/3d'
  *
- * const scene = new FScene3d()
+ * const scene = new FScene()
  *
  * const glb = new FGLB(scene, {
  *  path: 'model.glb',
@@ -19,7 +19,7 @@ import { FGLTF } from './FGLTF'
  * ```
  */
 export class FGLB extends FGLTF {
-  constructor(scene: FScene3d, options: FModelOptions) {
+  constructor(scene: FScene, options: FModelOptions) {
     super(scene, {
       fileExtension: 'glb',
       ...options,
