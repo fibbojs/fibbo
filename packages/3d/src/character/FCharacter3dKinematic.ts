@@ -1,8 +1,5 @@
 import type RAPIER from '@dimforge/rapier3d'
 import type { FScene3d } from '../FScene3d'
-import { F3dShapes } from '../types/F3dShapes'
-import type { FRigidBody3dOptions } from '../FRigidBody3d'
-import type { FCollider3dOptions } from '../FCollider3d'
 import type { FCharacter3dOptions } from './FCharacter3d'
 import { FCharacter3d } from './FCharacter3d'
 
@@ -25,19 +22,5 @@ export abstract class FCharacter3dKinematic extends FCharacter3d {
     this.characterController = scene.world.createCharacterController(offset)
     // Configure autostep
     this.characterController.enableAutostep(0.5, 0.1, true)
-  }
-
-  initRigidBody(options?: FRigidBody3dOptions): void {
-    super.initRigidBody({
-      ...options,
-      shape: F3dShapes.CAPSULE,
-    })
-  }
-
-  initCollider(options?: FCollider3dOptions): void {
-    super.initCollider({
-      shape: F3dShapes.CAPSULE,
-      ...options,
-    })
   }
 }

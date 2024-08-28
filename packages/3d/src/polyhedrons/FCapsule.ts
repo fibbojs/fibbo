@@ -34,15 +34,15 @@ export class FCapsule extends FPolyhedron {
 
   initRigidBody(options?: FRigidBody3dOptions): void {
     super.initRigidBody({
-      ...options,
       shape: F3dShapes.CAPSULE,
+      ...options,
     })
   }
 
   initCollider(options?: FCollider3dOptions): void {
     super.initCollider({
-      ...options,
       shape: F3dShapes.CAPSULE,
+      ...options,
     })
   }
 }
