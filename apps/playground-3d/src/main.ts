@@ -1,4 +1,4 @@
-import { F3dShapes, FCapsule, FCharacter3dKP, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene3d, FSphere } from '@fibbojs/3d'
+import { F3dShapes, FCapsule, FCharacter3dKP, FComponentEmpty, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene3d, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -13,6 +13,14 @@ import MyCustomCube from './classes/MyCustomCube'
   // Debug the scene
   if (import.meta.env.DEV)
     fDebug(scene)
+
+  // Create a death zone
+  const deathZone = new FComponentEmpty(scene, {
+    position: { x: 0, y: -20, z: 0 },
+    scale: { x: 100, y: 1, z: 100 },
+  })
+  deathZone.initCollider()
+  scene.addComponent(deathZone)
 
   // Create a ground
   const ground = new FCube(scene, {
@@ -173,6 +181,10 @@ import MyCustomCube from './classes/MyCustomCube'
   })
   character.onCollisionWith(sphere, () => {
     console.log('Character collided with the sphere!')
+  })
+  character.onCollisionWith(deathZone, () => {
+    console.log('Character fell into the death zone!')
+    character.setPosition(0, 10, 0)
   })
 
   // After 3 seconds, add a third gltfCube

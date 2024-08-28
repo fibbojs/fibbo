@@ -4,6 +4,7 @@
 // Core 3d Classes
 export { FScene3d } from './FScene3d'
 export { FComponent3d } from './FComponent3d'
+export { FComponentEmpty } from './FComponentEmpty'
 export { FCharacter3d } from './character/FCharacter3d'
 export { FCharacter3dDynamic } from './character/FCharacter3dDynamic'
 export { FCharacter3dKinematic } from './character/FCharacter3dKinematic'
