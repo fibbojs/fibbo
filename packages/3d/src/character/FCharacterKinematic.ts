@@ -42,9 +42,10 @@ export abstract class FCharacterKinematic extends FCharacter {
   }
 
   /**
-   * Return the desired movement for the current frame.
+   * Return the corrected movements for the current frame.
+   * @param delta The time elapsed since the last frame.
    */
-  getDesiredMovement(delta: number): { x: number, y: number, z: number } {
+  getCorrectedMovements(delta: number): { x: number, y: number, z: number } {
     let worldDirection = new THREE.Vector3(0, 0, 0)
     // Compute the movement direction
     worldDirection.x = this.inputs.left ? 1 : this.inputs.right ? -1 : 0

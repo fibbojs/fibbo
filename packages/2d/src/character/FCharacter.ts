@@ -112,6 +112,11 @@ export abstract class FCharacter extends FComponent {
     fKeyboard.onKeyUp('q', () => {
       this.inputs.left = false
     })
+
+    // Initialize the rigid body
+    this.initRigidBody()
+    // Initialize the sensor
+    this.initSensor()
   }
 
   initRigidBody(options?: FRigidBodyOptions): void {

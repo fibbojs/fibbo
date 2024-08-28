@@ -32,7 +32,7 @@ export class FCharacterKV extends FCharacterKinematic {
     /**
      * Get the corrected movements for the current frame
      */
-    const correctedMovement = this.getDesiredMovement(delta)
+    const correctedMovement = this.getCorrectedMovements(delta)
 
     // Apply the movement to the rigid body
     this.rigidBody?.rigidBody.setLinvel({
