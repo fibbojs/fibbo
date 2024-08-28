@@ -4,7 +4,7 @@
 let ID_COUNTER = 0
 
 /**
- * @description The base class for all 2D and 3D components in FibboJS.
+ * @description The base class for all 2D and 3D components in Fibbo.
  */
 export abstract class FComponent {
   /**

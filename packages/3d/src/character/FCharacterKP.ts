@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import RAPIER, { QueryFilterFlags } from '@dimforge/rapier3d'
+import RAPIER from '@dimforge/rapier3d'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../FScene'
 import type { FComponentOptions } from '../FComponent'
@@ -66,7 +66,7 @@ export class FCharacterKP extends FCharacterKinematic {
       this.collider?.collider as RAPIER.Collider,
       desiredMovement,
       // I don't why this flag works, I would expect QueryFilterFlags.EXCLUDE_SENSORS to work but anyway
-      QueryFilterFlags.EXCLUDE_SOLIDS,
+      RAPIER.QueryFilterFlags.EXCLUDE_SOLIDS,
     )
     // Get the corrected movement
     const correctedMovement = this.characterController.computedMovement()

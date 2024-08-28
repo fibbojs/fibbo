@@ -30,7 +30,7 @@ The scene to be debugged
 
 #### Defined in
 
-[packages/devtools/src/FDebug.ts:38](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/devtools/src/FDebug.ts#L38)
+[packages/devtools/src/FDebug.ts:38](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/devtools/src/FDebug.ts#L38)
 
 ## Properties
 
@@ -42,7 +42,7 @@ The scene to be debugged
 
 #### Defined in
 
-[packages/devtools/src/FDebug.ts:33](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/devtools/src/FDebug.ts#L33)
+[packages/devtools/src/FDebug.ts:33](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/devtools/src/FDebug.ts#L33)
 
 ***
 
@@ -54,7 +54,7 @@ The scene to be debugged
 
 #### Defined in
 
-[packages/devtools/src/FDebug.ts:28](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/devtools/src/FDebug.ts#L28)
+[packages/devtools/src/FDebug.ts:28](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/devtools/src/FDebug.ts#L28)
 
 ***
 
@@ -68,4 +68,4 @@ The scene being debugged by this instance
 
 #### Defined in
 
-[packages/devtools/src/FDebug.ts:23](https://github.com/fibbojs/fibbo/blob/e2f94db3c5f5c8ad9defb691b298d5af8c1622f6/packages/devtools/src/FDebug.ts#L23)
+[packages/devtools/src/FDebug.ts:23](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/devtools/src/FDebug.ts#L23)

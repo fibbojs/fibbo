@@ -5,7 +5,7 @@ import type { FScene } from '../FScene'
 import { FShapes } from '../types/FShapes'
 
 /**
- * @description A simple circle in FibboJS.
+ * @description A simple circle in Fibbo.
  * @category Polygons
  * @example
  * ```ts

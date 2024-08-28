@@ -14,7 +14,7 @@
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:10
+[packages/2d/src/FComponent.ts:12](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L12)
 
 ***
 
@@ -24,7 +24,7 @@ packages/2d/src/FComponent.ts:10
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:12
+[packages/2d/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L14)
 
 ***
 
@@ -34,7 +34,7 @@ packages/2d/src/FComponent.ts:12
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:13
+[packages/2d/src/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L15)
 
 ***
 
@@ -44,4 +44,4 @@ packages/2d/src/FComponent.ts:13
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:11
+[packages/2d/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L13)

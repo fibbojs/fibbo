@@ -1,6 +1,6 @@
-[@fibbojs](/api/index) / [2d](/api/2d) / FComponentOptions\_\_initRigidBody
+[@fibbojs](/api/index) / [2d](/api/2d) / FRigidBodyOptions
 
-# Interface: FComponentOptions\_\_initRigidBody
+# Interface: FRigidBodyOptions
 
 ## Properties
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:24
+packages/2d/src/FRigidBody.ts:15
 
 ***
 
@@ -28,7 +28,7 @@ packages/2d/src/FComponent.ts:24
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:23
+packages/2d/src/FRigidBody.ts:14
 
 ***
 
@@ -38,17 +38,25 @@ packages/2d/src/FComponent.ts:23
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:22
+packages/2d/src/FRigidBody.ts:13
 
 ***
 
 ### position?
 
-> `optional` **position**: `PointData`
+> `optional` **position**: `object`
+
+#### x
+
+> **x**: `number`
+
+#### y
+
+> **y**: `number`
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:17
+packages/2d/src/FRigidBody.ts:7
 
 ***
 
@@ -58,7 +66,7 @@ packages/2d/src/FComponent.ts:17
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:21
+packages/2d/src/FRigidBody.ts:12
 
 ***
 
@@ -68,17 +76,35 @@ packages/2d/src/FComponent.ts:21
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:19
+packages/2d/src/FRigidBody.ts:9
+
+***
+
+### rotationDegree?
+
+> `optional` **rotationDegree**: `number`
+
+#### Defined in
+
+packages/2d/src/FRigidBody.ts:10
 
 ***
 
 ### scale?
 
-> `optional` **scale**: `PointData`
+> `optional` **scale**: `object`
+
+#### x
+
+> **x**: `number`
+
+#### y
+
+> **y**: `number`
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:18
+packages/2d/src/FRigidBody.ts:8
 
 ***
 
@@ -88,4 +114,4 @@ packages/2d/src/FComponent.ts:18
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:20
+packages/2d/src/FRigidBody.ts:11

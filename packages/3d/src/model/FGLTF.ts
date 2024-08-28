@@ -19,7 +19,7 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
 */
 
 /**
- * @description A GLTF model in FibboJS.
+ * @description A GLTF model in Fibbo.
  * @category Model
  * @example
  * ```ts

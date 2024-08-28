@@ -7,7 +7,7 @@ import type { FRigidBodyOptions } from '../FRigidBody'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
- * @description A simple capsule model in FibboJS.
+ * @description A simple capsule model in Fibbo.
  * @category Model
  * @example
  * ```ts

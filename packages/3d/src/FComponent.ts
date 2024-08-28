@@ -15,7 +15,7 @@ export interface FComponentOptions {
 }
 
 /**
- * @description The base class for all 3D objects in FibboJS.
+ * @description The base class for all 3D objects in Fibbo.
  * @category Core
  */
 export abstract class FComponent extends FComponentCore {
@@ -363,8 +363,8 @@ export abstract class FComponent extends FComponentCore {
   initSensor(options?: FColliderOptions): void {
     // Initialize the collider
     this.sensor = new FCollider(this, {
-      ...options,
       sensor: true,
+      ...options,
     })
   }
 

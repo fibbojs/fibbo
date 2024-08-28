@@ -4,7 +4,7 @@ import { FComponent } from '../FComponent'
 import type { FScene } from '../FScene'
 
 /**
- * @description A simple sprite in FibboJS.
+ * @description A simple sprite in Fibbo.
  * @category Sprite
  * @example
  * ```ts

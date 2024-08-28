@@ -1,6 +1,7 @@
 import RAPIER from '@dimforge/rapier2d'
 import type { FScene } from '../FScene'
-import type { FComponentOptions, FComponentOptions__initRigidBody } from '../FComponent'
+import type { FComponentOptions } from '../FComponent'
+import type { FRigidBodyOptions } from '../FRigidBody'
 import { FCharacter } from './FCharacter'
 
 /**
@@ -26,17 +27,17 @@ export class FCharacterDynamic extends FCharacter {
     scene.onFrame(() => {
       // Apply movement on the y axis
       if (this.inputs.up) {
-        this.rigidBody?.applyImpulse({ x: 0, y: 0.15 * this.speed }, true)
+        this.rigidBody?.rigidBody.applyImpulse({ x: 0, y: 0.15 * this.speed }, true)
       }
       else if (this.inputs.down) {
-        this.rigidBody?.applyImpulse({ x: 0, y: -0.15 * this.speed }, true)
+        this.rigidBody?.rigidBody.applyImpulse({ x: 0, y: -0.15 * this.speed }, true)
       }
       // Apply movement on the x axis
       if (this.inputs.left) {
-        this.rigidBody?.applyImpulse({ x: -0.15 * this.speed, y: 0 }, true)
+        this.rigidBody?.rigidBody.applyImpulse({ x: -0.15 * this.speed, y: 0 }, true)
       }
       else if (this.inputs.right) {
-        this.rigidBody?.applyImpulse({ x: 0.15 * this.speed, y: 0 }, true)
+        this.rigidBody?.rigidBody.applyImpulse({ x: 0.15 * this.speed, y: 0 }, true)
       }
     })
 
@@ -44,7 +45,7 @@ export class FCharacterDynamic extends FCharacter {
     this.initRigidBody()
   }
 
-  initRigidBody(options?: FComponentOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockRotations: true,

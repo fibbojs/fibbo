@@ -1,19 +1,14 @@
-[@fibbojs](/api/index) / [2d](/api/2d) / FCharacter
+[@fibbojs](/api/index) / [2d](/api/2d) / FComponentEmpty
 
-# Class: `abstract` FCharacter
+# Class: FComponentEmpty
 
 ## Description
 
-An abstract pre-defined character controller.
+An empty component. The container is empty.
 
 ## Extends
 
 - [`FComponent`](FComponent.md)
-
-## Extended by
-
-- [`FCharacterDynamic`](FCharacterDynamic.md)
-- [`FCharacterKinematic`](FCharacterKinematic.md)
 
 ## Accessors
 
@@ -139,19 +134,19 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FCharacter()
+### new FComponentEmpty()
 
-> **new FCharacter**(`scene`, `options`?): [`FCharacter`](FCharacter.md)
+> **new FComponentEmpty**(`scene`, `options`?): [`FComponentEmpty`](FComponentEmpty.md)
 
 #### Parameters
 
 • **scene**: [`FScene`](FScene.md)
 
-• **options?**: [`FCharacterOptions`](../interfaces/FCharacterOptions.md)
+• **options?**: [`FComponentOptions`](../interfaces/FComponentOptions.md)
 
 #### Returns
 
-[`FCharacter`](FCharacter.md)
+[`FComponentEmpty`](FComponentEmpty.md)
 
 #### Overrides
 
@@ -159,7 +154,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/2d/src/character/FCharacter.ts:37](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L37)
+packages/2d/src/FComponentEmpty.ts:10
 
 ## Methods
 
@@ -235,13 +230,13 @@ component.initCollider({
 })
 ```
 
-#### Overrides
+#### Inherited from
 
 [`FComponent`](FComponent.md).[`initCollider`](FComponent.md#initcollider)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacter.ts:124](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L124)
+[packages/2d/src/FComponent.ts:288](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L288)
 
 ***
 
@@ -274,13 +269,13 @@ component.initRigidBody({
 })
 ```
 
-#### Overrides
+#### Inherited from
 
 [`FComponent`](FComponent.md).[`initRigidBody`](FComponent.md#initrigidbody)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacter.ts:117](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L117)
+[packages/2d/src/FComponent.ts:261](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L261)
 
 ***
 
@@ -314,13 +309,13 @@ component.initSensor({
 })
 ```
 
-#### Overrides
+#### Inherited from
 
 [`FComponent`](FComponent.md).[`initSensor`](FComponent.md#initsensor)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacter.ts:131](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L131)
+[packages/2d/src/FComponent.ts:312](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L312)
 
 ***
 
@@ -391,13 +386,13 @@ player.onCollisionWith(enemy, () => {
 Update the component.
 Should be called every frame.
 
-#### Inherited from
+#### Overrides
 
 [`FComponent`](FComponent.md).[`onFrame`](FComponent.md#onframe)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:104](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L104)
+packages/2d/src/FComponentEmpty.ts:14
 
 ***
 
@@ -651,34 +646,6 @@ PIXI container
 
 ***
 
-### inputs
-
-> **inputs**: `object`
-
-The inputs that will be used to move the character.
-
-#### down
-
-> **down**: `boolean`
-
-#### left
-
-> **left**: `boolean`
-
-#### right
-
-> **right**: `boolean`
-
-#### up
-
-> **up**: `boolean`
-
-#### Defined in
-
-[packages/2d/src/character/FCharacter.ts:25](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L25)
-
-***
-
 ### position
 
 > **position**: `PointData`
@@ -772,15 +739,3 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 #### Defined in
 
 [packages/2d/src/FComponent.ts:64](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L64)
-
-***
-
-### speed
-
-> **speed**: `number`
-
-The speed of the character.
-
-#### Defined in
-
-[packages/2d/src/character/FCharacter.ts:35](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L35)

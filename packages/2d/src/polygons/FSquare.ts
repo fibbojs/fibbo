@@ -4,7 +4,7 @@ import { FComponent } from '../FComponent'
 import type { FScene } from '../FScene'
 
 /**
- * @description A simple square in FibboJS.
+ * @description A simple square in Fibbo.
  * @category Polygons
  * @example
  * ```ts

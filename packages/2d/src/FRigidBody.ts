@@ -1,14 +1,13 @@
-import * as THREE from 'three'
-import * as RAPIER from '@dimforge/rapier3d'
+import * as RAPIER from '@dimforge/rapier2d'
 import { FShapes } from './types/FShapes'
 import type { FComponent } from './FComponent'
 import { FCollider } from './FCollider'
 
 export interface FRigidBodyOptions {
-  position?: { x: number, y: number, z: number }
-  scale?: { x: number, y: number, z: number }
-  rotation?: { x: number, y: number, z: number }
-  rotationDegree?: { x: number, y: number, z: number }
+  position?: { x: number, y: number }
+  scale?: { x: number, y: number }
+  rotation?: number
+  rotationDegree?: number
   shape?: FShapes
   rigidBodyType?: RAPIER.RigidBodyType
   lockTranslations?: boolean
@@ -16,12 +15,6 @@ export interface FRigidBodyOptions {
   enabledTranslations?: {
     enableX: boolean
     enableY: boolean
-    enableZ: boolean
-  }
-  enabledRotations?: {
-    enableX: boolean
-    enableY: boolean
-    enableZ: boolean
   }
 }
 
@@ -61,9 +54,9 @@ export class FRigidBody {
    * @example
    * ```ts
    * const rigidBody = new FRigidBody({
-   *  position: { x: 0, y: 0, z: 0 },
-   *  scale: { x: 1, y: 1, z: 1 },
-   *  rotation: { x: 0, y: 0, z: 0 },
+   *  position: { x: 0, y: 0 },
+   *  scale: { x: 1, y: 1 },
+   *  rotation: 0
    *  shape: FShapes.CUBE
    * })
    * ```
@@ -73,9 +66,9 @@ export class FRigidBody {
     const DEFAULT_OPTIONS = {
       position: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
-      rotation: { x: 0, y: 0, z: 0 },
+      rotation: 0,
       rotationDegree: undefined,
-      shape: FShapes.CUBE,
+      shape: FShapes.SQUARE,
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockTranslations: false,
       lockRotations: false,
@@ -84,7 +77,7 @@ export class FRigidBody {
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.scale || !options.rotation || !options.shape)
+    if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
       throw new Error('FibboError: initRigidBody requires position, scale, rotation, shape and rigidBodyType options')
 
     // Check if the world exists
@@ -93,9 +86,8 @@ export class FRigidBody {
 
     // If rotation degree is given, convert it to radians
     if (options.rotationDegree) {
-      options.rotation.x = THREE.MathUtils.degToRad(options.rotationDegree.x)
-      options.rotation.y = THREE.MathUtils.degToRad(options.rotationDegree.y)
-      options.rotation.z = THREE.MathUtils.degToRad(options.rotationDegree.z)
+      // Convert the degree to radians
+      options.rotation = (options.rotationDegree * Math.PI) / 180
     }
 
     // Create a rigid body description according to the type
@@ -104,17 +96,10 @@ export class FRigidBody {
     rigidBodyDesc.setTranslation(
       component.position.x + options.position.x,
       component.position.y + options.position.y,
-      component.position.z + options.position.z,
     )
 
     // Interprete the given rotation as relative to the component's rotation
-    rigidBodyDesc.setRotation(new THREE.Quaternion().setFromEuler(
-      new THREE.Euler(
-        component.rotation.x + options.rotation.x,
-        component.rotation.y + options.rotation.y,
-        component.rotation.z + options.rotation.z,
-      ),
-    ))
+    rigidBodyDesc.setRotation(component.rotation + options.rotation)
 
     // Create the rigid body
     this.rigidBody = component.scene.world.createRigidBody(rigidBodyDesc)
@@ -130,16 +115,6 @@ export class FRigidBody {
       this.rigidBody.setEnabledTranslations(
         options.enabledTranslations.enableX,
         options.enabledTranslations.enableY,
-        options.enabledTranslations.enableZ,
-        true,
-      )
-    }
-    // Enable only specific rotations if needed
-    if (options.enabledRotations) {
-      this.rigidBody.setEnabledRotations(
-        options.enabledRotations.enableX,
-        options.enabledRotations.enableY,
-        options.enabledRotations.enableZ,
         true,
       )
     }

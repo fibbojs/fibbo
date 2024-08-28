@@ -3,7 +3,7 @@ import type { FComponentOptions } from '../FComponent'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
- * @description A simple cube model in FibboJS.
+ * @description A simple cube model in Fibbo.
  * @category Model
  * @example
  * ```ts

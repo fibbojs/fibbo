@@ -82,6 +82,11 @@ export class FScene extends FSceneCore {
     this.__DOM_NODE__ = options.domNode
     // Store the gravity
     this.gravity = options.gravity
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      this.app.renderer.resize(window.innerWidth, window.innerHeight)
+    })
   }
 
   /**
@@ -218,8 +223,8 @@ export class FScene extends FSceneCore {
         this.viewport.addChild(component.container)
 
         // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        if (component.collider?.handle !== undefined)
-          this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
+        if (component.collider?.collider.handle !== undefined)
+          this.__RAPIER_TO_COMPONENT__.set(component.collider?.collider.handle, component)
       })
     }
     else {
@@ -227,9 +232,12 @@ export class FScene extends FSceneCore {
       this.viewport.addChild(component.container)
     }
 
-    // If a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    if (component.collider?.handle !== undefined)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider?.handle, component)
+    // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    if (component.sensor)
+      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.handle, component)
+    // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    else if (component.collider)
+      this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
   }
 
   onReady(callback: () => void) {

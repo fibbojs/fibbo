@@ -1,6 +1,7 @@
 import RAPIER from '@dimforge/rapier2d'
 import type { FScene } from '../FScene'
-import type { FComponentOptions, FComponentOptions__initRigidBody } from '../FComponent'
+import type { FComponentOptions } from '../FComponent'
+import type { FRigidBodyOptions } from '../FRigidBody'
 import { FCharacterKinematic } from './FCharacterKinematic'
 
 /**
@@ -39,13 +40,13 @@ export class FCharacterKV extends FCharacterKinematic {
       }
       // Compute the desired movement
       this.characterController.computeColliderMovement(
-        this.collider as RAPIER.Collider,
+        this.collider?.collider as RAPIER.Collider,
         desiredMovement,
       )
       // Get the corrected movement
       const correctedMovement = this.characterController.computedMovement()
       // Apply the movement to the rigid body
-      this.rigidBody?.setLinvel({
+      this.rigidBody?.rigidBody.setLinvel({
         x: correctedMovement.x / delta,
         y: correctedMovement.y / delta,
       }, true)
@@ -55,7 +56,7 @@ export class FCharacterKV extends FCharacterKinematic {
     this.initRigidBody()
   }
 
-  initRigidBody(options?: FComponentOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.KinematicVelocityBased,
       ...options,

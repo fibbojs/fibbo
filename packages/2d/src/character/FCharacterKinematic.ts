@@ -1,7 +1,8 @@
 import type RAPIER from '@dimforge/rapier2d'
 import type { FScene } from '../FScene'
 import { FShapes } from '../types/FShapes'
-import type { FComponentOptions__initCollider, FComponentOptions__initRigidBody } from '../FComponent'
+import type { FRigidBodyOptions } from '../FRigidBody'
+import type { FColliderOptions } from '../FCollider'
 import type { FCharacterOptions } from './FCharacter'
 import { FCharacter } from './FCharacter'
 
@@ -24,14 +25,14 @@ export abstract class FCharacterKinematic extends FCharacter {
     this.characterController = scene.world.createCharacterController(offset)
   }
 
-  initRigidBody(options?: FComponentOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
       shape: FShapes.SQUARE,
       ...options,
     })
   }
 
-  initCollider(options?: FComponentOptions__initCollider): void {
+  initCollider(options?: FColliderOptions): void {
     super.initCollider({
       shape: FShapes.SQUARE,
       ...options,

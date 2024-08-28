@@ -5,7 +5,7 @@ import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
 /**
- * @description An OBJ model in FibboJS.
+ * @description An OBJ model in Fibbo.
  * @category Model
  * @example
  * ```ts

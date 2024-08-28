@@ -1,10 +1,12 @@
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import { Container } from 'pixi.js'
-import type { Collider, RigidBody } from '@dimforge/rapier2d'
 import * as RAPIER from '@dimforge/rapier2d'
 import * as PIXI from 'pixi.js'
-import { FShapes } from './types/FShapes'
 import type { FScene } from './FScene'
+import type { FColliderOptions } from './FCollider'
+import { FCollider } from './FCollider'
+import type { FRigidBodyOptions } from './FRigidBody'
+import { FRigidBody } from './FRigidBody'
 
 export interface FComponentOptions {
   position?: PIXI.PointData
@@ -13,29 +15,8 @@ export interface FComponentOptions {
   rotationDegree?: number
 }
 
-export interface FComponentOptions__initRigidBody {
-  position?: PIXI.PointData
-  scale?: PIXI.PointData
-  rotation?: number
-  shape?: FShapes
-  rigidBodyType?: RAPIER.RigidBodyType
-  lockTranslations?: boolean
-  lockRotations?: boolean
-  enabledTranslations?: {
-    enableX: boolean
-    enableY: boolean
-  }
-}
-
-export interface FComponentOptions__initCollider {
-  position?: PIXI.PointData
-  scale?: PIXI.PointData
-  rotation?: number
-  shape?: FShapes
-}
-
 /**
- * @description The base class for all 2D components in FibboJS.
+ * @description The base class for all 2D components in Fibbo.
  * @category Core
  */
 export abstract class FComponent extends FComponentCore {
@@ -72,11 +53,15 @@ export abstract class FComponent extends FComponentCore {
   /**
    * RAPIER RigidBody
    */
-  rigidBody?: RigidBody
+  rigidBody?: FRigidBody
   /**
    * RAPIER Collider
    */
-  collider?: Collider
+  collider?: FCollider
+  /**
+   * Sensor (a collider that doesn't collide with other colliders, but still triggers events)
+   */
+  sensor?: FCollider
 
   /**
    * @param scene The 2D scene where the component will be added.
@@ -119,23 +104,43 @@ export abstract class FComponent extends FComponentCore {
   onFrame(_delta: number): void {
     // If the rigid body exist, update the container position and rotation according to the rigid body
     if (this.rigidBody) {
-      const newRigidBodyPosition = this.rigidBody.translation()
-      const newRigidBodyRotation = this.rigidBody.rotation()
-      this.container.position.set(newRigidBodyPosition.x * 100, -newRigidBodyPosition.y * 100)
-      this.container.rotation = -newRigidBodyRotation
+      const newContainerPosition = this.rigidBody.rigidBody.translation()
+      const newContainerRotation = this.rigidBody.rigidBody.rotation()
+      this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
+      this.container.rotation = -newContainerRotation
       // Update position and rotation properties of the component according to the rigid body
       this.position = {
         x: this.container.position.x / 100,
         y: -this.container.position.y / 100,
       }
       this.rotation = this.container.rotation
+      // If a sensor exists, update its position and rotation according to the rigid body
+      if (this.sensor) {
+        // Apply offset to the sensor
+        newContainerPosition.x += this.sensor.colliderPositionOffset.x
+        newContainerPosition.y += this.sensor.colliderPositionOffset.y
+        this.sensor.collider.setTranslation(newContainerPosition)
+        this.sensor.collider.setRotation(newContainerRotation)
+      }
     }
     // Else if the collider exist, update the container position and rotation according to the collider
     else if (this.collider) {
-      const newColliderPosition = this.collider.translation()
-      const newColliderRotation = this.collider.rotation()
-      this.container.position.set(newColliderPosition.x * 100, -newColliderPosition.y * 100)
-      this.container.rotation = -newColliderRotation
+      // Get the new transforms from the collider
+
+      // Transforms
+      const newContainerPosition = this.collider.collider.translation()
+      // Remove offset
+      newContainerPosition.x -= this.collider.colliderPositionOffset.x
+      newContainerPosition.y -= this.collider.colliderPositionOffset.y
+
+      // Rotation
+      let newContainerRotation = this.collider.collider.rotation()
+      // Remove offset
+      newContainerRotation -= this.collider.colliderRotationOffset
+
+      // Apply the new transforms to the container
+      this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
+      this.container.rotation = -newContainerRotation
       // Update position and rotation properties of the component according to the collider
       this.position = {
         x: this.container.position.x / 100,
@@ -165,10 +170,10 @@ export abstract class FComponent extends FComponentCore {
     this.container.position.set(x, y)
     // If a collider exists, update its translation
     if (this.collider)
-      this.collider.setTranslation(new RAPIER.Vector2(x, y))
+      this.collider.collider.setTranslation(new RAPIER.Vector2(x, y))
     // If a rigid body exists, update its translation
     if (this.rigidBody)
-      this.rigidBody.setTranslation(new RAPIER.Vector2(x, y), true)
+      this.rigidBody.rigidBody.setTranslation(new RAPIER.Vector2(x, y), true)
   }
 
   /**
@@ -187,12 +192,12 @@ export abstract class FComponent extends FComponentCore {
     // If a collider exists
     if (this.collider) {
       // If the collider is a cuboid, update its half extents
-      if (this.collider.shape.type === RAPIER.ShapeType.Cuboid) {
-        this.collider.setHalfExtents(new RAPIER.Vector2(x / 2, y / 2))
+      if (this.collider.collider.shape.type === RAPIER.ShapeType.Cuboid) {
+        this.collider.collider.setHalfExtents(new RAPIER.Vector2(x / 2, y / 2))
       }
       // If the collider is a ball, update its radius
-      else if (this.collider.shape.type === RAPIER.ShapeType.Ball) {
-        this.collider.setRadius(
+      else if (this.collider.collider.shape.type === RAPIER.ShapeType.Ball) {
+        this.collider.collider.setRadius(
           // Get the maximum value of x and y
           Math.max(x, y) / 2,
         )
@@ -213,10 +218,10 @@ export abstract class FComponent extends FComponentCore {
     this.container.rotation = r
     // If a collider exists, update its rotation
     if (this.collider)
-      this.collider.setRotation(r)
+      this.collider.collider.setRotation(r)
     // If a rigid body exists, update its rotation
     if (this.rigidBody)
-      this.rigidBody.setRotation(r, true)
+      this.rigidBody.rigidBody.setRotation(r, true)
   }
 
   /**
@@ -246,57 +251,19 @@ export abstract class FComponent extends FComponentCore {
    * @example
    * ```ts
    * component.initRigidBody({
-   *  position: new PIXI.Point(0, 0),
-   *  scale: new PIXI.Point(1, 1),
+   *  position: { x: 0, y: 0 },
+   *  scale: { x: 1, y: 1 },
    *  rotation: 0,
    *  shape: FShapes.SQUARE
    * })
    * ```
    */
-  initRigidBody(options?: FComponentOptions__initRigidBody): void {
-    // Apply default options
-    const DEFAULT_OPTIONS = {
-      position: new PIXI.Point(this.position.x, this.position.y),
-      scale: new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
-      rotation: this.rotation,
-      shape: FShapes.SQUARE,
-      lockTranslations: false,
-      lockRotations: false,
-      enabledTranslations: undefined,
-    }
-    options = { ...DEFAULT_OPTIONS, ...options }
-    // Validate options
-    if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
-      throw new Error('FibboError: initRigidBody requires position, scale, rotation and shape options')
+  initRigidBody(options?: FRigidBodyOptions): void {
+    // Initialize the rigid body
+    this.rigidBody = new FRigidBody(this, options)
 
-    // Check if the world exists
-    if (!this.scene.world)
-      throw new Error('FibboError: FScene must have a world to create a rigid body')
-
-    // Create a rigid body description according to the type
-    const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
-    // Set translation and rotation for the rigid body
-    rigidBodyDesc.setTranslation(options.position.x, options.position.y)
-    rigidBodyDesc.setRotation(options.rotation)
-
-    this.rigidBody = this.scene.world.createRigidBody(rigidBodyDesc)
-
-    // Lock the translation if needed
-    if (options.lockTranslations)
-      this.rigidBody.lockTranslations(true, true)
-    // Lock the rotation if needed
-    if (options.lockRotations)
-      this.rigidBody.lockRotations(true, true)
-    // Enable only specific translations if needed
-    if (options.enabledTranslations)
-      this.rigidBody.setEnabledTranslations(options.enabledTranslations.enableX, options.enabledTranslations.enableY, true)
-
-    // Create a collider description for the rigid body
-    const colliderDesc = options.shape === FShapes.SQUARE
-      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y)
-      : RAPIER.ColliderDesc.ball(options.scale.x)
-    // Create the collider
-    this.collider = this.scene.world.createCollider(colliderDesc, this.rigidBody)
+    // Set the collider
+    this.collider = this.rigidBody?.collider
   }
 
   /**
@@ -307,49 +274,55 @@ export abstract class FComponent extends FComponentCore {
    * @param options.scale The scale of the collider.
    * @param options.rotation The rotation of the collider.
    * @param options.shape The shape of the collider.
+   * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts
    * component.initCollider({
-   *  position: new PIXI.Point(0, 0),
-   *  scale: new PIXI.Point(1, 1),
+   *  position: { x: 0, y: 0 },
+   *  scale: { x: 1, y: 1 },
    *  rotation: 0,
    *  shape: FShapes.SQUARE
    * })
    * ```
    */
-  initCollider(options?: FComponentOptions__initCollider): void {
-    // Apply default options
-    const DEFAULT_OPTIONS = {
-      position: new PIXI.Point(this.position.x, this.position.y),
-      scale: new PIXI.Point(this.scale.x / 2, this.scale.y / 2),
-      rotation: this.rotation,
-      shape: FShapes.SQUARE,
-    }
-    options = { ...DEFAULT_OPTIONS, ...options }
-    // Validate options
-    if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
-      throw new Error('FibboError: initCollider requires position, scale, rotation and shape options')
+  initCollider(options?: FColliderOptions): void {
+    // Initialize the collider
+    this.collider = new FCollider(this, options)
+  }
 
-    // Check if the world exists
-    if (!this.scene.world)
-      throw new Error('FibboError: FScene must have a world to create a collider')
-
-    // Create a collider description
-    const colliderDesc = options.shape === FShapes.SQUARE
-      ? RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y)
-      : RAPIER.ColliderDesc.ball(options.scale.x)
-    colliderDesc.setTranslation(options.position.x, options.position.y)
-    colliderDesc.setRotation(options.rotation)
-    // Create the collider
-    this.collider = this.scene.world.createCollider(colliderDesc)
+  /**
+   * @description Init a sensor for the component.
+   * This is useful for triggerings events when the component collides with other components.
+   * @param options The options for the collider.
+   * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.
+   * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent.
+   * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
+   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
+   * @param options.sensor If true, the collider will be a sensor.
+   * @example
+   * ```ts
+   * component.initSensor({
+   *  position: { x: 0, y: 0 },
+   *  scale: { x: 1, y: 1 },
+   *  rotation: { x: 0, y: 0 },
+   *  shape: FShapes.SQUARE
+   * })
+   * ```
+   */
+  initSensor(options?: FColliderOptions): void {
+    // Initialize the collider
+    this.sensor = new FCollider(this, {
+      ...options,
+      sensor: true,
+    })
   }
 
   onCollisionWith(classOrObject: any, callback: () => void): void {
     super.onCollisionWith(classOrObject, callback)
     // Activate collision events if they are not already activated
-    if (this.collider && this.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
+    if (this.sensor && this.sensor.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
       // Set the active events
-      this.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
+      this.sensor.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
   }
 

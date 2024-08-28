@@ -7,7 +7,7 @@ export interface FCameraOptions {
 }
 
 /**
- * @description The base class for 2D cameras in FibboJS.
+ * @description The base class for 2D cameras in Fibbo.
  * @category Camera
  */
 export abstract class FCamera extends FCameraCore {

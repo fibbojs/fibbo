@@ -24,6 +24,7 @@
 #### Core
 
 - [FComponent](classes/FComponent.md)
+- [FComponentEmpty](classes/FComponentEmpty.md)
 - [FScene](classes/FScene.md)
 
 #### Polygons
@@ -43,7 +44,7 @@
 
 - [FCameraOptions](interfaces/FCameraOptions.md)
 - [FCharacterOptions](interfaces/FCharacterOptions.md)
+- [FColliderOptions](interfaces/FColliderOptions.md)
 - [FComponentOptions](interfaces/FComponentOptions.md)
-- [FComponentOptions\_\_initCollider](interfaces/FComponentOptions__initCollider.md)
-- [FComponentOptions\_\_initRigidBody](interfaces/FComponentOptions__initRigidBody.md)
+- [FRigidBodyOptions](interfaces/FRigidBodyOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)

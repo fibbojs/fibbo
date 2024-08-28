@@ -2,8 +2,10 @@ import * as PIXI from 'pixi.js'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../FScene'
 import { FShapes } from '../types/FShapes'
-import type { FComponentOptions, FComponentOptions__initCollider, FComponentOptions__initRigidBody } from '../FComponent'
+import type { FComponentOptions } from '../FComponent'
 import { FComponent } from '../FComponent'
+import type { FRigidBodyOptions } from '../FRigidBody'
+import type { FColliderOptions } from '../FCollider'
 
 export interface FCharacterOptions extends FComponentOptions {
   /**
@@ -70,43 +72,65 @@ export abstract class FCharacter extends FComponent {
     const fKeyboard = new FKeyboard(scene)
 
     // Key down
-    fKeyboard.onKeyDown('ArrowUp', () => {
+    fKeyboard.onKeyDown('w', () => {
       this.inputs.up = true
     })
-    fKeyboard.onKeyDown('ArrowDown', () => {
+    fKeyboard.onKeyDown('s', () => {
       this.inputs.down = true
     })
-    fKeyboard.onKeyDown('ArrowLeft', () => {
+    fKeyboard.onKeyDown('a', () => {
       this.inputs.left = true
     })
-    fKeyboard.onKeyDown('ArrowRight', () => {
+    fKeyboard.onKeyDown('d', () => {
       this.inputs.right = true
+    })
+    // For AZERTY keyboards
+    fKeyboard.onKeyDown('z', () => {
+      this.inputs.up = true
+    })
+    fKeyboard.onKeyDown('q', () => {
+      this.inputs.left = true
     })
 
     // Key up
-    fKeyboard.onKeyUp('ArrowUp', () => {
+    fKeyboard.onKeyUp('w', () => {
       this.inputs.up = false
     })
-    fKeyboard.onKeyUp('ArrowDown', () => {
+    fKeyboard.onKeyUp('s', () => {
       this.inputs.down = false
     })
-    fKeyboard.onKeyUp('ArrowLeft', () => {
+    fKeyboard.onKeyUp('a', () => {
       this.inputs.left = false
     })
-    fKeyboard.onKeyUp('ArrowRight', () => {
+    fKeyboard.onKeyUp('d', () => {
       this.inputs.right = false
+    })
+    // For AZERTY keyboards
+    fKeyboard.onKeyUp('z', () => {
+      this.inputs.up = false
+    })
+    fKeyboard.onKeyUp('q', () => {
+      this.inputs.left = false
     })
   }
 
-  initRigidBody(options?: FComponentOptions__initRigidBody): void {
+  initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
       shape: FShapes.SQUARE,
       ...options,
     })
   }
 
-  initCollider(options?: FComponentOptions__initCollider): void {
+  initCollider(options?: FColliderOptions): void {
     super.initCollider({
+      shape: FShapes.SQUARE,
+      ...options,
+    })
+  }
+
+  initSensor(options?: FColliderOptions): void {
+    super.initSensor({
+      scale: { x: 1.2, y: 1.2 },
       shape: FShapes.SQUARE,
       ...options,
     })

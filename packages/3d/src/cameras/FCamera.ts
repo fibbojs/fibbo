@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import type { FCamera as FCameraCore } from '@fibbojs/core'
 
 /**
- * @description The base class for cameras in FibboJS.
+ * @description The base class for cameras in Fibbo.
  * @category Camera
  */
 export abstract class FCamera extends THREE.PerspectiveCamera implements FCameraCore {

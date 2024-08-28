@@ -37,7 +37,7 @@ An abstract pre-defined character controller based on Kinematic rigidbodies.
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:375
+[packages/2d/src/FComponent.ts:348](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L348)
 
 ***
 
@@ -61,7 +61,7 @@ packages/2d/src/FComponent.ts:375
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:383
+[packages/2d/src/FComponent.ts:356](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L356)
 
 ***
 
@@ -85,7 +85,7 @@ packages/2d/src/FComponent.ts:383
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:391
+[packages/2d/src/FComponent.ts:364](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L364)
 
 ***
 
@@ -111,7 +111,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:359
+[packages/2d/src/FComponent.ts:332](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L332)
 
 ***
 
@@ -135,7 +135,7 @@ packages/2d/src/FComponent.ts:359
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:367
+[packages/2d/src/FComponent.ts:340](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L340)
 
 ## Constructors
 
@@ -159,7 +159,7 @@ packages/2d/src/FComponent.ts:367
 
 #### Defined in
 
-packages/2d/src/character/FCharacterKinematic.ts:18
+[packages/2d/src/character/FCharacterKinematic.ts:19](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacterKinematic.ts#L19)
 
 ## Methods
 
@@ -211,7 +211,7 @@ packages/core/dist/index.d.ts:70
 
 #### Parameters
 
-• **options?**: [`FComponentOptions__initCollider`](../interfaces/FComponentOptions__initCollider.md)
+• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
 
 The options for the collider.
 
@@ -228,8 +228,8 @@ This is useful for static objects.
 
 ```ts
 component.initCollider({
- position: new PIXI.Point(0, 0),
- scale: new PIXI.Point(1, 1),
+ position: { x: 0, y: 0 },
+ scale: { x: 1, y: 1 },
  rotation: 0,
  shape: FShapes.SQUARE
 })
@@ -241,7 +241,7 @@ component.initCollider({
 
 #### Defined in
 
-packages/2d/src/character/FCharacterKinematic.ts:34
+[packages/2d/src/character/FCharacterKinematic.ts:35](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacterKinematic.ts#L35)
 
 ***
 
@@ -251,7 +251,7 @@ packages/2d/src/character/FCharacterKinematic.ts:34
 
 #### Parameters
 
-• **options?**: [`FComponentOptions__initRigidBody`](../interfaces/FComponentOptions__initRigidBody.md)
+• **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
 The options for the rigid body.
 
@@ -267,8 +267,8 @@ Init a rigid body for the model.
 
 ```ts
 component.initRigidBody({
- position: new PIXI.Point(0, 0),
- scale: new PIXI.Point(1, 1),
+ position: { x: 0, y: 0 },
+ scale: { x: 1, y: 1 },
  rotation: 0,
  shape: FShapes.SQUARE
 })
@@ -280,7 +280,47 @@ component.initRigidBody({
 
 #### Defined in
 
-packages/2d/src/character/FCharacterKinematic.ts:27
+[packages/2d/src/character/FCharacterKinematic.ts:28](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacterKinematic.ts#L28)
+
+***
+
+### initSensor()
+
+> **initSensor**(`options`?): `void`
+
+#### Parameters
+
+• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
+
+The options for the collider.
+
+#### Returns
+
+`void`
+
+#### Description
+
+Init a sensor for the component.
+This is useful for triggerings events when the component collides with other components.
+
+#### Example
+
+```ts
+component.initSensor({
+ position: { x: 0, y: 0 },
+ scale: { x: 1, y: 1 },
+ rotation: { x: 0, y: 0 },
+ shape: FShapes.SQUARE
+})
+```
+
+#### Inherited from
+
+[`FCharacter`](FCharacter.md).[`initSensor`](FCharacter.md#initsensor)
+
+#### Defined in
+
+[packages/2d/src/character/FCharacter.ts:131](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L131)
 
 ***
 
@@ -330,7 +370,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:347
+[packages/2d/src/FComponent.ts:320](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L320)
 
 ***
 
@@ -357,7 +397,7 @@ Should be called every frame.
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:119
+[packages/2d/src/FComponent.ts:104](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L104)
 
 ***
 
@@ -395,7 +435,7 @@ component.setPosition(0, 0)
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:163
+[packages/2d/src/FComponent.ts:168](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L168)
 
 ***
 
@@ -429,7 +469,7 @@ component.setRotation(Math.PI / 2)
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:211
+[packages/2d/src/FComponent.ts:216](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L216)
 
 ***
 
@@ -463,7 +503,7 @@ component.setRotationDegree(90)
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:230
+[packages/2d/src/FComponent.ts:235](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L235)
 
 ***
 
@@ -501,7 +541,7 @@ component.setScale(1, 1)
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:183
+[packages/2d/src/FComponent.ts:188](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L188)
 
 ## Properties
 
@@ -559,7 +599,7 @@ Internal flags
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:45
+[packages/2d/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L26)
 
 ***
 
@@ -587,13 +627,13 @@ The character controller that will be used to move the character.
 
 #### Defined in
 
-packages/2d/src/character/FCharacterKinematic.ts:16
+[packages/2d/src/character/FCharacterKinematic.ts:17](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacterKinematic.ts#L17)
 
 ***
 
 ### collider?
 
-> `optional` **collider**: `Collider`
+> `optional` **collider**: `FCollider`
 
 RAPIER Collider
 
@@ -603,7 +643,7 @@ RAPIER Collider
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:79
+[packages/2d/src/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L60)
 
 ***
 
@@ -619,7 +659,7 @@ PIXI container
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:55
+[packages/2d/src/FComponent.ts:36](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L36)
 
 ***
 
@@ -651,7 +691,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-packages/2d/src/character/FCharacter.ts:23
+[packages/2d/src/character/FCharacter.ts:25](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L25)
 
 ***
 
@@ -667,13 +707,13 @@ Position of the component.
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:61
+[packages/2d/src/FComponent.ts:42](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L42)
 
 ***
 
 ### rigidBody?
 
-> `optional` **rigidBody**: `RigidBody`
+> `optional` **rigidBody**: `FRigidBody`
 
 RAPIER RigidBody
 
@@ -683,7 +723,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:75
+[packages/2d/src/FComponent.ts:56](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L56)
 
 ***
 
@@ -699,7 +739,7 @@ Rotation of the component.
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:69
+[packages/2d/src/FComponent.ts:50](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L50)
 
 ***
 
@@ -715,7 +755,7 @@ Scale of the component.
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:65
+[packages/2d/src/FComponent.ts:46](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L46)
 
 ***
 
@@ -731,7 +771,23 @@ The scene which the component is in.
 
 #### Defined in
 
-packages/2d/src/FComponent.ts:50
+[packages/2d/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L31)
+
+***
+
+### sensor?
+
+> `optional` **sensor**: `FCollider`
+
+Sensor (a collider that doesn't collide with other colliders, but still triggers events)
+
+#### Inherited from
+
+[`FCharacter`](FCharacter.md).[`sensor`](FCharacter.md#sensor)
+
+#### Defined in
+
+[packages/2d/src/FComponent.ts:64](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/FComponent.ts#L64)
 
 ***
 
@@ -747,4 +803,4 @@ The speed of the character.
 
 #### Defined in
 
-packages/2d/src/character/FCharacter.ts:33
+[packages/2d/src/character/FCharacter.ts:35](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/character/FCharacter.ts#L35)

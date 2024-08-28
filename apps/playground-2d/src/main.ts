@@ -1,5 +1,5 @@
 import './style.css'
-import { FAttachedCamera, FCharacterKV, FCircle, FScene, FShapes, FSprite, FSquare } from '@fibbojs/2d'
+import { FAttachedCamera, FCharacterKP, FCircle, FComponentEmpty, FScene, FShapes, FSprite, FSquare } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
 import MySquare from './classes/MySquare'
 
@@ -19,6 +19,14 @@ import MySquare from './classes/MySquare'
   ground.initCollider()
   scene.addComponent(ground)
 
+  // Create a death zone
+  const deathZone = new FComponentEmpty(scene, {
+    position: { x: 0, y: -5 },
+    scale: { x: 20, y: 0.1 },
+  })
+  deathZone.initCollider()
+  scene.addComponent(deathZone)
+
   const square = new MySquare(scene)
   scene.addComponent(square)
 
@@ -27,7 +35,9 @@ import MySquare from './classes/MySquare'
     scale: { x: 0.5, y: 0.5 },
     rotationDegree: 45,
   })
-  square2.initCollider()
+  square2.initCollider({
+    rotationDegree: 45,
+  })
   scene.addComponent(square2)
 
   const square3 = new FSquare(scene, {
@@ -42,7 +52,12 @@ import MySquare from './classes/MySquare'
     position: { x: -2.2, y: 1 },
     scale: { x: 0.5, y: 0.5 },
   })
-  square4.initCollider()
+  square4.initCollider({
+    scale: { x: 1.5, y: 1.5 },
+  })
+  square4.initSensor({
+    scale: { x: 2.5, y: 2.5 },
+  })
   scene.addComponent(square4)
 
   const square5 = new FSquare(scene, {
@@ -59,9 +74,10 @@ import MySquare from './classes/MySquare'
   scene.addComponent(circle)
 
   // Create a sprite
-  const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png')
+  const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png', {
+    position: { x: 2, y: 3 },
+  })
   sprite.onLoaded(() => {
-    sprite.setPosition(2, 3)
     sprite.initRigidBody({
       lockRotations: true,
     })
@@ -72,12 +88,16 @@ import MySquare from './classes/MySquare'
   /**
    * Create character
    */
-  const character = new FCharacterKV(scene)
+  const character = new FCharacterKP(scene)
   character.onCollisionWith(FSquare, () => {
     console.log('Sprite collided with a square!')
   })
   character.onCollisionWith(circle, () => {
     console.log('Sprite collided with the circle!')
+  })
+  character.onCollisionWith(deathZone, () => {
+    character.setPosition(0, 5)
+    console.log('Sprite collided with the death zone!')
   })
   scene.addComponent(character)
 

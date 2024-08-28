@@ -3,7 +3,7 @@ import type { FModelOptions } from './FModel'
 import { FGLTF } from './FGLTF'
 
 /**
- * @description A GLB model in FibboJS.
+ * @description A GLB model in Fibbo.
  * For now, it is just a wrapper around FGLTF as GLB is a binary form of glTF.
  * @category Model
  * @example

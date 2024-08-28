@@ -7,7 +7,7 @@ import type { FColliderOptions } from '../FCollider'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
- * @description A simple sphere model in FibboJS.
+ * @description A simple sphere model in Fibbo.
  * @category Model
  * @example
  * ```ts

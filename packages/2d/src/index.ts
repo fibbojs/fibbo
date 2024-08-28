@@ -4,6 +4,7 @@
 // Core
 export { FScene } from './FScene'
 export { FComponent } from './FComponent'
+export { FComponentEmpty } from './FComponentEmpty'
 
 // Cameras
 export { FCamera } from './cameras/FCamera'
@@ -27,7 +28,9 @@ export { FSprite } from './sprite/FSprite'
 
 // Types
 export { FShapes } from './types/FShapes'
-export type { FComponentOptions, FComponentOptions__initRigidBody, FComponentOptions__initCollider } from './FComponent'
+export type { FComponentOptions } from './FComponent'
+export type { FColliderOptions } from './FCollider'
+export type { FRigidBodyOptions } from './FRigidBody'
 export type { FCameraOptions } from './cameras/FCamera'
 export type { FCharacterOptions } from './character/FCharacter'
 export type { FSceneOptions } from './FScene'

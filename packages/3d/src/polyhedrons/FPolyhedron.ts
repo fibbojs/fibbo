@@ -4,7 +4,7 @@ import { FComponent } from '../FComponent'
 import type { FComponentOptions } from '../FComponent'
 
 /**
- * @description A simple polyhedron model in FibboJS.
+ * @description A simple polyhedron model in Fibbo.
  * Defaults to a cube.
  * @category Model
  */
