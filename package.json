@@ -16,6 +16,10 @@
   "bugs": "https://github.com/fibbojs/fibbo/issues",
   "keywords": [],
   "scripts": {
+    "dev:3d": "nx dev:watch @fibbojs/playground-3d",
+    "dev:3d:windows": "nx dev:watch:windows @fibbojs/playground-3d",
+    "dev:2d": "nx dev:watch @fibbojs/playground-2d",
+    "dev:2d:windows": "nx dev:watch:windows @fibbojs/playground-2d",
     "lint": "./node_modules/.bin/eslint .",
     "lint:fix": "./node_modules/.bin/eslint --fix .",
     "test:ui": "vitest --ui --coverage --coverage.include=packages",

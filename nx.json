@@ -22,6 +22,12 @@
     "dev": {
       "dependsOn": ["^build"]
     },
+    "dev:watch": {
+      "dependsOn": ["^build"]
+    },
+    "dev:watch:windows": {
+      "dependsOn": ["^build"]
+    },
     "lint": {
       "cache": true
     },

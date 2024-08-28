@@ -39,11 +39,9 @@ npm install
 - To develop on the 3D package, run the 3D playground :
 
 ```bash
-# In one terminal
-nx dev @fibbojs/playground-3d
-# In another terminal
-nx watch --projects=@fibbojs/3d,@fibbojs/devtools --includeDependentProjects -- nx run \$NX_PROJECT_NAME:build
-# or on Windows : nx watch --projects=@fibbojs/3d,@fibbojs/devtools --includeDependentProjects -- nx run %NX_PROJECT_NAME%:build
+npm run dev:3d
+# or on Windows :
+npm run dev:3d:windows
 ```
 
 You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-3d`.
@@ -51,11 +49,9 @@ You can now open your browser and navigate to `http://localhost:5173/fibbo/playg
 - To develop on the 2D package, run the 2D playground :
 
 ```bash
-# In one terminal
-nx dev @fibbojs/playground-2d
-# In another terminal
-nx watch --projects=@fibbojs/2d,@fibbojs/devtools --includeDependentProjects -- nx run \$NX_PROJECT_NAME:build
-# or on Windows : nx watch --projects=@fibbojs/2d,@fibbojs/devtools --includeDependentProjects -- nx run %NX_PROJECT_NAME%:build
+npm run dev:2d
+# or on Windows :
+npm run dev:2d:windows
 ```
 
 You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-2d`.
