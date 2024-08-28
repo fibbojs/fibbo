@@ -1,7 +1,7 @@
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import { Container } from 'pixi.js'
 import * as RAPIER from '@dimforge/rapier2d'
-import * as PIXI from 'pixi.js'
+import type * as PIXI from 'pixi.js'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
@@ -9,8 +9,8 @@ import type { FRigidBodyOptions } from './FRigidBody'
 import { FRigidBody } from './FRigidBody'
 
 export interface FComponentOptions {
-  position?: PIXI.PointData
-  scale?: PIXI.PointData
+  position?: { x: number, y: number }
+  scale?: { x: number, y: number }
   rotation?: number
   rotationDegree?: number
 }
@@ -39,11 +39,11 @@ export abstract class FComponent extends FComponentCore {
   /**
    * Position of the component.
    */
-  position: PIXI.PointData
+  position: { x: number, y: number }
   /**
    * Scale of the component.
    */
-  scale: PIXI.PointData
+  scale: { x: number, y: number }
   /**
    * Rotation of the component.
    */
@@ -79,8 +79,8 @@ export abstract class FComponent extends FComponentCore {
 
     // Define default options
     const DEFAULT_OPTIONS = {
-      position: new PIXI.Point(0, 5),
-      scale: new PIXI.Point(1, 1),
+      position: { x: 0, y: 5 },
+      scale: { x: 1, y: 1 },
       rotation: 0,
     }
     // Apply default options
@@ -166,7 +166,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setPosition(x: number, y: number): void {
-    this.position = new PIXI.Point(x, y)
+    this.position = { x, y }
     this.container.position.set(x, y)
     // If a collider exists, update its translation
     if (this.collider)
@@ -186,7 +186,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setScale(x: number, y: number): void {
-    this.scale = new PIXI.Point(x, y)
+    this.scale = { x, y }
     this.container.height = y * 100
     this.container.width = x * 100
     // If a collider exists

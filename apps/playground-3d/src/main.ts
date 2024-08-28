@@ -138,7 +138,7 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(capsule)
 
   const duck = new Duck(scene)
-  duck.setPosition(-5, 1, -5)
+  duck.setPosition({ x: -5, y: 1, z: -5 })
   duck.initRigidBody()
   scene.addComponent(duck)
 
@@ -146,7 +146,7 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(gltfCube)
 
   const gltfCube2 = new GltfCube(scene)
-  gltfCube2.setPosition(2, 5, 2)
+  gltfCube2.setPosition({ x: 2, y: 5, z: 2 })
   scene.addComponent(gltfCube2)
 
   // Create 8 cubes dynamically in circle from 0 to 2PI on the second ground
@@ -159,7 +159,7 @@ import MyCustomCube from './classes/MyCustomCube'
     if (i === 0) {
       // First one is an instance of MyCustomCube
       cube = new MyCustomCube(scene)
-      cube.setPosition(x, 3, z - 17)
+      cube.setPosition({ x, y: 3, z: z - 17 })
       cube.initRigidBody({
         // First one gets a sphere collider, the others get a cube collider
         shape: FShapes.SPHERE,
@@ -167,7 +167,7 @@ import MyCustomCube from './classes/MyCustomCube'
     }
     else {
       cube = new FCube(scene)
-      cube.setPosition(x, 3, z - 17)
+      cube.setPosition({ x, y: 3, z: z - 17 })
       cube.initRigidBody()
     }
     scene.addComponent(cube)
@@ -184,13 +184,13 @@ import MyCustomCube from './classes/MyCustomCube'
   })
   character.onCollisionWith(deathZone, () => {
     console.log('Character fell into the death zone!')
-    character.setPosition(0, 10, 0)
+    character.setPosition({ x: 0, y: 10, z: 0 })
   })
 
   // After 3 seconds, add a third gltfCube
   setTimeout(() => {
     const gltfCube3 = new GltfCube(scene)
-    gltfCube3.setPosition(-2, 5, -2)
+    gltfCube3.setPosition({ x: -2, y: 5, z: -2 })
     scene.addComponent(gltfCube3)
   }, 3000)
 })()
