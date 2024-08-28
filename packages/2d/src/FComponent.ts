@@ -158,48 +158,50 @@ export abstract class FComponent extends FComponentCore {
 
   /**
    * @description Set the position of the component.
-   * @param x The x position.
-   * @param y The y position.
+   * @param options The options for the position.
+   * @param options.x The x position.
+   * @param options.y The y position.
    * @example
    * ```ts
-   * component.setPosition(0, 0)
+   * component.setPosition({ x: 0, y: 0 })
    * ```
    */
-  setPosition(x: number, y: number): void {
-    this.position = { x, y }
-    this.container.position.set(x, y)
+  setPosition(options: { x: number, y: number }): void {
+    this.position = { x: options.x, y: options.y }
+    this.container.position.set(options.x, options.y)
     // If a collider exists, update its translation
     if (this.collider)
-      this.collider.collider.setTranslation(new RAPIER.Vector2(x, y))
+      this.collider.collider.setTranslation(new RAPIER.Vector2(options.x, options.y))
     // If a rigid body exists, update its translation
     if (this.rigidBody)
-      this.rigidBody.rigidBody.setTranslation(new RAPIER.Vector2(x, y), true)
+      this.rigidBody.rigidBody.setTranslation(new RAPIER.Vector2(options.x, options.y), true)
   }
 
   /**
    * @description Set the scale of the component.
-   * @param x The x scale.
-   * @param y The y scale.
+   * @param options The options for the scale.
+   * @param options.x The x scale.
+   * @param options.y The y scale.
    * @example
    * ```ts
-   * component.setScale(1, 1)
+   * component.setScale({ x: 1, y: 1 })
    * ```
    */
-  setScale(x: number, y: number): void {
-    this.scale = { x, y }
-    this.container.height = y * 100
-    this.container.width = x * 100
+  setScale(options: { x: number, y: number }): void {
+    this.scale = { x: options.x, y: options.y }
+    this.container.height = options.y * 100
+    this.container.width = options.x * 100
     // If a collider exists
     if (this.collider) {
       // If the collider is a cuboid, update its half extents
       if (this.collider.collider.shape.type === RAPIER.ShapeType.Cuboid) {
-        this.collider.collider.setHalfExtents(new RAPIER.Vector2(x / 2, y / 2))
+        this.collider.collider.setHalfExtents(new RAPIER.Vector2(options.x / 2, options.y / 2))
       }
       // If the collider is a ball, update its radius
       else if (this.collider.collider.shape.type === RAPIER.ShapeType.Ball) {
         this.collider.collider.setRadius(
           // Get the maximum value of x and y
-          Math.max(x, y) / 2,
+          Math.max(options.x, options.y) / 2,
         )
       }
     }
@@ -334,7 +336,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   set x(x: number) {
-    this.setPosition(x, this.position.y)
+    this.setPosition({ x, y: this.position.y })
   }
 
   get y(): number {
@@ -342,7 +344,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   set y(y: number) {
-    this.setPosition(this.position.x, y)
+    this.setPosition({ x: this.position.x, y })
   }
 
   get rotationDegree(): number {
@@ -358,7 +360,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   set scaleX(x: number) {
-    this.setScale(x, this.scale.y)
+    this.setScale({ x, y: this.scale.y })
   }
 
   get scaleY(): number {
@@ -366,6 +368,6 @@ export abstract class FComponent extends FComponentCore {
   }
 
   set scaleY(y: number) {
-    this.setScale(this.scale.x, y)
+    this.setScale({ x: this.scale.x, y })
   }
 }

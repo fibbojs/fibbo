@@ -96,7 +96,7 @@ import MySquare from './classes/MySquare'
     console.log('Sprite collided with the circle!')
   })
   character.onCollisionWith(deathZone, () => {
-    character.setPosition(0, 5)
+    character.setPosition({ x: 0, y: 5 })
     console.log('Sprite collided with the death zone!')
   })
   scene.addComponent(character)
