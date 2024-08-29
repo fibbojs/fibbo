@@ -32,6 +32,7 @@ export default defineConfig({
           { text: 'Transforms', link: '/guide/transforms' },
           { text: 'Scene', link: '/guide/scene' },
           { text: 'Cameras', link: '/guide/cameras' },
+          { text: 'Lights', link: '/guide/lights' },
           { text: '2d', collapsed: true, items: [
             { text: 'Container', link: '/guide/2d/container' },
             { text: 'Polygons', link: '/guide/2d/polygons' },
