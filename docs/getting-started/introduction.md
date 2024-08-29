@@ -41,7 +41,7 @@ Here are the main packages :
 - [`@fibbojs/core`](https://www.npmjs.com/package/@fibbojs/core) : The core package, which defines fundamental classes and interfaces.
 - [`@fibbojs/2d`](https://www.npmjs.com/package/@fibbojs/2d) : The 2D engine, mainly based on [PixiJS](https://pixijs.com/) and [Rapier](https://rapier.rs/).
 - [`@fibbojs/3d`](https://www.npmjs.com/package/@fibbojs/3d) : The 3D engine, mainly based on [Three.js](https://threejs.org/) and [Rapier](https://rapier.rs/).
-- [`@fibbojs/event`](https://www.npmjs.com/package/@fibbojs/event) : The event system, which allows you to create and listen to events.
+- [`@fibbojs/event`](https://www.npmjs.com/package/@fibbojs/event) : The event system, which allows you to create and listen to events in the browser.
 - [`@fibbojs/devtools`](https://www.npmjs.com/package/@fibbojs/devtools) : The devtools, which allow you to inspect and debug your scenes.
 
 For now, here is what the tech stack looks like :
