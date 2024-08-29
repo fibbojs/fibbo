@@ -371,6 +371,14 @@ export abstract class FComponent extends FComponentCore {
   /**
    * Setters & getters for transform properties
    */
+  get position(): { x: number, y: number, z: number } {
+    return this.transform.position
+  }
+
+  set position(position: { x: number, y: number, z: number }) {
+    this.setPosition(position)
+  }
+
   get x(): number {
     return this.transform.position.x
   }
@@ -393,6 +401,14 @@ export abstract class FComponent extends FComponentCore {
 
   set z(z: number) {
     this.setPosition({ x: this.transform.position.x, y: this.transform.position.y, z })
+  }
+
+  get rotation(): { x: number, y: number, z: number } {
+    return this.transform.rotation
+  }
+
+  set rotation(rotation: { x: number, y: number, z: number }) {
+    this.setRotation(rotation)
   }
 
   get rotationX(): number {
@@ -419,6 +435,18 @@ export abstract class FComponent extends FComponentCore {
     this.setRotation({ x: this.transform.rotation.x, y: this.transform.rotation.y, z })
   }
 
+  get rotationDegree(): { x: number, y: number, z: number } {
+    return {
+      x: this.rotationDegreeX,
+      y: this.rotationDegreeY,
+      z: this.rotationDegreeZ,
+    }
+  }
+
+  set rotationDegree(rotationDegree: { x: number, y: number, z: number }) {
+    this.setRotationDegree(rotationDegree)
+  }
+
   get rotationDegreeX(): number {
     return THREE.MathUtils.radToDeg(this.transform.rotation.x)
   }
@@ -441,6 +469,14 @@ export abstract class FComponent extends FComponentCore {
 
   set rotationDegreeZ(z: number) {
     this.setRotationDegree({ x: this.rotationDegreeX, y: this.rotationDegreeY, z })
+  }
+
+  get scale(): { x: number, y: number, z: number } {
+    return this.transform.scale
+  }
+
+  set scale(scale: { x: number, y: number, z: number }) {
+    this.setScale(scale)
   }
 
   get scaleX(): number {

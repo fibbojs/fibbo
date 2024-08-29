@@ -325,6 +325,14 @@ export abstract class FComponent extends FComponentCore {
   /**
    * Setters & getters for transform properties
    */
+  get position(): { x: number, y: number } {
+    return this.transform.position
+  }
+
+  set position(p: { x: number, y: number }) {
+    this.setPosition(p)
+  }
+
   get x(): number {
     return this.transform.position.x
   }
@@ -341,12 +349,28 @@ export abstract class FComponent extends FComponentCore {
     this.setPosition({ x: this.transform.position.x, y })
   }
 
+  get rotation(): number {
+    return this.transform.rotation
+  }
+
+  set rotation(r: number) {
+    this.setRotation(r)
+  }
+
   get rotationDegree(): number {
     return this.transform.rotation * (180 / Math.PI)
   }
 
   set rotationDegree(r: number) {
     this.setRotationDegree(r)
+  }
+
+  get scale(): { x: number, y: number } {
+    return this.transform.scale
+  }
+
+  set scale(s: { x: number, y: number }) {
+    this.setScale(s)
   }
 
   get scaleX(): number {

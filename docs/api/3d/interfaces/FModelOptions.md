@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:10](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/model/FModel.ts#L10)
+[packages/3d/src/model/FModel.ts:10](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/model/FModel.ts#L10)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:7](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/model/FModel.ts#L7)
+[packages/3d/src/model/FModel.ts:7](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/model/FModel.ts#L7)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:8](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/model/FModel.ts#L8)
+[packages/3d/src/model/FModel.ts:8](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/model/FModel.ts#L8)
 
 ***
 
@@ -60,7 +60,7 @@
 
 #### Defined in
 
-[packages/3d/src/FComponent.ts:12](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/FComponent.ts#L12)
+[packages/3d/src/FComponent.ts:12](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/FComponent.ts#L12)
 
 ***
 
@@ -86,7 +86,7 @@
 
 #### Defined in
 
-[packages/3d/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/FComponent.ts#L14)
+[packages/3d/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/FComponent.ts#L14)
 
 ***
 
@@ -112,7 +112,7 @@
 
 #### Defined in
 
-[packages/3d/src/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/FComponent.ts#L15)
+[packages/3d/src/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/FComponent.ts#L15)
 
 ***
 
@@ -138,7 +138,7 @@
 
 #### Defined in
 
-[packages/3d/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/FComponent.ts#L13)
+[packages/3d/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/FComponent.ts#L13)
 
 ***
 
@@ -148,4 +148,4 @@
 
 #### Defined in
 
-[packages/3d/src/model/FModel.ts:9](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/3d/src/model/FModel.ts#L9)
+[packages/3d/src/model/FModel.ts:9](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/model/FModel.ts#L9)

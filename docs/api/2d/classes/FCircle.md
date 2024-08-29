@@ -23,6 +23,68 @@ scene.addComponent(circle)
 
 ## Accessors
 
+### position
+
+> `get` **position**(): `object`
+
+Setters & getters for transform properties
+
+> `set` **position**(`p`): `void`
+
+#### Parameters
+
+• **p**
+
+• **p.x**: `number`
+
+• **p.y**: `number`
+
+#### Returns
+
+`object`
+
+##### x
+
+> **x**: `number`
+
+##### y
+
+> **y**: `number`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`position`](FComponent.md#position)
+
+#### Defined in
+
+[packages/2d/src/FComponent.ts:328](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L328)
+
+***
+
+### rotation
+
+> `get` **rotation**(): `number`
+
+> `set` **rotation**(`r`): `void`
+
+#### Parameters
+
+• **r**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`rotation`](FComponent.md#rotation)
+
+#### Defined in
+
+[packages/2d/src/FComponent.ts:352](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L352)
+
+***
+
 ### rotationDegree
 
 > `get` **rotationDegree**(): `number`
@@ -43,7 +105,43 @@ scene.addComponent(circle)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:344](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L344)
+[packages/2d/src/FComponent.ts:360](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L360)
+
+***
+
+### scale
+
+> `get` **scale**(): `object`
+
+> `set` **scale**(`s`): `void`
+
+#### Parameters
+
+• **s**
+
+• **s.x**: `number`
+
+• **s.y**: `number`
+
+#### Returns
+
+`object`
+
+##### x
+
+> **x**: `number`
+
+##### y
+
+> **y**: `number`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`scale`](FComponent.md#scale)
+
+#### Defined in
+
+[packages/2d/src/FComponent.ts:368](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L368)
 
 ***
 
@@ -67,7 +165,7 @@ scene.addComponent(circle)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:352](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L352)
+[packages/2d/src/FComponent.ts:376](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L376)
 
 ***
 
@@ -91,15 +189,13 @@ scene.addComponent(circle)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:360](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L360)
+[packages/2d/src/FComponent.ts:384](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L384)
 
 ***
 
 ### x
 
 > `get` **x**(): `number`
-
-Setters & getters for transform properties
 
 > `set` **x**(`x`): `void`
 
@@ -117,7 +213,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:328](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L328)
+[packages/2d/src/FComponent.ts:336](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L336)
 
 ***
 
@@ -141,7 +237,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:336](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L336)
+[packages/2d/src/FComponent.ts:344](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L344)
 
 ## Constructors
 
@@ -165,7 +261,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:21](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/polygons/FCircle.ts#L21)
+[packages/2d/src/polygons/FCircle.ts:21](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FCircle.ts#L21)
 
 ## Methods
 
@@ -263,7 +359,7 @@ component.initCollider({
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:51](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/polygons/FCircle.ts#L51)
+[packages/2d/src/polygons/FCircle.ts:51](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FCircle.ts#L51)
 
 ***
 
@@ -334,7 +430,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:33](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/polygons/FCircle.ts#L33)
+[packages/2d/src/polygons/FCircle.ts:33](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FCircle.ts#L33)
 
 ***
 
@@ -374,7 +470,7 @@ component.initSensor({
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:308](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L308)
+[packages/2d/src/FComponent.ts:308](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L308)
 
 ***
 
@@ -424,7 +520,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:316](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L316)
+[packages/2d/src/FComponent.ts:316](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L316)
 
 ***
 
@@ -451,7 +547,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/polygons/FCircle.ts:29](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/polygons/FCircle.ts#L29)
+[packages/2d/src/polygons/FCircle.ts:29](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FCircle.ts#L29)
 
 ***
 
@@ -493,7 +589,7 @@ component.setPosition({ x: 0, y: 0 })
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:163](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L163)
+[packages/2d/src/FComponent.ts:163](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L163)
 
 ***
 
@@ -527,7 +623,7 @@ component.setRotation(Math.PI / 2)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:212](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L212)
+[packages/2d/src/FComponent.ts:212](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L212)
 
 ***
 
@@ -561,7 +657,7 @@ component.setRotationDegree(90)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:231](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L231)
+[packages/2d/src/FComponent.ts:231](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L231)
 
 ***
 
@@ -603,7 +699,7 @@ component.setScale({ x: 1, y: 1 })
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:184](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L184)
+[packages/2d/src/FComponent.ts:184](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L184)
 
 ## Properties
 
@@ -661,7 +757,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L26)
+[packages/2d/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L26)
 
 ***
 
@@ -693,7 +789,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:51](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L51)
+[packages/2d/src/FComponent.ts:51](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L51)
 
 ***
 
@@ -709,7 +805,7 @@ PIXI container
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:36](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L36)
+[packages/2d/src/FComponent.ts:36](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L36)
 
 ***
 
@@ -725,7 +821,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:47](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L47)
+[packages/2d/src/FComponent.ts:47](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L47)
 
 ***
 
@@ -741,7 +837,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L31)
+[packages/2d/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L31)
 
 ***
 
@@ -757,7 +853,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L55)
+[packages/2d/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L55)
 
 ***
 
@@ -773,4 +869,4 @@ Transforms
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:41](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/FComponent.ts#L41)
+[packages/2d/src/FComponent.ts:41](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L41)

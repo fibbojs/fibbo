@@ -19,7 +19,7 @@ Also contains the Rapier world if physics is enabled.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:35](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L35)
+[packages/core/src/FScene.ts:35](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L35)
 
 ## Methods
 
@@ -41,7 +41,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:67](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L67)
+[packages/core/src/FScene.ts:67](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L67)
 
 ***
 
@@ -63,7 +63,7 @@ Add a callback to be called when a component is added to the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:82](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L82)
+[packages/core/src/FScene.ts:82](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L82)
 
 ***
 
@@ -85,7 +85,7 @@ Add a callback to be called when a frame is rendered.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:75](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L75)
+[packages/core/src/FScene.ts:75](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L75)
 
 ## Properties
 
@@ -100,7 +100,7 @@ It is an array of functions that take the component as an argument.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:33](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L33)
+[packages/core/src/FScene.ts:33](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L33)
 
 ***
 
@@ -115,7 +115,7 @@ It is an array of functions that take the delta time as an argument.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:28](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L28)
+[packages/core/src/FScene.ts:28](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L28)
 
 ***
 
@@ -125,7 +125,7 @@ It is an array of functions that take the delta time as an argument.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L14)
+[packages/core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L14)
 
 ***
 
@@ -137,7 +137,7 @@ Internal flags
 
 #### Defined in
 
-[packages/core/src/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L13)
+[packages/core/src/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L13)
 
 ***
 
@@ -149,7 +149,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:19](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L19)
+[packages/core/src/FScene.ts:19](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L19)
 
 ***
 
@@ -171,7 +171,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:21](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L21)
+[packages/core/src/FScene.ts:21](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L21)
 
 ***
 
@@ -181,4 +181,4 @@ The components in the scene.
 
 #### Defined in
 
-[packages/core/src/FScene.ts:22](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/core/src/FScene.ts#L22)
+[packages/core/src/FScene.ts:22](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FScene.ts#L22)
