@@ -47,22 +47,9 @@ const cube = new FCube({
 })
 ```
 
-## Moving a component
-
-When moving a component, you should always use the methods exposed by the component itself (like `setPosition`, `setRotation`, `setScale`).
-
-Not only this is important for consistency, but it also ensures various underlying systems (like the physic engine) are updated correctly.
-
-For example, to move a component to a new position, you should use the `setPosition` method :
-
-```typescript
-const cube = new FCube()
-cube.setPosition({ x: 1, y: 2, z: 3 })
-```
-
 ## Getters and setters
 
-For convenience, components expose getters and setters for interacting with their transform :
+For convenience, components expose getters and setters for interacting with their [transform](/guide/transforms).
 
 ```typescript
 const cube = new FCube()

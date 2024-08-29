@@ -28,6 +28,7 @@
 - [FComponent](classes/FComponent.md)
 - [FComponentEmpty](classes/FComponentEmpty.md)
 - [FScene](classes/FScene.md)
+- [FTransform](classes/FTransform.md)
 
 #### Model
 
@@ -53,3 +54,4 @@
 - [FModelOptions](interfaces/FModelOptions.md)
 - [FRigidBodyOptions](interfaces/FRigidBodyOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)
+- [FTransformOptions](interfaces/FTransformOptions.md)

@@ -85,7 +85,9 @@ export default defineConfig({
               ] },
               { text: 'Core Classes', items: [
                 { text: 'FComponent', link: '/api/2d/classes/FComponent' },
+                { text: 'FComponentEmpty', link: '/api/2d/classes/FComponentEmpty' },
                 { text: 'FScene', link: '/api/2d/classes/FScene' },
+                { text: 'FTransform', link: '/api/2d/classes/FTransform' },
               ] },
               { text: 'Polygons Classes', items: [
                 { text: 'FCircle', link: '/api/2d/classes/FCircle' },
@@ -101,9 +103,10 @@ export default defineConfig({
                 { text: 'FCameraOptions', link: '/api/2d/interfaces/FCameraOptions' },
                 { text: 'FCharacterOptions', link: '/api/2d/interfaces/FCharacterOptions' },
                 { text: 'FComponentOptions', link: '/api/2d/interfaces/FComponentOptions' },
-                { text: 'FComponentOptions__initCollider', link: '/api/2d/interfaces/FComponentOptions__initCollider' },
-                { text: 'FComponentOptions__initRigidBody', link: '/api/2d/interfaces/FComponentOptions__initRigidBody' },
+                { text: 'FColliderOptions', link: '/api/2d/interfaces/FColliderOptions' },
+                { text: 'FRigidBodyOptions', link: '/api/2d/interfaces/FRigidBodyOptions' },
                 { text: 'FSceneOptions', link: '/api/2d/interfaces/FSceneOptions' },
+                { text: 'FTransformOptions', link: '/api/2d/interfaces/FTransformOptions' },
               ] },
             ] },
             { text: '3d', link: '/api/3d/index.md', collapsed: true, items: [
@@ -123,7 +126,9 @@ export default defineConfig({
               ] },
               { text: 'Core Classes', items: [
                 { text: 'FComponent', link: '/api/3d/classes/FComponent' },
+                { text: 'FComponentEmpty', link: '/api/3d/classes/FComponentEmpty' },
                 { text: 'FScene', link: '/api/3d/classes/FScene' },
+                { text: 'FTransform', link: '/api/3d/classes/FTransform' },
               ] },
               { text: 'Model Classes', items: [
                 { text: 'FCapsule', link: '/api/3d/classes/FCapsule' },
@@ -138,9 +143,10 @@ export default defineConfig({
               { text: 'Interfaces', items: [
                 { text: 'FCharacterOptions', link: '/api/3d/interfaces/FCharacterOptions' },
                 { text: 'FComponentOptions', link: '/api/3d/interfaces/FComponentOptions' },
-                { text: 'FComponentOptions__initCollider', link: '/api/3d/interfaces/FComponentOptions__initCollider' },
-                { text: 'FComponentOptions__initRigidBody', link: '/api/3d/interfaces/FComponentOptions__initRigidBody' },
+                { text: 'FColliderOptions', link: '/api/3d/interfaces/FColliderOptions' },
+                { text: 'FRigidBodyOptions', link: '/api/3d/interfaces/FRigidBodyOptions' },
                 { text: 'FSceneOptions', link: '/api/3d/interfaces/FSceneOptions' },
+                { text: 'FTransformOptions', link: '/api/3d/interfaces/FTransformOptions' },
               ] },
             ] },
             { text: 'core', link: '/api/core/index.md', collapsed: true, items: [

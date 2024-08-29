@@ -12,7 +12,7 @@ Also, every class name in Fibbo is prefixed with `F`, to avoid conflicts with ot
 
 ## Unit system
 
-Fibbo has its own unit system, to help you work with different environments in a consistent way.
+Fibbo has its own unit system, to help you work with different environments in a consistent way. This system is used to define the [position](/guide/transforms#position) and [scale](/guide/transforms#scale) of components in the scene.
 
 As Fibbo relies on other underlying libraries (such as Three.js or PixiJS) that have their own unit system, it is important to have a common unit system to work with.
 So here is a quick overview of the unit system in Fibbo :

@@ -46,7 +46,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:35](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/cameras/FCamera.ts#L35)
+[packages/2d/src/cameras/FCamera.ts:35](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/cameras/FCamera.ts#L35)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:56](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/cameras/FCamera.ts#L56)
+[packages/2d/src/cameras/FCamera.ts:56](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/cameras/FCamera.ts#L56)
 
 ***
 
@@ -179,7 +179,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:54](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/cameras/FCamera.ts#L54)
+[packages/2d/src/cameras/FCamera.ts:54](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/cameras/FCamera.ts#L54)
 
 ## Properties
 
@@ -237,7 +237,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/cameras/FCamera.ts#L17)
+[packages/2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -265,7 +265,7 @@ Position of the camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:28](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/cameras/FCamera.ts#L28)
+[packages/2d/src/cameras/FCamera.ts:28](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/cameras/FCamera.ts#L28)
 
 ***
 
@@ -279,4 +279,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/b75caee36f4519a3126901ff2e1c5645cf5db4a7/packages/2d/src/cameras/FCamera.ts#L22)
+[packages/2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/52fe7d6d53b5d477c42887a359f3b480f4835068/packages/2d/src/cameras/FCamera.ts#L22)
