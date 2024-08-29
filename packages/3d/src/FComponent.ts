@@ -6,6 +6,7 @@ import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
 import type { FRigidBodyOptions } from './FRigidBody'
 import { FRigidBody } from './FRigidBody'
+import { FTransform } from './FTransform'
 
 export interface FComponentOptions {
   position?: { x: number, y: number, z: number }
@@ -34,19 +35,10 @@ export abstract class FComponent extends FComponentCore {
    */
   mesh?: THREE.Mesh | THREE.Group
 
-  // Transform
   /**
-   * The position of the component.
+   * Transforms
    */
-  position: THREE.Vector3
-  /**
-   * The scale of the component.
-   */
-  scale: THREE.Vector3
-  /**
-   * The rotation of the component.
-   */
-  rotation: THREE.Vector3
+  transform: FTransform
 
   // Physics & collision
   /**
@@ -98,16 +90,13 @@ export abstract class FComponent extends FComponentCore {
     if (!options.position || !options.scale || (!options.rotation && !options.rotationDegree))
       throw new Error('FibboError: FComponent requires position, scale and rotation options')
 
-    // Set the transform values
-    this.position = new THREE.Vector3(options.position.x, options.position.y, options.position.z)
-    this.scale = new THREE.Vector3(options.scale.x, options.scale.y, options.scale.z)
-    this.rotation = options.rotationDegree
-      ? new THREE.Vector3(
-        THREE.MathUtils.degToRad(options.rotationDegree.x),
-        THREE.MathUtils.degToRad(options.rotationDegree.y),
-        THREE.MathUtils.degToRad(options.rotationDegree.z),
-      )
-      : options.rotation ? new THREE.Vector3(options.rotation.x, options.rotation.y, options.rotation.z) : new THREE.Vector3(0, 0, 0)
+    // Create the transform
+    this.transform = new FTransform({
+      position: options.position,
+      scale: options.scale,
+      rotation: options.rotation,
+      rotationDegree: options.rotationDegree,
+    })
   }
 
   onFrame(_delta: number): void {
@@ -120,8 +109,8 @@ export abstract class FComponent extends FComponentCore {
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w))
       // Update position and rotation properties of the component according to the rigid body
-      this.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
+      this.transform.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.transform.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
       // If a sensor exists, update its position and rotation according to the rigid body
       if (this.sensor) {
         // Apply offset to the sensor
@@ -159,13 +148,13 @@ export abstract class FComponent extends FComponentCore {
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.mesh.setRotationFromEuler(newMeshRotation)
       // Update position and rotation properties of the component
-      this.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
+      this.transform.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.transform.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
     }
     // If the rigid body and collider doesn't exist, update the mesh position and rotation according to the default values
     else if (this.mesh) {
-      this.mesh.position.set(this.position.x, this.position.y, this.position.z)
-      this.mesh.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
+      this.mesh.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+      this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
     }
     // If the mesh still doesn't exist, do nothing
   }
@@ -182,7 +171,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setPosition(options: { x: number, y: number, z: number }): void {
-    this.position.set(options.x, options.y, options.z)
+    this.transform.position.set(options.x, options.y, options.z)
     // If a mesh exists, update its position
     if (this.mesh)
       this.mesh.position.set(options.x, options.y, options.z)
@@ -206,7 +195,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setScale(options: { x: number, y: number, z: number }): void {
-    this.scale.set(options.x, options.y, options.z)
+    this.transform.scale.set(options.x, options.y, options.z)
     // If a mesh exists
     if (this.mesh) {
       // If the mesh is a classic polyhedron
@@ -247,7 +236,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setRotation(options: { x: number, y: number, z: number }): void {
-    this.rotation.set(options.x, options.y, options.z)
+    this.transform.rotation.set(options.x, options.y, options.z)
     // If a mesh exists, update its rotation
     if (this.mesh)
       this.mesh.rotation.set(options.x, options.y, options.z)
@@ -383,55 +372,55 @@ export abstract class FComponent extends FComponentCore {
    * Setters & getters for transform properties
    */
   get x(): number {
-    return this.position.x
+    return this.transform.position.x
   }
 
   set x(x: number) {
-    this.setPosition({ x, y: this.position.y, z: this.position.z })
+    this.setPosition({ x, y: this.transform.position.y, z: this.transform.position.z })
   }
 
   get y(): number {
-    return this.position.y
+    return this.transform.position.y
   }
 
   set y(y: number) {
-    this.setPosition({ x: this.position.x, y, z: this.position.z })
+    this.setPosition({ x: this.transform.position.x, y, z: this.transform.position.z })
   }
 
   get z(): number {
-    return this.position.z
+    return this.transform.position.z
   }
 
   set z(z: number) {
-    this.setPosition({ x: this.position.x, y: this.position.y, z })
+    this.setPosition({ x: this.transform.position.x, y: this.transform.position.y, z })
   }
 
   get rotationX(): number {
-    return this.rotation.x
+    return this.transform.rotation.x
   }
 
   set rotationX(x: number) {
-    this.setRotation({ x, y: this.rotation.y, z: this.rotation.z })
+    this.setRotation({ x, y: this.transform.rotation.y, z: this.transform.rotation.z })
   }
 
   get rotationY(): number {
-    return this.rotation.y
+    return this.transform.rotation.y
   }
 
   set rotationY(y: number) {
-    this.setRotation({ x: this.rotation.x, y, z: this.rotation.z })
+    this.setRotation({ x: this.transform.rotation.x, y, z: this.transform.rotation.z })
   }
 
   get rotationZ(): number {
-    return this.rotation.z
+    return this.transform.rotation.z
   }
 
   set rotationZ(z: number) {
-    this.setRotation({ x: this.rotation.x, y: this.rotation.y, z })
+    this.setRotation({ x: this.transform.rotation.x, y: this.transform.rotation.y, z })
   }
 
   get rotationDegreeX(): number {
-    return THREE.MathUtils.radToDeg(this.rotation.x)
+    return THREE.MathUtils.radToDeg(this.transform.rotation.x)
   }
 
   set rotationDegreeX(x: number) {
@@ -439,7 +428,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   get rotationDegreeY(): number {
-    return THREE.MathUtils.radToDeg(this.rotation.y)
+    return THREE.MathUtils.radToDeg(this.transform.rotation.y)
   }
 
   set rotationDegreeY(y: number) {
@@ -447,7 +436,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   get rotationDegreeZ(): number {
-    return THREE.MathUtils.radToDeg(this.rotation.z)
+    return THREE.MathUtils.radToDeg(this.transform.rotation.z)
   }
 
   set rotationDegreeZ(z: number) {
@@ -455,26 +444,26 @@ export abstract class FComponent extends FComponentCore {
   }
 
   get scaleX(): number {
-    return this.scale.x
+    return this.transform.scale.x
   }
 
   set scaleX(x: number) {
-    this.setScale({ x, y: this.scale.y, z: this.scale.z })
+    this.setScale({ x, y: this.transform.scale.y, z: this.transform.scale.z })
   }
 
   get scaleY(): number {
-    return this.scale.y
+    return this.transform.scale.y
   }
 
   set scaleY(y: number) {
-    this.setScale({ x: this.scale.x, y, z: this.scale.z })
+    this.setScale({ x: this.transform.scale.x, y, z: this.transform.scale.z })
   }
 
   get scaleZ(): number {
-    return this.scale.z
+    return this.transform.scale.z
   }
 
   set scaleZ(z: number) {
-    this.setScale({ x: this.scale.x, y: this.scale.y, z })
+    this.setScale({ x: this.transform.scale.x, y: this.transform.scale.y, z })
   }
 }

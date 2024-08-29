@@ -45,8 +45,8 @@ export class FOrbitCamera extends FCamera {
   setPosition(x: number, y: number, z: number): void {
     super.setPosition(x, y, z)
     // Set the position of the camera relative to the attached model
-    this.position.set(this.attachedComponent.position.x + x, this.attachedComponent.position.y + y, this.attachedComponent.position.z + z)
+    this.position.set(this.attachedComponent.transform.position.x + x, this.attachedComponent.transform.position.y + y, this.attachedComponent.transform.position.z + z)
     // Set the target of the camera to the attached model
-    this.lookAt(this.attachedComponent.position)
+    this.lookAt(this.attachedComponent.transform.position)
   }
 }

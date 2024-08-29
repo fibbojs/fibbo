@@ -128,16 +128,16 @@ export abstract class FModel extends FComponent {
       return
 
     // If a position is defined, apply it
-    if (this.position)
-      this.mesh.position.set(this.position.x, this.position.y, this.position.z)
+    if (this.transform.position)
+      this.mesh.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
 
     // If a scale is defined, apply it
-    if (this.scale)
-      this.mesh.scale.set(this.scale.x / 2, this.scale.y / 2, this.scale.z / 2)
+    if (this.transform.scale)
+      this.mesh.scale.set(this.transform.scale.x / 2, this.transform.scale.y / 2, this.transform.scale.z / 2)
 
     // If a rotation is defined, apply it
-    if (this.rotation)
-      this.mesh.rotation.set(this.rotation.x, this.rotation.y, this.rotation.z)
+    if (this.transform.rotation)
+      this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
   }
 
   /**

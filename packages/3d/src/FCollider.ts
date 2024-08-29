@@ -90,9 +90,9 @@ export class FCollider {
     // Devide the scale by 2 for the collider (RAPIER uses half-extents)
     // Also interpete the scale as relative to the component's scale
     options.scale = {
-      x: component.scale.x * (options.scale.x / 2),
-      y: component.scale.y * (options.scale.y / 2),
-      z: component.scale.z * (options.scale.z / 2),
+      x: component.transform.scale.x * (options.scale.x / 2),
+      y: component.transform.scale.y * (options.scale.y / 2),
+      z: component.transform.scale.z * (options.scale.z / 2),
     }
 
     // Create a collider description according to the shape given
@@ -140,9 +140,9 @@ export class FCollider {
     if (options.rigidBody === undefined) {
       // Interprete the given position as relative to the component's position
       const finalPosition = new THREE.Vector3(
-        component.position.x + options.position.x,
-        component.position.y + options.position.y,
-        component.position.z + options.position.z,
+        component.transform.position.x + options.position.x,
+        component.transform.position.y + options.position.y,
+        component.transform.position.z + options.position.z,
       )
       finalPosition.add(this.colliderPositionOffset)
       colliderDesc.setTranslation(finalPosition.x, finalPosition.y, finalPosition.z)
@@ -150,9 +150,9 @@ export class FCollider {
       // Interprete the given rotation as relative to the component's rotation
       const finalRotation = new THREE.Quaternion().setFromEuler(
         new THREE.Euler(
-          component.rotation.x + options.rotation.x,
-          component.rotation.y + options.rotation.y,
-          component.rotation.z + options.rotation.z,
+          component.transform.rotation.x + options.rotation.x,
+          component.transform.rotation.y + options.rotation.y,
+          component.transform.rotation.z + options.rotation.z,
         ),
       )
       colliderDesc.setRotation(finalRotation)

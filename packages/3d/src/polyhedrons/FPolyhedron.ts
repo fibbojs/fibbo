@@ -18,7 +18,7 @@ export abstract class FPolyhedron extends FComponent {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a cube
-    const geometry = new THREE.BoxGeometry(this.scale.x, this.scale.y, this.scale.z)
+    const geometry = new THREE.BoxGeometry(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
     const material = new THREE.MeshBasicMaterial({ color: 0x666666 })
     this.mesh = new THREE.Mesh(geometry, material)
   }

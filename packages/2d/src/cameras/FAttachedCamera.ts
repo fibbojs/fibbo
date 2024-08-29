@@ -25,8 +25,8 @@ export class FAttachedCamera extends FCamera {
   onFrame(_delta: number): void {
     // Move the camera to the target
     this.scene.viewport.moveCenter(
-      this.target.position.x * 100 + this.position.x * 100,
-      -this.target.position.y * 100 - this.position.y * 100,
+      this.target.transform.position.x * 100 + this.position.x * 100,
+      -this.target.transform.position.y * 100 - this.position.y * 100,
     )
   }
 

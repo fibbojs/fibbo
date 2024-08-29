@@ -70,8 +70,8 @@ export class FFBX extends FModel {
     super.defineMeshTransforms()
 
     // Define the scale differently for FBX models as they are usually larger
-    if (this.scale) {
-      this.mesh.scale.set(this.scale.x / 200, this.scale.y / 200, this.scale.z / 200)
+    if (this.transform.scale) {
+      this.mesh.scale.set(this.transform.scale.x / 200, this.transform.scale.y / 200, this.transform.scale.z / 200)
     }
   }
 }

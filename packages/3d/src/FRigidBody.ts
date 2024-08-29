@@ -102,17 +102,17 @@ export class FRigidBody {
     const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
     // Interprete the given position as relative to the component's position
     rigidBodyDesc.setTranslation(
-      component.position.x + options.position.x,
-      component.position.y + options.position.y,
-      component.position.z + options.position.z,
+      component.transform.position.x + options.position.x,
+      component.transform.position.y + options.position.y,
+      component.transform.position.z + options.position.z,
     )
 
     // Interprete the given rotation as relative to the component's rotation
     rigidBodyDesc.setRotation(new THREE.Quaternion().setFromEuler(
       new THREE.Euler(
-        component.rotation.x + options.rotation.x,
-        component.rotation.y + options.rotation.y,
-        component.rotation.z + options.rotation.z,
+        component.transform.rotation.x + options.rotation.x,
+        component.transform.rotation.y + options.rotation.y,
+        component.transform.rotation.z + options.rotation.z,
       ),
     ))
 

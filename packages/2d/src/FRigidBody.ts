@@ -94,12 +94,12 @@ export class FRigidBody {
     const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
     // Interprete the given position as relative to the component's position
     rigidBodyDesc.setTranslation(
-      component.position.x + options.position.x,
-      component.position.y + options.position.y,
+      component.transform.position.x + options.position.x,
+      component.transform.position.y + options.position.y,
     )
 
     // Interprete the given rotation as relative to the component's rotation
-    rigidBodyDesc.setRotation(component.rotation + options.rotation)
+    rigidBodyDesc.setRotation(component.transform.rotation + options.rotation)
 
     // Create the rigid body
     this.rigidBody = component.scene.world.createRigidBody(rigidBodyDesc)

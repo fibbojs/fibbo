@@ -30,7 +30,7 @@ export class FGameCamera extends FOrbitCamera {
    */
   constructor(attachedComponent: FComponent) {
     super(attachedComponent)
-    this.previousModelPosition = attachedComponent.position.clone()
+    this.previousModelPosition = attachedComponent.transform.position.clone()
     this.setPosition(0, 5, 5)
 
     this.controls.enableDamping = true

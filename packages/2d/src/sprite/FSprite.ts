@@ -31,7 +31,7 @@ export class FSprite extends FComponent {
     // Define the texture and container while loading
     this.texture = PIXI.Texture.EMPTY
     this.container = new PIXI.Graphics()
-      .rect(this.position.x, this.position.y, this.scale.x * 100, this.scale.y * 100)
+      .rect(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100, this.transform.scale.y * 100)
       .fill(new PIXI.FillGradient(0, 0, 100, 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)

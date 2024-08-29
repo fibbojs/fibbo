@@ -86,8 +86,8 @@ export class FCollider {
     // Devide the scale by 2 for the collider (RAPIER uses half-extents)
     // Also interpete the scale as relative to the component's scale
     options.scale = {
-      x: component.scale.x * (options.scale.x / 2),
-      y: component.scale.y * (options.scale.y / 2),
+      x: component.transform.scale.x * (options.scale.x / 2),
+      y: component.transform.scale.y * (options.scale.y / 2),
     }
 
     // Create a collider description according to the shape given
@@ -109,13 +109,13 @@ export class FCollider {
     // If no rigidbody given, the collider is free : set translation and rotation for the collider
     if (options.rigidBody === undefined) {
       // Interprete the given position as relative to the component's position
-      const finalPosition = component.position
+      const finalPosition = component.transform.position
       finalPosition.x += options.position.x
       finalPosition.y += options.position.y
       colliderDesc.setTranslation(finalPosition.x, finalPosition.y)
 
       // Interprete the given rotation as relative to the component's rotation
-      const finalRotation = component.rotation + options.rotation
+      const finalRotation = component.transform.rotation + options.rotation
       colliderDesc.setRotation(finalRotation)
     }
     // Set the sensor flag

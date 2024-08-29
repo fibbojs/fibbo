@@ -1,12 +1,12 @@
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import { Container } from 'pixi.js'
 import * as RAPIER from '@dimforge/rapier2d'
-import type * as PIXI from 'pixi.js'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
 import type { FRigidBodyOptions } from './FRigidBody'
 import { FRigidBody } from './FRigidBody'
+import { FTransform } from './FTransform'
 
 export interface FComponentOptions {
   position?: { x: number, y: number }
@@ -35,19 +35,10 @@ export abstract class FComponent extends FComponentCore {
    */
   container: Container
 
-  // Transform
   /**
-   * Position of the component.
+   * Transforms
    */
-  position: { x: number, y: number }
-  /**
-   * Scale of the component.
-   */
-  scale: { x: number, y: number }
-  /**
-   * Rotation of the component.
-   */
-  rotation: number
+  transform: FTransform
 
   // Physics & collision
   /**
@@ -89,14 +80,17 @@ export abstract class FComponent extends FComponentCore {
     if (!options.position || !options.scale || (options.rotation === undefined && options.rotationDegree === undefined))
       throw new Error('FibboError: FComponent requires position, scale and rotation options')
 
-    // Set the transform values
-    this.position = options.position
-    this.scale = options.scale
-    this.rotation = options.rotationDegree ? options.rotationDegree * (Math.PI / 180) : options.rotation ?? 0
+    // Create the transform
+    this.transform = new FTransform({
+      position: options.position,
+      scale: options.scale,
+      rotation: options.rotation,
+      rotationDegree: options.rotationDegree,
+    })
     // Set the container values
-    this.container.position.set(this.position.x, this.position.y)
-    this.container.scale.set(this.scale.x * 100, this.scale.y * 100)
-    this.container.rotation = this.rotation
+    this.container.position.set(this.transform.position.x, this.transform.position.y)
+    this.container.scale.set(this.transform.scale.x * 100, this.transform.scale.y * 100)
+    this.container.rotation = this.transform.rotation
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
   }
@@ -109,11 +103,11 @@ export abstract class FComponent extends FComponentCore {
       this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
       this.container.rotation = -newContainerRotation
       // Update position and rotation properties of the component according to the rigid body
-      this.position = {
+      this.transform.position = {
         x: this.container.position.x / 100,
         y: -this.container.position.y / 100,
       }
-      this.rotation = this.container.rotation
+      this.transform.rotation = this.container.rotation
       // If a sensor exists, update its position and rotation according to the rigid body
       if (this.sensor) {
         // Apply offset to the sensor
@@ -142,17 +136,17 @@ export abstract class FComponent extends FComponentCore {
       this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
       this.container.rotation = -newContainerRotation
       // Update position and rotation properties of the component according to the collider
-      this.position = {
+      this.transform.position = {
         x: this.container.position.x / 100,
         y: -this.container.position.y / 100,
       }
-      this.rotation = this.container.rotation
+      this.transform.rotation = this.container.rotation
     }
     else {
       // If the rigid body and collider doesn't exist, update the container position and rotation according to the default values
       // The y position is inverted because the y axis is inverted in PIXI.js compared to Rapier
-      this.container.position.set(this.position.x * 100, -this.position.y * 100)
-      this.container.rotation = this.rotation
+      this.container.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
+      this.container.rotation = this.transform.rotation
     }
   }
 
@@ -167,7 +161,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setPosition(options: { x: number, y: number }): void {
-    this.position = { x: options.x, y: options.y }
+    this.transform.position = { x: options.x, y: options.y }
     this.container.position.set(options.x, options.y)
     // If a collider exists, update its translation
     if (this.collider)
@@ -188,7 +182,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setScale(options: { x: number, y: number }): void {
-    this.scale = { x: options.x, y: options.y }
+    this.transform.scale = { x: options.x, y: options.y }
     this.container.height = options.y * 100
     this.container.width = options.x * 100
     // If a collider exists
@@ -216,7 +210,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setRotation(r: number): void {
-    this.rotation = r
+    this.transform.rotation = r
     this.container.rotation = r
     // If a collider exists, update its rotation
     if (this.collider)
@@ -332,23 +326,23 @@ export abstract class FComponent extends FComponentCore {
    * Setters & getters for transform properties
    */
   get x(): number {
-    return this.position.x
+    return this.transform.position.x
   }
 
   set x(x: number) {
-    this.setPosition({ x, y: this.position.y })
+    this.setPosition({ x, y: this.transform.position.y })
   }
 
   get y(): number {
-    return this.position.y
+    return this.transform.position.y
   }
 
   set y(y: number) {
-    this.setPosition({ x: this.position.x, y })
+    this.setPosition({ x: this.transform.position.x, y })
   }
 
   get rotationDegree(): number {
-    return this.rotation * (180 / Math.PI)
+    return this.transform.rotation * (180 / Math.PI)
   }
 
   set rotationDegree(r: number) {
@@ -356,18 +350,18 @@ export abstract class FComponent extends FComponentCore {
   }
 
   get scaleX(): number {
-    return this.scale.x
+    return this.transform.scale.x
   }
 
   set scaleX(x: number) {
-    this.setScale({ x, y: this.scale.y })
+    this.setScale({ x, y: this.transform.scale.y })
   }
 
   get scaleY(): number {
-    return this.scale.y
+    return this.transform.scale.y
   }
 
   set scaleY(y: number) {
-    this.setScale({ x: this.scale.x, y })
+    this.setScale({ x: this.transform.scale.x, y })
   }
 }

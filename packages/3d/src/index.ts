@@ -5,6 +5,9 @@
 export { FScene } from './FScene'
 export { FComponent } from './FComponent'
 export { FComponentEmpty } from './FComponentEmpty'
+export { FTransform } from './FTransform'
+
+// Character controllers
 export { FCharacter } from './character/FCharacter'
 export { FCharacterDynamic } from './character/FCharacterDynamic'
 export { FCharacterKinematic } from './character/FCharacterKinematic'
@@ -40,3 +43,4 @@ export type { FCharacterOptions } from './character/FCharacter'
 export type { FModelOptions } from './model/FModel'
 export type { FRigidBodyOptions } from './FRigidBody'
 export type { FColliderOptions } from './FCollider'
+export type { FTransformOptions } from './FTransform'
