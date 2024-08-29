@@ -29,8 +29,8 @@ export default defineConfig({
         items: [
           { text: 'Fundamentals', link: '/guide/fundamentals' },
           { text: 'Components', link: '/guide/components' },
-          { text: 'Scene', link: '/guide/scene' },
           { text: 'Transforms', link: '/guide/transforms' },
+          { text: 'Scene', link: '/guide/scene' },
           { text: 'Cameras', link: '/guide/cameras' },
           { text: '2d', collapsed: true, items: [
             { text: 'Container', link: '/guide/2d/container' },
