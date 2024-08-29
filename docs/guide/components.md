@@ -59,3 +59,32 @@ For example, to move a component to a new position, you should use the `setPosit
 const cube = new FCube()
 cube.setPosition({ x: 1, y: 2, z: 3 })
 ```
+
+## Getters and setters
+
+For convenience, components expose getters and setters for interacting with their transform :
+
+```typescript
+const cube = new FCube()
+
+// Get the position of the cube
+const position = cube.x
+
+// Set the position of the cube
+cube.x = 1
+```
+
+This is especially useful when you want to use things like [2-way data binding](https://en.wikipedia.org/wiki/Data_binding#Two-way_data_binding) in modern UI libraries (e.g. React, Vue, Angular,...).
+
+For example, in Vue, you could bind the position of a cube to a `v-model` :
+```vue
+<template>
+  <div>
+    <input v-model="cube.x" type="number">
+    <input v-model="cube.y" type="number">
+    <input v-model="cube.z" type="number">
+  </div>
+</template>
+```
+
+You can check the [API documentation](/api) for more information on the available getters and setters : [here for a 3D component](/api/3d/classes/FComponent) or [here for a 2D component](/api/2d/classes/FComponent).
