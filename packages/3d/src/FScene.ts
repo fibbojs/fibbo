@@ -111,10 +111,6 @@ export class FScene extends FSceneCore {
     // Orbit controls for the camera
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
-    // Add ambient light
-    const light = new THREE.AmbientLight(0xFFFFFF)
-    this.scene.add(light)
-
     // Add renderer to DOM
     this.__DOM_NODE__.appendChild(this.renderer.domElement)
 

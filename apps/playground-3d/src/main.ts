@@ -1,3 +1,4 @@
+import * as THREE from 'three'
 import { FCapsule, FCharacterKP, FComponentEmpty, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
@@ -13,6 +14,10 @@ import MyCustomCube from './classes/MyCustomCube'
   // Debug the scene
   if (import.meta.env.DEV)
     fDebug(scene)
+
+  // Add ambient light
+  const light = new THREE.AmbientLight(0xFFFFFF)
+  scene.scene.add(light)
 
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {
