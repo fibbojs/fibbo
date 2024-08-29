@@ -31,7 +31,7 @@ Well it's really up to you ! We believe Fibbo can create fun experiences for eve
 
 Moreover, we would really appreciate your feedback, so if you have any suggestions, questions, or if you encounter any issues, please let us know by either [asking on the forum](https://github.com/orgs/fibbojs/discussions) or [opening an issue on GitHub](https://github.com/fibbojs/fibbo/issues).
 
-We are doing our best to create a great tool so developers can create amazing experiences, and your feedback is really important to us.
+We are doing our best to make a great tool so developers can create amazing experiences, and your feedback is really important to us.
 
 ## Architecture
 
@@ -42,7 +42,7 @@ Here are the main packages :
 - [`@fibbojs/2d`](https://www.npmjs.com/package/@fibbojs/2d) : The 2D engine, mainly based on [PixiJS](https://pixijs.com/) and [Rapier](https://rapier.rs/).
 - [`@fibbojs/3d`](https://www.npmjs.com/package/@fibbojs/3d) : The 3D engine, mainly based on [Three.js](https://threejs.org/) and [Rapier](https://rapier.rs/).
 - [`@fibbojs/event`](https://www.npmjs.com/package/@fibbojs/event) : The event system, which allows you to create and listen to events in the browser.
-- [`@fibbojs/devtools`](https://www.npmjs.com/package/@fibbojs/devtools) : The devtools, which allow you to inspect and debug your scenes.
+- [`@fibbojs/devtools`](https://www.npmjs.com/package/@fibbojs/devtools) : The devtools, which lets you inspect and debug your scenes.
 
 For now, here is what the tech stack looks like :
 
