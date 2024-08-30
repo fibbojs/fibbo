@@ -28,17 +28,19 @@ export default defineConfig({
         text: 'Guide',
         items: [
           { text: 'Fundamentals', link: '/guide/fundamentals' },
-          { text: 'Components', link: '/guide/components' },
-          { text: 'Transforms', link: '/guide/transforms' },
-          { text: 'Scene', link: '/guide/scene' },
-          { text: 'Cameras', link: '/guide/cameras' },
-          { text: 'Lights', link: '/guide/lights' },
-          { text: '2d', collapsed: true, items: [
+          { text: 'Core', collapsed: true, items: [
+            { text: 'Components', link: '/guide/core/components' },
+            { text: 'Transforms', link: '/guide/core/transforms' },
+            { text: 'Scene', link: '/guide/core/scene' },
+            { text: 'Cameras', link: '/guide/core/cameras' },
+            { text: 'Lights', link: '/guide/core/lights' },
+          ] },
+          { text: '2D', collapsed: true, items: [
             { text: 'Container', link: '/guide/2d/container' },
             { text: 'Polygons', link: '/guide/2d/polygons' },
             { text: 'Sprites', link: '/guide/2d/sprites' },
           ] },
-          { text: '3d', collapsed: true, items: [
+          { text: '3D', collapsed: true, items: [
             { text: 'Mesh', link: '/guide/3d/mesh' },
             { text: 'Polyhedrons', link: '/guide/3d/polyhedrons' },
             { text: 'Models', link: '/guide/3d/models' },
