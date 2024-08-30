@@ -2,11 +2,11 @@
 
 Fibbo provides a simple way to create polygons in 2D.
 
-For now, only 2 types of polygons are supported: squares and circles.
+For now, only 2 types of polygons are supported: rectangles and circles.
 
-## Squares
+## Rectangles
 
-To create a square, you can use the `FRectangle` class. Here is an example:
+To create a rectangle, you can use the `FRectangle` class. Here is an example:
 
 ```typescript
 import { FRectangle } from '@fibbojs/2d'
@@ -17,7 +17,7 @@ const square = new FRectangle({
 })
 ```
 
-This will create a square with a size of `1` at the position `(0, 5)`.
+This will create a rectangles with a size of `1` at the position `(0, 5)`. As the scale is `(1, 1)`, the rectangle will be a square.
 
 ## Circles
 
