@@ -1,5 +1,9 @@
 import * as THREE from 'three'
 import type { FCamera as FCameraCore } from '@fibbojs/core'
+import type { FTransformOptions } from '../FTransform'
+import { FTransform } from '../FTransform'
+
+export interface FCameraOptions extends FTransformOptions {}
 
 /**
  * @description The base class for cameras in Fibbo.
@@ -15,8 +19,36 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
   declare public __ID__: number
   public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 
-  constructor() {
+  /**
+   * Transform of the camera.
+   */
+  transform: FTransform
+
+  constructor(options?: FCameraOptions) {
     super(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+
+    // Define default options
+    const DEFAULT_OPTIONS = {
+      position: { x: 5, y: 5, z: 5 },
+      rotation: { x: 0, y: 0.7853981634, z: 0 },
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (!options.position || (!options.rotation && !options.rotationDegree))
+      throw new Error('FibboError: FCamera requires position and rotation options')
+
+    // Store transform
+    this.transform = new FTransform({
+      position: options.position,
+      rotation: options.rotation,
+      rotationDegree: options.rotationDegree,
+    })
+
+    // Set the position
+    this.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+    // Set the rotation
+    this.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
   }
 
   abstract onFrame(_delta: number): void

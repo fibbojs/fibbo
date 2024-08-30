@@ -1,9 +1,8 @@
 import { FCamera as FCameraCore } from '@fibbojs/core'
-import type * as PIXI from 'pixi.js'
 import type { FScene } from '../FScene'
 
 export interface FCameraOptions {
-  position?: PIXI.PointData
+  position?: { x: number, y: number }
 }
 
 /**
@@ -21,11 +20,11 @@ export abstract class FCamera extends FCameraCore {
    */
   scene: FScene
 
-  // Transform
+  // FTransform isn't used as a 2D camera doesn't need scale or rotation
   /**
    * Position of the camera.
    */
-  position: PIXI.PointData
+  position: { x: number, y: number }
 
   /**
    * @description Create a new 2D camera.

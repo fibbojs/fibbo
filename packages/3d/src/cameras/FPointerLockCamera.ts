@@ -1,6 +1,7 @@
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'
 import type { FComponent } from '../FComponent'
 import { FCamera } from './FCamera'
+import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
  * @description A camera that can be attached to a FComponent and orbits around it.
@@ -24,19 +25,19 @@ export class FPointerLockCamera extends FCamera {
   controls: PointerLockControls
 
   /**
-   * @param attachedComponent Component that the camera is attached to
+   * @param options Options for the camera.
    */
-  constructor(attachedComponent: FComponent) {
-    super()
-    this.attachedComponent = attachedComponent
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
+    this.attachedComponent = options.target
 
     // Create Pointer Lock controls
-    this.controls = new PointerLockControls(this, attachedComponent.scene.renderer.domElement)
+    this.controls = new PointerLockControls(this, this.attachedComponent.scene.renderer.domElement)
 
-    attachedComponent.scene.scene.add(this.controls.getObject())
+    this.attachedComponent.scene.scene.add(this.controls.getObject())
 
     // Lock controls when clicking on the renderer
-    attachedComponent.scene.renderer.domElement.addEventListener('click', () => {
+    this.attachedComponent.scene.renderer.domElement.addEventListener('click', () => {
       this.controls.lock()
     })
   }

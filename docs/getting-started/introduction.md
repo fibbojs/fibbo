@@ -33,6 +33,6 @@ Moreover, we would really appreciate your feedback, so if you have any suggestio
 
 We are doing our best to make a great tool so developers can create amazing experiences, and your feedback is really important to us.
 
-Ready to take off ? You can go the next section to learn how to get started with Fibbo.
+Ready to take off ? You can go to the next section to learn how to get started with Fibbo.
 
 Have fun !

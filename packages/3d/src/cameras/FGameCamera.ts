@@ -1,6 +1,6 @@
 import type * as THREE from 'three'
-import type { FComponent } from '../FComponent'
 import { FOrbitCamera } from './FOrbitCamera'
+import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
  * @description A camera that can be attached to a FComponent and orbits around it in a more game-like way.
@@ -26,11 +26,11 @@ export class FGameCamera extends FOrbitCamera {
   lastMouseMoveEvent: MouseEvent | undefined
 
   /**
-   * @param attachedComponent Component that the camera is attached to
+   * @param options Options for the camera.
    */
-  constructor(attachedComponent: FComponent) {
-    super(attachedComponent)
-    this.previousModelPosition = attachedComponent.transform.position.clone()
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
+    this.previousModelPosition = options.target.transform.position.clone()
     this.setPosition(0, 5, 5)
 
     this.controls.enableDamping = true
@@ -40,7 +40,7 @@ export class FGameCamera extends FOrbitCamera {
      * Add event listeners
      */
     // Request pointer lock when the canvas is clicked
-    attachedComponent.scene.renderer.domElement.addEventListener('click', () => {
+    this.attachedComponent.scene.renderer.domElement.addEventListener('click', () => {
       this.attachedComponent.scene.renderer.domElement.requestPointerLock()
     })
     // Update the pointer lock flag when the pointer lock state changes

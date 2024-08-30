@@ -1,6 +1,7 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { FComponent } from '../FComponent'
 import { FCamera } from './FCamera'
+import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
  * @description A camera that can be attached to a FComponent and orbits around it.
@@ -24,14 +25,14 @@ export class FOrbitCamera extends FCamera {
   controls: OrbitControls
 
   /**
-   * @param attachedComponent Component that the camera is attached to
+   * @param options Options for the camera.
    */
-  constructor(attachedComponent: FComponent) {
-    super()
-    this.attachedComponent = attachedComponent
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
+    this.attachedComponent = options.target
 
     // Create orbit controls
-    this.controls = new OrbitControls(this, attachedComponent.scene.renderer.domElement)
+    this.controls = new OrbitControls(this, this.attachedComponent.scene.renderer.domElement)
   }
 
   onFrame(_delta: number): void {

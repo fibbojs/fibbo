@@ -1,6 +1,11 @@
 import * as THREE from 'three'
 import type { FComponent } from '../FComponent'
+import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
+
+export interface FAttachedCameraOptions extends FCameraOptions {
+  target: FComponent
+}
 
 /**
  * @description A camera that can be attached to a FComponent.

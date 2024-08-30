@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { FScene as FSceneCore } from '@fibbojs/core'
 import type RAPIER from '@dimforge/rapier3d'
 import type { FComponent } from './FComponent'
@@ -60,7 +59,6 @@ export class FScene extends FSceneCore {
   declare scene: THREE.Scene
   declare renderer: THREE.WebGLRenderer
   declare camera: FCamera
-  declare controls?: OrbitControls
   // Rapier
   gravity: { x: number, y: number, z: number }
   declare world: RAPIER.World
@@ -107,9 +105,6 @@ export class FScene extends FSceneCore {
     this.renderer.setSize((window as any).innerWidth, (window as any).innerHeight)
     // Create a default camera
     this.camera = new FFixedCamera()
-    this.camera.position.set(5, 5, 5)
-    // Orbit controls for the camera
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
     // Add renderer to DOM
     this.__DOM_NODE__.appendChild(this.renderer.domElement)

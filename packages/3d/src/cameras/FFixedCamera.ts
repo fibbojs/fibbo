@@ -1,3 +1,4 @@
+import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
 /**
@@ -15,8 +16,8 @@ import { FCamera } from './FCamera'
  * ```
  */
 export class FFixedCamera extends FCamera {
-  constructor() {
-    super()
+  constructor(options?: FCameraOptions) {
+    super(options)
   }
 
   onFrame(_delta: number): void {
