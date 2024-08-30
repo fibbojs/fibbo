@@ -33,29 +33,6 @@ Moreover, we would really appreciate your feedback, so if you have any suggestio
 
 We are doing our best to make a great tool so developers can create amazing experiences, and your feedback is really important to us.
 
-## Architecture
+Ready to take off ? You can go the next section to learn how to get started with Fibbo.
 
-Fibbo is a monorepo managed with [Nx](https://nx.dev/). It is composed of multiple packages, each with its own responsibility.
-
-Here are the main packages :
-- [`@fibbojs/core`](https://www.npmjs.com/package/@fibbojs/core) : The core package, which defines fundamental classes and interfaces.
-- [`@fibbojs/2d`](https://www.npmjs.com/package/@fibbojs/2d) : The 2D engine, mainly based on [PixiJS](https://pixijs.com/) and [Rapier](https://rapier.rs/).
-- [`@fibbojs/3d`](https://www.npmjs.com/package/@fibbojs/3d) : The 3D engine, mainly based on [Three.js](https://threejs.org/) and [Rapier](https://rapier.rs/).
-- [`@fibbojs/event`](https://www.npmjs.com/package/@fibbojs/event) : The event system, which allows you to create and listen to events in the browser.
-- [`@fibbojs/devtools`](https://www.npmjs.com/package/@fibbojs/devtools) : The devtools, which lets you inspect and debug your scenes.
-
-For now, here is what the tech stack looks like :
-
-- Game stuff
-  - [Three.js](https://threejs.org/) for 3D rendering
-  - [Rapier](https://rapier.rs/) for physics
-  - [PixiJS](https://pixijs.com/) for 2D rendering
-  - [Vue](https://vuejs.org/) for the devtools
-- Tooling
-  - [Nx](https://nx.dev/) for monorepo management
-  - [unbuild](https://github.com/unjs/unbuild) for building the packages
-  - [Vite](https://vitejs.dev/) for the playgrounds + building the devtools
-  - [VitePress](https://vitepress.dev/) for the documentation
-  - [Vitest](https://vitest.dev/) for testing
-  - [TypeDoc](https://typedoc.org/) for the API Reference part of the documentation
-  - [ESLint](https://eslint.org/) for linting
+Have fun !

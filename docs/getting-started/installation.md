@@ -39,4 +39,4 @@ npm install
 npm run dev
 ```
 
-## Manual installation (Coming soon)
+## Manual installation (WIP)
