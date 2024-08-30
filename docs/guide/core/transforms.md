@@ -15,7 +15,7 @@ The position of an object is a 3D vector that represents its location in the sce
 You can set the position as follows :
 
 ```typescript
-const cube = new FCube()
+const cube = new FCuboid()
 cube.setPosition({ x: 1, y: 2, z: 3 })
 // Or using the setter :
 cube.position = { x: 1, y: 2, z: 3 }
@@ -34,7 +34,7 @@ The rotation of an object is a 3D vector that represents its orientation in the 
 You can set the rotation as follows :
 
 ```typescript
-const cube = new FCube()
+const cube = new FCuboid()
 cube.setRotation({ x: 0, y: 0.7853981634, z: 0 })
 // Or using the setter :
 cube.rotation = { x: 0, y: 0.7853981634, z: 0 }
@@ -61,7 +61,7 @@ The scale of an object is a 3D vector that represents its size in the scene. For
 You can set the scale as follows :
 
 ```typescript
-const cube = new FCube()
+const cube = new FCuboid()
 cube.setScale({ x: 2, y: 2, z: 2 })
 // Or using the setter :
 cube.scale = { x: 2, y: 2, z: 2 }

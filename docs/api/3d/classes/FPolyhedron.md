@@ -14,7 +14,7 @@ Defaults to a cube.
 ## Extended by
 
 - [`FCapsule`](FCapsule.md)
-- [`FCube`](FCube.md)
+- [`FCuboid`](FCuboid.md)
 - [`FSphere`](FSphere.md)
 
 ## Accessors

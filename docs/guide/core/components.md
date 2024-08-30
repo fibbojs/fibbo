@@ -27,9 +27,9 @@ And the following methods :
 To create a component, you can just import it and create a new instance :
 
 ```typescript
-import { FCube } from '@fibbojs/3d'
+import { FCuboid } from '@fibbojs/3d'
 
-const cube = new FCube()
+const cube = new FCuboid()
 ```
 
 This will create a new cube component, that can be added to a [Scene](/guide/scene) (which we'll see in the next section).
@@ -37,9 +37,9 @@ This will create a new cube component, that can be added to a [Scene](/guide/sce
 Basic options can be passed to the constructor :
 
 ```typescript
-import { FCube } from '@fibbojs/3d'
+import { FCuboid } from '@fibbojs/3d'
 
-const cube = new FCube({
+const cube = new FCuboid({
   position: { x: 1, y: 2, z: 3 },
   scale: { x: 2, y: 2, z: 2 },
   rotation: { x: 0, y: 0, z: 0 }
@@ -52,7 +52,7 @@ const cube = new FCube({
 For convenience, components expose getters and setters for interacting with their [transform](/guide/transforms).
 
 ```typescript
-const cube = new FCube()
+const cube = new FCuboid()
 
 // Get the position of the cube
 const position = cube.x

@@ -7,11 +7,11 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  * @category Camera
  * @example
  * ```ts
- * import { FScene, FGameCamera, FCube } from '@fibbojs/3d'
+ * import { FScene, FGameCamera, FCuboid } from '@fibbojs/3d'
  *
  * const scene = new FScene()
  *
- * const cube = new FCube(scene)
+ * const cube = new FCuboid(scene)
  * scene.addComponent(cube)
  *
  * scene.camera = new FGameCamera(cube)

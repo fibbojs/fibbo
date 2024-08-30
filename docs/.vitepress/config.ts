@@ -95,7 +95,7 @@ export default defineConfig({
               ] },
               { text: 'Polygons Classes', items: [
                 { text: 'FCircle', link: '/api/2d/classes/FCircle' },
-                { text: 'FSquare', link: '/api/2d/classes/FSquare' },
+                { text: 'FRectangle', link: '/api/2d/classes/FRectangle' },
               ] },
               { text: 'Sprite Classes', items: [
                 { text: 'FSprite', link: '/api/2d/classes/FSprite' },
@@ -136,7 +136,7 @@ export default defineConfig({
               ] },
               { text: 'Model Classes', items: [
                 { text: 'FCapsule', link: '/api/3d/classes/FCapsule' },
-                { text: 'FCube', link: '/api/3d/classes/FCube' },
+                { text: 'FCuboid', link: '/api/3d/classes/FCuboid' },
                 { text: 'FGLTF', link: '/api/3d/classes/FGLTF' },
                 { text: 'FPolyhedron', link: '/api/3d/classes/FPolyhedron' },
                 { text: 'FSphere', link: '/api/3d/classes/FSphere' },

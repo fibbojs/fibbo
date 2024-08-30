@@ -1,6 +1,6 @@
-[@fibbojs](/api/index) / [2d](/api/2d) / FSquare
+[@fibbojs](/api/index) / [2d](/api/2d) / FRectangle
 
-# Class: FSquare
+# Class: FRectangle
 
 ## Description
 
@@ -9,11 +9,11 @@ A simple square in Fibbo.
 ## Example
 
 ```ts
-import { FScene, FSquare } from '@fibbojs/2d'
+import { FScene, FRectangle } from '@fibbojs/2d'
 
 const scene = new FScene()
 
-const square = new FSquare(scene)
+const square = new FRectangle(scene)
 scene.addComponent(square)
 ```
 
@@ -241,9 +241,9 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FSquare()
+### new FRectangle()
 
-> **new FSquare**(`scene`, `options`?): [`FSquare`](FSquare.md)
+> **new FRectangle**(`scene`, `options`?): [`FRectangle`](FRectangle.md)
 
 #### Parameters
 
@@ -253,7 +253,7 @@ Setters & getters for transform properties
 
 #### Returns
 
-[`FSquare`](FSquare.md)
+[`FRectangle`](FRectangle.md)
 
 #### Overrides
 
@@ -261,7 +261,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:20](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FSquare.ts#L20)
+[packages/2d/src/polygons/FRectangle.ts:20](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FRectangle.ts#L20)
 
 ## Methods
 
@@ -499,7 +499,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/polygons/FSquare.ts:30](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FSquare.ts#L30)
+[packages/2d/src/polygons/FRectangle.ts:30](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/polygons/FRectangle.ts#L30)
 
 ***
 

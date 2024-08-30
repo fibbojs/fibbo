@@ -1,6 +1,6 @@
-[@fibbojs](/api/index) / [3d](/api/3d) / FCube
+[@fibbojs](/api/index) / [3d](/api/3d) / FCuboid
 
-# Class: FCube
+# Class: FCuboid
 
 ## Description
 
@@ -9,11 +9,11 @@ A simple cube model in Fibbo.
 ## Example
 
 ```ts
-import { FScene, FCube } from '@fibbojs/3d'
+import { FScene, FCuboid } from '@fibbojs/3d'
 
 const scene = new FScene()
 
-const cube = new FCube(scene)
+const cube = new FCuboid(scene)
 scene.addComponent(cube)
 ```
 
@@ -481,9 +481,9 @@ Setters & getters for transform properties
 
 ## Constructors
 
-### new FCube()
+### new FCuboid()
 
-> **new FCube**(`scene`, `options`?): [`FCube`](FCube.md)
+> **new FCuboid**(`scene`, `options`?): [`FCuboid`](FCuboid.md)
 
 #### Parameters
 
@@ -493,7 +493,7 @@ Setters & getters for transform properties
 
 #### Returns
 
-[`FCube`](FCube.md)
+[`FCuboid`](FCuboid.md)
 
 #### Overrides
 
@@ -501,7 +501,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[packages/3d/src/polyhedrons/FCube.ts:19](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/polyhedrons/FCube.ts#L19)
+[packages/3d/src/polyhedrons/FCuboid.ts:19](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/polyhedrons/FCuboid.ts#L19)
 
 ## Methods
 
@@ -739,7 +739,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/polyhedrons/FCube.ts:23](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/polyhedrons/FCube.ts#L23)
+[packages/3d/src/polyhedrons/FCuboid.ts:23](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/polyhedrons/FCuboid.ts#L23)
 
 ***
 

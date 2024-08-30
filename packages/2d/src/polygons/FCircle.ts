@@ -1,8 +1,8 @@
 import * as PIXI from 'pixi.js'
 import type { FComponentOptions } from '../FComponent'
-import { FComponent } from '../FComponent'
 import type { FScene } from '../FScene'
 import { FShapes } from '../types/FShapes'
+import { FPolygon } from './FPolygon'
 
 /**
  * @description A simple circle in Fibbo.
@@ -17,7 +17,7 @@ import { FShapes } from '../types/FShapes'
  * scene.addComponent(circle)
  * ```
  */
-export class FCircle extends FComponent {
+export class FCircle extends FPolygon {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a circle

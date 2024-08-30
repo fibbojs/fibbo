@@ -9,11 +9,11 @@ A camera that can be attached to a FComponent and orbits around it.
 ## Example
 
 ```ts
-import { FScene, FOrbitCamera, FCube } from '@fibbojs/3d'
+import { FScene, FOrbitCamera, FCuboid } from '@fibbojs/3d'
 
 const scene = new FScene()
 
-const cube = new FCube(scene)
+const cube = new FCuboid(scene)
 scene.addComponent(cube)
 
 scene.camera = new FOrbitCamera(cube)

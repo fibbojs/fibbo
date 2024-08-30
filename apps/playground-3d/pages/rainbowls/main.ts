@@ -1,5 +1,5 @@
 import '../../src/style.css'
-import { FCube, FOrbitCamera, FScene, FSphere } from '@fibbojs/3d'
+import { FCuboid, FOrbitCamera, FScene, FSphere } from '@fibbojs/3d'
 import * as THREE from 'three'
 
 (async () => {
@@ -26,7 +26,7 @@ import * as THREE from 'three'
       sphere.mesh.material.color.set(new THREE.Color(0x2C2C2C))
 
       // Create a cube for the hitbox
-      const cube = new FCube(scene)
+      const cube = new FCuboid(scene)
       cube.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
       cube.setScale({ x: GRID_GAP, y: 1, z: GRID_GAP })
       // Make the cube invisible
@@ -48,7 +48,7 @@ import * as THREE from 'three'
   }
 
   // Create a camera target
-  const cameraTarget = new FCube(scene)
+  const cameraTarget = new FCuboid(scene)
   cameraTarget.setPosition({ x: 0, y: 1, z: 0 })
   // Create a camera
   const camera = new FOrbitCamera(cameraTarget)

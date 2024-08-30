@@ -24,7 +24,7 @@ export { FGLTF } from './model/FGLTF'
 // Polyhedrons
 export { FPolyhedron } from './polyhedrons/FPolyhedron'
 export { FCapsule } from './polyhedrons/FCapsule'
-export { FCube } from './polyhedrons/FCube'
+export { FCuboid } from './polyhedrons/FCuboid'
 export { FSphere } from './polyhedrons/FSphere'
 
 // Cameras
@@ -44,3 +44,5 @@ export type { FModelOptions } from './model/FModel'
 export type { FRigidBodyOptions } from './FRigidBody'
 export type { FColliderOptions } from './FCollider'
 export type { FTransformOptions } from './FTransform'
+export type { FCameraOptions } from './cameras/FCamera'
+export type { FAttachedCameraOptions } from './cameras/FAttachedCamera'

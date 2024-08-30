@@ -6,12 +6,12 @@ For now, only 2 types of polygons are supported: squares and circles.
 
 ## Squares
 
-To create a square, you can use the `FSquare` class. Here is an example:
+To create a square, you can use the `FRectangle` class. Here is an example:
 
 ```typescript
-import { FSquare } from '@fibbojs/2d'
+import { FRectangle } from '@fibbojs/2d'
 
-const square = new FSquare({
+const square = new FRectangle({
   position: { x: 0, y: 5 },
   scale: { x: 1, y: 1 },
 })

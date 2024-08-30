@@ -4,19 +4,10 @@ import { FComponent } from '../FComponent'
 import type { FScene } from '../FScene'
 
 /**
- * @description A simple square in Fibbo.
+ * @description A simple polygon in Fibbo.
  * @category Polygons
- * @example
- * ```ts
- * import { FScene, FSquare } from '@fibbojs/2d'
- *
- * const scene = new FScene()
- *
- * const square = new FSquare(scene)
- * scene.addComponent(square)
- * ```
  */
-export class FSquare extends FComponent {
+export abstract class FPolygon extends FComponent {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a square

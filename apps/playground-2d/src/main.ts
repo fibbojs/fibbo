@@ -1,5 +1,5 @@
 import './style.css'
-import { FAttachedCamera, FCharacterKP, FCircle, FComponentEmpty, FScene, FShapes, FSprite, FSquare } from '@fibbojs/2d'
+import { FAttachedCamera, FCharacterKP, FCircle, FComponentEmpty, FScene, FShapes, FSprite, FRectangle } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
 import MySquare from './classes/MySquare'
 
@@ -12,7 +12,7 @@ import MySquare from './classes/MySquare'
     fDebug(scene)
 
   // Create the ground
-  const ground = new FSquare(scene, {
+  const ground = new FRectangle(scene, {
     position: { x: 0, y: 0 },
     scale: { x: 10, y: 0.1 },
   })
@@ -30,7 +30,7 @@ import MySquare from './classes/MySquare'
   const square = new MySquare(scene)
   scene.addComponent(square)
 
-  const square2 = new FSquare(scene, {
+  const square2 = new FRectangle(scene, {
     position: { x: 0, y: 3 },
     scale: { x: 0.5, y: 0.5 },
     rotationDegree: 45,
@@ -40,7 +40,7 @@ import MySquare from './classes/MySquare'
   })
   scene.addComponent(square2)
 
-  const square3 = new FSquare(scene, {
+  const square3 = new FRectangle(scene, {
     position: { x: 4, y: 1 },
   })
   square3.initCollider({
@@ -48,7 +48,7 @@ import MySquare from './classes/MySquare'
   })
   scene.addComponent(square3)
 
-  const square4 = new FSquare(scene, {
+  const square4 = new FRectangle(scene, {
     position: { x: -2.2, y: 1 },
     scale: { x: 0.5, y: 0.5 },
   })
@@ -60,7 +60,7 @@ import MySquare from './classes/MySquare'
   })
   scene.addComponent(square4)
 
-  const square5 = new FSquare(scene, {
+  const square5 = new FRectangle(scene, {
     position: { x: 1, y: 2 },
     scale: { x: 0.5, y: 0.5 },
   })
@@ -89,7 +89,7 @@ import MySquare from './classes/MySquare'
    * Create character
    */
   const character = new FCharacterKP(scene)
-  character.onCollisionWith(FSquare, () => {
+  character.onCollisionWith(FRectangle, () => {
     console.log('Sprite collided with a square!')
   })
   character.onCollisionWith(circle, () => {

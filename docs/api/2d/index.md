@@ -31,7 +31,7 @@
 #### Polygons
 
 - [FCircle](classes/FCircle.md)
-- [FSquare](classes/FSquare.md)
+- [FRectangle](classes/FRectangle.md)
 
 #### Sprite
 

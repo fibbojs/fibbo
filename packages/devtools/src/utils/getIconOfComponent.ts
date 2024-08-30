@@ -11,7 +11,7 @@ export function getIconOfComponent(component: FComponent): FComponentIconSet {
   if (chain.length === 0)
     return FComponentIconSet.Square
   // Get the icon of the component
-  if (chain.includes('FCube'))
+  if (chain.includes('FCuboid'))
     return FComponentIconSet.Cube
   if (chain.includes('FSphere'))
     return FComponentIconSet.Sphere
@@ -25,7 +25,7 @@ export function getIconOfComponent(component: FComponent): FComponentIconSet {
     return FComponentIconSet.Light
   if (chain.includes('FModel'))
     return FComponentIconSet.Mesh
-  if (chain.includes('FSquare'))
+  if (chain.includes('FRectangle'))
     return FComponentIconSet.Square
   if (chain.includes('FCircle'))
     return FComponentIconSet.Circle

@@ -14,7 +14,7 @@ The base class for all 2D components in Fibbo.
 
 - [`FComponentEmpty`](FComponentEmpty.md)
 - [`FCharacter`](FCharacter.md)
-- [`FSquare`](FSquare.md)
+- [`FRectangle`](FRectangle.md)
 - [`FCircle`](FCircle.md)
 - [`FSprite`](FSprite.md)
 

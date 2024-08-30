@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { FCapsule, FCharacterKP, FComponentEmpty, FCube, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FCapsule, FCharacterKP, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -28,7 +28,7 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(deathZone)
 
   // Create a ground
-  const ground = new FCube(scene, {
+  const ground = new FCuboid(scene, {
     position: { x: 0, y: -0.1, z: 0 },
     scale: { x: 15, y: 0.1, z: 15 },
   })
@@ -99,7 +99,7 @@ import MyCustomCube from './classes/MyCustomCube'
 
   // Add "stairs"
   for (let i = 0; i < 10; i++) {
-    const cube = new FCube(scene, {
+    const cube = new FCuboid(scene, {
       scale: { x: 2, y: 0.2, z: 1 },
       position: { x: 6, y: i / 4, z: -i },
     })
@@ -109,7 +109,7 @@ import MyCustomCube from './classes/MyCustomCube'
   }
 
   // Create a second ground
-  const ground2 = new FCube(scene, {
+  const ground2 = new FCuboid(scene, {
     position: { x: 0, y: 2.2, z: -17 },
     scale: { x: 15, y: 0.1, z: 15 },
   })
@@ -171,7 +171,7 @@ import MyCustomCube from './classes/MyCustomCube'
       })
     }
     else {
-      cube = new FCube(scene)
+      cube = new FCuboid(scene)
       cube.setPosition({ x, y: 3, z: z - 17 })
       cube.initRigidBody()
     }
@@ -181,8 +181,8 @@ import MyCustomCube from './classes/MyCustomCube'
   /**
    * Add collision events
    */
-  character.onCollisionWith(FCube, () => {
-    console.log('Character collided with a FCube !')
+  character.onCollisionWith(FCuboid, () => {
+    console.log('Character collided with a FCuboid !')
   })
   character.onCollisionWith(sphere, () => {
     console.log('Character collided with the sphere!')

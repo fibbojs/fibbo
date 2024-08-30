@@ -9,7 +9,7 @@ A scene which contains the models, the Three.js scene and the Rapier world.
 ## Example
 
 ```ts
-import { FCube, FGameCamera, FScene } from '@fibbojs/3d'
+import { FCuboid, FGameCamera, FScene } from '@fibbojs/3d'
 
 (async () => {
  // Initialize the scene
@@ -18,7 +18,7 @@ import { FCube, FGameCamera, FScene } from '@fibbojs/3d'
  await scene.initPhysics()
 
  // Create a ground
- const ground = new FCube(scene)
+ const ground = new FCuboid(scene)
  ground.setScale(15, 0.1, 15)
  ground.setPosition(0, -0.1, 0)
  ground.initCollider()
@@ -26,7 +26,7 @@ import { FCube, FGameCamera, FScene } from '@fibbojs/3d'
  scene.addComponent(ground)
 
  // Create a cube
- const cube = new FCube(scene)
+ const cube = new FCuboid(scene)
  cube.initRigidBody()
  scene.addComponent(cube)
 

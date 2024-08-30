@@ -8,11 +8,11 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  * @category Camera
  * @example
  * ```ts
- * import { FScene, FPointerLockCamera, FCube } from '@fibbojs/3d'
+ * import { FScene, FPointerLockCamera, FCuboid } from '@fibbojs/3d'
  *
  * const scene = new FScene()
  *
- * const cube = new FCube(scene)
+ * const cube = new FCuboid(scene)
  * scene.addComponent(cube)
  *
  * scene.camera = new FPointerLockCamera(cube)

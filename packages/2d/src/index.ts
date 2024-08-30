@@ -21,7 +21,8 @@ export { FCharacterKP } from './character/FCharacterKP'
 export { FCharacterKV } from './character/FCharacterKV'
 
 // Polygons
-export { FSquare } from './polygons/FSquare'
+export { FPolygon } from './polygons/FPolygon'
+export { FRectangle } from './polygons/FRectangle'
 export { FCircle } from './polygons/FCircle'
 
 // Sprite

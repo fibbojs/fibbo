@@ -7,15 +7,15 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Model
  * @example
  * ```ts
- * import { FScene, FCube } from '@fibbojs/3d'
+ * import { FScene, FCuboid } from '@fibbojs/3d'
  *
  * const scene = new FScene()
  *
- * const cube = new FCube(scene)
+ * const cube = new FCuboid(scene)
  * scene.addComponent(cube)
  * ```
  */
-export class FCube extends FPolyhedron {
+export class FCuboid extends FPolyhedron {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
   }

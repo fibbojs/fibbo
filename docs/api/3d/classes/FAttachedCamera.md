@@ -9,11 +9,11 @@ A camera that can be attached to a FComponent.
 ## Example
 
 ```ts
-import { FScene, FAttachedCamera, FCube } from '@fibbojs/3d'
+import { FScene, FAttachedCamera, FCuboid } from '@fibbojs/3d'
 
 const scene = new FScene()
 
-const cube = new FCube(scene)
+const cube = new FCuboid(scene)
 scene.addComponent(cube)
 
 scene.camera = new FAttachedCamera(cube)

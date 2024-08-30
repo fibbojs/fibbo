@@ -36,7 +36,7 @@ import { FScene } from '@fibbojs/3d'
 Once the scene is created, you can add components to it using the `addComponent` method.
 
 ```typescript
-const cube = new FCube()
+const cube = new FCuboid()
 scene.addComponent(cube)
 ```
 

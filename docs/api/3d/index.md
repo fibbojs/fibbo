@@ -33,7 +33,7 @@
 #### Model
 
 - [FCapsule](classes/FCapsule.md)
-- [FCube](classes/FCube.md)
+- [FCuboid](classes/FCuboid.md)
 - [FFBX](classes/FFBX.md)
 - [FGLB](classes/FGLB.md)
 - [FGLTF](classes/FGLTF.md)
