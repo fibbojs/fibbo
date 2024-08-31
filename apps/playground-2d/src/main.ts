@@ -1,7 +1,9 @@
 import './style.css'
-import { FAttachedCamera, FCharacterKP, FCircle, FComponentEmpty, FScene, FShapes, FSprite, FRectangle } from '@fibbojs/2d'
+import { FAttachedCamera, FCharacterKP, FCircle, FComponentEmpty, FRectangle, FScene, FShapes, FSprite } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
+import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
+import { loadLevel } from './level'
 
 (async () => {
   const scene = new FScene()
@@ -11,14 +13,6 @@ import MySquare from './classes/MySquare'
   if (import.meta.env.DEV)
     fDebug(scene)
 
-  // Create the ground
-  const ground = new FRectangle(scene, {
-    position: { x: 0, y: 0 },
-    scale: { x: 10, y: 0.1 },
-  })
-  ground.initCollider()
-  scene.addComponent(ground)
-
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {
     position: { x: 0, y: -5 },
@@ -26,6 +20,9 @@ import MySquare from './classes/MySquare'
   })
   deathZone.initCollider()
   scene.addComponent(deathZone)
+
+  // Load level
+  loadLevel(scene)
 
   const square = new MySquare(scene)
   scene.addComponent(square)
@@ -74,7 +71,8 @@ import MySquare from './classes/MySquare'
   scene.addComponent(circle)
 
   // Create a sprite
-  const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png', {
+  const sprite = new FSprite(scene, {
+    texture: '/fibbo/playground-2d/bunny.png',
     position: { x: 2, y: 3 },
   })
   sprite.onLoaded(() => {
@@ -88,7 +86,9 @@ import MySquare from './classes/MySquare'
   /**
    * Create character
    */
-  const character = new FCharacterKP(scene)
+  const character = new FCharacterKP(scene, {
+    position: { x: 0, y: 5 },
+  })
   character.onCollisionWith(FRectangle, () => {
     console.log('Sprite collided with a square!')
   })
@@ -100,6 +100,12 @@ import MySquare from './classes/MySquare'
     console.log('Sprite collided with the death zone!')
   })
   scene.addComponent(character)
+
+  // Create keyboard
+  const keyboard = new FKeyboard(scene)
+  keyboard.onKeyDown('p', () => {
+    character.setPosition({ x: 0, y: 5 })
+  })
 
   // Attach a camera to the character
   scene.camera = new FAttachedCamera(scene, {

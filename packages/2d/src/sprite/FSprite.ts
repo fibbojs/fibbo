@@ -3,6 +3,10 @@ import type { FComponentOptions } from '../FComponent'
 import { FComponent } from '../FComponent'
 import type { FScene } from '../FScene'
 
+export interface FSpriteOptions extends FComponentOptions {
+  texture: string
+}
+
 /**
  * @description A simple sprite in Fibbo.
  * @category Sprite
@@ -26,8 +30,9 @@ export class FSprite extends FComponent {
    */
   public __CALLBACKS_ON_LOADED__: (() => void)[] = []
 
-  constructor(scene: FScene, texture: string, options?: FComponentOptions) {
+  constructor(scene: FScene, options: FSpriteOptions) {
     super(scene, options)
+
     // Define the texture and container while loading
     this.texture = PIXI.Texture.EMPTY
     this.container = new PIXI.Graphics()
@@ -37,7 +42,7 @@ export class FSprite extends FComponent {
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
 
     // Load the texture
-    this.loadTexture(texture)
+    this.loadTexture(options.texture)
   }
 
   /**
@@ -47,8 +52,10 @@ export class FSprite extends FComponent {
   async loadTexture(texture: string) {
     // Load the texture
     this.texture = await PIXI.Assets.load(texture)
+    this.texture.source.scaleMode = 'nearest'
     // Create a sprite
     this.container = new PIXI.Sprite(this.texture)
+    this.container.zIndex = 0
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
     // Set the scale of the component so it fits the texture by its width
