@@ -75,7 +75,7 @@ You can now open your browser and navigate to `http://localhost:5173/fibbo`.
 
 ## Credits
 
-3D Models used for development purpose are from [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) and [Kenney](https://kenney.nl/assets?q=3d).
+3D models and sprites used for development purpose are from [Kenney](https://kenney.nl/assets?q=3d) and [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets).
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@fibbojs/fibbo/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
