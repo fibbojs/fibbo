@@ -10,10 +10,10 @@ To create a sprite, you can use the `FSprite` class. Here is an example:
 import { FSprite } from '@fibbojs/2d'
 
 const sprite = new FSprite({
-  path: 'path/to/image.png',
+  texture: 'path/to/texture.png',
   position: { x: 0, y: 5 },
   scale: { x: 1, y: 1 },
 })
 ```
 
-This will create a sprite with the image located at `path/to/image.png` at the position `(0, 5)`.
+This will create a sprite with the image located at `path/to/texture.png` at the position `(0, 5)`.

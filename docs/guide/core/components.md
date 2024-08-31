@@ -32,9 +32,9 @@ import { FCuboid } from '@fibbojs/3d'
 const cube = new FCuboid()
 ```
 
-This will create a new cube component, that can be added to a [Scene](/guide/scene) (which we'll see in the next section).
+This will create a new cuboid component, that can be added to a [Scene](/guide/scene).
 
-Basic options can be passed to the constructor :
+Options can be passed to the constructor :
 
 ```typescript
 import { FCuboid } from '@fibbojs/3d'

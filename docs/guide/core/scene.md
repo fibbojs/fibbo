@@ -12,7 +12,7 @@ Its main purpose is to initialize the technical environment for your game, aswel
 
 Creating a scene involves several steps :
 
-- Import the `FScene` class from the `@fibbojs/3d` library.
+- Import the `FScene` class from the `@fibbojs/3d` or `@fibbojs/2d` library.
 - Create a new instance of the `FScene` class.
 - Calling the `init` method to initialize the scene.
 - (optional) Calling the `initPhysics` method to initialize the physics engine.
@@ -47,11 +47,11 @@ As soon as you add a component to the scene, it will be rendered on the screen e
 The `Scene` class exposes several hooks that you can use to interact with the scene and its components. This feature took inspiration from the [Vue Lifecycle Hooks](https://vuejs.org/guide/essentials/lifecycle.html) system, but it is still very experimental.
 
 Here is a list of the available hooks :
-- `onFrame` : Called every frame by the scene to update the components.
+- `onFrame` : Called every frame by the scene. Delta time is passed as an argument.
 - `onComponentAdded` : Called when a component is added to the scene.
 
 ```typescript
-scene.onFrame(() => {
+scene.onFrame((delta) => {
   // Do something on the scene every frame
 })
 scene.onComponentAdded((component: FComponent) => {

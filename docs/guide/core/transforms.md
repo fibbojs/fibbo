@@ -10,7 +10,7 @@ You can find the API reference for a [2d transform here](/api/2d/classes/FTransf
 
 ## Position
 
-The position of an object is a 3D vector that represents its location in the scene. For more information on the unit system, see the [fundamentals](/guide/fundamentals#unit-system) section.
+The position of an object is a 2D/3D vector that represents its location in the scene. For more information on the unit system, see the [fundamentals](/guide/fundamentals#unit-system) section.
 
 You can set the position as follows :
 
@@ -29,7 +29,7 @@ const position = cube.position
 
 ## Rotation
 
-The rotation of an object is a 3D vector that represents its orientation in the scene. The rotation is expressed in [radians](https://en.wikipedia.org/wiki/Radian).
+The rotation of an object is a either a number (in 2D scenes) or a 3D vector (in 3D scenes) that represents its orientation in the scene. The rotation is expressed in [radians](https://en.wikipedia.org/wiki/Radian).
 
 You can set the rotation as follows :
 
@@ -56,7 +56,7 @@ const rotationDegree = cube.rotationDegree
 
 ## Scale
 
-The scale of an object is a 3D vector that represents its size in the scene. For more information on the units system, see the [fundamentals](/guide/fundamentals#unit-system) section.
+The scale of an object is a 2D/3D vector that represents its size in the scene. For more information on the units system, see the [fundamentals](/guide/fundamentals#unit-system) section.
 
 You can set the scale as follows :
 
