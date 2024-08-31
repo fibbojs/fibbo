@@ -1,5 +1,4 @@
 import RAPIER from '@dimforge/rapier2d'
-import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../FScene'
 import type { FComponentOptions } from '../FComponent'
 import type { FRigidBodyOptions } from '../FRigidBody'
