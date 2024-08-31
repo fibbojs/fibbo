@@ -72,7 +72,7 @@ import { loadLevel } from './level'
 
   // Create a sprite
   const sprite = new FSprite(scene, {
-    texture: '/fibbo/playground-2d/bunny.png',
+    texture: 'bunny.png',
     position: { x: 2, y: 3 },
   })
   sprite.onLoaded(() => {

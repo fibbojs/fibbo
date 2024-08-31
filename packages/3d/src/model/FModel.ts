@@ -61,7 +61,7 @@ export abstract class FModel extends FComponent {
 
     // Apply default options
     const DEFAULT_OPTIONS = {
-      path: `/models/${options.name}/${options.name}.${options.fileExtension || 'obj'}`,
+      path: `/assets/${options.name}/${options.name}.${options.fileExtension || 'obj'}`,
       textures: {},
       fileExtension: 'obj',
     }
@@ -86,9 +86,9 @@ export abstract class FModel extends FComponent {
       else if (path.startsWith('/')) {
         return `${window.location.href}${path}`
       }
-      // Otherwise, treat as a relative path starting to the models folder
+      // Otherwise, treat as a relative path starting to the assets folder
       else {
-        return `${window.location.href}/models/${path}`
+        return `${window.location.href}/assets/${path}`
       }
     }
 
@@ -165,7 +165,7 @@ export abstract class FModel extends FComponent {
       }
       else {
         // Otherwise, use a default path
-        texturePath = `models/${this.name}/Textures/colormap.png`
+        texturePath = `assets/${this.name}/Textures/colormap.png`
       }
       // Load the texture
       textureLoader.load(texturePath, (texture) => {

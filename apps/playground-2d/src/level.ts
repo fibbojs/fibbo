@@ -3,7 +3,7 @@ import { FSprite } from '@fibbojs/2d'
 
 function addBelowGround(scene: FScene, position: { x: number, y: number }) {
   const ground = new FSprite(scene, {
-    texture: '/fibbo/playground-2d/ground_0122.jpeg',
+    texture: 'ground_0122.jpeg',
     position,
   })
   ground.initCollider()
@@ -12,7 +12,7 @@ function addBelowGround(scene: FScene, position: { x: number, y: number }) {
 
 function addGround(scene: FScene, position: { x: number, y: number }) {
   const ground = new FSprite(scene, {
-    texture: '/fibbo/playground-2d/ground_0022.png',
+    texture: 'ground_0022.png',
     position,
   })
   ground.initCollider()
@@ -21,7 +21,7 @@ function addGround(scene: FScene, position: { x: number, y: number }) {
 
 function addBackground(scene: FScene, position: { x: number, y: number }) {
   const background = new FSprite(scene, {
-    texture: '/fibbo/playground-2d/background_0000.jpg',
+    texture: 'background_0000.jpg',
     position,
   })
   background.onLoaded(() => {
@@ -32,7 +32,7 @@ function addBackground(scene: FScene, position: { x: number, y: number }) {
 
 function addBackgroundDark(scene: FScene, position: { x: number, y: number }) {
   const background = new FSprite(scene, {
-    texture: '/fibbo/playground-2d/background_0016.png',
+    texture: 'background_0016.png',
     position,
   })
   background.onLoaded(() => {
@@ -44,12 +44,12 @@ function addBackgroundDark(scene: FScene, position: { x: number, y: number }) {
 function addBackgroundVariation(scene: FScene, position: { x: number, y: number }, variation = 0) {
   const background = new FSprite(scene, {
     texture: variation === 0
-      ? '/fibbo/playground-2d/background_0008.webp'
+      ? 'background_0008.webp'
       : variation === 1
-        ? '/fibbo/playground-2d/background_0009.png'
+        ? 'background_0009.png'
         : variation === 2
-          ? '/fibbo/playground-2d/background_0010.png'
-          : '/fibbo/playground-2d/background_0011.png',
+          ? 'background_0010.png'
+          : 'background_0011.png',
     position,
   })
   background.onLoaded(() => {

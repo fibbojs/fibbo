@@ -50,8 +50,26 @@ export class FSprite extends FComponent {
    * @param texture The path to the texture.
    */
   async loadTexture(texture: string) {
+    // Interpret path function
+    function interpretPath(path: string) {
+      // Resource URL (if it starts http, treat as a URL)
+      if (path.startsWith('http')) {
+        return path
+      }
+      // Absolute path (if it starts with /), add the current domain + path
+      else if (path.startsWith('/')) {
+        return `${window.location.href}${path}`
+      }
+      // Otherwise, treat as a relative path starting to the assets folder
+      else {
+        return `${window.location.href}/assets/${path}`
+      }
+    }
+
+    // Interpret the path
+    const path = interpretPath(texture)
     // Load the texture
-    this.texture = await PIXI.Assets.load(texture)
+    this.texture = await PIXI.Assets.load(path)
     this.texture.source.scaleMode = 'nearest'
     // Create a sprite
     this.container = new PIXI.Sprite(this.texture)
