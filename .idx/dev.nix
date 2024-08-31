@@ -11,12 +11,11 @@
       web = {
         command = [
           "nx"
-          "dev"
-          "@fibbojs/playground-2d"
+          "dev:watch"
+          "@fibbojs/playground-3d"
           "--port"
           "$PORT"
         ];
-        # Then open a terminal and run : nx watch --projects=@fibbojs/2d -- nx build @fibbojs/2d
         manager = "web";
       };
     };
