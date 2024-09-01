@@ -1,21 +1,26 @@
 import * as PIXI from 'pixi.js'
-import { FComponent2d } from '../FComponent2d'
-import type { FScene2d } from '../FScene2d'
+import type { FComponentOptions } from '../core/FComponent'
+import { FComponent } from '../core/FComponent'
+import type { FScene } from '../core/FScene'
+
+export interface FSpriteOptions extends FComponentOptions {
+  texture: string
+}
 
 /**
- * @description A simple sprite in FibboJS.
+ * @description A simple sprite in Fibbo.
  * @category Sprite
  * @example
  * ```ts
- * import { FScene2d, FSprite } from '@fibbojs/2d'
+ * import { FScene, FSprite } from '@fibbojs/2d'
  *
- * const scene = new FScene2d()
+ * const scene = new FScene()
  *
  * const sprite = new FSprite(scene, '/my-texture.png')
  * scene.addComponent(sprite)
  * ```
  */
-export class FSprite extends FComponent2d {
+export class FSprite extends FComponent {
   /**
    * The texture of the sprite.
    */
@@ -23,25 +28,21 @@ export class FSprite extends FComponent2d {
   /**
    * Callbacks for when the texture is loaded
    */
-  public CALLBACKS_ONLOADED: (() => void)[] = []
+  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
 
-  constructor(scene: FScene2d, texture: string, options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    rotationDegree?: number
-  }) {
+  constructor(scene: FScene, options: FSpriteOptions) {
     super(scene, options)
+
     // Define the texture and container while loading
     this.texture = PIXI.Texture.EMPTY
     this.container = new PIXI.Graphics()
-      .rect(this.position.x, this.position.y, this.scale.x * 100, this.scale.y * 100)
+      .rect(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100, this.transform.scale.y * 100)
       .fill(new PIXI.FillGradient(0, 0, 100, 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
 
     // Load the texture
-    this.loadTexture(texture)
+    this.loadTexture(options.texture)
   }
 
   /**
@@ -49,15 +50,35 @@ export class FSprite extends FComponent2d {
    * @param texture The path to the texture.
    */
   async loadTexture(texture: string) {
+    // Interpret path function
+    function interpretPath(path: string) {
+      // Resource URL (if it starts http, treat as a URL)
+      if (path.startsWith('http')) {
+        return path
+      }
+      // Absolute path (if it starts with /), add the current domain + path
+      else if (path.startsWith('/')) {
+        return `${window.location.href}${path}`
+      }
+      // Otherwise, treat as a relative path starting to the assets folder
+      else {
+        return `${window.location.href}/assets/${path}`
+      }
+    }
+
+    // Interpret the path
+    const path = interpretPath(texture)
     // Load the texture
-    this.texture = await PIXI.Assets.load(texture)
+    this.texture = await PIXI.Assets.load(path)
+    this.texture.source.scaleMode = 'nearest'
     // Create a sprite
     this.container = new PIXI.Sprite(this.texture)
+    this.container.zIndex = 0
     // Set the pivot of the container to the center
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
     // Set the scale of the component so it fits the texture by its width
     // Width will be 1 unit, height will be calculated according to the aspect ratio
-    this.setScaleWidth(1)
+    this.setScaleWidth(this.transform.scale.x)
     // Call the onLoaded method
     this.emitOnLoaded()
   }
@@ -68,7 +89,7 @@ export class FSprite extends FComponent2d {
    * @param width The width of the sprite.
    */
   setScaleWidth(width: number) {
-    this.setScale(width, width * this.texture.height / this.texture.width)
+    this.setScale({ x: width, y: width * this.texture.height / this.texture.width })
   }
 
   /**
@@ -77,7 +98,7 @@ export class FSprite extends FComponent2d {
    * @param height The height of the sprite.
    */
   setScaleHeight(height: number) {
-    this.setScale(height * this.texture.width / this.texture.height, height)
+    this.setScale({ x: height * this.texture.width / this.texture.height, y: height })
   }
 
   onFrame(delta: number): void {
@@ -86,17 +107,17 @@ export class FSprite extends FComponent2d {
 
   /**
    * @description Add a callback to be called when the texture is loaded.
-   * @param fn The callback function.
+   * @param callback The callback function.
    */
-  onLoaded(fn: () => void) {
-    this.CALLBACKS_ONLOADED.push(fn)
+  onLoaded(callback: () => void) {
+    this.__CALLBACKS_ON_LOADED__.push(callback)
   }
 
   /**
    * @description Emit the onLoaded callbacks.
    */
   emitOnLoaded() {
-    this.CALLBACKS_ONLOADED.forEach((callback) => {
+    this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
       callback()
     })
   }

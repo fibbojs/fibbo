@@ -1,47 +1,63 @@
 import './style.css'
-import { F2dShapes, FCircle, FScene2d, FSprite, FSquare } from '@fibbojs/2d'
+import { FAttachedCamera, FCharacterControllerKP, FCircle, FComponentEmpty, FRectangle, FScene, FShapes, FSprite } from '@fibbojs/2d'
+import { fDebug } from '@fibbojs/devtools'
+import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
+import { loadLevel } from './level'
 
 (async () => {
-  const scene = new FScene2d({ debug: true })
+  const scene = new FScene()
   await scene.init()
   await scene.initPhysics()
+  // Debug the scene
+  if (import.meta.env.DEV)
+    fDebug(scene)
 
-  // Create the ground
-  const ground = new FSquare(scene, {
-    position: { x: 0, y: 0 },
-    scale: { x: 10, y: 0.1 },
+  // Create a death zone
+  const deathZone = new FComponentEmpty(scene, {
+    position: { x: 0, y: -5 },
+    scale: { x: 20, y: 0.1 },
   })
-  ground.initCollider()
-  scene.addComponent(ground)
+  deathZone.initCollider()
+  scene.addComponent(deathZone)
+
+  // Load level
+  loadLevel(scene)
 
   const square = new MySquare(scene)
   scene.addComponent(square)
 
-  const square2 = new FSquare(scene, {
+  const square2 = new FRectangle(scene, {
     position: { x: 0, y: 3 },
     scale: { x: 0.5, y: 0.5 },
     rotationDegree: 45,
   })
-  square2.initCollider()
+  square2.initCollider({
+    rotationDegree: 45,
+  })
   scene.addComponent(square2)
 
-  const square3 = new FSquare(scene, {
+  const square3 = new FRectangle(scene, {
     position: { x: 4, y: 1 },
   })
   square3.initCollider({
-    shape: F2dShapes.CIRCLE,
+    shape: FShapes.CIRCLE,
   })
   scene.addComponent(square3)
 
-  const square4 = new FSquare(scene, {
+  const square4 = new FRectangle(scene, {
     position: { x: -2.2, y: 1 },
     scale: { x: 0.5, y: 0.5 },
   })
-  square4.initCollider()
+  square4.initCollider({
+    scale: { x: 1.5, y: 1.5 },
+  })
+  square4.initSensor({
+    scale: { x: 2.5, y: 2.5 },
+  })
   scene.addComponent(square4)
 
-  const square5 = new FSquare(scene, {
+  const square5 = new FRectangle(scene, {
     position: { x: 1, y: 2 },
     scale: { x: 0.5, y: 0.5 },
   })
@@ -54,42 +70,37 @@ import MySquare from './classes/MySquare'
   circle.initRigidBody()
   scene.addComponent(circle)
 
-  const sprite = new FSprite(scene, '/fibbo/playground-2d/bunny.png')
-  sprite.onLoaded(() => {
-    sprite.setPosition(2, 3)
-    sprite.initRigidBody({
-      lockRotations: true,
-    })
-    sprite.setScaleWidth(0.5)
-    sprite.onCollisionWith(FSquare, () => {
-      console.log('Sprite collided with a square!')
-    })
-    sprite.onCollisionWith(circle, () => {
-      console.log('Sprite collided with the circle!')
-    })
+  /**
+   * Create character
+   */
+  const character = new FSprite(scene, {
+    texture: 'character_0000.png',
+    position: { x: 0, y: 5 },
+    scale: { x: 0.5, y: 0.5 },
   })
-  scene.addComponent(sprite)
+  character.controller = new FCharacterControllerKP(scene, {
+    component: character,
+  })
+  character.onCollisionWith(FRectangle, () => {
+    console.log('Sprite collided with a square!')
+  })
+  character.onCollisionWith(circle, () => {
+    console.log('Sprite collided with the circle!')
+  })
+  character.onCollisionWith(deathZone, () => {
+    character.setPosition({ x: 0, y: 5 })
+    console.log('Sprite collided with the death zone!')
+  })
+  scene.addComponent(character)
 
-  // Detect inputs to move the cube
-  document.addEventListener('keydown', (event) => {
-    const impulse = { x: 0, y: 0, z: 0 }
-    switch (event.key) {
-      case 'ArrowUp':
-        impulse.y = 1
-        break
-      case 'ArrowDown':
-        impulse.y = -1
-        break
-      case 'ArrowLeft':
-        impulse.x = -1
-        break
-      case 'ArrowRight':
-        impulse.x = 1
-        break
-      case ' ':
-        sprite.rigidBody?.applyImpulse({ x: 0, y: 2 }, true)
-        break
-    }
-    sprite.rigidBody?.applyImpulse(impulse, true)
+  // Create keyboard
+  const keyboard = new FKeyboard(scene)
+  keyboard.onKeyDown('p', () => {
+    character.setPosition({ x: 0, y: 5 })
+  })
+
+  // Attach a camera to the character
+  scene.camera = new FAttachedCamera(scene, {
+    target: character,
   })
 })()

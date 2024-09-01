@@ -7,30 +7,33 @@ on:
     types: [published]
 
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-node@v2
-          with:
-            node-version: 18
-            registry-url: https://registry.npmjs.org/
-        - run: npm ci
-        - name: Test package
-          run: npm run test
-        - name: Build
-          run: npm run build
-        # Configure Git for automated commits
-        - name: Configuring Git
-          run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@users.noreply.github.com"
-        # Bump package version
-        - name: Update package version
-          run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
-        # Publish package to NPM
-        - name: Publish package to NPM
-          run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        # Push changes to GitHub (package.json and package-lock.json)
-        - name: Push changes to GitHub
-          run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write # Needed for provenance data generation
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      # Build all packages
+      - name: Build
+        run: npx nx run-many --target=build --all
+      # Configure Git for automated commits
+      - name: Configuring Git
+        run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@users.noreply.github.com"
+      # Bump packages versions
+      - name: Bump packages versions
+        run: npx nx release --first-release --skip-publish ${{ github.event.release.tag_name }}
+      # Publish packages to NPM
+      - name: Publish package to NPM
+        run: npx nx release publish ${{ github.event.release.tag_name }} --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+      # Push changes to GitHub (updated package.json,...)
+      - name: Push changes to GitHub
+        run: git push origin HEAD:main

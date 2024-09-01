@@ -1,34 +1,53 @@
+import type { FController } from './FController'
+
 /**
  * ID_COUNTER is used to generate unique identifiers for components.
  */
 let ID_COUNTER = 0
 
 /**
- * @description The base class for all 2D and 3D components in FibboJS.
+ * @description The base class for all 2D and 3D components in Fibbo.
  */
 export abstract class FComponent {
+  /**
+   * Internal flags
+   */
+  public __IS_3D__: boolean = false
+  public __IS_2D__: boolean = false
+
   /**
    * @description Unique identifier for the component.
    * It is generated automatically.
    */
-  public ID: number
+  public __ID__: number
 
   /**
    * @description Callbacks for when a collision occurs with a given class or object.
    * It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
    */
-  public CALLBACKS_ONCOLLISION: { [key: string]: (() => void)[] } = {}
+  public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
+
+  /**
+   * The controller attached to the component.
+   */
+  public controller?: FController
 
   constructor() {
-    this.ID = ID_COUNTER++
+    this.__ID__ = ID_COUNTER++
   }
 
   /**
-   * @description Update the component.
-   * Should be called every frame.
+   * @description Update the component. Should be called every frame.
+   * The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+   * Any changes on its transform should be done on the controller, not here.
    * @param delta The time since the last frame.
    */
-  abstract onFrame(delta: number): void
+  onFrame(delta: number): void {
+    // If a controller is attached, update it
+    if (this.controller) {
+      this.controller.onFrame(delta)
+    }
+  }
 
   /**
    * @description Add a callback to be called when a collision occurs.
@@ -58,18 +77,18 @@ export abstract class FComponent {
     let eventKey = ''
     // If the classOrObject is an object, use the class name + ID
     if (classOrObject instanceof FComponent) {
-      eventKey = `${classOrObject.constructor.name}@${classOrObject.ID}`
+      eventKey = `${classOrObject.constructor.name}@${classOrObject.__ID__}`
     }
     // Else, it should be a class, use the class name
     else {
       eventKey = classOrObject.name
     }
     // Create the array if it doesn't exist
-    if (!this.CALLBACKS_ONCOLLISION[eventKey]) {
-      this.CALLBACKS_ONCOLLISION[eventKey] = []
+    if (!this.__CALLBACKS_ON_COLLISION__[eventKey]) {
+      this.__CALLBACKS_ON_COLLISION__[eventKey] = []
     }
     // Add the callback
-    this.CALLBACKS_ONCOLLISION[eventKey].push(callback)
+    this.__CALLBACKS_ON_COLLISION__[eventKey].push(callback)
   }
 
   /**
@@ -89,19 +108,42 @@ export abstract class FComponent {
    * ```
    */
   emitCollisionWith(classOrObject: any) {
-    let eventKey = ''
     // If the classOrObject is an object, use the class name + ID
     if (classOrObject instanceof FComponent) {
-      eventKey = `${classOrObject.constructor.name}@${classOrObject.ID}`
+      const eventKey = `${classOrObject.constructor.name}@${classOrObject.__ID__}`
+
+      // Check if the event key exists and call the callbacks
+      if (this.__CALLBACKS_ON_COLLISION__[eventKey]) {
+        this.__CALLBACKS_ON_COLLISION__[eventKey].forEach((callback) => {
+          callback()
+        })
+      }
     }
     // Else, it should be a class, use the class name
     else {
-      eventKey = classOrObject.name
-    }
-    // Check if the event key exists and call the callbacks
-    if (this.CALLBACKS_ONCOLLISION[eventKey]) {
-      this.CALLBACKS_ONCOLLISION[eventKey].forEach((callback) => {
-        callback()
+      // Get the prototype chain for a given class
+      const getPrototypeChain = (obj: any) => {
+        const protoChain = []
+        let currentProto = obj.prototype
+        while (currentProto) {
+          protoChain.push(currentProto.constructor.name)
+          currentProto = Object.getPrototypeOf(currentProto)
+        }
+        return protoChain
+      }
+      // Get the prototype chain for the classOrObject
+      const thisChain = getPrototypeChain(classOrObject)
+
+      /**
+       * For each class in the prototype chain, check if there are any callbacks.
+       * If there are, call them.
+       */
+      thisChain.forEach((className) => {
+        if (this.__CALLBACKS_ON_COLLISION__[className]) {
+          this.__CALLBACKS_ON_COLLISION__[className].forEach((callback) => {
+            callback()
+          })
+        }
       })
     }
   }

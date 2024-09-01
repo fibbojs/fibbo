@@ -4,16 +4,16 @@
 
 ## Description
 
-A camera that can be attached to a FComponent3d.
+A camera that can be attached to a FComponent.
 
 ## Example
 
 ```ts
-import { FScene3d, FAttachedCamera, FCube } from '@fibbojs/3d'
+import { FScene, FAttachedCamera, FCuboid } from '@fibbojs/3d'
 
-const scene = new FScene3d()
+const scene = new FScene()
 
-const cube = new FCube(scene)
+const cube = new FCuboid(scene)
 scene.addComponent(cube)
 
 scene.camera = new FAttachedCamera(cube)
@@ -21,7 +21,7 @@ scene.camera = new FAttachedCamera(cube)
 
 ## Extends
 
-- [`FCamera3d`](FCamera3d.md)
+- [`FCamera`](FCamera.md)
 
 ## Constructors
 
@@ -31,7 +31,7 @@ scene.camera = new FAttachedCamera(cube)
 
 #### Parameters
 
-• **attachedComponent**: [`FComponent3d`](FComponent3d.md)
+• **attachedComponent**: [`FComponent`](FComponent.md)
 
 Model that the camera is attached to
 
@@ -41,11 +41,11 @@ Model that the camera is attached to
 
 #### Overrides
 
-[`FCamera3d`](FCamera3d.md).[`constructor`](FCamera3d.md#constructors)
+[`FCamera`](FCamera.md).[`constructor`](FCamera.md#constructors)
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:29](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L29)
+[packages/3d/src/cameras/FAttachedCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FAttachedCamera.ts#L29)
 
 ## Methods
 
@@ -75,7 +75,7 @@ Any current parent on an object passed in here will be removed, since an Object3
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`add`](FCamera3d.md#add)
+[`FCamera`](FCamera.md).[`add`](FCamera.md#add)
 
 #### Defined in
 
@@ -111,7 +111,7 @@ The function that gets called when the event is fired.
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`addEventListener`](FCamera3d.md#addeventlistener)
+[`FCamera`](FCamera.md).[`addEventListener`](FCamera.md#addeventlistener)
 
 ##### Defined in
 
@@ -137,7 +137,7 @@ node\_modules/@types/three/src/core/EventDispatcher.d.ts:52
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`addEventListener`](FCamera3d.md#addeventlistener)
+[`FCamera`](FCamera.md).[`addEventListener`](FCamera.md#addeventlistener)
 
 ##### Defined in
 
@@ -161,7 +161,7 @@ Applies the matrix transform to the object and updates the object's position, ro
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`applyMatrix4`](FCamera3d.md#applymatrix4)
+[`FCamera`](FCamera.md).[`applyMatrix4`](FCamera.md#applymatrix4)
 
 #### Defined in
 
@@ -185,7 +185,7 @@ Applies the rotation represented by the quaternion to the object.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`applyQuaternion`](FCamera3d.md#applyquaternion)
+[`FCamera`](FCamera.md).[`applyQuaternion`](FCamera.md#applyquaternion)
 
 #### Defined in
 
@@ -217,7 +217,7 @@ Note: This method does not support scene graphs having non-uniformly-scaled node
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`attach`](FCamera3d.md#attach)
+[`FCamera`](FCamera.md).[`attach`](FCamera.md#attach)
 
 #### Defined in
 
@@ -237,7 +237,7 @@ Removes all child objects.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`clear`](FCamera3d.md#clear)
+[`FCamera`](FCamera.md).[`clear`](FCamera.md#clear)
 
 #### Defined in
 
@@ -257,7 +257,7 @@ Removes any offset set by the [.setViewOffset](FAttachedCamera.md#setviewoffset)
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`clearViewOffset`](FCamera3d.md#clearviewoffset)
+[`FCamera`](FCamera.md).[`clearViewOffset`](FCamera.md#clearviewoffset)
 
 #### Defined in
 
@@ -283,7 +283,7 @@ If true, descendants of the object are also cloned. Default `true`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`clone`](FCamera3d.md#clone)
+[`FCamera`](FCamera.md).[`clone`](FCamera.md#clone)
 
 #### Defined in
 
@@ -316,7 +316,7 @@ Event listeners and user-defined callbacks (.onAfterRender and .onBeforeRender) 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`copy`](FCamera3d.md#copy)
+[`FCamera`](FCamera.md).[`copy`](FCamera.md#copy)
 
 #### Defined in
 
@@ -346,7 +346,7 @@ The event that gets fired.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`dispatchEvent`](FCamera3d.md#dispatchevent)
+[`FCamera`](FCamera.md).[`dispatchEvent`](FCamera.md#dispatchevent)
 
 #### Defined in
 
@@ -388,11 +388,36 @@ player.emitCollisionWith(enemy)
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`emitCollisionWith`](FCamera3d.md#emitcollisionwith)
+[`FCamera`](FCamera.md).[`emitCollisionWith`](FCamera.md#emitcollisionwith)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:46](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L46)
+[packages/3d/src/cameras/FCamera.ts:52](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L52)
+
+***
+
+### getCameraDirection()
+
+> **getCameraDirection**(): `Vector3`
+
+#### Returns
+
+`Vector3`
+
+The direction of the camera. It is a normalized vector.
+
+#### Description
+
+Get the direction of the camera.
+This method is useful to get the direction of the camera to apply forces in the direction of the camera.
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`getCameraDirection`](FCamera.md#getcameradirection)
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera.ts:61](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L61)
 
 ***
 
@@ -408,7 +433,7 @@ Returns the current vertical field of view angle in degrees considering [.zoom](
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getEffectiveFOV`](FCamera3d.md#geteffectivefov)
+[`FCamera`](FCamera.md).[`getEffectiveFOV`](FCamera.md#geteffectivefov)
 
 #### Defined in
 
@@ -432,7 +457,7 @@ If [.aspect](FAttachedCamera.md#aspect). is less than or equal to one (portrait 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getFilmHeight`](FCamera3d.md#getfilmheight)
+[`FCamera`](FCamera.md).[`getFilmHeight`](FCamera.md#getfilmheight)
 
 #### Defined in
 
@@ -456,7 +481,7 @@ If [.aspect](FAttachedCamera.md#aspect). is greater than or equal to one (landsc
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getFilmWidth`](FCamera3d.md#getfilmwidth)
+[`FCamera`](FCamera.md).[`getFilmWidth`](FCamera.md#getfilmwidth)
 
 #### Defined in
 
@@ -476,7 +501,7 @@ Returns the focal length of the current .fov | fov in respect to [.filmGauge](FA
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getFocalLength`](FCamera3d.md#getfocallength)
+[`FCamera`](FCamera.md).[`getFocalLength`](FCamera.md#getfocallength)
 
 #### Defined in
 
@@ -510,7 +535,7 @@ id
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getObjectById`](FCamera3d.md#getobjectbyid)
+[`FCamera`](FCamera.md).[`getObjectById`](FCamera.md#getobjectbyid)
 
 #### Defined in
 
@@ -541,7 +566,7 @@ You will have to set it manually to make use of this method.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getObjectByName`](FCamera3d.md#getobjectbyname)
+[`FCamera`](FCamera.md).[`getObjectByName`](FCamera.md#getobjectbyname)
 
 #### Defined in
 
@@ -572,7 +597,7 @@ value of the given property.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getObjectByProperty`](FCamera3d.md#getobjectbyproperty)
+[`FCamera`](FCamera.md).[`getObjectByProperty`](FCamera.md#getobjectbyproperty)
 
 #### Defined in
 
@@ -608,7 +633,7 @@ this array prior to each call (i.e., array.length = 0;).
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getObjectsByProperty`](FCamera3d.md#getobjectsbyproperty)
+[`FCamera`](FCamera.md).[`getObjectsByProperty`](FCamera.md#getobjectsbyproperty)
 
 #### Defined in
 
@@ -637,7 +662,7 @@ Sets minTarget and maxTarget to the coordinates of the lower-left and upper-righ
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getViewBounds`](FCamera3d.md#getviewbounds)
+[`FCamera`](FCamera.md).[`getViewBounds`](FCamera.md#getviewbounds)
 
 #### Defined in
 
@@ -664,7 +689,7 @@ Copies the result into the target Vector2, where x is width and y is height.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getViewSize`](FCamera3d.md#getviewsize)
+[`FCamera`](FCamera.md).[`getViewSize`](FCamera.md#getviewsize)
 
 #### Defined in
 
@@ -694,7 +719,7 @@ Note: A Camera looks down its local, negative z-axis.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getWorldDirection`](FCamera3d.md#getworlddirection)
+[`FCamera`](FCamera.md).[`getWorldDirection`](FCamera.md#getworlddirection)
 
 #### Defined in
 
@@ -720,7 +745,7 @@ The result will be copied into this Vector3.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getWorldPosition`](FCamera3d.md#getworldposition)
+[`FCamera`](FCamera.md).[`getWorldPosition`](FCamera.md#getworldposition)
 
 #### Defined in
 
@@ -746,7 +771,7 @@ The result will be copied into this Quaternion.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getWorldQuaternion`](FCamera3d.md#getworldquaternion)
+[`FCamera`](FCamera.md).[`getWorldQuaternion`](FCamera.md#getworldquaternion)
 
 #### Defined in
 
@@ -772,7 +797,7 @@ The result will be copied into this Vector3.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`getWorldScale`](FCamera3d.md#getworldscale)
+[`FCamera`](FCamera.md).[`getWorldScale`](FCamera.md#getworldscale)
 
 #### Defined in
 
@@ -808,7 +833,7 @@ The function that gets called when the event is fired.
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`hasEventListener`](FCamera3d.md#haseventlistener)
+[`FCamera`](FCamera.md).[`hasEventListener`](FCamera.md#haseventlistener)
 
 ##### Defined in
 
@@ -834,7 +859,7 @@ node\_modules/@types/three/src/core/EventDispatcher.d.ts:63
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`hasEventListener`](FCamera3d.md#haseventlistener)
+[`FCamera`](FCamera.md).[`hasEventListener`](FCamera.md#haseventlistener)
 
 ##### Defined in
 
@@ -860,7 +885,7 @@ A vector representing a position in this object's local space.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`localToWorld`](FCamera3d.md#localtoworld)
+[`FCamera`](FCamera.md).[`localToWorld`](FCamera.md#localtoworld)
 
 #### Defined in
 
@@ -892,7 +917,7 @@ This method does not support objects having non-uniformly-scaled parent(s).
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`lookAt`](FCamera3d.md#lookat)
+[`FCamera`](FCamera.md).[`lookAt`](FCamera.md#lookat)
 
 ##### Defined in
 
@@ -928,7 +953,7 @@ This method does not support objects having non-uniformly-scaled parent(s).
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`lookAt`](FCamera3d.md#lookat)
+[`FCamera`](FCamera.md).[`lookAt`](FCamera.md#lookat)
 
 ##### Defined in
 
@@ -970,7 +995,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`onAfterRender`](FCamera3d.md#onafterrender)
+[`FCamera`](FCamera.md).[`onAfterRender`](FCamera.md#onafterrender)
 
 #### Defined in
 
@@ -1013,7 +1038,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`onAfterShadow`](FCamera3d.md#onaftershadow)
+[`FCamera`](FCamera.md).[`onAfterShadow`](FCamera.md#onaftershadow)
 
 #### Defined in
 
@@ -1055,7 +1080,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`onBeforeRender`](FCamera3d.md#onbeforerender)
+[`FCamera`](FCamera.md).[`onBeforeRender`](FCamera.md#onbeforerender)
 
 #### Defined in
 
@@ -1098,7 +1123,7 @@ and thus this callback is not executed for such objects.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`onBeforeShadow`](FCamera3d.md#onbeforeshadow)
+[`FCamera`](FCamera.md).[`onBeforeShadow`](FCamera.md#onbeforeshadow)
 
 #### Defined in
 
@@ -1148,11 +1173,11 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`onCollisionWith`](FCamera3d.md#oncollisionwith)
+[`FCamera`](FCamera.md).[`onCollisionWith`](FCamera.md#oncollisionwith)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:39](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L39)
+[packages/3d/src/cameras/FCamera.ts:45](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L45)
 
 ***
 
@@ -1175,11 +1200,11 @@ Should be called every frame.
 
 #### Overrides
 
-[`FCamera3d`](FCamera3d.md).[`onFrame`](FCamera3d.md#onframe)
+[`FCamera`](FCamera.md).[`onFrame`](FCamera.md#onframe)
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:34](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L34)
+[packages/3d/src/cameras/FAttachedCamera.ts:34](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FAttachedCamera.ts#L34)
 
 ***
 
@@ -1213,7 +1238,7 @@ THREE.Raycaster | Raycaster
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`raycast`](FCamera3d.md#raycast)
+[`FCamera`](FCamera.md).[`raycast`](FCamera.md#raycast)
 
 #### Defined in
 
@@ -1245,7 +1270,7 @@ THREE.Group | Group for info on manually grouping objects.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`remove`](FCamera3d.md#remove)
+[`FCamera`](FCamera.md).[`remove`](FCamera.md#remove)
 
 #### Defined in
 
@@ -1281,7 +1306,7 @@ The listener function that gets removed.
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`removeEventListener`](FCamera3d.md#removeeventlistener)
+[`FCamera`](FCamera.md).[`removeEventListener`](FCamera.md#removeeventlistener)
 
 ##### Defined in
 
@@ -1307,7 +1332,7 @@ node\_modules/@types/three/src/core/EventDispatcher.d.ts:74
 
 ##### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`removeEventListener`](FCamera3d.md#removeeventlistener)
+[`FCamera`](FCamera.md).[`removeEventListener`](FCamera.md#removeeventlistener)
 
 ##### Defined in
 
@@ -1327,7 +1352,7 @@ Removes this object from its current parent.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`removeFromParent`](FCamera3d.md#removefromparent)
+[`FCamera`](FCamera.md).[`removeFromParent`](FCamera.md#removefromparent)
 
 #### Defined in
 
@@ -1361,7 +1386,7 @@ The axis is assumed to be normalized.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`rotateOnAxis`](FCamera3d.md#rotateonaxis)
+[`FCamera`](FCamera.md).[`rotateOnAxis`](FCamera.md#rotateonaxis)
 
 #### Defined in
 
@@ -1396,7 +1421,7 @@ Method Assumes no rotated parent.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`rotateOnWorldAxis`](FCamera3d.md#rotateonworldaxis)
+[`FCamera`](FCamera.md).[`rotateOnWorldAxis`](FCamera.md#rotateonworldaxis)
 
 #### Defined in
 
@@ -1420,7 +1445,7 @@ Rotates the object around _x_ axis in local space.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`rotateX`](FCamera3d.md#rotatex)
+[`FCamera`](FCamera.md).[`rotateX`](FCamera.md#rotatex)
 
 #### Defined in
 
@@ -1444,7 +1469,7 @@ Rotates the object around _y_ axis in local space.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`rotateY`](FCamera3d.md#rotatey)
+[`FCamera`](FCamera.md).[`rotateY`](FCamera.md#rotatey)
 
 #### Defined in
 
@@ -1468,7 +1493,7 @@ Rotates the object around _z_ axis in local space.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`rotateZ`](FCamera3d.md#rotatez)
+[`FCamera`](FCamera.md).[`rotateZ`](FCamera.md#rotatez)
 
 #### Defined in
 
@@ -1498,7 +1523,7 @@ By default, the focal length is specified for a `35mm` (full frame) camera.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setFocalLength`](FCamera3d.md#setfocallength)
+[`FCamera`](FCamera.md).[`setFocalLength`](FCamera.md#setfocallength)
 
 #### Defined in
 
@@ -1526,7 +1551,7 @@ Use [.setFocalLength()](FAttachedCamera.md#setfocallength) and [.filmGauge](FAtt
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setLens`](FCamera3d.md#setlens)
+[`FCamera`](FCamera.md).[`setLens`](FCamera.md#setlens)
 
 #### Defined in
 
@@ -1556,11 +1581,11 @@ Set the position of the camera.
 
 #### Overrides
 
-[`FCamera3d`](FCamera3d.md).[`setPosition`](FCamera3d.md#setposition)
+[`FCamera`](FCamera.md).[`setPosition`](FCamera.md#setposition)
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:46](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L46)
+[packages/3d/src/cameras/FAttachedCamera.ts:46](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FAttachedCamera.ts#L46)
 
 ***
 
@@ -1586,11 +1611,11 @@ Set the rotation of the camera.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setRotation`](FCamera3d.md#setrotation)
+[`FCamera`](FCamera.md).[`setRotation`](FCamera.md#setrotation)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:35](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L35)
+[packages/3d/src/cameras/FCamera.ts:41](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L41)
 
 ***
 
@@ -1616,7 +1641,7 @@ Angle in radians. Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setRotationFromAxisAngle`](FCamera3d.md#setrotationfromaxisangle)
+[`FCamera`](FCamera.md).[`setRotationFromAxisAngle`](FCamera.md#setrotationfromaxisangle)
 
 #### Defined in
 
@@ -1642,7 +1667,7 @@ Euler angle specifying rotation amount.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setRotationFromEuler`](FCamera3d.md#setrotationfromeuler)
+[`FCamera`](FCamera.md).[`setRotationFromEuler`](FCamera.md#setrotationfromeuler)
 
 #### Defined in
 
@@ -1672,7 +1697,7 @@ Note that this assumes that the upper 3x3 of m is a pure rotation matrix (i.e, u
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setRotationFromMatrix`](FCamera3d.md#setrotationfrommatrix)
+[`FCamera`](FCamera.md).[`setRotationFromMatrix`](FCamera.md#setrotationfrommatrix)
 
 #### Defined in
 
@@ -1698,7 +1723,7 @@ Normalized Quaternion.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setRotationFromQuaternion`](FCamera3d.md#setrotationfromquaternion)
+[`FCamera`](FCamera.md).[`setRotationFromQuaternion`](FCamera.md#setrotationfromquaternion)
 
 #### Defined in
 
@@ -1728,11 +1753,11 @@ Set the scale of the camera.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setScale`](FCamera3d.md#setscale)
+[`FCamera`](FCamera.md).[`setScale`](FCamera.md#setscale)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:28](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L28)
+[packages/3d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L34)
 
 ***
 
@@ -1809,7 +1834,7 @@ Note there is no reason monitors have to be the same size or in a grid.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`setViewOffset`](FCamera3d.md#setviewoffset)
+[`FCamera`](FCamera.md).[`setViewOffset`](FCamera.md#setviewoffset)
 
 #### Defined in
 
@@ -1843,7 +1868,7 @@ Object containing metadata such as materials, textures or images for the object.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`toJSON`](FCamera3d.md#tojson)
+[`FCamera`](FCamera.md).[`toJSON`](FCamera.md#tojson)
 
 #### Defined in
 
@@ -1877,7 +1902,7 @@ The axis is assumed to be normalized.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`translateOnAxis`](FCamera3d.md#translateonaxis)
+[`FCamera`](FCamera.md).[`translateOnAxis`](FCamera.md#translateonaxis)
 
 #### Defined in
 
@@ -1903,7 +1928,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`translateX`](FCamera3d.md#translatex)
+[`FCamera`](FCamera.md).[`translateX`](FCamera.md#translatex)
 
 #### Defined in
 
@@ -1929,7 +1954,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`translateY`](FCamera3d.md#translatey)
+[`FCamera`](FCamera.md).[`translateY`](FCamera.md#translatey)
 
 #### Defined in
 
@@ -1955,7 +1980,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`translateZ`](FCamera3d.md#translatez)
+[`FCamera`](FCamera.md).[`translateZ`](FCamera.md#translatez)
 
 #### Defined in
 
@@ -1985,7 +2010,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`traverse`](FCamera3d.md#traverse)
+[`FCamera`](FCamera.md).[`traverse`](FCamera.md#traverse)
 
 #### Defined in
 
@@ -2015,7 +2040,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`traverseAncestors`](FCamera3d.md#traverseancestors)
+[`FCamera`](FCamera.md).[`traverseAncestors`](FCamera.md#traverseancestors)
 
 #### Defined in
 
@@ -2046,7 +2071,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`traverseVisible`](FCamera3d.md#traversevisible)
+[`FCamera`](FCamera.md).[`traverseVisible`](FCamera.md#traversevisible)
 
 #### Defined in
 
@@ -2066,7 +2091,7 @@ Updates local transform.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`updateMatrix`](FCamera3d.md#updatematrix)
+[`FCamera`](FCamera.md).[`updateMatrix`](FCamera.md#updatematrix)
 
 #### Defined in
 
@@ -2094,7 +2119,7 @@ Useful if you cannot wait for the renderer to update it on the next frame, assum
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`updateMatrixWorld`](FCamera3d.md#updatematrixworld)
+[`FCamera`](FCamera.md).[`updateMatrixWorld`](FCamera.md#updatematrixworld)
 
 #### Defined in
 
@@ -2118,7 +2143,7 @@ Must be called after any change of parameters.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`updateProjectionMatrix`](FCamera3d.md#updateprojectionmatrix)
+[`FCamera`](FCamera.md).[`updateProjectionMatrix`](FCamera.md#updateprojectionmatrix)
 
 #### Defined in
 
@@ -2148,7 +2173,7 @@ Recursively updates global transform of descendants.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`updateWorldMatrix`](FCamera3d.md#updateworldmatrix)
+[`FCamera`](FCamera.md).[`updateWorldMatrix`](FCamera.md#updateworldmatrix)
 
 #### Defined in
 
@@ -2174,7 +2199,7 @@ A vector representing a position in world space.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`worldToLocal`](FCamera3d.md#worldtolocal)
+[`FCamera`](FCamera.md).[`worldToLocal`](FCamera.md#worldtolocal)
 
 #### Defined in
 
@@ -2182,9 +2207,9 @@ node\_modules/@types/three/src/core/Object3D.d.ts:443
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
@@ -2197,17 +2222,17 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`CALLBACKS_ONCOLLISION`](FCamera3d.md#callbacks_oncollision)
+[`FCamera`](FCamera.md).[`__CALLBACKS_ON_COLLISION__`](FCamera.md#__callbacks_on_collision__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:10](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L10)
+[packages/3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L16)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -2216,11 +2241,41 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`ID`](FCamera3d.md#id)
+[`FCamera`](FCamera.md).[`__ID__`](FCamera.md#__id__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L9)
+[packages/3d/src/cameras/FCamera.ts:15](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L15)
+
+***
+
+### \_\_IS\_2D\_\_
+
+> **\_\_IS\_2D\_\_**: `boolean` = `false`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__IS_2D__`](FCamera.md#__is_2d__)
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L13)
+
+***
+
+### \_\_IS\_3D\_\_
+
+> **\_\_IS\_3D\_\_**: `boolean` = `true`
+
+Internal flags
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__IS_3D__`](FCamera.md#__is_3d__)
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera.ts:12](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L12)
 
 ***
 
@@ -2236,7 +2291,7 @@ Array with object's animation clips.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`animations`](FCamera3d.md#animations)
+[`FCamera`](FCamera.md).[`animations`](FCamera.md#animations)
 
 #### Defined in
 
@@ -2260,7 +2315,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`aspect`](FCamera3d.md#aspect)
+[`FCamera`](FCamera.md).[`aspect`](FCamera.md#aspect)
 
 #### Defined in
 
@@ -2270,11 +2325,11 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:64
 
 ### attachedComponent
 
-> **attachedComponent**: [`FComponent3d`](FComponent3d.md)
+> **attachedComponent**: [`FComponent`](FComponent.md)
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L22)
+[packages/3d/src/cameras/FAttachedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FAttachedCamera.ts#L22)
 
 ***
 
@@ -2290,7 +2345,7 @@ Whether the object gets rendered into shadow map.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`castShadow`](FCamera3d.md#castshadow)
+[`FCamera`](FCamera.md).[`castShadow`](FCamera.md#castshadow)
 
 #### Defined in
 
@@ -2314,7 +2369,7 @@ THREE.Object3DGroup | Group for info on manually grouping objects.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`children`](FCamera3d.md#children)
+[`FCamera`](FCamera.md).[`children`](FCamera.md#children)
 
 #### Defined in
 
@@ -2328,7 +2383,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:100
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`coordinateSystem`](FCamera3d.md#coordinatesystem)
+[`FCamera`](FCamera.md).[`coordinateSystem`](FCamera.md#coordinatesystem)
 
 #### Defined in
 
@@ -2354,7 +2409,7 @@ if you are modifying vertex positions in the vertex shader you must specify a cu
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`customDepthMaterial`](FCamera3d.md#customdepthmaterial)
+[`FCamera`](FCamera.md).[`customDepthMaterial`](FCamera.md#customdepthmaterial)
 
 #### Defined in
 
@@ -2374,7 +2429,7 @@ Same as [customDepthMaterial](FAttachedCamera.md#customdepthmaterial), but used 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`customDistanceMaterial`](FCamera3d.md#customdistancematerial)
+[`FCamera`](FCamera.md).[`customDistanceMaterial`](FCamera.md#customdistancematerial)
 
 #### Defined in
 
@@ -2398,7 +2453,7 @@ Must be greater than the current value of [.near](FAttachedCamera.md#near) plane
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`far`](FCamera3d.md#far)
+[`FCamera`](FCamera.md).[`far`](FCamera.md#far)
 
 #### Defined in
 
@@ -2423,7 +2478,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`filmGauge`](FCamera3d.md#filmgauge)
+[`FCamera`](FCamera.md).[`filmGauge`](FCamera.md#filmgauge)
 
 #### Defined in
 
@@ -2447,7 +2502,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`filmOffset`](FCamera3d.md#filmoffset)
+[`FCamera`](FCamera.md).[`filmOffset`](FCamera.md#filmoffset)
 
 #### Defined in
 
@@ -2471,7 +2526,7 @@ This parameter does not influence the projection matrix unless a THREE.StereoCam
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`focus`](FCamera3d.md#focus)
+[`FCamera`](FCamera.md).[`focus`](FCamera.md#focus)
 
 #### Defined in
 
@@ -2495,7 +2550,7 @@ Expects a `Float`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`fov`](FCamera3d.md#fov)
+[`FCamera`](FCamera.md).[`fov`](FCamera.md#fov)
 
 #### Defined in
 
@@ -2516,7 +2571,7 @@ If set to `false` the object gets rendered every frame even if it is not in the 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`frustumCulled`](FCamera3d.md#frustumculled)
+[`FCamera`](FCamera.md).[`frustumCulled`](FCamera.md#frustumculled)
 
 #### Defined in
 
@@ -2537,7 +2592,7 @@ Expects a `Integer`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`id`](FCamera3d.md#id-1)
+[`FCamera`](FCamera.md).[`id`](FCamera.md#id)
 
 #### Defined in
 
@@ -2561,7 +2616,7 @@ This is a _constant_ value
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`isCamera`](FCamera3d.md#iscamera)
+[`FCamera`](FCamera.md).[`isCamera`](FCamera.md#iscamera)
 
 #### Defined in
 
@@ -2585,7 +2640,7 @@ This is a _constant_ value
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`isObject3D`](FCamera3d.md#isobject3d)
+[`FCamera`](FCamera.md).[`isObject3D`](FCamera.md#isobject3d)
 
 #### Defined in
 
@@ -2609,7 +2664,7 @@ This is a _constant_ value
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`isPerspectiveCamera`](FCamera3d.md#isperspectivecamera)
+[`FCamera`](FCamera.md).[`isPerspectiveCamera`](FCamera.md#isperspectivecamera)
 
 #### Defined in
 
@@ -2633,7 +2688,7 @@ Objects must share at least one layer with the Camera to be n when the camera's 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`layers`](FCamera3d.md#layers)
+[`FCamera`](FCamera.md).[`layers`](FCamera.md#layers)
 
 #### Defined in
 
@@ -2653,7 +2708,7 @@ The local transform matrix.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`matrix`](FCamera3d.md#matrix)
+[`FCamera`](FCamera.md).[`matrix`](FCamera.md#matrix)
 
 #### Defined in
 
@@ -2674,7 +2729,7 @@ scale every frame and also recalculates the matrixWorld property.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`matrixAutoUpdate`](FCamera3d.md#matrixautoupdate)
+[`FCamera`](FCamera.md).[`matrixAutoUpdate`](FCamera.md#matrixautoupdate)
 
 #### Defined in
 
@@ -2698,7 +2753,7 @@ If the Object3D has no parent, then it's identical to the local transform THREE.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`matrixWorld`](FCamera3d.md#matrixworld)
+[`FCamera`](FCamera.md).[`matrixWorld`](FCamera.md#matrixworld)
 
 #### Defined in
 
@@ -2719,7 +2774,7 @@ When it isn't, then you have to maintain all matrices in the object and its chil
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`matrixWorldAutoUpdate`](FCamera3d.md#matrixworldautoupdate)
+[`FCamera`](FCamera.md).[`matrixWorldAutoUpdate`](FCamera.md#matrixworldautoupdate)
 
 #### Defined in
 
@@ -2743,7 +2798,7 @@ THREE.Matrix4 | `new THREE.Matrix4()`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`matrixWorldInverse`](FCamera3d.md#matrixworldinverse)
+[`FCamera`](FCamera.md).[`matrixWorldInverse`](FCamera.md#matrixworldinverse)
 
 #### Defined in
 
@@ -2763,7 +2818,7 @@ When this is set, it calculates the matrixWorld in that frame and resets this pr
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`matrixWorldNeedsUpdate`](FCamera3d.md#matrixworldneedsupdate)
+[`FCamera`](FCamera.md).[`matrixWorldNeedsUpdate`](FCamera.md#matrixworldneedsupdate)
 
 #### Defined in
 
@@ -2781,7 +2836,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:173
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`modelViewMatrix`](FCamera3d.md#modelviewmatrix)
+[`FCamera`](FCamera.md).[`modelViewMatrix`](FCamera.md#modelviewmatrix)
 
 #### Defined in
 
@@ -2805,7 +2860,7 @@ _(doesn't need to be unique)_.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`name`](FCamera3d.md#name)
+[`FCamera`](FCamera.md).[`name`](FCamera.md#name)
 
 #### Defined in
 
@@ -2829,7 +2884,7 @@ The valid range is greater than `0` and less than the current value of the [.far
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`near`](FCamera3d.md#near)
+[`FCamera`](FCamera.md).[`near`](FCamera.md#near)
 
 #### Defined in
 
@@ -2847,7 +2902,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:73
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`normalMatrix`](FCamera3d.md#normalmatrix)
+[`FCamera`](FCamera.md).[`normalMatrix`](FCamera.md#normalmatrix)
 
 #### Defined in
 
@@ -2857,11 +2912,23 @@ node\_modules/@types/three/src/core/Object3D.d.ts:140
 
 ### offset
 
-> **offset**: `Vector3`
+> **offset**: `object`
+
+#### x
+
+> **x**: `number`
+
+#### y
+
+> **y**: `number`
+
+#### z
+
+> **z**: `number`
 
 #### Defined in
 
-[packages/3d/src/cameras/FAttachedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FAttachedCamera.ts#L24)
+[packages/3d/src/cameras/FAttachedCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FAttachedCamera.ts#L24)
 
 ***
 
@@ -2881,7 +2948,7 @@ An object can have at most one parent.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`parent`](FCamera3d.md#parent)
+[`FCamera`](FCamera.md).[`parent`](FCamera.md#parent)
 
 #### Defined in
 
@@ -2901,7 +2968,7 @@ Object's local position.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`position`](FCamera3d.md#position)
+[`FCamera`](FCamera.md).[`position`](FCamera.md#position)
 
 #### Defined in
 
@@ -2921,7 +2988,7 @@ THREE.Matrix4 | `new THREE.Matrix4()`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`projectionMatrix`](FCamera3d.md#projectionmatrix)
+[`FCamera`](FCamera.md).[`projectionMatrix`](FCamera.md#projectionmatrix)
 
 #### Defined in
 
@@ -2941,7 +3008,7 @@ THREE.Matrix4 | `new THREE.Matrix4()`
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`projectionMatrixInverse`](FCamera3d.md#projectionmatrixinverse)
+[`FCamera`](FCamera.md).[`projectionMatrixInverse`](FCamera.md#projectionmatrixinverse)
 
 #### Defined in
 
@@ -2961,7 +3028,7 @@ Object's local rotation as a THREE.Quaternion | Quaternion.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`quaternion`](FCamera3d.md#quaternion)
+[`FCamera`](FCamera.md).[`quaternion`](FCamera.md#quaternion)
 
 #### Defined in
 
@@ -2981,7 +3048,7 @@ Whether the material receives shadows.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`receiveShadow`](FCamera3d.md#receiveshadow)
+[`FCamera`](FCamera.md).[`receiveShadow`](FCamera.md#receiveshadow)
 
 #### Defined in
 
@@ -3007,7 +3074,7 @@ Sorting is from lowest to highest renderOrder.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`renderOrder`](FCamera3d.md#renderorder)
+[`FCamera`](FCamera.md).[`renderOrder`](FCamera.md#renderorder)
 
 #### Defined in
 
@@ -3027,7 +3094,7 @@ Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angl
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`rotation`](FCamera3d.md#rotation)
+[`FCamera`](FCamera.md).[`rotation`](FCamera.md#rotation)
 
 #### Defined in
 
@@ -3047,7 +3114,7 @@ The object's local scale.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`scale`](FCamera3d.md#scale)
+[`FCamera`](FCamera.md).[`scale`](FCamera.md#scale)
 
 #### Defined in
 
@@ -3065,7 +3132,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:130
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`type`](FCamera3d.md#type)
+[`FCamera`](FCamera.md).[`type`](FCamera.md#type)
 
 #### Defined in
 
@@ -3085,7 +3152,7 @@ This is used by the [lookAt](FAttachedCamera.md#lookat) method, for example, to 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`up`](FCamera3d.md#up)
+[`FCamera`](FCamera.md).[`up`](FCamera.md#up)
 
 #### Defined in
 
@@ -3109,7 +3176,7 @@ It should not hold references to _functions_ as these **will not** be cloned.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`userData`](FCamera3d.md#userdata)
+[`FCamera`](FCamera.md).[`userData`](FCamera.md#userdata)
 
 #### Defined in
 
@@ -3129,7 +3196,7 @@ This gets automatically assigned and shouldn't be edited.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`uuid`](FCamera3d.md#uuid)
+[`FCamera`](FCamera.md).[`uuid`](FCamera.md#uuid)
 
 #### Defined in
 
@@ -3150,7 +3217,7 @@ This is set using the [.setViewOffset](FAttachedCamera.md#setviewoffset) method 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`view`](FCamera3d.md#view)
+[`FCamera`](FCamera.md).[`view`](FCamera.md#view)
 
 #### Defined in
 
@@ -3164,7 +3231,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:96
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`viewport`](FCamera3d.md#viewport)
+[`FCamera`](FCamera.md).[`viewport`](FCamera.md#viewport)
 
 #### Defined in
 
@@ -3184,7 +3251,7 @@ Object gets rendered if `true`.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`visible`](FCamera3d.md#visible)
+[`FCamera`](FCamera.md).[`visible`](FCamera.md#visible)
 
 #### Defined in
 
@@ -3204,7 +3271,7 @@ Gets or sets the zoom factor of the camera.
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`zoom`](FCamera3d.md#zoom)
+[`FCamera`](FCamera.md).[`zoom`](FCamera.md#zoom)
 
 #### Defined in
 
@@ -3224,7 +3291,7 @@ The default setting for [matrixAutoUpdate](FAttachedCamera.md#matrixautoupdate) 
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`DEFAULT_MATRIX_AUTO_UPDATE`](FCamera3d.md#default_matrix_auto_update)
+[`FCamera`](FCamera.md).[`DEFAULT_MATRIX_AUTO_UPDATE`](FCamera.md#default_matrix_auto_update)
 
 #### Defined in
 
@@ -3244,7 +3311,7 @@ The default setting for [matrixWorldAutoUpdate](FAttachedCamera.md#matrixworldau
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`DEFAULT_MATRIX_WORLD_AUTO_UPDATE`](FCamera3d.md#default_matrix_world_auto_update)
+[`FCamera`](FCamera.md).[`DEFAULT_MATRIX_WORLD_AUTO_UPDATE`](FCamera.md#default_matrix_world_auto_update)
 
 #### Defined in
 
@@ -3265,7 +3332,7 @@ THREE.HemisphereLight | HemisphereLight and THREE.Spotlight | Spotlight (which c
 
 #### Inherited from
 
-[`FCamera3d`](FCamera3d.md).[`DEFAULT_UP`](FCamera3d.md#default_up)
+[`FCamera`](FCamera.md).[`DEFAULT_UP`](FCamera.md#default_up)
 
 #### Defined in
 

@@ -5,6 +5,9 @@
   "description": "2D package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://fibbojs.github.io/fibbo",
   "repository": {
     "type": "git",
@@ -41,6 +44,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/core": "^0.0.1"
+    "@fibbojs/core": "^0.0.1",
+    "@fibbojs/event": "^0.0.1"
   }
 }

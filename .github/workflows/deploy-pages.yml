@@ -6,8 +6,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'package.json'
-      - 'package-lock.json'
+      - package.json
+      - package-lock.json
       - 'docs/**'
       - 'apps/playground-2d/**'
       - 'apps/playground-3d/**'
@@ -40,7 +40,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm # or pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4

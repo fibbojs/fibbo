@@ -1,32 +1,28 @@
 import * as PIXI from 'pixi.js'
-import { FComponent2d } from '../FComponent2d'
-import type { FScene2d } from '../FScene2d'
-import { F2dShapes } from '../types/F2dShapes'
+import type { FComponentOptions } from '../core/FComponent'
+import type { FScene } from '../core/FScene'
+import { FShapes } from '../types/FShapes'
+import { FPolygon } from './FPolygon'
 
 /**
- * @description A simple circle in FibboJS.
+ * @description A simple circle in Fibbo.
  * @category Polygons
  * @example
  * ```ts
- * import { FScene2d, FCircle } from '@fibbojs/2d'
+ * import { FScene, FCircle } from '@fibbojs/2d'
  *
- * const scene = new FScene2d()
+ * const scene = new FScene()
  *
  * const circle = new FCircle(scene)
  * scene.addComponent(circle)
  * ```
  */
-export class FCircle extends FComponent2d {
-  constructor(scene: FScene2d, options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    rotationDegree?: number
-  }) {
+export class FCircle extends FPolygon {
+  constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
     // Create a circle
     this.container = new PIXI.Graphics()
-      .circle(this.position.x, this.position.y, this.scale.x * 100 / 2)
+      .circle(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100 / 2)
       .fill(new PIXI.FillGradient(0, 0, 10, 10).addColorStop(0, 0x0000FF).addColorStop(1, 0xFFFF00))
   }
 
@@ -38,7 +34,7 @@ export class FCircle extends FComponent2d {
     position?: PIXI.PointData
     scale?: PIXI.PointData
     rotation?: number
-    shape?: F2dShapes
+    shape?: FShapes
     lockTranslations?: boolean
     lockRotations?: boolean
     enabledTranslations?: {
@@ -48,7 +44,7 @@ export class FCircle extends FComponent2d {
   }): void {
     super.initRigidBody({
       ...options,
-      shape: F2dShapes.CIRCLE,
+      shape: FShapes.CIRCLE,
     })
   }
 
@@ -56,11 +52,11 @@ export class FCircle extends FComponent2d {
     position?: PIXI.PointData
     scale?: PIXI.PointData
     rotation?: number
-    shape?: F2dShapes
+    shape?: FShapes
   }): void {
     super.initCollider({
       ...options,
-      shape: F2dShapes.CIRCLE,
+      shape: FShapes.CIRCLE,
     })
   }
 }

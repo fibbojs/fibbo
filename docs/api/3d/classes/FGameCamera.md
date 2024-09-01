@@ -4,19 +4,19 @@
 
 ## Description
 
-A camera that can be attached to a FComponent3d and orbits around it in a more game-like way.
+A camera that can be attached to a FComponent and orbits around it in a more game-like way.
 
 ## Example
 
 ```ts
-import { FScene3d, FGameCamera, FCube } from '@fibbojs/3d'
+import { FScene, FGameCamera, FCuboid } from '@fibbojs/3d'
 
-const scene = new FScene3d()
+const scene = new FScene()
 
-const cube = new FCube(scene)
+const cube = new FCuboid(scene)
 scene.addComponent(cube)
 
-scene.camera = new FGameCamera(cube, scene)
+scene.camera = new FGameCamera(cube)
 ```
 
 ## Extends
@@ -27,17 +27,13 @@ scene.camera = new FGameCamera(cube, scene)
 
 ### new FGameCamera()
 
-> **new FGameCamera**(`attachedComponent`, `scene`): [`FGameCamera`](FGameCamera.md)
+> **new FGameCamera**(`attachedComponent`): [`FGameCamera`](FGameCamera.md)
 
 #### Parameters
 
-• **attachedComponent**: [`FComponent3d`](FComponent3d.md)
+• **attachedComponent**: [`FComponent`](FComponent.md)
 
 Component that the camera is attached to
-
-• **scene**: [`FScene3d`](FScene3d.md)
-
-Scene that the camera is in
 
 #### Returns
 
@@ -49,7 +45,7 @@ Scene that the camera is in
 
 #### Defined in
 
-[packages/3d/src/cameras/FGameCamera.ts:29](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FGameCamera.ts#L29)
+[packages/3d/src/cameras/FGameCamera.ts:31](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FGameCamera.ts#L31)
 
 ## Methods
 
@@ -396,7 +392,32 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:46](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L46)
+[packages/3d/src/cameras/FCamera.ts:52](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L52)
+
+***
+
+### getCameraDirection()
+
+> **getCameraDirection**(): `Vector3`
+
+#### Returns
+
+`Vector3`
+
+The direction of the camera. It is a normalized vector.
+
+#### Description
+
+Get the direction of the camera.
+This method is useful to get the direction of the camera to apply forces in the direction of the camera.
+
+#### Inherited from
+
+[`FOrbitCamera`](FOrbitCamera.md).[`getCameraDirection`](FOrbitCamera.md#getcameradirection)
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera.ts:61](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L61)
 
 ***
 
@@ -1156,7 +1177,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:39](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L39)
+[packages/3d/src/cameras/FCamera.ts:45](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L45)
 
 ***
 
@@ -1183,7 +1204,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/cameras/FGameCamera.ts:35](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FGameCamera.ts#L35)
+[packages/3d/src/cameras/FGameCamera.ts:57](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FGameCamera.ts#L57)
 
 ***
 
@@ -1564,7 +1585,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:47](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FOrbitCamera.ts#L47)
+[packages/3d/src/cameras/FOrbitCamera.ts:45](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FOrbitCamera.ts#L45)
 
 ***
 
@@ -1594,7 +1615,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:35](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L35)
+[packages/3d/src/cameras/FCamera.ts:41](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L41)
 
 ***
 
@@ -1736,7 +1757,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:28](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L28)
+[packages/3d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L34)
 
 ***
 
@@ -2186,9 +2207,9 @@ node\_modules/@types/three/src/core/Object3D.d.ts:443
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
@@ -2201,17 +2222,17 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FOrbitCamera`](FOrbitCamera.md).[`CALLBACKS_ONCOLLISION`](FOrbitCamera.md#callbacks_oncollision)
+[`FOrbitCamera`](FOrbitCamera.md).[`__CALLBACKS_ON_COLLISION__`](FOrbitCamera.md#__callbacks_on_collision__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:10](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L10)
+[packages/3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L16)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -2220,11 +2241,41 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FOrbitCamera`](FOrbitCamera.md).[`ID`](FOrbitCamera.md#id)
+[`FOrbitCamera`](FOrbitCamera.md).[`__ID__`](FOrbitCamera.md#__id__)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera3d.ts:9](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FCamera3d.ts#L9)
+[packages/3d/src/cameras/FCamera.ts:15](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L15)
+
+***
+
+### \_\_IS\_2D\_\_
+
+> **\_\_IS\_2D\_\_**: `boolean` = `false`
+
+#### Inherited from
+
+[`FOrbitCamera`](FOrbitCamera.md).[`__IS_2D__`](FOrbitCamera.md#__is_2d__)
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L13)
+
+***
+
+### \_\_IS\_3D\_\_
+
+> **\_\_IS\_3D\_\_**: `boolean` = `true`
+
+Internal flags
+
+#### Inherited from
+
+[`FOrbitCamera`](FOrbitCamera.md).[`__IS_3D__`](FOrbitCamera.md#__is_3d__)
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera.ts:12](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L12)
 
 ***
 
@@ -2274,7 +2325,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:64
 
 ### attachedComponent
 
-> **attachedComponent**: [`FComponent3d`](FComponent3d.md)
+> **attachedComponent**: [`FComponent`](FComponent.md)
 
 #### Inherited from
 
@@ -2282,7 +2333,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:64
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:23](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FOrbitCamera.ts#L23)
+[packages/3d/src/cameras/FOrbitCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FOrbitCamera.ts#L22)
 
 ***
 
@@ -2340,7 +2391,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:100
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:25](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/3d/src/cameras/FOrbitCamera.ts#L25)
+[packages/3d/src/cameras/FOrbitCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FOrbitCamera.ts#L24)
 
 ***
 
@@ -2559,7 +2610,7 @@ Expects a `Integer`
 
 #### Inherited from
 
-[`FOrbitCamera`](FOrbitCamera.md).[`id`](FOrbitCamera.md#id-1)
+[`FOrbitCamera`](FOrbitCamera.md).[`id`](FOrbitCamera.md#id)
 
 #### Defined in
 
@@ -2636,6 +2687,26 @@ This is a _constant_ value
 #### Defined in
 
 node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:38
+
+***
+
+### isPointerLocked
+
+> **isPointerLocked**: `boolean` = `false`
+
+#### Defined in
+
+[packages/3d/src/cameras/FGameCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FGameCamera.ts#L24)
+
+***
+
+### lastMouseMoveEvent
+
+> **lastMouseMoveEvent**: `undefined` \| `MouseEvent`
+
+#### Defined in
+
+[packages/3d/src/cameras/FGameCamera.ts:26](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FGameCamera.ts#L26)
 
 ***
 

@@ -1,7 +1,7 @@
 import type { FComponent } from './FComponent'
 
 /**
- * @description The base class for all groups of components in FibboJS.
+ * @description The base class for all groups of components in Fibbo.
  */
 export abstract class FGroup {
   /**

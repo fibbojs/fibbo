@@ -4,7 +4,7 @@
 
 ## Description
 
-The base class for cameras in FibboJS.
+The base class for cameras in Fibbo.
 
 ## Extends
 
@@ -26,7 +26,7 @@ The base class for cameras in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FCamera.ts#L7)
+[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FCamera.ts#L7)
 
 ## Methods
 
@@ -68,7 +68,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:91](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L91)
+[packages/core/src/FComponent.ts:97](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L97)
 
 ***
 
@@ -118,7 +118,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L54)
+[packages/core/src/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L60)
 
 ***
 
@@ -147,13 +147,13 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L31)
+[packages/core/src/FComponent.ts:37](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L37)
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
@@ -166,17 +166,17 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FComponent`](FComponent.md).[`CALLBACKS_ONCOLLISION`](FComponent.md#callbacks_oncollision)
+[`FComponent`](FComponent.md).[`__CALLBACKS_ON_COLLISION__`](FComponent.md#__callbacks_on_collision__)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L20)
+[packages/core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L26)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -185,8 +185,38 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FComponent`](FComponent.md).[`ID`](FComponent.md#id)
+[`FComponent`](FComponent.md).[`__ID__`](FComponent.md#__id__)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L14)
+[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L20)
+
+***
+
+### \_\_IS\_2D\_\_
+
+> **\_\_IS\_2D\_\_**: `boolean` = `false`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`__IS_2D__`](FComponent.md#__is_2d__)
+
+#### Defined in
+
+[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L14)
+
+***
+
+### \_\_IS\_3D\_\_
+
+> **\_\_IS\_3D\_\_**: `boolean` = `false`
+
+Internal flags
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`__IS_3D__`](FComponent.md#__is_3d__)
+
+#### Defined in
+
+[packages/core/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L13)

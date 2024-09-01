@@ -4,7 +4,7 @@
 
 ## Description
 
-The base class for all 2D and 3D components in FibboJS.
+The base class for all 2D and 3D components in Fibbo.
 
 ## Extended by
 
@@ -22,7 +22,7 @@ The base class for all 2D and 3D components in FibboJS.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L22)
+[packages/core/src/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L28)
 
 ## Methods
 
@@ -60,7 +60,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:91](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L91)
+[packages/core/src/FComponent.ts:97](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L97)
 
 ***
 
@@ -106,7 +106,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L54)
+[packages/core/src/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L60)
 
 ***
 
@@ -131,13 +131,13 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L31)
+[packages/core/src/FComponent.ts:37](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L37)
 
 ## Properties
 
-### CALLBACKS\_ONCOLLISION
+### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **CALLBACKS\_ONCOLLISION**: `object` = `{}`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
@@ -150,13 +150,13 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L20)
+[packages/core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L26)
 
 ***
 
-### ID
+### \_\_ID\_\_
 
-> **ID**: `number`
+> **\_\_ID\_\_**: `number`
 
 #### Description
 
@@ -165,4 +165,26 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/446efcf6acd7b8597316769fc6a8a3146d7c8a02/packages/core/src/FComponent.ts#L14)
+[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L20)
+
+***
+
+### \_\_IS\_2D\_\_
+
+> **\_\_IS\_2D\_\_**: `boolean` = `false`
+
+#### Defined in
+
+[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L14)
+
+***
+
+### \_\_IS\_3D\_\_
+
+> **\_\_IS\_3D\_\_**: `boolean` = `false`
+
+Internal flags
+
+#### Defined in
+
+[packages/core/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L13)

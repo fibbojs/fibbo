@@ -1,39 +1,38 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import type { FScene3d } from '../FScene3d'
-import type { FComponent3d } from '../FComponent3d'
-import { FCamera3d } from './FCamera3d'
+import type { FComponent } from '../core/FComponent'
+import { FCamera } from './FCamera'
+import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
- * @description A camera that can be attached to a FComponent3d and orbits around it.
+ * @description A camera that can be attached to a FComponent and orbits around it.
  * @category Camera
  * @example
  * ```ts
- * import { FScene3d, FOrbitCamera, FCube } from '@fibbojs/3d'
+ * import { FScene, FOrbitCamera, FCuboid } from '@fibbojs/3d'
  *
- * const scene = new FScene3d()
+ * const scene = new FScene()
  *
- * const cube = new FCube(scene)
+ * const cube = new FCuboid(scene)
  * scene.addComponent(cube)
  *
- * scene.camera = new FOrbitCamera(cube, scene)
+ * scene.camera = new FOrbitCamera(cube)
  * ```
  */
-export class FOrbitCamera extends FCamera3d {
+export class FOrbitCamera extends FCamera {
   // Model that the camera is attached to
-  attachedComponent: FComponent3d
+  attachedComponent: FComponent
   // Orbit controls
   controls: OrbitControls
 
   /**
-   * @param attachedComponent Component that the camera is attached to
-   * @param scene Scene that the camera is in
+   * @param options Options for the camera.
    */
-  constructor(attachedComponent: FComponent3d, scene: FScene3d) {
-    super()
-    this.attachedComponent = attachedComponent
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
+    this.attachedComponent = options.target
 
     // Create orbit controls
-    this.controls = new OrbitControls(this, scene.renderer.domElement)
+    this.controls = new OrbitControls(this, this.attachedComponent.scene.renderer.domElement)
   }
 
   onFrame(_delta: number): void {
@@ -47,8 +46,8 @@ export class FOrbitCamera extends FCamera3d {
   setPosition(x: number, y: number, z: number): void {
     super.setPosition(x, y, z)
     // Set the position of the camera relative to the attached model
-    this.position.set(this.attachedComponent.position.x + x, this.attachedComponent.position.y + y, this.attachedComponent.position.z + z)
+    this.position.set(this.attachedComponent.transform.position.x + x, this.attachedComponent.transform.position.y + y, this.attachedComponent.transform.position.z + z)
     // Set the target of the camera to the attached model
-    this.lookAt(this.attachedComponent.position)
+    this.lookAt(this.attachedComponent.transform.position)
   }
 }

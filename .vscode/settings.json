@@ -3,7 +3,7 @@
   "editor.tabSize": 2,
 
   // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
 
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
@@ -41,5 +41,16 @@
     "jsonc",
     "yaml"
   ],
-  "vitest.disableWorkspaceWarning": true
+  "vitest.disableWorkspaceWarning": true,
+
+  // Exclude files from the sidebar (makes it cleaner)
+  "files.exclude": {
+    ".nx": true,
+    ".idx": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/tsconfig.json": true,
+    "**/*.d.ts": true,
+    "**/.gitignore": true
+  }
 }

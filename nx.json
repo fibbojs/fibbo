@@ -1,5 +1,14 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "release": {
+    "projects": [
+      "@fibbojs/2d",
+      "@fibbojs/3d",
+      "@fibbojs/core",
+      "@fibbojs/devtools",
+      "@fibbojs/event"
+    ]
+  },
   "targetDefaults": {
     "build": {
       "outputs": [
@@ -11,6 +20,12 @@
       "cache": true
     },
     "dev": {
+      "dependsOn": ["^build"]
+    },
+    "dev:watch": {
+      "dependsOn": ["^build"]
+    },
+    "dev:watch:windows": {
       "dependsOn": ["^build"]
     },
     "lint": {

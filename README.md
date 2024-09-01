@@ -14,9 +14,19 @@ An open-source, web-based game engine.
 
 ## Tech stack
 
-- [Three.js](https://threejs.org/)
-- [Rappier](https://rapier.rs/)
-- [PixiJS](https://pixijs.com/)
+- Game stuff
+  - [Three.js](https://threejs.org/) for 3D rendering
+  - [Rapier](https://rapier.rs/) for physics
+  - [PixiJS](https://pixijs.com/) for 2D rendering
+  - [Vue](https://vuejs.org/) for the devtools
+- Tooling
+  - [Nx](https://nx.dev/) for monorepo management
+  - [unbuild](https://github.com/unjs/unbuild) for building the packages
+  - [Vite](https://vitejs.dev/) for the playgrounds + building the devtools
+  - [VitePress](https://vitepress.dev/) for the documentation
+  - [Vitest](https://vitest.dev/) for testing
+  - [TypeDoc](https://typedoc.org/) for the API Reference part of the documentation
+  - [ESLint](https://eslint.org/) for linting
 
 ## Development
 
@@ -29,22 +39,22 @@ npm install
 - To develop on the 3D package, run the 3D playground :
 
 ```bash
-# In one terminal
-nx dev @fibbojs/playground-3d
-# In another terminal
-nx watch --projects=@fibbojs/3d -- nx build @fibbojs/3d
+npm run dev:3d
+# or on Windows :
+npm run dev:3d:windows
 ```
+
+You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-3d`.
 
 - To develop on the 2D package, run the 2D playground :
 
 ```bash
-# In one terminal
-nx dev @fibbojs/playground-2d
-# In another terminal
-nx watch --projects=@fibbojs/2d -- nx build @fibbojs/2d
+npm run dev:2d
+# or on Windows :
+npm run dev:2d:windows
 ```
 
-You can now open your browser and navigate to `http://localhost:5173/`.
+You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-2d`.
 
 ## Documentation
 
@@ -61,11 +71,11 @@ Also, the API Reference part is generated using [TypeDoc](https://typedoc.org/).
 npm run docs:generate
 ```
 
-You can now open your browser and navigate to `http://localhost:5173/`.
+You can now open your browser and navigate to `http://localhost:5173/fibbo`.
 
 ## Credits
 
-3D Models used for development purpose are from [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) and [Kenney](https://kenney.nl/assets?q=3d).
+3D models and sprites used for development purpose are from [Kenney](https://kenney.nl/assets?q=3d) and [glTF-Sample-Assets](https://github.com/KhronosGroup/glTF-Sample-Assets).
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@fibbojs/fibbo/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
