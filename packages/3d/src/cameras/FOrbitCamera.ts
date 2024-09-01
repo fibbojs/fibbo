@@ -1,5 +1,5 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import type { FComponent } from '../FComponent'
+import type { FComponent } from '../core/FComponent'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 

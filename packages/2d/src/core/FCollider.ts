@@ -1,5 +1,5 @@
 import * as RAPIER from '@dimforge/rapier2d'
-import { FShapes } from './types/FShapes'
+import { FShapes } from '../types/FShapes'
 import type { FComponent } from './FComponent'
 
 export interface FColliderOptions {

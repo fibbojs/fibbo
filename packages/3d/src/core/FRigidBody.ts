@@ -1,13 +1,14 @@
-import * as RAPIER from '@dimforge/rapier2d'
-import { FShapes } from './types/FShapes'
+import * as THREE from 'three'
+import * as RAPIER from '@dimforge/rapier3d'
+import { FShapes } from '../types/FShapes'
 import type { FComponent } from './FComponent'
 import { FCollider } from './FCollider'
 
 export interface FRigidBodyOptions {
-  position?: { x: number, y: number }
-  scale?: { x: number, y: number }
-  rotation?: number
-  rotationDegree?: number
+  position?: { x: number, y: number, z: number }
+  scale?: { x: number, y: number, z: number }
+  rotation?: { x: number, y: number, z: number }
+  rotationDegree?: { x: number, y: number, z: number }
   shape?: FShapes
   rigidBodyType?: RAPIER.RigidBodyType
   lockTranslations?: boolean
@@ -15,6 +16,12 @@ export interface FRigidBodyOptions {
   enabledTranslations?: {
     enableX: boolean
     enableY: boolean
+    enableZ: boolean
+  }
+  enabledRotations?: {
+    enableX: boolean
+    enableY: boolean
+    enableZ: boolean
   }
 }
 
@@ -54,9 +61,9 @@ export class FRigidBody {
    * @example
    * ```ts
    * const rigidBody = new FRigidBody({
-   *  position: { x: 0, y: 0 },
-   *  scale: { x: 1, y: 1 },
-   *  rotation: 0
+   *  position: { x: 0, y: 0, z: 0 },
+   *  scale: { x: 1, y: 1, z: 1 },
+   *  rotation: { x: 0, y: 0, z: 0 },
    *  shape: FShapes.CUBE
    * })
    * ```
@@ -66,9 +73,9 @@ export class FRigidBody {
     const DEFAULT_OPTIONS = {
       position: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
-      rotation: 0,
+      rotation: { x: 0, y: 0, z: 0 },
       rotationDegree: undefined,
-      shape: FShapes.SQUARE,
+      shape: FShapes.CUBE,
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockTranslations: false,
       lockRotations: false,
@@ -77,7 +84,7 @@ export class FRigidBody {
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
+    if (!options.position || !options.scale || !options.rotation || !options.shape)
       throw new Error('FibboError: initRigidBody requires position, scale, rotation, shape and rigidBodyType options')
 
     // Check if the world exists
@@ -86,8 +93,9 @@ export class FRigidBody {
 
     // If rotation degree is given, convert it to radians
     if (options.rotationDegree) {
-      // Convert the degree to radians
-      options.rotation = (options.rotationDegree * Math.PI) / 180
+      options.rotation.x = THREE.MathUtils.degToRad(options.rotationDegree.x)
+      options.rotation.y = THREE.MathUtils.degToRad(options.rotationDegree.y)
+      options.rotation.z = THREE.MathUtils.degToRad(options.rotationDegree.z)
     }
 
     // Create a rigid body description according to the type
@@ -96,10 +104,17 @@ export class FRigidBody {
     rigidBodyDesc.setTranslation(
       component.transform.position.x + options.position.x,
       component.transform.position.y + options.position.y,
+      component.transform.position.z + options.position.z,
     )
 
     // Interprete the given rotation as relative to the component's rotation
-    rigidBodyDesc.setRotation(component.transform.rotation + options.rotation)
+    rigidBodyDesc.setRotation(new THREE.Quaternion().setFromEuler(
+      new THREE.Euler(
+        component.transform.rotation.x + options.rotation.x,
+        component.transform.rotation.y + options.rotation.y,
+        component.transform.rotation.z + options.rotation.z,
+      ),
+    ))
 
     // Create the rigid body
     this.rigidBody = component.scene.world.createRigidBody(rigidBodyDesc)
@@ -115,6 +130,16 @@ export class FRigidBody {
       this.rigidBody.setEnabledTranslations(
         options.enabledTranslations.enableX,
         options.enabledTranslations.enableY,
+        options.enabledTranslations.enableZ,
+        true,
+      )
+    }
+    // Enable only specific rotations if needed
+    if (options.enabledRotations) {
+      this.rigidBody.setEnabledRotations(
+        options.enabledRotations.enableX,
+        options.enabledRotations.enableY,
+        options.enabledRotations.enableZ,
         true,
       )
     }

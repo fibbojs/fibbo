@@ -1,6 +1,7 @@
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import { Container } from 'pixi.js'
 import * as RAPIER from '@dimforge/rapier2d'
+import type { FController } from '../controllers/FController'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
@@ -29,6 +30,10 @@ export abstract class FComponent extends FComponentCore {
    * The scene which the component is in.
    */
   scene: FScene
+
+  // The controller attached to the component.
+  // Redefined here to be able to use the updated FController type.
+  declare controller?: FController
 
   /**
    * PIXI container
@@ -96,6 +101,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   onFrame(_delta: number): void {
+    super.onFrame(_delta)
     // If the rigid body exist, update the container position and rotation according to the rigid body
     if (this.rigidBody) {
       const newContainerPosition = this.rigidBody.rigidBody.translation()

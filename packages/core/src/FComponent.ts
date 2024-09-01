@@ -1,3 +1,5 @@
+import type { FController } from './FController'
+
 /**
  * ID_COUNTER is used to generate unique identifiers for components.
  */
@@ -25,16 +27,27 @@ export abstract class FComponent {
    */
   public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 
+  /**
+   * The controller attached to the component.
+   */
+  public controller?: FController
+
   constructor() {
     this.__ID__ = ID_COUNTER++
   }
 
   /**
-   * @description Update the component.
-   * Should be called every frame.
+   * @description Update the component. Should be called every frame.
+   * The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+   * Any changes on its transform should be done on the controller, not here.
    * @param delta The time since the last frame.
    */
-  abstract onFrame(delta: number): void
+  onFrame(delta: number): void {
+    // If a controller is attached, update it
+    if (this.controller) {
+      this.controller.onFrame(delta)
+    }
+  }
 
   /**
    * @description Add a callback to be called when a collision occurs.

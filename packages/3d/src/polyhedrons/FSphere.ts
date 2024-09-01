@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import type { FScene } from '../FScene'
+import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
-import type { FComponentOptions } from '../FComponent'
-import type { FRigidBodyOptions } from '../FRigidBody'
-import type { FColliderOptions } from '../FCollider'
+import type { FComponentOptions } from '../core/FComponent'
+import type { FRigidBodyOptions } from '../core/FRigidBody'
+import type { FColliderOptions } from '../core/FCollider'
 import { FPolyhedron } from './FPolyhedron'
 
 /**

@@ -2,10 +2,10 @@
  * Export Core
  */
 // Core
-export { FScene } from './FScene'
-export { FComponent } from './FComponent'
-export { FComponentEmpty } from './FComponentEmpty'
-export { FTransform } from './FTransform'
+export { FScene } from './core/FScene'
+export { FComponent } from './core/FComponent'
+export { FComponentEmpty } from './core/FComponentEmpty'
+export { FTransform } from './core/FTransform'
 
 // Cameras
 export { FCamera } from './cameras/FCamera'
@@ -14,11 +14,11 @@ export { FFixedCamera } from './cameras/FFixedCamera'
 export { FFreeCamera } from './cameras/FFreeCamera'
 
 // Character controllers
-export { FCharacter } from './character/FCharacter'
-export { FCharacterDynamic } from './character/FCharacterDynamic'
-export { FCharacterKinematic } from './character/FCharacterKinematic'
-export { FCharacterKP } from './character/FCharacterKP'
-export { FCharacterKV } from './character/FCharacterKV'
+export { FCharacterController } from './controllers/FCharacterController'
+export { FCharacterControllerD } from './controllers/FCharacterControllerD'
+export { FCharacterControllerK } from './controllers/FCharacterControllerK'
+export { FCharacterControllerKP } from './controllers/FCharacterControllerKP'
+export { FCharacterControllerKV } from './controllers/FCharacterControllerKV'
 
 // Polygons
 export { FPolygon } from './polygons/FPolygon'
@@ -30,11 +30,12 @@ export { FSprite } from './sprite/FSprite'
 
 // Types
 export { FShapes } from './types/FShapes'
-export type { FComponentOptions } from './FComponent'
-export type { FColliderOptions } from './FCollider'
-export type { FRigidBodyOptions } from './FRigidBody'
+export type { FComponentOptions } from './core/FComponent'
+export type { FColliderOptions } from './core/FCollider'
+export type { FRigidBodyOptions } from './core/FRigidBody'
 export type { FCameraOptions } from './cameras/FCamera'
-export type { FCharacterOptions } from './character/FCharacter'
-export type { FSceneOptions } from './FScene'
+export type { FControllerOptions } from './controllers/FController'
+export type { FCharacterControllerOptions } from './controllers/FCharacterController'
+export type { FSceneOptions } from './core/FScene'
 export type { FSpriteOptions } from './sprite/FSprite'
-export type { FTransformOptions } from './FTransform'
+export type { FTransformOptions } from './core/FTransform'

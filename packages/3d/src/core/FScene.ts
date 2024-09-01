@@ -1,10 +1,10 @@
 import * as THREE from 'three'
 import { FScene as FSceneCore } from '@fibbojs/core'
 import type RAPIER from '@dimforge/rapier3d'
+import type { FCamera } from '../cameras/FCamera'
+import { FFixedCamera } from '../cameras/FFixedCamera'
+import { FModel } from '../model/FModel'
 import type { FComponent } from './FComponent'
-import type { FCamera } from './cameras/FCamera'
-import { FFixedCamera } from './cameras/FFixedCamera'
-import { FModel } from './model/FModel'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number }

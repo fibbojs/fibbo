@@ -1,5 +1,5 @@
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'
-import type { FComponent } from '../FComponent'
+import type { FComponent } from '../core/FComponent'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 

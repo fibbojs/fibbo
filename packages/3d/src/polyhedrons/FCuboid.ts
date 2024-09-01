@@ -1,5 +1,5 @@
-import type { FScene } from '../FScene'
-import type { FComponentOptions } from '../FComponent'
+import type { FScene } from '../core/FScene'
+import type { FComponentOptions } from '../core/FComponent'
 import { FPolyhedron } from './FPolyhedron'
 
 /**

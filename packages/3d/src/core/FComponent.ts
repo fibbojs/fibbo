@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import { FComponent as FComponentCore } from '@fibbojs/core'
+import type { FController } from '../controllers/FController'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
@@ -29,6 +30,10 @@ export abstract class FComponent extends FComponentCore {
    * The scene which the component is in.
    */
   scene: FScene
+
+  // The controller attached to the component.
+  // Redefined here to be able to use the updated FController type.
+  declare controller?: FController
 
   /**
    * Mesh
@@ -100,6 +105,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   onFrame(_delta: number): void {
+    super.onFrame(_delta)
     // If the rigid body and mesh exist, update the mesh position and rotation according to the rigid body
     if (this.rigidBody && this.mesh) {
       // Get the new transforms from the rigid body

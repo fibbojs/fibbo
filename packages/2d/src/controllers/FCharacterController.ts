@@ -1,13 +1,13 @@
 import * as PIXI from 'pixi.js'
 import { FKeyboard } from '@fibbojs/event'
-import type { FScene } from '../FScene'
+import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
-import type { FComponentOptions } from '../FComponent'
-import { FComponent } from '../FComponent'
-import type { FRigidBodyOptions } from '../FRigidBody'
-import type { FColliderOptions } from '../FCollider'
+import { FComponent } from '../core/FComponent'
+import type { FRigidBodyOptions } from '../core/FRigidBody'
+import type { FColliderOptions } from '../core/FCollider'
+import { FController, type FControllerOptions } from './FController'
 
-export interface FCharacterOptions extends FComponentOptions {
+export interface FCharacterControllerOptions extends FControllerOptions {
   /**
    * The speed of the character.
    */
@@ -18,7 +18,7 @@ export interface FCharacterOptions extends FComponentOptions {
  * @description An abstract pre-defined character controller.
  * @category Character
  */
-export abstract class FCharacter extends FComponent {
+export abstract class FCharacterController extends FController {
   /**
    * The inputs that will be used to move the character.
    */
@@ -34,11 +34,13 @@ export abstract class FCharacter extends FComponent {
    */
   speed: number
 
-  constructor(scene: FScene, options?: FCharacterOptions) {
-    super(scene, {
-      scale: { x: 0.5, y: 1 },
-      ...options,
-    })
+  /**
+   * The scene where the character is.
+   */
+  scene: FScene
+
+  constructor(scene: FScene, options: FCharacterControllerOptions) {
+    super(options)
 
     // Define default values
     const DEFAULT_OPTIONS = {
@@ -50,7 +52,8 @@ export abstract class FCharacter extends FComponent {
     if (!options.speed)
       throw new Error('FibboError: FCharacter requires speed option')
 
-    // Store speed
+    // Store options
+    this.scene = scene
     this.speed = options.speed
 
     // Map of the movements (will be updated by the keyboard)
@@ -60,13 +63,6 @@ export abstract class FCharacter extends FComponent {
       left: false,
       right: false,
     }
-
-    // Create a square
-    this.container = new PIXI.Graphics()
-      .rect(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100, this.transform.scale.y * 100)
-      .fill(new PIXI.FillGradient(0, 0, this.transform.scale.x * 100, this.transform.scale.y * 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
-    // Set the pivot of the container to the center
-    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
 
     // Create a keyboard instance
     const fKeyboard = new FKeyboard(scene)
@@ -111,33 +107,6 @@ export abstract class FCharacter extends FComponent {
     })
     fKeyboard.onKeyUp('q', () => {
       this.inputs.left = false
-    })
-
-    // Initialize the rigid body
-    this.initRigidBody()
-    // Initialize the sensor
-    this.initSensor()
-  }
-
-  initRigidBody(options?: FRigidBodyOptions): void {
-    super.initRigidBody({
-      shape: FShapes.SQUARE,
-      ...options,
-    })
-  }
-
-  initCollider(options?: FColliderOptions): void {
-    super.initCollider({
-      shape: FShapes.SQUARE,
-      ...options,
-    })
-  }
-
-  initSensor(options?: FColliderOptions): void {
-    super.initSensor({
-      scale: { x: 1.2, y: 1.2 },
-      shape: FShapes.SQUARE,
-      ...options,
     })
   }
 }

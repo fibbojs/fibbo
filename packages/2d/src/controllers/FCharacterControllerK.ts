@@ -1,17 +1,14 @@
 import RAPIER from '@dimforge/rapier2d'
 import { FKeyboard } from '@fibbojs/event'
-import type { FScene } from '../FScene'
-import { FShapes } from '../types/FShapes'
-import type { FRigidBodyOptions } from '../FRigidBody'
-import type { FColliderOptions } from '../FCollider'
-import type { FCharacterOptions } from './FCharacter'
-import { FCharacter } from './FCharacter'
+import type { FScene } from '../core/FScene'
+import type { FCharacterControllerOptions } from './FCharacterController'
+import { FCharacterController } from './FCharacterController'
 
 /**
  * @description An abstract pre-defined character controller based on Kinematic rigidbodies.
- * @category Character
+ * @category Controller
  */
-export abstract class FCharacterKinematic extends FCharacter {
+export abstract class FCharacterControllerK extends FCharacterController {
   /**
    * The y velocity of the character. Used to simulate gravity.
    */
@@ -22,7 +19,7 @@ export abstract class FCharacterKinematic extends FCharacter {
    */
   characterController: RAPIER.KinematicCharacterController
 
-  constructor(scene: FScene, options?: FCharacterOptions) {
+  constructor(scene: FScene, options: FCharacterControllerOptions) {
     super(scene, options)
 
     // Initialize the y velocity
@@ -57,7 +54,7 @@ export abstract class FCharacterKinematic extends FCharacter {
     }
     // Compute the desired movement
     this.characterController.computeColliderMovement(
-      this.collider?.collider as RAPIER.Collider,
+      this.component.collider?.collider as RAPIER.Collider,
       desiredMovement,
       // I don't why this flag works, I would expect QueryFilterFlags.EXCLUDE_SENSORS to work but anyway
       RAPIER.QueryFilterFlags.EXCLUDE_SOLIDS,
@@ -73,19 +70,5 @@ export abstract class FCharacterKinematic extends FCharacter {
 
     // Get the corrected movement
     return this.characterController.computedMovement()
-  }
-
-  initRigidBody(options?: FRigidBodyOptions): void {
-    super.initRigidBody({
-      shape: FShapes.SQUARE,
-      ...options,
-    })
-  }
-
-  initCollider(options?: FColliderOptions): void {
-    super.initCollider({
-      shape: FShapes.SQUARE,
-      ...options,
-    })
   }
 }

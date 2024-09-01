@@ -1,5 +1,5 @@
-import type { FComponent } from '../FComponent'
-import type { FScene } from '../FScene'
+import type { FComponent } from '../core/FComponent'
+import type { FScene } from '../core/FScene'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 

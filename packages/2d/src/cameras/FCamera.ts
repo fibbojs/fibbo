@@ -1,5 +1,5 @@
 import { FCamera as FCameraCore } from '@fibbojs/core'
-import type { FScene } from '../FScene'
+import type { FScene } from '../core/FScene'
 
 export interface FCameraOptions {
   position?: { x: number, y: number }

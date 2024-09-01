@@ -1,4 +1,4 @@
-import type { FScene } from '../FScene'
+import type { FScene } from '../core/FScene'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 

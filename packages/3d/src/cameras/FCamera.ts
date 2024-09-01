@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import type { FCamera as FCameraCore } from '@fibbojs/core'
-import type { FTransformOptions } from '../FTransform'
-import { FTransform } from '../FTransform'
+import type { FTransformOptions } from '../core/FTransform'
+import { FTransform } from '../core/FTransform'
 
 export interface FCameraOptions extends FTransformOptions {}
 

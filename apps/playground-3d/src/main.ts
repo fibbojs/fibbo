@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { FCapsule, FCharacterKP, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FCapsule, FCharacterControllerKP, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
@@ -118,8 +118,11 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(ground2)
 
   // Create a character
-  const character = new FCharacterKP(scene, {
+  const character = new FCapsule(scene, {
     position: { x: 0, y: 10, z: 0 },
+  })
+  character.controller = new FCharacterControllerKP(scene, {
+    component: character,
   })
   scene.addComponent(character)
 

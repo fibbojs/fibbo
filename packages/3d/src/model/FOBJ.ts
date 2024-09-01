@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js'
-import type { FScene } from '../FScene'
+import type { FScene } from '../core/FScene'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 

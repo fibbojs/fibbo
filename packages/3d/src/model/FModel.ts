@@ -1,7 +1,7 @@
 import * as THREE from 'three'
-import type { FScene } from '../FScene'
-import { FComponent } from '../FComponent'
-import type { FComponentOptions } from '../FComponent'
+import type { FScene } from '../core/FScene'
+import { FComponent } from '../core/FComponent'
+import type { FComponentOptions } from '../core/FComponent'
 
 export interface FModelOptions extends FComponentOptions {
   name: string

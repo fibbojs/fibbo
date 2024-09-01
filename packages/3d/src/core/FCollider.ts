@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
-import { FShapes } from './types/FShapes'
+import { FShapes } from '../types/FShapes'
 import type { FComponent } from './FComponent'
 
 export interface FColliderOptions {

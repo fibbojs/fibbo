@@ -3,10 +3,10 @@ import { FScene as FSceneCore } from '@fibbojs/core'
 import * as PIXI from 'pixi.js'
 import { Viewport } from 'pixi-viewport'
 import type RAPIER from '@dimforge/rapier2d'
+import { FSprite } from '../sprite/FSprite'
+import type { FCamera } from '../cameras/FCamera'
+import { FFreeCamera } from '../cameras/FFreeCamera'
 import type { FComponent } from './FComponent'
-import { FSprite } from './sprite/FSprite'
-import type { FCamera } from './cameras/FCamera'
-import { FFreeCamera } from './cameras/FFreeCamera'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number }

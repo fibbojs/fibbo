@@ -2,17 +2,17 @@
  * Export Core
  */
 // Core 3d Classes
-export { FScene } from './FScene'
-export { FComponent } from './FComponent'
-export { FComponentEmpty } from './FComponentEmpty'
-export { FTransform } from './FTransform'
+export { FScene } from './core/FScene'
+export { FComponent } from './core/FComponent'
+export { FComponentEmpty } from './core/FComponentEmpty'
+export { FTransform } from './core/FTransform'
 
 // Character controllers
-export { FCharacter } from './character/FCharacter'
-export { FCharacterDynamic } from './character/FCharacterDynamic'
-export { FCharacterKinematic } from './character/FCharacterKinematic'
-export { FCharacterKP } from './character/FCharacterKP'
-export { FCharacterKV } from './character/FCharacterKV'
+export { FCharacterController } from './controllers/FCharacterController'
+export { FCharacterControllerD } from './controllers/FCharacterControllerD'
+export { FCharacterControllerK } from './controllers/FCharacterControllerK'
+export { FCharacterControllerKP } from './controllers/FCharacterControllerKP'
+export { FCharacterControllerKV } from './controllers/FCharacterControllerKV'
 
 // Models
 export { FModel } from './model/FModel'
@@ -37,12 +37,13 @@ export { FPointerLockCamera } from './cameras/FPointerLockCamera'
 
 // Types
 export { FShapes } from './types/FShapes'
-export type { FComponentOptions } from './FComponent'
-export type { FSceneOptions } from './FScene'
-export type { FCharacterOptions } from './character/FCharacter'
+export type { FComponentOptions } from './core/FComponent'
+export type { FSceneOptions } from './core/FScene'
+export type { FControllerOptions } from './controllers/FController'
+export type { FCharacterControllerOptions } from './controllers/FCharacterController'
 export type { FModelOptions } from './model/FModel'
-export type { FRigidBodyOptions } from './FRigidBody'
-export type { FColliderOptions } from './FCollider'
-export type { FTransformOptions } from './FTransform'
+export type { FRigidBodyOptions } from './core/FRigidBody'
+export type { FColliderOptions } from './core/FCollider'
+export type { FTransformOptions } from './core/FTransform'
 export type { FCameraOptions } from './cameras/FCamera'
 export type { FAttachedCameraOptions } from './cameras/FAttachedCamera'

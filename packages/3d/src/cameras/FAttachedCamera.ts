@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import type { FComponent } from '../FComponent'
+import type { FComponent } from '../core/FComponent'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
