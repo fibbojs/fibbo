@@ -158,7 +158,10 @@ export class FCollider {
       colliderDesc.setRotation(finalRotation)
     }
     // Set the sensor flag
-    colliderDesc.setSensor(options.sensor)
+    if (options.sensor) {
+      colliderDesc.setSensor(true)
+      colliderDesc.setActiveCollisionTypes(RAPIER.ActiveCollisionTypes.ALL)
+    }
 
     // Create the collider
     this.collider = component.scene.world.createCollider(colliderDesc, options.rigidBody)

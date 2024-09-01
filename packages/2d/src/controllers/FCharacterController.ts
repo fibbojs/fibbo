@@ -108,5 +108,11 @@ export abstract class FCharacterController extends FController {
     fKeyboard.onKeyUp('q', () => {
       this.inputs.left = false
     })
+
+    // Initialize a sensor
+    this.component.initSensor({
+      shape: FShapes.SQUARE,
+      scale: { x: 1.1, y: 1.1 },
+    })
   }
 }

@@ -76,12 +76,10 @@ import { loadLevel } from './level'
   const character = new FSprite(scene, {
     texture: 'character_0000.png',
     position: { x: 0, y: 5 },
+    scale: { x: 0.5, y: 0.5 },
   })
   character.controller = new FCharacterControllerKP(scene, {
     component: character,
-  })
-  character.onLoaded(() => {
-    character.setScaleWidth(0.5)
   })
   character.onCollisionWith(FRectangle, () => {
     console.log('Sprite collided with a square!')

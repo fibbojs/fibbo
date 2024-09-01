@@ -57,7 +57,7 @@ export abstract class FComponent extends FComponentCore {
   /**
    * Sensor (a collider that doesn't collide with other colliders, but still triggers events)
    */
-  sensor?: FCollider
+  sensor?: FRigidBody
 
   /**
    * @param scene The 2D scene where the component will be added.
@@ -117,10 +117,10 @@ export abstract class FComponent extends FComponentCore {
       // If a sensor exists, update its position and rotation according to the rigid body
       if (this.sensor) {
         // Apply offset to the sensor
-        newContainerPosition.x += this.sensor.colliderPositionOffset.x
-        newContainerPosition.y += this.sensor.colliderPositionOffset.y
-        this.sensor.collider.setTranslation(newContainerPosition)
-        this.sensor.collider.setRotation(newContainerRotation)
+        newContainerPosition.x += this.sensor.collider.colliderPositionOffset.x
+        newContainerPosition.y += this.sensor.collider.colliderPositionOffset.y
+        this.sensor.rigidBody.setTranslation(newContainerPosition, true)
+        this.sensor.rigidBody.setRotation(newContainerRotation, true)
       }
     }
     // Else if the collider exist, update the container position and rotation according to the collider
@@ -312,19 +312,20 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   initSensor(options?: FColliderOptions): void {
-    // Initialize the collider
-    this.sensor = new FCollider(this, {
-      ...options,
+    // Initialize the sensor
+    this.sensor = new FRigidBody(this, {
       sensor: true,
+      rigidBodyType: RAPIER.RigidBodyType.KinematicPositionBased,
+      ...options,
     })
   }
 
   onCollisionWith(classOrObject: any, callback: () => void): void {
     super.onCollisionWith(classOrObject, callback)
     // Activate collision events if they are not already activated
-    if (this.sensor && this.sensor.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
+    if (this.sensor && this.sensor.collider.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
       // Set the active events
-      this.sensor.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
+      this.sensor.collider.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
   }
 

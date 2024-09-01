@@ -1,5 +1,6 @@
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../core/FScene'
+import { FShapes } from '../types/FShapes'
 import type { FControllerOptions } from './FController'
 import { FController } from './FController'
 
@@ -103,6 +104,12 @@ export abstract class FCharacterController extends FController {
     })
     fKeyboard.onKeyUp('q', () => {
       this.inputs.left = false
+    })
+
+    // Initialize a sensor
+    this.component.initSensor({
+      shape: FShapes.CAPSULE,
+      scale: { x: 1.1, y: 1.1, z: 1.1 },
     })
   }
 }

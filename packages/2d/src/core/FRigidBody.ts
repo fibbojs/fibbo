@@ -10,6 +10,7 @@ export interface FRigidBodyOptions {
   rotationDegree?: number
   shape?: FShapes
   rigidBodyType?: RAPIER.RigidBodyType
+  sensor?: boolean
   lockTranslations?: boolean
   lockRotations?: boolean
   enabledTranslations?: {
@@ -69,6 +70,7 @@ export class FRigidBody {
       rotation: 0,
       rotationDegree: undefined,
       shape: FShapes.SQUARE,
+      sensor: false,
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockTranslations: false,
       lockRotations: false,

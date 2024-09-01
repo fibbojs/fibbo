@@ -34,11 +34,11 @@
     "packages/*"
   ],
   "dependencies": {
-    "@dimforge/rapier2d": "^0.13.1",
-    "@dimforge/rapier3d": "^0.12.0",
+    "@dimforge/rapier2d": "^0.14.0",
+    "@dimforge/rapier3d": "^0.14.0",
     "pixi-viewport": "^5.0.3",
-    "pixi.js": "^8.1.1",
-    "three": "^0.164.1"
+    "pixi.js": "^8.3.4",
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.14.0",

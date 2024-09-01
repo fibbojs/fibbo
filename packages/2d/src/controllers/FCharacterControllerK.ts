@@ -56,8 +56,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
     this.characterController.computeColliderMovement(
       this.component.collider?.collider as RAPIER.Collider,
       desiredMovement,
-      // I don't why this flag works, I would expect QueryFilterFlags.EXCLUDE_SENSORS to work but anyway
-      RAPIER.QueryFilterFlags.EXCLUDE_SOLIDS,
+      RAPIER.QueryFilterFlags.EXCLUDE_SENSORS,
     )
 
     // If yVelocity is not 0, apply gravity

@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import RAPIER from '@dimforge/rapier3d'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../core/FScene'
-import { FShapes } from '../types/FShapes'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 
@@ -34,10 +33,6 @@ export class FCharacterControllerD extends FCharacterController {
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockRotations: true,
       ...options,
-    })
-    // Initialize a sensor
-    this.component.initSensor({
-      shape: FShapes.CAPSULE,
     })
   }
 

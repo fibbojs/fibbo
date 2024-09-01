@@ -1,6 +1,5 @@
 import RAPIER from '@dimforge/rapier3d'
 import type { FScene } from '../core/FScene'
-import { FShapes } from '../types/FShapes'
 import { FCharacterControllerK } from './FCharacterControllerK'
 import type { FCharacterControllerOptions } from './FCharacterController'
 
@@ -26,10 +25,6 @@ export class FCharacterControllerKP extends FCharacterControllerK {
     this.component.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.KinematicPositionBased,
       ...options,
-    })
-    // Initialize a sensor
-    this.component.initSensor({
-      shape: FShapes.CAPSULE,
     })
   }
 

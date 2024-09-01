@@ -78,7 +78,7 @@ export class FSprite extends FComponent {
     this.container.pivot.set(this.container.width / 2, this.container.height / 2)
     // Set the scale of the component so it fits the texture by its width
     // Width will be 1 unit, height will be calculated according to the aspect ratio
-    this.setScaleWidth(1)
+    this.setScaleWidth(this.transform.scale.x)
     // Call the onLoaded method
     this.emitOnLoaded()
   }

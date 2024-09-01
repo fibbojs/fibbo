@@ -1,6 +1,8 @@
 import * as THREE from 'three'
 import { FCapsule, FCharacterControllerKP, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
+import { FKeyboard } from '@fibbojs/event'
+import RAPIER from '@dimforge/rapier3d'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 import './style.css'
@@ -32,7 +34,9 @@ import MyCustomCube from './classes/MyCustomCube'
     position: { x: 0, y: -0.1, z: 0 },
     scale: { x: 15, y: 0.1, z: 15 },
   })
-  ground.initCollider()
+  ground.initRigidBody({
+    rigidBodyType: RAPIER.RigidBodyType.Fixed,
+  })
   ground.setColor(0x1F1F1F)
   scene.addComponent(ground)
 
@@ -193,6 +197,12 @@ import MyCustomCube from './classes/MyCustomCube'
   character.onCollisionWith(deathZone, () => {
     console.log('Character fell into the death zone!')
     character.setPosition({ x: 0, y: 10, z: 0 })
+  })
+
+  // Create keyboard
+  const keyboard = new FKeyboard(scene)
+  keyboard.onKeyDown('p', () => {
+    character.setPosition({ x: 0, y: 5, z: 0 })
   })
 
   // After 3 seconds, add a third gltfCube
