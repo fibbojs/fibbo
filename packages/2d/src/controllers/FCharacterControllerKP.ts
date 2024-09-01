@@ -31,7 +31,7 @@ export class FCharacterControllerKP extends FCharacterControllerK {
 
   onFrame(delta: number): void {
     // Get the corrected movement
-    const correctedMovement = this.getCorrectedMovements(delta)
+    const correctedMovement = this.getCorrectedMovements()
 
     // Apply the movement to the rigid body
     this.component.rigidBody?.rigidBody.setNextKinematicTranslation({

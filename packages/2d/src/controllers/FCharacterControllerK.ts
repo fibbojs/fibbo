@@ -40,17 +40,16 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
   /**
    * Return the corrected movements for the current frame.
-   * @param delta The time elapsed since the last frame.
    */
-  getCorrectedMovements(delta: number): { x: number, y: number } {
+  getCorrectedMovements(): { x: number, y: number } {
     const movementDirection = new RAPIER.Vector2(0, 0)
     // Compute the movement direction
     movementDirection.x = this.inputs.left ? -1 : this.inputs.right ? 1 : 0
 
     // Create movement vector
     const desiredMovement = {
-      x: movementDirection.x * delta * 8 * this.speed,
-      y: this.yVelocity * delta,
+      x: movementDirection.x * 8 * 0.01 * this.speed,
+      y: this.yVelocity * 0.01,
     }
     // Compute the desired movement
     this.characterController.computeColliderMovement(
@@ -61,7 +60,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
     // If yVelocity is not 0, apply gravity
     if (this.yVelocity > this.scene.world.gravity.y) {
-      this.yVelocity += this.scene.world.gravity.y * delta * 4
+      this.yVelocity += this.scene.world.gravity.y * 0.00981 * 4
     }
     else {
       this.yVelocity = this.scene.world.gravity.y

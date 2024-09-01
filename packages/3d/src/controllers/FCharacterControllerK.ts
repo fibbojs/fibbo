@@ -43,9 +43,8 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
   /**
    * Return the corrected movements for the current frame.
-   * @param delta The time elapsed since the last frame.
    */
-  getCorrectedMovements(delta: number): { x: number, y: number, z: number } {
+  getCorrectedMovements(): { x: number, y: number, z: number } {
     let worldDirection = new THREE.Vector3(0, 0, 0)
     // Compute the movement direction
     worldDirection.x = this.inputs.left ? 1 : this.inputs.right ? -1 : 0
@@ -58,9 +57,9 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
     // Create movement vector
     const desiredMovement = {
-      x: worldDirection.x * delta * 8,
-      y: this.yVelocity * delta,
-      z: worldDirection.z * delta * 8,
+      x: worldDirection.x * 8 * 0.01,
+      y: this.yVelocity * 0.01,
+      z: worldDirection.z * 8 * 0.01,
     }
     // Compute the desired movement
     this.characterController.computeColliderMovement(
@@ -71,7 +70,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
     // If yVelocity is not 0, apply gravity
     if (this.yVelocity > this.scene.world.gravity.y) {
-      this.yVelocity += this.scene.world.gravity.y * delta * 4
+      this.yVelocity += this.scene.world.gravity.y * 0.00981 * 4
     }
     else {
       this.yVelocity = this.scene.world.gravity.y
