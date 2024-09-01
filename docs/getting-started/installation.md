@@ -39,4 +39,4 @@ npm install
 npm run dev
 ```
 
-## Manual installation (WIP)
+## Manual installation <Badge type="warning" text="work in progress" />
