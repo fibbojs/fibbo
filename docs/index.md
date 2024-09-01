@@ -3,24 +3,24 @@
 layout: home
 
 hero:
-  name: "Fibbo"
+  name: "fibbo"
   text: "Creating games should be easy"
   image:
-    src: /fibbo-logo.png
+    src: /logo.png
     alt: Fibbo Logo
   actions:
     - theme: brand
       text: Quick start
       link: /getting-started/installation
     - theme: alt
-      text: Components
-      link: /components/introduction
+      text: Fundamentals
+      link: /guide/fundamentals
 
 features:
   - title: No configuration needed ⚙️
     details: Everything is set up for you out of the box.
   - title: Typescript support 🦺
     details: Full typescript support.
-  - title: Minimal code 🚀
-    details: Write less code and create more.
+  - title: 2D and 3D support 🎮
+    details: Create 2D and 3D games with the same API.
 ---

@@ -1,4 +1,4 @@
-# Lights
+# Lights <Badge type="warning" text="work in progress" />
 
 As lights are still not supported natively in Fibbo, you should use the underlying libraries to create and manage lights in your scene.
 
