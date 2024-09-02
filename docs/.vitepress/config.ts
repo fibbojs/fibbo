@@ -63,6 +63,9 @@ export default defineConfig({
             { text: 'Events', collapsed: true, items: [
               { text: 'Keyboard', link: '/guide/events/keyboard' },
             ] },
+            { text: 'Audio', collapsed: true, items: [
+              { text: 'Introduction', link: '/guide/audio/introduction' },
+            ] },
           ],
         },
         {

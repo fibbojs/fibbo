@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Models are the core of any 3D application. They are the objects that are rendered in the scene. They can be simple shapes like cubes or spheres, but most of the time, they are complex 3D models that are created in a 3D modeling software like [Blender](https://www.blender.org/).
+Models are the core of any 3D application. They are the objects that are rendered in the scene.
+
+They can be simple shapes like cubes or spheres ; but in Fibbo, we will use the term to refer to complex 3D models that are created in a 3D modeling software like [Blender](https://www.blender.org/).
 
 Here is a brief overview of the most common 3D models file formats :
 - [.fbx](https://en.wikipedia.org/wiki/FBX) : A proprietary file format developed by Autodesk. It is widely used in the game industry.

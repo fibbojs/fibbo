@@ -3,6 +3,7 @@
   --fibbo-yellow: #F5EA70;
   --fibbo-black: #0A0901;
   --fibbo-black-300: #1A151E;
+  --fibbo-black-600: #2A252C;
   --fibbo-secondary: #FFFBE4;
   --fibbo-secondary-300: #f4eecc;
 
@@ -28,6 +29,12 @@
 
   /* Sidebar */
   --vp-sidebar-bg-color: var(--fibbo-secondary);
+
+  /* Grey Code Background */
+  --vp-code-bg: var(--fibbo-secondary-300);
+
+  /* Divider */
+  --vp-c-divider: var(--fibbo-secondary-300);
 
   /* Black */
   --vp-c-black: #0E0317;
@@ -61,6 +68,12 @@
 
   /* Sidebar */
   --vp-sidebar-bg-color: var(--fibbo-black);
+
+  /* Grey Code Background */
+  --vp-code-bg: var(--fibbo-black-300);
+
+  /* Divider */
+  --vp-c-divider: var(--fibbo-black-600);
 
   /* White */
   --vp-c-white: var(--fibbo-secondary);
