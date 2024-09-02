@@ -17,11 +17,14 @@
 
 #### Character
 
-- [FCharacter](classes/FCharacter.md)
-- [FCharacterDynamic](classes/FCharacterDynamic.md)
-- [FCharacterKP](classes/FCharacterKP.md)
-- [FCharacterKV](classes/FCharacterKV.md)
-- [FCharacterKinematic](classes/FCharacterKinematic.md)
+- [FCharacterControllerKV](classes/FCharacterControllerKV.md)
+
+#### Controller
+
+- [FCharacterController](classes/FCharacterController.md)
+- [FCharacterControllerD](classes/FCharacterControllerD.md)
+- [FCharacterControllerK](classes/FCharacterControllerK.md)
+- [FCharacterControllerKP](classes/FCharacterControllerKP.md)
 
 #### Core
 
@@ -42,15 +45,22 @@
 - [FPolyhedron](classes/FPolyhedron.md)
 - [FSphere](classes/FSphere.md)
 
+#### Other
+
+- [FController](classes/FController.md)
+
 ### Enumerations
 
 - [FShapes](enumerations/FShapes.md)
 
 ### Interfaces
 
-- [FCharacterOptions](interfaces/FCharacterOptions.md)
+- [FAttachedCameraOptions](interfaces/FAttachedCameraOptions.md)
+- [FCameraOptions](interfaces/FCameraOptions.md)
+- [FCharacterControllerOptions](interfaces/FCharacterControllerOptions.md)
 - [FColliderOptions](interfaces/FColliderOptions.md)
 - [FComponentOptions](interfaces/FComponentOptions.md)
+- [FControllerOptions](interfaces/FControllerOptions.md)
 - [FModelOptions](interfaces/FModelOptions.md)
 - [FRigidBodyOptions](interfaces/FRigidBodyOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)

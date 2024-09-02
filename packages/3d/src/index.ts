@@ -8,6 +8,7 @@ export { FComponentEmpty } from './core/FComponentEmpty'
 export { FTransform } from './core/FTransform'
 
 // Character controllers
+export { FController } from './controllers/FController'
 export { FCharacterController } from './controllers/FCharacterController'
 export { FCharacterControllerD } from './controllers/FCharacterControllerD'
 export { FCharacterControllerK } from './controllers/FCharacterControllerK'

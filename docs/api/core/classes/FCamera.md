@@ -26,7 +26,7 @@ The base class for cameras in Fibbo.
 
 #### Defined in
 
-[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FCamera.ts#L7)
+[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FCamera.ts#L7)
 
 ## Methods
 
@@ -68,7 +68,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:97](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L97)
+[packages/core/src/FComponent.ts:110](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L110)
 
 ***
 
@@ -118,13 +118,13 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L60)
+[packages/core/src/FComponent.ts:73](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L73)
 
 ***
 
 ### onFrame()
 
-> `abstract` **onFrame**(`delta`): `void`
+> **onFrame**(`delta`): `void`
 
 #### Parameters
 
@@ -138,8 +138,9 @@ The time since the last frame.
 
 #### Description
 
-Update the component.
-Should be called every frame.
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Inherited from
 
@@ -147,7 +148,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:37](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L37)
+[packages/core/src/FComponent.ts:45](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L45)
 
 ## Properties
 
@@ -170,7 +171,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L26)
+[packages/core/src/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L28)
 
 ***
 
@@ -189,7 +190,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L20)
+[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L22)
 
 ***
 
@@ -203,7 +204,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L14)
+[packages/core/src/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L16)
 
 ***
 
@@ -219,4 +220,20 @@ Internal flags
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/core/src/FComponent.ts#L13)
+[packages/core/src/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L15)
+
+***
+
+### controller?
+
+> `optional` **controller**: [`FController`](FController.md)
+
+The controller attached to the component.
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`controller`](FComponent.md#controller)
+
+#### Defined in
+
+[packages/core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/core/src/FComponent.ts#L33)

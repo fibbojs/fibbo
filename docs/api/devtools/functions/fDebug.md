@@ -26,4 +26,4 @@ fDebug(scene)
 
 ## Defined in
 
-[packages/devtools/src/FDebug.ts:77](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/devtools/src/FDebug.ts#L77)
+[packages/devtools/src/FDebug.ts:77](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/devtools/src/FDebug.ts#L77)

@@ -46,7 +46,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:35](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L35)
+[packages/2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L34)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:56](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L56)
+[packages/2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L55)
 
 ***
 
@@ -102,7 +102,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:70
+packages/core/dist/index.d.ts:100
 
 ***
 
@@ -152,7 +152,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-packages/core/dist/index.d.ts:53
+packages/core/dist/index.d.ts:83
 
 ***
 
@@ -170,8 +170,9 @@ packages/core/dist/index.d.ts:53
 
 #### Description
 
-Update the component.
-Should be called every frame.
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Overrides
 
@@ -179,7 +180,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:54](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L54)
+[packages/2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L53)
 
 ## Properties
 
@@ -202,7 +203,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-packages/core/dist/index.d.ts:22
+packages/core/dist/index.d.ts:47
 
 ***
 
@@ -221,7 +222,7 @@ It is generated automatically.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:17
+packages/core/dist/index.d.ts:42
 
 ***
 
@@ -237,7 +238,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L17)
+[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -253,19 +254,43 @@ Internal flags
 
 #### Defined in
 
-packages/core/dist/index.d.ts:11
+packages/core/dist/index.d.ts:36
+
+***
+
+### controller?
+
+> `optional` **controller**: `FController`
+
+The controller attached to the component.
+
+#### Inherited from
+
+`FCameraCore.controller`
+
+#### Defined in
+
+packages/core/dist/index.d.ts:53
 
 ***
 
 ### position
 
-> **position**: `PointData`
+> **position**: `object`
 
 Position of the camera.
 
+#### x
+
+> **x**: `number`
+
+#### y
+
+> **y**: `number`
+
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:28](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L28)
+[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -279,4 +304,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L22)
+[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L21)

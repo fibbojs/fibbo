@@ -26,7 +26,11 @@ scene.camera.lookAt(0, 0, 0)
 
 ### new FFixedCamera()
 
-> **new FFixedCamera**(): [`FFixedCamera`](FFixedCamera.md)
+> **new FFixedCamera**(`options`?): [`FFixedCamera`](FFixedCamera.md)
+
+#### Parameters
+
+• **options?**: [`FCameraOptions`](../interfaces/FCameraOptions.md)
 
 #### Returns
 
@@ -38,7 +42,7 @@ scene.camera.lookAt(0, 0, 0)
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FFixedCamera.ts#L18)
+[packages/3d/src/cameras/FFixedCamera.ts:19](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FFixedCamera.ts#L19)
 
 ## Methods
 
@@ -385,7 +389,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:52](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L52)
+[packages/3d/src/cameras/FCamera.ts:84](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L84)
 
 ***
 
@@ -410,7 +414,7 @@ This method is useful to get the direction of the camera to apply forces in the 
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:61](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L61)
+[packages/3d/src/cameras/FCamera.ts:93](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L93)
 
 ***
 
@@ -1170,7 +1174,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:45](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L45)
+[packages/3d/src/cameras/FCamera.ts:77](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L77)
 
 ***
 
@@ -1188,8 +1192,9 @@ player.onCollisionWith(enemy, () => {
 
 #### Description
 
-Update the component.
-Should be called every frame.
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Overrides
 
@@ -1197,7 +1202,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/3d/src/cameras/FFixedCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FFixedCamera.ts#L22)
+[packages/3d/src/cameras/FFixedCamera.ts:23](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FFixedCamera.ts#L23)
 
 ***
 
@@ -1578,7 +1583,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L27)
+[packages/3d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L59)
 
 ***
 
@@ -1608,7 +1613,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:41](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L41)
+[packages/3d/src/cameras/FCamera.ts:73](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L73)
 
 ***
 
@@ -1750,7 +1755,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L34)
+[packages/3d/src/cameras/FCamera.ts:66](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L66)
 
 ***
 
@@ -2219,7 +2224,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L16)
+[packages/3d/src/cameras/FCamera.ts:20](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L20)
 
 ***
 
@@ -2238,7 +2243,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:15](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L15)
+[packages/3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -2252,7 +2257,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L13)
+[packages/3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -2268,7 +2273,7 @@ Internal flags
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:12](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/3d/src/cameras/FCamera.ts#L12)
+[packages/3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -3080,6 +3085,22 @@ The object's local scale.
 #### Defined in
 
 node\_modules/@types/three/src/core/Object3D.d.ts:130
+
+***
+
+### transform
+
+> **transform**: [`FTransform`](FTransform.md)
+
+Transform of the camera.
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`transform`](FCamera.md#transform)
+
+#### Defined in
+
+[packages/3d/src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/cameras/FCamera.ts#L25)
 
 ***
 

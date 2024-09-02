@@ -32,7 +32,7 @@ A camera attached to a given target.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FAttachedCamera.ts#L20)
+[packages/2d/src/cameras/FAttachedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FAttachedCamera.ts#L20)
 
 ## Methods
 
@@ -50,7 +50,7 @@ A camera attached to a given target.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:33](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FAttachedCamera.ts#L33)
+[packages/2d/src/cameras/FAttachedCamera.ts:33](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FAttachedCamera.ts#L33)
 
 ***
 
@@ -92,7 +92,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:70
+packages/core/dist/index.d.ts:100
 
 ***
 
@@ -142,7 +142,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-packages/core/dist/index.d.ts:53
+packages/core/dist/index.d.ts:83
 
 ***
 
@@ -160,8 +160,9 @@ packages/core/dist/index.d.ts:53
 
 #### Description
 
-Update the component.
-Should be called every frame.
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Overrides
 
@@ -169,7 +170,7 @@ Should be called every frame.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:25](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FAttachedCamera.ts#L25)
+[packages/2d/src/cameras/FAttachedCamera.ts:25](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FAttachedCamera.ts#L25)
 
 ## Properties
 
@@ -192,7 +193,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-packages/core/dist/index.d.ts:22
+packages/core/dist/index.d.ts:47
 
 ***
 
@@ -211,7 +212,7 @@ It is generated automatically.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:17
+packages/core/dist/index.d.ts:42
 
 ***
 
@@ -227,7 +228,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L17)
+[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -243,15 +244,39 @@ Internal flags
 
 #### Defined in
 
-packages/core/dist/index.d.ts:11
+packages/core/dist/index.d.ts:36
+
+***
+
+### controller?
+
+> `optional` **controller**: `FController`
+
+The controller attached to the component.
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`controller`](FCamera.md#controller)
+
+#### Defined in
+
+packages/core/dist/index.d.ts:53
 
 ***
 
 ### position
 
-> **position**: `PointData`
+> **position**: `object`
 
 Position of the camera.
+
+#### x
+
+> **x**: `number`
+
+#### y
+
+> **y**: `number`
 
 #### Inherited from
 
@@ -259,7 +284,7 @@ Position of the camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:28](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L28)
+[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -277,7 +302,7 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FCamera.ts#L22)
+[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FCamera.ts#L21)
 
 ***
 
@@ -291,4 +316,4 @@ The target to follow.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/cameras/FAttachedCamera.ts#L18)
+[packages/2d/src/cameras/FAttachedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/cameras/FAttachedCamera.ts#L18)

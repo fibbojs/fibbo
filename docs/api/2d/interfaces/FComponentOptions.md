@@ -4,7 +4,7 @@
 
 ## Extended by
 
-- [`FCharacterOptions`](FCharacterOptions.md)
+- [`FSpriteOptions`](FSpriteOptions.md)
 
 ## Properties
 
@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:12](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L12)
+[packages/2d/src/core/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L13)
 
 ***
 
@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L14)
+[packages/2d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L15)
 
 ***
 
@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L15)
+[packages/2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L16)
 
 ***
 
@@ -60,4 +60,4 @@
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L13)
+[packages/2d/src/core/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L14)

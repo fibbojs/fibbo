@@ -1,25 +1,25 @@
-[@fibbojs](/api/index) / [2d](/api/2d) / FCharacterDynamic
+[@fibbojs](/api/index) / [2d](/api/2d) / FRectangle
 
-# Class: FCharacterDynamic
+# Class: FRectangle
 
 ## Description
 
-A pre-defined character controller based on a Dynamic RigidBody.
+A simple square in Fibbo.
 
 ## Example
 
 ```ts
-import { FScene, FCharacterDynamic } from '@fibbojs/2d'
+import { FScene, FRectangle } from '@fibbojs/2d'
 
 const scene = new FScene()
 
-const capsule = new FCharacterDynamic(scene)
-scene.addComponent(capsule)
+const square = new FRectangle(scene)
+scene.addComponent(square)
 ```
 
 ## Extends
 
-- [`FCharacter`](FCharacter.md)
+- [`FPolygon`](FPolygon.md)
 
 ## Accessors
 
@@ -53,11 +53,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`position`](FCharacter.md#position)
+[`FPolygon`](FPolygon.md).[`position`](FPolygon.md#position)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:328](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L328)
+[packages/2d/src/core/FComponent.ts:335](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L335)
 
 ***
 
@@ -77,11 +77,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`rotation`](FCharacter.md#rotation)
+[`FPolygon`](FPolygon.md).[`rotation`](FPolygon.md#rotation)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:352](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L352)
+[packages/2d/src/core/FComponent.ts:359](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L359)
 
 ***
 
@@ -101,11 +101,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`rotationDegree`](FCharacter.md#rotationdegree)
+[`FPolygon`](FPolygon.md).[`rotationDegree`](FPolygon.md#rotationdegree)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:360](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L360)
+[packages/2d/src/core/FComponent.ts:367](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L367)
 
 ***
 
@@ -137,11 +137,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`scale`](FCharacter.md#scale)
+[`FPolygon`](FPolygon.md).[`scale`](FPolygon.md#scale)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:368](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L368)
+[packages/2d/src/core/FComponent.ts:375](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L375)
 
 ***
 
@@ -161,11 +161,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`scaleX`](FCharacter.md#scalex)
+[`FPolygon`](FPolygon.md).[`scaleX`](FPolygon.md#scalex)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:376](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L376)
+[packages/2d/src/core/FComponent.ts:383](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L383)
 
 ***
 
@@ -185,11 +185,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`scaleY`](FCharacter.md#scaley)
+[`FPolygon`](FPolygon.md).[`scaleY`](FPolygon.md#scaley)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:384](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L384)
+[packages/2d/src/core/FComponent.ts:391](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L391)
 
 ***
 
@@ -209,11 +209,11 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`x`](FCharacter.md#x)
+[`FPolygon`](FPolygon.md).[`x`](FPolygon.md#x)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:336](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L336)
+[packages/2d/src/core/FComponent.ts:343](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L343)
 
 ***
 
@@ -233,17 +233,17 @@ Setters & getters for transform properties
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`y`](FCharacter.md#y)
+[`FPolygon`](FPolygon.md).[`y`](FPolygon.md#y)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:344](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L344)
+[packages/2d/src/core/FComponent.ts:351](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L351)
 
 ## Constructors
 
-### new FCharacterDynamic()
+### new FRectangle()
 
-> **new FCharacterDynamic**(`scene`, `options`?): [`FCharacterDynamic`](FCharacterDynamic.md)
+> **new FRectangle**(`scene`, `options`?): [`FRectangle`](FRectangle.md)
 
 #### Parameters
 
@@ -253,15 +253,15 @@ Setters & getters for transform properties
 
 #### Returns
 
-[`FCharacterDynamic`](FCharacterDynamic.md)
+[`FRectangle`](FRectangle.md)
 
 #### Overrides
 
-[`FCharacter`](FCharacter.md).[`constructor`](FCharacter.md#constructors)
+[`FPolygon`](FPolygon.md).[`constructor`](FPolygon.md#constructors)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacterDynamic.ts:22](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/character/FCharacterDynamic.ts#L22)
+[packages/2d/src/polygons/FRectangle.ts:19](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/polygons/FRectangle.ts#L19)
 
 ## Methods
 
@@ -299,11 +299,11 @@ player.emitCollisionWith(enemy)
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`emitCollisionWith`](FCharacter.md#emitcollisionwith)
+[`FPolygon`](FPolygon.md).[`emitCollisionWith`](FPolygon.md#emitcollisionwith)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:70
+packages/core/dist/index.d.ts:100
 
 ***
 
@@ -339,11 +339,11 @@ component.initCollider({
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`initCollider`](FCharacter.md#initcollider)
+[`FPolygon`](FPolygon.md).[`initCollider`](FPolygon.md#initcollider)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacter.ts:129](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/character/FCharacter.ts#L129)
+[packages/2d/src/core/FComponent.ts:290](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L290)
 
 ***
 
@@ -376,13 +376,13 @@ component.initRigidBody({
 })
 ```
 
-#### Overrides
+#### Inherited from
 
-[`FCharacter`](FCharacter.md).[`initRigidBody`](FCharacter.md#initrigidbody)
+[`FPolygon`](FPolygon.md).[`initRigidBody`](FPolygon.md#initrigidbody)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacterDynamic.ts:50](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/character/FCharacterDynamic.ts#L50)
+[packages/2d/src/core/FComponent.ts:263](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L263)
 
 ***
 
@@ -418,11 +418,11 @@ component.initSensor({
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`initSensor`](FCharacter.md#initsensor)
+[`FPolygon`](FPolygon.md).[`initSensor`](FPolygon.md#initsensor)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacter.ts:136](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/character/FCharacter.ts#L136)
+[packages/2d/src/core/FComponent.ts:314](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L314)
 
 ***
 
@@ -468,21 +468,21 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`onCollisionWith`](FCharacter.md#oncollisionwith)
+[`FPolygon`](FPolygon.md).[`onCollisionWith`](FPolygon.md#oncollisionwith)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:316](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L316)
+[packages/2d/src/core/FComponent.ts:323](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L323)
 
 ***
 
 ### onFrame()
 
-> **onFrame**(`_delta`): `void`
+> **onFrame**(`delta`): `void`
 
 #### Parameters
 
-• **\_delta**: `number`
+• **delta**: `number`
 
 #### Returns
 
@@ -490,16 +490,17 @@ player.onCollisionWith(enemy, () => {
 
 #### Description
 
-Update the component.
-Should be called every frame.
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Overrides
 
-[`FCharacter`](FCharacter.md).[`onFrame`](FCharacter.md#onframe)
+[`FPolygon`](FPolygon.md).[`onFrame`](FPolygon.md#onframe)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacterDynamic.ts:31](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/character/FCharacterDynamic.ts#L31)
+[packages/2d/src/polygons/FRectangle.ts:23](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/polygons/FRectangle.ts#L23)
 
 ***
 
@@ -537,11 +538,11 @@ component.setPosition({ x: 0, y: 0 })
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`setPosition`](FCharacter.md#setposition)
+[`FPolygon`](FPolygon.md).[`setPosition`](FPolygon.md#setposition)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:163](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L163)
+[packages/2d/src/core/FComponent.ts:169](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L169)
 
 ***
 
@@ -571,11 +572,11 @@ component.setRotation(Math.PI / 2)
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`setRotation`](FCharacter.md#setrotation)
+[`FPolygon`](FPolygon.md).[`setRotation`](FPolygon.md#setrotation)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:212](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L212)
+[packages/2d/src/core/FComponent.ts:218](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L218)
 
 ***
 
@@ -605,11 +606,11 @@ component.setRotationDegree(90)
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`setRotationDegree`](FCharacter.md#setrotationdegree)
+[`FPolygon`](FPolygon.md).[`setRotationDegree`](FPolygon.md#setrotationdegree)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:231](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L231)
+[packages/2d/src/core/FComponent.ts:237](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L237)
 
 ***
 
@@ -647,11 +648,11 @@ component.setScale({ x: 1, y: 1 })
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`setScale`](FCharacter.md#setscale)
+[`FPolygon`](FPolygon.md).[`setScale`](FPolygon.md#setscale)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:184](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L184)
+[packages/2d/src/core/FComponent.ts:190](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L190)
 
 ## Properties
 
@@ -670,11 +671,11 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`__CALLBACKS_ON_COLLISION__`](FCharacter.md#__callbacks_on_collision__)
+[`FPolygon`](FPolygon.md).[`__CALLBACKS_ON_COLLISION__`](FPolygon.md#__callbacks_on_collision__)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:22
+packages/core/dist/index.d.ts:47
 
 ***
 
@@ -689,11 +690,11 @@ It is generated automatically.
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`__ID__`](FCharacter.md#__id__)
+[`FPolygon`](FPolygon.md).[`__ID__`](FPolygon.md#__id__)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:17
+packages/core/dist/index.d.ts:42
 
 ***
 
@@ -705,11 +706,11 @@ Internal flags
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`__IS_2D__`](FCharacter.md#__is_2d__)
+[`FPolygon`](FPolygon.md).[`__IS_2D__`](FPolygon.md#__is_2d__)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L26)
+[packages/2d/src/core/FComponent.ts:27](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L27)
 
 ***
 
@@ -721,11 +722,11 @@ Internal flags
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`__IS_3D__`](FCharacter.md#__is_3d__)
+[`FPolygon`](FPolygon.md).[`__IS_3D__`](FPolygon.md#__is_3d__)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:11
+packages/core/dist/index.d.ts:36
 
 ***
 
@@ -737,11 +738,11 @@ RAPIER Collider
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`collider`](FCharacter.md#collider)
+[`FPolygon`](FPolygon.md).[`collider`](FPolygon.md#collider)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:51](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L51)
+[packages/2d/src/core/FComponent.ts:56](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L56)
 
 ***
 
@@ -753,43 +754,27 @@ PIXI container
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`container`](FCharacter.md#container)
+[`FPolygon`](FPolygon.md).[`container`](FPolygon.md#container)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:36](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L36)
+[packages/2d/src/core/FComponent.ts:41](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L41)
 
 ***
 
-### inputs
+### controller?
 
-> **inputs**: `object`
+> `optional` **controller**: [`FController`](FController.md)
 
-The inputs that will be used to move the character.
-
-#### down
-
-> **down**: `boolean`
-
-#### left
-
-> **left**: `boolean`
-
-#### right
-
-> **right**: `boolean`
-
-#### up
-
-> **up**: `boolean`
+The controller attached to the component.
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`inputs`](FCharacter.md#inputs)
+[`FPolygon`](FPolygon.md).[`controller`](FPolygon.md#controller)
 
 #### Defined in
 
-[packages/2d/src/character/FCharacter.ts:25](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/character/FCharacter.ts#L25)
+[packages/2d/src/core/FComponent.ts:36](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L36)
 
 ***
 
@@ -801,11 +786,11 @@ RAPIER RigidBody
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`rigidBody`](FCharacter.md#rigidbody)
+[`FPolygon`](FPolygon.md).[`rigidBody`](FPolygon.md#rigidbody)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:47](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L47)
+[packages/2d/src/core/FComponent.ts:52](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L52)
 
 ***
 
@@ -817,43 +802,27 @@ The scene which the component is in.
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`scene`](FCharacter.md#scene)
+[`FPolygon`](FPolygon.md).[`scene`](FPolygon.md#scene)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:31](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L31)
+[packages/2d/src/core/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L32)
 
 ***
 
 ### sensor?
 
-> `optional` **sensor**: `FCollider`
+> `optional` **sensor**: `FRigidBody`
 
 Sensor (a collider that doesn't collide with other colliders, but still triggers events)
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`sensor`](FCharacter.md#sensor)
+[`FPolygon`](FPolygon.md).[`sensor`](FPolygon.md#sensor)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L55)
-
-***
-
-### speed
-
-> **speed**: `number`
-
-The speed of the character.
-
-#### Inherited from
-
-[`FCharacter`](FCharacter.md).[`speed`](FCharacter.md#speed)
-
-#### Defined in
-
-[packages/2d/src/character/FCharacter.ts:35](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/character/FCharacter.ts#L35)
+[packages/2d/src/core/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L60)
 
 ***
 
@@ -865,8 +834,8 @@ Transforms
 
 #### Inherited from
 
-[`FCharacter`](FCharacter.md).[`transform`](FCharacter.md#transform)
+[`FPolygon`](FPolygon.md).[`transform`](FPolygon.md#transform)
 
 #### Defined in
 
-[packages/2d/src/FComponent.ts:41](https://github.com/fibbojs/fibbo/blob/ebbfce6158465f6309c7f36dadb4e328deefcf24/packages/2d/src/FComponent.ts#L41)
+[packages/2d/src/core/FComponent.ts:46](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/core/FComponent.ts#L46)

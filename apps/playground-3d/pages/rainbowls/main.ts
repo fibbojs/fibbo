@@ -51,7 +51,9 @@ import * as THREE from 'three'
   const cameraTarget = new FCuboid(scene)
   cameraTarget.setPosition({ x: 0, y: 1, z: 0 })
   // Create a camera
-  const camera = new FOrbitCamera(cameraTarget)
+  const camera = new FOrbitCamera({
+    target: cameraTarget,
+  })
   camera.setPosition(14, 12, 14)
   camera.lookAt(0, 0, 0)
   scene.camera = camera

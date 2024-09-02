@@ -13,7 +13,8 @@ export { FAttachedCamera } from './cameras/FAttachedCamera'
 export { FFixedCamera } from './cameras/FFixedCamera'
 export { FFreeCamera } from './cameras/FFreeCamera'
 
-// Character controllers
+// Controllers
+export { FController } from './controllers/FController'
 export { FCharacterController } from './controllers/FCharacterController'
 export { FCharacterControllerD } from './controllers/FCharacterControllerD'
 export { FCharacterControllerK } from './controllers/FCharacterControllerK'
@@ -31,10 +32,10 @@ export { FSprite } from './sprite/FSprite'
 // Types
 export { FShapes } from './types/FShapes'
 export type { FComponentOptions } from './core/FComponent'
+export type { FControllerOptions } from './controllers/FController'
 export type { FColliderOptions } from './core/FCollider'
 export type { FRigidBodyOptions } from './core/FRigidBody'
 export type { FCameraOptions } from './cameras/FCamera'
-export type { FControllerOptions } from './controllers/FController'
 export type { FCharacterControllerOptions } from './controllers/FCharacterController'
 export type { FSceneOptions } from './core/FScene'
 export type { FSpriteOptions } from './sprite/FSprite'
