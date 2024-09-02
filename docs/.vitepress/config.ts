@@ -43,6 +43,7 @@ export default defineConfig({
               { text: 'Scene', link: '/guide/core/scene' },
               { text: 'Cameras', link: '/guide/core/cameras' },
               { text: 'Lights', link: '/guide/core/lights' },
+              { text: 'Assets', link: '/guide/core/assets' },
             ] },
             { text: '2D', collapsed: true, items: [
               { text: 'Container', link: '/guide/2d/container' },

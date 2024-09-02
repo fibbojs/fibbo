@@ -1,8 +1,12 @@
 # Polygons
 
-Fibbo provides a simple way to create polygons in 2D.
+Polygons are a fundamental part of 2D graphics. They are used to create shapes like rectangles, circles, and more complex shapes.
 
-For now, only 2 types of polygons are supported: rectangles and circles.
+## What is a polygon ?
+
+A polygon is a 2D shape that is made up of straight lines. It is a type of [polytope](https://en.wikipedia.org/wiki/Polytope) in two dimensions.
+
+For now, only 2 types of polygons are supported by Fibbo : rectangles and circles.
 
 ## Rectangles
 
