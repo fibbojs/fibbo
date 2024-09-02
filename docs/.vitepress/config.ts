@@ -57,11 +57,13 @@ export default defineConfig({
               { text: 'Models', link: '/guide/3d/models' },
             ] },
             { text: 'Physics', collapsed: true, items: [
-              { text: 'Collisions', link: '/guide/physics/collisions' },
-              { text: 'Gravity', link: '/guide/physics/gravity' },
-              { text: 'Sensor', link: '/guide/physics/sensor' },
+              { text: 'Introduction', link: '/guide/physics/introduction' },
+              { text: 'Colliders', link: '/guide/physics/colliders' },
+              { text: 'RigidBody', link: '/guide/physics/rigidbody' },
+              { text: 'Joints', link: '/guide/physics/joints' },
             ] },
             { text: 'Events', collapsed: true, items: [
+              { text: 'Collisions', link: '/guide/events/collisions' },
               { text: 'Keyboard', link: '/guide/events/keyboard' },
             ] },
             { text: 'Audio', collapsed: true, items: [
@@ -108,6 +110,8 @@ export default defineConfig({
                   { text: 'FComponentEmpty', link: '/api/2d/classes/FComponentEmpty' },
                   { text: 'FScene', link: '/api/2d/classes/FScene' },
                   { text: 'FTransform', link: '/api/2d/classes/FTransform' },
+                  { text: 'FCollider', link: '/api/2d/classes/FCollider' },
+                  { text: 'FRigidBody', link: '/api/2d/classes/FRigidBody' },
                 ] },
                 { text: 'Polygons Classes', items: [
                   { text: 'FPolygon', link: '/api/2d/classes/FPolygon' },
@@ -152,6 +156,8 @@ export default defineConfig({
                   { text: 'FComponentEmpty', link: '/api/3d/classes/FComponentEmpty' },
                   { text: 'FScene', link: '/api/3d/classes/FScene' },
                   { text: 'FTransform', link: '/api/3d/classes/FTransform' },
+                  { text: 'FCollider', link: '/api/3d/classes/FCollider' },
+                  { text: 'FRigidBody', link: '/api/3d/classes/FRigidBody' },
                 ] },
                 { text: 'Polyhedrons Classes', items: [
                   { text: 'FCapsule', link: '/api/3d/classes/FCapsule' },

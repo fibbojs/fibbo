@@ -38,7 +38,7 @@ const collider = new FTransform({
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:44](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/core/FTransform.ts#L44)
+[packages/3d/src/core/FTransform.ts:44](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FTransform.ts#L44)
 
 ## Properties
 
@@ -50,7 +50,7 @@ The position of the component.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:18](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/core/FTransform.ts#L18)
+[packages/3d/src/core/FTransform.ts:18](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FTransform.ts#L18)
 
 ***
 
@@ -62,7 +62,7 @@ The rotation of the component.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:26](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/core/FTransform.ts#L26)
+[packages/3d/src/core/FTransform.ts:26](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FTransform.ts#L26)
 
 ***
 
@@ -74,4 +74,4 @@ The scale of the component.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:22](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/3d/src/core/FTransform.ts#L22)
+[packages/3d/src/core/FTransform.ts:22](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FTransform.ts#L22)

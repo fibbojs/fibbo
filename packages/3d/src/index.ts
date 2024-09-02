@@ -7,6 +7,10 @@ export { FComponent } from './core/FComponent'
 export { FComponentEmpty } from './core/FComponentEmpty'
 export { FTransform } from './core/FTransform'
 
+// Physics
+export { FRigidBody } from './core/FRigidBody'
+export { FCollider } from './core/FCollider'
+
 // Character controllers
 export { FController } from './controllers/FController'
 export { FCharacterController } from './controllers/FCharacterController'

@@ -22,4 +22,4 @@
 
 #### Defined in
 
-[packages/2d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/ca6e10de1cfed8b8d44a28a82c206333ede11c84/packages/2d/src/controllers/FController.ts#L6)
+[packages/2d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/controllers/FController.ts#L6)
