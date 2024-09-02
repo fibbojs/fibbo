@@ -1,7 +1,7 @@
 {
   "name": "@fibbojs/3d",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "3D package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
@@ -44,7 +44,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/core": "0.0.1",
-    "@fibbojs/event": "0.0.1"
+    "@fibbojs/core": "0.0.2",
+    "@fibbojs/event": "0.0.2"
   }
 }
