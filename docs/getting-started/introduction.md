@@ -24,6 +24,7 @@ Here are a few reasons why you might not want to use Fibbo :
 
 - **Performance** : It is fair to say that the web platform can't get as much performance as native platforms. And this is even more true for Fibbo, which is still in its early stages of development.
 - **Standardization** : Fibbo is new and still not widely used. If you're on your way to become a professional game developer, you should probably consider more standard tools (we highly recommend [Godot](https://godotengine.org/) as a free and open-source game engine !).
+- **Stability** : Fibbo is still in its early stages of development, it's an alpha version. This means that there may be bugs, missing features, and breaking changes. We are working hard to improve the engine, but it may not be the best choice for a project that requires stability.
 
 ## So should I use it ?
 
