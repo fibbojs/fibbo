@@ -44,8 +44,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/2d": "^0.0.1",
-    "@fibbojs/3d": "^0.0.1",
-    "@fibbojs/core": "^0.0.1"
+    "@fibbojs/2d": "0.0.0",
+    "@fibbojs/3d": "0.0.0",
+    "@fibbojs/core": "0.0.0"
   }
 }
