@@ -11,9 +11,9 @@ Any other use case might require attaching the collider to a rigid-body.
 Every [`FComponent`](/api/core/classes/FComponent) has a [`initCollider`](/api/3d/classes/FComponent#initcollider) method that allows you to create a collider and attach it to the component directly.
 
 ```typescript
-import { FCube, FShape } from '@fibbojs/3d'
+import { FCuboid, FShape } from '@fibbojs/3d'
 
-const cube = new FCube()
+const cube = new FCuboid()
 cube.initCollider({
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
@@ -32,9 +32,9 @@ This is particularly useful as it allows to position the collider by defining of
 You can also directly use the [`FCollider`](/api/3d/classes/FCollider) class to create a collider and attach it to a component.
 
 ```typescript
-import { FCollider, FCube, FShape } from '@fibbojs/3d'
+import { FCollider, FCuboid, FShape } from '@fibbojs/3d'
 
-const cube = new FCube()
+const cube = new FCuboid()
 cube.collider = new FCollider({
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },

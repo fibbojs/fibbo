@@ -27,9 +27,9 @@ There are four types of rigid-bodies, identified by the RigidBodyType enumeratio
 Every [`FComponent`](/api/core/classes/FComponent) has a [`initRigidBody`](/api/3d/classes/FComponent#initrigidbody) method that allows you to create a rigid-body and attach it to the component directly.
 
 ```typescript
-import { FCube, FShape } from '@fibbojs/3d'
+import { FCuboid, FShape } from '@fibbojs/3d'
 
-const cube = new FCube()
+const cube = new FCuboid()
 cube.initRigidBody({
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
@@ -59,9 +59,9 @@ Apart from the classic [transform](/guide/core/transforms) properties, the `init
 You can also directly use the [`FRigidBody`](/api/3d/classes/FRigidBody) class to create a rigid-body and attach it to a component.
 
 ```typescript
-import { FCube, FRigidBody, FShape } from '@fibbojs/3d'
+import { FCuboid, FRigidBody, FShape } from '@fibbojs/3d'
 
-const cube = new FCube()
+const cube = new FCuboid()
 cube.rigidBody = new FRigidBody({
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },

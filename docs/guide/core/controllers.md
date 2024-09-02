@@ -5,7 +5,7 @@ Every [`FComponent`](/api/core/classes/FComponent) in Fibbo can have a [`FContro
 A controller's [`onFrame`](/api/core/classes/FController#onframe) method is where you should put your typical movement logic. This method is called every frame by the attached component itself. To help you get started, here is a simple example of a controller that makes a cube rotate around its Y axis :
 
 ```typescript
-import { FController, FCube } from '@fibbojs/core'
+import { FController, FCuboid } from '@fibbojs/core'
 import type { FControllerOptions } from '@fibbojs/core'
 
 export class MyRotateController extends FController {
@@ -19,7 +19,7 @@ export class MyRotateController extends FController {
 }
 
 // Usage
-const cube = new FCube()
+const cube = new FCuboid()
 cube.controller = new MyRotateController({
   component: cube
 })
