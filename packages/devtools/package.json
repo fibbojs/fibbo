@@ -1,7 +1,7 @@
 {
   "name": "@fibbojs/devtools",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Devtools package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
