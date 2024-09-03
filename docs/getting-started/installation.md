@@ -1,6 +1,6 @@
 # Installation
 
-Want to create a new game ? Follow the instructions below to get started.
+Want to create a new game ? Fibbo provides a starter project based on [Vite](https://vitejs.dev/) for both 2D and 3D games. It includes a basic scene as well as devtools to help you get started quickly.
 
 ## Prerequisites
 
