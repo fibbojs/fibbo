@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { FCapsule, FCharacterControllerKP, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FCapsule, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import RAPIER from '@dimforge/rapier3d'
