@@ -103,11 +103,22 @@ export abstract class FComponent extends FComponentCore {
   onFrame(_delta: number): void {
     super.onFrame(_delta)
     // If the rigid body exist, update the container position and rotation according to the rigid body
-    if (this.rigidBody) {
+    if (this.rigidBody && this.collider) {
+      // Translation
       const newContainerPosition = this.rigidBody.rigidBody.translation()
-      const newContainerRotation = this.rigidBody.rigidBody.rotation()
+      // Remove offset
+      newContainerPosition.x -= this.collider.colliderPositionOffset.x
+      newContainerPosition.y -= this.collider.colliderPositionOffset.y
+
+      // Rotation
+      let newContainerRotation = this.rigidBody.rigidBody.rotation()
+      // Remove offset
+      newContainerRotation -= this.collider.colliderRotationOffset
+
+      // Apply the new transforms to the container
       this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
       this.container.rotation = -newContainerRotation
+
       // Update position and rotation properties of the component according to the rigid body
       this.transform.position = {
         x: this.container.position.x / 100,

@@ -90,9 +90,9 @@ export class FCollider {
     // Devide the scale by 2 for the collider (RAPIER uses half-extents)
     // Also interpete the scale as relative to the component's scale
     options.scale = {
-      x: component.transform.scale.x * (options.scale.x / 2),
-      y: component.transform.scale.y * (options.scale.y / 2),
-      z: component.transform.scale.z * (options.scale.z / 2),
+      x: component.transform.scale.x / 2 * options.scale.x,
+      y: component.transform.scale.y / 2 * options.scale.y,
+      z: component.transform.scale.z / 2 * options.scale.z,
     }
 
     // Create a collider description according to the shape given
@@ -105,7 +105,7 @@ export class FCollider {
         colliderDesc = RAPIER.ColliderDesc.ball(options.scale.x)
         break
       case FShapes.CAPSULE:
-        colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.x, options.scale.y)
+        colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.y / 2, options.scale.x / 2)
         break
       case FShapes.MESH:
       // If component.mesh isn't defined, throw an error

@@ -40,5 +40,11 @@ export class FCharacterControllerKP extends FCharacterControllerK {
       y: this.component.rigidBody.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
       z: this.component.rigidBody.rigidBody.translation().z + correctedMovement.z * delta * this.speed * 64,
     })
+
+    // If one of the inputs is true, apply the corrected rotation
+    if (this.inputs.forward || this.inputs.backward || this.inputs.left || this.inputs.right) {
+      // Apply the rotation to the rigid body
+      this.component.rigidBody?.rigidBody.setNextKinematicRotation(this.getCorrectedRotation())
+    }
   }
 }

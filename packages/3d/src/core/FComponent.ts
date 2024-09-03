@@ -107,13 +107,32 @@ export abstract class FComponent extends FComponentCore {
   onFrame(_delta: number): void {
     super.onFrame(_delta)
     // If the rigid body and mesh exist, update the mesh position and rotation according to the rigid body
-    if (this.rigidBody && this.mesh) {
-      // Get the new transforms from the rigid body
+    if (this.rigidBody && this.collider && this.mesh) {
+      // Translation
       const newMeshPosition = this.rigidBody.rigidBody.translation()
-      const newMeshRotation = this.rigidBody.rigidBody.rotation()
+      // Remove offset
+      newMeshPosition.x -= this.collider.colliderPositionOffset.x
+      newMeshPosition.y -= this.collider.colliderPositionOffset.y
+      newMeshPosition.z -= this.collider.colliderPositionOffset.z
+
+      // Rotation
+      const newMeshRotation = new THREE.Euler().setFromQuaternion(
+        new THREE.Quaternion(
+          this.rigidBody.rigidBody.rotation().x,
+          this.rigidBody.rigidBody.rotation().y,
+          this.rigidBody.rigidBody.rotation().z,
+          this.rigidBody.rigidBody.rotation().w,
+        ),
+      )
+      // Remove offset
+      newMeshRotation.x -= this.collider.colliderRotationOffset.x
+      newMeshRotation.y -= this.collider.colliderRotationOffset.y
+      newMeshRotation.z -= this.collider.colliderRotationOffset.z
+
       // Apply the new transforms to the mesh
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.mesh.setRotationFromQuaternion(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w))
+      this.mesh.setRotationFromEuler(newMeshRotation)
+
       // Update position and rotation properties of the component according to the rigid body
       this.transform.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.transform.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
@@ -124,7 +143,7 @@ export abstract class FComponent extends FComponentCore {
         newMeshPosition.y += this.sensor.collider.colliderPositionOffset.y
         newMeshPosition.z += this.sensor.collider.colliderPositionOffset.z
         this.sensor.rigidBody.setTranslation(newMeshPosition, true)
-        this.sensor.rigidBody.setRotation(new THREE.Quaternion(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z, newMeshRotation.w), true)
+        this.sensor.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(newMeshRotation), true)
       }
     }
     // If the collider and mesh exist, update the mesh position and rotation according to the collider

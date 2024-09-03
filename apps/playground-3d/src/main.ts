@@ -7,6 +7,7 @@ import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 import './style.css'
 import MyCustomCube from './classes/MyCustomCube'
+import Character from './classes/Character'
 
 (async () => {
   // Initialize the scene
@@ -122,12 +123,7 @@ import MyCustomCube from './classes/MyCustomCube'
   scene.addComponent(ground2)
 
   // Create a character
-  const character = new FCapsule(scene, {
-    position: { x: 0, y: 10, z: 0 },
-  })
-  character.controller = new FCharacterControllerKP(scene, {
-    component: character,
-  })
+  const character = new Character(scene)
   scene.addComponent(character)
 
   // Attach a camera to the character

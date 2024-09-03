@@ -1,4 +1,6 @@
 import { FKeyboard } from '@fibbojs/event'
+import RAPIER from '@dimforge/rapier3d'
+import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
 import type { FControllerOptions } from './FController'
@@ -111,5 +113,20 @@ export abstract class FCharacterController extends FController {
       shape: FShapes.CAPSULE,
       scale: { x: 1.1, y: 1.1, z: 1.1 },
     })
+  }
+
+  /**
+   * Return the corrected rotation for the current frame.
+   * Uses the camera so the character nevers faces the camera.
+   */
+  getCorrectedRotation(): RAPIER.Quaternion {
+    // Get the camera direction
+    const cameraDirection = this.scene.camera.getCameraDirection()
+    // Get the angle between the camera direction and the character direction
+    const angle = Math.atan2(cameraDirection.x, cameraDirection.z)
+    // Create a THREE quaternion from the corrected rotation
+    const quaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, angle, 0))
+    // Return the corrected rotation as a RAPIER quaternion
+    return new RAPIER.Quaternion(quaternion.x, quaternion.y, quaternion.z, quaternion.w)
   }
 }

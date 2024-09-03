@@ -1,9 +1,10 @@
 import './style.css'
-import { FAttachedCamera, FCharacterControllerKP, FCircle, FComponentEmpty, FRectangle, FScene, FShapes, FSprite } from '@fibbojs/2d'
+import { FAttachedCamera, FCircle, FComponentEmpty, FRectangle, FScene, FShapes } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import MySquare from './classes/MySquare'
 import { loadLevel } from './level'
+import Character from './classes/Character'
 
 (async () => {
   const scene = new FScene()
@@ -73,14 +74,7 @@ import { loadLevel } from './level'
   /**
    * Create character
    */
-  const character = new FSprite(scene, {
-    texture: 'character_0000.png',
-    position: { x: 0, y: 5 },
-    scale: { x: 0.5, y: 0.5 },
-  })
-  character.controller = new FCharacterControllerKP(scene, {
-    component: character,
-  })
+  const character = new Character(scene)
   character.onCollisionWith(FRectangle, () => {
     console.log('Sprite collided with a square!')
   })

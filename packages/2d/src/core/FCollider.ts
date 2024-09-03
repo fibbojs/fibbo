@@ -86,8 +86,8 @@ export class FCollider {
     // Devide the scale by 2 for the collider (RAPIER uses half-extents)
     // Also interpete the scale as relative to the component's scale
     options.scale = {
-      x: component.transform.scale.x * (options.scale.x / 2),
-      y: component.transform.scale.y * (options.scale.y / 2),
+      x: component.transform.scale.x / 2 * options.scale.x,
+      y: component.transform.scale.y / 2 * options.scale.y,
     }
 
     // Create a collider description according to the shape given
