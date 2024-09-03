@@ -1,3 +1,18 @@
+## 0.0.4 (2024-09-03)
+
+
+### 🚀 Features
+
+- improve 3d model texture loading ([da8f213](https://github.com/fibbojs/fibbo/commit/da8f213))
+
+### 🩹 Fixes
+
+- component rigidbody position + add controllerKP rotation ([36d537e](https://github.com/fibbojs/fibbo/commit/36d537e))
+
+### ❤️  Thank You
+
+- Gugustinette
+
 ## 0.0.2 (2024-09-02)
 
 
