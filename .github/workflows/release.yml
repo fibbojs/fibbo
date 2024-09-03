@@ -34,6 +34,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
+      # Fix the package-lock.json file
+      - name: Fix package-lock.json
+        run: npm install
       # Push changes to GitHub (updated package.json,...)
       - name: Push changes to GitHub
         run: git push origin HEAD:main
