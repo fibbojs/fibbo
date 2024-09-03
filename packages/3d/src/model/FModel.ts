@@ -164,8 +164,12 @@ export abstract class FModel extends FComponent {
         texturePath = this.textures[mesh.material.name]
       }
       else {
-        // Otherwise, use a default path
-        texturePath = `assets/${this.name}/Textures/colormap.png`
+        // Otherwise, if a "default" texture is provided, use it
+        if (this.textures.default)
+          texturePath = this.textures.default
+        // Otherwise, consider the default texture path to be the colormap.png
+        else
+          texturePath = `${window.location.href}/assets/${this.name}/Textures/colormap.png`
       }
       // Load the texture
       textureLoader.load(texturePath, (texture) => {
@@ -173,7 +177,7 @@ export abstract class FModel extends FComponent {
         // Apply the texture to the material
         mesh.material = new THREE.MeshBasicMaterial({ map: texture })
       }, undefined, (error) => {
-        console.error(`FibboError: An error happened while loading the texture for model: name(${this.name}) path(${this.path}) materialName(${mesh.material instanceof THREE.Mesh ? mesh.material.name : 'ERROR'}) texturePath(${texturePath})`)
+        console.error(`FibboError: An error happened while loading the texture for model: name(${this.name}) path(${this.path}) materialName(${mesh.material instanceof THREE.Mesh ? mesh.material.name : 'ERROR-NO-MATERIAL-NAME'}) texturePath(${texturePath})`)
         console.error(error)
       })
     }
