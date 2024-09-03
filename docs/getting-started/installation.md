@@ -11,7 +11,7 @@ Want to create a new game ? Follow the instructions below to get started.
 
 - Clone the [starter project](https://github.com/fibbojs/starter-2d) from the repository
 ```bash
-npx degit fibbojs/starter-2d my-new-game
+npx tiged fibbojs/starter-2d my-new-game
 ```
 - Install the dependencies
 ```bash
@@ -27,7 +27,7 @@ npm run dev
 
 - Clone the [starter project](https://github.com/fibbojs/starter-3d) from the repository
 ```bash
-npx degit fibbojs/starter-3d my-new-game
+npx tiged fibbojs/starter-3d my-new-game
 ```
 - Install the dependencies
 ```bash
