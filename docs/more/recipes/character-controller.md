@@ -30,7 +30,3 @@ character.controller = new FCharacterControllerKP(scene, {
   component: character,
 })
 ```
-
-## Creating your own character controller
-
-If you want to create your own character controller, the source code for [`FCharacterControllerKP`](https://github.com/fibbojs/fibbo/blob/main/packages/3d/src/controllers/FCharacterControllerKP.ts) might be a good starting point. It extends many important classes so make sure to check them out as well.
