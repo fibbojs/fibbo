@@ -59,7 +59,7 @@ import { FCuboid, FGameCamera, FScene } from '@fibbojs/3d'
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:68](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L68)
+[packages/3d/src/core/FScene.ts:68](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L68)
 
 ## Methods
 
@@ -85,7 +85,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:180](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L180)
+[packages/3d/src/core/FScene.ts:180](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L180)
 
 ***
 
@@ -117,7 +117,7 @@ Handle a collision event between two colliders.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:154](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L154)
+[packages/3d/src/core/FScene.ts:154](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L154)
 
 ***
 
@@ -131,7 +131,7 @@ Handle a collision event between two colliders.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:100](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L100)
+[packages/3d/src/core/FScene.ts:100](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L100)
 
 ***
 
@@ -145,7 +145,7 @@ Handle a collision event between two colliders.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:125](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L125)
+[packages/3d/src/core/FScene.ts:125](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L125)
 
 ***
 
@@ -207,7 +207,7 @@ packages/core/dist/index.d.ts:180
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:58](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L58)
+[packages/3d/src/core/FScene.ts:58](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L58)
 
 ***
 
@@ -257,7 +257,7 @@ DOM element that the renderer will be appended to
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:56](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L56)
+[packages/3d/src/core/FScene.ts:56](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L56)
 
 ***
 
@@ -287,7 +287,7 @@ Internal flags
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:49](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L49)
+[packages/3d/src/core/FScene.ts:49](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L49)
 
 ***
 
@@ -297,7 +297,7 @@ Internal flags
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:66](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L66)
+[packages/3d/src/core/FScene.ts:66](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L66)
 
 ***
 
@@ -307,7 +307,7 @@ Internal flags
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:61](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L61)
+[packages/3d/src/core/FScene.ts:61](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L61)
 
 ***
 
@@ -323,7 +323,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:52](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L52)
+[packages/3d/src/core/FScene.ts:52](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L52)
 
 ***
 
@@ -333,7 +333,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:65](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L65)
+[packages/3d/src/core/FScene.ts:65](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L65)
 
 ***
 
@@ -359,7 +359,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:63](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L63)
+[packages/3d/src/core/FScene.ts:63](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L63)
 
 ***
 
@@ -369,7 +369,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:60](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L60)
+[packages/3d/src/core/FScene.ts:60](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L60)
 
 ***
 
@@ -379,7 +379,7 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:59](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L59)
+[packages/3d/src/core/FScene.ts:59](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L59)
 
 ***
 
@@ -393,4 +393,4 @@ The components in the scene.
 
 #### Defined in
 
-[packages/3d/src/core/FScene.ts:64](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/core/FScene.ts#L64)
+[packages/3d/src/core/FScene.ts:64](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FScene.ts#L64)

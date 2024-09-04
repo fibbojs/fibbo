@@ -32,7 +32,7 @@ A camera attached to a given target.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FAttachedCamera.ts#L20)
+[packages/2d/src/cameras/FAttachedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FAttachedCamera.ts#L20)
 
 ## Methods
 
@@ -50,7 +50,7 @@ A camera attached to a given target.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:33](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FAttachedCamera.ts#L33)
+[packages/2d/src/cameras/FAttachedCamera.ts:33](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FAttachedCamera.ts#L33)
 
 ***
 
@@ -170,7 +170,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:25](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FAttachedCamera.ts#L25)
+[packages/2d/src/cameras/FAttachedCamera.ts:25](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FAttachedCamera.ts#L25)
 
 ## Properties
 
@@ -228,7 +228,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L16)
+[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -284,7 +284,7 @@ Position of the camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L27)
+[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -302,7 +302,7 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L21)
+[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L21)
 
 ***
 
@@ -316,4 +316,4 @@ The target to follow.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FAttachedCamera.ts#L18)
+[packages/2d/src/cameras/FAttachedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FAttachedCamera.ts#L18)

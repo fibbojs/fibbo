@@ -36,7 +36,7 @@ The options for the controller.
 
 #### Defined in
 
-[packages/3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FController.ts#L23)
+[packages/3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FController.ts#L23)
 
 ## Methods
 
@@ -83,4 +83,4 @@ It is redefined here to get the correct type (with 3D properties).
 
 #### Defined in
 
-[packages/3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FController.ts#L17)
+[packages/3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FController.ts#L17)

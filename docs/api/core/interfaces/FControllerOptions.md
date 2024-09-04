@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[packages/core/src/FController.ts:4](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FController.ts#L4)
+[packages/core/src/FController.ts:4](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FController.ts#L4)

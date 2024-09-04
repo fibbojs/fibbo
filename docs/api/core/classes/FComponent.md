@@ -22,7 +22,7 @@ The base class for all 2D and 3D components in Fibbo.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:35](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L35)
+[packages/core/src/FComponent.ts:35](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L35)
 
 ## Methods
 
@@ -60,7 +60,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:110](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L110)
+[packages/core/src/FComponent.ts:110](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L110)
 
 ***
 
@@ -106,7 +106,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:73](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L73)
+[packages/core/src/FComponent.ts:73](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L73)
 
 ***
 
@@ -132,7 +132,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:45](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L45)
+[packages/core/src/FComponent.ts:45](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L45)
 
 ## Properties
 
@@ -151,7 +151,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L28)
+[packages/core/src/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L28)
 
 ***
 
@@ -166,7 +166,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L22)
+[packages/core/src/FComponent.ts:22](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L22)
 
 ***
 
@@ -176,7 +176,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L16)
+[packages/core/src/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L16)
 
 ***
 
@@ -188,7 +188,7 @@ Internal flags
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L15)
+[packages/core/src/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L15)
 
 ***
 
@@ -200,4 +200,4 @@ The controller attached to the component.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/core/src/FComponent.ts#L33)
+[packages/core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/core/src/FComponent.ts#L33)

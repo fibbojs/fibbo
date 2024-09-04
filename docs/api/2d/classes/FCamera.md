@@ -46,7 +46,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L34)
+[packages/2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L34)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L55)
+[packages/2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L55)
 
 ***
 
@@ -180,7 +180,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L53)
+[packages/2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L53)
 
 ## Properties
 
@@ -238,7 +238,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L16)
+[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -290,7 +290,7 @@ Position of the camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L27)
+[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -304,4 +304,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/cameras/FCamera.ts#L21)
+[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L21)

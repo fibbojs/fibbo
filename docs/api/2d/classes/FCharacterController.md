@@ -37,7 +37,7 @@ An abstract pre-defined character controller.
 
 #### Defined in
 
-[packages/2d/src/controllers/FCharacterController.ts:42](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/controllers/FCharacterController.ts#L42)
+[packages/2d/src/controllers/FCharacterController.ts:42](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/controllers/FCharacterController.ts#L42)
 
 ## Methods
 
@@ -84,7 +84,7 @@ It is redefined here to get the correct type (with 2D properties).
 
 #### Defined in
 
-[packages/2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/controllers/FController.ts#L17)
+[packages/2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -112,7 +112,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[packages/2d/src/controllers/FCharacterController.ts:25](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/controllers/FCharacterController.ts#L25)
+[packages/2d/src/controllers/FCharacterController.ts:25](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/controllers/FCharacterController.ts#L25)
 
 ***
 
@@ -124,7 +124,7 @@ The scene where the character is.
 
 #### Defined in
 
-[packages/2d/src/controllers/FCharacterController.ts:40](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/controllers/FCharacterController.ts#L40)
+[packages/2d/src/controllers/FCharacterController.ts:40](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/controllers/FCharacterController.ts#L40)
 
 ***
 
@@ -136,4 +136,4 @@ The speed of the character.
 
 #### Defined in
 
-[packages/2d/src/controllers/FCharacterController.ts:35](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/2d/src/controllers/FCharacterController.ts#L35)
+[packages/2d/src/controllers/FCharacterController.ts:35](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/controllers/FCharacterController.ts#L35)

@@ -44,9 +44,30 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterControllerD.ts:23](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FCharacterControllerD.ts#L23)
+[packages/3d/src/controllers/FCharacterControllerD.ts:23](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FCharacterControllerD.ts#L23)
 
 ## Methods
+
+### getCorrectedRotation()
+
+> **getCorrectedRotation**(): `Quaternion`
+
+Return the corrected rotation for the current frame.
+Uses the camera so the character nevers faces the camera.
+
+#### Returns
+
+`Quaternion`
+
+#### Inherited from
+
+[`FCharacterController`](FCharacterController.md).[`getCorrectedRotation`](FCharacterController.md#getcorrectedrotation)
+
+#### Defined in
+
+[packages/3d/src/controllers/FCharacterController.ts:122](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FCharacterController.ts#L122)
+
+***
 
 ### onFrame()
 
@@ -72,7 +93,7 @@ Any rendering process should be done on the component, not here.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterControllerD.ts:39](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FCharacterControllerD.ts#L39)
+[packages/3d/src/controllers/FCharacterControllerD.ts:39](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FCharacterControllerD.ts#L39)
 
 ## Properties
 
@@ -89,7 +110,7 @@ It is redefined here to get the correct type (with 3D properties).
 
 #### Defined in
 
-[packages/3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FController.ts#L17)
+[packages/3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -121,7 +142,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterController.ts:22](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FCharacterController.ts#L22)
+[packages/3d/src/controllers/FCharacterController.ts:24](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FCharacterController.ts#L24)
 
 ***
 
@@ -137,7 +158,7 @@ The scene where the character is.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterController.ts:37](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FCharacterController.ts#L37)
+[packages/3d/src/controllers/FCharacterController.ts:39](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FCharacterController.ts#L39)
 
 ***
 
@@ -153,4 +174,4 @@ The speed of the character.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterController.ts:32](https://github.com/fibbojs/fibbo/blob/b15d2db28a257e995075ea40c3de44dde73dcbf1/packages/3d/src/controllers/FCharacterController.ts#L32)
+[packages/3d/src/controllers/FCharacterController.ts:34](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/controllers/FCharacterController.ts#L34)
