@@ -186,6 +186,13 @@ export class FScene extends FSceneCore {
       component.onLoaded(() => {
         if (component.mesh)
           this.scene.add(component.mesh)
+
+        // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+        if (component.sensor)
+          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
+        // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+        else if (component.collider)
+          this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
       })
     }
     else {
