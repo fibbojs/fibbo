@@ -31,6 +31,11 @@ export abstract class FScene {
    * It is an array of functions that take the component as an argument.
    */
   public __CALLBACKS_ON_COMPONENT_ADDED__: ((component: FComponent) => void)[] = []
+  /**
+   * @description Callbacks for when a component is remove from the scene.
+   * It is an array of functions that take the component as an argument.
+   */
+  public __CALLBACKS_ON_COMPONENT_REMOVED__: ((component: FComponent) => void)[] = []
 
   constructor() {
     /**
@@ -67,6 +72,17 @@ export abstract class FScene {
   addComponent(component: FComponent): void {
     this.components.push(component)
     this.__CALLBACKS_ON_COMPONENT_ADDED__.forEach(callback => callback(component))
+  }
+
+  /**
+   * @description Remove a component from the scene.
+   */
+  removeComponent(component: FComponent): void {
+    const index = this.components.indexOf(component)
+    if (index !== -1) {
+      this.components.splice(index, 1)
+    }
+    this.__CALLBACKS_ON_COMPONENT_REMOVED__.forEach(callback => callback(component))
   }
 
   /**

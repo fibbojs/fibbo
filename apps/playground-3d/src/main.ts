@@ -206,5 +206,8 @@ import Character from './classes/Character'
     const gltfCube3 = new GltfCube(scene)
     gltfCube3.setPosition({ x: -2, y: 5, z: -2 })
     scene.addComponent(gltfCube3)
+
+    // Remove the first gltfCube
+    scene.removeComponent(gltfCube)
   }, 3000)
 })()

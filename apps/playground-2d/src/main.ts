@@ -91,6 +91,9 @@ import Character from './classes/Character'
   const keyboard = new FKeyboard(scene)
   keyboard.onKeyDown('p', () => {
     character.setPosition({ x: 0, y: 5 })
+
+    // Remove a square
+    scene.removeComponent(square4)
   })
 
   // Attach a camera to the character

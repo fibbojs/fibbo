@@ -243,6 +243,21 @@ export class FScene extends FSceneCore {
       this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
   }
 
+  removeComponent(component: FComponent): void {
+    super.removeComponent(component)
+
+    // Remove container from the viewport
+    this.viewport.removeChild(component.container)
+
+    // Remove collider and rigidBodies from rapier world
+    if (component.rigidBody)
+      this.world.removeRigidBody(component.rigidBody.rigidBody)
+    if (component.collider)
+      this.world.removeCollider(component.collider.collider, false)
+    if (component.sensor)
+      this.world.removeCollider(component.sensor.collider.collider, false)
+  }
+
   onReady(callback: () => void) {
     this.onReadyCallbacks.push(callback)
   }
