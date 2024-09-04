@@ -26,4 +26,4 @@ cube.controller = new MyRotateController({
 ```
 
 In this example, the `onFrame` method is called every frame by the cube itself, and it updates the cube's rotation around the Y axis.
-If you want to learn more about controllers, Fibbo provides a default [character controller](/more/recipes/character-controller) that you can use as a base for your own controllers.
+If you want to learn more about controllers, Fibbo provides a default [character controller](/more/recipes/character-controller) and you can also create your own [custom controller](/more/recipes/custom-controller).
