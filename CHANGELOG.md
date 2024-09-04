@@ -1,3 +1,14 @@
+## 0.0.5 (2024-09-04)
+
+
+### 🚀 Features
+
+- add removeComponent method on FScene ([a74df04](https://github.com/fibbojs/fibbo/commit/a74df04))
+
+### ❤️  Thank You
+
+- Gugustinette
+
 ## 0.0.4 (2024-09-03)
 
 
