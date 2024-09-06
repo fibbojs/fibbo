@@ -77,8 +77,8 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
   onCollisionWith(
     classOrObject: any,
     callback: (data: OnCollisionWithData) => void,
-  ) {
-    FCamera.prototype.onCollisionWith.call(this, classOrObject, callback)
+  ): () => void {
+    return FCamera.prototype.onCollisionWith.call(this, classOrObject, callback)
   }
 
   emitCollisionWith(classOrObject: any) {

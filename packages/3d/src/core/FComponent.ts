@@ -386,13 +386,14 @@ export abstract class FComponent extends FComponentCore {
     })
   }
 
-  onCollisionWith(classOrObject: any, callback: (data: OnCollisionWithData) => void): void {
-    super.onCollisionWith(classOrObject, callback)
+  onCollisionWith(classOrObject: any, callback: (data: OnCollisionWithData) => void): () => void {
     // Activate collision events if they are not already activated
     if (this.sensor && this.sensor.collider.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
       // Set the active events
       this.sensor.collider.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
+    // Call the core onCollisionWith method
+    return super.onCollisionWith(classOrObject, callback)
   }
 
   /**

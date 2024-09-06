@@ -63,6 +63,7 @@ export abstract class FComponent {
    * @description Add a callback to be called when a collision occurs.
    * @param classOrObject The class or object to add the callback to.
    * @param callback The callback to add.
+   * @returns A function to remove the callback.
    * @example With a class:
    * ```typescript
    * const player = new Player()
@@ -83,7 +84,7 @@ export abstract class FComponent {
   onCollisionWith(
     classOrObject: any,
     callback: (data: OnCollisionWithData) => void,
-  ) {
+  ): () => void {
     let eventKey = ''
     // If the classOrObject is an object, use the class name + ID
     if (classOrObject instanceof FComponent) {
@@ -99,6 +100,13 @@ export abstract class FComponent {
     }
     // Add the callback
     this.__CALLBACKS_ON_COLLISION__[eventKey].push(callback)
+
+    // Return a function to remove the callback
+    return () => {
+      this.__CALLBACKS_ON_COLLISION__[eventKey] = this.__CALLBACKS_ON_COLLISION__[eventKey].filter(
+        cb => cb !== callback,
+      )
+    }
   }
 
   /**

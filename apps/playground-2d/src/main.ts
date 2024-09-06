@@ -75,7 +75,7 @@ import Character from './classes/Character'
    * Create character
    */
   const character = new Character(scene)
-  character.onCollisionWith(FRectangle, ({ component }) => {
+  const removeCollisionCallbackWithFRectangle = character.onCollisionWith(FRectangle, ({ component }) => {
     console.log('Sprite collided with a square!')
     // Cast the component to FRectangle
     const square = component as FRectangle
@@ -98,6 +98,9 @@ import Character from './classes/Character'
 
     // Remove a square
     scene.removeComponent(square4)
+
+    // Remove the collision callback with FRectangle
+    removeCollisionCallbackWithFRectangle()
   })
 
   // Attach a camera to the character

@@ -184,7 +184,7 @@ import Character from './classes/Character'
   /**
    * Add collision events
    */
-  character.onCollisionWith(FCuboid, ({ component }) => {
+  const removeCollisionCallbackWithFCuboid = character.onCollisionWith(FCuboid, ({ component }) => {
     console.log('Character collided with a FCuboid !')
     // Cast the component to FCuboid
     const cube = component as FCuboid
@@ -213,5 +213,8 @@ import Character from './classes/Character'
 
     // Remove the first gltfCube
     scene.removeComponent(gltfCube)
+
+    // Remove the collision callback with FCuboid
+    removeCollisionCallbackWithFCuboid()
   }, 3000)
 })()
