@@ -44,7 +44,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@dimforge/rapier2d": "0.14.0",
     "@fibbojs/core": "0.0.5",
-    "@fibbojs/event": "0.0.5"
+    "@fibbojs/event": "0.0.5",
+    "pixi-viewport": "5.0.3",
+    "pixi.js": "8.3.4"
   }
 }

@@ -44,7 +44,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@dimforge/rapier3d": "0.14.0",
     "@fibbojs/core": "0.0.5",
-    "@fibbojs/event": "0.0.5"
+    "@fibbojs/event": "0.0.5",
+    "@types/three": "0.168.0",
+    "three": "0.168.0"
   }
 }

@@ -20,7 +20,7 @@ import Character from './classes/Character'
 
   // Add ambient light
   const light = new THREE.AmbientLight(0xFFFFFF)
-  scene.scene.add(light)
+  scene.scene.add(light as any)
 
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {

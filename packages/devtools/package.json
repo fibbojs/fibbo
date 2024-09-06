@@ -46,6 +46,7 @@
   "dependencies": {
     "@fibbojs/2d": "0.0.5",
     "@fibbojs/3d": "0.0.5",
-    "@fibbojs/core": "0.0.5"
+    "@fibbojs/core": "0.0.5",
+    "vue": "3.5.0"
   }
 }
