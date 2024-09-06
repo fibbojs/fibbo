@@ -63,3 +63,20 @@ cube.onCollisionWith((FCuboid) => {
 ```
 
 In this example, the event will be triggered when the `cube` collides with the `myCube` because `MyCuboid` extends `FCuboid`.
+
+## Getting data about the collision
+
+When a collision event is triggered, you can get [data about the collision](/api/core/interfaces/OnCollisionWithData).
+
+For now, the only data available is the component that the collision event is triggered on.
+
+```typescript
+import { FCuboid, FSphere } from '@fibbojs/3d'
+
+const cube = new FCuboid()
+
+cube.onCollisionWith(FSphere, ({ component }) => {
+  console.log('Collision with the sphere')
+  console.log('The sphere component is', component)
+})
+```
