@@ -1,7 +1,7 @@
 {
   "name": "@fibbojs/3d",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "3D package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@dimforge/rapier3d": "0.14.0",
-    "@fibbojs/core": "0.0.5",
-    "@fibbojs/event": "0.0.5",
+    "@fibbojs/core": "0.0.6",
+    "@fibbojs/event": "0.0.6",
     "@types/three": "0.168.0",
     "three": "0.168.0"
   }
