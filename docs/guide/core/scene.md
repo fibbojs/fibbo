@@ -42,6 +42,14 @@ scene.addComponent(cube)
 
 As soon as you add a component to the scene, it will be rendered on the screen each frame.
 
+## Removing components from the scene
+
+You can remove a component from the scene using the `removeComponent` method.
+
+```typescript
+scene.removeComponent(cube)
+```
+
 ## Hooks
 
 The `Scene` class exposes several hooks that you can use to interact with the scene and its components. This feature took inspiration from the [Vue Lifecycle Hooks](https://vuejs.org/guide/essentials/lifecycle.html) system, but it is still very experimental.
