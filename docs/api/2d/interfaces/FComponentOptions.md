@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[packages/2d/src/core/FComponent.ts:13](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/core/FComponent.ts#L13)
+[packages/2d/src/core/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/core/FComponent.ts#L14)
 
 ***
 
@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[packages/2d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/core/FComponent.ts#L15)
+[packages/2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/core/FComponent.ts#L16)
 
 ***
 
@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[packages/2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/core/FComponent.ts#L16)
+[packages/2d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/core/FComponent.ts#L17)
 
 ***
 
@@ -60,4 +60,4 @@
 
 #### Defined in
 
-[packages/2d/src/core/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/core/FComponent.ts#L14)
+[packages/2d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/core/FComponent.ts#L15)

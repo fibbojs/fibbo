@@ -1,3 +1,4 @@
+import type { OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import { Container } from 'pixi.js'
 import * as RAPIER from '@dimforge/rapier2d'
@@ -331,7 +332,7 @@ export abstract class FComponent extends FComponentCore {
     })
   }
 
-  onCollisionWith(classOrObject: any, callback: () => void): void {
+  onCollisionWith(classOrObject: any, callback: (data: OnCollisionWithData) => void): void {
     super.onCollisionWith(classOrObject, callback)
     // Activate collision events if they are not already activated
     if (this.sensor && this.sensor.collider.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {

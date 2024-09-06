@@ -43,7 +43,7 @@ const collider = new FCollider(component, {
 
 #### Defined in
 
-[packages/3d/src/core/FCollider.ts:57](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FCollider.ts#L57)
+[packages/3d/src/core/FCollider.ts:57](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FCollider.ts#L57)
 
 ## Properties
 
@@ -55,7 +55,7 @@ RAPIER Collider
 
 #### Defined in
 
-[packages/3d/src/core/FCollider.ts:24](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FCollider.ts#L24)
+[packages/3d/src/core/FCollider.ts:24](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FCollider.ts#L24)
 
 ***
 
@@ -80,7 +80,7 @@ This is used to adjust the collider position relative to the mesh.
 
 #### Defined in
 
-[packages/3d/src/core/FCollider.ts:29](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FCollider.ts#L29)
+[packages/3d/src/core/FCollider.ts:29](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FCollider.ts#L29)
 
 ***
 
@@ -105,4 +105,4 @@ This is used to adjust the collider position relative to the mesh.
 
 #### Defined in
 
-[packages/3d/src/core/FCollider.ts:34](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/3d/src/core/FCollider.ts#L34)
+[packages/3d/src/core/FCollider.ts:34](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FCollider.ts#L34)

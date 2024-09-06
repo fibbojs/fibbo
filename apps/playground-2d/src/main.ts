@@ -75,8 +75,12 @@ import Character from './classes/Character'
    * Create character
    */
   const character = new Character(scene)
-  character.onCollisionWith(FRectangle, () => {
+  character.onCollisionWith(FRectangle, ({ component }) => {
     console.log('Sprite collided with a square!')
+    // Cast the component to FRectangle
+    const square = component as FRectangle
+    // Change the color of the square to a random color
+    square.container.tint = Math.random() * 0xFFFFFF
   })
   character.onCollisionWith(circle, () => {
     console.log('Sprite collided with the circle!')

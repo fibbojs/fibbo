@@ -198,6 +198,7 @@ export default defineConfig({
                 ] },
                 { text: 'Interfaces', items: [
                   { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions' },
+                  { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData' },
                 ] },
               ] },
               { text: 'devtools', link: '/api/devtools/index.md', collapsed: true, items: [

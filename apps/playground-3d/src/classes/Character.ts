@@ -27,7 +27,7 @@ export default class Character extends FFBX {
     super.initSensor({
       ...options,
       position: { x: 0, y: 0.25, z: 0 },
-      scale: { x: 0.5, y: 0.5, z: 0.5 },
+      scale: { x: 0.6, y: 0.4, z: 0.6 },
     })
   }
 }

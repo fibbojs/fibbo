@@ -160,19 +160,17 @@ export class FScene extends FSceneCore {
       return
     // If the collision is a start event, a collision has started
     if (start) {
-      // Call the onCollisionWith callbacks for the first collider
-      if (component1) {
-        // Call the callback for the class name
-        component1.emitCollisionWith(component2?.constructor)
-        // Call the callback for the specific object
-        component1.emitCollisionWith(component2)
-      }
-      // Call the onCollisionWith callbacks for the second collider
-      if (component2) {
-        // Call the callback for the class name
-        component2.emitCollisionWith(component1?.constructor)
-        // Call the callback for the specific object
-        component2?.emitCollisionWith(component1)
+      if (component1 && component2) {
+        // Call the onCollisionWith callbacks for the first collider
+        component1.emitCollisionWith({
+          class: component2.constructor,
+          component: component2,
+        })
+        // Call the onCollisionWith callbacks for the second collider
+        component2.emitCollisionWith({
+          class: component1.constructor,
+          component: component1,
+        })
       }
     }
   }
@@ -214,17 +212,19 @@ export class FScene extends FSceneCore {
     // Remove mesh from scene
     if (component.mesh)
       this.scene.remove(component.mesh)
-    // Remove handle from rapier map
-    if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
-    else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
-    // Remove collider and rigidBodies from rapier world
+
+    // Remove colliders and rigidBodies from rapier world
     if (component.rigidBody)
       this.world.removeRigidBody(component.rigidBody.rigidBody)
     if (component.collider)
       this.world.removeCollider(component.collider.collider, false)
     if (component.sensor)
       this.world.removeCollider(component.sensor.collider.collider, false)
+
+    // Remove handle from rapier map
+    if (component.sensor)
+      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
+    if (component.collider)
+      this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
   }
 }

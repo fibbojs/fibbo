@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
+import type { OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import type { FController } from '../controllers/FController'
 import type { FScene } from './FScene'
@@ -385,7 +386,7 @@ export abstract class FComponent extends FComponentCore {
     })
   }
 
-  onCollisionWith(classOrObject: any, callback: () => void): void {
+  onCollisionWith(classOrObject: any, callback: (data: OnCollisionWithData) => void): void {
     super.onCollisionWith(classOrObject, callback)
     // Activate collision events if they are not already activated
     if (this.sensor && this.sensor.collider.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {

@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import type { FCamera as FCameraCore } from '@fibbojs/core'
+import type { FCamera as FCameraCore, OnCollisionWithData } from '@fibbojs/core'
 import type { FTransformOptions } from '../core/FTransform'
 import { FTransform } from '../core/FTransform'
 
@@ -76,7 +76,7 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
 
   onCollisionWith(
     classOrObject: any,
-    callback: () => void,
+    callback: (data: OnCollisionWithData) => void,
   ) {
     FCamera.prototype.onCollisionWith.call(this, classOrObject, callback)
   }

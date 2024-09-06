@@ -6,6 +6,16 @@ import type { FController } from './FController'
 let ID_COUNTER = 0
 
 /**
+ * Data being sent to collision callbacks.
+ */
+export interface OnCollisionWithData {
+  /**
+   * The component that collided with the component.
+   */
+  component: FComponent
+}
+
+/**
  * @description The base class for all 2D and 3D components in Fibbo.
  */
 export abstract class FComponent {
@@ -25,7 +35,7 @@ export abstract class FComponent {
    * @description Callbacks for when a collision occurs with a given class or object.
    * It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
    */
-  public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
+  public __CALLBACKS_ON_COLLISION__: { [key: string]: ((data: OnCollisionWithData) => void)[] } = {}
 
   /**
    * The controller attached to the component.
@@ -72,7 +82,7 @@ export abstract class FComponent {
    */
   onCollisionWith(
     classOrObject: any,
-    callback: () => void,
+    callback: (data: OnCollisionWithData) => void,
   ) {
     let eventKey = ''
     // If the classOrObject is an object, use the class name + ID
@@ -92,35 +102,46 @@ export abstract class FComponent {
   }
 
   /**
-   * @description Emit a collision event with a given class.
-   * @param classOrObject The class or object to emit the collision event with.
+   * @description Emit a collision event with a given class or object.
+   * @param options The options for the collision event.
+   * @param options.class The class to emit the collision event with.
+   * @param options.component The component to emit the collision event with.
    * @example With a class:
    * ```typescript
    * const player = new Player()
    * const enemy = new Enemy()
-   * player.emitCollisionWith(Enemy)
+   * player.emitCollisionWith({
+   *  class: Enemy
+   * })
    * ```
    * @example With a specific object:
    * ```typescript
    * const player = new Player()
    * const enemy = new Enemy()
-   * player.emitCollisionWith(enemy)
+   * player.emitCollisionWith({
+   *  object: enemy
+   * })
    * ```
    */
-  emitCollisionWith(classOrObject: any) {
-    // If the classOrObject is an object, use the class name + ID
-    if (classOrObject instanceof FComponent) {
-      const eventKey = `${classOrObject.constructor.name}@${classOrObject.__ID__}`
+  emitCollisionWith(options: {
+    class?: any
+    component?: FComponent
+  }) {
+    // A component was passed, use the class name + ID to fire an instance specific event
+    if (options.component) {
+      const eventKey = `${options.component.constructor.name}@${options.component.__ID__}`
 
       // Check if the event key exists and call the callbacks
       if (this.__CALLBACKS_ON_COLLISION__[eventKey]) {
         this.__CALLBACKS_ON_COLLISION__[eventKey].forEach((callback) => {
-          callback()
+          callback({
+            component: options.component as FComponent,
+          })
         })
       }
     }
-    // Else, it should be a class, use the class name
-    else {
+    // A class was passed, use the class name to fire a class specific event
+    if (options.class && options.component) {
       // Get the prototype chain for a given class
       const getPrototypeChain = (obj: any) => {
         const protoChain = []
@@ -131,8 +152,8 @@ export abstract class FComponent {
         }
         return protoChain
       }
-      // Get the prototype chain for the classOrObject
-      const thisChain = getPrototypeChain(classOrObject)
+      // Get the prototype chain for the options.classOrObject
+      const thisChain = getPrototypeChain(options.class)
 
       /**
        * For each class in the prototype chain, check if there are any callbacks.
@@ -141,7 +162,9 @@ export abstract class FComponent {
       thisChain.forEach((className) => {
         if (this.__CALLBACKS_ON_COLLISION__[className]) {
           this.__CALLBACKS_ON_COLLISION__[className].forEach((callback) => {
-            callback()
+            callback({
+              component: options.component as FComponent,
+            })
           })
         }
       })

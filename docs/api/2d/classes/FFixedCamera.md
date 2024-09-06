@@ -32,7 +32,7 @@ A fixed camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FFixedCamera.ts:10](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FFixedCamera.ts#L10)
+[packages/2d/src/cameras/FFixedCamera.ts:10](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FFixedCamera.ts#L10)
 
 ## Methods
 
@@ -50,19 +50,27 @@ A fixed camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FFixedCamera.ts:17](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FFixedCamera.ts#L17)
+[packages/2d/src/cameras/FFixedCamera.ts:17](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FFixedCamera.ts#L17)
 
 ***
 
 ### emitCollisionWith()
 
-> **emitCollisionWith**(`classOrObject`): `void`
+> **emitCollisionWith**(`options`): `void`
 
 #### Parameters
 
-• **classOrObject**: `any`
+• **options**
 
-The class or object to emit the collision event with.
+The options for the collision event.
+
+• **options.class?**: `any`
+
+The class to emit the collision event with.
+
+• **options.component?**: `FComponent`
+
+The component to emit the collision event with.
 
 #### Returns
 
@@ -70,20 +78,24 @@ The class or object to emit the collision event with.
 
 #### Description
 
-Emit a collision event with a given class.
+Emit a collision event with a given class or object.
 
 #### Examples
 
 ```typescript
 const player = new Player()
 const enemy = new Enemy()
-player.emitCollisionWith(Enemy)
+player.emitCollisionWith({
+ class: Enemy
+})
 ```
 
 ```typescript
 const player = new Player()
 const enemy = new Enemy()
-player.emitCollisionWith(enemy)
+player.emitCollisionWith({
+ object: enemy
+})
 ```
 
 #### Inherited from
@@ -92,7 +104,7 @@ player.emitCollisionWith(enemy)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:100
+packages/core/dist/index.d.ts:115
 
 ***
 
@@ -142,7 +154,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-packages/core/dist/index.d.ts:83
+packages/core/dist/index.d.ts:92
 
 ***
 
@@ -170,7 +182,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[packages/2d/src/cameras/FFixedCamera.ts:14](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FFixedCamera.ts#L14)
+[packages/2d/src/cameras/FFixedCamera.ts:14](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FFixedCamera.ts#L14)
 
 ## Properties
 
@@ -180,7 +192,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Index Signature
 
- \[`key`: `string`\]: () => `void`[]
+ \[`key`: `string`\]: (`data`) => `void`[]
 
 #### Description
 
@@ -193,7 +205,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-packages/core/dist/index.d.ts:47
+packages/core/dist/index.d.ts:56
 
 ***
 
@@ -212,7 +224,7 @@ It is generated automatically.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:42
+packages/core/dist/index.d.ts:51
 
 ***
 
@@ -228,7 +240,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L16)
+[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -244,7 +256,7 @@ Internal flags
 
 #### Defined in
 
-packages/core/dist/index.d.ts:36
+packages/core/dist/index.d.ts:45
 
 ***
 
@@ -260,7 +272,7 @@ The controller attached to the component.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:53
+packages/core/dist/index.d.ts:62
 
 ***
 
@@ -284,7 +296,7 @@ Position of the camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L27)
+[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -302,4 +314,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L21)
+[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L21)

@@ -18,4 +18,4 @@
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:5](https://github.com/fibbojs/fibbo/blob/22e935206e75566f1a9d7fdd87a9aaa5b0efc202/packages/2d/src/cameras/FCamera.ts#L5)
+[packages/2d/src/cameras/FCamera.ts:5](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L5)
