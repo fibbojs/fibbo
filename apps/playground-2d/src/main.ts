@@ -62,6 +62,7 @@ import Character from './classes/Character'
     position: { x: 1, y: 2 },
     scale: { x: 0.5, y: 0.5 },
   })
+  square5.initSensor()
   scene.addComponent(square5)
 
   const circle = new FCircle(scene, {
@@ -70,6 +71,21 @@ import Character from './classes/Character'
   })
   circle.initRigidBody()
   scene.addComponent(circle)
+
+  // Create a rotating square
+  const rotatingSquare = new FRectangle(scene, {
+    position: { x: 0, y: 5 },
+  })
+  rotatingSquare.initSensor()
+  let totalDelta = 0
+  scene.addComponent(rotatingSquare)
+  scene.onFrame((delta) => {
+    // Each frame, move the cube on a circle of radius 3
+    const x = Math.cos(totalDelta) * 3
+    const y = Math.sin(totalDelta) * 3
+    rotatingSquare.setPosition({ x, y })
+    totalDelta += delta
+  })
 
   /**
    * Create character

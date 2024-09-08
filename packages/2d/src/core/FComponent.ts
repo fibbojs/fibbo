@@ -94,7 +94,7 @@ export abstract class FComponent extends FComponentCore {
       rotationDegree: options.rotationDegree,
     })
     // Set the container values
-    this.container.position.set(this.transform.position.x, this.transform.position.y)
+    this.container.position.set(this.transform.position.x * 100, this.transform.position.y * 100)
     this.container.scale.set(this.transform.scale.x * 100, this.transform.scale.y * 100)
     this.container.rotation = this.transform.rotation
     // Set the pivot of the container to the center
@@ -159,12 +159,26 @@ export abstract class FComponent extends FComponentCore {
         y: -this.container.position.y / 100,
       }
       this.transform.rotation = this.container.rotation
+
+      // If a sensor exists, update its position and rotation according to the collider
+      if (this.sensor) {
+        // Apply offset to the sensor
+        newContainerPosition.x += this.sensor.collider.colliderPositionOffset.x
+        newContainerPosition.y += this.sensor.collider.colliderPositionOffset.y
+        this.sensor.rigidBody.setTranslation(newContainerPosition, true)
+        this.sensor.rigidBody.setRotation(newContainerRotation, true)
+      }
     }
     else {
       // If the rigid body and collider doesn't exist, update the container position and rotation according to the default values
       // The y position is inverted because the y axis is inverted in PIXI.js compared to Rapier
       this.container.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
       this.container.rotation = this.transform.rotation
+      // If a sensor exists, update its position and rotation according to the default values
+      if (this.sensor) {
+        this.sensor.rigidBody.setTranslation({ x: this.transform.position.x, y: -this.transform.position.y }, true)
+        this.sensor.rigidBody.setRotation(this.transform.rotation, true)
+      }
     }
   }
 
@@ -180,7 +194,7 @@ export abstract class FComponent extends FComponentCore {
    */
   setPosition(options: { x: number, y: number }): void {
     this.transform.position = { x: options.x, y: options.y }
-    this.container.position.set(options.x, options.y)
+    this.container.position.set(options.x * 100, options.y * 100)
     // If a collider exists, update its translation
     if (this.collider)
       this.collider.collider.setTranslation(new RAPIER.Vector2(options.x, options.y))

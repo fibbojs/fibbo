@@ -181,10 +181,26 @@ import Character from './classes/Character'
     scene.addComponent(cube)
   }
 
+  // Create a rotating cube
+  const rotatingCube = new FCuboid(scene, {
+    position: { x: 0, y: 5, z: 0 },
+  })
+  rotatingCube.setColor(0x00FF00)
+  rotatingCube.initSensor()
+  let totalDelta = 0
+  scene.addComponent(rotatingCube)
+  scene.onFrame((delta) => {
+    // Each frame, move the cube on a circle of radius 3
+    const x = Math.cos(totalDelta) * 3
+    const y = Math.sin(totalDelta) * 3
+    rotatingCube.setPosition({ x, y, z: -5 })
+    totalDelta += delta
+  })
+
   /**
    * Add collision events
    */
-  const removeCollisionCallbackWithFCuboid = character.onCollisionWith(FCuboid, ({ component }) => {
+  character.onCollisionWith(FCuboid, ({ component }) => {
     console.log('Character collided with a FCuboid !')
     // Cast the component to FCuboid
     const cube = component as FCuboid
@@ -213,8 +229,5 @@ import Character from './classes/Character'
 
     // Remove the first gltfCube
     scene.removeComponent(gltfCube)
-
-    // Remove the collision callback with FCuboid
-    removeCollisionCallbackWithFCuboid()
   }, 3000)
 })()
