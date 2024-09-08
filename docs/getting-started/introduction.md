@@ -13,7 +13,7 @@ There are already many game engines available, such as [Unity](https://unity.com
 There are a few reasons:
 - **Accessibility** : Web games are easy to share, run on any device, and don't require any installation. We think this is an appropriate plateform for many types of experiences, such as arcade games, educational games, and more.
 - **Easy to learn** : We think that Fibbo is easier to learn than other game engines. The API is fairly minimal, and the documentation was designed to be accessible to beginners.
-- **Extensible** : Fibbo is designed to be extensible. You can create your own components, behaviors, and systems to extend the engine's functionality, but also share them easily through libraries (which can then be installed easily using [npm](https://www.npmjs.com/) for example).
+- **Extensible** : Fibbo is designed to be extensible. You can create your own components, behaviors, and systems to extend the engine's functionality, but also share them easily through libraries (see [Extending Fibbo](/more/extending-fibbo)).
 - **Free and open-source** : Fibbo is free to use and open-source. You can use it for any purpose, commercial or non-commercial, without any restrictions.
 
 ## Why not Fibbo ?
