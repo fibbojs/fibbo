@@ -33,7 +33,7 @@ jobs:
         run: npx nx release publish ${{ github.event.release.tag_name }} --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+          NPM_CONFIG_PROVENANCE: false
       # Fix the package-lock.json file
       - name: Fix package-lock.json
         run: npm install
