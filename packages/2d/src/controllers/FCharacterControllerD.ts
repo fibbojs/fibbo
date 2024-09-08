@@ -23,7 +23,7 @@ export class FCharacterControllerD extends FCharacterController {
     super(scene, options)
 
     const fKeyboard = new FKeyboard(scene)
-    fKeyboard.on(' ', () => {
+    fKeyboard.onKeyDown(' ', () => {
       this.component.rigidBody?.rigidBody.applyImpulse({ x: 0, y: 0.5 }, true)
     })
 

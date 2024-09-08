@@ -28,7 +28,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
     // Create a keyboard instance
     const fKeyboard = new FKeyboard(scene)
     // Bind the keyboard events
-    fKeyboard.on(' ', () => {
+    fKeyboard.onKeyDown(' ', () => {
       this.yVelocity = 10
     })
 

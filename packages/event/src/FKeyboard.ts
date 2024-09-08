@@ -44,10 +44,12 @@ export class FKeyboard {
 
     // Detect keys being pressed
     document.addEventListener('keydown', (event: KeyboardEvent) => {
-      this.keys[event.key] = true
-      if (this.callbackKeyDown[event.key]) {
-        for (const cb of this.callbackKeyDown[event.key]) {
-          cb()
+      if (!this.keys[event.key]) {
+        this.keys[event.key] = true
+        if (this.callbackKeyDown[event.key]) {
+          for (const cb of this.callbackKeyDown[event.key]) {
+            cb()
+          }
         }
       }
     })

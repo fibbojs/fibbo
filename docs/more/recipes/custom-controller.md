@@ -129,7 +129,7 @@ export class CustomController extends FController {
     })
 
     // Jump
-    fKeyboard.on(' ', () => {
+    fKeyboard.onKeyDown(' ', () => {
       this.yVelocity = 10
     })
 
