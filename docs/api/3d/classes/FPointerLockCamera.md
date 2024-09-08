@@ -45,7 +45,7 @@ Options for the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FPointerLockCamera.ts:30](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FPointerLockCamera.ts#L30)
+[3d/src/cameras/FPointerLockCamera.ts:30](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FPointerLockCamera.ts#L30)
 
 ## Methods
 
@@ -79,23 +79,21 @@ Any current parent on an object passed in here will be removed, since an Object3
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:468
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:515
 
 ***
 
 ### addEventListener()
 
-#### addEventListener(type, listener)
-
 > **addEventListener**\<`T`\>(`type`, `listener`): `void`
 
 Adds a listener to an event type.
 
-##### Type Parameters
+#### Type Parameters
 
 • **T** *extends* keyof `Object3DEventMap`
 
-##### Parameters
+#### Parameters
 
 • **type**: `T`
 
@@ -105,43 +103,17 @@ The type of event to listen to.
 
 The function that gets called when the event is fired.
 
-##### Returns
+#### Returns
 
 `void`
 
-##### Inherited from
+#### Inherited from
 
 [`FCamera`](FCamera.md).[`addEventListener`](FCamera.md#addeventlistener)
 
-##### Defined in
+#### Defined in
 
-node\_modules/@types/three/src/core/EventDispatcher.d.ts:52
-
-#### addEventListener(type, listener)
-
-> **addEventListener**\<`T`\>(`type`, `listener`): `void`
-
-##### Type Parameters
-
-• **T** *extends* `string`
-
-##### Parameters
-
-• **type**: `T`
-
-• **listener**: `EventListener`\<`object`, `T`, [`FPointerLockCamera`](FPointerLockCamera.md)\>
-
-##### Returns
-
-`void`
-
-##### Inherited from
-
-[`FCamera`](FCamera.md).[`addEventListener`](FCamera.md#addeventlistener)
-
-##### Defined in
-
-node\_modules/@types/three/src/core/EventDispatcher.d.ts:56
+3d/node\_modules/@types/three/src/core/EventDispatcher.d.ts:52
 
 ***
 
@@ -165,7 +137,7 @@ Applies the matrix transform to the object and updates the object's position, ro
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:338
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:385
 
 ***
 
@@ -189,7 +161,7 @@ Applies the rotation represented by the quaternion to the object.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:344
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:391
 
 ***
 
@@ -221,7 +193,7 @@ Note: This method does not support scene graphs having non-uniformly-scaled node
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:494
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:541
 
 ***
 
@@ -241,7 +213,7 @@ Removes all child objects.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:486
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:533
 
 ***
 
@@ -261,7 +233,7 @@ Removes any offset set by the [.setViewOffset](FAttachedCamera.md#setviewoffset)
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:211
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:240
 
 ***
 
@@ -287,7 +259,7 @@ If true, descendants of the object are also cloned. Default `true`
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:617
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:664
 
 ***
 
@@ -320,7 +292,7 @@ Event listeners and user-defined callbacks (.onAfterRender and .onBeforeRender) 
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:626
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:673
 
 ***
 
@@ -350,7 +322,7 @@ The event that gets fired.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/EventDispatcher.d.ts:84
+3d/node\_modules/@types/three/src/core/EventDispatcher.d.ts:81
 
 ***
 
@@ -394,7 +366,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:84](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L84)
+[3d/src/cameras/FCamera.ts:89](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L89)
 
 ***
 
@@ -419,7 +391,7 @@ This method is useful to get the direction of the camera to apply forces in the 
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:93](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L93)
+[3d/src/cameras/FCamera.ts:98](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L98)
 
 ***
 
@@ -439,7 +411,7 @@ Returns the current vertical field of view angle in degrees considering [.zoom](
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:136
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:165
 
 ***
 
@@ -463,7 +435,7 @@ If [.aspect](FAttachedCamera.md#aspect). is less than or equal to one (portrait 
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:150
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:179
 
 ***
 
@@ -487,7 +459,7 @@ If [.aspect](FAttachedCamera.md#aspect). is greater than or equal to one (landsc
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:143
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:172
 
 ***
 
@@ -507,7 +479,7 @@ Returns the focal length of the current .fov | fov in respect to [.filmGauge](FA
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:124
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:153
 
 ***
 
@@ -541,7 +513,7 @@ id
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:502
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:549
 
 ***
 
@@ -572,7 +544,7 @@ You will have to set it manually to make use of this method.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:510
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:557
 
 ***
 
@@ -603,7 +575,7 @@ value of the given property.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:519
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:566
 
 ***
 
@@ -639,7 +611,7 @@ this array prior to each call (i.e., array.length = 0;).
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:529
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:576
 
 ***
 
@@ -668,7 +640,7 @@ Sets minTarget and maxTarget to the coordinates of the lower-left and upper-righ
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:156
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:185
 
 ***
 
@@ -695,7 +667,7 @@ Copies the result into the target Vector2, where x is width and y is height.
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:162
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:191
 
 ***
 
@@ -725,7 +697,7 @@ Note: A Camera looks down its local, negative z-axis.
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:73
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:73
 
 ***
 
@@ -751,7 +723,7 @@ The result will be copied into this Vector3.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:535
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:582
 
 ***
 
@@ -777,7 +749,7 @@ The result will be copied into this Quaternion.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:541
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:588
 
 ***
 
@@ -803,23 +775,21 @@ The result will be copied into this Vector3.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:547
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:594
 
 ***
 
 ### hasEventListener()
 
-#### hasEventListener(type, listener)
-
 > **hasEventListener**\<`T`\>(`type`, `listener`): `boolean`
 
 Checks if listener is added to an event type.
 
-##### Type Parameters
+#### Type Parameters
 
 • **T** *extends* keyof `Object3DEventMap`
 
-##### Parameters
+#### Parameters
 
 • **type**: `T`
 
@@ -829,43 +799,17 @@ The type of event to listen to.
 
 The function that gets called when the event is fired.
 
-##### Returns
+#### Returns
 
 `boolean`
 
-##### Inherited from
+#### Inherited from
 
 [`FCamera`](FCamera.md).[`hasEventListener`](FCamera.md#haseventlistener)
 
-##### Defined in
+#### Defined in
 
-node\_modules/@types/three/src/core/EventDispatcher.d.ts:63
-
-#### hasEventListener(type, listener)
-
-> **hasEventListener**\<`T`\>(`type`, `listener`): `boolean`
-
-##### Type Parameters
-
-• **T** *extends* `string`
-
-##### Parameters
-
-• **type**: `T`
-
-• **listener**: `EventListener`\<`object`, `T`, [`FPointerLockCamera`](FPointerLockCamera.md)\>
-
-##### Returns
-
-`boolean`
-
-##### Inherited from
-
-[`FCamera`](FCamera.md).[`hasEventListener`](FCamera.md#haseventlistener)
-
-##### Defined in
-
-node\_modules/@types/three/src/core/EventDispatcher.d.ts:67
+3d/node\_modules/@types/three/src/core/EventDispatcher.d.ts:62
 
 ***
 
@@ -891,7 +835,7 @@ A vector representing a position in this object's local space.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:437
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:484
 
 ***
 
@@ -923,7 +867,7 @@ This method does not support objects having non-uniformly-scaled parent(s).
 
 ##### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:450
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:497
 
 #### lookAt(x, y, z)
 
@@ -959,7 +903,7 @@ This method does not support objects having non-uniformly-scaled parent(s).
 
 ##### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:458
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:505
 
 ***
 
@@ -1001,13 +945,13 @@ and thus this callback is not executed for such objects.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:306
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:353
 
 ***
 
 ### onAfterShadow()
 
-> **onAfterShadow**(`renderer`, `scene`, `shadowCamera`, `geometry`, `depthMaterial`, `group`): `void`
+> **onAfterShadow**(`renderer`, `scene`, `camera`, `shadowCamera`, `geometry`, `depthMaterial`, `group`): `void`
 
 An optional callback that is executed immediately after a 3D object is rendered to a shadow map.
 
@@ -1016,6 +960,8 @@ An optional callback that is executed immediately after a 3D object is rendered 
 • **renderer**: `WebGLRenderer`
 
 • **scene**: `Scene`
+
+• **camera**: `Camera`
 
 • **shadowCamera**: `Camera`
 
@@ -1044,7 +990,7 @@ and thus this callback is not executed for such objects.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:272
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:318
 
 ***
 
@@ -1086,13 +1032,13 @@ and thus this callback is not executed for such objects.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:289
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:336
 
 ***
 
 ### onBeforeShadow()
 
-> **onBeforeShadow**(`renderer`, `scene`, `shadowCamera`, `geometry`, `depthMaterial`, `group`): `void`
+> **onBeforeShadow**(`renderer`, `scene`, `camera`, `shadowCamera`, `geometry`, `depthMaterial`, `group`): `void`
 
 An optional callback that is executed immediately before a 3D object is rendered to a shadow map.
 
@@ -1101,6 +1047,8 @@ An optional callback that is executed immediately before a 3D object is rendered
 • **renderer**: `WebGLRenderer`
 
 • **scene**: `Scene`
+
+• **camera**: `Camera`
 
 • **shadowCamera**: `Camera`
 
@@ -1129,13 +1077,13 @@ and thus this callback is not executed for such objects.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:254
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:299
 
 ***
 
 ### onCollisionWith()
 
-> **onCollisionWith**(`classOrObject`, `callback`): `void`
+> **onCollisionWith**(`classOrObject`, `callback`): () => `void`
 
 #### Parameters
 
@@ -1148,6 +1096,12 @@ The class or object to add the callback to.
 The callback to add.
 
 #### Returns
+
+`Function`
+
+A function to remove the callback.
+
+##### Returns
 
 `void`
 
@@ -1179,7 +1133,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:77](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L77)
+[3d/src/cameras/FCamera.ts:82](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L82)
 
 ***
 
@@ -1207,7 +1161,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[packages/3d/src/cameras/FPointerLockCamera.ts:45](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FPointerLockCamera.ts#L45)
+[3d/src/cameras/FPointerLockCamera.ts:45](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FPointerLockCamera.ts#L45)
 
 ***
 
@@ -1245,7 +1199,7 @@ THREE.Raycaster | Raycaster
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:563
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:610
 
 ***
 
@@ -1277,23 +1231,21 @@ THREE.Group | Group for info on manually grouping objects.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:476
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:523
 
 ***
 
 ### removeEventListener()
 
-#### removeEventListener(type, listener)
-
 > **removeEventListener**\<`T`\>(`type`, `listener`): `void`
 
 Removes a listener from an event type.
 
-##### Type Parameters
+#### Type Parameters
 
 • **T** *extends* keyof `Object3DEventMap`
 
-##### Parameters
+#### Parameters
 
 • **type**: `T`
 
@@ -1303,43 +1255,17 @@ The type of the listener that gets removed.
 
 The listener function that gets removed.
 
-##### Returns
+#### Returns
 
 `void`
 
-##### Inherited from
+#### Inherited from
 
 [`FCamera`](FCamera.md).[`removeEventListener`](FCamera.md#removeeventlistener)
 
-##### Defined in
+#### Defined in
 
-node\_modules/@types/three/src/core/EventDispatcher.d.ts:74
-
-#### removeEventListener(type, listener)
-
-> **removeEventListener**\<`T`\>(`type`, `listener`): `void`
-
-##### Type Parameters
-
-• **T** *extends* `string`
-
-##### Parameters
-
-• **type**: `T`
-
-• **listener**: `EventListener`\<`object`, `T`, [`FPointerLockCamera`](FPointerLockCamera.md)\>
-
-##### Returns
-
-`void`
-
-##### Inherited from
-
-[`FCamera`](FCamera.md).[`removeEventListener`](FCamera.md#removeeventlistener)
-
-##### Defined in
-
-node\_modules/@types/three/src/core/EventDispatcher.d.ts:78
+3d/node\_modules/@types/three/src/core/EventDispatcher.d.ts:72
 
 ***
 
@@ -1359,7 +1285,7 @@ Removes this object from its current parent.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:481
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:528
 
 ***
 
@@ -1393,7 +1319,7 @@ The axis is assumed to be normalized.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:378
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:425
 
 ***
 
@@ -1428,7 +1354,7 @@ Method Assumes no rotated parent.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:387
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:434
 
 ***
 
@@ -1452,7 +1378,7 @@ Rotates the object around _x_ axis in local space.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:393
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:440
 
 ***
 
@@ -1476,7 +1402,7 @@ Rotates the object around _y_ axis in local space.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:399
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:446
 
 ***
 
@@ -1500,7 +1426,7 @@ Rotates the object around _z_ axis in local space.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:405
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:452
 
 ***
 
@@ -1530,7 +1456,7 @@ By default, the focal length is specified for a `35mm` (full frame) camera.
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:131
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:160
 
 ***
 
@@ -1558,7 +1484,7 @@ Use [.setFocalLength()](FAttachedCamera.md#setfocallength) and [.filmGauge](FAtt
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:222
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:251
 
 ***
 
@@ -1588,7 +1514,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L59)
+[3d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L59)
 
 ***
 
@@ -1618,7 +1544,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:73](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L73)
+[3d/src/cameras/FCamera.ts:73](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L73)
 
 ***
 
@@ -1648,7 +1574,7 @@ Angle in radians. Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:351
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:398
 
 ***
 
@@ -1674,7 +1600,7 @@ Euler angle specifying rotation amount.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:357
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:404
 
 ***
 
@@ -1704,7 +1630,7 @@ Note that this assumes that the upper 3x3 of m is a pure rotation matrix (i.e, u
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:364
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:411
 
 ***
 
@@ -1730,7 +1656,7 @@ Normalized Quaternion.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:370
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:417
 
 ***
 
@@ -1760,7 +1686,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:66](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L66)
+[3d/src/cameras/FCamera.ts:66](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L66)
 
 ***
 
@@ -1841,33 +1767,51 @@ Note there is no reason monitors have to be the same size or in a grid.
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:206
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:235
+
+***
+
+### setZoom()
+
+> **setZoom**(`zoom`): `void`
+
+#### Parameters
+
+• **zoom**: `number`
+
+#### Returns
+
+`void`
+
+#### Description
+
+Set the zoom of the camera.
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`setZoom`](FCamera.md#setzoom)
+
+#### Defined in
+
+[3d/src/cameras/FCamera.ts:77](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L77)
 
 ***
 
 ### toJSON()
 
-> **toJSON**(`meta`?): `any`
+> **toJSON**(`meta`?): `PerspectiveCameraJSON`
 
 Convert the object to three.js [JSON Object/Scene format](https://github.com/mrdoob/three.js/wiki/JSON-Object-Scene-format-4).
 
 #### Parameters
 
-• **meta?**
+• **meta?**: `JSONMeta`
 
 Object containing metadata such as materials, textures or images for the object.
 
-• **meta.geometries?**: `any`
-
-• **meta.images?**: `any`
-
-• **meta.materials?**: `any`
-
-• **meta.textures?**: `any`
-
 #### Returns
 
-`any`
+`PerspectiveCameraJSON`
 
 #### Inherited from
 
@@ -1875,7 +1819,7 @@ Object containing metadata such as materials, textures or images for the object.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:611
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:253
 
 ***
 
@@ -1909,7 +1853,7 @@ The axis is assumed to be normalized.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:413
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:460
 
 ***
 
@@ -1935,7 +1879,7 @@ Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:419
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:466
 
 ***
 
@@ -1961,7 +1905,7 @@ Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:425
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:472
 
 ***
 
@@ -1987,7 +1931,7 @@ Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:431
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:478
 
 ***
 
@@ -2017,7 +1961,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:570
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:617
 
 ***
 
@@ -2047,7 +1991,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:585
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:632
 
 ***
 
@@ -2078,7 +2022,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:578
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:625
 
 ***
 
@@ -2098,7 +2042,7 @@ Updates local transform.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:590
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:637
 
 ***
 
@@ -2126,7 +2070,7 @@ Useful if you cannot wait for the renderer to update it on the next frame, assum
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:598
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:645
 
 ***
 
@@ -2150,7 +2094,7 @@ Must be called after any change of parameters.
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:217
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:246
 
 ***
 
@@ -2180,7 +2124,7 @@ Recursively updates global transform of descendants.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:605
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:652
 
 ***
 
@@ -2206,7 +2150,7 @@ A vector representing a position in world space.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:443
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:490
 
 ## Properties
 
@@ -2229,7 +2173,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:20](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L20)
+[3d/src/cameras/FCamera.ts:20](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L20)
 
 ***
 
@@ -2248,7 +2192,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -2262,7 +2206,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L17)
+[3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -2278,7 +2222,7 @@ Internal flags
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L16)
+[3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -2298,7 +2242,7 @@ Array with object's animation clips.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:221
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:266
 
 ***
 
@@ -2322,7 +2266,7 @@ Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:64
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:93
 
 ***
 
@@ -2332,7 +2276,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:64
 
 #### Defined in
 
-[packages/3d/src/cameras/FPointerLockCamera.ts:23](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FPointerLockCamera.ts#L23)
+[3d/src/cameras/FPointerLockCamera.ts:23](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FPointerLockCamera.ts#L23)
 
 ***
 
@@ -2352,7 +2296,7 @@ Whether the object gets rendered into shadow map.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:193
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:238
 
 ***
 
@@ -2376,7 +2320,7 @@ THREE.Object3DGroup | Group for info on manually grouping objects.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:100
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:145
 
 ***
 
@@ -2386,7 +2330,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:100
 
 #### Defined in
 
-[packages/3d/src/cameras/FPointerLockCamera.ts:25](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FPointerLockCamera.ts#L25)
+[3d/src/cameras/FPointerLockCamera.ts:25](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FPointerLockCamera.ts#L25)
 
 ***
 
@@ -2400,7 +2344,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:100
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:64
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:64
 
 ***
 
@@ -2426,7 +2370,7 @@ if you are modifying vertex positions in the vertex shader you must specify a cu
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:237
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:282
 
 ***
 
@@ -2446,7 +2390,7 @@ Same as [customDepthMaterial](FAttachedCamera.md#customdepthmaterial), but used 
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:243
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:288
 
 ***
 
@@ -2470,7 +2414,7 @@ Must be greater than the current value of [.near](FAttachedCamera.md#near) plane
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:81
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:110
 
 ***
 
@@ -2495,7 +2439,7 @@ Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:112
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:141
 
 ***
 
@@ -2519,7 +2463,7 @@ Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:119
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:148
 
 ***
 
@@ -2543,7 +2487,7 @@ This parameter does not influence the projection matrix unless a THREE.StereoCam
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:89
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:118
 
 ***
 
@@ -2567,7 +2511,7 @@ Expects a `Float`
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:57
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:86
 
 ***
 
@@ -2588,7 +2532,7 @@ If set to `false` the object gets rendered every frame even if it is not in the 
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:206
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:251
 
 ***
 
@@ -2609,7 +2553,7 @@ Expects a `Integer`
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:64
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:109
 
 ***
 
@@ -2633,7 +2577,7 @@ This is a _constant_ value
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:29
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:29
 
 ***
 
@@ -2657,7 +2601,7 @@ This is a _constant_ value
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:57
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:102
 
 ***
 
@@ -2681,7 +2625,7 @@ This is a _constant_ value
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:38
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:67
 
 ***
 
@@ -2705,7 +2649,7 @@ Objects must share at least one layer with the Camera to be n when the camera's 
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:43
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:43
 
 ***
 
@@ -2725,7 +2669,7 @@ The local transform matrix.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:146
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:191
 
 ***
 
@@ -2746,7 +2690,7 @@ scale every frame and also recalculates the matrixWorld property.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:160
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:205
 
 ***
 
@@ -2770,7 +2714,7 @@ If the Object3D has no parent, then it's identical to the local transform THREE.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:153
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:198
 
 ***
 
@@ -2791,7 +2735,7 @@ When it isn't, then you have to maintain all matrices in the object and its chil
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:167
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:212
 
 ***
 
@@ -2815,7 +2759,7 @@ THREE.Matrix4 | `new THREE.Matrix4()`
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:50
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:50
 
 ***
 
@@ -2835,7 +2779,7 @@ When this is set, it calculates the matrixWorld in that frame and resets this pr
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:173
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:218
 
 ***
 
@@ -2853,7 +2797,7 @@ node\_modules/@types/three/src/core/Object3D.d.ts:173
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:135
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:180
 
 ***
 
@@ -2877,7 +2821,7 @@ _(doesn't need to be unique)_.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:77
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:122
 
 ***
 
@@ -2901,7 +2845,7 @@ The valid range is greater than `0` and less than the current value of the [.far
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:73
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:102
 
 ***
 
@@ -2919,7 +2863,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:73
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:140
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:185
 
 ***
 
@@ -2943,7 +2887,7 @@ An object can have at most one parent.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:92
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:137
 
 ***
 
@@ -2963,7 +2907,7 @@ Object's local position.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:112
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:157
 
 ***
 
@@ -2983,7 +2927,7 @@ THREE.Matrix4 | `new THREE.Matrix4()`
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:56
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:56
 
 ***
 
@@ -3003,7 +2947,7 @@ THREE.Matrix4 | `new THREE.Matrix4()`
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:62
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:62
 
 ***
 
@@ -3023,7 +2967,7 @@ Object's local rotation as a THREE.Quaternion | Quaternion.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:124
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:169
 
 ***
 
@@ -3043,7 +2987,7 @@ Whether the material receives shadows.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:199
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:244
 
 ***
 
@@ -3069,7 +3013,7 @@ Sorting is from lowest to highest renderOrder.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:215
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:260
 
 ***
 
@@ -3089,7 +3033,7 @@ Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angl
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:118
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:163
 
 ***
 
@@ -3109,7 +3053,7 @@ The object's local scale.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:130
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:175
 
 ***
 
@@ -3125,7 +3069,7 @@ Transform of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/cameras/FCamera.ts#L25)
+[3d/src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L25)
 
 ***
 
@@ -3143,7 +3087,7 @@ Transform of the camera.
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:44
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:73
 
 ***
 
@@ -3163,7 +3107,7 @@ This is used by the [lookAt](FPointerLockCamera.md#lookat) method, for example, 
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:106
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:151
 
 ***
 
@@ -3187,7 +3131,7 @@ It should not hold references to _functions_ as these **will not** be cloned.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:228
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:273
 
 ***
 
@@ -3207,7 +3151,7 @@ This gets automatically assigned and shouldn't be edited.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:70
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:115
 
 ***
 
@@ -3228,7 +3172,7 @@ This is set using the [.setViewOffset](FAttachedCamera.md#setviewoffset) method 
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:96
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:125
 
 ***
 
@@ -3242,7 +3186,7 @@ node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:96
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/Camera.d.ts:66
+3d/node\_modules/@types/three/src/cameras/Camera.d.ts:66
 
 ***
 
@@ -3262,7 +3206,7 @@ Object gets rendered if `true`.
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:187
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:232
 
 ***
 
@@ -3282,7 +3226,7 @@ Gets or sets the zoom factor of the camera.
 
 #### Defined in
 
-node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:50
+3d/node\_modules/@types/three/src/cameras/PerspectiveCamera.d.ts:79
 
 ***
 
@@ -3302,7 +3246,7 @@ The default setting for [matrixAutoUpdate](FAttachedCamera.md#matrixautoupdate) 
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:326
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:373
 
 ***
 
@@ -3322,7 +3266,7 @@ The default setting for [matrixWorldAutoUpdate](FAttachedCamera.md#matrixworldau
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:332
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:379
 
 ***
 
@@ -3343,4 +3287,4 @@ THREE.HemisphereLight | HemisphereLight and THREE.Spotlight | Spotlight (which c
 
 #### Defined in
 
-node\_modules/@types/three/src/core/Object3D.d.ts:320
+3d/node\_modules/@types/three/src/core/Object3D.d.ts:367

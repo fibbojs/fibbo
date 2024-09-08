@@ -46,7 +46,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L34)
+[2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/cameras/FCamera.ts#L34)
 
 ## Methods
 
@@ -60,7 +60,7 @@ Create a new 2D camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L55)
+[2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/cameras/FCamera.ts#L55)
 
 ***
 
@@ -114,13 +114,13 @@ player.emitCollisionWith({
 
 #### Defined in
 
-packages/core/dist/index.d.ts:115
+core/dist/index.d.ts:116
 
 ***
 
 ### onCollisionWith()
 
-> **onCollisionWith**(`classOrObject`, `callback`): `void`
+> **onCollisionWith**(`classOrObject`, `callback`): () => `void`
 
 #### Parameters
 
@@ -133,6 +133,12 @@ The class or object to add the callback to.
 The callback to add.
 
 #### Returns
+
+`Function`
+
+A function to remove the callback.
+
+##### Returns
 
 `void`
 
@@ -164,7 +170,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-packages/core/dist/index.d.ts:92
+core/dist/index.d.ts:93
 
 ***
 
@@ -192,7 +198,33 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L53)
+[2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/cameras/FCamera.ts#L53)
+
+***
+
+### setZoom()
+
+> **setZoom**(`zoom`): `void`
+
+#### Parameters
+
+• **zoom**: `number`
+
+#### Returns
+
+`void`
+
+#### Description
+
+Set the zoom of the camera.
+
+#### Overrides
+
+`FCameraCore.setZoom`
+
+#### Defined in
+
+[2d/src/cameras/FCamera.ts:57](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/cameras/FCamera.ts#L57)
 
 ## Properties
 
@@ -215,7 +247,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-packages/core/dist/index.d.ts:56
+core/dist/index.d.ts:56
 
 ***
 
@@ -234,7 +266,7 @@ It is generated automatically.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:51
+core/dist/index.d.ts:51
 
 ***
 
@@ -250,7 +282,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L16)
+[2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -266,7 +298,7 @@ Internal flags
 
 #### Defined in
 
-packages/core/dist/index.d.ts:45
+core/dist/index.d.ts:45
 
 ***
 
@@ -282,7 +314,7 @@ The controller attached to the component.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:62
+core/dist/index.d.ts:62
 
 ***
 
@@ -302,7 +334,7 @@ Position of the camera.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L27)
+[2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -316,4 +348,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/2d/src/cameras/FCamera.ts#L21)
+[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/cameras/FCamera.ts#L21)

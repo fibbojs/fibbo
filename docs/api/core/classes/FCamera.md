@@ -26,7 +26,7 @@ The base class for cameras in Fibbo.
 
 #### Defined in
 
-[packages/core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FCamera.ts#L7)
+[core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FCamera.ts#L7)
 
 ## Methods
 
@@ -80,13 +80,13 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:126](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L126)
+[core/src/FComponent.ts:134](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L134)
 
 ***
 
 ### onCollisionWith()
 
-> **onCollisionWith**(`classOrObject`, `callback`): `void`
+> **onCollisionWith**(`classOrObject`, `callback`): () => `void`
 
 #### Parameters
 
@@ -99,6 +99,12 @@ The class or object to add the callback to.
 The callback to add.
 
 #### Returns
+
+`Function`
+
+A function to remove the callback.
+
+##### Returns
 
 `void`
 
@@ -130,7 +136,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:83](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L83)
+[core/src/FComponent.ts:84](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L84)
 
 ***
 
@@ -160,7 +166,29 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L55)
+[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L55)
+
+***
+
+### setZoom()
+
+> `abstract` **setZoom**(`zoom`): `void`
+
+#### Parameters
+
+• **zoom**: `number`
+
+#### Returns
+
+`void`
+
+#### Description
+
+Set the zoom of the camera.
+
+#### Defined in
+
+[core/src/FCamera.ts:14](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FCamera.ts#L14)
 
 ## Properties
 
@@ -183,7 +211,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L38)
+[core/src/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L38)
 
 ***
 
@@ -202,7 +230,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L32)
+[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L32)
 
 ***
 
@@ -216,7 +244,7 @@ It is generated automatically.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L26)
+[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L26)
 
 ***
 
@@ -232,7 +260,7 @@ Internal flags
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:25](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L25)
+[core/src/FComponent.ts:25](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L25)
 
 ***
 
@@ -248,4 +276,4 @@ The controller attached to the component.
 
 #### Defined in
 
-[packages/core/src/FComponent.ts:43](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/core/src/FComponent.ts#L43)
+[core/src/FComponent.ts:43](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L43)

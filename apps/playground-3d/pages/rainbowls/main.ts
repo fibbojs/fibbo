@@ -69,10 +69,10 @@ import * as THREE from 'three'
     pointer.y = -(event.clientY / window.innerHeight) * 2 + 1
 
     // Update the picking ray with the camera and pointer position
-    raycaster.setFromCamera(pointer, scene.camera)
+    raycaster.setFromCamera(pointer, scene.camera as unknown as THREE.Camera)
 
     // calculate objects intersecting the picking ray
-    const intersects = raycaster.intersectObjects(scene.scene.children)
+    const intersects = raycaster.intersectObjects(scene.scene.children as unknown as THREE.Object3D[])
 
     intersects.forEach((intersect) => {
       if (intersect.object.userData && intersect.object.userData.x !== undefined) {

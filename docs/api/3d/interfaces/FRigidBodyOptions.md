@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:22](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L22)
+[3d/src/core/FRigidBody.ts:22](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L22)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:17](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L17)
+[3d/src/core/FRigidBody.ts:17](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L17)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:16](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L16)
+[3d/src/core/FRigidBody.ts:16](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L16)
 
 ***
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:15](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L15)
+[3d/src/core/FRigidBody.ts:15](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L15)
 
 ***
 
@@ -86,7 +86,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:8](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L8)
+[3d/src/core/FRigidBody.ts:8](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L8)
 
 ***
 
@@ -96,7 +96,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:13](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L13)
+[3d/src/core/FRigidBody.ts:13](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L13)
 
 ***
 
@@ -118,7 +118,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:10](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L10)
+[3d/src/core/FRigidBody.ts:10](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L10)
 
 ***
 
@@ -140,7 +140,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:11](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L11)
+[3d/src/core/FRigidBody.ts:11](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L11)
 
 ***
 
@@ -162,7 +162,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:9](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L9)
+[3d/src/core/FRigidBody.ts:9](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L9)
 
 ***
 
@@ -172,7 +172,7 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:14](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L14)
+[3d/src/core/FRigidBody.ts:14](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L14)
 
 ***
 
@@ -182,4 +182,4 @@
 
 #### Defined in
 
-[packages/3d/src/core/FRigidBody.ts:12](https://github.com/fibbojs/fibbo/blob/661c4959fa5749d0db5d94ebb84036f7231634a4/packages/3d/src/core/FRigidBody.ts#L12)
+[3d/src/core/FRigidBody.ts:12](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L12)
