@@ -50,4 +50,14 @@ export class FOrbitCamera extends FCamera {
     // Set the target of the camera to the attached model
     this.lookAt(this.attachedComponent.transform.position)
   }
+
+  setZoom(zoom: number): void {
+    const oldMinDistance = this.controls.minDistance
+    const oldMaxDistance = this.controls.maxDistance
+    this.controls.minDistance = zoom
+    this.controls.maxDistance = zoom
+    this.controls.update()
+    this.controls.minDistance = oldMinDistance
+    this.controls.maxDistance = oldMaxDistance
+  }
 }

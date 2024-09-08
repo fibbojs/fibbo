@@ -227,6 +227,9 @@ import Character from './classes/Character'
     gltfCube3.setPosition({ x: -2, y: 5, z: -2 })
     scene.addComponent(gltfCube3)
 
+    // Update the camera zoom
+    scene.camera.setZoom(2)
+
     // Remove the first gltfCube
     scene.removeComponent(gltfCube)
   }, 3000)

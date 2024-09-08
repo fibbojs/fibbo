@@ -117,6 +117,9 @@ import Character from './classes/Character'
 
     // Remove the collision callback with FRectangle
     removeCollisionCallbackWithFRectangle()
+
+    // Zoom in the camera
+    scene.camera.setZoom(1)
   })
 
   // Attach a camera to the character

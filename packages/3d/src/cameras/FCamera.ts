@@ -74,6 +74,11 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
     this.rotation.set(x, y, z)
   }
 
+  setZoom(zoom: number): void {
+    this.zoom = zoom
+    this.updateProjectionMatrix()
+  }
+
   onCollisionWith(
     classOrObject: any,
     callback: (data: OnCollisionWithData) => void,

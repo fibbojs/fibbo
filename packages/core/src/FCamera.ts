@@ -7,4 +7,9 @@ export abstract class FCamera extends FComponent {
   constructor() {
     super()
   }
+
+  /**
+   * @description Set the zoom of the camera.
+   */
+  abstract setZoom(zoom: number): void
 }
