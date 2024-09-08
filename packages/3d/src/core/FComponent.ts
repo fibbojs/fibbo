@@ -181,6 +181,11 @@ export abstract class FComponent extends FComponentCore {
     else if (this.mesh) {
       this.mesh.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
       this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+      // If a sensor exists, update its position and rotation according to the default values
+      if (this.sensor) {
+        this.sensor.rigidBody.setTranslation({ x: this.transform.position.x, y: this.transform.position.y, z: this.transform.position.z }, true)
+        this.sensor.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)), true)
+      }
     }
     // If the mesh still doesn't exist, do nothing
   }
