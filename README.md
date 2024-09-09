@@ -1,4 +1,4 @@
-[![@fibbojs/leaflet](./docs/public/banner.png)](https://fibbojs.github.io/fibbo/)
+[![@fibbojs/core](./docs/public/banner.png)](https://fibbojs.github.io/fibbo/)
 
 # Fibbo
 
