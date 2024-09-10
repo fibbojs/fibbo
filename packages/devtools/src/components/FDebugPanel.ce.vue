@@ -1,7 +1,7 @@
 <template>
   <div class="f-debug-panel">
     <h1>{{ title }}</h1>
-    <div v-if="scene && scene.components && scene.components.length > 0">
+    <div v-if="scene.components.length > 0">
       <FComponents2d
         v-if="scene.components[0].__IS_2D__"
         :components="scene.components as FComponent2d[]"
@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps } from 'vue'
+import { defineProps, onMounted } from 'vue'
 import type { FScene } from '@fibbojs/core'
 import type { FComponent as FComponent2d } from '@fibbojs/2d'
 import type { FComponent as FComponent3d } from '@fibbojs/3d'

@@ -1,6 +1,5 @@
 import type { FScene } from '@fibbojs/2d'
 import type { DebugRenderBuffers } from '@dimforge/rapier2d'
-import type PIXI from 'pixi.js'
 
 /**
  * @description A helper class to debug a given 2d scene
@@ -14,9 +13,6 @@ export class FDebug2d {
    * @param scene The scene to be debugged
    */
   constructor(scene: FScene) {
-    // Initialize the array for the debug lines
-    const DEBUG_LINES: PIXI.Graphics[] = []
-
     // Add help grid
     const helpGrid = new scene.PIXI.Graphics()
     // Draw the grid
@@ -36,40 +32,37 @@ export class FDebug2d {
     // Add the grid to the viewport
     scene.viewport.addChild(helpGrid)
 
+    // Initiliaze debug graphics
+    const DEBUG_GRAPHICS = new scene.PIXI.Graphics()
+    DEBUG_GRAPHICS.zIndex = 1000000
+    scene.viewport.addChild(DEBUG_GRAPHICS)
+
     /**
      * Display debug lines on each frame
      */
     scene.onFrame(() => {
+      DEBUG_GRAPHICS.clear() // Clear the previous frame
+
       const buffers: DebugRenderBuffers = scene.world.debugRender()
       const debugVerticies: Float32Array = buffers.vertices
       const debugColors: Float32Array = buffers.colors
 
-      // Remove the previous debug lines
-      DEBUG_LINES.forEach((line) => {
-        scene.viewport.removeChild(line)
-      })
+      for (let i = 0; i < debugVerticies.length / 4; i++) {
+        const x1 = debugVerticies[i * 4] * 100
+        const y1 = -debugVerticies[i * 4 + 1] * 100
+        const x2 = debugVerticies[i * 4 + 2] * 100
+        const y2 = -debugVerticies[i * 4 + 3] * 100
 
-      // For each line (a line is represented by 4 numbers in the vertices array)
-      for (let i = 0; i < debugVerticies.length / 4; i += 1) {
-        // Create a new debug line
-        const newDebugLine = new scene.PIXI.Graphics()
-
-        // Use the vertices to draw the line
-        newDebugLine.moveTo(debugVerticies[i * 4] * 100, -debugVerticies[i * 4 + 1] * 100)
-        newDebugLine.lineTo(debugVerticies[i * 4 + 2] * 100, -debugVerticies[i * 4 + 3] * 100)
-
-        // Create a color array for the linear gradient
-        const newDebugColor = new scene.PIXI.Color({
+        const color = new scene.PIXI.Color({
           r: debugColors[i * 4] * 255,
           g: debugColors[i * 4 + 1] * 255,
           b: debugColors[i * 4 + 2] * 255,
           a: debugColors[i * 4 + 3] * 255,
         })
-        // Apply the gradient fill to the graphics object
-        newDebugLine.stroke({ width: 4, color: newDebugColor })
-        // Add the line to the viewport and the DEBUG_LINES array
-        scene.viewport.addChild(newDebugLine)
-        DEBUG_LINES.push(newDebugLine)
+
+        DEBUG_GRAPHICS.stroke({ width: 4, color })
+        DEBUG_GRAPHICS.moveTo(x1, y1)
+        DEBUG_GRAPHICS.lineTo(x2, y2)
       }
     })
   }

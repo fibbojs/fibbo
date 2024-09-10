@@ -1,7 +1,7 @@
 import { defineCustomElement, reactive } from 'vue'
 import type { FScene } from '@fibbojs/core'
-import type { FScene as FScene3d } from '@fibbojs/3d'
 import type { FScene as FScene2d } from '@fibbojs/2d'
+import type { FScene as FScene3d } from '@fibbojs/3d'
 import FDebugPanel from './components/FDebugPanel.ce.vue'
 import { FDebug2d } from './FDebug2d'
 import { FDebug3d } from './FDebug3d'
@@ -39,9 +39,6 @@ export class FDebug {
     // Define the scene
     this.scene = scene
 
-    // Make scene.components reactive
-    this.scene.components = reactive(scene.components) as any
-
     // Define the custom element in the browser
     customElements.define('f-debug-panel', FDebugPanelElement)
     // Create and inject the custom element into the DOM
@@ -49,6 +46,9 @@ export class FDebug {
       title: 'Fibbo',
       scene: this.scene,
     })
+
+    // Make the component array reactive
+    this.scene.components = reactive(this.scene.components)
 
     // 3D specific debug behavior
     if (scene.__IS_3D__) {
