@@ -94,7 +94,7 @@ export abstract class FComponent extends FComponentCore {
       rotationDegree: options.rotationDegree,
     })
     // Set the container values
-    this.container.position.set(this.transform.position.x * 100, this.transform.position.y * 100)
+    this.container.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
     this.container.scale.set(this.transform.scale.x * 100, this.transform.scale.y * 100)
     this.container.rotation = this.transform.rotation
     // Set the pivot of the container to the center
@@ -176,7 +176,7 @@ export abstract class FComponent extends FComponentCore {
       this.container.rotation = this.transform.rotation
       // If a sensor exists, update its position and rotation according to the default values
       if (this.sensor) {
-        this.sensor.rigidBody.setTranslation({ x: this.transform.position.x, y: -this.transform.position.y }, true)
+        this.sensor.rigidBody.setTranslation({ x: this.transform.position.x, y: this.transform.position.y }, true)
         this.sensor.rigidBody.setRotation(this.transform.rotation, true)
       }
     }
@@ -194,7 +194,7 @@ export abstract class FComponent extends FComponentCore {
    */
   setPosition(options: { x: number, y: number }): void {
     this.transform.position = { x: options.x, y: options.y }
-    this.container.position.set(options.x * 100, options.y * 100)
+    this.container.position.set(options.x * 100, -options.y * 100)
     // If a collider exists, update its translation
     if (this.collider)
       this.collider.collider.setTranslation(new RAPIER.Vector2(options.x, options.y))

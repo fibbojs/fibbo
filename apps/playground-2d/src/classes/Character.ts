@@ -5,7 +5,7 @@ export default class Character extends FSprite {
   constructor(scene: FScene) {
     super(scene, {
       texture: 'character_0000.png',
-      position: { x: 0, y: 5 },
+      position: { x: 0, y: 10 },
       scale: { x: 0.5, y: 0.5 },
     })
 
