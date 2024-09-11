@@ -22,13 +22,16 @@ import Character from './classes/Character'
 
   // Add directional light
   const color = 0xFFFFFF
-  const intensity = 1000
+  const intensity = 2000
   const light = new THREE.PointLight(color, intensity)
   light.castShadow = true
-  light.position.set(0, 10, 0)
+  light.position.set(0, 20, 0)
   scene.scene.add(light as any)
   const helper = new THREE.PointLightHelper(light)
   scene.scene.add(helper as any)
+  // Add ambient light
+  const ambientLight = new THREE.AmbientLight(0x404040, 10)
+  scene.scene.add(ambientLight as any)
 
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {
@@ -48,7 +51,6 @@ import Character from './classes/Character'
   })
   // Green ground
   ground.setColor(0x60D641)
-  ground.mesh.receiveShadow = true
   scene.addComponent(ground)
 
   // Import 3d models

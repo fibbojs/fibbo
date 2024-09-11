@@ -24,8 +24,13 @@ export class FCapsule extends FPolyhedron {
     super(scene, options)
     // Create a capsule
     const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
-    const material = new THREE.MeshBasicMaterial({ color: 0x666666 })
+    const material = new THREE.MeshPhongMaterial({ color: 0x666666 })
     this.mesh = new THREE.Mesh(geometry, material)
+    // If shadows are enabled, cast and receive shadows
+    if (scene.__ENABLE_SHADOWS__) {
+      this.mesh.castShadow = true
+      this.mesh.receiveShadow = true
+    }
   }
 
   onFrame(_delta: number): void {
