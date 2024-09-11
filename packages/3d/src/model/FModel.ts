@@ -183,7 +183,7 @@ export abstract class FModel extends FComponent {
       textureLoader.load(texturePath, (texture) => {
         texture.colorSpace = THREE.SRGBColorSpace
         // Apply the texture to the material
-        mesh.material = new THREE.MeshBasicMaterial({ map: texture })
+        mesh.material = new THREE.MeshPhongMaterial({ map: texture })
       }, undefined, (error) => {
         console.error(`FibboError: An error happened while loading the texture for model: name(${this.name}) path(${this.path}) materialName(${mesh.material instanceof THREE.Mesh ? mesh.material.name : 'ERROR-NO-MATERIAL-NAME'}) texturePath(${texturePath})`)
         console.error(error)
