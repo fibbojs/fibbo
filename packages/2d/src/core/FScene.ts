@@ -1,5 +1,5 @@
-import type { World } from '@dimforge/rapier2d'
 import { FScene as FSceneCore } from '@fibbojs/core'
+import type { FSceneOptions as FSceneOptionsCore } from '@fibbojs/core'
 import * as PIXI from 'pixi.js'
 import { Viewport } from 'pixi-viewport'
 import type RAPIER from '@dimforge/rapier2d'
@@ -8,9 +8,8 @@ import type { FCamera } from '../cameras/FCamera'
 import { FFreeCamera } from '../cameras/FFreeCamera'
 import type { FComponent } from './FComponent'
 
-export interface FSceneOptions {
-  gravity?: { x: number, y: number, z: number }
-  domNode?: HTMLElement
+export interface FSceneOptions extends FSceneOptionsCore {
+  gravity?: { x: number, y: number }
 }
 
 /**
@@ -39,49 +38,26 @@ export class FScene extends FSceneCore {
 
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent[]
+
   // Camera
   declare __CAMERA__: FCamera
-  /**
-   * DOM element that the renderer will be appended to
-   */
-  __DOM_NODE__: HTMLElement
+
   // Pixi.js
   PIXI: typeof PIXI = PIXI
   app: PIXI.Application
   declare viewport: Viewport
+
   // Rapier
-  gravity: { x: number, y: number, z: number }
-  declare world: World
+  declare gravity: { x: number, y: number }
+  declare world: RAPIER.World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent> = new Map()
-  // onReadyCallbacks
-  public onReadyCallbacks: (() => void)[] = []
 
   constructor(options?: FSceneOptions) {
-    super()
-
-    // Verify window and document are available
-    if (typeof window === 'undefined' || typeof document === 'undefined')
-      throw new Error('FibboError: FScene must be instantiated in a browser environment')
+    super(options)
 
     // Create a new PIXI application
     this.app = new PIXI.Application()
-
-    // Define default values for the options
-    const DEFAULT_OPTIONS = {
-      gravity: { x: 0, y: -9.81, z: 0 },
-      domNode: document.body,
-    }
-    // Apply default options
-    options = { ...DEFAULT_OPTIONS, ...options }
-    // Validate the options
-    if (options.domNode === undefined || options.gravity === undefined)
-      throw new Error('FibboError: The gravity option must be defined')
-
-    // Store the DOM node
-    this.__DOM_NODE__ = options.domNode
-    // Store the gravity
-    this.gravity = options.gravity
 
     // Handle window resize
     window.addEventListener('resize', () => {
@@ -151,7 +127,7 @@ export class FScene extends FSceneCore {
     })
 
     // Call the onReady callbacks
-    this.onReadyCallbacks.forEach((callback) => {
+    this.__CALLBACKS_ON_READY__.forEach((callback) => {
       callback()
     })
   }
@@ -260,10 +236,6 @@ export class FScene extends FSceneCore {
       this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
     if (component.collider)
       this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
-  }
-
-  onReady(callback: () => void) {
-    this.onReadyCallbacks.push(callback)
   }
 
   /**

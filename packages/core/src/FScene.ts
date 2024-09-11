@@ -1,6 +1,11 @@
-import type { World as World3d } from '@dimforge/rapier3d'
-import type { World as World2d } from '@dimforge/rapier2d'
+import type RAPIER2D from '@dimforge/rapier2d'
+import type RAPIER3D from '@dimforge/rapier3d'
 import type { FComponent } from './FComponent'
+
+export interface FSceneOptions {
+  gravity?: { x: number, y: number, z: number } | { x: number, y: number }
+  domNode?: HTMLElement
+}
 
 /**
  * @description A scene which contains the components and the camera.
@@ -14,12 +19,21 @@ export abstract class FScene {
   public __IS_2D__: boolean = false
 
   /**
+   * DOM element that the renderer will be appended to
+   */
+  __DOM_NODE__: HTMLElement
+
+  /**
    * The components in the scene.
    */
   components: FComponent[]
+
   // Rapier
-  gravity: { x: number, y: number, z: number } = { x: 0, y: -9.81, z: 0 }
-  world?: World3d | World2d
+  gravity: { x: number, y: number, z: number } | { x: number, y: number }
+  declare world: RAPIER2D.World | RAPIER3D.World
+  declare eventQueue: RAPIER2D.EventQueue | RAPIER3D.EventQueue
+  __RAPIER_TO_COMPONENT__: Map<number, FComponent> = new Map()
+
   // Callbacks
   /**
    * @description Callbacks for when a frame is rendered.
@@ -36,8 +50,31 @@ export abstract class FScene {
    * It is an array of functions that take the component as an argument.
    */
   public __CALLBACKS_ON_COMPONENT_REMOVED__: ((component: FComponent) => void)[] = []
+  /**
+   * @description Callbacks for when the scene is ready.
+   */
+  public __CALLBACKS_ON_READY__: (() => void)[] = []
 
-  constructor() {
+  constructor(options?: FSceneOptions) {
+    // Verify window and document are available
+    if (typeof window === 'undefined' || typeof document === 'undefined')
+      throw new Error('FibboError: FScene must be instantiated in a browser environment')
+
+    // Define default values for the options
+    const DEFAULT_OPTIONS = {
+      gravity: { x: 0, y: -9.81, z: 0 },
+      domNode: document.body,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate the options
+    if (options.domNode === undefined || options.gravity === undefined)
+      throw new Error('FibboError: The gravity option and the DOM node must be defined')
+
+    // Store the options
+    this.gravity = options.gravity
+    this.__DOM_NODE__ = options.domNode
+
     /**
      * Time management
      */
@@ -97,5 +134,20 @@ export abstract class FScene {
    */
   onComponentAdded(callback: (component: FComponent) => void) {
     this.__CALLBACKS_ON_COMPONENT_ADDED__.push(callback)
+  }
+
+  /**
+   * @description Add a callback to be called when a component is removed from the scene.
+   */
+  onComponentRemoved(callback: (component: FComponent) => void) {
+    this.__CALLBACKS_ON_COMPONENT_REMOVED__.push(callback)
+  }
+
+  /**
+   * @description Add a callback to be called when the scene is ready.
+   * The scene is ready when the `init` method has finished.
+   */
+  onReady(callback: () => void) {
+    this.__CALLBACKS_ON_READY__.push(callback)
   }
 }

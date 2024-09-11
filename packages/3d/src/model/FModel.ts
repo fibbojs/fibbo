@@ -114,6 +114,14 @@ export abstract class FModel extends FComponent {
    * @description Emit the onLoaded callbacks.
    */
   emitOnLoaded() {
+    if (this.scene.__ENABLE_SHADOWS__ && this.mesh) {
+      this.mesh.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = true
+          child.receiveShadow = true
+        }
+      })
+    }
     this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
       callback()
     })

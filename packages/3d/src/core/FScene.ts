@@ -1,14 +1,15 @@
 import * as THREE from 'three'
 import { FScene as FSceneCore } from '@fibbojs/core'
+import type { FSceneOptions as FSceneOptionsCore } from '@fibbojs/core'
 import type RAPIER from '@dimforge/rapier3d'
 import type { FCamera } from '../cameras/FCamera'
 import { FFixedCamera } from '../cameras/FFixedCamera'
 import { FModel } from '../model/FModel'
 import type { FComponent } from './FComponent'
 
-export interface FSceneOptions {
+export interface FSceneOptions extends FSceneOptionsCore {
   gravity?: { x: number, y: number, z: number }
-  domNode?: HTMLElement
+  shadows?: boolean
 }
 
 /**
@@ -47,46 +48,37 @@ export class FScene extends FSceneCore {
    * Internal flags
    */
   public __IS_3D__: boolean = true
+  public __ENABLE_SHADOWS__: boolean
 
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent[]
-  /**
-   * DOM element that the renderer will be appended to
-   */
-  __DOM_NODE__: HTMLElement
+
   // Three.js
   THREE: typeof THREE = THREE
   declare scene: THREE.Scene
   declare renderer: THREE.WebGLRenderer
   declare camera: FCamera
+
   // Rapier
-  gravity: { x: number, y: number, z: number }
+  declare gravity: { x: number, y: number, z: number }
   declare world: RAPIER.World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent> = new Map()
 
   constructor(options?: FSceneOptions) {
-    super()
-
-    // Verify window and document are available
-    if (typeof window === 'undefined' || typeof document === 'undefined')
-      throw new Error('FibboError: FScene must be instantiated in a browser environment')
+    super(options)
 
     // Define default values for the options
     const DEFAULT_OPTIONS = {
-      gravity: { x: 0, y: -9.81, z: 0 },
-      domNode: document.body,
+      shadows: false,
     }
-    // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate the options
-    if (options.domNode === undefined || options.gravity === undefined)
-      throw new Error('FibboError: The gravity option must be defined')
+    if (options.shadows === undefined || typeof options.shadows !== 'boolean')
+      throw new Error('FibboError: FScene options.shadows must be a boolean')
 
-    // Store the DOM node
-    this.__DOM_NODE__ = options.domNode
-    // Store the gravity
-    this.gravity = options.gravity
+    // Set the options
+    this.__ENABLE_SHADOWS__ = options.shadows
 
     // Handle window resize
     window.addEventListener('resize', () => {
@@ -103,6 +95,11 @@ export class FScene extends FSceneCore {
     this.scene.background = new THREE.Color(0x222324)
     this.renderer = new THREE.WebGLRenderer()
     this.renderer.setSize((window as any).innerWidth, (window as any).innerHeight)
+    // If shadows are enabled, set the renderer to cast and receive shadows
+    if (this.__ENABLE_SHADOWS__) {
+      this.renderer.shadowMap.enabled = true
+      // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
+    }
     // Create a default camera
     this.camera = new FFixedCamera()
 
@@ -119,6 +116,11 @@ export class FScene extends FSceneCore {
 
       // Render the scene
       this.renderer.render(this.scene, this.camera)
+    })
+
+    // Call the onReady callbacks
+    this.__CALLBACKS_ON_READY__.forEach((callback) => {
+      callback()
     })
   }
 

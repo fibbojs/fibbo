@@ -11,16 +11,24 @@ import Character from './classes/Character'
 
 (async () => {
   // Initialize the scene
-  const scene = new FScene()
+  const scene = new FScene({
+    shadows: true,
+  })
   scene.init()
   await scene.initPhysics()
   // Debug the scene
   if (import.meta.env.DEV)
     fDebug(scene)
 
-  // Add ambient light
-  const light = new THREE.AmbientLight(0xFFFFFF)
+  // Add directional light
+  const color = 0xFFFFFF
+  const intensity = 1000
+  const light = new THREE.PointLight(color, intensity)
+  light.castShadow = true
+  light.position.set(0, 10, 0)
   scene.scene.add(light as any)
+  const helper = new THREE.PointLightHelper(light)
+  scene.scene.add(helper as any)
 
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {
@@ -38,7 +46,9 @@ import Character from './classes/Character'
   ground.initRigidBody({
     rigidBodyType: RAPIER.RigidBodyType.Fixed,
   })
-  ground.setColor(0x1F1F1F)
+  // Green ground
+  ground.setColor(0x60D641)
+  ground.mesh.receiveShadow = true
   scene.addComponent(ground)
 
   // Import 3d models
@@ -109,7 +119,7 @@ import Character from './classes/Character'
       position: { x: 6, y: i / 4, z: -i },
     })
     cube.initCollider()
-    cube.setColor(0x1F1F1F)
+    cube.setColor(0x60D641)
     scene.addComponent(cube)
   }
 
@@ -119,7 +129,7 @@ import Character from './classes/Character'
     scale: { x: 15, y: 0.1, z: 15 },
   })
   ground2.initCollider()
-  ground2.setColor(0x1F1F1F)
+  ground2.setColor(0x60D641)
   scene.addComponent(ground2)
 
   // Create a character
@@ -201,11 +211,11 @@ import Character from './classes/Character'
    * Add collision events
    */
   character.onCollisionWith(FCuboid, ({ component }) => {
-    console.log('Character collided with a FCuboid !')
     // Cast the component to FCuboid
     const cube = component as FCuboid
+    console.log('Collision with cube : ', cube)
     // Change the color of the cube to a random color
-    cube.setColor(Math.random() * 0xFFFFFF)
+    // cube.setColor(Math.random() * 0xFFFFFF)
   })
   character.onCollisionWith(sphere, () => {
     console.log('Character collided with the sphere!')
@@ -226,11 +236,5 @@ import Character from './classes/Character'
     const gltfCube3 = new GltfCube(scene)
     gltfCube3.setPosition({ x: -2, y: 5, z: -2 })
     scene.addComponent(gltfCube3)
-
-    // Update the camera zoom
-    scene.camera.setZoom(2)
-
-    // Remove the first gltfCube
-    scene.removeComponent(gltfCube)
   }, 3000)
 })()
