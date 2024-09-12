@@ -12,6 +12,10 @@ A [collider](/guide/physics/colliders) can be attached to a rigid-body to specif
 
 A rigid-body without collider attached to it will not be affected by contacts (because there is no shape to compute contact against).
 
+::: tip
+By default, Fibbo always create a collider when a rigid-body is created.
+:::
+
 ## Types of rigid-bodies
 
 There are 4 types of rigid-bodies :
