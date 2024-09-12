@@ -2,7 +2,7 @@
 
 You might want to create your own controller to control the character or any other object in the game. This can be useful if you want to have a specific behavior that is not provided by the default controllers.
 
-Here is an example custom controller for a 3D character :
+Here is an example custom controller for a character :
 
 ::: code-group
 
