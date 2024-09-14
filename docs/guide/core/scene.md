@@ -56,14 +56,22 @@ The `Scene` class exposes several hooks that you can use to interact with the sc
 
 Here is a list of the available hooks :
 - `onFrame` : Called every frame by the scene. Delta time is passed as an argument.
+- `onReady` : Called when the scene is ready to be used.
 - `onComponentAdded` : Called when a component is added to the scene.
+- `onComponentRemoved` : Called when a component is removed from the scene.
 
 ```typescript
 scene.onFrame((delta) => {
   // Do something on the scene every frame
 })
+scene.onReady(() => {
+  // Do something when the scene is ready
+})
 scene.onComponentAdded((component: FComponent) => {
   // Do something on a component added to the scene
+})
+scene.onComponentRemoved((component: FComponent) => {
+  // Do something on a component removed from the scene
 })
 ```
 
