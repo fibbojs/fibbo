@@ -47,6 +47,7 @@
   "files.exclude": {
     ".nx": true,
     ".idx": true,
+    ".zed": true,
     "**/dist": true,
     "**/node_modules": true,
     "**/tsconfig.json": true,
