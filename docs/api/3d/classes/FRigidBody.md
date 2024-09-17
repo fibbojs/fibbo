@@ -43,7 +43,7 @@ const rigidBody = new FRigidBody({
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:72](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L72)
+[3d/src/core/FRigidBody.ts:72](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FRigidBody.ts#L72)
 
 ## Properties
 
@@ -55,7 +55,7 @@ Fibbo Collider
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:41](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L41)
+[3d/src/core/FRigidBody.ts:41](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FRigidBody.ts#L41)
 
 ***
 
@@ -67,4 +67,4 @@ RAPIER RigidBody
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:37](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FRigidBody.ts#L37)
+[3d/src/core/FRigidBody.ts:37](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FRigidBody.ts#L37)

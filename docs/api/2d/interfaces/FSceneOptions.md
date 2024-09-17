@@ -2,15 +2,23 @@
 
 # Interface: FSceneOptions
 
+## Extends
+
+- `FSceneOptions`
+
 ## Properties
 
 ### domNode?
 
 > `optional` **domNode**: `HTMLElement`
 
+#### Inherited from
+
+`FSceneOptionsCore.domNode`
+
 #### Defined in
 
-[2d/src/core/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/core/FScene.ts#L13)
+core/dist/index.d.ts:181
 
 ***
 
@@ -26,10 +34,10 @@
 
 > **y**: `number`
 
-#### z
+#### Overrides
 
-> **z**: `number`
+`FSceneOptionsCore.gravity`
 
 #### Defined in
 
-[2d/src/core/FScene.ts:12](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/core/FScene.ts#L12)
+[2d/src/core/FScene.ts:12](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/core/FScene.ts#L12)

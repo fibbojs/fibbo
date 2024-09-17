@@ -145,6 +145,11 @@ export default defineConfig({
                   { text: 'FGameCamera', link: '/api/3d/classes/FGameCamera' },
                   { text: 'FOrbitCamera', link: '/api/3d/classes/FOrbitCamera' },
                 ] },
+                { text: 'Light Classes', items: [
+                  { text: 'FAmbientLight', link: '/api/3d/classes/FAmbientLight' },
+                  { text: 'FLight', link: '/api/3d/classes/FLight' },
+                  { text: 'FPointLight', link: '/api/3d/classes/FPointLight' },
+                ] },
                 { text: 'Character Classes', items: [
                   { text: 'FController', link: '/api/3d/classes/FController' },
                   { text: 'FCharacterController', link: '/api/3d/classes/FCharacterController' },
@@ -195,10 +200,12 @@ export default defineConfig({
                   { text: 'FComponent', link: '/api/core/classes/FComponent' },
                   { text: 'FController', link: '/api/core/classes/FController' },
                   { text: 'FGroup', link: '/api/core/classes/FGroup' },
+                  { text: 'FLight', link: '/api/core/classes/FLight' },
                   { text: 'FScene', link: '/api/core/classes/FScene' },
                 ] },
                 { text: 'Interfaces', items: [
                   { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions' },
+                  { text: 'FSceneOptions', link: '/api/core/interfaces/FSceneOptions' },
                   { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData' },
                 ] },
               ] },

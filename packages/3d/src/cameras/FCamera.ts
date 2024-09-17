@@ -6,7 +6,7 @@ import { FTransform } from '../core/FTransform'
 export interface FCameraOptions extends FTransformOptions {}
 
 /**
- * @description The base class for cameras in Fibbo.
+ * @description The base class for 3d cameras in Fibbo.
  * @category Camera
  */
 export abstract class FCamera extends THREE.PerspectiveCamera implements FCameraCore {
@@ -15,7 +15,6 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
    */
   public __IS_3D__: boolean = true
   public __IS_2D__: boolean = false
-
   declare public __ID__: number
   public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 

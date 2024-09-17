@@ -35,6 +35,12 @@
 - [FScene](classes/FScene.md)
 - [FTransform](classes/FTransform.md)
 
+#### Light
+
+- [FAmbientLight](classes/FAmbientLight.md)
+- [FLight](classes/FLight.md)
+- [FPointLight](classes/FPointLight.md)
+
 #### Model
 
 - [FCapsule](classes/FCapsule.md)

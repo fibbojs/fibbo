@@ -1,68 +1,88 @@
-[@fibbojs](/api/index) / [2d](/api/2d) / FCamera
+[@fibbojs](/api/index) / [3d](/api/3d) / FPointLight
 
-# Class: `abstract` FCamera
+# Class: FPointLight
 
 ## Description
 
-The base class for 2D cameras in Fibbo.
+A point light in 3d space.
 
 ## Extends
 
-- `FCamera`
+- [`FLight`](FLight.md)
 
-## Extended by
+## Accessors
 
-- [`FAttachedCamera`](FAttachedCamera.md)
-- [`FFixedCamera`](FFixedCamera.md)
-- [`FFreeCamera`](FFreeCamera.md)
+### color
+
+> `get` **color**(): `Color`
+
+> `set` **color**(`color`): `void`
+
+#### Parameters
+
+• **color**: `ColorRepresentation`
+
+#### Returns
+
+`Color`
+
+#### Inherited from
+
+[`FLight`](FLight.md).[`color`](FLight.md#color)
+
+#### Defined in
+
+3d/src/lights/FLight.ts:72
+
+***
+
+### intensity
+
+> `get` **intensity**(): `number`
+
+> `set` **intensity**(`intensity`): `void`
+
+#### Parameters
+
+• **intensity**: `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+[`FLight`](FLight.md).[`intensity`](FLight.md#intensity)
+
+#### Defined in
+
+3d/src/lights/FLight.ts:80
 
 ## Constructors
 
-### new FCamera()
+### new FPointLight()
 
-> **new FCamera**(`scene`, `options`?): [`FCamera`](FCamera.md)
+> **new FPointLight**(`scene`, `options`?): [`FPointLight`](FPointLight.md)
 
 #### Parameters
 
 • **scene**: [`FScene`](FScene.md)
 
-The scene the camera is in.
-
-• **options?**: [`FCameraOptions`](../interfaces/FCameraOptions.md)
-
-The options for the camera.
+• **options?**: `FLightOptions`
 
 #### Returns
 
-[`FCamera`](FCamera.md)
-
-#### Description
-
-Create a new 2D camera.
+[`FPointLight`](FPointLight.md)
 
 #### Overrides
 
-`FCameraCore.constructor`
+[`FLight`](FLight.md).[`constructor`](FLight.md#constructors)
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/cameras/FCamera.ts#L34)
+3d/src/lights/FPointLight.ts:11
 
 ## Methods
-
-### \_\_ON\_CAMERA\_ADDED\_TO\_SCENE\_PLEASE\_DO\_NOT\_CALL\_THIS\_BY\_HAND\_\_()
-
-> `abstract` **\_\_ON\_CAMERA\_ADDED\_TO\_SCENE\_PLEASE\_DO\_NOT\_CALL\_THIS\_BY\_HAND\_\_**(): `void`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/cameras/FCamera.ts#L55)
-
-***
 
 ### emitCollisionWith()
 
@@ -110,7 +130,7 @@ player.emitCollisionWith({
 
 #### Inherited from
 
-`FCameraCore.emitCollisionWith`
+[`FLight`](FLight.md).[`emitCollisionWith`](FLight.md#emitcollisionwith)
 
 #### Defined in
 
@@ -166,7 +186,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Inherited from
 
-`FCameraCore.onCollisionWith`
+[`FLight`](FLight.md).[`onCollisionWith`](FLight.md#oncollisionwith)
 
 #### Defined in
 
@@ -176,7 +196,7 @@ core/dist/index.d.ts:93
 
 ### onFrame()
 
-> `abstract` **onFrame**(`_delta`): `void`
+> **onFrame**(`_delta`): `void`
 
 #### Parameters
 
@@ -194,47 +214,21 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Overrides
 
-`FCameraCore.onFrame`
+[`FLight`](FLight.md).[`onFrame`](FLight.md#onframe)
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/cameras/FCamera.ts#L53)
-
-***
-
-### setZoom()
-
-> **setZoom**(`zoom`): `void`
-
-#### Parameters
-
-• **zoom**: `number`
-
-#### Returns
-
-`void`
-
-#### Description
-
-Set the zoom of the camera.
-
-#### Overrides
-
-`FCameraCore.setZoom`
-
-#### Defined in
-
-[2d/src/cameras/FCamera.ts:57](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/cameras/FCamera.ts#L57)
+3d/src/lights/FPointLight.ts:38
 
 ## Properties
 
 ### \_\_CALLBACKS\_ON\_COLLISION\_\_
 
-> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object`
+> **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
 #### Index Signature
 
- \[`key`: `string`\]: (`data`) => `void`[]
+ \[`key`: `string`\]: () => `void`[]
 
 #### Description
 
@@ -243,11 +237,11 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Inherited from
 
-`FCameraCore.__CALLBACKS_ON_COLLISION__`
+[`FLight`](FLight.md).[`__CALLBACKS_ON_COLLISION__`](FLight.md#__callbacks_on_collision__)
 
 #### Defined in
 
-core/dist/index.d.ts:56
+3d/src/lights/FLight.ts:23
 
 ***
 
@@ -262,43 +256,41 @@ It is generated automatically.
 
 #### Inherited from
 
-`FCameraCore.__ID__`
+[`FLight`](FLight.md).[`__ID__`](FLight.md#__id__)
 
 #### Defined in
 
-core/dist/index.d.ts:51
+3d/src/lights/FLight.ts:22
 
 ***
 
 ### \_\_IS\_2D\_\_
 
-> **\_\_IS\_2D\_\_**: `boolean` = `true`
+> **\_\_IS\_2D\_\_**: `boolean` = `false`
 
-Internal flags
+#### Inherited from
 
-#### Overrides
-
-`FCameraCore.__IS_2D__`
+[`FLight`](FLight.md).[`__IS_2D__`](FLight.md#__is_2d__)
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/cameras/FCamera.ts#L16)
+3d/src/lights/FLight.ts:21
 
 ***
 
 ### \_\_IS\_3D\_\_
 
-> **\_\_IS\_3D\_\_**: `boolean`
+> **\_\_IS\_3D\_\_**: `boolean` = `true`
 
 Internal flags
 
 #### Inherited from
 
-`FCameraCore.__IS_3D__`
+[`FLight`](FLight.md).[`__IS_3D__`](FLight.md#__is_3d__)
 
 #### Defined in
 
-core/dist/index.d.ts:45
+3d/src/lights/FLight.ts:20
 
 ***
 
@@ -310,7 +302,7 @@ The controller attached to the component.
 
 #### Inherited from
 
-`FCameraCore.controller`
+[`FLight`](FLight.md).[`controller`](FLight.md#controller)
 
 #### Defined in
 
@@ -318,23 +310,19 @@ core/dist/index.d.ts:62
 
 ***
 
-### position
+### light
 
-> **position**: `object`
+> **light**: `Light`\<`undefined` \| `LightShadow`\<`Camera`\>\>
 
-Position of the camera.
+The original light object from Three.js.
 
-#### x
+#### Inherited from
 
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
+[`FLight`](FLight.md).[`light`](FLight.md#light)
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/cameras/FCamera.ts#L27)
+3d/src/lights/FLight.ts:28
 
 ***
 
@@ -342,10 +330,28 @@ Position of the camera.
 
 > **scene**: [`FScene`](FScene.md)
 
-#### Description
+Scene the light is in.
 
-The scene the camera is in.
+#### Inherited from
+
+[`FLight`](FLight.md).[`scene`](FLight.md#scene)
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/cameras/FCamera.ts#L21)
+3d/src/lights/FLight.ts:33
+
+***
+
+### transform
+
+> **transform**: [`FTransform`](FTransform.md)
+
+Transform of the light.
+
+#### Inherited from
+
+[`FLight`](FLight.md).[`transform`](FLight.md#transform)
+
+#### Defined in
+
+3d/src/lights/FLight.ts:38

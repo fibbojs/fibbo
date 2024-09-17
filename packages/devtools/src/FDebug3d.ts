@@ -1,4 +1,4 @@
-import type { FScene } from '@fibbojs/3d'
+import type { FLight, FScene } from '@fibbojs/3d'
 
 /**
  * @description A helper class to debug a given 3d scene
@@ -19,6 +19,28 @@ export class FDebug3d {
     // Axes helper
     const axesHelper = new scene.THREE.AxesHelper(5)
     scene.scene.add(axesHelper)
+
+    /**
+     * When a light is added to the scene, add a helper for it
+     */
+    scene.onLightAdded((lightParam) => {
+      // Cast light to a 3D FLight
+      const light = lightParam as FLight
+      // Create a helper depending on the light type
+      let helper
+      if (light.light instanceof scene.THREE.DirectionalLight)
+        helper = new scene.THREE.DirectionalLightHelper(light.light)
+      else if (light.light instanceof scene.THREE.HemisphereLight)
+        helper = new scene.THREE.HemisphereLightHelper(light.light, 1)
+      else if (light.light instanceof scene.THREE.PointLight)
+        helper = new scene.THREE.PointLightHelper(light.light)
+      else if (light.light instanceof scene.THREE.SpotLight)
+        helper = new scene.THREE.SpotLightHelper(light.light)
+      else
+        return
+      // Add the helper to the scene
+      scene.scene.add(helper as any)
+    })
 
     /**
      * Display debug lines on each frame

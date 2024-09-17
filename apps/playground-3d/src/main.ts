@@ -1,5 +1,4 @@
-import * as THREE from 'three'
-import { FCapsule, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FPointLight, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import RAPIER from '@dimforge/rapier3d'
@@ -21,17 +20,16 @@ import Character from './classes/Character'
     fDebug(scene)
 
   // Add directional light
-  const color = 0xFFFFFF
-  const intensity = 2000
-  const light = new THREE.PointLight(color, intensity)
-  light.castShadow = true
-  light.position.set(0, 20, 0)
-  scene.scene.add(light as any)
-  const helper = new THREE.PointLightHelper(light)
-  scene.scene.add(helper as any)
+  scene.addLight(new FPointLight(scene, {
+    position: { x: 0, y: 20, z: 0 },
+    color: 0xFFFFFF,
+    intensity: 2000,
+  }))
   // Add ambient light
-  const ambientLight = new THREE.AmbientLight(0x404040, 10)
-  scene.scene.add(ambientLight as any)
+  scene.addLight(new FAmbientLight(scene, {
+    color: 0x404040,
+    intensity: 10,
+  }))
 
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {

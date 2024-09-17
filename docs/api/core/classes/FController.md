@@ -24,7 +24,7 @@ The options for the controller.
 
 #### Defined in
 
-[core/src/FController.ts:20](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FController.ts#L20)
+[core/src/FController.ts:20](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FController.ts#L20)
 
 ## Methods
 
@@ -50,7 +50,7 @@ Any rendering process should be done on the component, not here.
 
 #### Defined in
 
-[core/src/FController.ts:30](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FController.ts#L30)
+[core/src/FController.ts:30](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FController.ts#L30)
 
 ## Properties
 
@@ -62,4 +62,4 @@ The component attached to the controller.
 
 #### Defined in
 
-[core/src/FController.ts:14](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FController.ts#L14)
+[core/src/FController.ts:14](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FController.ts#L14)

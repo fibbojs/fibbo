@@ -1,6 +1,7 @@
 import type RAPIER2D from '@dimforge/rapier2d'
 import type RAPIER3D from '@dimforge/rapier3d'
 import type { FComponent } from './FComponent'
+import type { FLight } from './FLight'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
@@ -28,6 +29,11 @@ export abstract class FScene {
    */
   components: FComponent[]
 
+  /**
+   * The lights in the scene.
+   */
+  lights: FLight[] = []
+
   // Rapier
   gravity: { x: number, y: number, z: number } | { x: number, y: number }
   declare world: RAPIER2D.World | RAPIER3D.World
@@ -54,6 +60,16 @@ export abstract class FScene {
    * @description Callbacks for when the scene is ready.
    */
   public __CALLBACKS_ON_READY__: (() => void)[] = []
+  /**
+   * @description Callbacks for when a light is added to the scene.
+   * It is an array of functions that take the light as an argument.
+   */
+  public __CALLBACKS_ON_LIGHT_ADDED__: ((light: FLight) => void)[] = []
+  /**
+   * @description Callbacks for when a light is added to the scene.
+   * It is an array of functions that take the light as an argument.
+   */
+  public __CALLBACKS_ON_LIGHT_REMOVED__: ((light: FLight) => void)[] = []
 
   constructor(options?: FSceneOptions) {
     // Verify window and document are available
@@ -101,6 +117,8 @@ export abstract class FScene {
 
     // Initialize the components array
     this.components = []
+    // Initialize the lights array
+    this.lights = []
   }
 
   /**
@@ -120,6 +138,25 @@ export abstract class FScene {
       this.components.splice(index, 1)
     }
     this.__CALLBACKS_ON_COMPONENT_REMOVED__.forEach(callback => callback(component))
+  }
+
+  /**
+   * @description Add a light to the scene.
+   */
+  addLight(light: FLight): void {
+    this.lights.push(light)
+    this.__CALLBACKS_ON_LIGHT_ADDED__.forEach(callback => callback(light))
+  }
+
+  /**
+   * @description Remove a light from the scene.
+   */
+  removeLight(light: FLight): void {
+    const index = this.lights.indexOf(light)
+    if (index !== -1) {
+      this.lights.splice(index, 1)
+    }
+    this.__CALLBACKS_ON_LIGHT_REMOVED__.forEach(callback => callback(light))
   }
 
   /**
@@ -149,5 +186,19 @@ export abstract class FScene {
    */
   onReady(callback: () => void) {
     this.__CALLBACKS_ON_READY__.push(callback)
+  }
+
+  /**
+   * @description Add a callback to be called when a light is added to the scene.
+   */
+  onLightAdded(callback: (light: FLight) => void) {
+    this.__CALLBACKS_ON_LIGHT_ADDED__.push(callback)
+  }
+
+  /**
+   * @description Add a callback to be called when a light is removed from the scene.
+   */
+  onLightRemoved(callback: (light: FLight) => void) {
+    this.__CALLBACKS_ON_LIGHT_REMOVED__.push(callback)
   }
 }

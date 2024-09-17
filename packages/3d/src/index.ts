@@ -40,6 +40,11 @@ export { FGameCamera } from './cameras/FGameCamera'
 export { FOrbitCamera } from './cameras/FOrbitCamera'
 export { FPointerLockCamera } from './cameras/FPointerLockCamera'
 
+// Lights
+export { FLight } from './lights/FLight'
+export { FAmbientLight } from './lights/FAmbientLight'
+export { FPointLight } from './lights/FPointLight'
+
 // Types
 export { FShapes } from './types/FShapes'
 export type { FComponentOptions } from './core/FComponent'

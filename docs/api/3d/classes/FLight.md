@@ -1,29 +1,83 @@
-[@fibbojs](/api/index) / [core](/api/core) / FComponent
+[@fibbojs](/api/index) / [3d](/api/3d) / FLight
 
-# Class: `abstract` FComponent
+# Class: `abstract` FLight
 
 ## Description
 
-The base class for all 2D and 3D components in Fibbo.
+The base class for 3d lights in Fibbo.
+
+## Extends
+
+- `FLight`
 
 ## Extended by
 
-- [`FCamera`](FCamera.md)
-- [`FLight`](FLight.md)
+- [`FAmbientLight`](FAmbientLight.md)
+- [`FPointLight`](FPointLight.md)
 
-## Constructors
+## Accessors
 
-### new FComponent()
+### color
 
-> **new FComponent**(): [`FComponent`](FComponent.md)
+> `get` **color**(): `Color`
+
+> `set` **color**(`color`): `void`
+
+#### Parameters
+
+• **color**: `ColorRepresentation`
 
 #### Returns
 
-[`FComponent`](FComponent.md)
+`Color`
 
 #### Defined in
 
-[core/src/FComponent.ts:45](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L45)
+3d/src/lights/FLight.ts:72
+
+***
+
+### intensity
+
+> `get` **intensity**(): `number`
+
+> `set` **intensity**(`intensity`): `void`
+
+#### Parameters
+
+• **intensity**: `number`
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+3d/src/lights/FLight.ts:80
+
+## Constructors
+
+### new FLight()
+
+> **new FLight**(`scene`, `options`?): [`FLight`](FLight.md)
+
+#### Parameters
+
+• **scene**: [`FScene`](FScene.md)
+
+• **options?**: `FLightOptions`
+
+#### Returns
+
+[`FLight`](FLight.md)
+
+#### Overrides
+
+`FLightCore.constructor`
+
+#### Defined in
+
+3d/src/lights/FLight.ts:40
 
 ## Methods
 
@@ -41,7 +95,7 @@ The options for the collision event.
 
 The class to emit the collision event with.
 
-• **options.component?**: [`FComponent`](FComponent.md)
+• **options.component?**: `FComponent`
 
 The component to emit the collision event with.
 
@@ -71,9 +125,13 @@ player.emitCollisionWith({
 })
 ```
 
+#### Inherited from
+
+`FLightCore.emitCollisionWith`
+
 #### Defined in
 
-[core/src/FComponent.ts:134](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L134)
+core/dist/index.d.ts:116
 
 ***
 
@@ -123,21 +181,23 @@ player.onCollisionWith(enemy, () => {
 })
 ```
 
+#### Inherited from
+
+`FLightCore.onCollisionWith`
+
 #### Defined in
 
-[core/src/FComponent.ts:84](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L84)
+core/dist/index.d.ts:93
 
 ***
 
 ### onFrame()
 
-> **onFrame**(`delta`): `void`
+> `abstract` **onFrame**(`_delta`): `void`
 
 #### Parameters
 
-• **delta**: `number`
-
-The time since the last frame.
+• **\_delta**: `number`
 
 #### Returns
 
@@ -149,9 +209,13 @@ Update the component. Should be called every frame.
 The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
 Any changes on its transform should be done on the controller, not here.
 
+#### Overrides
+
+`FLightCore.onFrame`
+
 #### Defined in
 
-[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L55)
+3d/src/lights/FLight.ts:66
 
 ## Properties
 
@@ -161,16 +225,20 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Index Signature
 
- \[`key`: `string`\]: (`data`) => `void`[]
+ \[`key`: `string`\]: () => `void`[]
 
 #### Description
 
 Callbacks for when a collision occurs with a given class or object.
 It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
 
+#### Overrides
+
+`FLightCore.__CALLBACKS_ON_COLLISION__`
+
 #### Defined in
 
-[core/src/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L38)
+3d/src/lights/FLight.ts:23
 
 ***
 
@@ -183,9 +251,13 @@ It is a dictionary where the key is the class name or object id and the value is
 Unique identifier for the component.
 It is generated automatically.
 
+#### Overrides
+
+`FLightCore.__ID__`
+
 #### Defined in
 
-[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L32)
+3d/src/lights/FLight.ts:22
 
 ***
 
@@ -193,30 +265,78 @@ It is generated automatically.
 
 > **\_\_IS\_2D\_\_**: `boolean` = `false`
 
+#### Overrides
+
+`FLightCore.__IS_2D__`
+
 #### Defined in
 
-[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L26)
+3d/src/lights/FLight.ts:21
 
 ***
 
 ### \_\_IS\_3D\_\_
 
-> **\_\_IS\_3D\_\_**: `boolean` = `false`
+> **\_\_IS\_3D\_\_**: `boolean` = `true`
 
 Internal flags
 
+#### Overrides
+
+`FLightCore.__IS_3D__`
+
 #### Defined in
 
-[core/src/FComponent.ts:25](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L25)
+3d/src/lights/FLight.ts:20
 
 ***
 
 ### controller?
 
-> `optional` **controller**: [`FController`](FController.md)
+> `optional` **controller**: `FController`
 
 The controller attached to the component.
 
+#### Inherited from
+
+`FLightCore.controller`
+
 #### Defined in
 
-[core/src/FComponent.ts:43](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L43)
+core/dist/index.d.ts:62
+
+***
+
+### light
+
+> **light**: `Light`\<`undefined` \| `LightShadow`\<`Camera`\>\>
+
+The original light object from Three.js.
+
+#### Defined in
+
+3d/src/lights/FLight.ts:28
+
+***
+
+### scene
+
+> **scene**: [`FScene`](FScene.md)
+
+Scene the light is in.
+
+#### Defined in
+
+3d/src/lights/FLight.ts:33
+
+***
+
+### transform
+
+> **transform**: [`FTransform`](FTransform.md)
+
+Transform of the light.
+
+#### Defined in
+
+3d/src/lights/FLight.ts:38

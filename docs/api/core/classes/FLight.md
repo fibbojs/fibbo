@@ -1,10 +1,10 @@
-[@fibbojs](/api/index) / [core](/api/core) / FCamera
+[@fibbojs](/api/index) / [core](/api/core) / FLight
 
-# Class: `abstract` FCamera
+# Class: `abstract` FLight
 
 ## Description
 
-The base class for cameras in Fibbo.
+The base class for lights in Fibbo.
 
 ## Extends
 
@@ -12,13 +12,13 @@ The base class for cameras in Fibbo.
 
 ## Constructors
 
-### new FCamera()
+### new FLight()
 
-> **new FCamera**(): [`FCamera`](FCamera.md)
+> **new FLight**(): [`FLight`](FLight.md)
 
 #### Returns
 
-[`FCamera`](FCamera.md)
+[`FLight`](FLight.md)
 
 #### Overrides
 
@@ -26,7 +26,7 @@ The base class for cameras in Fibbo.
 
 #### Defined in
 
-[core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FCamera.ts#L7)
+core/src/FLight.ts:7
 
 ## Methods
 
@@ -167,28 +167,6 @@ Any changes on its transform should be done on the controller, not here.
 #### Defined in
 
 [core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FComponent.ts#L55)
-
-***
-
-### setZoom()
-
-> `abstract` **setZoom**(`zoom`): `void`
-
-#### Parameters
-
-• **zoom**: `number`
-
-#### Returns
-
-`void`
-
-#### Description
-
-Set the zoom of the camera.
-
-#### Defined in
-
-[core/src/FCamera.ts:14](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/core/src/FCamera.ts#L14)
 
 ## Properties
 

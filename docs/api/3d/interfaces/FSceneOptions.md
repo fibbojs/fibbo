@@ -2,15 +2,23 @@
 
 # Interface: FSceneOptions
 
+## Extends
+
+- `FSceneOptions`
+
 ## Properties
 
 ### domNode?
 
 > `optional` **domNode**: `HTMLElement`
 
+#### Inherited from
+
+`FSceneOptionsCore.domNode`
+
 #### Defined in
 
-[3d/src/core/FScene.ts:11](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FScene.ts#L11)
+core/dist/index.d.ts:181
 
 ***
 
@@ -30,6 +38,20 @@
 
 > **z**: `number`
 
+#### Overrides
+
+`FSceneOptionsCore.gravity`
+
 #### Defined in
 
-[3d/src/core/FScene.ts:10](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/core/FScene.ts#L10)
+[3d/src/core/FScene.ts:12](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FScene.ts#L12)
+
+***
+
+### shadows?
+
+> `optional` **shadows**: `boolean`
+
+#### Defined in
+
+[3d/src/core/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FScene.ts#L13)

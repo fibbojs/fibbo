@@ -5,6 +5,7 @@ import type RAPIER from '@dimforge/rapier3d'
 import type { FCamera } from '../cameras/FCamera'
 import { FFixedCamera } from '../cameras/FFixedCamera'
 import { FModel } from '../model/FModel'
+import type { FLight } from '../lights/FLight'
 import type { FComponent } from './FComponent'
 
 export interface FSceneOptions extends FSceneOptionsCore {
@@ -52,6 +53,8 @@ export class FScene extends FSceneCore {
 
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent[]
+  // Lights can be declared as it will be initialized by the parent class
+  declare lights: FLight[]
 
   // Three.js
   THREE: typeof THREE = THREE
@@ -228,5 +231,19 @@ export class FScene extends FSceneCore {
       this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
     if (component.collider)
       this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
+  }
+
+  addLight(light: FLight): void {
+    super.addLight(light)
+
+    // Add the light to the THREE scene
+    this.scene.add(light.light)
+  }
+
+  removeLight(light: FLight): void {
+    super.removeLight(light)
+
+    // Remove the light from the THREE scene
+    this.scene.remove(light.light)
   }
 }

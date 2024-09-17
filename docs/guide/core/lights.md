@@ -8,3 +8,22 @@ The 3D starter includes a basic [AmbientLight](https://threejs.org/docs/#api/en/
 To learn more about how to manage lights in Three.js, you can check the [Three.js documentation](https://threejs.org/manual/#en/lights).
 
 We are planning to add a light system in Fibbo in the future. Stay tuned !
+
+## Available lights
+
+Here are the available lights in Fibbo :
+
+| Camera                  | Available in 2D | Available in 3D | Description           |
+| ----------------------- | --------------- | --------------- | --------------------- |
+| FAmbientLight           | ✅              | ✅              | A light.              |
+| FDirectionalLight       | ✅              | ✅              | A light.              |
+| FPointLight             | ✅              | ✅              | A light.              |
+| FHemiSphereLight        | ❌              | ✅              | A light.              |
+| FLightProbe             | ❌              | ✅              | A light.              |
+| FRectAreaLight          | ❌              | ✅              | A light.              |
+| FSpotLight              | ❌              | ✅              | A light.              |
+| FAmbientLightShader     | ✅              | ❌              | A light.              |
+| FDirectionalLightShader | ✅              | ❌              | A light.              |
+| FPointLightShader       | ✅              | ❌              | A light.              |
+| FLight                  | ✅              | ✅              | `(abstract)` A light. |
+| FLightShader            | ✅              | ❌              | `(abstract)` A light. |
