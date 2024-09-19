@@ -176,16 +176,18 @@ import Character from './classes/Character'
     let cube
     if (i === 0) {
       // First one is an instance of MyCustomCube
-      cube = new MyCustomCube(scene)
-      cube.setPosition({ x, y: 3, z: z - 17 })
+      cube = new MyCustomCube(scene, {
+        position: { x, y: 5, z: z - 17 },
+      })
       cube.initRigidBody({
         // First one gets a sphere collider, the others get a cube collider
         shape: FShapes.SPHERE,
       })
     }
     else {
-      cube = new FCuboid(scene)
-      cube.setPosition({ x, y: 3, z: z - 17 })
+      cube = new FCuboid(scene, {
+        position: { x, y: 5, z: z - 17 },
+      })
       cube.initRigidBody()
     }
     scene.addComponent(cube)
