@@ -10,9 +10,10 @@
     previews = {
       web = {
         command = [
-          "nx"
-          "dev:watch"
-          "@fibbojs/playground-3d"
+          "npm"
+          "run"
+          "dev:3d"
+          "--"
           "--port"
           "$PORT"
         ];
