@@ -1,4 +1,4 @@
-import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FPointLight, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import RAPIER from '@dimforge/rapier3d'
@@ -19,16 +19,16 @@ import Character from './classes/Character'
   if (import.meta.env.DEV)
     fDebug(scene)
 
-  // Add directional light
-  scene.addLight(new FPointLight(scene, {
-    position: { x: 0, y: 20, z: 0 },
+  // Add directional light to represent the sun
+  scene.addLight(new FDirectionalLight(scene, {
+    position: { x: 20, y: 20, z: 0 },
     color: 0xFFFFFF,
-    intensity: 2000,
+    intensity: 2,
   }))
   // Add ambient light
   scene.addLight(new FAmbientLight(scene, {
     color: 0x404040,
-    intensity: 10,
+    intensity: 30,
   }))
 
   // Create a death zone

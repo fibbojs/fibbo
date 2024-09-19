@@ -43,6 +43,7 @@ export { FPointerLockCamera } from './cameras/FPointerLockCamera'
 // Lights
 export { FLight } from './lights/FLight'
 export { FAmbientLight } from './lights/FAmbientLight'
+export { FDirectionalLight } from './lights/FDirectionalLight'
 export { FPointLight } from './lights/FPointLight'
 
 // Types

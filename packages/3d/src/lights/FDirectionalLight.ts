@@ -4,10 +4,10 @@ import type { FLightOptions } from './FLight'
 import { FLight } from './FLight'
 
 /**
- * @description An ambient light in 3d space.
+ * @description A directional light in 3d space.
  * @category Light
  */
-export class FAmbientLight extends FLight {
+export class FDirectionalLight extends FLight {
   constructor(scene: FScene, options?: FLightOptions) {
     super(scene, options)
 
@@ -20,16 +20,31 @@ export class FAmbientLight extends FLight {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.color || !options.intensity)
-      throw new Error('FibboError: FAmbientLight requires color and intensity')
+      throw new Error('FibboError: FDirectionalLight requires color and intensity')
 
-    // Create the ambient light
-    this.light = new THREE.AmbientLight(options.color, options.intensity)
+    // Create the directional light
+    this.light = new THREE.DirectionalLight(options.color, options.intensity)
     // Set the position
     this.light.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
     // Set the scale
     this.light.scale.set(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
     // Set the rotation
     this.light.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+
+    // If shadows are enabled, set the light to cast shadows
+    if (this.scene.__ENABLE_SHADOWS__) {
+      this.light.castShadow = true
+      if (this.light.shadow && this.light.shadow.camera && this.light.shadow.camera instanceof THREE.OrthographicCamera) {
+        this.light.shadow.camera.near = 0.5
+        this.light.shadow.camera.far = 500
+        this.light.shadow.camera.left = -100
+        this.light.shadow.camera.right = 100
+        this.light.shadow.camera.top = 100
+        this.light.shadow.camera.bottom = -100
+        this.light.shadow.mapSize.width = 16384
+        this.light.shadow.mapSize.height = 16384
+      }
+    }
   }
 
   onFrame(_delta: number): void {}
