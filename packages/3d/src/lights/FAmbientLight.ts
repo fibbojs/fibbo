@@ -19,7 +19,7 @@ export class FAmbientLight extends FLight {
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.color || !options.intensity)
+    if (!options.color || options.intensity === undefined)
       throw new Error('FibboError: FAmbientLight requires color and intensity')
 
     // Create the ambient light

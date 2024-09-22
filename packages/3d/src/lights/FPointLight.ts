@@ -19,7 +19,7 @@ export class FPointLight extends FLight {
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.color || !options.intensity)
+    if (!options.color || options.intensity === undefined)
       throw new Error('FibboError: FPointLight requires color and intensity')
 
     // Create the point light

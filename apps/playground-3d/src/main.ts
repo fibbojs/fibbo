@@ -1,4 +1,4 @@
-import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FPointLight, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import RAPIER from '@dimforge/rapier3d'
@@ -28,7 +28,7 @@ import Character from './classes/Character'
   // Add ambient light
   scene.addLight(new FAmbientLight(scene, {
     color: 0x404040,
-    intensity: 30,
+    intensity: 20,
   }))
 
   // Create a death zone

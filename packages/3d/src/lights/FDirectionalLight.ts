@@ -19,7 +19,7 @@ export class FDirectionalLight extends FLight {
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.color || !options.intensity)
+    if (!options.color || options.intensity === undefined)
       throw new Error('FibboError: FDirectionalLight requires color and intensity')
 
     // Create the directional light

@@ -44,6 +44,7 @@ export { FPointerLockCamera } from './cameras/FPointerLockCamera'
 export { FLight } from './lights/FLight'
 export { FAmbientLight } from './lights/FAmbientLight'
 export { FDirectionalLight } from './lights/FDirectionalLight'
+export { FHemisphereLight } from './lights/FHemisphereLight'
 export { FPointLight } from './lights/FPointLight'
 
 // Types
@@ -58,3 +59,5 @@ export type { FColliderOptions } from './core/FCollider'
 export type { FTransformOptions } from './core/FTransform'
 export type { FCameraOptions } from './cameras/FCamera'
 export type { FAttachedCameraOptions } from './cameras/FAttachedCamera'
+export type { FLightOptions } from './lights/FLight'
+export type { FHemisphereLightOptions } from './lights/FHemisphereLight'
