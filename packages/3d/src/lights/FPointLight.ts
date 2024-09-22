@@ -23,19 +23,27 @@ export class FPointLight extends FLight {
       throw new Error('FibboError: FPointLight requires color and intensity')
 
     // Create the point light
-    this.light = new THREE.PointLight(options.color, options.intensity)
-    // Set the position
-    this.light.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
-    // Set the scale
-    this.light.scale.set(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
-    // Set the rotation
-    this.light.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+    this.light = new THREE.PointLight(options.color, options.intensity * 500)
+    // Apply the transform
+    this.applyTransform()
 
     // If shadows are enabled, set the light to cast shadows
     if (this.scene.__ENABLE_SHADOWS__) {
       this.light.castShadow = true
+      if (this.light.shadow) {
+        this.light.shadow.mapSize.width = 65536
+        this.light.shadow.mapSize.height = 65536
+      }
     }
   }
 
   onFrame(_delta: number): void {}
+
+  set intensity(intensity: number) {
+    this.light.intensity = intensity * 500
+  }
+
+  get intensity(): number {
+    return this.light.intensity / 500
+  }
 }

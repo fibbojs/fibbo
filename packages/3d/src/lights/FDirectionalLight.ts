@@ -24,12 +24,8 @@ export class FDirectionalLight extends FLight {
 
     // Create the directional light
     this.light = new THREE.DirectionalLight(options.color, options.intensity)
-    // Set the position
-    this.light.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
-    // Set the scale
-    this.light.scale.set(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
-    // Set the rotation
-    this.light.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+    // Apply the transform
+    this.applyTransform()
 
     // If shadows are enabled, set the light to cast shadows
     if (this.scene.__ENABLE_SHADOWS__) {

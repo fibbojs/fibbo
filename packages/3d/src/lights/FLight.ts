@@ -50,7 +50,7 @@ export abstract class FLight extends FLightCore {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position)
-      throw new Error('FibboError: FLight requires color, intensity and position')
+      throw new Error('FibboError: FLight requires position')
 
     // Store scene
     this.scene = scene
@@ -64,6 +64,15 @@ export abstract class FLight extends FLightCore {
   }
 
   abstract onFrame(_delta: number): void
+
+  applyTransform(): void {
+    // Set the position
+    this.light.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+    // Set the scale
+    this.light.scale.set(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
+    // Set the rotation
+    this.light.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+  }
 
   set color(color: THREE.ColorRepresentation) {
     this.light.color.set(color)
