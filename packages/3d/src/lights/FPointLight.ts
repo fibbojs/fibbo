@@ -23,7 +23,7 @@ export class FPointLight extends FLight {
       throw new Error('FibboError: FPointLight requires color and intensity')
 
     // Create the point light
-    this.light = new THREE.PointLight(options.color, options.intensity * 500)
+    this.light = new THREE.PointLight(options.color, options.intensity)
     // Apply the transform
     this.applyTransform()
 
@@ -38,12 +38,4 @@ export class FPointLight extends FLight {
   }
 
   onFrame(_delta: number): void {}
-
-  set intensity(intensity: number) {
-    this.light.intensity = intensity * 500
-  }
-
-  get intensity(): number {
-    return this.light.intensity / 500
-  }
 }

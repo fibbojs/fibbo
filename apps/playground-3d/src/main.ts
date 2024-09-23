@@ -1,4 +1,4 @@
-import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere, FSpotLight } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import RAPIER from '@dimforge/rapier3d'
@@ -24,6 +24,15 @@ import Character from './classes/Character'
     position: { x: 20, y: 20, z: 0 },
     color: 0xFFFFFF,
     intensity: 2,
+  }))
+  // Add spot light
+  scene.addLight(new FSpotLight(scene, {
+    position: { x: 4, y: 4, z: 4 },
+    angle: 1,
+    distance: 8,
+    color: 0xFFFFFF,
+    intensity: 20,
+    lookAt: { x: 8, y: 0, z: 8 },
   }))
   // Add ambient light
   scene.addLight(new FAmbientLight(scene, {

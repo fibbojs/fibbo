@@ -30,7 +30,7 @@ export class FLightProbe extends FLight {
       throw new Error('FibboError: FLightProbe requires sh and intensity')
 
     // Create the light probe
-    this.light = new THREE.LightProbe(options.sh, options.intensity * 500)
+    this.light = new THREE.LightProbe(options.sh, options.intensity)
     // Apply the transform
     this.applyTransform()
 
@@ -45,12 +45,4 @@ export class FLightProbe extends FLight {
   }
 
   onFrame(_delta: number): void {}
-
-  set intensity(intensity: number) {
-    this.light.intensity = intensity * 500
-  }
-
-  get intensity(): number {
-    return this.light.intensity / 500
-  }
 }

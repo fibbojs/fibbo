@@ -33,6 +33,7 @@ export * from './lights/FHemisphereLight'
 export * from './lights/FLight'
 export * from './lights/FLightProbe'
 export * from './lights/FPointLight'
+export * from './lights/FSpotLight'
 
 // Models
 export * from './model/FFBX'
