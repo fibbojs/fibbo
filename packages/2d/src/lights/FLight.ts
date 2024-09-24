@@ -1,17 +1,16 @@
-import * as THREE from 'three'
 import { FLight as FLightCore } from '@fibbojs/core'
 import type { FTransformOptions } from '../core/FTransform'
 import { FTransform } from '../core/FTransform'
 import type { FScene } from '../core/FScene'
 
 export interface FLightOptions extends FTransformOptions {
-  color?: THREE.ColorRepresentation
+  color?: number
   intensity?: number
-  lookAt?: { x: number, y: number, z: number }
+  lookAt?: { x: number, y: number }
 }
 
 /**
- * @description The base class for 3d lights in Fibbo.
+ * @description The base class for 2d lights in Fibbo.
  * @category Light
  */
 export abstract class FLight extends FLightCore {
@@ -24,9 +23,9 @@ export abstract class FLight extends FLightCore {
   public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 
   /**
-   * The original light object from Three.js.
+   * The original light object from PIXI.js.
    */
-  declare light: THREE.Light
+  declare light: any
 
   /**
    * Scene the light is in.
@@ -41,17 +40,17 @@ export abstract class FLight extends FLightCore {
   /**
    * Look at target of the light.
    */
-  __LOOK_AT__: { x: number, y: number, z: number }
+  __LOOK_AT__: { x: number, y: number }
 
   constructor(scene: FScene, options?: FLightOptions) {
     super()
 
     // Define default options
     const DEFAULT_OPTIONS = {
-      position: { x: 5, y: 5, z: 5 },
-      scale: { x: 1, y: 1, z: 1 },
-      rotation: { x: 0, y: 0, z: 0 },
-      lookAt: { x: 0, y: 0, z: 0 },
+      position: { x: 5, y: 5 },
+      scale: { x: 1, y: 1 },
+      rotation: 0,
+      lookAt: { x: 0, y: 0 },
     }
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
@@ -75,41 +74,39 @@ export abstract class FLight extends FLightCore {
 
   applyTransform(): void {
     // Set the position
-    this.light.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+    this.light.position.set(this.transform.position.x, this.transform.position.y)
     // Set the scale
-    this.light.scale.set(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
+    this.light.scale.set(this.transform.scale.x, this.transform.scale.y)
     // Set the rotation
-    this.light.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
-    // Set the look at
-    if (this.light instanceof THREE.SpotLight || this.light instanceof THREE.DirectionalLight) {
-      this.light.target.position.set(this.__LOOK_AT__.x, this.__LOOK_AT__.y, this.__LOOK_AT__.z)
-    }
+    this.light.rotation = this.transform.rotation
   }
 
-  set color(color: THREE.ColorRepresentation) {
-    this.light.color.set(color)
+  set color(color: number) {
+    this.light.color = color
   }
 
-  get color(): THREE.Color {
+  get color(): number {
     return this.light.color
   }
 
   set intensity(intensity: number) {
-    this.light.intensity = intensity
+    this.light.brightness = intensity
   }
 
   get intensity(): number {
-    return this.light.intensity
+    return this.light.brightness
   }
 
-  get lookAt(): { x: number, y: number, z: number } {
+  get lookAt(): { x: number, y: number } {
     return this.__LOOK_AT__
   }
 
-  set lookAt(lookAt: { x: number, y: number, z: number }) {
+  set lookAt(lookAt: { x: number, y: number }) {
     this.__LOOK_AT__ = lookAt
-    if (this.light instanceof THREE.SpotLight) {
-      this.light.lookAt(lookAt.x, lookAt.y, lookAt.z)
+    /*
+    if (this.light instanceof PIXI.DirectionalLight) {
+      this.light.target = new PIXI.Point(lookAt.x, lookAt.y)
     }
+    */
   }
 }

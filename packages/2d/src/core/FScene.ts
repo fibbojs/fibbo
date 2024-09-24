@@ -6,6 +6,7 @@ import type RAPIER from '@dimforge/rapier2d'
 import { FSprite } from '../sprite/FSprite'
 import type { FCamera } from '../cameras/FCamera'
 import { FFreeCamera } from '../cameras/FFreeCamera'
+import type { FLight } from '../lights/FLight'
 import type { FComponent } from './FComponent'
 
 export interface FSceneOptions extends FSceneOptionsCore {
@@ -38,6 +39,8 @@ export class FScene extends FSceneCore {
 
   // Components can be declared as it will be initialized by the parent class
   declare components: FComponent[]
+  // Lights can be declared as it will be initialized by the parent class
+  declare lights: FLight[]
 
   // Camera
   declare __CAMERA__: FCamera
@@ -253,5 +256,13 @@ export class FScene extends FSceneCore {
   set camera(camera: FCamera) {
     this.__CAMERA__ = camera
     camera.__ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__()
+  }
+
+  addLight(light: FLight): void {
+    super.addLight(light)
+  }
+
+  removeLight(light: FLight): void {
+    super.removeLight(light)
   }
 }
