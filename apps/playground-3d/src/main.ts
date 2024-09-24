@@ -1,5 +1,4 @@
-import * as THREE from 'three'
-import { FCapsule, FComponentEmpty, FCuboid, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere } from '@fibbojs/3d'
+import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere, FSpotLight } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
 import RAPIER from '@dimforge/rapier3d'
@@ -20,18 +19,26 @@ import Character from './classes/Character'
   if (import.meta.env.DEV)
     fDebug(scene)
 
-  // Add directional light
-  const color = 0xFFFFFF
-  const intensity = 2000
-  const light = new THREE.PointLight(color, intensity)
-  light.castShadow = true
-  light.position.set(0, 20, 0)
-  scene.scene.add(light as any)
-  const helper = new THREE.PointLightHelper(light)
-  scene.scene.add(helper as any)
+  // Add directional light to represent the sun
+  scene.addLight(new FDirectionalLight(scene, {
+    position: { x: 20, y: 20, z: 0 },
+    color: 0xFFFFFF,
+    intensity: 2,
+  }))
+  // Add spot light
+  scene.addLight(new FSpotLight(scene, {
+    position: { x: 4, y: 4, z: 4 },
+    angle: 1,
+    distance: 8,
+    color: 0xFFFFFF,
+    intensity: 20,
+    lookAt: { x: 8, y: 0, z: 8 },
+  }))
   // Add ambient light
-  const ambientLight = new THREE.AmbientLight(0x404040, 10)
-  scene.scene.add(ambientLight as any)
+  scene.addLight(new FAmbientLight(scene, {
+    color: 0x404040,
+    intensity: 20,
+  }))
 
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {
@@ -145,7 +152,7 @@ import Character from './classes/Character'
    * Create other objects
    */
   const sphere = new FSphere(scene, {
-    position: { x: 2, y: 4, z: -2 },
+    position: { x: 2, y: 5, z: -2 },
   })
   sphere.initRigidBody()
   scene.addComponent(sphere)
@@ -158,7 +165,7 @@ import Character from './classes/Character'
   scene.addComponent(capsule)
 
   const duck = new Duck(scene)
-  duck.setPosition({ x: -5, y: 1, z: -5 })
+  duck.setPosition({ x: -5, y: 5, z: -5 })
   duck.initRigidBody()
   scene.addComponent(duck)
 
@@ -178,16 +185,18 @@ import Character from './classes/Character'
     let cube
     if (i === 0) {
       // First one is an instance of MyCustomCube
-      cube = new MyCustomCube(scene)
-      cube.setPosition({ x, y: 3, z: z - 17 })
+      cube = new MyCustomCube(scene, {
+        position: { x, y: 10, z: z - 17 },
+      })
       cube.initRigidBody({
         // First one gets a sphere collider, the others get a cube collider
         shape: FShapes.SPHERE,
       })
     }
     else {
-      cube = new FCuboid(scene)
-      cube.setPosition({ x, y: 3, z: z - 17 })
+      cube = new FCuboid(scene, {
+        position: { x, y: 10, z: z - 17 },
+      })
       cube.initRigidBody()
     }
     scene.addComponent(cube)

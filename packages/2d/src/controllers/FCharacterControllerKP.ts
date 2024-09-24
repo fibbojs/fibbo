@@ -4,7 +4,7 @@ import { FCharacterControllerK } from './FCharacterControllerK'
 import type { FCharacterControllerOptions } from './FCharacterController'
 
 /**
- * @description A pre-defined character controller based on a Kinematic Position RigidBody.
+ * A pre-defined character controller based on a Kinematic Position RigidBody.
  * @category Controller
  * @example
  * ```ts

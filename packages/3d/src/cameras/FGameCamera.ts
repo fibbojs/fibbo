@@ -3,7 +3,7 @@ import { FOrbitCamera } from './FOrbitCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
- * @description A camera that can be attached to a FComponent and orbits around it in a more game-like way.
+ * A camera that can be attached to a FComponent and orbits around it in a more game-like way.
  * @category Camera
  * @example
  * ```ts
@@ -31,7 +31,7 @@ export class FGameCamera extends FOrbitCamera {
   constructor(options: FAttachedCameraOptions) {
     super(options)
     this.previousModelPosition = options.target.transform.position.clone()
-    this.setPosition(0, 5, 5)
+    this.setPosition(0, 20, 20)
 
     this.controls.enableDamping = true
     this.controls.maxDistance = 5

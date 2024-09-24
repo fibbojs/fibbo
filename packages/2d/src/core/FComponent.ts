@@ -18,7 +18,7 @@ export interface FComponentOptions {
 }
 
 /**
- * @description The base class for all 2D components in Fibbo.
+ * The base class for all 2D components in Fibbo.
  * @category Core
  */
 export abstract class FComponent extends FComponentCore {
@@ -183,7 +183,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the position of the component.
+   * Set the position of the component.
    * @param options The options for the position.
    * @param options.x The x position.
    * @param options.y The y position.
@@ -204,7 +204,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the scale of the component.
+   * Set the scale of the component.
    * @param options The options for the scale.
    * @param options.x The x scale.
    * @param options.y The y scale.
@@ -234,7 +234,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the rotation of the component in radians.
+   * Set the rotation of the component in radians.
    * @param r The rotation in radians.
    * @example
    * ```ts
@@ -253,7 +253,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the rotation of the component in degrees.
+   * Set the rotation of the component in degrees.
    * @param r The rotation in degrees.
    * @example
    * ```ts
@@ -265,7 +265,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Init a rigid body for the model.
+   * Init a rigid body for the model.
    * @param options The options for the rigid body.
    * @param options.position The position of the rigid body.
    * @param options.scale The scale of the rigid body.
@@ -295,7 +295,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Only init a collider for the component, without a rigid body.
+   * Only init a collider for the component, without a rigid body.
    * This is useful for static objects.
    * @param options The options for the collider.
    * @param options.position The position of the collider.
@@ -319,7 +319,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Init a sensor for the component.
+   * Init a sensor for the component.
    * This is useful for triggerings events when the component collides with other components.
    * @param options The options for the collider.
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.

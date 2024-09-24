@@ -8,7 +8,7 @@ export interface FTransformOptions {
 }
 
 /**
- * @description 3D Transforms for a component.
+ * 3D Transforms for a component.
  * @category Core
  */
 export class FTransform {
@@ -26,7 +26,7 @@ export class FTransform {
   rotation: THREE.Vector3
 
   /**
-   * @description Create a new FTransform.
+   * Create a new FTransform.
    * @param options The options for the collider.
    * @param options.position The position of the collider. If not defined, it will default to `{ x: 0, y: 0, z: 0 }`.
    * @param options.scale The scale of the collider. If not defined, it will default to `{ x: 1, y: 1, z: 1 }`.

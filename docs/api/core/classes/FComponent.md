@@ -2,13 +2,12 @@
 
 # Class: `abstract` FComponent
 
-## Description
-
 The base class for all 2D and 3D components in Fibbo.
 
 ## Extended by
 
 - [`FCamera`](FCamera.md)
+- [`FLight`](FLight.md)
 
 ## Constructors
 
@@ -22,13 +21,15 @@ The base class for all 2D and 3D components in Fibbo.
 
 #### Defined in
 
-[core/src/FComponent.ts:45](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L45)
+[core/src/FComponent.ts:45](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L45)
 
 ## Methods
 
 ### emitCollisionWith()
 
 > **emitCollisionWith**(`options`): `void`
+
+Emit a collision event with a given class or object.
 
 #### Parameters
 
@@ -47,10 +48,6 @@ The component to emit the collision event with.
 #### Returns
 
 `void`
-
-#### Description
-
-Emit a collision event with a given class or object.
 
 #### Examples
 
@@ -72,13 +69,15 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[core/src/FComponent.ts:134](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L134)
+[core/src/FComponent.ts:134](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L134)
 
 ***
 
 ### onCollisionWith()
 
 > **onCollisionWith**(`classOrObject`, `callback`): () => `void`
+
+Add a callback to be called when a collision occurs.
 
 #### Parameters
 
@@ -100,10 +99,6 @@ A function to remove the callback.
 
 `void`
 
-#### Description
-
-Add a callback to be called when a collision occurs.
-
 #### Examples
 
 ```typescript
@@ -124,13 +119,17 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[core/src/FComponent.ts:84](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L84)
+[core/src/FComponent.ts:84](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L84)
 
 ***
 
 ### onFrame()
 
 > **onFrame**(`delta`): `void`
+
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Parameters
 
@@ -142,15 +141,9 @@ The time since the last frame.
 
 `void`
 
-#### Description
-
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
-
 #### Defined in
 
-[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L55)
+[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L55)
 
 ## Properties
 
@@ -158,18 +151,16 @@ Any changes on its transform should be done on the controller, not here.
 
 > **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
+Callbacks for when a collision occurs with a given class or object.
+It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
+
 #### Index Signature
 
  \[`key`: `string`\]: (`data`) => `void`[]
 
-#### Description
-
-Callbacks for when a collision occurs with a given class or object.
-It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
-
 #### Defined in
 
-[core/src/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L38)
+[core/src/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L38)
 
 ***
 
@@ -177,14 +168,12 @@ It is a dictionary where the key is the class name or object id and the value is
 
 > **\_\_ID\_\_**: `number`
 
-#### Description
-
 Unique identifier for the component.
 It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L32)
+[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L32)
 
 ***
 
@@ -194,7 +183,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L26)
+[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L26)
 
 ***
 
@@ -206,7 +195,7 @@ Internal flags
 
 #### Defined in
 
-[core/src/FComponent.ts:25](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L25)
+[core/src/FComponent.ts:25](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L25)
 
 ***
 
@@ -218,4 +207,4 @@ The controller attached to the component.
 
 #### Defined in
 
-[core/src/FComponent.ts:43](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L43)
+[core/src/FComponent.ts:43](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L43)

@@ -1,9 +1,15 @@
 # docs:generate
 
+
+
+################################ API DOCUMENTATION GENERATION ################################
+
+
+
 # Generate API documentation
 typedoc
 
-# Based on previous code, create a function that make the process easier for each package
+# Function to beautify the structure of the API documentation
 beautifyStructure () {
   # Move all content of /docs/api/PACKAGE/src to /docs/api/PACKAGE
   mv ./docs/api/$1/src/* ./docs/api/$1
@@ -19,8 +25,101 @@ beautifyStructure () {
 beautifyStructure 2d
 beautifyStructure 3d
 beautifyStructure core
-beautifyStructure devtools
 beautifyStructure event
 
 # Replace every occurence of "[fibbojs](*)" with "[@fibbojs](/api/index)"
 find ./docs/api -type f -name "*.md" -exec sed -i '' 's/\[fibbojs\]([^)]*)/\[@fibbojs\](\/api\/index)/g' {} \;
+
+
+
+################################ VITEPRESS NAVBAR CONFIGURATION ################################
+
+
+
+# Function to generate VitePress navbar entries for classes in a specific category
+generate_classes_entries() {
+  local package_dir="$1"
+  local category="$2"
+
+  find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" -print0 | while IFS= read -r -d $'\0' file; do
+    local filename=$(basename "$file" .ts)
+    local class_category=$(grep "@category" "$file" | awk '{print $3}' | sed 's/\"//g')
+
+    if [[ "$class_category" == "$category" ]]; then
+      echo "              { text: '$filename', link: '/api/$package_dir/classes/$filename.md' },"
+    fi
+  done
+}
+
+# Function to generate VitePress navbar entries for enumerations
+generate_enum_entries() {
+  local package_dir="$1"
+
+  find "packages/$package_dir/src" -type f -name "*.ts" -print0 | while IFS= read -r -d $'\0' file; do
+    grep -q "export enum" "$file" && {
+      local filename=$(basename "$file" .ts)
+      echo "              { text: '$filename', link: '/api/$package_dir/enumerations/$filename.md' },"
+    }
+  done
+}
+
+# Function to generate VitePress navbar entries for interfaces
+generate_interface_entries() {
+  local package_dir="$1"
+
+  find "packages/$package_dir/src" -type f -name "*.ts" -print0 | while IFS= read -r -d $'\0' file; do
+    grep -q "export interface " "$file" && {
+      local interface_name=$(grep "export interface " "$file" | awk '{print $3}' | sed 's/{//')
+      echo "              { text: '$interface_name', link: '/api/$package_dir/interfaces/$interface_name.md' },"
+    }
+  done
+}
+
+# Define the VitePress configuration file
+VITEPRESS_CONFIG_FILE="docs/.vitepress/config.ts"
+
+# Generate the VitePress navbar content for the API section
+TEMP_FILE="docs/.vitepress/config.ts.tmp"
+
+echo "      // API DOC START" > $TEMP_FILE
+echo "      '/api/': [" >> $TEMP_FILE
+echo "        { text: 'API Reference', items: [" >> $TEMP_FILE
+
+# Iterate through each package directory
+for package_dir in 2d 3d core event; do
+  echo "          { text: '$package_dir', link: '/api/$package_dir/index.md', collapsed: true, items: [" >> $TEMP_FILE
+
+  # Generate navbar entries for each category
+  for category in $(find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" | xargs grep "@category" | awk '{print $4}' | sort | uniq); do
+    echo "            { text: '$category', collapsed: true, items: [" >> $TEMP_FILE
+    generate_classes_entries "$package_dir" "$category" >> $TEMP_FILE
+    echo "            ] }," >> $TEMP_FILE
+  done
+
+  # Generate navbar entries for enumerations
+  echo "            { text: 'Enumerations', collapsed: true, items: [" >> $TEMP_FILE
+  generate_enum_entries "$package_dir" >> $TEMP_FILE
+  echo "            ] }," >> $TEMP_FILE
+
+  # Generate navbar entries for interfaces
+  echo "            { text: 'Interfaces', collapsed: true, items: [" >> $TEMP_FILE
+  generate_interface_entries "$package_dir" >> $TEMP_FILE
+  echo "            ] }," >> $TEMP_FILE
+
+  echo "        ] }," >> $TEMP_FILE
+done
+
+echo "        ] }," >> $TEMP_FILE
+echo "      ]," >> $TEMP_FILE
+echo "      // API DOC END" >> $TEMP_FILE
+
+# Uses ed to replace the content of the VitePress configuration file between "// API DOC START" and "// API DOC END"
+ed -s $VITEPRESS_CONFIG_FILE <<EOF
+/\/\/ API DOC START/,/\/\/ API DOC END/c
+$(cat $TEMP_FILE)
+.
+w
+EOF
+
+# Remove the temporary file
+rm "$TEMP_FILE"

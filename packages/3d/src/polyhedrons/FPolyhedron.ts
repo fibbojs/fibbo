@@ -4,9 +4,9 @@ import { FComponent } from '../core/FComponent'
 import type { FComponentOptions } from '../core/FComponent'
 
 /**
- * @description A simple polyhedron model in Fibbo.
+ * A simple polyhedron model in Fibbo.
  * Defaults to a cube.
- * @category Model
+ * @category Polyhedrons
  */
 export abstract class FPolyhedron extends FComponent {
   /**
@@ -19,7 +19,11 @@ export abstract class FPolyhedron extends FComponent {
     super(scene, options)
     // Create a cube
     const geometry = new THREE.BoxGeometry(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
-    const material = new THREE.MeshPhongMaterial({ color: 0x666666 })
+    const material = new THREE.MeshPhongMaterial({
+      color: 0x666666,
+      // Turn on depthWrite if shadows are enabled
+      depthWrite: this.scene.__ENABLE_SHADOWS__,
+    })
     this.mesh = new THREE.Mesh(geometry, material)
     // If shadows are enabled, cast and receive shadows
     if (scene.__ENABLE_SHADOWS__) {
@@ -33,7 +37,7 @@ export abstract class FPolyhedron extends FComponent {
   }
 
   /**
-   * @description Change the color of the polyhedron.
+   * Change the color of the polyhedron.
    * @param color The color of the polyhedron.
    * @example
    * ```ts

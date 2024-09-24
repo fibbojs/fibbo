@@ -2,8 +2,6 @@
 
 # Class: FRigidBody
 
-## Description
-
 A 3d RigidBody.
 
 ## Constructors
@@ -11,6 +9,8 @@ A 3d RigidBody.
 ### new FRigidBody()
 
 > **new FRigidBody**(`component`, `options`?): [`FRigidBody`](FRigidBody.md)
+
+Creates a rigid body for the given component.
 
 #### Parameters
 
@@ -26,10 +26,6 @@ The options for the rigid body.
 
 [`FRigidBody`](FRigidBody.md)
 
-#### Description
-
-Creates a rigid body for the given component.
-
 #### Example
 
 ```ts
@@ -43,7 +39,7 @@ const rigidBody = new FRigidBody({
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:65](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/core/FRigidBody.ts#L65)
+[2d/src/core/FRigidBody.ts:65](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/core/FRigidBody.ts#L65)
 
 ## Properties
 
@@ -55,7 +51,7 @@ Fibbo Collider
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:34](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/core/FRigidBody.ts#L34)
+[2d/src/core/FRigidBody.ts:34](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/core/FRigidBody.ts#L34)
 
 ***
 
@@ -67,4 +63,4 @@ RAPIER RigidBody
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:30](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/2d/src/core/FRigidBody.ts#L30)
+[2d/src/core/FRigidBody.ts:30](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/core/FRigidBody.ts#L30)

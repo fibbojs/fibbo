@@ -4,7 +4,7 @@ import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
- * @description A camera that can be attached to a FComponent and orbits around it.
+ * A camera that can be attached to a FComponent and orbits around it.
  * @category Camera
  * @example
  * ```ts

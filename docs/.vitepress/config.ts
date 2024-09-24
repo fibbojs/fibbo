@@ -86,133 +86,143 @@ export default defineConfig({
           ],
         },
       ],
+      // API DOC START
       '/api/': [
-        {
-          text: 'API Reference',
-          items: [
-            { text: 'Index', link: '/api/index.md' },
-            { text: 'Modules', items: [
-              { text: '2d', link: '/api/2d/index.md', collapsed: true, items: [
-                { text: 'Camera Classes', items: [
-                  { text: 'FAttachedCamera', link: '/api/2d/classes/FAttachedCamera' },
-                  { text: 'FCamera', link: '/api/2d/classes/FCamera' },
-                  { text: 'FFixedCamera', link: '/api/3d/classes/FFixedCamera' },
-                  { text: 'FFreeCamera', link: '/api/3d/classes/FFreeCamera' },
-                ] },
-                { text: 'Controller Classes', items: [
-                  { text: 'FController', link: '/api/2d/classes/FController' },
-                  { text: 'FCharacterController', link: '/api/2d/classes/FCharacterController' },
-                  { text: 'FCharacterControllerD', link: '/api/2d/classes/FCharacterControllerD' },
-                  { text: 'FCharacterControllerK', link: '/api/2d/classes/FCharacterControllerK' },
-                  { text: 'FCharacterControllerKP', link: '/api/2d/classes/FCharacterControllerKP' },
-                  { text: 'FCharacterControllerKV', link: '/api/2d/classes/FCharacterControllerKV' },
-                ] },
-                { text: 'Core Classes', items: [
-                  { text: 'FComponent', link: '/api/2d/classes/FComponent' },
-                  { text: 'FComponentEmpty', link: '/api/2d/classes/FComponentEmpty' },
-                  { text: 'FScene', link: '/api/2d/classes/FScene' },
-                  { text: 'FTransform', link: '/api/2d/classes/FTransform' },
-                  { text: 'FCollider', link: '/api/2d/classes/FCollider' },
-                  { text: 'FRigidBody', link: '/api/2d/classes/FRigidBody' },
-                ] },
-                { text: 'Polygons Classes', items: [
-                  { text: 'FPolygon', link: '/api/2d/classes/FPolygon' },
-                  { text: 'FCircle', link: '/api/2d/classes/FCircle' },
-                  { text: 'FRectangle', link: '/api/2d/classes/FRectangle' },
-                ] },
-                { text: 'Sprite Classes', items: [
-                  { text: 'FSprite', link: '/api/2d/classes/FSprite' },
-                ] },
-                { text: 'Enumerations', items: [
-                  { text: 'FShapes', link: '/api/2d/enumerations/FShapes' },
-                ] },
-                { text: 'Interfaces', items: [
-                  { text: 'FCameraOptions', link: '/api/2d/interfaces/FCameraOptions' },
-                  { text: 'FCharacterControllerOptions', link: '/api/2d/interfaces/FCharacterControllerOptions' },
-                  { text: 'FColliderOptions', link: '/api/2d/interfaces/FColliderOptions' },
-                  { text: 'FComponentOptions', link: '/api/2d/interfaces/FComponentOptions' },
-                  { text: 'FControllerOptions', link: '/api/2d/interfaces/FControllerOptions' },
-                  { text: 'FRigidBodyOptions', link: '/api/2d/interfaces/FRigidBodyOptions' },
-                  { text: 'FSceneOptions', link: '/api/2d/interfaces/FSceneOptions' },
-                  { text: 'FTransformOptions', link: '/api/2d/interfaces/FTransformOptions' },
-                ] },
-              ] },
-              { text: '3d', link: '/api/3d/index.md', collapsed: true, items: [
-                { text: 'Camera Classes', items: [
-                  { text: 'FAttachedCamera', link: '/api/3d/classes/FAttachedCamera' },
-                  { text: 'FCamera', link: '/api/3d/classes/FCamera' },
-                  { text: 'FFixedCamera', link: '/api/3d/classes/FFixedCamera' },
-                  { text: 'FGameCamera', link: '/api/3d/classes/FGameCamera' },
-                  { text: 'FOrbitCamera', link: '/api/3d/classes/FOrbitCamera' },
-                ] },
-                { text: 'Character Classes', items: [
-                  { text: 'FController', link: '/api/3d/classes/FController' },
-                  { text: 'FCharacterController', link: '/api/3d/classes/FCharacterController' },
-                  { text: 'FCharacterControllerD', link: '/api/3d/classes/FCharacterControllerD' },
-                  { text: 'FCharacterControllerK', link: '/api/3d/classes/FCharacterControllerK' },
-                  { text: 'FCharacterControllerKP', link: '/api/3d/classes/FCharacterControllerKP' },
-                  { text: 'FCharacterControllerKV', link: '/api/3d/classes/FCharacterControllerKV' },
-                ] },
-                { text: 'Core Classes', items: [
-                  { text: 'FComponent', link: '/api/3d/classes/FComponent' },
-                  { text: 'FComponentEmpty', link: '/api/3d/classes/FComponentEmpty' },
-                  { text: 'FScene', link: '/api/3d/classes/FScene' },
-                  { text: 'FTransform', link: '/api/3d/classes/FTransform' },
-                  { text: 'FCollider', link: '/api/3d/classes/FCollider' },
-                  { text: 'FRigidBody', link: '/api/3d/classes/FRigidBody' },
-                ] },
-                { text: 'Polyhedrons Classes', items: [
-                  { text: 'FCapsule', link: '/api/3d/classes/FCapsule' },
-                  { text: 'FCuboid', link: '/api/3d/classes/FCuboid' },
-                  { text: 'FPolyhedron', link: '/api/3d/classes/FPolyhedron' },
-                  { text: 'FSphere', link: '/api/3d/classes/FSphere' },
-                ] },
-                { text: 'Model Classes', items: [
-                  { text: 'FModel', link: '/api/3d/classes/FModel' },
-                  { text: 'FGLTF', link: '/api/3d/classes/FGLTF' },
-                  { text: 'FGLB', link: '/api/3d/classes/FGLB' },
-                  { text: 'FOBJ', link: '/api/3d/classes/FOBJ' },
-                  { text: 'FFBX', link: '/api/3d/classes/FFBX' },
-                ] },
-                { text: 'Enumerations', items: [
-                  { text: 'FShapes', link: '/api/3d/enumerations/FShapes' },
-                ] },
-                { text: 'Interfaces', items: [
-                  { text: 'FAttachedCameraOptions', link: '/api/3d/interfaces/FAttachedCameraOptions' },
-                  { text: 'FCameraOptions', link: '/api/3d/interfaces/FCameraOptions' },
-                  { text: 'FCharacterControllerOptions', link: '/api/3d/interfaces/FCharacterControllerOptions' },
-                  { text: 'FColliderOptions', link: '/api/3d/interfaces/FColliderOptions' },
-                  { text: 'FComponentOptions', link: '/api/3d/interfaces/FComponentOptions' },
-                  { text: 'FControllerOptions', link: '/api/3d/interfaces/FControllerOptions' },
-                  { text: 'FRigidBodyOptions', link: '/api/3d/interfaces/FRigidBodyOptions' },
-                  { text: 'FSceneOptions', link: '/api/3d/interfaces/FSceneOptions' },
-                  { text: 'FTransformOptions', link: '/api/3d/interfaces/FTransformOptions' },
-                ] },
-              ] },
-              { text: 'core', link: '/api/core/index.md', collapsed: true, items: [
-                { text: 'Core Classes', items: [
-                  { text: 'FCamera', link: '/api/core/classes/FCamera' },
-                  { text: 'FComponent', link: '/api/core/classes/FComponent' },
-                  { text: 'FController', link: '/api/core/classes/FController' },
-                  { text: 'FGroup', link: '/api/core/classes/FGroup' },
-                  { text: 'FScene', link: '/api/core/classes/FScene' },
-                ] },
-                { text: 'Interfaces', items: [
-                  { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions' },
-                  { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData' },
-                ] },
-              ] },
-              { text: 'devtools', link: '/api/devtools/index.md', collapsed: true, items: [
-                { text: 'FDebug', link: '/api/devtools/classes/FDebug' },
-                { text: 'fDebug', link: '/api/devtools/functions/fDebug' },
-              ] },
-              { text: 'event', link: '/api/event/index.md', collapsed: true, items: [
-                { text: 'FKeyboard', link: '/api/event/classes/FKeyboard' },
-              ] },
+        { text: 'API Reference', items: [
+          { text: '2d', link: '/api/2d/index.md', collapsed: true, items: [
+            { text: 'Camera', collapsed: true, items: [
+              { text: 'FFixedCamera', link: '/api/2d/classes/FFixedCamera.md' },
+              { text: 'FFreeCamera', link: '/api/2d/classes/FFreeCamera.md' },
+              { text: 'FAttachedCamera', link: '/api/2d/classes/FAttachedCamera.md' },
+              { text: 'FCamera', link: '/api/2d/classes/FCamera.md' },
             ] },
-          ],
-        },
+            { text: 'Controller', collapsed: true, items: [
+              { text: 'FCharacterControllerK', link: '/api/2d/classes/FCharacterControllerK.md' },
+              { text: 'FCharacterControllerKV', link: '/api/2d/classes/FCharacterControllerKV.md' },
+              { text: 'FCharacterControllerD', link: '/api/2d/classes/FCharacterControllerD.md' },
+              { text: 'FCharacterController', link: '/api/2d/classes/FCharacterController.md' },
+              { text: 'FCharacterControllerKP', link: '/api/2d/classes/FCharacterControllerKP.md' },
+            ] },
+            { text: 'Core', collapsed: true, items: [
+              { text: 'FRigidBody', link: '/api/2d/classes/FRigidBody.md' },
+              { text: 'FCollider', link: '/api/2d/classes/FCollider.md' },
+              { text: 'FComponent', link: '/api/2d/classes/FComponent.md' },
+              { text: 'FComponentEmpty', link: '/api/2d/classes/FComponentEmpty.md' },
+              { text: 'FTransform', link: '/api/2d/classes/FTransform.md' },
+              { text: 'FScene', link: '/api/2d/classes/FScene.md' },
+            ] },
+            { text: 'Light', collapsed: true, items: [
+              { text: 'FLight', link: '/api/2d/classes/FLight.md' },
+            ] },
+            { text: 'Polygons', collapsed: true, items: [
+              { text: 'FPolygon', link: '/api/2d/classes/FPolygon.md' },
+              { text: 'FCircle', link: '/api/2d/classes/FCircle.md' },
+              { text: 'FRectangle', link: '/api/2d/classes/FRectangle.md' },
+            ] },
+            { text: 'Sprite', collapsed: true, items: [
+              { text: 'FSprite', link: '/api/2d/classes/FSprite.md' },
+            ] },
+            { text: 'Enumerations', collapsed: true, items: [
+              { text: 'FShapes', link: '/api/2d/enumerations/FShapes.md' },
+            ] },
+            { text: 'Interfaces', collapsed: true, items: [
+              { text: 'FRigidBodyOptions', link: '/api/2d/interfaces/FRigidBodyOptions.md' },
+              { text: 'FColliderOptions', link: '/api/2d/interfaces/FColliderOptions.md' },
+              { text: 'FComponentOptions', link: '/api/2d/interfaces/FComponentOptions.md' },
+              { text: 'FTransformOptions', link: '/api/2d/interfaces/FTransformOptions.md' },
+              { text: 'FSceneOptions', link: '/api/2d/interfaces/FSceneOptions.md' },
+              { text: 'FAttachedCameraOptions', link: '/api/2d/interfaces/FAttachedCameraOptions.md' },
+              { text: 'FCameraOptions', link: '/api/2d/interfaces/FCameraOptions.md' },
+              { text: 'FSpriteOptions', link: '/api/2d/interfaces/FSpriteOptions.md' },
+              { text: 'FControllerOptions', link: '/api/2d/interfaces/FControllerOptions.md' },
+              { text: 'FCharacterControllerOptions', link: '/api/2d/interfaces/FCharacterControllerOptions.md' },
+              { text: 'FLightOptions', link: '/api/2d/interfaces/FLightOptions.md' },
+            ] },
+        ] },
+          { text: '3d', link: '/api/3d/index.md', collapsed: true, items: [
+            { text: 'Camera', collapsed: true, items: [
+              { text: 'FGameCamera', link: '/api/3d/classes/FGameCamera.md' },
+              { text: 'FOrbitCamera', link: '/api/3d/classes/FOrbitCamera.md' },
+              { text: 'FFixedCamera', link: '/api/3d/classes/FFixedCamera.md' },
+              { text: 'FPointerLockCamera', link: '/api/3d/classes/FPointerLockCamera.md' },
+              { text: 'FAttachedCamera', link: '/api/3d/classes/FAttachedCamera.md' },
+              { text: 'FCamera', link: '/api/3d/classes/FCamera.md' },
+            ] },
+            { text: 'Controller', collapsed: true, items: [
+              { text: 'FCharacterControllerK', link: '/api/3d/classes/FCharacterControllerK.md' },
+              { text: 'FCharacterControllerKV', link: '/api/3d/classes/FCharacterControllerKV.md' },
+              { text: 'FCharacterControllerD', link: '/api/3d/classes/FCharacterControllerD.md' },
+              { text: 'FCharacterController', link: '/api/3d/classes/FCharacterController.md' },
+              { text: 'FCharacterControllerKP', link: '/api/3d/classes/FCharacterControllerKP.md' },
+            ] },
+            { text: 'Core', collapsed: true, items: [
+              { text: 'FRigidBody', link: '/api/3d/classes/FRigidBody.md' },
+              { text: 'FCollider', link: '/api/3d/classes/FCollider.md' },
+              { text: 'FComponent', link: '/api/3d/classes/FComponent.md' },
+              { text: 'FComponentEmpty', link: '/api/3d/classes/FComponentEmpty.md' },
+              { text: 'FTransform', link: '/api/3d/classes/FTransform.md' },
+              { text: 'FScene', link: '/api/3d/classes/FScene.md' },
+            ] },
+            { text: 'Light', collapsed: true, items: [
+              { text: 'FLightProbe', link: '/api/3d/classes/FLightProbe.md' },
+              { text: 'FDirectionalLight', link: '/api/3d/classes/FDirectionalLight.md' },
+              { text: 'FHemisphereLight', link: '/api/3d/classes/FHemisphereLight.md' },
+              { text: 'FSpotLight', link: '/api/3d/classes/FSpotLight.md' },
+              { text: 'FPointLight', link: '/api/3d/classes/FPointLight.md' },
+              { text: 'FLight', link: '/api/3d/classes/FLight.md' },
+              { text: 'FAmbientLight', link: '/api/3d/classes/FAmbientLight.md' },
+            ] },
+            { text: 'Model', collapsed: true, items: [
+              { text: 'FModel', link: '/api/3d/classes/FModel.md' },
+              { text: 'FGLB', link: '/api/3d/classes/FGLB.md' },
+              { text: 'FFBX', link: '/api/3d/classes/FFBX.md' },
+              { text: 'FGLTF', link: '/api/3d/classes/FGLTF.md' },
+              { text: 'FOBJ', link: '/api/3d/classes/FOBJ.md' },
+            ] },
+            { text: 'Polyhedrons', collapsed: true, items: [
+              { text: 'FCapsule', link: '/api/3d/classes/FCapsule.md' },
+              { text: 'FPolyhedron', link: '/api/3d/classes/FPolyhedron.md' },
+              { text: 'FCuboid', link: '/api/3d/classes/FCuboid.md' },
+              { text: 'FSphere', link: '/api/3d/classes/FSphere.md' },
+            ] },
+            { text: 'Enumerations', collapsed: true, items: [
+              { text: 'FShapes', link: '/api/3d/enumerations/FShapes.md' },
+            ] },
+            { text: 'Interfaces', collapsed: true, items: [
+              { text: 'FRigidBodyOptions', link: '/api/3d/interfaces/FRigidBodyOptions.md' },
+              { text: 'FColliderOptions', link: '/api/3d/interfaces/FColliderOptions.md' },
+              { text: 'FComponentOptions', link: '/api/3d/interfaces/FComponentOptions.md' },
+              { text: 'FTransformOptions', link: '/api/3d/interfaces/FTransformOptions.md' },
+              { text: 'FSceneOptions', link: '/api/3d/interfaces/FSceneOptions.md' },
+              { text: 'FAttachedCameraOptions', link: '/api/3d/interfaces/FAttachedCameraOptions.md' },
+              { text: 'FCameraOptions', link: '/api/3d/interfaces/FCameraOptions.md' },
+              { text: 'FModelOptions', link: '/api/3d/interfaces/FModelOptions.md' },
+              { text: 'FControllerOptions', link: '/api/3d/interfaces/FControllerOptions.md' },
+              { text: 'FCharacterControllerOptions', link: '/api/3d/interfaces/FCharacterControllerOptions.md' },
+              { text: 'FLightProbeOptions', link: '/api/3d/interfaces/FLightProbeOptions.md' },
+              { text: 'FHemisphereLightOptions', link: '/api/3d/interfaces/FHemisphereLightOptions.md' },
+              { text: 'FSpotLightOptions', link: '/api/3d/interfaces/FSpotLightOptions.md' },
+              { text: 'FLightOptions', link: '/api/3d/interfaces/FLightOptions.md' },
+            ] },
+        ] },
+          { text: 'core', link: '/api/core/index.md', collapsed: true, items: [
+            { text: 'Enumerations', collapsed: true, items: [
+            ] },
+            { text: 'Interfaces', collapsed: true, items: [
+              { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions.md' },
+              { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData.md' },
+              { text: 'FSceneOptions', link: '/api/core/interfaces/FSceneOptions.md' },
+            ] },
+        ] },
+          { text: 'event', link: '/api/event/index.md', collapsed: true, items: [
+            { text: 'Enumerations', collapsed: true, items: [
+            ] },
+            { text: 'Interfaces', collapsed: true, items: [
+            ] },
+        ] },
+        ] },
       ],
+      // API DOC END
     },
 
     socialLinks: [

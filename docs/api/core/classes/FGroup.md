@@ -2,8 +2,6 @@
 
 # Class: `abstract` FGroup
 
-## Description
-
 The base class for all groups of components in Fibbo.
 
 ## Constructors
@@ -11,6 +9,9 @@ The base class for all groups of components in Fibbo.
 ### new FGroup()
 
 > **new FGroup**(`options`): [`FGroup`](FGroup.md)
+
+Initialize the group with a list of components.
+If no components are provided, the group will be empty.
 
 #### Parameters
 
@@ -26,20 +27,17 @@ The components to add to the group.
 
 [`FGroup`](FGroup.md)
 
-#### Description
-
-Initialize the group with a list of components.
-If no components are provided, the group will be empty.
-
 #### Defined in
 
-[core/src/FGroup.ts:18](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FGroup.ts#L18)
+[core/src/FGroup.ts:18](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FGroup.ts#L18)
 
 ## Methods
 
 ### addComponent()
 
 > **addComponent**(`component`): `void`
+
+Add a component to the group.
 
 #### Parameters
 
@@ -49,19 +47,17 @@ If no components are provided, the group will be empty.
 
 `void`
 
-#### Description
-
-Add a component to the group.
-
 #### Defined in
 
-[core/src/FGroup.ts:25](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FGroup.ts#L25)
+[core/src/FGroup.ts:25](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FGroup.ts#L25)
 
 ***
 
 ### onFrame()
 
 > **onFrame**(`delta`): `void`
+
+Update all components in the group.
 
 #### Parameters
 
@@ -73,19 +69,17 @@ The time since the last frame.
 
 `void`
 
-#### Description
-
-Update all components in the group.
-
 #### Defined in
 
-[core/src/FGroup.ts:40](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FGroup.ts#L40)
+[core/src/FGroup.ts:40](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FGroup.ts#L40)
 
 ***
 
 ### removeComponent()
 
 > **removeComponent**(`component`): `void`
+
+Remove a component from the group.
 
 #### Parameters
 
@@ -95,13 +89,9 @@ Update all components in the group.
 
 `void`
 
-#### Description
-
-Remove a component from the group.
-
 #### Defined in
 
-[core/src/FGroup.ts:32](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FGroup.ts#L32)
+[core/src/FGroup.ts:32](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FGroup.ts#L32)
 
 ## Properties
 
@@ -109,10 +99,8 @@ Remove a component from the group.
 
 > **components**: [`FComponent`](FComponent.md)[] = `[]`
 
-#### Description
-
 The components in the group.
 
 #### Defined in
 
-[core/src/FGroup.ts:10](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FGroup.ts#L10)
+[core/src/FGroup.ts:10](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FGroup.ts#L10)

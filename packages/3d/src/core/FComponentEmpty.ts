@@ -3,7 +3,7 @@ import { FComponent } from './FComponent'
 import type { FComponentOptions } from './FComponent'
 
 /**
- * @description An empty component. No mesh is created.
+ * An empty component. No mesh is created.
  * @category Core
  */
 export class FComponentEmpty extends FComponent {

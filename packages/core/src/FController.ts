@@ -5,7 +5,7 @@ export interface FControllerOptions {
 }
 
 /**
- * @description The base class for all 2D and 3D controllers in Fibbo.
+ * The base class for all 2D and 3D controllers in Fibbo.
  */
 export abstract class FController {
   /**
@@ -22,7 +22,7 @@ export abstract class FController {
   }
 
   /**
-   * @description Update the controller. Should be called every frame.
+   * Update the controller. Should be called every frame.
    * The purpose of `onFrame` on FController is to update the component's transform in the desired way.
    * Any rendering process should be done on the component, not here.
    * @param delta The time since the last frame.

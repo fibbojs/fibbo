@@ -20,7 +20,7 @@ export interface CustomControllerOptions extends FControllerOptions {
 }
 
 /**
- * @description Custom controller
+ * Custom controller
  * @category Character
  */
 export class CustomController extends FController {
@@ -211,7 +211,7 @@ export interface CustomControllerOptions extends FControllerOptions {
 }
 
 /**
- * @description Character controller that will be used to move the character.
+ * Character controller that will be used to move the character.
  * @category Controller
  */
 export class CustomController extends FController {

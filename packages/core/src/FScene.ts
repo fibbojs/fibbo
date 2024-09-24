@@ -1,6 +1,7 @@
 import type RAPIER2D from '@dimforge/rapier2d'
 import type RAPIER3D from '@dimforge/rapier3d'
 import type { FComponent } from './FComponent'
+import type { FLight } from './FLight'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
@@ -8,7 +9,7 @@ export interface FSceneOptions {
 }
 
 /**
- * @description A scene which contains the components and the camera.
+ * A scene which contains the components and the camera.
  * Also contains the Rapier world if physics is enabled.
  */
 export abstract class FScene {
@@ -28,6 +29,11 @@ export abstract class FScene {
    */
   components: FComponent[]
 
+  /**
+   * The lights in the scene.
+   */
+  lights: FLight[] = []
+
   // Rapier
   gravity: { x: number, y: number, z: number } | { x: number, y: number }
   declare world: RAPIER2D.World | RAPIER3D.World
@@ -36,24 +42,34 @@ export abstract class FScene {
 
   // Callbacks
   /**
-   * @description Callbacks for when a frame is rendered.
+   * Callbacks for when a frame is rendered.
    * It is an array of functions that take the delta time as an argument.
    */
   public __CALLBACKS_ON_FRAME__: ((delta: number) => void)[] = []
   /**
-   * @description Callbacks for when a component is added to the scene.
+   * Callbacks for when a component is added to the scene.
    * It is an array of functions that take the component as an argument.
    */
   public __CALLBACKS_ON_COMPONENT_ADDED__: ((component: FComponent) => void)[] = []
   /**
-   * @description Callbacks for when a component is remove from the scene.
+   * Callbacks for when a component is remove from the scene.
    * It is an array of functions that take the component as an argument.
    */
   public __CALLBACKS_ON_COMPONENT_REMOVED__: ((component: FComponent) => void)[] = []
   /**
-   * @description Callbacks for when the scene is ready.
+   * Callbacks for when the scene is ready.
    */
   public __CALLBACKS_ON_READY__: (() => void)[] = []
+  /**
+   * Callbacks for when a light is added to the scene.
+   * It is an array of functions that take the light as an argument.
+   */
+  public __CALLBACKS_ON_LIGHT_ADDED__: ((light: FLight) => void)[] = []
+  /**
+   * Callbacks for when a light is added to the scene.
+   * It is an array of functions that take the light as an argument.
+   */
+  public __CALLBACKS_ON_LIGHT_REMOVED__: ((light: FLight) => void)[] = []
 
   constructor(options?: FSceneOptions) {
     // Verify window and document are available
@@ -101,10 +117,12 @@ export abstract class FScene {
 
     // Initialize the components array
     this.components = []
+    // Initialize the lights array
+    this.lights = []
   }
 
   /**
-   * @description Add a component to the scene.
+   * Add a component to the scene.
    */
   addComponent(component: FComponent): void {
     this.components.push(component)
@@ -112,7 +130,7 @@ export abstract class FScene {
   }
 
   /**
-   * @description Remove a component from the scene.
+   * Remove a component from the scene.
    */
   removeComponent(component: FComponent): void {
     const index = this.components.indexOf(component)
@@ -123,31 +141,64 @@ export abstract class FScene {
   }
 
   /**
-   * @description Add a callback to be called when a frame is rendered.
+   * Add a light to the scene.
+   */
+  addLight(light: FLight): void {
+    this.lights.push(light)
+    this.__CALLBACKS_ON_LIGHT_ADDED__.forEach(callback => callback(light))
+  }
+
+  /**
+   * Remove a light from the scene.
+   */
+  removeLight(light: FLight): void {
+    const index = this.lights.indexOf(light)
+    if (index !== -1) {
+      this.lights.splice(index, 1)
+    }
+    this.__CALLBACKS_ON_LIGHT_REMOVED__.forEach(callback => callback(light))
+  }
+
+  /**
+   * Add a callback to be called when a frame is rendered.
    */
   onFrame(callback: (delta: number) => void) {
     this.__CALLBACKS_ON_FRAME__.push(callback)
   }
 
   /**
-   * @description Add a callback to be called when a component is added to the scene.
+   * Add a callback to be called when a component is added to the scene.
    */
   onComponentAdded(callback: (component: FComponent) => void) {
     this.__CALLBACKS_ON_COMPONENT_ADDED__.push(callback)
   }
 
   /**
-   * @description Add a callback to be called when a component is removed from the scene.
+   * Add a callback to be called when a component is removed from the scene.
    */
   onComponentRemoved(callback: (component: FComponent) => void) {
     this.__CALLBACKS_ON_COMPONENT_REMOVED__.push(callback)
   }
 
   /**
-   * @description Add a callback to be called when the scene is ready.
+   * Add a callback to be called when the scene is ready.
    * The scene is ready when the `init` method has finished.
    */
   onReady(callback: () => void) {
     this.__CALLBACKS_ON_READY__.push(callback)
+  }
+
+  /**
+   * Add a callback to be called when a light is added to the scene.
+   */
+  onLightAdded(callback: (light: FLight) => void) {
+    this.__CALLBACKS_ON_LIGHT_ADDED__.push(callback)
+  }
+
+  /**
+   * Add a callback to be called when a light is removed from the scene.
+   */
+  onLightRemoved(callback: (light: FLight) => void) {
+    this.__CALLBACKS_ON_LIGHT_REMOVED__.push(callback)
   }
 }

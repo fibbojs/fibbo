@@ -1,46 +1,38 @@
 /**
  * Export Core
  */
-// Core
-export { FScene } from './core/FScene'
-export { FComponent } from './core/FComponent'
-export { FComponentEmpty } from './core/FComponentEmpty'
-export { FTransform } from './core/FTransform'
-
-// Physics
-export { FRigidBody } from './core/FRigidBody'
-export { FCollider } from './core/FCollider'
-
 // Cameras
-export { FCamera } from './cameras/FCamera'
-export { FAttachedCamera } from './cameras/FAttachedCamera'
-export { FFixedCamera } from './cameras/FFixedCamera'
-export { FFreeCamera } from './cameras/FFreeCamera'
+export * from './cameras/FAttachedCamera'
+export * from './cameras/FCamera'
+export * from './cameras/FFixedCamera'
+export * from './cameras/FFreeCamera'
 
 // Controllers
-export { FController } from './controllers/FController'
-export { FCharacterController } from './controllers/FCharacterController'
-export { FCharacterControllerD } from './controllers/FCharacterControllerD'
-export { FCharacterControllerK } from './controllers/FCharacterControllerK'
-export { FCharacterControllerKP } from './controllers/FCharacterControllerKP'
-export { FCharacterControllerKV } from './controllers/FCharacterControllerKV'
+export * from './controllers/FCharacterController'
+export * from './controllers/FCharacterControllerD'
+export * from './controllers/FCharacterControllerK'
+export * from './controllers/FCharacterControllerKP'
+export * from './controllers/FCharacterControllerKV'
+export * from './controllers/FController'
+
+// Core
+export * from './core/FCollider'
+export * from './core/FComponent'
+export * from './core/FComponentEmpty'
+export * from './core/FRigidBody'
+export * from './core/FScene'
+export * from './core/FTransform'
+
+// Lights
+export * from './lights/FLight'
 
 // Polygons
-export { FPolygon } from './polygons/FPolygon'
-export { FRectangle } from './polygons/FRectangle'
-export { FCircle } from './polygons/FCircle'
+export * from './polygons/FCircle'
+export * from './polygons/FPolygon'
+export * from './polygons/FRectangle'
 
 // Sprite
-export { FSprite } from './sprite/FSprite'
+export * from './sprite/FSprite'
 
 // Types
-export { FShapes } from './types/FShapes'
-export type { FComponentOptions } from './core/FComponent'
-export type { FControllerOptions } from './controllers/FController'
-export type { FColliderOptions } from './core/FCollider'
-export type { FRigidBodyOptions } from './core/FRigidBody'
-export type { FCameraOptions } from './cameras/FCamera'
-export type { FCharacterControllerOptions } from './controllers/FCharacterController'
-export type { FSceneOptions } from './core/FScene'
-export type { FSpriteOptions } from './sprite/FSprite'
-export type { FTransformOptions } from './core/FTransform'
+export * from './types/FShapes'

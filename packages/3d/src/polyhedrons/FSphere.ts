@@ -7,8 +7,8 @@ import type { FColliderOptions } from '../core/FCollider'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
- * @description A simple sphere model in Fibbo.
- * @category Model
+ * A simple sphere model in Fibbo.
+ * @category Polyhedrons
  * @example
  * ```ts
  * import { FScene, FSphere } from '@fibbojs/3d'

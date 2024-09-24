@@ -3,7 +3,7 @@ import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
 /**
- * @description A fixed camera.
+ * A fixed camera.
  * @category Camera
  */
 export class FFixedCamera extends FCamera {

@@ -3,7 +3,7 @@ import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
 /**
- * @description A free camera that can be moved around.
+ * A free camera that can be moved around.
  * @category Camera
  */
 export class FFreeCamera extends FCamera {

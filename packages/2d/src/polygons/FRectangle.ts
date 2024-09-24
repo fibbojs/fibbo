@@ -3,7 +3,7 @@ import type { FScene } from '../core/FScene'
 import { FPolygon } from './FPolygon'
 
 /**
- * @description A simple square in Fibbo.
+ * A simple square in Fibbo.
  * @category Polygons
  * @example
  * ```ts

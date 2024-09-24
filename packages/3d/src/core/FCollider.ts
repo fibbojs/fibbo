@@ -14,7 +14,7 @@ export interface FColliderOptions {
 }
 
 /**
- * @description A 3d collider.
+ * A 3d collider.
  * @category Core
  */
 export class FCollider {
@@ -34,7 +34,7 @@ export class FCollider {
   colliderRotationOffset: { x: number, y: number, z: number }
 
   /**
-   * @description Creates a collider for a given component.
+   * Creates a collider for a given component.
    * @param component The component which the collider will be attached to.
    * @param options The options for the collider.
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.

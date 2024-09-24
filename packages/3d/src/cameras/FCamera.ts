@@ -6,7 +6,7 @@ import { FTransform } from '../core/FTransform'
 export interface FCameraOptions extends FTransformOptions {}
 
 /**
- * @description The base class for cameras in Fibbo.
+ * The base class for 3d cameras in Fibbo.
  * @category Camera
  */
 export abstract class FCamera extends THREE.PerspectiveCamera implements FCameraCore {
@@ -15,7 +15,6 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
    */
   public __IS_3D__: boolean = true
   public __IS_2D__: boolean = false
-
   declare public __ID__: number
   public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 
@@ -54,21 +53,21 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
   abstract onFrame(_delta: number): void
 
   /**
-   * @description Set the position of the camera.
+   * Set the position of the camera.
    */
   setPosition(x: number, y: number, z: number): void {
     this.position.set(x, y, z)
   }
 
   /**
-   * @description Set the scale of the camera.
+   * Set the scale of the camera.
    */
   setScale(x: number, y: number, z: number): void {
     this.scale.set(x, y, z)
   }
 
   /**
-   * @description Set the rotation of the camera.
+   * Set the rotation of the camera.
    */
   setRotation(x: number, y: number, z: number): void {
     this.rotation.set(x, y, z)
@@ -91,7 +90,7 @@ export abstract class FCamera extends THREE.PerspectiveCamera implements FCamera
   }
 
   /**
-   * @description Get the direction of the camera.
+   * Get the direction of the camera.
    * This method is useful to get the direction of the camera to apply forces in the direction of the camera.
    * @returns The direction of the camera. It is a normalized vector.
    */

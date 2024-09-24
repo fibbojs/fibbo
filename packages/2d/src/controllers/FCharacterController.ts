@@ -15,8 +15,8 @@ export interface FCharacterControllerOptions extends FControllerOptions {
 }
 
 /**
- * @description An abstract pre-defined character controller.
- * @category Character
+ * An abstract pre-defined character controller.
+ * @category Controller
  */
 export abstract class FCharacterController extends FController {
   /**

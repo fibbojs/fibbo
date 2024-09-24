@@ -1,7 +1,7 @@
 import type { FScene } from '@fibbojs/core'
 
 /**
- * @description A helper class to manage keyboard events.
+ * A helper class to manage keyboard events.
  * Events will be triggered on each frame.
  * @example
  * ```ts
@@ -18,19 +18,19 @@ import type { FScene } from '@fibbojs/core'
  */
 export class FKeyboard {
   /**
-   * @description A map of all the keys being pressed
+   * A map of all the keys being pressed
    */
   keys: Record<string, boolean>
   /**
-   * @description An map of all the callbacks for each key being pressed
+   * An map of all the callbacks for each key being pressed
    */
   callback: Record<string, Array<() => void>>
   /**
-   * @description An map of all the callbacks for each key being released
+   * An map of all the callbacks for each key being released
    */
   callbackKeyDown: Record<string, Array<() => void>>
   /**
-   * @description An map of all the callbacks for each key being released
+   * An map of all the callbacks for each key being released
    */
   callbackKeyUp: Record<string, Array<() => void>>
 
@@ -76,7 +76,7 @@ export class FKeyboard {
   }
 
   /**
-   * @description Add a listener to a given key event.
+   * Add a listener to a given key event.
    * This is a small wrapper around the native `addEventListener` method, which helps listen to key events continuously.
    * Basically, this prevents keyboard "debounce" delay by firing the given callback on each frame if the key is pressed.
    * @param key The key to listen to
@@ -112,7 +112,7 @@ export class FKeyboard {
   }
 
   /**
-   * @description Add a listener to a given key event when the key is pressed
+   * Add a listener to a given key event when the key is pressed
    * @param key The key to listen to
    * @param callback The callback to call when the key is pressed
    * @returns The callback function that removes the listener
@@ -146,7 +146,7 @@ export class FKeyboard {
   }
 
   /**
-   * @description Add a listener to a given key event when the key is released
+   * Add a listener to a given key event when the key is released
    * @param key The key to listen to
    * @param callback The callback to call when the key is released
    * @returns The callback function that removes the listener
@@ -180,7 +180,7 @@ export class FKeyboard {
   }
 
   /**
-   * @description Remove all the listeners
+   * Remove all the listeners
    * @example
    * ```ts
    * const keyboard = new FKeyboard(scene)

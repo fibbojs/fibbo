@@ -2,7 +2,7 @@ import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
 /**
- * @description A fixed camera that does not move.
+ * A fixed camera that does not move.
  * @category Camera
  * @example
  * ```ts

@@ -13,12 +13,9 @@
 - [FFixedCamera](classes/FFixedCamera.md)
 - [FFreeCamera](classes/FFreeCamera.md)
 
-#### Character
-
-- [FCharacterController](classes/FCharacterController.md)
-
 #### Controller
 
+- [FCharacterController](classes/FCharacterController.md)
 - [FCharacterControllerD](classes/FCharacterControllerD.md)
 - [FCharacterControllerK](classes/FCharacterControllerK.md)
 - [FCharacterControllerKP](classes/FCharacterControllerKP.md)
@@ -32,6 +29,10 @@
 - [FRigidBody](classes/FRigidBody.md)
 - [FScene](classes/FScene.md)
 - [FTransform](classes/FTransform.md)
+
+#### Light
+
+- [FLight](classes/FLight.md)
 
 #### Other
 
@@ -53,11 +54,13 @@
 
 ### Interfaces
 
+- [FAttachedCameraOptions](interfaces/FAttachedCameraOptions.md)
 - [FCameraOptions](interfaces/FCameraOptions.md)
 - [FCharacterControllerOptions](interfaces/FCharacterControllerOptions.md)
 - [FColliderOptions](interfaces/FColliderOptions.md)
 - [FComponentOptions](interfaces/FComponentOptions.md)
 - [FControllerOptions](interfaces/FControllerOptions.md)
+- [FLightOptions](interfaces/FLightOptions.md)
 - [FRigidBodyOptions](interfaces/FRigidBodyOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)
 - [FSpriteOptions](interfaces/FSpriteOptions.md)

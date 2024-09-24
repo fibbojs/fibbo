@@ -2,8 +2,6 @@
 
 # Class: `abstract` FCamera
 
-## Description
-
 The base class for cameras in Fibbo.
 
 ## Extends
@@ -26,13 +24,15 @@ The base class for cameras in Fibbo.
 
 #### Defined in
 
-[core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FCamera.ts#L7)
+[core/src/FCamera.ts:7](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FCamera.ts#L7)
 
 ## Methods
 
 ### emitCollisionWith()
 
 > **emitCollisionWith**(`options`): `void`
+
+Emit a collision event with a given class or object.
 
 #### Parameters
 
@@ -51,10 +51,6 @@ The component to emit the collision event with.
 #### Returns
 
 `void`
-
-#### Description
-
-Emit a collision event with a given class or object.
 
 #### Examples
 
@@ -80,13 +76,15 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[core/src/FComponent.ts:134](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L134)
+[core/src/FComponent.ts:134](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L134)
 
 ***
 
 ### onCollisionWith()
 
 > **onCollisionWith**(`classOrObject`, `callback`): () => `void`
+
+Add a callback to be called when a collision occurs.
 
 #### Parameters
 
@@ -107,10 +105,6 @@ A function to remove the callback.
 ##### Returns
 
 `void`
-
-#### Description
-
-Add a callback to be called when a collision occurs.
 
 #### Examples
 
@@ -136,13 +130,17 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[core/src/FComponent.ts:84](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L84)
+[core/src/FComponent.ts:84](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L84)
 
 ***
 
 ### onFrame()
 
 > **onFrame**(`delta`): `void`
+
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Parameters
 
@@ -154,25 +152,21 @@ The time since the last frame.
 
 `void`
 
-#### Description
-
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
-
 #### Inherited from
 
 [`FComponent`](FComponent.md).[`onFrame`](FComponent.md#onframe)
 
 #### Defined in
 
-[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L55)
+[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L55)
 
 ***
 
 ### setZoom()
 
 > `abstract` **setZoom**(`zoom`): `void`
+
+Set the zoom of the camera.
 
 #### Parameters
 
@@ -182,13 +176,9 @@ Any changes on its transform should be done on the controller, not here.
 
 `void`
 
-#### Description
-
-Set the zoom of the camera.
-
 #### Defined in
 
-[core/src/FCamera.ts:14](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FCamera.ts#L14)
+[core/src/FCamera.ts:14](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FCamera.ts#L14)
 
 ## Properties
 
@@ -196,14 +186,12 @@ Set the zoom of the camera.
 
 > **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
+Callbacks for when a collision occurs with a given class or object.
+It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
+
 #### Index Signature
 
  \[`key`: `string`\]: (`data`) => `void`[]
-
-#### Description
-
-Callbacks for when a collision occurs with a given class or object.
-It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
 
 #### Inherited from
 
@@ -211,15 +199,13 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[core/src/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L38)
+[core/src/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L38)
 
 ***
 
 ### \_\_ID\_\_
 
 > **\_\_ID\_\_**: `number`
-
-#### Description
 
 Unique identifier for the component.
 It is generated automatically.
@@ -230,7 +216,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L32)
+[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L32)
 
 ***
 
@@ -244,7 +230,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L26)
+[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L26)
 
 ***
 
@@ -260,7 +246,7 @@ Internal flags
 
 #### Defined in
 
-[core/src/FComponent.ts:25](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L25)
+[core/src/FComponent.ts:25](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L25)
 
 ***
 
@@ -276,4 +262,4 @@ The controller attached to the component.
 
 #### Defined in
 
-[core/src/FComponent.ts:43](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/core/src/FComponent.ts#L43)
+[core/src/FComponent.ts:43](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/core/src/FComponent.ts#L43)

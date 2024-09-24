@@ -2,8 +2,6 @@
 
 # Class: `abstract` FController
 
-## Description
-
 The base class for 3D controllers in Fibbo.
 
 ## Extends
@@ -36,7 +34,7 @@ The options for the controller.
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/controllers/FController.ts#L23)
+[3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/controllers/FController.ts#L23)
 
 ## Methods
 
@@ -83,4 +81,4 @@ It is redefined here to get the correct type (with 3D properties).
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/controllers/FController.ts#L17)
+[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/controllers/FController.ts#L17)

@@ -18,7 +18,7 @@ export interface FComponentOptions {
 }
 
 /**
- * @description The base class for all 3D objects in Fibbo.
+ * The base class for all 3D objects in Fibbo.
  * @category Core
  */
 export abstract class FComponent extends FComponentCore {
@@ -191,7 +191,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the position of the component.
+   * Set the position of the component.
    * @param options The options for the position.
    * @param options.x The position on the x-axis.
    * @param options.y The position on the y-axis.
@@ -215,7 +215,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the scale of the component.
+   * Set the scale of the component.
    * @param options The options for the scale.
    * @param options.x The scale on the x-axis.
    * @param options.y The scale on the y-axis.
@@ -256,7 +256,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the rotation of the component from radians.
+   * Set the rotation of the component from radians.
    * @param options The options for the rotation.
    * @param options.x The rotation on the x-axis.
    * @param options.y The rotation on the y-axis.
@@ -280,7 +280,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Set the rotation of the component from degrees.
+   * Set the rotation of the component from degrees.
    * @param options The options for the rotation.
    * @param options.x The rotation in degrees on the x-axis.
    * @param options.y The rotation in degrees on the y-axis.
@@ -302,7 +302,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Init a rigid body for the component.
+   * Init a rigid body for the component.
    * @param options The options for the rigid body.
    * @param options.position The position of the rigid body. If not defined, it will use the default position of the FComponent.
    * @param options.scale The scale of the rigid body. If not defined, it will use the default scale of the FComponent.
@@ -338,7 +338,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Only init a collider for the component, without a rigid body.
+   * Only init a collider for the component, without a rigid body.
    * This is useful for static objects.
    * @param options The options for the collider.
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.
@@ -364,7 +364,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * @description Init a sensor for the component.
+   * Init a sensor for the component.
    * This is useful for triggerings events when the component collides with other components.
    * @param options The options for the collider.
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.

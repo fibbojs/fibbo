@@ -6,7 +6,7 @@ import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 
 /**
- * @description A pre-defined character controller based on a Dynamic RigidBody.
+ * A pre-defined character controller based on a Dynamic RigidBody.
  * @category Controller
  * @example
  * ```ts

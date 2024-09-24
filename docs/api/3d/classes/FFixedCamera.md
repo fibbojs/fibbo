@@ -2,8 +2,6 @@
 
 # Class: FFixedCamera
 
-## Description
-
 A fixed camera that does not move.
 
 ## Example
@@ -42,7 +40,7 @@ scene.camera.lookAt(0, 0, 0)
 
 #### Defined in
 
-[3d/src/cameras/FFixedCamera.ts:19](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FFixedCamera.ts#L19)
+[3d/src/cameras/FFixedCamera.ts:19](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FFixedCamera.ts#L19)
 
 ## Methods
 
@@ -363,7 +361,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:89](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L89)
+[3d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L88)
 
 ***
 
@@ -371,16 +369,14 @@ player.emitCollisionWith({
 
 > **getCameraDirection**(): `Vector3`
 
+Get the direction of the camera.
+This method is useful to get the direction of the camera to apply forces in the direction of the camera.
+
 #### Returns
 
 `Vector3`
 
 The direction of the camera. It is a normalized vector.
-
-#### Description
-
-Get the direction of the camera.
-This method is useful to get the direction of the camera to apply forces in the direction of the camera.
 
 #### Inherited from
 
@@ -388,7 +384,7 @@ This method is useful to get the direction of the camera to apply forces in the 
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:98](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L98)
+[3d/src/cameras/FCamera.ts:97](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L97)
 
 ***
 
@@ -1130,7 +1126,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:82](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L82)
+[3d/src/cameras/FCamera.ts:81](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L81)
 
 ***
 
@@ -1158,7 +1154,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[3d/src/cameras/FFixedCamera.ts:23](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FFixedCamera.ts#L23)
+[3d/src/cameras/FFixedCamera.ts:23](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FFixedCamera.ts#L23)
 
 ***
 
@@ -1489,6 +1485,8 @@ Use [.setFocalLength()](FAttachedCamera.md#setfocallength) and [.filmGauge](FAtt
 
 > **setPosition**(`x`, `y`, `z`): `void`
 
+Set the position of the camera.
+
 #### Parameters
 
 • **x**: `number`
@@ -1500,10 +1498,6 @@ Use [.setFocalLength()](FAttachedCamera.md#setfocallength) and [.filmGauge](FAtt
 #### Returns
 
 `void`
-
-#### Description
-
-Set the position of the camera.
 
 #### Inherited from
 
@@ -1511,13 +1505,15 @@ Set the position of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L59)
+[3d/src/cameras/FCamera.ts:58](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L58)
 
 ***
 
 ### setRotation()
 
 > **setRotation**(`x`, `y`, `z`): `void`
+
+Set the rotation of the camera.
 
 #### Parameters
 
@@ -1531,17 +1527,13 @@ Set the position of the camera.
 
 `void`
 
-#### Description
-
-Set the rotation of the camera.
-
 #### Inherited from
 
 [`FCamera`](FCamera.md).[`setRotation`](FCamera.md#setrotation)
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:73](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L73)
+[3d/src/cameras/FCamera.ts:72](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L72)
 
 ***
 
@@ -1661,6 +1653,8 @@ Normalized Quaternion.
 
 > **setScale**(`x`, `y`, `z`): `void`
 
+Set the scale of the camera.
+
 #### Parameters
 
 • **x**: `number`
@@ -1673,17 +1667,13 @@ Normalized Quaternion.
 
 `void`
 
-#### Description
-
-Set the scale of the camera.
-
 #### Inherited from
 
 [`FCamera`](FCamera.md).[`setScale`](FCamera.md#setscale)
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:66](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L66)
+[3d/src/cameras/FCamera.ts:65](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L65)
 
 ***
 
@@ -1790,7 +1780,7 @@ Set the zoom of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:77](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L77)
+[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L76)
 
 ***
 
@@ -2170,7 +2160,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:20](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L20)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -2189,7 +2179,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L18)
 
 ***
 
@@ -2203,7 +2193,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L17)
+[3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -2219,7 +2209,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L16)
+[3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -3046,7 +3036,7 @@ Transform of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:25](https://github.com/fibbojs/fibbo/blob/c87e9de577b4352e4b6a8336cf19cf678868439d/packages/3d/src/cameras/FCamera.ts#L25)
+[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L24)
 
 ***
 
