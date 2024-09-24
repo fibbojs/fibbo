@@ -4,8 +4,8 @@ import { FCharacterControllerK } from './FCharacterControllerK'
 import type { FCharacterControllerOptions } from './FCharacterController'
 
 /**
- * @description A pre-defined character controller based on a Kinematic Velocity RigidBody.
- * @category Character
+ * A pre-defined character controller based on a Kinematic Velocity RigidBody.
+ * @category Controller
  * @example
  * ```ts
  * import { FCapsule, FCharacterControllerKV, FScene } from '@fibbojs/3d'

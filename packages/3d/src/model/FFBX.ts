@@ -5,7 +5,7 @@ import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
 /**
- * @description A FBX model in Fibbo.
+ * A FBX model in Fibbo.
  * @category Model
  * @example
  * ```ts

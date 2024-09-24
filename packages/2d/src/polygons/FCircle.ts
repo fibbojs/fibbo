@@ -5,7 +5,7 @@ import { FShapes } from '../types/FShapes'
 import { FPolygon } from './FPolygon'
 
 /**
- * @description A simple circle in Fibbo.
+ * A simple circle in Fibbo.
  * @category Polygons
  * @example
  * ```ts

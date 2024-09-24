@@ -2,8 +2,6 @@
 
 # Class: `abstract` FCharacterControllerK
 
-## Description
-
 An abstract pre-defined character controller based on Kinematic rigidbodies.
 
 ## Extends
@@ -37,7 +35,7 @@ An abstract pre-defined character controller based on Kinematic rigidbodies.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerK.ts:22](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FCharacterControllerK.ts#L22)
+[2d/src/controllers/FCharacterControllerK.ts:22](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FCharacterControllerK.ts#L22)
 
 ## Methods
 
@@ -61,7 +59,7 @@ Return the corrected movements for the current frame.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerK.ts:44](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FCharacterControllerK.ts#L44)
+[2d/src/controllers/FCharacterControllerK.ts:44](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FCharacterControllerK.ts#L44)
 
 ***
 
@@ -103,7 +101,7 @@ The character controller that will be used to move the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerK.ts:20](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FCharacterControllerK.ts#L20)
+[2d/src/controllers/FCharacterControllerK.ts:20](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FCharacterControllerK.ts#L20)
 
 ***
 
@@ -120,7 +118,7 @@ It is redefined here to get the correct type (with 2D properties).
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FController.ts#L17)
+[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -152,7 +150,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:25](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FCharacterController.ts#L25)
+[2d/src/controllers/FCharacterController.ts:25](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FCharacterController.ts#L25)
 
 ***
 
@@ -168,7 +166,7 @@ The scene where the character is.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:40](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FCharacterController.ts#L40)
+[2d/src/controllers/FCharacterController.ts:40](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FCharacterController.ts#L40)
 
 ***
 
@@ -184,7 +182,7 @@ The speed of the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:35](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FCharacterController.ts#L35)
+[2d/src/controllers/FCharacterController.ts:35](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FCharacterController.ts#L35)
 
 ***
 
@@ -196,4 +194,4 @@ The y velocity of the character. Used to simulate gravity.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerK.ts:15](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/2d/src/controllers/FCharacterControllerK.ts#L15)
+[2d/src/controllers/FCharacterControllerK.ts:15](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/controllers/FCharacterControllerK.ts#L15)

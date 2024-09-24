@@ -3,8 +3,8 @@ import type { FComponentOptions } from '../core/FComponent'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
- * @description A simple cube model in Fibbo.
- * @category Model
+ * A simple cube model in Fibbo.
+ * @category Polyhedrons
  * @example
  * ```ts
  * import { FScene, FCuboid } from '@fibbojs/3d'

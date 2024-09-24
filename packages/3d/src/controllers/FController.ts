@@ -7,7 +7,7 @@ export interface FControllerOptions extends FControllerOptionsCore {
 }
 
 /**
- * @description The base class for 3D controllers in Fibbo.
+ * The base class for 3D controllers in Fibbo.
  */
 export abstract class FController extends FControllerCore {
   /**

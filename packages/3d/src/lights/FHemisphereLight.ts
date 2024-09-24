@@ -9,7 +9,7 @@ export interface FHemisphereLightOptions extends FLightOptions {
 }
 
 /**
- * @description An hemisphere light in 3d space.
+ * An hemisphere light in 3d space.
  * @category Light
  */
 export class FHemisphereLight extends FLight {

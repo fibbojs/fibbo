@@ -8,12 +8,12 @@ export interface FAttachedCameraOptions extends FCameraOptions {
 }
 
 /**
- * @description A camera attached to a given target.
+ * A camera attached to a given target.
  * @category Camera
  */
 export class FAttachedCamera extends FCamera {
   /**
-   * @description The target to follow.
+   * The target to follow.
    */
   target: FComponent
 

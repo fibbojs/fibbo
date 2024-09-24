@@ -14,7 +14,7 @@ export interface FSceneOptions extends FSceneOptionsCore {
 }
 
 /**
- * @description A scene which contains the models, the Three.js scene and the Rapier world.
+ * A scene which contains the models, the Three.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts
@@ -151,7 +151,7 @@ export class FScene extends FSceneCore {
   }
 
   /**
-   * @description Handle a collision event between two colliders.
+   * Handle a collision event between two colliders.
    * @param handle1 The handle of the first collider
    * @param handle2 The handle of the second collider
    * @param start If the collision has started or ended

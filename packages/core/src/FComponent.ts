@@ -16,7 +16,7 @@ export interface OnCollisionWithData {
 }
 
 /**
- * @description The base class for all 2D and 3D components in Fibbo.
+ * The base class for all 2D and 3D components in Fibbo.
  */
 export abstract class FComponent {
   /**
@@ -26,13 +26,13 @@ export abstract class FComponent {
   public __IS_2D__: boolean = false
 
   /**
-   * @description Unique identifier for the component.
+   * Unique identifier for the component.
    * It is generated automatically.
    */
   public __ID__: number
 
   /**
-   * @description Callbacks for when a collision occurs with a given class or object.
+   * Callbacks for when a collision occurs with a given class or object.
    * It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
    */
   public __CALLBACKS_ON_COLLISION__: { [key: string]: ((data: OnCollisionWithData) => void)[] } = {}
@@ -47,7 +47,7 @@ export abstract class FComponent {
   }
 
   /**
-   * @description Update the component. Should be called every frame.
+   * Update the component. Should be called every frame.
    * The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
    * Any changes on its transform should be done on the controller, not here.
    * @param delta The time since the last frame.
@@ -60,7 +60,7 @@ export abstract class FComponent {
   }
 
   /**
-   * @description Add a callback to be called when a collision occurs.
+   * Add a callback to be called when a collision occurs.
    * @param classOrObject The class or object to add the callback to.
    * @param callback The callback to add.
    * @returns A function to remove the callback.
@@ -110,7 +110,7 @@ export abstract class FComponent {
   }
 
   /**
-   * @description Emit a collision event with a given class or object.
+   * Emit a collision event with a given class or object.
    * @param options The options for the collision event.
    * @param options.class The class to emit the collision event with.
    * @param options.component The component to emit the collision event with.

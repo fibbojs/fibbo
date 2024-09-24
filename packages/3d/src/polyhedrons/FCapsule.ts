@@ -7,8 +7,8 @@ import type { FRigidBodyOptions } from '../core/FRigidBody'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
- * @description A simple capsule model in Fibbo.
- * @category Model
+ * A simple capsule model in Fibbo.
+ * @category Polyhedrons
  * @example
  * ```ts
  * import { FScene, FCapsule } from '@fibbojs/3d'

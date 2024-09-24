@@ -3,7 +3,7 @@ import { FOrbitCamera } from './FOrbitCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
- * @description A camera that can be attached to a FComponent and orbits around it in a more game-like way.
+ * A camera that can be attached to a FComponent and orbits around it in a more game-like way.
  * @category Camera
  * @example
  * ```ts

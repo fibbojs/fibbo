@@ -10,7 +10,7 @@ export interface FLightOptions extends FTransformOptions {
 }
 
 /**
- * @description The base class for 2d lights in Fibbo.
+ * The base class for 2d lights in Fibbo.
  * @category Light
  */
 export abstract class FLight extends FLightCore {

@@ -8,7 +8,7 @@ export interface FAttachedCameraOptions extends FCameraOptions {
 }
 
 /**
- * @description A camera that can be attached to a FComponent.
+ * A camera that can be attached to a FComponent.
  * @category Camera
  * @example
  * ```ts

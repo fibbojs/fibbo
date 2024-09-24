@@ -4,9 +4,9 @@ import { FComponent } from '../core/FComponent'
 import type { FComponentOptions } from '../core/FComponent'
 
 /**
- * @description A simple polyhedron model in Fibbo.
+ * A simple polyhedron model in Fibbo.
  * Defaults to a cube.
- * @category Model
+ * @category Polyhedrons
  */
 export abstract class FPolyhedron extends FComponent {
   /**
@@ -37,7 +37,7 @@ export abstract class FPolyhedron extends FComponent {
   }
 
   /**
-   * @description Change the color of the polyhedron.
+   * Change the color of the polyhedron.
    * @param color The color of the polyhedron.
    * @example
    * ```ts

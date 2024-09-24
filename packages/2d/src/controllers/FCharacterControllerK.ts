@@ -5,7 +5,7 @@ import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 
 /**
- * @description An abstract pre-defined character controller based on Kinematic rigidbodies.
+ * An abstract pre-defined character controller based on Kinematic rigidbodies.
  * @category Controller
  */
 export abstract class FCharacterControllerK extends FCharacterController {

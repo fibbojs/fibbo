@@ -8,7 +8,7 @@ export interface FLightProbeOptions extends FLightOptions {
 }
 
 /**
- * @description A light probe in 3d space.
+ * A light probe in 3d space.
  * Unlike other lights, light probes do not emit light.
  * Instead they store information about light passing through 3D space.
  * During rendering, the light that hits a 3D object is approximated by using the data from the light probe.

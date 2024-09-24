@@ -2,7 +2,7 @@ import type { FScene } from '@fibbojs/2d'
 import type { DebugRenderBuffers } from '@dimforge/rapier2d'
 
 /**
- * @description A helper class to debug a given 2d scene
+ * A helper class to debug a given 2d scene
  * @example
  * ```ts
  * const fDebugger = FDebug2d(scene)

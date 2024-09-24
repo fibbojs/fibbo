@@ -27,7 +27,7 @@ export interface FRigidBodyOptions {
 }
 
 /**
- * @description A 3d RigidBody.
+ * A 3d RigidBody.
  * @category Core
  */
 export class FRigidBody {
@@ -41,7 +41,7 @@ export class FRigidBody {
   collider: FCollider
 
   /**
-   * @description Creates a rigid body for the given component.
+   * Creates a rigid body for the given component.
    * @param component The component which the collider will be attached to.
    * @param options The options for the rigid body.
    * @param options.position The position of the rigid body. If not defined, it will use the default position of the FComponent.

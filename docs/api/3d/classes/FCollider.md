@@ -2,8 +2,6 @@
 
 # Class: FCollider
 
-## Description
-
 A 3d collider.
 
 ## Constructors
@@ -11,6 +9,8 @@ A 3d collider.
 ### new FCollider()
 
 > **new FCollider**(`component`, `options`?): [`FCollider`](FCollider.md)
+
+Creates a collider for a given component.
 
 #### Parameters
 
@@ -26,10 +26,6 @@ The options for the collider.
 
 [`FCollider`](FCollider.md)
 
-#### Description
-
-Creates a collider for a given component.
-
 #### Example
 
 ```ts
@@ -43,7 +39,7 @@ const collider = new FCollider(component, {
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:57](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FCollider.ts#L57)
+[3d/src/core/FCollider.ts:57](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FCollider.ts#L57)
 
 ## Properties
 
@@ -55,7 +51,7 @@ RAPIER Collider
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:24](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FCollider.ts#L24)
+[3d/src/core/FCollider.ts:24](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FCollider.ts#L24)
 
 ***
 
@@ -80,7 +76,7 @@ This is used to adjust the collider position relative to the mesh.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:29](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FCollider.ts#L29)
+[3d/src/core/FCollider.ts:29](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FCollider.ts#L29)
 
 ***
 
@@ -105,4 +101,4 @@ This is used to adjust the collider position relative to the mesh.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:34](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FCollider.ts#L34)
+[3d/src/core/FCollider.ts:34](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FCollider.ts#L34)

@@ -4,7 +4,7 @@ import { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
 
 /**
- * @description A simple polygon in Fibbo.
+ * A simple polygon in Fibbo.
  * @category Polygons
  */
 export abstract class FPolygon extends FComponent {

@@ -15,16 +15,13 @@
 - [FOrbitCamera](classes/FOrbitCamera.md)
 - [FPointerLockCamera](classes/FPointerLockCamera.md)
 
-#### Character
-
-- [FCharacterControllerKV](classes/FCharacterControllerKV.md)
-
 #### Controller
 
 - [FCharacterController](classes/FCharacterController.md)
 - [FCharacterControllerD](classes/FCharacterControllerD.md)
 - [FCharacterControllerK](classes/FCharacterControllerK.md)
 - [FCharacterControllerKP](classes/FCharacterControllerKP.md)
+- [FCharacterControllerKV](classes/FCharacterControllerKV.md)
 
 #### Core
 
@@ -38,24 +35,31 @@
 #### Light
 
 - [FAmbientLight](classes/FAmbientLight.md)
+- [FDirectionalLight](classes/FDirectionalLight.md)
+- [FHemisphereLight](classes/FHemisphereLight.md)
 - [FLight](classes/FLight.md)
+- [FLightProbe](classes/FLightProbe.md)
 - [FPointLight](classes/FPointLight.md)
+- [FSpotLight](classes/FSpotLight.md)
 
 #### Model
 
-- [FCapsule](classes/FCapsule.md)
-- [FCuboid](classes/FCuboid.md)
 - [FFBX](classes/FFBX.md)
 - [FGLB](classes/FGLB.md)
 - [FGLTF](classes/FGLTF.md)
 - [FModel](classes/FModel.md)
 - [FOBJ](classes/FOBJ.md)
-- [FPolyhedron](classes/FPolyhedron.md)
-- [FSphere](classes/FSphere.md)
 
 #### Other
 
 - [FController](classes/FController.md)
+
+#### Polyhedrons
+
+- [FCapsule](classes/FCapsule.md)
+- [FCuboid](classes/FCuboid.md)
+- [FPolyhedron](classes/FPolyhedron.md)
+- [FSphere](classes/FSphere.md)
 
 ### Enumerations
 
@@ -69,7 +73,11 @@
 - [FColliderOptions](interfaces/FColliderOptions.md)
 - [FComponentOptions](interfaces/FComponentOptions.md)
 - [FControllerOptions](interfaces/FControllerOptions.md)
+- [FHemisphereLightOptions](interfaces/FHemisphereLightOptions.md)
+- [FLightOptions](interfaces/FLightOptions.md)
+- [FLightProbeOptions](interfaces/FLightProbeOptions.md)
 - [FModelOptions](interfaces/FModelOptions.md)
 - [FRigidBodyOptions](interfaces/FRigidBodyOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)
+- [FSpotLightOptions](interfaces/FSpotLightOptions.md)
 - [FTransformOptions](interfaces/FTransformOptions.md)

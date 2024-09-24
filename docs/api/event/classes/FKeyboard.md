@@ -2,8 +2,6 @@
 
 # Class: FKeyboard
 
-## Description
-
 A helper class to manage keyboard events.
 Events will be triggered on each frame.
 
@@ -37,7 +35,7 @@ keyboard.on('ArrowUp', () => {
 
 #### Defined in
 
-[event/src/FKeyboard.ts:37](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L37)
+[event/src/FKeyboard.ts:37](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L37)
 
 ## Methods
 
@@ -45,13 +43,11 @@ keyboard.on('ArrowUp', () => {
 
 > **clear**(): `void`
 
+Remove all the listeners
+
 #### Returns
 
 `void`
-
-#### Description
-
-Remove all the listeners
 
 #### Example
 
@@ -65,13 +61,17 @@ keyboard.clear()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:193](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L193)
+[event/src/FKeyboard.ts:193](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L193)
 
 ***
 
 ### on()
 
 > **on**(`key`, `callback`): () => `void`
+
+Add a listener to a given key event.
+This is a small wrapper around the native `addEventListener` method, which helps listen to key events continuously.
+Basically, this prevents keyboard "debounce" delay by firing the given callback on each frame if the key is pressed.
 
 #### Parameters
 
@@ -92,12 +92,6 @@ The callback function that removes the listener
 ##### Returns
 
 `void`
-
-#### Description
-
-Add a listener to a given key event.
-This is a small wrapper around the native `addEventListener` method, which helps listen to key events continuously.
-Basically, this prevents keyboard "debounce" delay by firing the given callback on each frame if the key is pressed.
 
 #### Examples
 
@@ -118,13 +112,15 @@ removeListener()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:101](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L101)
+[event/src/FKeyboard.ts:101](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L101)
 
 ***
 
 ### onKeyDown()
 
 > **onKeyDown**(`key`, `callback`): () => `void`
+
+Add a listener to a given key event when the key is pressed
 
 #### Parameters
 
@@ -146,10 +142,6 @@ The callback function that removes the listener
 
 `void`
 
-#### Description
-
-Add a listener to a given key event when the key is pressed
-
 #### Examples
 
 ```ts
@@ -169,13 +161,15 @@ removeListener()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:135](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L135)
+[event/src/FKeyboard.ts:135](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L135)
 
 ***
 
 ### onKeyUp()
 
 > **onKeyUp**(`key`, `callback`): () => `void`
+
+Add a listener to a given key event when the key is released
 
 #### Parameters
 
@@ -197,10 +191,6 @@ The callback function that removes the listener
 
 `void`
 
-#### Description
-
-Add a listener to a given key event when the key is released
-
 #### Examples
 
 ```ts
@@ -220,7 +210,7 @@ removeListener()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:169](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L169)
+[event/src/FKeyboard.ts:169](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L169)
 
 ## Properties
 
@@ -228,13 +218,11 @@ removeListener()
 
 > **callback**: `Record`\<`string`, () => `void`[]\>
 
-#### Description
-
 An map of all the callbacks for each key being pressed
 
 #### Defined in
 
-[event/src/FKeyboard.ts:27](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L27)
+[event/src/FKeyboard.ts:27](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L27)
 
 ***
 
@@ -242,13 +230,11 @@ An map of all the callbacks for each key being pressed
 
 > **callbackKeyDown**: `Record`\<`string`, () => `void`[]\>
 
-#### Description
-
 An map of all the callbacks for each key being released
 
 #### Defined in
 
-[event/src/FKeyboard.ts:31](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L31)
+[event/src/FKeyboard.ts:31](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L31)
 
 ***
 
@@ -256,13 +242,11 @@ An map of all the callbacks for each key being released
 
 > **callbackKeyUp**: `Record`\<`string`, () => `void`[]\>
 
-#### Description
-
 An map of all the callbacks for each key being released
 
 #### Defined in
 
-[event/src/FKeyboard.ts:35](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L35)
+[event/src/FKeyboard.ts:35](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L35)
 
 ***
 
@@ -270,10 +254,8 @@ An map of all the callbacks for each key being released
 
 > **keys**: `Record`\<`string`, `boolean`\>
 
-#### Description
-
 A map of all the keys being pressed
 
 #### Defined in
 
-[event/src/FKeyboard.ts:23](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/event/src/FKeyboard.ts#L23)
+[event/src/FKeyboard.ts:23](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/event/src/FKeyboard.ts#L23)

@@ -11,7 +11,7 @@ export interface FModelOptions extends FComponentOptions {
 }
 
 /**
- * @description An abstract 3D Model base class.
+ * An abstract 3D Model base class.
  * @category Model
  */
 export abstract class FModel extends FComponent {
@@ -103,7 +103,7 @@ export abstract class FModel extends FComponent {
   }
 
   /**
-   * @description Add a callback to be called when the model is loaded.
+   * Add a callback to be called when the model is loaded.
    * @param callback The callback function.
    */
   onLoaded(callback: () => void) {
@@ -111,7 +111,7 @@ export abstract class FModel extends FComponent {
   }
 
   /**
-   * @description Emit the onLoaded callbacks.
+   * Emit the onLoaded callbacks.
    */
   emitOnLoaded() {
     if (this.scene.__ENABLE_SHADOWS__ && this.mesh) {
@@ -128,7 +128,7 @@ export abstract class FModel extends FComponent {
   }
 
   /**
-   * @description Define mesh transforms (used after loading the model).
+   * Define mesh transforms (used after loading the model).
    */
   defineMeshTransforms() {
     // If the mesh is not defined, return
@@ -149,7 +149,7 @@ export abstract class FModel extends FComponent {
   }
 
   /**
-   * @description Load the texture for a given mesh.
+   * Load the texture for a given mesh.
    * @param mesh The mesh.
    * @example
    * ```ts

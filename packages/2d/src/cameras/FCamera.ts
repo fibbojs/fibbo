@@ -6,7 +6,7 @@ export interface FCameraOptions {
 }
 
 /**
- * @description The base class for 2D cameras in Fibbo.
+ * The base class for 2D cameras in Fibbo.
  * @category Camera
  */
 export abstract class FCamera extends FCameraCore {
@@ -16,7 +16,7 @@ export abstract class FCamera extends FCameraCore {
   public __IS_2D__: boolean = true
 
   /**
-   * @description The scene the camera is in.
+   * The scene the camera is in.
    */
   scene: FScene
 
@@ -27,7 +27,7 @@ export abstract class FCamera extends FCameraCore {
   position: { x: number, y: number }
 
   /**
-   * @description Create a new 2D camera.
+   * Create a new 2D camera.
    * @param scene The scene the camera is in.
    * @param options The options for the camera.
    */

@@ -10,7 +10,7 @@ import { FDebug3d } from './FDebug3d'
 const FDebugPanelElement = defineCustomElement(FDebugPanel)
 
 /**
- * @description A helper class to debug a given scene
+ * A helper class to debug a given scene
  * @example
  * ```ts
  * const fDebugger = FDebug(scene)
@@ -18,7 +18,7 @@ const FDebugPanelElement = defineCustomElement(FDebugPanel)
  */
 export class FDebug {
   /**
-   * @description The scene being debugged by this instance
+   * The scene being debugged by this instance
    */
   declare scene: FScene
 
@@ -67,7 +67,7 @@ export class FDebug {
 }
 
 /**
- * @description A helper function to debug a given scene
+ * A helper function to debug a given scene
  * @param scene The scene to be debugged
  * @example
  * ```ts

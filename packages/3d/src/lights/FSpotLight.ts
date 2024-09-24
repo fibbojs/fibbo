@@ -11,7 +11,7 @@ export interface FSpotLightOptions extends FLightOptions {
 }
 
 /**
- * @description A spot light in 3d space.
+ * A spot light in 3d space.
  * @category Light
  */
 export class FSpotLight extends FLight {

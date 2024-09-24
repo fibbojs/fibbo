@@ -2,8 +2,6 @@
 
 # Class: FTransform
 
-## Description
-
 3D Transforms for a component.
 
 ## Constructors
@@ -11,6 +9,8 @@
 ### new FTransform()
 
 > **new FTransform**(`options`?): [`FTransform`](FTransform.md)
+
+Create a new FTransform.
 
 #### Parameters
 
@@ -21,10 +21,6 @@ The options for the collider.
 #### Returns
 
 [`FTransform`](FTransform.md)
-
-#### Description
-
-Create a new FTransform.
 
 #### Example
 
@@ -38,7 +34,7 @@ const collider = new FTransform({
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:44](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FTransform.ts#L44)
+[3d/src/core/FTransform.ts:44](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FTransform.ts#L44)
 
 ## Properties
 
@@ -50,7 +46,7 @@ The position of the component.
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:18](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FTransform.ts#L18)
+[3d/src/core/FTransform.ts:18](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FTransform.ts#L18)
 
 ***
 
@@ -62,7 +58,7 @@ The rotation of the component.
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:26](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FTransform.ts#L26)
+[3d/src/core/FTransform.ts:26](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FTransform.ts#L26)
 
 ***
 
@@ -74,4 +70,4 @@ The scale of the component.
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:22](https://github.com/fibbojs/fibbo/blob/deb1b2647977c28556b303db18b4c729c63a8312/packages/3d/src/core/FTransform.ts#L22)
+[3d/src/core/FTransform.ts:22](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/core/FTransform.ts#L22)

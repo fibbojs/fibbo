@@ -3,7 +3,7 @@ import { FComponent } from './FComponent'
 import type { FComponentOptions } from './FComponent'
 
 /**
- * @description An empty component. The container is empty.
+ * An empty component. The container is empty.
  * @category Core
  */
 export class FComponentEmpty extends FComponent {

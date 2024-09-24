@@ -8,7 +8,7 @@ export interface FSpriteOptions extends FComponentOptions {
 }
 
 /**
- * @description A simple sprite in Fibbo.
+ * A simple sprite in Fibbo.
  * @category Sprite
  * @example
  * ```ts
@@ -46,7 +46,7 @@ export class FSprite extends FComponent {
   }
 
   /**
-   * @description Load a texture from a path.
+   * Load a texture from a path.
    * @param texture The path to the texture.
    */
   async loadTexture(texture: string) {
@@ -84,7 +84,7 @@ export class FSprite extends FComponent {
   }
 
   /**
-   * @description Set the scale of the sprite to a specific width.
+   * Set the scale of the sprite to a specific width.
    * The height will be calculated according to the aspect ratio of the texture.
    * @param width The width of the sprite.
    */
@@ -93,7 +93,7 @@ export class FSprite extends FComponent {
   }
 
   /**
-   * @description Set the scale of the sprite to a specific height.
+   * Set the scale of the sprite to a specific height.
    * The width will be calculated according to the aspect ratio of the texture.
    * @param height The height of the sprite.
    */
@@ -106,7 +106,7 @@ export class FSprite extends FComponent {
   }
 
   /**
-   * @description Add a callback to be called when the texture is loaded.
+   * Add a callback to be called when the texture is loaded.
    * @param callback The callback function.
    */
   onLoaded(callback: () => void) {
@@ -114,7 +114,7 @@ export class FSprite extends FComponent {
   }
 
   /**
-   * @description Emit the onLoaded callbacks.
+   * Emit the onLoaded callbacks.
    */
   emitOnLoaded() {
     this.__CALLBACKS_ON_LOADED__.forEach((callback) => {

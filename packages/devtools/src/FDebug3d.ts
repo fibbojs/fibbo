@@ -1,7 +1,7 @@
 import type { FLight, FScene } from '@fibbojs/3d'
 
 /**
- * @description A helper class to debug a given 3d scene
+ * A helper class to debug a given 3d scene
  * @example
  * ```ts
  * const fDebugger = FDebug3d(scene)

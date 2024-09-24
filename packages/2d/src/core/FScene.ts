@@ -14,7 +14,7 @@ export interface FSceneOptions extends FSceneOptionsCore {
 }
 
 /**
- * @description A scene which contains the models, the Pixi.js scene and the Rapier world.
+ * A scene which contains the models, the Pixi.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts
@@ -69,7 +69,7 @@ export class FScene extends FSceneCore {
   }
 
   /**
-   * @description Initialize the scene.
+   * Initialize the scene.
    * The application will create a renderer using WebGL, if possible,
    * with a fallback to a canvas render. It will also setup the ticker
    * and the root stage PIXI.Container.
@@ -161,7 +161,7 @@ export class FScene extends FSceneCore {
   }
 
   /**
-   * @description Handle a collision event between two colliders.
+   * Handle a collision event between two colliders.
    * @param handle1 The handle of the first collider
    * @param handle2 The handle of the second collider
    * @param start If the collision has started or ended
@@ -242,7 +242,7 @@ export class FScene extends FSceneCore {
   }
 
   /**
-   * @description Getter for the camera.
+   * Getter for the camera.
    * This is required because the camera is a private property.
    */
   get camera() {
@@ -250,7 +250,7 @@ export class FScene extends FSceneCore {
   }
 
   /**
-   * @description Setter for the camera.
+   * Setter for the camera.
    * This is required so when the camera is set, its method to defined the viewport behavior is called.
    */
   set camera(camera: FCamera) {

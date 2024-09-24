@@ -4,7 +4,7 @@ import type { FLightOptions } from './FLight'
 import { FLight } from './FLight'
 
 /**
- * @description An ambient light in 3d space.
+ * An ambient light in 3d space.
  * @category Light
  */
 export class FAmbientLight extends FLight {

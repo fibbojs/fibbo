@@ -2,8 +2,6 @@
 
 # Class: FAmbientLight
 
-## Description
-
 An ambient light in 3d space.
 
 ## Extends
@@ -32,7 +30,7 @@ An ambient light in 3d space.
 
 #### Defined in
 
-3d/src/lights/FLight.ts:72
+[3d/src/lights/FLight.ts:93](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L93)
 
 ***
 
@@ -56,7 +54,49 @@ An ambient light in 3d space.
 
 #### Defined in
 
-3d/src/lights/FLight.ts:80
+[3d/src/lights/FLight.ts:101](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L101)
+
+***
+
+### lookAt
+
+> `get` **lookAt**(): `object`
+
+> `set` **lookAt**(`lookAt`): `void`
+
+#### Parameters
+
+• **lookAt**
+
+• **lookAt.x**: `number`
+
+• **lookAt.y**: `number`
+
+• **lookAt.z**: `number`
+
+#### Returns
+
+`object`
+
+##### x
+
+> **x**: `number`
+
+##### y
+
+> **y**: `number`
+
+##### z
+
+> **z**: `number`
+
+#### Inherited from
+
+[`FLight`](FLight.md).[`lookAt`](FLight.md#lookat)
+
+#### Defined in
+
+[3d/src/lights/FLight.ts:105](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L105)
 
 ## Constructors
 
@@ -68,7 +108,7 @@ An ambient light in 3d space.
 
 • **scene**: [`FScene`](FScene.md)
 
-• **options?**: `FLightOptions`
+• **options?**: [`FLightOptions`](../interfaces/FLightOptions.md)
 
 #### Returns
 
@@ -80,9 +120,27 @@ An ambient light in 3d space.
 
 #### Defined in
 
-3d/src/lights/FAmbientLight.ts:11
+[3d/src/lights/FAmbientLight.ts:11](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FAmbientLight.ts#L11)
 
 ## Methods
+
+### applyTransform()
+
+> **applyTransform**(): `void`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FLight`](FLight.md).[`applyTransform`](FLight.md#applytransform)
+
+#### Defined in
+
+[3d/src/lights/FLight.ts:76](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L76)
+
+***
 
 ### emitCollisionWith()
 
@@ -218,7 +276,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-3d/src/lights/FAmbientLight.ts:33
+[3d/src/lights/FAmbientLight.ts:31](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FAmbientLight.ts#L31)
 
 ## Properties
 
@@ -241,7 +299,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-3d/src/lights/FLight.ts:23
+[3d/src/lights/FLight.ts:24](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L24)
 
 ***
 
@@ -260,7 +318,7 @@ It is generated automatically.
 
 #### Defined in
 
-3d/src/lights/FLight.ts:22
+[3d/src/lights/FLight.ts:23](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L23)
 
 ***
 
@@ -274,7 +332,7 @@ It is generated automatically.
 
 #### Defined in
 
-3d/src/lights/FLight.ts:21
+[3d/src/lights/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L22)
 
 ***
 
@@ -290,7 +348,35 @@ Internal flags
 
 #### Defined in
 
-3d/src/lights/FLight.ts:20
+[3d/src/lights/FLight.ts:21](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L21)
+
+***
+
+### \_\_LOOK\_AT\_\_
+
+> **\_\_LOOK\_AT\_\_**: `object`
+
+Look at target of the light.
+
+#### x
+
+> **x**: `number`
+
+#### y
+
+> **y**: `number`
+
+#### z
+
+> **z**: `number`
+
+#### Inherited from
+
+[`FLight`](FLight.md).[`__LOOK_AT__`](FLight.md#__look_at__)
+
+#### Defined in
+
+[3d/src/lights/FLight.ts:44](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L44)
 
 ***
 
@@ -322,7 +408,7 @@ The original light object from Three.js.
 
 #### Defined in
 
-3d/src/lights/FLight.ts:28
+[3d/src/lights/FLight.ts:29](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L29)
 
 ***
 
@@ -338,7 +424,7 @@ Scene the light is in.
 
 #### Defined in
 
-3d/src/lights/FLight.ts:33
+[3d/src/lights/FLight.ts:34](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L34)
 
 ***
 
@@ -354,4 +440,4 @@ Transform of the light.
 
 #### Defined in
 
-3d/src/lights/FLight.ts:38
+[3d/src/lights/FLight.ts:39](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L39)
