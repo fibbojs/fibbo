@@ -1,29 +1,70 @@
 # Lights <Badge type="warning" text="work in progress" />
 
-As lights are still not supported natively in Fibbo, you should use the underlying libraries to create and manage lights in your scene.
+For now, lights are only available in 3D.
 
-By default, the 2D starter does not include any kind of light.
+The 3D starter includes a basic [AmbientLight](/api/3d/classes/FAmbientLight) and a [DirectionalLight](/api/3d/classes/FDirectionalLight) to light the scene.
 
-The 3D starter includes a basic [AmbientLight](https://threejs.org/docs/#api/en/lights/AmbientLight).
-To learn more about how to manage lights in Three.js, you can check the [Three.js documentation](https://threejs.org/manual/#en/lights).
+## Configuration
 
-We are planning to add a light system in Fibbo in the future. Stay tuned !
+Lights already work out of the box, but as shadows are disabled by default, you may want to enable them.
 
-## Available lights
+Fibbo provides a default shadow configuration which can be activated by setting the `shadows` option to `true` when creating a scene.
 
-Here are the available lights in Fibbo :
+```ts
+const scene = new FScene({
+  shadows: true,
+})
+```
 
-| Camera                  | Available in 2D | Available in 3D | Description           |
-| ----------------------- | --------------- | --------------- | --------------------- |
-| FAmbientLight           | ✅              | ✅              | A light.              |
-| FDirectionalLight       | ✅              | ✅              | A light.              |
-| FPointLight             | ✅              | ✅              | A light.              |
-| FHemiSphereLight        | ❌              | ✅              | A light.              |
-| FLightProbe             | ❌              | ✅              | A light.              |
-| FRectAreaLight          | ❌              | ✅              | A light.              |
-| FSpotLight              | ❌              | ✅              | A light.              |
-| FAmbientLightShader     | ✅              | ❌              | A light.              |
-| FDirectionalLightShader | ✅              | ❌              | A light.              |
-| FPointLightShader       | ✅              | ❌              | A light.              |
-| FLight                  | ✅              | ✅              | `(abstract)` A light. |
-| FLightShader            | ✅              | ❌              | `(abstract)` A light. |
+::: tip
+Note that shadows do not cast on certain materials, such as the [MeshBasicMaterial](https://threejs.org/docs/#api/en/materials/MeshBasicMaterial)
+:::
+
+## Usage
+
+Lights can be added to a scene using the `addLight` method.
+
+```ts
+import { FAmbientLight, FDirectionalLight, FSpotLight } from '@fibbojs/3d'
+
+// Add directional light to represent the sun
+scene.addLight(new FDirectionalLight(scene, {
+  position: { x: 20, y: 20, z: 0 },
+  color: 0xFFFFFF,
+  intensity: 2,
+}))
+// Add spot light
+scene.addLight(new FSpotLight(scene, {
+  position: { x: 4, y: 4, z: 4 },
+  angle: 1,
+  distance: 8,
+  color: 0xFFFFFF,
+  intensity: 20,
+  lookAt: { x: 8, y: 0, z: 8 },
+}))
+// Add ambient light
+scene.addLight(new FAmbientLight(scene, {
+  color: 0x404040,
+  intensity: 20,
+}))
+```
+
+They can also be removed using the `removeLight` method.
+
+```ts
+scene.removeLight(light)
+```
+
+### Available lights
+
+Here are the available lights in 3D :
+
+| Camera            | Description                                                                                                                                                                                                                                                                                                                                        | Can cast shadows |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| FAmbientLight     | This light globally illuminates all objects in the scene equally. This light cannot be used to cast shadows as it does not have a direction.                                                                                                                                                                                                       | ❌               |
+| FDirectionalLight | A light that gets emitted in a specific direction. This light will behave as though it is infinitely far away and the rays produced from it are all parallel. The common use case for this is to simulate daylight; the sun is far enough away that its position can be considered to be infinite, and all light rays coming from it are parallel. | ✅               |
+| FHemisphereLight  | A light source positioned directly above the scene, with color fading from the sky color to the ground color. This light cannot be used to cast shadows.                                                                                                                                                                                           | ❌               |
+| FLight            | `(abstract)` A light.                                                                                                                                                                                                                                                                                                                              | ❌               |
+| FLightProbe       | See [Three.js LightProbe](https://threejs.org/docs/?q=light#api/en/lights/LightProbe)                                                                                                                                                                                                                                                              | ❌               |
+| FPointLight       | A light that gets emitted from a single point in all directions. A common use case for this is to replicate the light emitted from a bare lightbulb.                                                                                                                                                                                               | ✅               |
+| FSpotLight        | This light gets emitted from a single point in one direction, along a cone that increases in size the further from the light it gets.                                                                                                                                                                                                              | ✅               |
