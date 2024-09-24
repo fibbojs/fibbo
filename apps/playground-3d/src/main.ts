@@ -152,7 +152,7 @@ import Character from './classes/Character'
    * Create other objects
    */
   const sphere = new FSphere(scene, {
-    position: { x: 2, y: 4, z: -2 },
+    position: { x: 2, y: 5, z: -2 },
   })
   sphere.initRigidBody()
   scene.addComponent(sphere)
@@ -165,7 +165,7 @@ import Character from './classes/Character'
   scene.addComponent(capsule)
 
   const duck = new Duck(scene)
-  duck.setPosition({ x: -5, y: 1, z: -5 })
+  duck.setPosition({ x: -5, y: 5, z: -5 })
   duck.initRigidBody()
   scene.addComponent(duck)
 
@@ -186,7 +186,7 @@ import Character from './classes/Character'
     if (i === 0) {
       // First one is an instance of MyCustomCube
       cube = new MyCustomCube(scene, {
-        position: { x, y: 5, z: z - 17 },
+        position: { x, y: 10, z: z - 17 },
       })
       cube.initRigidBody({
         // First one gets a sphere collider, the others get a cube collider
@@ -195,7 +195,7 @@ import Character from './classes/Character'
     }
     else {
       cube = new FCuboid(scene, {
-        position: { x, y: 5, z: z - 17 },
+        position: { x, y: 10, z: z - 17 },
       })
       cube.initRigidBody()
     }
