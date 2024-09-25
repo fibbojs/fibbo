@@ -1,3 +1,14 @@
+## 0.0.9 (2024-09-25)
+
+
+### 🚀 Features
+
+- add light system + automate API Reference generation ([#19](https://github.com/fibbojs/fibbo/pull/19))
+
+### ❤️  Thank You
+
+- Gugustinette @Gugustinette
+
 ## 0.0.8 (2024-09-10)
 
 This was a version bump only, there were no code changes.
