@@ -2,6 +2,7 @@ import { FComponent } from './FComponent'
 
 /**
  * The base class for cameras in Fibbo.
+ * @category Core
  */
 export abstract class FCamera extends FComponent {
   constructor() {

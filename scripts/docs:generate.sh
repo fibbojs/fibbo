@@ -6,8 +6,14 @@
 
 
 
-# Generate API documentation
-typedoc
+echo "📚 Generating API documentation..."
+
+# Generate API documentation (hide the output)
+typedoc &> /dev/null
+
+echo "✅ API documentation generated successfully!"
+
+echo "📚 Beautifying API documentation structure..."
 
 # Function to beautify the structure of the API documentation
 beautifyStructure () {
@@ -30,11 +36,15 @@ beautifyStructure event
 # Replace every occurence of "[fibbojs](*)" with "[@fibbojs](/api/index)"
 find ./docs/api -type f -name "*.md" -exec sed -i '' 's/\[fibbojs\]([^)]*)/\[@fibbojs\](\/api\/index)/g' {} \;
 
+echo "✅ API documentation structure beautified successfully!"
+
 
 
 ################################ VITEPRESS NAVBAR CONFIGURATION ################################
 
 
+
+echo "📚 Generating VitePress navbar configuration..."
 
 # Function to generate VitePress navbar entries for classes in a specific category
 generate_classes_entries() {
@@ -90,23 +100,42 @@ for package_dir in 2d 3d core event; do
   echo "          { text: '$package_dir', link: '/api/$package_dir/index.md', collapsed: true, items: [" >> $TEMP_FILE
 
   # Generate navbar entries for each category
-  for category in $(find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" | xargs grep "@category" | awk '{print $4}' | sort | uniq); do
-    echo "            { text: '$category', collapsed: true, items: [" >> $TEMP_FILE
-    generate_classes_entries "$package_dir" "$category" >> $TEMP_FILE
-    echo "            ] }," >> $TEMP_FILE
-  done
+  # I don't know why, but the category is the 3rd word for the event package and the 4th word for the other packages
+  if [[ "$package_dir" == "event" ]]; then
+    for category in $(find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" | xargs grep "@category" | awk '{print $3}' | sort | uniq); do
+      echo "            { text: '$category', collapsed: true, items: [" >> $TEMP_FILE
+      generate_classes_entries "$package_dir" "$category" >> $TEMP_FILE
+      echo "            ] }," >> $TEMP_FILE
+    done
+  else
+    for category in $(find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" | xargs grep "@category" | awk '{print $4}' | sort | uniq); do
+      echo "            { text: '$category', collapsed: true, items: [" >> $TEMP_FILE
+      generate_classes_entries "$package_dir" "$category" >> $TEMP_FILE
+      echo "            ] }," >> $TEMP_FILE
+    done
+  fi
 
   # Generate navbar entries for enumerations
-  echo "            { text: 'Enumerations', collapsed: true, items: [" >> $TEMP_FILE
-  generate_enum_entries "$package_dir" >> $TEMP_FILE
-  echo "            ] }," >> $TEMP_FILE
+  find "packages/$package_dir/src" -type f -name "*.ts" -print0 | while IFS= read -r -d $'\0' file; do
+    grep -q "export enum" "$file" && {
+      echo "            { text: 'Enumerations', collapsed: true, items: [" >> $TEMP_FILE
+      generate_enum_entries "$package_dir" >> $TEMP_FILE
+      echo "            ] }," >> $TEMP_FILE
+      break
+    }
+  done
 
   # Generate navbar entries for interfaces
-  echo "            { text: 'Interfaces', collapsed: true, items: [" >> $TEMP_FILE
-  generate_interface_entries "$package_dir" >> $TEMP_FILE
-  echo "            ] }," >> $TEMP_FILE
+  find "packages/$package_dir/src" -type f -name "*.ts" -print0 | while IFS= read -r -d $'\0' file; do
+    grep -q "export interface " "$file" && {
+      echo "            { text: 'Interfaces', collapsed: true, items: [" >> $TEMP_FILE
+      generate_interface_entries "$package_dir" >> $TEMP_FILE
+      echo "            ] }," >> $TEMP_FILE
+      break
+    }
+  done
 
-  echo "        ] }," >> $TEMP_FILE
+  echo "          ] }," >> $TEMP_FILE
 done
 
 echo "        ] }," >> $TEMP_FILE
@@ -123,3 +152,5 @@ EOF
 
 # Remove the temporary file
 rm "$TEMP_FILE"
+
+echo "✅ VitePress navbar configuration generated successfully!"

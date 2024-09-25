@@ -30,7 +30,7 @@ A free camera that can be moved around.
 
 #### Defined in
 
-[2d/src/cameras/FFreeCamera.ts:10](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/cameras/FFreeCamera.ts#L10)
+[2d/src/cameras/FFreeCamera.ts:10](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FFreeCamera.ts#L10)
 
 ## Methods
 
@@ -48,13 +48,15 @@ A free camera that can be moved around.
 
 #### Defined in
 
-[2d/src/cameras/FFreeCamera.ts:17](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/cameras/FFreeCamera.ts#L17)
+[2d/src/cameras/FFreeCamera.ts:17](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FFreeCamera.ts#L17)
 
 ***
 
 ### emitCollisionWith()
 
 > **emitCollisionWith**(`options`): `void`
+
+Emit a collision event with a given class or object.
 
 #### Parameters
 
@@ -73,10 +75,6 @@ The component to emit the collision event with.
 #### Returns
 
 `void`
-
-#### Description
-
-Emit a collision event with a given class or object.
 
 #### Examples
 
@@ -110,6 +108,8 @@ core/dist/index.d.ts:116
 
 > **onCollisionWith**(`classOrObject`, `callback`): () => `void`
 
+Add a callback to be called when a collision occurs.
+
 #### Parameters
 
 • **classOrObject**: `any`
@@ -129,10 +129,6 @@ A function to remove the callback.
 ##### Returns
 
 `void`
-
-#### Description
-
-Add a callback to be called when a collision occurs.
 
 #### Examples
 
@@ -166,6 +162,10 @@ core/dist/index.d.ts:93
 
 > **onFrame**(`_delta`): `void`
 
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
+
 #### Parameters
 
 • **\_delta**: `number`
@@ -174,25 +174,21 @@ core/dist/index.d.ts:93
 
 `void`
 
-#### Description
-
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
-
 #### Overrides
 
 [`FCamera`](FCamera.md).[`onFrame`](FCamera.md#onframe)
 
 #### Defined in
 
-[2d/src/cameras/FFreeCamera.ts:14](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/cameras/FFreeCamera.ts#L14)
+[2d/src/cameras/FFreeCamera.ts:14](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FFreeCamera.ts#L14)
 
 ***
 
 ### setZoom()
 
 > **setZoom**(`zoom`): `void`
+
+Set the zoom of the camera.
 
 #### Parameters
 
@@ -202,17 +198,13 @@ Any changes on its transform should be done on the controller, not here.
 
 `void`
 
-#### Description
-
-Set the zoom of the camera.
-
 #### Inherited from
 
 [`FCamera`](FCamera.md).[`setZoom`](FCamera.md#setzoom)
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:57](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/cameras/FCamera.ts#L57)
+[2d/src/cameras/FCamera.ts:57](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L57)
 
 ## Properties
 
@@ -220,14 +212,12 @@ Set the zoom of the camera.
 
 > **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object`
 
+Callbacks for when a collision occurs with a given class or object.
+It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
+
 #### Index Signature
 
  \[`key`: `string`\]: (`data`) => `void`[]
-
-#### Description
-
-Callbacks for when a collision occurs with a given class or object.
-It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
 
 #### Inherited from
 
@@ -242,8 +232,6 @@ core/dist/index.d.ts:56
 ### \_\_ID\_\_
 
 > **\_\_ID\_\_**: `number`
-
-#### Description
 
 Unique identifier for the component.
 It is generated automatically.
@@ -270,7 +258,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/cameras/FCamera.ts#L16)
+[2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -326,7 +314,7 @@ Position of the camera.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/cameras/FCamera.ts#L27)
+[2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -342,4 +330,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/cameras/FCamera.ts#L21)
+[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L21)

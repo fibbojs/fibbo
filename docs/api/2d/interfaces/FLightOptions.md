@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:7](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/lights/FLight.ts#L7)
+[2d/src/lights/FLight.ts:7](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/lights/FLight.ts#L7)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:8](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/lights/FLight.ts#L8)
+[2d/src/lights/FLight.ts:8](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/lights/FLight.ts#L8)
 
 ***
 
@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/lights/FLight.ts#L9)
+[2d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/lights/FLight.ts#L9)
 
 ***
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[2d/src/core/FTransform.ts:2](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/core/FTransform.ts#L2)
+[2d/src/core/FTransform.ts:2](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/core/FTransform.ts#L2)
 
 ***
 
@@ -78,7 +78,7 @@
 
 #### Defined in
 
-[2d/src/core/FTransform.ts:4](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/core/FTransform.ts#L4)
+[2d/src/core/FTransform.ts:4](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/core/FTransform.ts#L4)
 
 ***
 
@@ -92,7 +92,7 @@
 
 #### Defined in
 
-[2d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/core/FTransform.ts#L5)
+[2d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/core/FTransform.ts#L5)
 
 ***
 
@@ -114,4 +114,4 @@
 
 #### Defined in
 
-[2d/src/core/FTransform.ts:3](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/2d/src/core/FTransform.ts#L3)
+[2d/src/core/FTransform.ts:3](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/core/FTransform.ts#L3)

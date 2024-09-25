@@ -17,6 +17,7 @@ export interface OnCollisionWithData {
 
 /**
  * The base class for all 2D and 3D components in Fibbo.
+ * @category Core
  */
 export abstract class FComponent {
   /**

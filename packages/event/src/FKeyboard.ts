@@ -3,6 +3,7 @@ import type { FScene } from '@fibbojs/core'
 /**
  * A helper class to manage keyboard events.
  * Events will be triggered on each frame.
+ * @category Event
  * @example
  * ```ts
  * // Static usage

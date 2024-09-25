@@ -33,7 +33,7 @@ During rendering, the light that hits a 3D object is approximated by using the d
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:93](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L93)
+[3d/src/lights/FLight.ts:93](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L93)
 
 ***
 
@@ -57,7 +57,7 @@ During rendering, the light that hits a 3D object is approximated by using the d
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:101](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L101)
+[3d/src/lights/FLight.ts:101](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L101)
 
 ***
 
@@ -99,7 +99,7 @@ During rendering, the light that hits a 3D object is approximated by using the d
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:105](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L105)
+[3d/src/lights/FLight.ts:105](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L105)
 
 ## Constructors
 
@@ -123,7 +123,7 @@ During rendering, the light that hits a 3D object is approximated by using the d
 
 #### Defined in
 
-[3d/src/lights/FLightProbe.ts:18](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLightProbe.ts#L18)
+[3d/src/lights/FLightProbe.ts:18](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLightProbe.ts#L18)
 
 ## Methods
 
@@ -141,13 +141,15 @@ During rendering, the light that hits a 3D object is approximated by using the d
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:76](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L76)
+[3d/src/lights/FLight.ts:76](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L76)
 
 ***
 
 ### emitCollisionWith()
 
 > **emitCollisionWith**(`options`): `void`
+
+Emit a collision event with a given class or object.
 
 #### Parameters
 
@@ -166,10 +168,6 @@ The component to emit the collision event with.
 #### Returns
 
 `void`
-
-#### Description
-
-Emit a collision event with a given class or object.
 
 #### Examples
 
@@ -203,6 +201,8 @@ core/dist/index.d.ts:116
 
 > **onCollisionWith**(`classOrObject`, `callback`): () => `void`
 
+Add a callback to be called when a collision occurs.
+
 #### Parameters
 
 • **classOrObject**: `any`
@@ -222,10 +222,6 @@ A function to remove the callback.
 ##### Returns
 
 `void`
-
-#### Description
-
-Add a callback to be called when a collision occurs.
 
 #### Examples
 
@@ -259,6 +255,10 @@ core/dist/index.d.ts:93
 
 > **onFrame**(`_delta`): `void`
 
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
+
 #### Parameters
 
 • **\_delta**: `number`
@@ -267,19 +267,13 @@ core/dist/index.d.ts:93
 
 `void`
 
-#### Description
-
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
-
 #### Overrides
 
 [`FLight`](FLight.md).[`onFrame`](FLight.md#onframe)
 
 #### Defined in
 
-[3d/src/lights/FLightProbe.ts:47](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLightProbe.ts#L47)
+[3d/src/lights/FLightProbe.ts:47](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLightProbe.ts#L47)
 
 ## Properties
 
@@ -287,14 +281,12 @@ Any changes on its transform should be done on the controller, not here.
 
 > **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
+Callbacks for when a collision occurs with a given class or object.
+It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
+
 #### Index Signature
 
  \[`key`: `string`\]: () => `void`[]
-
-#### Description
-
-Callbacks for when a collision occurs with a given class or object.
-It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
 
 #### Inherited from
 
@@ -302,15 +294,13 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:24](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L24)
+[3d/src/lights/FLight.ts:24](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L24)
 
 ***
 
 ### \_\_ID\_\_
 
 > **\_\_ID\_\_**: `number`
-
-#### Description
 
 Unique identifier for the component.
 It is generated automatically.
@@ -321,7 +311,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:23](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L23)
+[3d/src/lights/FLight.ts:23](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L23)
 
 ***
 
@@ -335,7 +325,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L22)
+[3d/src/lights/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L22)
 
 ***
 
@@ -351,7 +341,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:21](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L21)
+[3d/src/lights/FLight.ts:21](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L21)
 
 ***
 
@@ -379,7 +369,7 @@ Look at target of the light.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:44](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L44)
+[3d/src/lights/FLight.ts:44](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L44)
 
 ***
 
@@ -411,7 +401,7 @@ The original light object from Three.js.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:29](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L29)
+[3d/src/lights/FLight.ts:29](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L29)
 
 ***
 
@@ -427,7 +417,7 @@ Scene the light is in.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:34](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L34)
+[3d/src/lights/FLight.ts:34](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L34)
 
 ***
 
@@ -443,4 +433,4 @@ Transform of the light.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:39](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/lights/FLight.ts#L39)
+[3d/src/lights/FLight.ts:39](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/lights/FLight.ts#L39)

@@ -39,7 +39,7 @@ The base class for 3d cameras in Fibbo.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:26](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L26)
+[3d/src/cameras/FCamera.ts:26](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L26)
 
 ## Methods
 
@@ -324,6 +324,8 @@ The event that gets fired.
 
 > **emitCollisionWith**(`classOrObject`): `void`
 
+Emit a collision event with a given class or object.
+
 #### Parameters
 
 • **classOrObject**: `any`
@@ -331,10 +333,6 @@ The event that gets fired.
 #### Returns
 
 `void`
-
-#### Description
-
-Emit a collision event with a given class or object.
 
 #### Examples
 
@@ -360,7 +358,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L88)
+[3d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L88)
 
 ***
 
@@ -379,7 +377,7 @@ The direction of the camera. It is a normalized vector.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:97](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L97)
+[3d/src/cameras/FCamera.ts:97](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L97)
 
 ***
 
@@ -1073,6 +1071,8 @@ and thus this callback is not executed for such objects.
 
 > **onCollisionWith**(`classOrObject`, `callback`): () => `void`
 
+Add a callback to be called when a collision occurs.
+
 #### Parameters
 
 • **classOrObject**: `any`
@@ -1092,10 +1092,6 @@ A function to remove the callback.
 ##### Returns
 
 `void`
-
-#### Description
-
-Add a callback to be called when a collision occurs.
 
 #### Examples
 
@@ -1121,13 +1117,17 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:81](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L81)
+[3d/src/cameras/FCamera.ts:81](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L81)
 
 ***
 
 ### onFrame()
 
 > `abstract` **onFrame**(`_delta`): `void`
+
+Update the component. Should be called every frame.
+The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
+Any changes on its transform should be done on the controller, not here.
 
 #### Parameters
 
@@ -1137,19 +1137,13 @@ player.onCollisionWith(enemy, () => {
 
 `void`
 
-#### Description
-
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
-
 #### Implementation of
 
 `FCameraCore.onFrame`
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L53)
+[3d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L53)
 
 ***
 
@@ -1496,7 +1490,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:58](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L58)
+[3d/src/cameras/FCamera.ts:58](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L58)
 
 ***
 
@@ -1520,7 +1514,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:72](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L72)
+[3d/src/cameras/FCamera.ts:72](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L72)
 
 ***
 
@@ -1656,7 +1650,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:65](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L65)
+[3d/src/cameras/FCamera.ts:65](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L65)
 
 ***
 
@@ -1745,6 +1739,8 @@ Note there is no reason monitors have to be the same size or in a grid.
 
 > **setZoom**(`zoom`): `void`
 
+Set the zoom of the camera.
+
 #### Parameters
 
 • **zoom**: `number`
@@ -1753,17 +1749,13 @@ Note there is no reason monitors have to be the same size or in a grid.
 
 `void`
 
-#### Description
-
-Set the zoom of the camera.
-
 #### Implementation of
 
 `FCameraCore.setZoom`
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L76)
+[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L76)
 
 ***
 
@@ -2128,14 +2120,12 @@ A vector representing a position in world space.
 
 > **\_\_CALLBACKS\_ON\_COLLISION\_\_**: `object` = `{}`
 
+Callbacks for when a collision occurs with a given class or object.
+It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
+
 #### Index Signature
 
  \[`key`: `string`\]: () => `void`[]
-
-#### Description
-
-Callbacks for when a collision occurs with a given class or object.
-It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
 
 #### Implementation of
 
@@ -2143,15 +2133,13 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
 ### \_\_ID\_\_
 
 > **\_\_ID\_\_**: `number`
-
-#### Description
 
 Unique identifier for the component.
 It is generated automatically.
@@ -2162,7 +2150,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L18)
+[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L18)
 
 ***
 
@@ -2176,7 +2164,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L17)
+[3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -2192,7 +2180,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L16)
+[3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -3015,7 +3003,7 @@ Transform of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/fc0b9ae1dcd24855b80ad46a69cb7005bbcce7f4/packages/3d/src/cameras/FCamera.ts#L24)
+[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L24)
 
 ***
 

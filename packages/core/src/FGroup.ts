@@ -2,6 +2,7 @@ import type { FComponent } from './FComponent'
 
 /**
  * The base class for all groups of components in Fibbo.
+ * @category Core
  */
 export abstract class FGroup {
   /**

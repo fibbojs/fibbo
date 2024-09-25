@@ -138,7 +138,7 @@ export default defineConfig({
               { text: 'FCharacterControllerOptions', link: '/api/2d/interfaces/FCharacterControllerOptions.md' },
               { text: 'FLightOptions', link: '/api/2d/interfaces/FLightOptions.md' },
             ] },
-        ] },
+          ] },
           { text: '3d', link: '/api/3d/index.md', collapsed: true, items: [
             { text: 'Camera', collapsed: true, items: [
               { text: 'FGameCamera', link: '/api/3d/classes/FGameCamera.md' },
@@ -204,22 +204,27 @@ export default defineConfig({
               { text: 'FSpotLightOptions', link: '/api/3d/interfaces/FSpotLightOptions.md' },
               { text: 'FLightOptions', link: '/api/3d/interfaces/FLightOptions.md' },
             ] },
-        ] },
+          ] },
           { text: 'core', link: '/api/core/index.md', collapsed: true, items: [
-            { text: 'Enumerations', collapsed: true, items: [
+            { text: 'Core', collapsed: true, items: [
+              { text: 'FController', link: '/api/core/classes/FController.md' },
+              { text: 'FGroup', link: '/api/core/classes/FGroup.md' },
+              { text: 'FCamera', link: '/api/core/classes/FCamera.md' },
+              { text: 'FComponent', link: '/api/core/classes/FComponent.md' },
+              { text: 'FLight', link: '/api/core/classes/FLight.md' },
+              { text: 'FScene', link: '/api/core/classes/FScene.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
               { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions.md' },
               { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData.md' },
               { text: 'FSceneOptions', link: '/api/core/interfaces/FSceneOptions.md' },
             ] },
-        ] },
+          ] },
           { text: 'event', link: '/api/event/index.md', collapsed: true, items: [
-            { text: 'Enumerations', collapsed: true, items: [
+            { text: 'Event', collapsed: true, items: [
+              { text: 'FKeyboard', link: '/api/event/classes/FKeyboard.md' },
             ] },
-            { text: 'Interfaces', collapsed: true, items: [
-            ] },
-        ] },
+          ] },
         ] },
       ],
       // API DOC END
