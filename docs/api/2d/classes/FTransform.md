@@ -26,9 +26,9 @@ The options for the collider.
 
 ```ts
 const collider = new FTransform({
- position: { x: 0, y: 0 },
- scale: { x: 1, y: 1 },
- rotation: 0,
+  position: { x: 0, y: 0 },
+  scale: { x: 1, y: 1 },
+  rotation: 0,
 })
 ```
 

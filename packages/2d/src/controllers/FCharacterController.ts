@@ -1,10 +1,6 @@
-import * as PIXI from 'pixi.js'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
-import { FComponent } from '../core/FComponent'
-import type { FRigidBodyOptions } from '../core/FRigidBody'
-import type { FColliderOptions } from '../core/FCollider'
 import { FController, type FControllerOptions } from './FController'
 
 export interface FCharacterControllerOptions extends FControllerOptions {

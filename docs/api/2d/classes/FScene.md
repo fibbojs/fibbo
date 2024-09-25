@@ -7,16 +7,16 @@ A scene which contains the models, the Pixi.js scene and the Rapier world.
 ## Example
 
 ```ts
-import { FScene, FRectangle } from '@fibbojs/2d'
+import { FRectangle, FScene } from '@fibbojs/2d'
 
 (async () => {
- const scene = new FScene()
- await scene.init()
- await scene.initPhysics()
+  const scene = new FScene()
+  await scene.init()
+  await scene.initPhysics()
 
- const square = new FRectangle(scene)
- square.initRigidBody()
- scene.addComponent(square)
+  const square = new FRectangle(scene)
+  square.initRigidBody()
+  scene.addComponent(square)
 })()
 ```
 

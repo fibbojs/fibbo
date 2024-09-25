@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps, onMounted } from 'vue'
+import { defineProps } from 'vue'
 import type { FScene } from '@fibbojs/core'
 import type { FComponent as FComponent2d } from '@fibbojs/2d'
 import type { FComponent as FComponent3d } from '@fibbojs/3d'

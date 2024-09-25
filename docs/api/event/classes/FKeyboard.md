@@ -10,12 +10,12 @@ Events will be triggered on each frame.
 ```ts
 // Static usage
 FKeyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 // Instance usage
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 ```
 
@@ -54,7 +54,7 @@ Remove all the listeners
 ```ts
 const keyboard = new FKeyboard(scene)
 keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 keyboard.clear()
 ```
@@ -98,14 +98,14 @@ The callback function that removes the listener
 ```ts
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 ```
 
 ```ts
 const keyboard = new FKeyboard()
 const removeListener = keyboard.on('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 removeListener()
 ```
@@ -147,14 +147,14 @@ The callback function that removes the listener
 ```ts
 const keyboard = new FKeyboard()
 keyboard.onKeyDown('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 ```
 
 ```ts
 const keyboard = new FKeyboard()
 const removeListener = keyboard.onKeyDown('ArrowUp', () => {
- console.log('ArrowUp key pressed!')
+  console.log('ArrowUp key pressed!')
 })
 removeListener()
 ```
@@ -196,14 +196,14 @@ The callback function that removes the listener
 ```ts
 const keyboard = new FKeyboard()
 keyboard.onKeyUp('ArrowUp', () => {
- console.log('ArrowUp key released!')
+  console.log('ArrowUp key released!')
 })
 ```
 
 ```ts
 const keyboard = new FKeyboard()
 const removeListener = keyboard.onKeyUp('ArrowUp', () => {
- console.log('ArrowUp key released!')
+  console.log('ArrowUp key released!')
 })
 removeListener()
 ```

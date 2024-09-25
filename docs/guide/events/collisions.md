@@ -15,8 +15,8 @@ const cube = new FCuboid()
 cube.initSensor({
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
-  rotationDegree: { x: 0, y: 0, z: 0 }
-  shape: FShape.CUBE,
+  rotationDegree: { x: 0, y: 0, z: 0 },
+  shape: FShape.CUBE
 })
 ```
 

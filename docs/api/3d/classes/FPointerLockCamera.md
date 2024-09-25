@@ -7,7 +7,7 @@ A camera that can be attached to a FComponent and orbits around it.
 ## Example
 
 ```ts
-import { FScene, FPointerLockCamera, FCuboid } from '@fibbojs/3d'
+import { FCuboid, FPointerLockCamera, FScene } from '@fibbojs/3d'
 
 const scene = new FScene()
 
@@ -344,7 +344,7 @@ Emit a collision event with a given class or object.
 const player = new Player()
 const enemy = new Enemy()
 player.emitCollisionWith({
- class: Enemy
+  class: Enemy
 })
 ```
 
@@ -352,7 +352,7 @@ player.emitCollisionWith({
 const player = new Player()
 const enemy = new Enemy()
 player.emitCollisionWith({
- object: enemy
+  object: enemy
 })
 ```
 
@@ -1107,7 +1107,7 @@ A function to remove the callback.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with an Enemy!')
+  console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -1115,7 +1115,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
- console.log('Player collided with the enemy!')
+  console.log('Player collided with the enemy!')
 })
 ```
 
@@ -1725,23 +1725,23 @@ the monitors are in grid like this
 ```
 then for each monitor you would call it like this
 ```typescript
-  const w = 1920;
-  const h = 1080;
-  const fullWidth = w * 3;
-  const fullHeight = h * 2;
+const w = 1920
+const h = 1080
+const fullWidth = w * 3
+const fullHeight = h * 2
 
-  // Monitor - A
-  camera.setViewOffset( fullWidth, fullHeight, w * 0, h * 0, w, h );
-  // Monitor - B
-  camera.setViewOffset( fullWidth, fullHeight, w * 1, h * 0, w, h );
-  // Monitor - C
-  camera.setViewOffset( fullWidth, fullHeight, w * 2, h * 0, w, h );
-  // Monitor - D
-  camera.setViewOffset( fullWidth, fullHeight, w * 0, h * 1, w, h );
-  // Monitor - E
-  camera.setViewOffset( fullWidth, fullHeight, w * 1, h * 1, w, h );
-  // Monitor - F
-  camera.setViewOffset( fullWidth, fullHeight, w * 2, h * 1, w, h );
+// Monitor - A
+camera.setViewOffset(fullWidth, fullHeight, w * 0, h * 0, w, h)
+// Monitor - B
+camera.setViewOffset(fullWidth, fullHeight, w * 1, h * 0, w, h)
+// Monitor - C
+camera.setViewOffset(fullWidth, fullHeight, w * 2, h * 0, w, h)
+// Monitor - D
+camera.setViewOffset(fullWidth, fullHeight, w * 0, h * 1, w, h)
+// Monitor - E
+camera.setViewOffset(fullWidth, fullHeight, w * 1, h * 1, w, h)
+// Monitor - F
+camera.setViewOffset(fullWidth, fullHeight, w * 2, h * 1, w, h)
 ```
 Note there is no reason monitors have to be the same size or in a grid.
 

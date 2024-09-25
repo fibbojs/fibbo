@@ -176,7 +176,7 @@ The component to emit the collision event with.
 const player = new Player()
 const enemy = new Enemy()
 player.emitCollisionWith({
- class: Enemy
+  class: Enemy
 })
 ```
 
@@ -184,7 +184,7 @@ player.emitCollisionWith({
 const player = new Player()
 const enemy = new Enemy()
 player.emitCollisionWith({
- object: enemy
+  object: enemy
 })
 ```
 
@@ -230,7 +230,7 @@ A function to remove the callback.
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(Enemy, () => {
- console.log('Player collided with an Enemy!')
+  console.log('Player collided with an Enemy!')
 })
 ```
 
@@ -238,7 +238,7 @@ player.onCollisionWith(Enemy, () => {
 const player = new Player()
 const enemy = new Enemy()
 player.onCollisionWith(enemy, () => {
- console.log('Player collided with the enemy!')
+  console.log('Player collided with the enemy!')
 })
 ```
 
