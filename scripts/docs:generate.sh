@@ -154,3 +154,10 @@ EOF
 rm "$TEMP_FILE"
 
 echo "✅ VitePress navbar configuration generated successfully!"
+
+# Lint the documentation
+echo "📚 Linting documentation..."
+
+npm run lint:docs &> /dev/null
+
+echo "✅ Documentation linted successfully!"

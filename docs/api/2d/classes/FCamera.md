@@ -42,7 +42,7 @@ The options for the camera.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L34)
+[2d/src/cameras/FCamera.ts:34](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L34)
 
 ## Methods
 
@@ -56,7 +56,7 @@ The options for the camera.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L55)
+[2d/src/cameras/FCamera.ts:55](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L55)
 
 ***
 
@@ -188,7 +188,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L53)
+[2d/src/cameras/FCamera.ts:53](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L53)
 
 ***
 
@@ -212,7 +212,7 @@ Set the zoom of the camera.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:57](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L57)
+[2d/src/cameras/FCamera.ts:57](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L57)
 
 ## Properties
 
@@ -266,7 +266,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L16)
+[2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -318,7 +318,7 @@ Position of the camera.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L27)
+[2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L27)
 
 ***
 
@@ -330,4 +330,4 @@ The scene the camera is in.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/2d/src/cameras/FCamera.ts#L21)
+[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L21)

@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:4](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/core/FTransform.ts#L4)
+[3d/src/core/FTransform.ts:4](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L4)
 
 ***
 
@@ -56,7 +56,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/core/FTransform.ts#L6)
+[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L6)
 
 ***
 
@@ -82,7 +82,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/core/FTransform.ts#L7)
+[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L7)
 
 ***
 
@@ -108,7 +108,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/core/FTransform.ts#L5)
+[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L5)
 
 ***
 
@@ -118,4 +118,4 @@
 
 #### Defined in
 
-[3d/src/cameras/FAttachedCamera.ts:7](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FAttachedCamera.ts#L7)
+[3d/src/cameras/FAttachedCamera.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FAttachedCamera.ts#L7)

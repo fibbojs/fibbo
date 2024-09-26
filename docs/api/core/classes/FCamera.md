@@ -24,7 +24,7 @@ The base class for cameras in Fibbo.
 
 #### Defined in
 
-[core/src/FCamera.ts:8](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FCamera.ts#L8)
+[core/src/FCamera.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FCamera.ts#L8)
 
 ## Methods
 
@@ -76,7 +76,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[core/src/FComponent.ts:135](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L135)
+[core/src/FComponent.ts:135](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L135)
 
 ***
 
@@ -130,7 +130,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[core/src/FComponent.ts:85](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L85)
+[core/src/FComponent.ts:85](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L85)
 
 ***
 
@@ -158,7 +158,7 @@ The time since the last frame.
 
 #### Defined in
 
-[core/src/FComponent.ts:56](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L56)
+[core/src/FComponent.ts:56](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L56)
 
 ***
 
@@ -178,7 +178,7 @@ Set the zoom of the camera.
 
 #### Defined in
 
-[core/src/FCamera.ts:15](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FCamera.ts#L15)
+[core/src/FCamera.ts:15](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FCamera.ts#L15)
 
 ## Properties
 
@@ -199,7 +199,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[core/src/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L39)
+[core/src/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L39)
 
 ***
 
@@ -216,7 +216,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L33)
+[core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L33)
 
 ***
 
@@ -230,7 +230,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:27](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L27)
+[core/src/FComponent.ts:27](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L27)
 
 ***
 
@@ -246,7 +246,7 @@ Internal flags
 
 #### Defined in
 
-[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L26)
+[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L26)
 
 ***
 
@@ -262,4 +262,4 @@ The controller attached to the component.
 
 #### Defined in
 
-[core/src/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/core/src/FComponent.ts#L44)
+[core/src/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L44)

@@ -43,7 +43,7 @@ Options for the camera.
 
 #### Defined in
 
-[3d/src/cameras/FGameCamera.ts:31](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FGameCamera.ts#L31)
+[3d/src/cameras/FGameCamera.ts:31](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FGameCamera.ts#L31)
 
 ## Methods
 
@@ -362,7 +362,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L88)
+[3d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L88)
 
 ***
 
@@ -385,7 +385,7 @@ The direction of the camera. It is a normalized vector.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:97](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L97)
+[3d/src/cameras/FCamera.ts:97](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L97)
 
 ***
 
@@ -1125,7 +1125,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:81](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L81)
+[3d/src/cameras/FCamera.ts:81](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L81)
 
 ***
 
@@ -1151,7 +1151,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[3d/src/cameras/FGameCamera.ts:57](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FGameCamera.ts#L57)
+[3d/src/cameras/FGameCamera.ts:57](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FGameCamera.ts#L57)
 
 ***
 
@@ -1502,7 +1502,7 @@ Set the position of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:46](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FOrbitCamera.ts#L46)
+[3d/src/cameras/FOrbitCamera.ts:46](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FOrbitCamera.ts#L46)
 
 ***
 
@@ -1530,7 +1530,7 @@ Set the rotation of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:72](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L72)
+[3d/src/cameras/FCamera.ts:72](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L72)
 
 ***
 
@@ -1670,7 +1670,7 @@ Set the scale of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:65](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L65)
+[3d/src/cameras/FCamera.ts:65](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L65)
 
 ***
 
@@ -1775,7 +1775,7 @@ Set the zoom of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:54](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FOrbitCamera.ts#L54)
+[3d/src/cameras/FOrbitCamera.ts:54](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FOrbitCamera.ts#L54)
 
 ***
 
@@ -2153,7 +2153,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -2170,7 +2170,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L18)
+[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L18)
 
 ***
 
@@ -2184,7 +2184,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L17)
+[3d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -2200,7 +2200,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L16)
+[3d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L16)
 
 ***
 
@@ -2258,7 +2258,7 @@ Expects a `Float`
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:23](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FOrbitCamera.ts#L23)
+[3d/src/cameras/FOrbitCamera.ts:23](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FOrbitCamera.ts#L23)
 
 ***
 
@@ -2316,7 +2316,7 @@ THREE.Object3DGroup | Group for info on manually grouping objects.
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:25](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FOrbitCamera.ts#L25)
+[3d/src/cameras/FOrbitCamera.ts:25](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FOrbitCamera.ts#L25)
 
 ***
 
@@ -2621,7 +2621,7 @@ This is a _constant_ value
 
 #### Defined in
 
-[3d/src/cameras/FGameCamera.ts:24](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FGameCamera.ts#L24)
+[3d/src/cameras/FGameCamera.ts:24](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FGameCamera.ts#L24)
 
 ***
 
@@ -2631,7 +2631,7 @@ This is a _constant_ value
 
 #### Defined in
 
-[3d/src/cameras/FGameCamera.ts:26](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FGameCamera.ts#L26)
+[3d/src/cameras/FGameCamera.ts:26](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FGameCamera.ts#L26)
 
 ***
 
@@ -3075,7 +3075,7 @@ Transform of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/bc4521390a7de80cd2e57e65854cfa488d5a5f8a/packages/3d/src/cameras/FCamera.ts#L24)
+[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/cameras/FCamera.ts#L24)
 
 ***
 
