@@ -169,6 +169,16 @@ export class FRigidBody {
   }
 
   /**
+   * Set the rotation of the rigidBody in degrees.
+   * @param rotation The new rotation of the rigidBody in degrees.
+   */
+  setRotationDegree(rotation: number) {
+    const newRotation = (rotation * Math.PI) / 180
+    this.__RIGIDBODY__.setRotation(newRotation, true)
+    this.collider.setRotation(newRotation)
+  }
+
+  /**
    * Update the position of the rigidBody according to the component's position.
    * This takes into account the position offset.
    */
