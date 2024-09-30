@@ -40,7 +40,7 @@
   "scripts": {
     "build": "unbuild",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "vitest run --workspace ../../vitest.workspace.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

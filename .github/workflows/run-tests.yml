@@ -9,16 +9,14 @@ on:
     paths:
       - package.json
       - package-lock.json
-      - 'src/**'
-      - 'test/**'
+      - 'packages/**'
   pull_request:
     branches:
       - main
     paths:
       - package.json
       - package-lock.json
-      - 'src/**'
-      - 'test/**'
+      - 'packages/**'
 
 jobs:
   test:
@@ -29,6 +27,9 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - name: Install Dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
       - name: Test all packages
         run: npx nx run-many --target=test --all
