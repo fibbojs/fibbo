@@ -2,6 +2,10 @@
 import { defineWorkspace } from 'vitest/config'
 import wasm from 'vite-plugin-wasm'
 
+/**
+ * This configuration will be used to run tests for all packages.
+ * This means paths are relative to the root of each package.
+ */
 export default defineWorkspace([
   // Node-based tests
   {

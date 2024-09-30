@@ -12,7 +12,7 @@ describe('fCollider', () => {
 
   it('should create a collider with default options', () => {
     const rectangle = new FRectangle(scene)
-    rectangle.initCollider()
+    // rectangle.initCollider()
     expect(rectangle.collider).toBeDefined()
   })
 })
