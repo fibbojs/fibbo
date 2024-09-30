@@ -9,16 +9,14 @@ on:
     paths:
       - package.json
       - package-lock.json
-      - 'src/**'
-      - 'test/**'
+      - 'packages/**'
   pull_request:
     branches:
       - main
     paths:
       - package.json
       - package-lock.json
-      - 'src/**'
-      - 'test/**'
+      - 'packages/**'
 
 jobs:
   test:
