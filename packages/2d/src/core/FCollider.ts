@@ -20,17 +20,26 @@ export class FCollider {
   /**
    * RAPIER Collider
    */
-  collider: RAPIER.Collider
+  __COLLIDER__: RAPIER.Collider
   /**
    * Position Offset for the collider.
    * This is used to adjust the collider position relative to the mesh.
    */
-  colliderPositionOffset: { x: number, y: number }
+  __COLLIDER_POSITION_OFFSET__: { x: number, y: number }
   /**
    * Rotation Offset for the collider.
    * This is used to adjust the collider position relative to the mesh.
    */
-  colliderRotationOffset: number
+  __COLLIDER_ROTATION_OFFSET__: number
+  /**
+   * Scale Offset for the collider.
+   * This is used to adjust the collider scale relative to the mesh.
+   */
+  __COLLIDER_SCALE_OFFSET__: { x: number, y: number }
+  /**
+   * The component the collider is attached to.
+   */
+  component: FComponent
 
   /**
    * Creates a collider for a given component.
@@ -41,7 +50,7 @@ export class FCollider {
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
    * @param options.rotationDegree The rotation of the collider in degrees. If not defined, it will default to 0.
    * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
-   * @param options.rigidBody The rigid body to attach the collider to. (optional)
+   * @param options.rigidBody The rigidBody to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts
@@ -71,7 +80,7 @@ export class FCollider {
 
     // Check if the world exists
     if (!component.scene.world)
-      throw new Error('FibboError: FScene must have a world to create a rigid body')
+      throw new Error('FibboError: FScene must have a world to create a rigidBody')
 
     // If rotation degree is given, convert it to radians
     if (options.rotationDegree) {
@@ -80,8 +89,11 @@ export class FCollider {
     }
 
     // Store the collider offset
-    this.colliderPositionOffset = { x: options.position.x, y: options.position.y }
-    this.colliderRotationOffset = options.rotation
+    this.__COLLIDER_POSITION_OFFSET__ = { x: options.position.x, y: options.position.y }
+    this.__COLLIDER_ROTATION_OFFSET__ = options.rotation
+    this.__COLLIDER_SCALE_OFFSET__ = { x: options.scale.x, y: options.scale.y }
+    // Store the component
+    this.component = component
 
     // Devide the scale by 2 for the collider (RAPIER uses half-extents)
     // Also interpete the scale as relative to the component's scale
@@ -109,10 +121,10 @@ export class FCollider {
     // If no rigidbody given, the collider is free : set translation and rotation for the collider
     if (options.rigidBody === undefined) {
       // Interprete the given position as relative to the component's position
-      const finalPosition = component.transform.position
-      finalPosition.x += options.position.x
-      finalPosition.y += options.position.y
-      colliderDesc.setTranslation(finalPosition.x, finalPosition.y)
+      const newPosition = component.transform.position
+      newPosition.x += options.position.x
+      newPosition.y += options.position.y
+      colliderDesc.setTranslation(newPosition.x, newPosition.y)
 
       // Interprete the given rotation as relative to the component's rotation
       const finalRotation = component.transform.rotation + options.rotation
@@ -125,6 +137,89 @@ export class FCollider {
     }
 
     // Create the collider
-    this.collider = component.scene.world.createCollider(colliderDesc, options.rigidBody)
+    this.__COLLIDER__ = component.scene.world.createCollider(colliderDesc, options.rigidBody)
+  }
+
+  /**
+   * Set the position of the collider.
+   * @param position The new position of the collider.
+   * @param position.x The new x position of the collider.
+   * @param position.y The new y position of the collider.
+   */
+  setPosition(position: { x: number, y: number }) {
+    this.__COLLIDER__.setTranslation(position)
+  }
+
+  /**
+   * Set the rotation of the collider.
+   * @param rotation The new rotation of the collider.
+   */
+  setRotation(rotation: number) {
+    this.__COLLIDER__.setRotation(rotation)
+  }
+
+  /**
+   * Set the rotation of the collider in degrees.
+   * @param rotation The new rotation of the collider in degrees.
+   */
+  setRotationDegree(rotation: number) {
+    this.__COLLIDER__.setRotation((rotation * Math.PI) / 180)
+  }
+
+  /**
+   * Set the scale of the collider.
+   * @param scale The new scale of the collider.
+   * @param scale.x The new x scale of the collider.
+   * @param scale.y The new y scale of the collider.
+   */
+  setScale(scale: { x: number, y: number }) {
+    // If the collider is a cuboid, update its half extents
+    if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Cuboid) {
+      this.__COLLIDER__.setHalfExtents(new RAPIER.Vector2(scale.x / 2, scale.y / 2))
+    }
+    // If the collider is a ball, update its radius
+    else if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Ball) {
+      this.__COLLIDER__.setRadius(
+        // Get the maximum value of x and y
+        Math.max(scale.x, scale.y) / 2,
+      )
+    }
+  }
+
+  /**
+   * Update the position of the collider according to the component's position.
+   * This takes into account the position offset.
+   */
+  updatePosition() {
+    const newPosition = this.component.transform.position
+    newPosition.x += this.__COLLIDER_POSITION_OFFSET__.x
+    newPosition.y += this.__COLLIDER_POSITION_OFFSET__.y
+    this.setPosition(newPosition)
+  }
+
+  /**
+   * Update the rotation of the collider according to the component's rotation.
+   * This takes into account the rotation offset.
+   */
+  updateRotation() {
+    this.setRotation(this.component.transform.rotation + this.__COLLIDER_ROTATION_OFFSET__)
+  }
+
+  /**
+   * Update the scale of the collider according to the component's scale.
+   * This takes into account the scale offset.
+   */
+  updateScale() {
+    // If the collider is a cuboid, update its half extents
+    if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Cuboid) {
+      this.__COLLIDER__.setHalfExtents(new RAPIER.Vector2(this.component.scale.x / 2 * this.__COLLIDER_SCALE_OFFSET__.x, this.component.scale.y / 2 * this.__COLLIDER_SCALE_OFFSET__.y))
+    }
+    // If the collider is a ball, update its radius
+    else if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Ball) {
+      this.__COLLIDER__.setRadius(
+        // Get the maximum value of x and y
+        Math.max(this.component.scale.x, this.component.scale.y) / 2 * this.__COLLIDER_SCALE_OFFSET__.x,
+      )
+    }
   }
 }

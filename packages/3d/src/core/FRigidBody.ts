@@ -41,24 +41,24 @@ export class FRigidBody {
   collider: FCollider
 
   /**
-   * Creates a rigid body for the given component.
+   * Creates a rigidBody for the given component.
    * @param component The component which the collider will be attached to.
-   * @param options The options for the rigid body.
-   * @param options.position The position of the rigid body. If not defined, it will use the default position of the FComponent.
-   * @param options.scale The scale of the rigid body. If not defined, it will use the default scale of the FComponent.
-   * @param options.rotation The rotation of the rigid body. If not defined, it will use the default rotation of the FComponent.
-   * @param options.shape The shape of the rigid body. If not defined, it will default to FShapes.CUBE.
-   * @param options.rigidBodyType The type of the rigid body. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
-   * @param options.lockTranslations If true, the rigid body will not be able to move.
-   * @param options.lockRotations If true, the rigid body will not be able to rotate.
+   * @param options The options for the rigidBody.
+   * @param options.position The position of the rigidBody. If not defined, it will use the default position of the FComponent.
+   * @param options.scale The scale of the rigidBody. If not defined, it will use the default scale of the FComponent.
+   * @param options.rotation The rotation of the rigidBody. If not defined, it will use the default rotation of the FComponent.
+   * @param options.shape The shape of the rigidBody. If not defined, it will default to FShapes.CUBE.
+   * @param options.rigidBodyType The type of the rigidBody. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
+   * @param options.lockTranslations If true, the rigidBody will not be able to move.
+   * @param options.lockRotations If true, the rigidBody will not be able to rotate.
    * @param options.enabledTranslations If defined, it will enable or disable translations on the x and y axis.
-   * @param options.enabledTranslations.enableX If true, the rigid body will be able to move on the x-axis.
-   * @param options.enabledTranslations.enableY If true, the rigid body will be able to move on the y-axis.
-   * @param options.enabledTranslations.enableZ If true, the rigid body will be able to move on the z-axis.
+   * @param options.enabledTranslations.enableX If true, the rigidBody will be able to move on the x-axis.
+   * @param options.enabledTranslations.enableY If true, the rigidBody will be able to move on the y-axis.
+   * @param options.enabledTranslations.enableZ If true, the rigidBody will be able to move on the z-axis.
    * @param options.enabledRotations If defined, it will enable or disable rotations on the x and y axis.
-   * @param options.enabledRotations.enableX If true, the rigid body will be able to rotate on the x-axis.
-   * @param options.enabledRotations.enableY If true, the rigid body will be able to rotate on the y-axis.
-   * @param options.enabledRotations.enableZ If true, the rigid body will be able to rotate on the z-axis.
+   * @param options.enabledRotations.enableX If true, the rigidBody will be able to rotate on the x-axis.
+   * @param options.enabledRotations.enableY If true, the rigidBody will be able to rotate on the y-axis.
+   * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
    * @example
    * ```ts
    * const rigidBody = new FRigidBody({
@@ -91,7 +91,7 @@ export class FRigidBody {
 
     // Check if the world exists
     if (!component.scene.world)
-      throw new Error('FibboError: FScene must have a world to create a rigid body')
+      throw new Error('FibboError: FScene must have a world to create a rigidBody')
 
     // If rotation degree is given, convert it to radians
     if (options.rotationDegree) {
@@ -100,7 +100,7 @@ export class FRigidBody {
       options.rotation.z = THREE.MathUtils.degToRad(options.rotationDegree.z)
     }
 
-    // Create a rigid body description according to the type
+    // Create a rigidBody description according to the type
     const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
     // Interprete the given position as relative to the component's position
     rigidBodyDesc.setTranslation(
@@ -118,7 +118,7 @@ export class FRigidBody {
       ),
     ))
 
-    // Create the rigid body
+    // Create the rigidBody
     this.rigidBody = component.scene.world.createRigidBody(rigidBodyDesc)
 
     // Lock the translation if needed

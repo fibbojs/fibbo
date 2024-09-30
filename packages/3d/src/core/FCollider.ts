@@ -42,7 +42,7 @@ export class FCollider {
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
    * @param options.rotationDegree The rotation of the collider in degrees. If not defined, it will default to 0.
    * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
-   * @param options.rigidBody The rigid body to attach the collider to. (optional)
+   * @param options.rigidBody The rigidBody to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts
@@ -72,7 +72,7 @@ export class FCollider {
 
     // Check if the world exists
     if (!component.scene.world)
-      throw new Error('FibboError: FScene must have a world to create a rigid body')
+      throw new Error('FibboError: FScene must have a world to create a rigidBody')
 
     // If rotation degree is given, convert it to radians
     if (options.rotationDegree) {

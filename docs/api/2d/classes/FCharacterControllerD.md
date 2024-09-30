@@ -42,7 +42,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerD.ts:22](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterControllerD.ts#L22)
+[2d/src/controllers/FCharacterControllerD.ts:22](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/2d/src/controllers/FCharacterControllerD.ts#L22)
 
 ## Methods
 
@@ -68,7 +68,7 @@ Any rendering process should be done on the component, not here.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerD.ts:38](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterControllerD.ts#L38)
+[2d/src/controllers/FCharacterControllerD.ts:38](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/2d/src/controllers/FCharacterControllerD.ts#L38)
 
 ## Properties
 
@@ -85,7 +85,7 @@ It is redefined here to get the correct type (with 2D properties).
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FController.ts#L17)
+[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/2d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -117,7 +117,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:21](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterController.ts#L21)
+[2d/src/controllers/FCharacterController.ts:21](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/2d/src/controllers/FCharacterController.ts#L21)
 
 ***
 
@@ -133,7 +133,7 @@ The scene where the character is.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:36](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterController.ts#L36)
+[2d/src/controllers/FCharacterController.ts:36](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/2d/src/controllers/FCharacterController.ts#L36)
 
 ***
 
@@ -149,4 +149,4 @@ The speed of the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:31](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterController.ts#L31)
+[2d/src/controllers/FCharacterController.ts:31](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/2d/src/controllers/FCharacterController.ts#L31)

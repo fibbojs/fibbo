@@ -24,10 +24,10 @@ export class FCharacterControllerD extends FCharacterController {
 
     const fKeyboard = new FKeyboard(scene)
     fKeyboard.onKeyDown(' ', () => {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0, y: 0.5 }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: 0.5 }, true)
     })
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockRotations: true,
@@ -38,17 +38,17 @@ export class FCharacterControllerD extends FCharacterController {
   onFrame(_delta: number): void {
     // Apply movement on the y axis
     if (this.inputs.up) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0, y: 0.15 * this.speed }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: 0.15 * this.speed }, true)
     }
     else if (this.inputs.down) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0, y: -0.15 * this.speed }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: -0.15 * this.speed }, true)
     }
     // Apply movement on the x axis
     if (this.inputs.left) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: -0.15 * this.speed, y: 0 }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: -0.15 * this.speed, y: 0 }, true)
     }
     else if (this.inputs.right) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0.15 * this.speed, y: 0 }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0.15 * this.speed, y: 0 }, true)
     }
   }
 }

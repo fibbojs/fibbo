@@ -50,7 +50,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:407](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L407)
+[3d/src/core/FComponent.ts:407](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L407)
 
 ***
 
@@ -92,7 +92,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:439](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L439)
+[3d/src/core/FComponent.ts:439](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L439)
 
 ***
 
@@ -134,7 +134,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:471](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L471)
+[3d/src/core/FComponent.ts:471](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L471)
 
 ***
 
@@ -158,7 +158,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:483](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L483)
+[3d/src/core/FComponent.ts:483](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L483)
 
 ***
 
@@ -182,7 +182,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:491](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L491)
+[3d/src/core/FComponent.ts:491](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L491)
 
 ***
 
@@ -206,7 +206,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:499](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L499)
+[3d/src/core/FComponent.ts:499](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L499)
 
 ***
 
@@ -230,7 +230,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:447](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L447)
+[3d/src/core/FComponent.ts:447](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L447)
 
 ***
 
@@ -254,7 +254,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:455](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L455)
+[3d/src/core/FComponent.ts:455](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L455)
 
 ***
 
@@ -278,7 +278,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:463](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L463)
+[3d/src/core/FComponent.ts:463](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L463)
 
 ***
 
@@ -320,7 +320,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:507](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L507)
+[3d/src/core/FComponent.ts:507](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L507)
 
 ***
 
@@ -344,7 +344,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:515](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L515)
+[3d/src/core/FComponent.ts:515](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L515)
 
 ***
 
@@ -368,7 +368,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:523](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L523)
+[3d/src/core/FComponent.ts:523](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L523)
 
 ***
 
@@ -392,7 +392,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:531](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L531)
+[3d/src/core/FComponent.ts:531](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L531)
 
 ***
 
@@ -416,7 +416,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:415](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L415)
+[3d/src/core/FComponent.ts:415](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L415)
 
 ***
 
@@ -440,7 +440,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:423](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L423)
+[3d/src/core/FComponent.ts:423](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L423)
 
 ***
 
@@ -464,7 +464,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:431](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L431)
+[3d/src/core/FComponent.ts:431](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L431)
 
 ## Constructors
 
@@ -488,7 +488,7 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/core/FComponentEmpty.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponentEmpty.ts#L10)
+[3d/src/core/FComponentEmpty.ts:10](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponentEmpty.ts#L10)
 
 ## Methods
 
@@ -540,7 +540,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:116
+core/dist/index.d.ts:118
 
 ***
 
@@ -548,7 +548,7 @@ core/dist/index.d.ts:116
 
 > **initCollider**(`options`?): `void`
 
-Only init a collider for the component, without a rigid body.
+Only init a collider for the component, without a rigidBody.
 This is useful for static objects.
 
 #### Parameters
@@ -578,7 +578,7 @@ component.initCollider({
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:361](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L361)
+[3d/src/core/FComponent.ts:361](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L361)
 
 ***
 
@@ -586,13 +586,13 @@ component.initCollider({
 
 > **initRigidBody**(`options`?): `void`
 
-Init a rigid body for the component.
+Init a rigidBody for the component.
 
 #### Parameters
 
 • **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
-The options for the rigid body.
+The options for the rigidBody.
 
 #### Returns
 
@@ -615,7 +615,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:332](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L332)
+[3d/src/core/FComponent.ts:332](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L332)
 
 ***
 
@@ -653,7 +653,7 @@ component.initSensor({
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:385](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L385)
+[3d/src/core/FComponent.ts:385](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L385)
 
 ***
 
@@ -707,7 +707,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:394](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L394)
+[3d/src/core/FComponent.ts:394](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L394)
 
 ***
 
@@ -733,7 +733,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[3d/src/core/FComponentEmpty.ts:14](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponentEmpty.ts#L14)
+[3d/src/core/FComponentEmpty.ts:14](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponentEmpty.ts#L14)
 
 ***
 
@@ -777,7 +777,7 @@ component.setPosition({ x: 0, y: 1, z: 0 })
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:204](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L204)
+[3d/src/core/FComponent.ts:204](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L204)
 
 ***
 
@@ -821,7 +821,7 @@ component.setRotation({ x: 0, y: 0, z: 0 })
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:269](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L269)
+[3d/src/core/FComponent.ts:269](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L269)
 
 ***
 
@@ -865,7 +865,7 @@ component.setRotationDegree({ x: 0, y: 90, z: 0 })
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:293](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L293)
+[3d/src/core/FComponent.ts:293](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L293)
 
 ***
 
@@ -909,7 +909,7 @@ component.setScale({ x: 1, y: 1, z: 1 })
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:228](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L228)
+[3d/src/core/FComponent.ts:228](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L228)
 
 ## Properties
 
@@ -930,7 +930,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:56
+core/dist/index.d.ts:58
 
 ***
 
@@ -947,7 +947,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:51
+core/dist/index.d.ts:53
 
 ***
 
@@ -961,7 +961,7 @@ core/dist/index.d.ts:51
 
 #### Defined in
 
-core/dist/index.d.ts:46
+core/dist/index.d.ts:48
 
 ***
 
@@ -977,7 +977,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L28)
+[3d/src/core/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L28)
 
 ***
 
@@ -993,7 +993,7 @@ Collider
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:57](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L57)
+[3d/src/core/FComponent.ts:57](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L57)
 
 ***
 
@@ -1009,7 +1009,7 @@ The controller attached to the component.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:37](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L37)
+[3d/src/core/FComponent.ts:37](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L37)
 
 ***
 
@@ -1025,7 +1025,7 @@ Mesh
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:42](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L42)
+[3d/src/core/FComponent.ts:42](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L42)
 
 ***
 
@@ -1041,7 +1041,7 @@ RigidBody
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:53](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L53)
+[3d/src/core/FComponent.ts:53](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L53)
 
 ***
 
@@ -1057,7 +1057,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L33)
+[3d/src/core/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L33)
 
 ***
 
@@ -1073,7 +1073,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:61](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L61)
+[3d/src/core/FComponent.ts:61](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L61)
 
 ***
 
@@ -1089,4 +1089,4 @@ Transforms
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:47](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L47)
+[3d/src/core/FComponent.ts:47](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FComponent.ts#L47)

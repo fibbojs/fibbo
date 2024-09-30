@@ -21,7 +21,7 @@ export class FCharacterControllerKV extends FCharacterControllerK {
   constructor(scene: FScene, options: FCharacterControllerOptions) {
     super(scene, options)
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.KinematicVelocityBased,
       ...options,
@@ -34,7 +34,7 @@ export class FCharacterControllerKV extends FCharacterControllerK {
      */
     const correctedMovement = this.getCorrectedMovements()
 
-    // Apply the movement to the rigid body
+    // Apply the movement to the rigidBody
     this.component.rigidBody?.rigidBody.setLinvel({
       x: correctedMovement.x / delta,
       y: correctedMovement.y / delta,

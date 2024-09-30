@@ -137,7 +137,7 @@ export class CustomController extends FController {
     // Create the character controller
     this.characterController = scene.world.createCharacterController(offset)
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.KinematicPositionBased,
       lockRotations: true,
@@ -187,7 +187,7 @@ export class CustomController extends FController {
     // Get the corrected movement
     const correctedMovement = this.getCorrectedMovements()
 
-    // Apply the movement to the rigid body
+    // Apply the movement to the rigidBody
     this.component.rigidBody?.rigidBody.setNextKinematicTranslation({
       x: this.component.rigidBody.rigidBody.translation().x + correctedMovement.x * delta * this.speed * 64,
       y: this.component.rigidBody.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
@@ -336,7 +336,7 @@ export class CustomController extends FController {
       scale: { x: 1.1, y: 1.1, z: 1.1 },
     })
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.KinematicPositionBased,
       ...options,
@@ -403,7 +403,7 @@ export class CustomController extends FController {
      */
     const correctedMovement = this.getCorrectedMovements()
 
-    // Apply the movement to the rigid body
+    // Apply the movement to the rigidBody
     this.component.rigidBody?.rigidBody.setNextKinematicTranslation({
       x: this.component.rigidBody.rigidBody.translation().x + correctedMovement.x * delta * this.speed * 64,
       y: this.component.rigidBody.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
@@ -412,7 +412,7 @@ export class CustomController extends FController {
 
     // If one of the inputs is true, apply the corrected rotation
     if (this.inputs.forward || this.inputs.backward || this.inputs.left || this.inputs.right) {
-      // Apply the rotation to the rigid body
+      // Apply the rotation to the rigidBody
       this.component.rigidBody?.rigidBody.setNextKinematicRotation(this.getCorrectedRotation())
     }
   }

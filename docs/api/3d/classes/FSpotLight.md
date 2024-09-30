@@ -30,7 +30,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:93](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L93)
+[3d/src/lights/FLight.ts:93](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L93)
 
 ***
 
@@ -54,7 +54,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:101](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L101)
+[3d/src/lights/FLight.ts:101](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L101)
 
 ***
 
@@ -96,7 +96,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:105](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L105)
+[3d/src/lights/FLight.ts:105](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L105)
 
 ## Constructors
 
@@ -124,7 +124,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:26](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FSpotLight.ts#L26)
+[3d/src/lights/FSpotLight.ts:26](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FSpotLight.ts#L26)
 
 ## Methods
 
@@ -142,7 +142,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:76](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L76)
+[3d/src/lights/FLight.ts:76](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L76)
 
 ***
 
@@ -194,7 +194,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:116
+core/dist/index.d.ts:118
 
 ***
 
@@ -248,7 +248,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-core/dist/index.d.ts:93
+core/dist/index.d.ts:95
 
 ***
 
@@ -274,7 +274,7 @@ Any changes on its transform should be done on the controller, not here.
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:62](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FSpotLight.ts#L62)
+[3d/src/lights/FSpotLight.ts:62](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FSpotLight.ts#L62)
 
 ## Properties
 
@@ -295,7 +295,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:24](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L24)
+[3d/src/lights/FLight.ts:24](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L24)
 
 ***
 
@@ -312,7 +312,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:23](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L23)
+[3d/src/lights/FLight.ts:23](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L23)
 
 ***
 
@@ -326,7 +326,7 @@ It is generated automatically.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L22)
+[3d/src/lights/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L22)
 
 ***
 
@@ -342,7 +342,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:21](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L21)
+[3d/src/lights/FLight.ts:21](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L21)
 
 ***
 
@@ -370,7 +370,7 @@ Look at target of the light.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:44](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L44)
+[3d/src/lights/FLight.ts:44](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L44)
 
 ***
 
@@ -386,7 +386,7 @@ The controller attached to the component.
 
 #### Defined in
 
-core/dist/index.d.ts:62
+core/dist/index.d.ts:64
 
 ***
 
@@ -402,7 +402,7 @@ The original light object from Three.js.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:29](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L29)
+[3d/src/lights/FLight.ts:29](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L29)
 
 ***
 
@@ -418,7 +418,7 @@ Scene the light is in.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:34](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L34)
+[3d/src/lights/FLight.ts:34](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L34)
 
 ***
 
@@ -434,4 +434,4 @@ Transform of the light.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:39](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L39)
+[3d/src/lights/FLight.ts:39](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L39)

@@ -118,6 +118,9 @@ import Character from './classes/Character'
     // Remove the collision callback with FRectangle
     removeCollisionCallbackWithFRectangle()
 
+    // Make character 2 times bigger on Y axis
+    character.setScale({ x: 0.5, y: 1 })
+
     // Zoom in the camera
     scene.camera.setZoom(1)
   })

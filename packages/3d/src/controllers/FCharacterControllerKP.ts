@@ -21,7 +21,7 @@ export class FCharacterControllerKP extends FCharacterControllerK {
   constructor(scene: FScene, options: FCharacterControllerOptions) {
     super(scene, options)
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.KinematicPositionBased,
       ...options,
@@ -34,7 +34,7 @@ export class FCharacterControllerKP extends FCharacterControllerK {
      */
     const correctedMovement = this.getCorrectedMovements()
 
-    // Apply the movement to the rigid body
+    // Apply the movement to the rigidBody
     this.component.rigidBody?.rigidBody.setNextKinematicTranslation({
       x: this.component.rigidBody.rigidBody.translation().x + correctedMovement.x * delta * this.speed * 64,
       y: this.component.rigidBody.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
@@ -43,7 +43,7 @@ export class FCharacterControllerKP extends FCharacterControllerK {
 
     // If one of the inputs is true, apply the corrected rotation
     if (this.inputs.forward || this.inputs.backward || this.inputs.left || this.inputs.right) {
-      // Apply the rotation to the rigid body
+      // Apply the rotation to the rigidBody
       this.component.rigidBody?.rigidBody.setNextKinematicRotation(this.getCorrectedRotation())
     }
   }

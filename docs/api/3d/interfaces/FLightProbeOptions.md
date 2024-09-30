@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L8)
+[3d/src/lights/FLight.ts:8](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L8)
 
 ***
 
@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L9)
+[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L9)
 
 ***
 
@@ -58,7 +58,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L10)
+[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLight.ts#L10)
 
 ***
 
@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:4](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L4)
+[3d/src/core/FTransform.ts:4](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FTransform.ts#L4)
 
 ***
 
@@ -110,7 +110,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L6)
+[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FTransform.ts#L6)
 
 ***
 
@@ -136,7 +136,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L7)
+[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FTransform.ts#L7)
 
 ***
 
@@ -162,7 +162,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L5)
+[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FTransform.ts#L5)
 
 ***
 
@@ -172,4 +172,4 @@
 
 #### Defined in
 
-[3d/src/lights/FLightProbe.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLightProbe.ts#L7)
+[3d/src/lights/FLightProbe.ts:7](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/lights/FLightProbe.ts#L7)

@@ -103,52 +103,44 @@ export abstract class FComponent extends FComponentCore {
 
   onFrame(_delta: number): void {
     super.onFrame(_delta)
-    // If the rigid body exist, update the container position and rotation according to the rigid body
+    // If the rigidBody exist, update the container position and rotation according to the rigidBody
     if (this.rigidBody && this.collider) {
       // Translation
-      const newContainerPosition = this.rigidBody.rigidBody.translation()
+      const newContainerPosition = this.rigidBody.__RIGIDBODY__.translation()
       // Remove offset
-      newContainerPosition.x -= this.collider.colliderPositionOffset.x
-      newContainerPosition.y -= this.collider.colliderPositionOffset.y
+      newContainerPosition.x -= this.rigidBody.__RIGIDBODY_POSITION_OFFSET__.x
+      newContainerPosition.y -= this.rigidBody.__RIGIDBODY_POSITION_OFFSET__.y
 
       // Rotation
-      let newContainerRotation = this.rigidBody.rigidBody.rotation()
+      let newContainerRotation = this.rigidBody.__RIGIDBODY__.rotation()
       // Remove offset
-      newContainerRotation -= this.collider.colliderRotationOffset
+      newContainerRotation -= this.rigidBody.__RIGIDBODY_ROTATION_OFFSET__
 
       // Apply the new transforms to the container
       this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
       this.container.rotation = -newContainerRotation
 
-      // Update position and rotation properties of the component according to the rigid body
+      // Update position and rotation properties of the component according to the rigidBody
       this.transform.position = {
         x: this.container.position.x / 100,
         y: -this.container.position.y / 100,
       }
       this.transform.rotation = this.container.rotation
-      // If a sensor exists, update its position and rotation according to the rigid body
-      if (this.sensor) {
-        // Apply offset to the sensor
-        newContainerPosition.x += this.sensor.collider.colliderPositionOffset.x
-        newContainerPosition.y += this.sensor.collider.colliderPositionOffset.y
-        this.sensor.rigidBody.setTranslation(newContainerPosition, true)
-        this.sensor.rigidBody.setRotation(newContainerRotation, true)
-      }
     }
     // Else if the collider exist, update the container position and rotation according to the collider
     else if (this.collider) {
       // Get the new transforms from the collider
 
       // Transforms
-      const newContainerPosition = this.collider.collider.translation()
+      const newContainerPosition = this.collider.__COLLIDER__.translation()
       // Remove offset
-      newContainerPosition.x -= this.collider.colliderPositionOffset.x
-      newContainerPosition.y -= this.collider.colliderPositionOffset.y
+      newContainerPosition.x -= this.collider.__COLLIDER_POSITION_OFFSET__.x
+      newContainerPosition.y -= this.collider.__COLLIDER_POSITION_OFFSET__.y
 
       // Rotation
-      let newContainerRotation = this.collider.collider.rotation()
+      let newContainerRotation = this.collider.__COLLIDER__.rotation()
       // Remove offset
-      newContainerRotation -= this.collider.colliderRotationOffset
+      newContainerRotation -= this.collider.__COLLIDER_ROTATION_OFFSET__
 
       // Apply the new transforms to the container
       this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
@@ -159,26 +151,25 @@ export abstract class FComponent extends FComponentCore {
         y: -this.container.position.y / 100,
       }
       this.transform.rotation = this.container.rotation
-
-      // If a sensor exists, update its position and rotation according to the collider
-      if (this.sensor) {
-        // Apply offset to the sensor
-        newContainerPosition.x += this.sensor.collider.colliderPositionOffset.x
-        newContainerPosition.y += this.sensor.collider.colliderPositionOffset.y
-        this.sensor.rigidBody.setTranslation(newContainerPosition, true)
-        this.sensor.rigidBody.setRotation(newContainerRotation, true)
-      }
     }
     else {
-      // If the rigid body and collider doesn't exist, update the container position and rotation according to the default values
+      // If the rigidBody and collider doesn't exist, update the container position and rotation according to the default values
       // The y position is inverted because the y axis is inverted in PIXI.js compared to Rapier
       this.container.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
       this.container.rotation = this.transform.rotation
-      // If a sensor exists, update its position and rotation according to the default values
-      if (this.sensor) {
-        this.sensor.rigidBody.setTranslation({ x: this.transform.position.x, y: this.transform.position.y }, true)
-        this.sensor.rigidBody.setRotation(this.transform.rotation, true)
+      // Update position and rotation properties of the component according to the default values
+      this.transform.position = {
+        x: this.container.position.x / 100,
+        y: -this.container.position.y / 100,
       }
+      this.transform.rotation = this.container.rotation
+    }
+
+    // If a sensor exists, update its transforms
+    if (this.sensor) {
+      this.sensor.updatePosition()
+      this.sensor.updateRotation()
+      this.sensor.updateScale()
     }
   }
 
@@ -195,12 +186,15 @@ export abstract class FComponent extends FComponentCore {
   setPosition(options: { x: number, y: number }): void {
     this.transform.position = { x: options.x, y: options.y }
     this.container.position.set(options.x * 100, -options.y * 100)
-    // If a collider exists, update its translation
-    if (this.collider)
-      this.collider.collider.setTranslation(new RAPIER.Vector2(options.x, options.y))
-    // If a rigid body exists, update its translation
+    // If a rigidBody exists, update its position
     if (this.rigidBody)
-      this.rigidBody.rigidBody.setTranslation(new RAPIER.Vector2(options.x, options.y), true)
+      this.rigidBody.updatePosition()
+    // Else if a collider exists, update its position
+    else if (this.collider)
+      this.collider.updatePosition()
+    // If a sensor exists, update its position
+    if (this.sensor)
+      this.sensor.updatePosition()
   }
 
   /**
@@ -217,20 +211,15 @@ export abstract class FComponent extends FComponentCore {
     this.transform.scale = { x: options.x, y: options.y }
     this.container.height = options.y * 100
     this.container.width = options.x * 100
-    // If a collider exists
-    if (this.collider) {
-      // If the collider is a cuboid, update its half extents
-      if (this.collider.collider.shape.type === RAPIER.ShapeType.Cuboid) {
-        this.collider.collider.setHalfExtents(new RAPIER.Vector2(options.x / 2, options.y / 2))
-      }
-      // If the collider is a ball, update its radius
-      else if (this.collider.collider.shape.type === RAPIER.ShapeType.Ball) {
-        this.collider.collider.setRadius(
-          // Get the maximum value of x and y
-          Math.max(options.x, options.y) / 2,
-        )
-      }
-    }
+    // If a rigidBody exists, update its scale
+    if (this.rigidBody)
+      this.rigidBody.updateScale()
+    // Else if a collider exists, update its scale
+    else if (this.collider)
+      this.collider.updateScale()
+    // If a sensor exists, update its scale
+    if (this.sensor)
+      this.sensor.updateScale()
   }
 
   /**
@@ -244,12 +233,15 @@ export abstract class FComponent extends FComponentCore {
   setRotation(r: number): void {
     this.transform.rotation = r
     this.container.rotation = r
-    // If a collider exists, update its rotation
-    if (this.collider)
-      this.collider.collider.setRotation(r)
-    // If a rigid body exists, update its rotation
+    // If a rigidBody exists, update its rotation
     if (this.rigidBody)
-      this.rigidBody.rigidBody.setRotation(r, true)
+      this.rigidBody.updateRotation()
+    // Else if a collider exists, update its rotation
+    else if (this.collider)
+      this.collider.updateRotation()
+    // If a sensor exists, update its rotation
+    if (this.sensor)
+      this.sensor.updateRotation()
   }
 
   /**
@@ -265,17 +257,17 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * Init a rigid body for the model.
-   * @param options The options for the rigid body.
-   * @param options.position The position of the rigid body.
-   * @param options.scale The scale of the rigid body.
-   * @param options.rotation The rotation of the rigid body.
-   * @param options.shape The shape of the rigid body.
-   * @param options.lockTranslations Lock the translations of the rigid body.
-   * @param options.lockRotations Lock the rotations of the rigid body.
-   * @param options.enabledTranslations Enable only specific translations of the rigid body.
-   * @param options.enabledTranslations.enableX Enable the x translation of the rigid body.
-   * @param options.enabledTranslations.enableY Enable the y translation of the rigid body.
+   * Init a rigidBody for the model.
+   * @param options The options for the rigidBody.
+   * @param options.position The position of the rigidBody.
+   * @param options.scale The scale of the rigidBody.
+   * @param options.rotation The rotation of the rigidBody.
+   * @param options.shape The shape of the rigidBody.
+   * @param options.lockTranslations Lock the translations of the rigidBody.
+   * @param options.lockRotations Lock the rotations of the rigidBody.
+   * @param options.enabledTranslations Enable only specific translations of the rigidBody.
+   * @param options.enabledTranslations.enableX Enable the x translation of the rigidBody.
+   * @param options.enabledTranslations.enableY Enable the y translation of the rigidBody.
    * @example
    * ```ts
    * component.initRigidBody({
@@ -287,7 +279,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   initRigidBody(options?: FRigidBodyOptions): void {
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.rigidBody = new FRigidBody(this, options)
 
     // Set the collider
@@ -295,7 +287,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * Only init a collider for the component, without a rigid body.
+   * Only init a collider for the component, without a rigidBody.
    * This is useful for static objects.
    * @param options The options for the collider.
    * @param options.position The position of the collider.
@@ -348,9 +340,9 @@ export abstract class FComponent extends FComponentCore {
 
   onCollisionWith(classOrObject: any, callback: (data: OnCollisionWithData) => void): () => void {
     // Activate collision events if they are not already activated
-    if (this.sensor && this.sensor.collider.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
+    if (this.sensor && this.sensor.collider.__COLLIDER__.activeEvents() === RAPIER.ActiveEvents.NONE) {
       // Set the active events
-      this.sensor.collider.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
+      this.sensor.collider.__COLLIDER__.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
     // Call the core onCollisionWith method
     return super.onCollisionWith(classOrObject, callback)

@@ -9,13 +9,13 @@ A component is a class that extends the [`FComponent`](/api/core/classes/FCompon
 It is mainly composed of the following attributes :
 - [`transform`](/guide/transforms) : The position, rotation, and scale of the object.
 - `collider` : (optional) The collider of the object, used for physics interactions.
-- `rigidBody` : (optional) The rigid body of the object, used for physics interactions.
+- `rigidBody` : (optional) The rigidBody of the object, used for physics interactions.
 - `sensor` : (optional) The sensor of the object, used for detecting and emitting collisions events.
 
 And the following methods :
 - `onFrame` : Called every frame by the [Scene](/guide/scene) to update the component.
 - `initCollider` : Initialize the collider of the object.
-- `initRigidBody` : Initialize the rigid body of the object.
+- `initRigidBody` : Initialize the rigidBody of the object.
 - `initSensor` : Initialize the sensor of the object.
 - Various methods to modify the transform of the object.
   - `setPosition` : Set the position of the object.

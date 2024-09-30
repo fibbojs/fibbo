@@ -28,7 +28,7 @@ export class FCharacterControllerD extends FCharacterController {
       this.component.rigidBody?.rigidBody.applyImpulse(new THREE.Vector3(0, 0.1, 0), true)
     })
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockRotations: true,

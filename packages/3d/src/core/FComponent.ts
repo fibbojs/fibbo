@@ -107,7 +107,7 @@ export abstract class FComponent extends FComponentCore {
 
   onFrame(_delta: number): void {
     super.onFrame(_delta)
-    // If the rigid body and mesh exist, update the mesh position and rotation according to the rigid body
+    // If the rigidBody and mesh exist, update the mesh position and rotation according to the rigidBody
     if (this.rigidBody && this.collider && this.mesh) {
       // Translation
       const newMeshPosition = this.rigidBody.rigidBody.translation()
@@ -134,10 +134,10 @@ export abstract class FComponent extends FComponentCore {
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.mesh.setRotationFromEuler(newMeshRotation)
 
-      // Update position and rotation properties of the component according to the rigid body
+      // Update position and rotation properties of the component according to the rigidBody
       this.transform.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.transform.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
-      // If a sensor exists, update its position and rotation according to the rigid body
+      // If a sensor exists, update its position and rotation according to the rigidBody
       if (this.sensor) {
         // Apply offset to the sensor
         newMeshPosition.x += this.sensor.collider.colliderPositionOffset.x
@@ -177,7 +177,7 @@ export abstract class FComponent extends FComponentCore {
       this.transform.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.transform.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
     }
-    // If the rigid body and collider doesn't exist, update the mesh position and rotation according to the default values
+    // If the rigidBody and collider doesn't exist, update the mesh position and rotation according to the default values
     else if (this.mesh) {
       this.mesh.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
       this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
@@ -209,7 +209,7 @@ export abstract class FComponent extends FComponentCore {
     // If a collider exists, update its translation
     if (this.collider)
       this.collider.collider.setTranslation({ x: options.x, y: options.y, z: options.z })
-    // If a rigid body exists, update its translation
+    // If a rigidBody exists, update its translation
     if (this.rigidBody)
       this.rigidBody.rigidBody.setTranslation({ x: options.x, y: options.y, z: options.z }, true)
   }
@@ -274,7 +274,7 @@ export abstract class FComponent extends FComponentCore {
     // If a collider exists, update its rotation
     if (this.collider)
       this.collider.collider.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(options.x, options.y, options.z)))
-    // If a rigid body exists, update its rotation
+    // If a rigidBody exists, update its rotation
     if (this.rigidBody)
       this.rigidBody.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(options.x, options.y, options.z)), true)
   }
@@ -302,23 +302,23 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * Init a rigid body for the component.
-   * @param options The options for the rigid body.
-   * @param options.position The position of the rigid body. If not defined, it will use the default position of the FComponent.
-   * @param options.scale The scale of the rigid body. If not defined, it will use the default scale of the FComponent.
-   * @param options.rotation The rotation of the rigid body. If not defined, it will use the default rotation of the FComponent.
-   * @param options.shape The shape of the rigid body. If not defined, it will default to FShapes.CUBE.
-   * @param options.rigidBodyType The type of the rigid body. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
-   * @param options.lockTranslations If true, the rigid body will not be able to move.
-   * @param options.lockRotations If true, the rigid body will not be able to rotate.
+   * Init a rigidBody for the component.
+   * @param options The options for the rigidBody.
+   * @param options.position The position of the rigidBody. If not defined, it will use the default position of the FComponent.
+   * @param options.scale The scale of the rigidBody. If not defined, it will use the default scale of the FComponent.
+   * @param options.rotation The rotation of the rigidBody. If not defined, it will use the default rotation of the FComponent.
+   * @param options.shape The shape of the rigidBody. If not defined, it will default to FShapes.CUBE.
+   * @param options.rigidBodyType The type of the rigidBody. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
+   * @param options.lockTranslations If true, the rigidBody will not be able to move.
+   * @param options.lockRotations If true, the rigidBody will not be able to rotate.
    * @param options.enabledTranslations If defined, it will enable or disable translations on the x and y axis.
-   * @param options.enabledTranslations.enableX If true, the rigid body will be able to move on the x-axis.
-   * @param options.enabledTranslations.enableY If true, the rigid body will be able to move on the y-axis.
-   * @param options.enabledTranslations.enableZ If true, the rigid body will be able to move on the z-axis.
+   * @param options.enabledTranslations.enableX If true, the rigidBody will be able to move on the x-axis.
+   * @param options.enabledTranslations.enableY If true, the rigidBody will be able to move on the y-axis.
+   * @param options.enabledTranslations.enableZ If true, the rigidBody will be able to move on the z-axis.
    * @param options.enabledRotations If defined, it will enable or disable rotations on the x and y axis.
-   * @param options.enabledRotations.enableX If true, the rigid body will be able to rotate on the x-axis.
-   * @param options.enabledRotations.enableY If true, the rigid body will be able to rotate on the y-axis.
-   * @param options.enabledRotations.enableZ If true, the rigid body will be able to rotate on the z-axis.
+   * @param options.enabledRotations.enableX If true, the rigidBody will be able to rotate on the x-axis.
+   * @param options.enabledRotations.enableY If true, the rigidBody will be able to rotate on the y-axis.
+   * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
    * @example
    * ```ts
    * component.initRigidBody({
@@ -330,7 +330,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   initRigidBody(options?: FRigidBodyOptions): void {
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.rigidBody = new FRigidBody(this, options)
 
     // Set the collider
@@ -338,7 +338,7 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * Only init a collider for the component, without a rigid body.
+   * Only init a collider for the component, without a rigidBody.
    * This is useful for static objects.
    * @param options The options for the collider.
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.
@@ -346,7 +346,7 @@ export abstract class FComponent extends FComponentCore {
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
    * @param options.rotationDegree The rotation of the collider in degrees. If not defined, it will default to 0.
    * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
-   * @param options.rigidBody The rigid body to attach the collider to. (optional)
+   * @param options.rigidBody The rigidBody to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts

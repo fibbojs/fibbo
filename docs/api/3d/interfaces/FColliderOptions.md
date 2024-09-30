@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FCollider.ts#L7)
+[3d/src/core/FCollider.ts:7](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FCollider.ts#L7)
 
 ***
 
@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:12](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FCollider.ts#L12)
+[3d/src/core/FCollider.ts:12](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FCollider.ts#L12)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:9](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FCollider.ts#L9)
+[3d/src/core/FCollider.ts:9](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FCollider.ts#L9)
 
 ***
 
@@ -76,7 +76,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FCollider.ts#L10)
+[3d/src/core/FCollider.ts:10](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FCollider.ts#L10)
 
 ***
 
@@ -98,7 +98,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FCollider.ts#L8)
+[3d/src/core/FCollider.ts:8](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FCollider.ts#L8)
 
 ***
 
@@ -108,7 +108,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:13](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FCollider.ts#L13)
+[3d/src/core/FCollider.ts:13](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FCollider.ts#L13)
 
 ***
 
@@ -118,4 +118,4 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:11](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FCollider.ts#L11)
+[3d/src/core/FCollider.ts:11](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/3d/src/core/FCollider.ts#L11)
