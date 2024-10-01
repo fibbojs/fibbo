@@ -40,6 +40,10 @@ export class FCollider {
    * The component the collider is attached to.
    */
   component: FComponent
+  /**
+   * The shape of the collider.
+   */
+  shape: FShapes
 
   /**
    * Creates a collider for a given component.
@@ -69,7 +73,7 @@ export class FCollider {
       scale: { x: 1, y: 1 },
       rotation: 0,
       rotationDegree: undefined,
-      shape: FShapes.SQUARE,
+      shape: FShapes.RECTANGLE,
       rigidBody: undefined,
       sensor: false,
     }
@@ -80,7 +84,7 @@ export class FCollider {
 
     // Check if the world exists
     if (!component.scene.world)
-      throw new Error('FibboError: FScene must have a world to create a rigidBody')
+      throw new Error('FibboError: FScene must have a world to create a collider')
 
     // If rotation degree is given, convert it to radians
     if (options.rotationDegree) {
@@ -88,15 +92,15 @@ export class FCollider {
       options.rotation = (options.rotationDegree * Math.PI) / 180
     }
 
-    // Store the collider offset
+    // Store the options
     this.__COLLIDER_POSITION_OFFSET__ = { x: options.position.x, y: options.position.y }
     this.__COLLIDER_ROTATION_OFFSET__ = options.rotation
     this.__COLLIDER_SCALE_OFFSET__ = { x: options.scale.x, y: options.scale.y }
-    // Store the component
     this.component = component
+    this.shape = options.shape
 
     // Devide the scale by 2 for the collider (RAPIER uses half-extents)
-    // Also interpete the scale as relative to the component's scale
+    // Also interpete the scale as relative to its component's scale
     options.scale = {
       x: component.transform.scale.x / 2 * options.scale.x,
       y: component.transform.scale.y / 2 * options.scale.y,
@@ -105,7 +109,7 @@ export class FCollider {
     // Create a collider description according to the shape given
     let colliderDesc
     switch (options.shape) {
-      case FShapes.SQUARE:
+      case FShapes.RECTANGLE:
         colliderDesc = RAPIER.ColliderDesc.cuboid(options.scale.x, options.scale.y)
         break
       case FShapes.CIRCLE:
@@ -120,13 +124,13 @@ export class FCollider {
 
     // If no rigidbody given, the collider is free : set translation and rotation for the collider
     if (options.rigidBody === undefined) {
-      // Interprete the given position as relative to the component's position
+      // Interprete the given position as relative to its component's position
       const newPosition = component.transform.position
       newPosition.x += options.position.x
       newPosition.y += options.position.y
       colliderDesc.setTranslation(newPosition.x, newPosition.y)
 
-      // Interprete the given rotation as relative to the component's rotation
+      // Interprete the given rotation as relative to its component's rotation
       const finalRotation = component.transform.rotation + options.rotation
       colliderDesc.setRotation(finalRotation)
     }
@@ -187,7 +191,7 @@ export class FCollider {
   }
 
   /**
-   * Update the position of the collider according to the component's position.
+   * Update the position of the collider according to its component's position.
    * This takes into account the position offset.
    */
   updatePosition() {
@@ -198,7 +202,7 @@ export class FCollider {
   }
 
   /**
-   * Update the rotation of the collider according to the component's rotation.
+   * Update the rotation of the collider according to its component's rotation.
    * This takes into account the rotation offset.
    */
   updateRotation() {
@@ -206,7 +210,7 @@ export class FCollider {
   }
 
   /**
-   * Update the scale of the collider according to the component's scale.
+   * Update the scale of the collider according to its component's scale.
    * This takes into account the scale offset.
    */
   updateScale() {
@@ -221,5 +225,85 @@ export class FCollider {
         Math.max(this.component.scale.x, this.component.scale.y) / 2 * this.__COLLIDER_SCALE_OFFSET__.x,
       )
     }
+  }
+
+  // Setters & getters for transform properties
+
+  get position() {
+    return this.__COLLIDER__.translation()
+  }
+
+  set position(position: { x: number, y: number }) {
+    this.setPosition(position)
+  }
+
+  get x() {
+    return this.__COLLIDER__.translation().x
+  }
+
+  set x(x: number) {
+    this.setPosition({ x, y: this.y })
+  }
+
+  get y() {
+    return this.__COLLIDER__.translation().y
+  }
+
+  set y(y: number) {
+    this.setPosition({ x: this.x, y })
+  }
+
+  get rotation() {
+    return this.__COLLIDER__.rotation()
+  }
+
+  set rotation(rotation: number) {
+    this.setRotation(rotation)
+  }
+
+  get rotationDegree() {
+    return (this.__COLLIDER__.rotation() * 180) / Math.PI
+  }
+
+  set rotationDegree(rotation: number) {
+    this.setRotationDegree(rotation)
+  }
+
+  get scale() {
+    if (this.__COLLIDER__.shape instanceof RAPIER.Cuboid) {
+      return {
+        x: this.__COLLIDER__.shape.halfExtents.x * 2,
+        y: this.__COLLIDER__.shape.halfExtents.y * 2,
+      }
+    }
+    else if (this.__COLLIDER__.shape instanceof RAPIER.Ball) {
+      return {
+        x: this.__COLLIDER__.shape.radius * 2,
+        y: this.__COLLIDER__.shape.radius * 2,
+      }
+    }
+    else {
+      return { x: 0, y: 0 }
+    }
+  }
+
+  set scale(scale: { x: number, y: number }) {
+    this.setScale(scale)
+  }
+
+  get scaleX() {
+    return this.scale.x
+  }
+
+  set scaleX(x: number) {
+    this.setScale({ x, y: this.scale.y })
+  }
+
+  get scaleY() {
+    return this.scale.y
+  }
+
+  set scaleY(y: number) {
+    this.setScale({ x: this.scale.x, y })
   }
 }

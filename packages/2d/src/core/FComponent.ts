@@ -50,15 +50,15 @@ export abstract class FComponent extends FComponentCore {
   /**
    * RAPIER RigidBody
    */
-  rigidBody?: FRigidBody
+  declare rigidBody: FRigidBody
   /**
    * RAPIER Collider
    */
-  collider?: FCollider
+  declare collider: FCollider
   /**
    * Sensor (a collider that doesn't collide with other colliders, but still triggers events)
    */
-  sensor?: FRigidBody
+  declare sensor: FRigidBody
 
   /**
    * @param scene The 2D scene where the component will be added.
@@ -348,9 +348,8 @@ export abstract class FComponent extends FComponentCore {
     return super.onCollisionWith(classOrObject, callback)
   }
 
-  /**
-   * Setters & getters for transform properties
-   */
+  // Setters & getters for transform properties
+
   get position(): { x: number, y: number } {
     return this.transform.position
   }

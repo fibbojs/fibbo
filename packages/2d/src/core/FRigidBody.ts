@@ -83,7 +83,7 @@ export class FRigidBody {
       scale: { x: 1, y: 1, z: 1 },
       rotation: 0,
       rotationDegree: undefined,
-      shape: FShapes.SQUARE,
+      shape: FShapes.RECTANGLE,
       sensor: false,
       rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockTranslations: false,

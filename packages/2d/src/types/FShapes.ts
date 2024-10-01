@@ -1,5 +1,5 @@
 // FShapes type
 export enum FShapes {
-  SQUARE = 'Square',
+  RECTANGLE = 'Rectangle',
   CIRCLE = 'Circle',
 }
