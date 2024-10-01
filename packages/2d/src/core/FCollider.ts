@@ -80,7 +80,7 @@ export class FCollider {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || options.rotation === undefined || !options.shape || options.sensor === undefined)
-      throw new Error('FibboError: initCollider requires position, scale, rotation and shape options')
+      throw new Error('FibboError: initCollider requires transforms options')
 
     // Check if the world exists
     if (!component.scene.world)
@@ -178,15 +178,13 @@ export class FCollider {
    */
   setScale(scale: { x: number, y: number }) {
     // If the collider is a cuboid, update its half extents
-    if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Cuboid) {
+    if (this.__COLLIDER__.shape instanceof RAPIER.Cuboid) {
       this.__COLLIDER__.setHalfExtents(new RAPIER.Vector2(scale.x / 2, scale.y / 2))
     }
     // If the collider is a ball, update its radius
-    else if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Ball) {
-      this.__COLLIDER__.setRadius(
-        // Get the maximum value of x and y
-        Math.max(scale.x, scale.y) / 2,
-      )
+    else if (this.__COLLIDER__.shape instanceof RAPIER.Ball) {
+      this.__COLLIDER__.setRadius(scale.x / 2)
+      this.__COLLIDER__.setHalfHeight(scale.y / 2)
     }
   }
 

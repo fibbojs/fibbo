@@ -68,7 +68,7 @@ export class FRigidBody {
    * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
    * @example
    * ```ts
-   * const rigidBody = new FRigidBody({
+   * const rigidBody = new FRigidBody(component, {
    *  position: { x: 0, y: 0 },
    *  scale: { x: 1, y: 1 },
    *  rotation: 0,
@@ -94,16 +94,15 @@ export class FRigidBody {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
-      throw new Error('FibboError: initRigidBody requires position, scale, rotation, shape and rigidBodyType options')
+      throw new Error('FibboError: initRigidBody requires transforms options')
 
     // Check if the world exists
     if (!component.scene.world)
       throw new Error('FibboError: FScene must have a world to create a rigidBody')
 
-    // Store the offset
+    // Store the options
     this.__RIGIDBODY_POSITION_OFFSET__ = { x: options.position.x, y: options.position.y }
     this.__RIGIDBODY_ROTATION_OFFSET__ = options.rotation
-    // Store the component
     this.component = component
 
     // If rotation degree is given, convert it to radians
