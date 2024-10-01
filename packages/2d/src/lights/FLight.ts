@@ -17,8 +17,8 @@ export abstract class FLight extends FLightCore {
   /**
    * Internal flags
    */
-  public __IS_3D__: boolean = true
-  public __IS_2D__: boolean = false
+  public __IS_3D__: boolean = false
+  public __IS_2D__: boolean = true
   declare public __ID__: number
   public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 

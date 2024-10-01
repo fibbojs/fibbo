@@ -8,7 +8,7 @@ import type { FCharacterControllerOptions } from './FCharacterController'
  * @category Controller
  * @example
  * ```ts
- * import { FCapsule, FCharacterControllerKP, FScene } from '@fibbojs/3d'
+ * import { FCapsule, FCharacterControllerKP, FScene } from '@fibbojs/2d'
  *
  * const scene = new FScene()
  *

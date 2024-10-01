@@ -20,7 +20,7 @@ export interface FRigidBodyOptions {
 }
 
 /**
- * A 3d RigidBody.
+ * A 2d rigidBody that can be attached to a component.
  * @category Core
  */
 export class FRigidBody {

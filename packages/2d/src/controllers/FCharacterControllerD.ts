@@ -9,7 +9,7 @@ import { FCharacterController } from './FCharacterController'
  * @category Controller
  * @example
  * ```ts
- * import { FCapsule, FCharacterControllerD, FScene } from '@fibbojs/3d'
+ * import { FCapsule, FCharacterControllerD, FScene } from '@fibbojs/2d'
  *
  * const scene = new FScene()
  *

@@ -13,7 +13,7 @@ export interface FColliderOptions {
 }
 
 /**
- * A 3d collider.
+ * A 2d collider that can be attached to a component.
  * @category Core
  */
 export class FCollider {
