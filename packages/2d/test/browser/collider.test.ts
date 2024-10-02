@@ -124,6 +124,10 @@ describe('fCollider', () => {
       shape: FShapes.CIRCLE,
     })
     expect(rectangle.collider).toBeDefined()
+    // Validate shape
+    expect(rectangle.collider.shape).toEqual(FShapes.CIRCLE)
+    expect(rectangle.collider.__COLLIDER__.shape).toBeDefined()
+    expect(rectangle.collider.__COLLIDER__.shape.type).toEqual(RAPIER.ShapeType.Ball)
     // Validate transforms
     expect(rectangle.collider.position.x).toEqual(0)
     expect(rectangle.collider.position.y).toEqual(0)

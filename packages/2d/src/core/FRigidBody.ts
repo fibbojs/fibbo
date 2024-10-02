@@ -178,6 +178,16 @@ export class FRigidBody {
   }
 
   /**
+   * Set the scale of the rigidBody.
+   * @param scale The new scale of the rigidBody.
+   * @param scale.x The new x scale of the rigidBody.
+   * @param scale.y The new y scale of the rigidBody.
+   */
+  setScale(scale: { x: number, y: number }) {
+    this.collider.scale = scale
+  }
+
+  /**
    * Update the position of the rigidBody according to the component's position.
    * This takes into account the position offset.
    */
@@ -205,5 +215,71 @@ export class FRigidBody {
    */
   updateScale() {
     this.collider.updateScale()
+  }
+
+  // Setters & getters for transform properties
+
+  get position() {
+    return this.__RIGIDBODY__.translation()
+  }
+
+  set position(position: { x: number, y: number }) {
+    this.setPosition(position)
+  }
+
+  get x() {
+    return this.position.x
+  }
+
+  set x(x: number) {
+    this.setPosition({ x, y: this.position.y })
+  }
+
+  get y() {
+    return this.position.y
+  }
+
+  set y(y: number) {
+    this.setPosition({ x: this.position.x, y })
+  }
+
+  get rotation() {
+    return this.__RIGIDBODY__.rotation()
+  }
+
+  set rotation(rotation: number) {
+    this.setRotation(rotation)
+  }
+
+  get rotationDegree() {
+    return (this.rotation * 180) / Math.PI
+  }
+
+  set rotationDegree(rotation: number) {
+    this.setRotationDegree(rotation)
+  }
+
+  get scale() {
+    return this.collider.scale
+  }
+
+  set scale(scale: { x: number, y: number }) {
+    this.setScale(scale)
+  }
+
+  get scaleX() {
+    return this.collider.scaleX
+  }
+
+  set scaleX(x: number) {
+    this.setScale({ x, y: this.scaleY })
+  }
+
+  get scaleY() {
+    return this.collider.scaleY
+  }
+
+  set scaleY(y: number) {
+    this.setScale({ x: this.scaleX, y })
   }
 }
