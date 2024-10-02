@@ -179,12 +179,11 @@ export class FCollider {
   setScale(scale: { x: number, y: number }) {
     // If the collider is a cuboid, update its half extents
     if (this.__COLLIDER__.shape instanceof RAPIER.Cuboid) {
-      this.__COLLIDER__.setHalfExtents(new RAPIER.Vector2(scale.x / 2, scale.y / 2))
+      this.__COLLIDER__.setShape(new RAPIER.Cuboid(scale.x / 2, scale.y / 2))
     }
     // If the collider is a ball, update its radius
     else if (this.__COLLIDER__.shape instanceof RAPIER.Ball) {
-      this.__COLLIDER__.setRadius(scale.x / 2)
-      this.__COLLIDER__.setHalfHeight(scale.y / 2)
+      this.__COLLIDER__.setShape(new RAPIER.Ball(Math.max(scale.x, scale.y) / 2))
     }
   }
 
