@@ -27,3 +27,11 @@ That means that if you create a component with a size of `1` in Fibbo, it will b
 
 When using Fibbo's classes and methods, you should always use the Fibbo unit system and all the conversions will be done automatically for you.
 But if for some reason you need to use the underlying libraries directly, you should be aware of the unit system they use.
+
+## About internals
+
+Fibbo is built on top of other libraries and does a lot of work behind the scenes to make your life easier.
+
+This means that Fibbo's classes have a lot of internal properties that you should not use directly, but are exposed for convenience (in edge cases or when [extending Fibbo](/more/extending-fibbo) for example). These properties are formatted with uppercase letters and double underscores at the beginning and end of their name (e.g. `__INTERNAL__`).
+
+If you ever feel the need to use these properties, you are very likely to have found a bug or a feature missing in Fibbo. If you're not sure about it, feel free to [ask on the forum](https://github.com/orgs/fibbojs/discussions) !
