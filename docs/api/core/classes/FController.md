@@ -22,7 +22,7 @@ The options for the controller.
 
 #### Defined in
 
-[core/src/FController.ts:21](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/core/src/FController.ts#L21)
+[core/src/FController.ts:21](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/core/src/FController.ts#L21)
 
 ## Methods
 
@@ -46,7 +46,7 @@ The time since the last frame.
 
 #### Defined in
 
-[core/src/FController.ts:31](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/core/src/FController.ts#L31)
+[core/src/FController.ts:31](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/core/src/FController.ts#L31)
 
 ## Properties
 
@@ -58,4 +58,4 @@ The component attached to the controller.
 
 #### Defined in
 
-[core/src/FController.ts:15](https://github.com/fibbojs/fibbo/blob/e3aaabaf7a5c47833ea6611fca008a9ca7b66ba5/packages/core/src/FController.ts#L15)
+[core/src/FController.ts:15](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/core/src/FController.ts#L15)
