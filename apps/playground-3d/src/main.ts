@@ -76,7 +76,7 @@ import Character from './classes/Character'
 
   const blockGrassOverhangLargeTall = new FOBJ(scene, {
     name: 'block-grass-overhang-large-tall',
-    position: { x: -10, y: -7, z: -4 },
+    position: { x: -10, y: -5, z: -4 },
     scale: { x: 4, y: 4, z: 4 },
   })
   blockGrassOverhangLargeTall.initCollider({
@@ -112,7 +112,7 @@ import Character from './classes/Character'
 
   const blockGrassLarge = new FFBX(scene, {
     name: 'block-grass-large',
-    position: { x: -14, y: -8, z: 0 },
+    position: { x: -14, y: -6, z: 0 },
     scale: { x: 8, y: 8, z: 8 },
   })
   blockGrassLarge.initCollider({
