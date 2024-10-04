@@ -30,6 +30,13 @@ describe('fRigidBody', () => {
     expect(rectangle.rigidBody.scale.x).toEqual(1)
     expect(rectangle.rigidBody.scale.y).toEqual(1)
     expect(rectangle.rigidBody.collider.shape).toEqual(FShapes.RECTANGLE)
+    // Validate scaleX and scaleY
+    rectangle.rigidBody.scaleX = 2
+    rectangle.rigidBody.scaleY = 3
+    expect(rectangle.rigidBody.scaleX).toEqual(2)
+    expect(rectangle.rigidBody.scaleY).toEqual(3)
+    expect(rectangle.rigidBody.scaleX).toEqual(rectangle.rigidBody.scale.x)
+    expect(rectangle.rigidBody.scaleY).toEqual(rectangle.rigidBody.scale.y)
   })
 
   it('should create a rigidBody with custom transforms', () => {
@@ -155,5 +162,35 @@ describe('fRigidBody', () => {
     // Circle shape has the same scale for x and y (the highest value is used)
     expect(rectangle.rigidBody.scale.x).toEqual(4)
     expect(rectangle.rigidBody.scale.y).toEqual(4)
+  })
+
+  it('should update rigidBody transforms with attached component transforms', () => {
+    const rectangle = new FRectangle(scene, {
+      position: { x: 1, y: 1 },
+      rotation: 0.1,
+      scale: { x: 1, y: 0.5 },
+    })
+    rectangle.initRigidBody({
+      position: { x: -2, y: 3 },
+      rotation: 0.3,
+      scale: { x: 2, y: 2 },
+    })
+    expect(rectangle.rigidBody).toBeDefined()
+    // Validate transforms
+    expect(rectangle.rigidBody.position.x).toEqual(-1)
+    expect(rectangle.rigidBody.position.y).toEqual(4)
+    expect(rectangle.rigidBody.rotation).closeTo(0.4, 0.0001)
+    expect(rectangle.rigidBody.scale.x).toEqual(2)
+    expect(rectangle.rigidBody.scale.y).toEqual(1)
+    // Modify component transforms
+    rectangle.setPosition({ x: 2, y: 2 })
+    rectangle.setRotation(0.2)
+    rectangle.setScale({ x: 3, y: 4 })
+    // Validate transforms
+    expect(rectangle.rigidBody.position.x).toEqual(0)
+    expect(rectangle.rigidBody.position.y).toEqual(5)
+    expect(rectangle.rigidBody.rotation).closeTo(0.5, 0.0001)
+    expect(rectangle.rigidBody.scale.x).toEqual(6)
+    expect(rectangle.rigidBody.scale.y).toEqual(8)
   })
 })

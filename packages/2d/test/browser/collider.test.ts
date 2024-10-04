@@ -30,6 +30,13 @@ describe('fCollider', () => {
     expect(rectangle.collider.scale.x).toEqual(1)
     expect(rectangle.collider.scale.y).toEqual(1)
     expect(rectangle.collider.shape).toEqual(FShapes.RECTANGLE)
+    // Validate scaleX and scaleY
+    rectangle.collider.scaleX = 2
+    rectangle.collider.scaleY = 3
+    expect(rectangle.collider.scaleX).toEqual(2)
+    expect(rectangle.collider.scaleY).toEqual(3)
+    expect(rectangle.collider.scaleX).toEqual(rectangle.collider.scale.x)
+    expect(rectangle.collider.scaleY).toEqual(rectangle.collider.scale.y)
   })
 
   it('should create a collider with custom transforms', () => {
@@ -155,5 +162,35 @@ describe('fCollider', () => {
     // Circle shape has the same scale for x and y (the highest value is used)
     expect(rectangle.collider.scale.x).toEqual(4)
     expect(rectangle.collider.scale.y).toEqual(4)
+  })
+
+  it('should update collider transforms with attached component transforms', () => {
+    const rectangle = new FRectangle(scene, {
+      position: { x: 1, y: 1 },
+      rotation: 0.1,
+      scale: { x: 1, y: 0.5 },
+    })
+    rectangle.initCollider({
+      position: { x: -2, y: 3 },
+      rotation: 0.3,
+      scale: { x: 2, y: 2 },
+    })
+    expect(rectangle.collider).toBeDefined()
+    // Validate transforms
+    expect(rectangle.collider.position.x).toEqual(-1)
+    expect(rectangle.collider.position.y).toEqual(4)
+    expect(rectangle.collider.rotation).closeTo(0.4, 0.0001)
+    expect(rectangle.collider.scale.x).toEqual(2)
+    expect(rectangle.collider.scale.y).toEqual(1)
+    // Modify component transforms
+    rectangle.setPosition({ x: 2, y: 2 })
+    rectangle.setRotation(0.2)
+    rectangle.setScale({ x: 3, y: 4 })
+    // Validate transforms
+    expect(rectangle.collider.position.x).toEqual(0)
+    expect(rectangle.collider.position.y).toEqual(5)
+    expect(rectangle.collider.rotation).closeTo(0.5, 0.0001)
+    expect(rectangle.collider.scale.x).toEqual(6)
+    expect(rectangle.collider.scale.y).toEqual(8)
   })
 })

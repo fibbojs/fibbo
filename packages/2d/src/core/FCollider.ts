@@ -212,15 +212,17 @@ export class FCollider {
    */
   updateScale() {
     // If the collider is a cuboid, update its half extents
-    if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Cuboid) {
-      this.__COLLIDER__.setHalfExtents(new RAPIER.Vector2(this.component.scale.x / 2 * this.__COLLIDER_SCALE_OFFSET__.x, this.component.scale.y / 2 * this.__COLLIDER_SCALE_OFFSET__.y))
+    if (this.__COLLIDER__.shape instanceof RAPIER.Cuboid) {
+      this.__COLLIDER__.setShape(new RAPIER.Cuboid(
+        this.component.scale.x / 2 * this.__COLLIDER_SCALE_OFFSET__.x,
+        this.component.scale.y / 2 * this.__COLLIDER_SCALE_OFFSET__.y,
+      ))
     }
     // If the collider is a ball, update its radius
-    else if (this.__COLLIDER__.shape.type === RAPIER.ShapeType.Ball) {
-      this.__COLLIDER__.setRadius(
-        // Get the maximum value of x and y
+    else if (this.__COLLIDER__.shape instanceof RAPIER.Ball) {
+      this.__COLLIDER__.setShape(new RAPIER.Ball(
         Math.max(this.component.scale.x, this.component.scale.y) / 2 * this.__COLLIDER_SCALE_OFFSET__.x,
-      )
+      ))
     }
   }
 
