@@ -198,31 +198,6 @@ export abstract class FComponent extends FComponentCore {
   }
 
   /**
-   * Set the scale of the component.
-   * @param options The options for the scale.
-   * @param options.x The x scale.
-   * @param options.y The y scale.
-   * @example
-   * ```ts
-   * component.setScale({ x: 1, y: 1 })
-   * ```
-   */
-  setScale(options: { x: number, y: number }): void {
-    this.transform.scale = { x: options.x, y: options.y }
-    this.container.height = options.y * 100
-    this.container.width = options.x * 100
-    // If a rigidBody exists, update its scale
-    if (this.rigidBody)
-      this.rigidBody.updateScale()
-    // Else if a collider exists, update its scale
-    else if (this.collider)
-      this.collider.updateScale()
-    // If a sensor exists, update its scale
-    if (this.sensor)
-      this.sensor.updateScale()
-  }
-
-  /**
    * Set the rotation of the component in radians.
    * @param r The rotation in radians.
    * @example
@@ -254,6 +229,31 @@ export abstract class FComponent extends FComponentCore {
    */
   setRotationDegree(r: number): void {
     this.setRotation(r * (Math.PI / 180))
+  }
+
+  /**
+   * Set the scale of the component.
+   * @param options The options for the scale.
+   * @param options.x The x scale.
+   * @param options.y The y scale.
+   * @example
+   * ```ts
+   * component.setScale({ x: 1, y: 1 })
+   * ```
+   */
+  setScale(options: { x: number, y: number }): void {
+    this.transform.scale = { x: options.x, y: options.y }
+    this.container.height = options.y * 100
+    this.container.width = options.x * 100
+    // If a rigidBody exists, update its scale
+    if (this.rigidBody)
+      this.rigidBody.updateScale()
+    // Else if a collider exists, update its scale
+    else if (this.collider)
+      this.collider.updateScale()
+    // If a sensor exists, update its scale
+    if (this.sensor)
+      this.sensor.updateScale()
   }
 
   /**
@@ -317,7 +317,7 @@ export abstract class FComponent extends FComponentCore {
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.
    * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent.
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
-   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
+   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBOID.
    * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts

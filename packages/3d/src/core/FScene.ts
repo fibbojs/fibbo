@@ -192,10 +192,10 @@ export class FScene extends FSceneCore {
 
         // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
         if (component.sensor)
-          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
+          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
         // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
         else if (component.collider)
-          this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
+          this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
       })
     }
     else {
@@ -205,10 +205,10 @@ export class FScene extends FSceneCore {
 
     // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
+      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
     // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
+      this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
   }
 
   removeComponent(component: FComponent): void {
@@ -220,17 +220,17 @@ export class FScene extends FSceneCore {
 
     // Remove colliders and rigidBodies from rapier world
     if (component.rigidBody)
-      this.world.removeRigidBody(component.rigidBody.rigidBody)
+      this.world.removeRigidBody(component.rigidBody.__RIGIDBODY__)
     if (component.collider)
-      this.world.removeCollider(component.collider.collider, false)
+      this.world.removeCollider(component.collider.__COLLIDER__, false)
     if (component.sensor)
-      this.world.removeCollider(component.sensor.collider.collider, false)
+      this.world.removeCollider(component.sensor.collider.__COLLIDER__, false)
 
     // Remove handle from rapier map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
+      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.__COLLIDER__.handle)
     if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
+      this.__RAPIER_TO_COMPONENT__.delete(component.collider.__COLLIDER__.handle)
   }
 
   addLight(light: FLight): void {

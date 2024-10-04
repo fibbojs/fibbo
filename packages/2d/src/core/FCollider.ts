@@ -1,6 +1,7 @@
 import * as RAPIER from '@dimforge/rapier2d'
 import { FShapes } from '../types/FShapes'
 import type { FComponent } from './FComponent'
+import type { FRigidBody } from './FRigidBody'
 
 export interface FColliderOptions {
   position?: { x: number, y: number }
@@ -8,7 +9,7 @@ export interface FColliderOptions {
   rotation?: number
   rotationDegree?: number
   shape?: FShapes
-  rigidBody?: RAPIER.RigidBody
+  rigidBody?: FRigidBody
   sensor?: boolean
 }
 
@@ -23,17 +24,17 @@ export class FCollider {
   __COLLIDER__: RAPIER.Collider
   /**
    * Position Offset for the collider.
-   * This is used to adjust the collider position relative to the mesh.
+   * This is used to adjust the collider position relative to the component.
    */
   __COLLIDER_POSITION_OFFSET__: { x: number, y: number }
   /**
    * Rotation Offset for the collider.
-   * This is used to adjust the collider position relative to the mesh.
+   * This is used to adjust the collider position relative to the component.
    */
   __COLLIDER_ROTATION_OFFSET__: number
   /**
    * Scale Offset for the collider.
-   * This is used to adjust the collider scale relative to the mesh.
+   * This is used to adjust the collider scale relative to the component.
    */
   __COLLIDER_SCALE_OFFSET__: { x: number, y: number }
   /**
@@ -53,7 +54,7 @@ export class FCollider {
    * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent.
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
    * @param options.rotationDegree The rotation of the collider in degrees. If not defined, it will default to 0.
-   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
+   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBOID.
    * @param options.rigidBody The rigidBody to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
    * @example
@@ -62,7 +63,7 @@ export class FCollider {
    *  position: { x: 0, y: 1 },
    *  scale: { x: 1, y: 1 },
    *  rotation: 0,
-   *  shape: FShapes.CUBE
+   *  shape: FShapes.RECTANGLE
    * })
    * ```
    */
@@ -141,7 +142,7 @@ export class FCollider {
     }
 
     // Create the collider
-    this.__COLLIDER__ = component.scene.world.createCollider(colliderDesc, options.rigidBody)
+    this.__COLLIDER__ = component.scene.world.createCollider(colliderDesc, options.rigidBody?.__RIGIDBODY__)
   }
 
   /**
@@ -192,10 +193,10 @@ export class FCollider {
    * This takes into account the position offset.
    */
   updatePosition() {
-    const newPosition = this.component.transform.position
-    newPosition.x += this.__COLLIDER_POSITION_OFFSET__.x
-    newPosition.y += this.__COLLIDER_POSITION_OFFSET__.y
-    this.setPosition(newPosition)
+    this.setPosition({
+      x: this.component.transform.position.x + this.__COLLIDER_POSITION_OFFSET__.x,
+      y: this.component.transform.position.y + this.__COLLIDER_POSITION_OFFSET__.y,
+    })
   }
 
   /**
@@ -211,19 +212,10 @@ export class FCollider {
    * This takes into account the scale offset.
    */
   updateScale() {
-    // If the collider is a cuboid, update its half extents
-    if (this.__COLLIDER__.shape instanceof RAPIER.Cuboid) {
-      this.__COLLIDER__.setShape(new RAPIER.Cuboid(
-        this.component.scale.x / 2 * this.__COLLIDER_SCALE_OFFSET__.x,
-        this.component.scale.y / 2 * this.__COLLIDER_SCALE_OFFSET__.y,
-      ))
-    }
-    // If the collider is a ball, update its radius
-    else if (this.__COLLIDER__.shape instanceof RAPIER.Ball) {
-      this.__COLLIDER__.setShape(new RAPIER.Ball(
-        Math.max(this.component.scale.x, this.component.scale.y) / 2 * this.__COLLIDER_SCALE_OFFSET__.x,
-      ))
-    }
+    this.setScale({
+      x: this.component.transform.scale.x * this.__COLLIDER_SCALE_OFFSET__.x,
+      y: this.component.transform.scale.y * this.__COLLIDER_SCALE_OFFSET__.y,
+    })
   }
 
   // Setters & getters for transform properties

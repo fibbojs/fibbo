@@ -35,7 +35,7 @@ export class FCharacterControllerKV extends FCharacterControllerK {
     const correctedMovement = this.getCorrectedMovements()
 
     // Apply the movement to the rigidBody
-    this.component.rigidBody?.rigidBody.setLinvel({
+    this.component.rigidBody?.__RIGIDBODY__.setLinvel({
       x: correctedMovement.x / delta,
       y: correctedMovement.y / delta,
       z: correctedMovement.z / delta,

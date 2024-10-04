@@ -34,12 +34,12 @@ export class FRigidBody {
   collider: FCollider
   /**
    * Position Offset for the rigidBody.
-   * This is used to adjust the rigidBody position relative to the mesh.
+   * This is used to adjust the rigidBody position relative to the component.
    */
   __RIGIDBODY_POSITION_OFFSET__: { x: number, y: number }
   /**
    * Rotation Offset for the rigidBody.
-   * This is used to adjust the rigidBody position relative to the mesh.
+   * This is used to adjust the rigidBody position relative to the component.
    */
   __RIGIDBODY_ROTATION_OFFSET__: number
   /**
@@ -54,7 +54,7 @@ export class FRigidBody {
    * @param options.position The position of the rigidBody. If not defined, it will use the default position of the FComponent.
    * @param options.scale The scale of the rigidBody. If not defined, it will use the default scale of the FComponent.
    * @param options.rotation The rotation of the rigidBody. If not defined, it will use the default rotation of the FComponent.
-   * @param options.shape The shape of the rigidBody. If not defined, it will default to FShapes.CUBE.
+   * @param options.shape The shape of the rigidBody. If not defined, it will default to FShapes.CUBOID.
    * @param options.rigidBodyType The type of the rigidBody. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
    * @param options.lockTranslations If true, the rigidBody will not be able to move.
    * @param options.lockRotations If true, the rigidBody will not be able to rotate.
@@ -72,7 +72,7 @@ export class FRigidBody {
    *  position: { x: 0, y: 0 },
    *  scale: { x: 1, y: 1 },
    *  rotation: 0,
-   *  shape: FShapes.CUBE
+   *  shape: FShapes.RECTANGLE
    * })
    * ```
    */
@@ -143,7 +143,7 @@ export class FRigidBody {
     // Create the collider attached to the rigidBody
     this.collider = new FCollider(component, {
       ...options,
-      rigidBody: this.__RIGIDBODY__,
+      rigidBody: this,
     })
   }
 
@@ -184,7 +184,7 @@ export class FRigidBody {
    * @param scale.y The new y scale of the rigidBody.
    */
   setScale(scale: { x: number, y: number }) {
-    this.collider.scale = scale
+    this.collider.setScale(scale)
   }
 
   /**
@@ -212,6 +212,7 @@ export class FRigidBody {
   /**
    * Update the scale of the rigidBody's collider according to the component's scale.
    * This takes into account the scale offset.
+   * As a rigidBody does not have a scale, this will only update the attached collider's scale.
    */
   updateScale() {
     this.collider.updateScale()

@@ -50,15 +50,15 @@ export abstract class FComponent extends FComponentCore {
   /**
    * RigidBody
    */
-  rigidBody?: FRigidBody
+  declare rigidBody: FRigidBody
   /**
    * Collider
    */
-  collider?: FCollider
+  declare collider: FCollider
   /**
    * Sensor (a collider that doesn't collide with other colliders, but still triggers events)
    */
-  sensor?: FRigidBody
+  declare sensor: FRigidBody
 
   /**
    * @param scene The 3D scene where the component will be added.
@@ -110,25 +110,25 @@ export abstract class FComponent extends FComponentCore {
     // If the rigidBody and mesh exist, update the mesh position and rotation according to the rigidBody
     if (this.rigidBody && this.collider && this.mesh) {
       // Translation
-      const newMeshPosition = this.rigidBody.rigidBody.translation()
+      const newMeshPosition = this.rigidBody.__RIGIDBODY__.translation()
       // Remove offset
-      newMeshPosition.x -= this.collider.colliderPositionOffset.x
-      newMeshPosition.y -= this.collider.colliderPositionOffset.y
-      newMeshPosition.z -= this.collider.colliderPositionOffset.z
+      newMeshPosition.x -= this.collider.__COLLIDER_POSITION_OFFSET__.x
+      newMeshPosition.y -= this.collider.__COLLIDER_POSITION_OFFSET__.y
+      newMeshPosition.z -= this.collider.__COLLIDER_POSITION_OFFSET__.z
 
       // Rotation
       const newMeshRotation = new THREE.Euler().setFromQuaternion(
         new THREE.Quaternion(
-          this.rigidBody.rigidBody.rotation().x,
-          this.rigidBody.rigidBody.rotation().y,
-          this.rigidBody.rigidBody.rotation().z,
-          this.rigidBody.rigidBody.rotation().w,
+          this.rigidBody.__RIGIDBODY__.rotation().x,
+          this.rigidBody.__RIGIDBODY__.rotation().y,
+          this.rigidBody.__RIGIDBODY__.rotation().z,
+          this.rigidBody.__RIGIDBODY__.rotation().w,
         ),
       )
       // Remove offset
-      newMeshRotation.x -= this.collider.colliderRotationOffset.x
-      newMeshRotation.y -= this.collider.colliderRotationOffset.y
-      newMeshRotation.z -= this.collider.colliderRotationOffset.z
+      newMeshRotation.x -= this.collider.__COLLIDER_ROTATION_OFFSET__.x
+      newMeshRotation.y -= this.collider.__COLLIDER_ROTATION_OFFSET__.y
+      newMeshRotation.z -= this.collider.__COLLIDER_ROTATION_OFFSET__.z
 
       // Apply the new transforms to the mesh
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
@@ -140,35 +140,35 @@ export abstract class FComponent extends FComponentCore {
       // If a sensor exists, update its position and rotation according to the rigidBody
       if (this.sensor) {
         // Apply offset to the sensor
-        newMeshPosition.x += this.sensor.collider.colliderPositionOffset.x
-        newMeshPosition.y += this.sensor.collider.colliderPositionOffset.y
-        newMeshPosition.z += this.sensor.collider.colliderPositionOffset.z
-        this.sensor.rigidBody.setTranslation(newMeshPosition, true)
-        this.sensor.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(newMeshRotation), true)
+        newMeshPosition.x += this.sensor.collider.__COLLIDER_POSITION_OFFSET__.x
+        newMeshPosition.y += this.sensor.collider.__COLLIDER_POSITION_OFFSET__.y
+        newMeshPosition.z += this.sensor.collider.__COLLIDER_POSITION_OFFSET__.z
+        this.sensor.__RIGIDBODY__.setTranslation(newMeshPosition, true)
+        this.sensor.__RIGIDBODY__.setRotation(new THREE.Quaternion().setFromEuler(newMeshRotation), true)
       }
     }
     // If the collider and mesh exist, update the mesh position and rotation according to the collider
     else if (this.collider && this.mesh) {
       // Translation
-      const newMeshPosition = this.collider.collider.translation()
+      const newMeshPosition = this.collider.__COLLIDER__.translation()
       // Remove offset
-      newMeshPosition.x -= this.collider.colliderPositionOffset.x
-      newMeshPosition.y -= this.collider.colliderPositionOffset.y
-      newMeshPosition.z -= this.collider.colliderPositionOffset.z
+      newMeshPosition.x -= this.collider.__COLLIDER_POSITION_OFFSET__.x
+      newMeshPosition.y -= this.collider.__COLLIDER_POSITION_OFFSET__.y
+      newMeshPosition.z -= this.collider.__COLLIDER_POSITION_OFFSET__.z
 
       // Rotation
       const newMeshRotation = new THREE.Euler().setFromQuaternion(
         new THREE.Quaternion(
-          this.collider.collider.rotation().x,
-          this.collider.collider.rotation().y,
-          this.collider.collider.rotation().z,
-          this.collider.collider.rotation().w,
+          this.collider.__COLLIDER__.rotation().x,
+          this.collider.__COLLIDER__.rotation().y,
+          this.collider.__COLLIDER__.rotation().z,
+          this.collider.__COLLIDER__.rotation().w,
         ),
       )
       // Remove offset
-      newMeshRotation.x -= this.collider.colliderRotationOffset.x
-      newMeshRotation.y -= this.collider.colliderRotationOffset.y
-      newMeshRotation.z -= this.collider.colliderRotationOffset.z
+      newMeshRotation.x -= this.collider.__COLLIDER_ROTATION_OFFSET__.x
+      newMeshRotation.y -= this.collider.__COLLIDER_ROTATION_OFFSET__.y
+      newMeshRotation.z -= this.collider.__COLLIDER_ROTATION_OFFSET__.z
 
       // Apply the new transforms to the mesh
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
@@ -183,8 +183,8 @@ export abstract class FComponent extends FComponentCore {
       this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
       // If a sensor exists, update its position and rotation according to the default values
       if (this.sensor) {
-        this.sensor.rigidBody.setTranslation({ x: this.transform.position.x, y: this.transform.position.y, z: this.transform.position.z }, true)
-        this.sensor.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)), true)
+        this.sensor.__RIGIDBODY__.setTranslation({ x: this.transform.position.x, y: this.transform.position.y, z: this.transform.position.z }, true)
+        this.sensor.__RIGIDBODY__.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)), true)
       }
     }
     // If the mesh still doesn't exist, do nothing
@@ -206,12 +206,64 @@ export abstract class FComponent extends FComponentCore {
     // If a mesh exists, update its position
     if (this.mesh)
       this.mesh.position.set(options.x, options.y, options.z)
-    // If a collider exists, update its translation
-    if (this.collider)
-      this.collider.collider.setTranslation({ x: options.x, y: options.y, z: options.z })
-    // If a rigidBody exists, update its translation
+    // If a rigidBody exists, update its position
     if (this.rigidBody)
-      this.rigidBody.rigidBody.setTranslation({ x: options.x, y: options.y, z: options.z }, true)
+      this.rigidBody.updatePosition()
+    // Else if a collider exists, update its position
+    else if (this.collider)
+      this.collider.updatePosition()
+    // If a sensor exists, update its position
+    if (this.sensor)
+      this.sensor.updatePosition()
+  }
+
+  /**
+   * Set the rotation of the component from radians.
+   * @param options The options for the rotation.
+   * @param options.x The rotation on the x-axis.
+   * @param options.y The rotation on the y-axis.
+   * @param options.z The rotation on the z-axis.
+   * @example
+   * ```ts
+   * component.setRotation({ x: 0, y: 0, z: 0 })
+   * ```
+   */
+  setRotation(options: { x: number, y: number, z: number }): void {
+    this.transform.rotation.set(options.x, options.y, options.z)
+    // If a mesh exists, update its rotation
+    if (this.mesh)
+      this.mesh.rotation.set(options.x, options.y, options.z)
+    // If a rigidBody exists, update its rotation
+    if (this.rigidBody)
+      this.rigidBody.updateRotation()
+    // Else if a collider exists, update its rotation
+    else if (this.collider)
+      this.collider.updateRotation()
+    // If a sensor exists, update its rotation
+    if (this.sensor)
+      this.sensor.updateRotation()
+  }
+
+  /**
+   * Set the rotation of the component from degrees.
+   * @param options The options for the rotation.
+   * @param options.x The rotation in degrees on the x-axis.
+   * @param options.y The rotation in degrees on the y-axis.
+   * @param options.z The rotation in degrees on the z-axis.
+   * @example
+   * ```ts
+   * component.setRotationDegree({ x: 0, y: 90, z: 0 })
+   * ```
+   */
+  setRotationDegree(options: { x: number, y: number, z: number }): void {
+    // Convert degrees to radians
+    const radRotation = {
+      x: THREE.MathUtils.degToRad(options.x),
+      y: THREE.MathUtils.degToRad(options.y),
+      z: THREE.MathUtils.degToRad(options.z),
+    }
+
+    this.setRotation(radRotation)
   }
 
   /**
@@ -239,66 +291,15 @@ export abstract class FComponent extends FComponentCore {
         this.mesh.scale.set(options.x / 2, options.y / 2, options.z / 2)
       }
     }
-    // If a collider exists
-    if (this.collider) {
-      // If the collider is a cuboid, update its half extents
-      if (this.collider.collider.shape.type === RAPIER.ShapeType.Cuboid) {
-        this.collider.collider.setHalfExtents(new RAPIER.Vector3(options.x / 2, options.y / 2, options.z / 2))
-      }
-      // If the collider is a ball, update its radius
-      else if (this.collider.collider.shape.type === RAPIER.ShapeType.Ball) {
-        this.collider.collider.setRadius(
-          // Get the maximum value of x, y and z
-          Math.max(options.x, options.y, options.z) / 2,
-        )
-      }
-    }
-  }
-
-  /**
-   * Set the rotation of the component from radians.
-   * @param options The options for the rotation.
-   * @param options.x The rotation on the x-axis.
-   * @param options.y The rotation on the y-axis.
-   * @param options.z The rotation on the z-axis.
-   * @example
-   * ```ts
-   * component.setRotation({ x: 0, y: 0, z: 0 })
-   * ```
-   */
-  setRotation(options: { x: number, y: number, z: number }): void {
-    this.transform.rotation.set(options.x, options.y, options.z)
-    // If a mesh exists, update its rotation
-    if (this.mesh)
-      this.mesh.rotation.set(options.x, options.y, options.z)
-    // If a collider exists, update its rotation
-    if (this.collider)
-      this.collider.collider.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(options.x, options.y, options.z)))
-    // If a rigidBody exists, update its rotation
+    // If a rigidBody exists, update its scale
     if (this.rigidBody)
-      this.rigidBody.rigidBody.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(options.x, options.y, options.z)), true)
-  }
-
-  /**
-   * Set the rotation of the component from degrees.
-   * @param options The options for the rotation.
-   * @param options.x The rotation in degrees on the x-axis.
-   * @param options.y The rotation in degrees on the y-axis.
-   * @param options.z The rotation in degrees on the z-axis.
-   * @example
-   * ```ts
-   * component.setRotationDegree({ x: 0, y: 90, z: 0 })
-   * ```
-   */
-  setRotationDegree(options: { x: number, y: number, z: number }): void {
-    // Convert degrees to radians
-    const radRotation = {
-      x: THREE.MathUtils.degToRad(options.x),
-      y: THREE.MathUtils.degToRad(options.y),
-      z: THREE.MathUtils.degToRad(options.z),
-    }
-
-    this.setRotation(radRotation)
+      this.rigidBody.updateScale()
+    // Else if a collider exists, update its scale
+    else if (this.collider)
+      this.collider.updateScale()
+    // If a sensor exists, update its scale
+    if (this.sensor)
+      this.sensor.updateScale()
   }
 
   /**
@@ -307,7 +308,7 @@ export abstract class FComponent extends FComponentCore {
    * @param options.position The position of the rigidBody. If not defined, it will use the default position of the FComponent.
    * @param options.scale The scale of the rigidBody. If not defined, it will use the default scale of the FComponent.
    * @param options.rotation The rotation of the rigidBody. If not defined, it will use the default rotation of the FComponent.
-   * @param options.shape The shape of the rigidBody. If not defined, it will default to FShapes.CUBE.
+   * @param options.shape The shape of the rigidBody. If not defined, it will default to FShapes.CUBOID.
    * @param options.rigidBodyType The type of the rigidBody. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
    * @param options.lockTranslations If true, the rigidBody will not be able to move.
    * @param options.lockRotations If true, the rigidBody will not be able to rotate.
@@ -325,7 +326,7 @@ export abstract class FComponent extends FComponentCore {
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },
    *  rotation: { x: 0, y: 0, z: 0 },
-   *  shape: FShapes.CUBE
+   *  shape: FShapes.CUBOID
    * })
    * ```
    */
@@ -345,7 +346,7 @@ export abstract class FComponent extends FComponentCore {
    * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent.
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
    * @param options.rotationDegree The rotation of the collider in degrees. If not defined, it will default to 0.
-   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
+   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBOID.
    * @param options.rigidBody The rigidBody to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
    * @example
@@ -354,7 +355,7 @@ export abstract class FComponent extends FComponentCore {
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },
    *  rotation: { x: 0, y: 0, z: 0 },
-   *  shape: FShapes.CUBE
+   *  shape: FShapes.CUBOID
    * })
    * ```
    */
@@ -370,7 +371,7 @@ export abstract class FComponent extends FComponentCore {
    * @param options.position The position of the collider. If not defined, it will use the default position of the FComponent.
    * @param options.scale The scale of the collider. If not defined, it will use the default scale of the FComponent.
    * @param options.rotation The rotation of the collider. If not defined, it will use the default rotation of the FComponent.
-   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBE.
+   * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBOID.
    * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts
@@ -378,7 +379,7 @@ export abstract class FComponent extends FComponentCore {
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },
    *  rotation: { x: 0, y: 0, z: 0 },
-   *  shape: FShapes.CUBE
+   *  shape: FShapes.CUBOID
    * })
    * ```
    */
@@ -393,9 +394,9 @@ export abstract class FComponent extends FComponentCore {
 
   onCollisionWith(classOrObject: any, callback: (data: OnCollisionWithData) => void): () => void {
     // Activate collision events if they are not already activated
-    if (this.sensor && this.sensor.collider.collider.activeEvents() === RAPIER.ActiveEvents.NONE) {
+    if (this.sensor && this.sensor.collider.__COLLIDER__.activeEvents() === RAPIER.ActiveEvents.NONE) {
       // Set the active events
-      this.sensor.collider.collider.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
+      this.sensor.collider.__COLLIDER__.setActiveEvents(RAPIER.ActiveEvents.COLLISION_EVENTS)
     }
     // Call the core onCollisionWith method
     return super.onCollisionWith(classOrObject, callback)
