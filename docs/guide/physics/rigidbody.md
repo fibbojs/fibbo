@@ -8,12 +8,12 @@ On the other hand, rigid-bodies are not enough to simulate, e.g., cars, ragdolls
 
 ## Relation with colliders
 
-A [collider](/guide/physics/colliders) can be attached to a rigid-body to specify its shape and enable collision-detection.
+A [collider](/guide/physics/colliders) can be attached to a rigidBody to specify its shape and enable collision-detection.
 
-A rigid-body without collider attached to it will not be affected by contacts (because there is no shape to compute contact against).
+A rigidBody without collider attached to it will not be affected by contacts (because there is no shape to compute contact against).
 
 ::: tip
-By default, Fibbo always create a collider when a rigid-body is created.
+By default, Fibbo always create a collider when a rigidBody is created.
 :::
 
 ## Types of rigid-bodies
@@ -26,9 +26,9 @@ There are four types of rigid-bodies, identified by the RigidBodyType enumeratio
 - Kinematic Position Based (`RAPIER.RigidBodyType.KinematicPositionBased`): Indicates that the body position must not be altered by the physics engine. The user is free to set its next position and the body velocity will be deduced at each update accordingly to ensure a realistic behavior of dynamic bodies in contact with it. This is typically used for moving characters, platforms, elevators, etc.
 - Kinematic Velocity Based (`RAPIER.RigidBodyType.KinematicVelocityBased`): Indicates that the body velocity must not be altered by the physics engine. The user is free to set its velocity and the next body position will be deduced at each update accordingly to ensure a realistic behavior of dynamic bodies in contact with it. This is typically used for moving characters, platforms, elevators, etc.
 
-## Adding a rigid-body to a component
+## Adding a rigidBody to a component
 
-Every [`FComponent`](/api/core/classes/FComponent) has a [`initRigidBody`](/api/3d/classes/FComponent#initrigidbody) method that allows you to create a rigid-body and attach it to the component directly.
+Every [`FComponent`](/api/core/classes/FComponent) has a [`initRigidBody`](/api/3d/classes/FComponent#initrigidbody) method that allows you to create a rigidBody and attach it to the component directly.
 
 ```typescript
 import { FCuboid, FShape } from '@fibbojs/3d'
@@ -45,22 +45,22 @@ cube.initRigidBody({
 ```
 
 Apart from the classic [transform](/guide/core/transforms) properties, the `initRigidBody` method accepts the following parameters :
-- `shape` : The shape of the collider attached to the rigid-body. This is required to compute contacts.
-- `rigidBodyType` : The type of the rigid-body.
-- `lockTranslations` : A boolean indicating if the translations of the rigid-body should be locked.
-- `enabledTranslations` : An object containing the enabled translations of the rigid-body.
+- `shape` : The shape of the collider attached to the rigidBody. This is required to compute contacts.
+- `rigidBodyType` : The type of the rigidBody.
+- `lockTranslations` : A boolean indicating if the translations of the rigidBody should be locked.
+- `enabledTranslations` : An object containing the enabled translations of the rigidBody.
   - `enableX` : A boolean indicating if the translation along the x-axis is enabled.
   - `enableY` : A boolean indicating if the translation along the y-axis is enabled.
   - `enableZ` : A boolean indicating if the translation along the z-axis is enabled. (only exist on 3d rigid-bodies)
-- `lockRotations` : A boolean indicating if the rotations of the rigid-body should be locked.
-- `enabledRotations` : An object containing the enabled rotations of the rigid-body. (only exist on 3d rigid-bodies)
+- `lockRotations` : A boolean indicating if the rotations of the rigidBody should be locked.
+- `enabledRotations` : An object containing the enabled rotations of the rigidBody. (only exist on 3d rigid-bodies)
   - `enableX` : A boolean indicating if the rotation around the x-axis is enabled.
   - `enableY` : A boolean indicating if the rotation around the y-axis is enabled.
   - `enableZ` : A boolean indicating if the rotation around the z-axis is enabled.
 
-## Creating a rigid-body by hand
+## Creating a rigidBody by hand
 
-You can also directly use the [`FRigidBody`](/api/3d/classes/FRigidBody) class to create a rigid-body and attach it to a component.
+You can also directly use the [`FRigidBody`](/api/3d/classes/FRigidBody) class to create a rigidBody and attach it to a component.
 
 ```typescript
 import { FCuboid, FRigidBody, FShape } from '@fibbojs/3d'
