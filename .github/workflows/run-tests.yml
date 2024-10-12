@@ -32,4 +32,4 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Test all packages
-        run: npx nx run-many --target=test --all
+        run: npx nx run-many --target=test:run --all

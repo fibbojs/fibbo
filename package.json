@@ -25,7 +25,7 @@
     "lint:docs": "./node_modules/.bin/eslint --fix ./docs",
     "test": "vitest --config ./vitest.config.global.ts --workspace ./vitest.workspace.ts",
     "test:ui": "vitest --ui --config ./vitest.config.global.ts --workspace ./vitest.workspace.ts",
-    "test:report": "vitest run --config ./docs/vitest.config.global.ts --workspace ./vitest.workspace.ts",
+    "test:report": "vitest run --config ./docs/vitest.config.ts --workspace ./vitest.workspace.ts",
     "docs:dev": "vitepress dev docs",
     "docs:dev:host": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
