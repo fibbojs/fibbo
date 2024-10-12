@@ -193,31 +193,17 @@ export class FScene extends FSceneCore {
   addComponent(component: FComponent) {
     super.addComponent(component)
 
-    // Detect if the FComponent is a FSprite instance
-    if (component instanceof FSprite) {
-      // Wait for the sprite to be loaded before adding it to the scene
-      component.onLoaded(() => {
-        this.viewport.addChild(component.container)
-
-        // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        if (component.sensor)
-          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
-        // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        else if (component.collider)
-          this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
-      })
-    }
-    else {
-      // The component is not a FSprite instance, it can be added directly
+    // Wait for the component to be loaded before adding it to the scene
+    component.onLoaded(() => {
       this.viewport.addChild(component.container)
-    }
 
-    // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
-    // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
+      // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+      if (component.sensor)
+        this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
+      // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+      else if (component.collider)
+        this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
+    })
   }
 
   removeComponent(component: FComponent): void {

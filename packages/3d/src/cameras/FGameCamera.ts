@@ -1,4 +1,4 @@
-import type * as THREE from 'three'
+import type { FScene } from '../core/FScene'
 import { FOrbitCamera } from './FOrbitCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -19,19 +19,17 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  */
 export class FGameCamera extends FOrbitCamera {
   // Previous position of the attached component (at each frame)
-  private previousModelPosition: THREE.Vector3
+  private previousModelPosition: { x: number, y: number, z: number }
   // Flag to track if the pointer is locked
   isPointerLocked: boolean = false
   // Last mouse move event
   lastMouseMoveEvent: MouseEvent | undefined
 
-  /**
-   * @param options Options for the camera.
-   */
-  constructor(options: FAttachedCameraOptions) {
-    super(options)
-    this.previousModelPosition = options.target.transform.position.clone()
-    this.setPosition(0, 20, 20)
+  constructor(scene: FScene, options: FAttachedCameraOptions) {
+    super(scene, options)
+    // Clone the model's position
+    this.previousModelPosition = options.target.transform.position
+    this.setPosition({ x: 0, y: 20, z: 20 })
 
     this.controls.enableDamping = true
     this.controls.maxDistance = 5
@@ -63,7 +61,9 @@ export class FGameCamera extends FOrbitCamera {
     // Calculate the difference between the previous and current position of the attached model
     const positionDifference = this.attachedComponent.mesh.position.clone().sub(this.previousModelPosition)
     // Move the camera by the same amount
-    this.position.add(positionDifference)
+    this.position.x += positionDifference.x
+    this.position.y += positionDifference.y
+    this.position.z += positionDifference.z
     // Update the previous position
     this.previousModelPosition = this.attachedComponent.mesh.position.clone()
 
@@ -78,8 +78,8 @@ export class FGameCamera extends FOrbitCamera {
        * Let's be honest, I don't know why this works.
        * But it does.
        */
-      this.translateX(-movementX * 0.01)
-      this.translateY(movementY * 0.01)
+      this.__CAMERA__.translateX(-movementX * 0.01)
+      this.__CAMERA__.translateY(movementY * 0.01)
       this.lastMouseMoveEvent = undefined
     }
 

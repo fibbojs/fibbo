@@ -1,4 +1,4 @@
-import type { OnCollisionWithData } from '@fibbojs/core'
+import type { FComponentOptions as FComponentOptionsCore, OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import { Container } from 'pixi.js'
 import * as RAPIER from '@dimforge/rapier2d'
@@ -10,7 +10,7 @@ import type { FRigidBodyOptions } from './FRigidBody'
 import { FRigidBody } from './FRigidBody'
 import { FTransform } from './FTransform'
 
-export interface FComponentOptions {
+export interface FComponentOptions extends FComponentOptionsCore {
   position?: { x: number, y: number }
   scale?: { x: number, y: number }
   rotation?: number
@@ -69,7 +69,7 @@ export abstract class FComponent extends FComponentCore {
    * @param options.rotationDegree The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
    */
   constructor(scene: FScene, options?: FComponentOptions) {
-    super()
+    super(scene)
     this.scene = scene
     // Create a new PIXI container
     this.container = new Container()

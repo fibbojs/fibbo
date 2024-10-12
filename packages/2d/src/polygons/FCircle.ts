@@ -24,6 +24,8 @@ export class FCircle extends FPolygon {
     this.container = new PIXI.Graphics()
       .circle(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100 / 2)
       .fill(new PIXI.FillGradient(0, 0, 10, 10).addColorStop(0, 0x0000FF).addColorStop(1, 0xFFFF00))
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 
   onFrame(delta: number): void {

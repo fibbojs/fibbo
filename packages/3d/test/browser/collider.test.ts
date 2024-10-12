@@ -1,12 +1,14 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { FCuboid, FScene, FShapes } from '@fibbojs/3d'
 import RAPIER from '@dimforge/rapier3d'
+import { FCuboid, FScene, FShapes } from '../../src'
 
 describe('fCollider', () => {
   let scene: FScene
 
   beforeEach(async () => {
-    scene = new FScene()
+    scene = new FScene({
+      autoLoop: false,
+    })
     await scene.init()
     await scene.initPhysics()
   })

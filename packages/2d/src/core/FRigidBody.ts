@@ -106,7 +106,7 @@ export class FRigidBody {
     this.component = component
 
     // If rotation degree is given, convert it to radians
-    if (options.rotationDegree) {
+    if (options.rotationDegree !== undefined) {
       // Convert the degree to radians
       options.rotation = (options.rotationDegree * Math.PI) / 180
     }
@@ -218,6 +218,16 @@ export class FRigidBody {
     this.collider.updateScale()
   }
 
+  /**
+   * Set the velocity of the rigidBody.
+   * @param velocity The new velocity of the rigidBody.
+   * @param velocity.x The new x velocity of the rigidBody.
+   * @param velocity.y The new y velocity of the rigidBody.
+   */
+  setVelocity(velocity: { x: number, y: number }) {
+    this.__RIGIDBODY__.setLinvel(new RAPIER.Vector2(velocity.x, velocity.y), true)
+  }
+
   // Setters & getters for transform properties
 
   get position() {
@@ -282,5 +292,29 @@ export class FRigidBody {
 
   set scaleY(y: number) {
     this.setScale({ x: this.scaleX, y })
+  }
+
+  get velocity() {
+    return this.__RIGIDBODY__.linvel()
+  }
+
+  set velocity(velocity: { x: number, y: number }) {
+    this.setVelocity(velocity)
+  }
+
+  get velocityX() {
+    return this.velocity.x
+  }
+
+  set velocityX(x: number) {
+    this.setVelocity({ x, y: this.velocity.y })
+  }
+
+  get velocityY() {
+    return this.velocity.y
+  }
+
+  set velocityY(y: number) {
+    this.setVelocity({ x: this.velocity.x, y })
   }
 }

@@ -35,6 +35,14 @@
       "dependsOn": ["^build", "build"],
       "cache": true
     },
+    "test:ui": {
+      "dependsOn": ["^build", "build"],
+      "cache": true
+    },
+    "test:run": {
+      "dependsOn": ["^build", "build"],
+      "cache": true
+    },
     "docs:build": {
       "dependsOn": ["^build"],
       "cache": true

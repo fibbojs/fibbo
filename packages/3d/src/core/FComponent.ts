@@ -81,7 +81,7 @@ export abstract class FComponent extends FComponentCore {
    * @param options.rotationDegree.z The rotation in degrees on the z-axis.
    */
   constructor(scene: FScene, options?: FComponentOptions) {
-    super()
+    super(scene)
     this.scene = scene
 
     // Define default values
@@ -135,8 +135,8 @@ export abstract class FComponent extends FComponentCore {
       this.mesh.setRotationFromEuler(newMeshRotation)
 
       // Update position and rotation properties of the component according to the rigidBody
-      this.transform.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.transform.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
+      this.transform.position = newMeshPosition
+      this.transform.rotation = newMeshRotation
       // If a sensor exists, update its position and rotation according to the rigidBody
       if (this.sensor) {
         // Apply offset to the sensor
@@ -174,8 +174,8 @@ export abstract class FComponent extends FComponentCore {
       this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
       this.mesh.setRotationFromEuler(newMeshRotation)
       // Update position and rotation properties of the component
-      this.transform.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.transform.rotation.set(newMeshRotation.x, newMeshRotation.y, newMeshRotation.z)
+      this.transform.position = newMeshPosition
+      this.transform.rotation = newMeshRotation
     }
     // If the rigidBody and collider doesn't exist, update the mesh position and rotation according to the default values
     else if (this.mesh) {
@@ -202,7 +202,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setPosition(options: { x: number, y: number, z: number }): void {
-    this.transform.position.set(options.x, options.y, options.z)
+    this.transform.position = options
     // If a mesh exists, update its position
     if (this.mesh)
       this.mesh.position.set(options.x, options.y, options.z)
@@ -229,7 +229,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setRotation(options: { x: number, y: number, z: number }): void {
-    this.transform.rotation.set(options.x, options.y, options.z)
+    this.transform.rotation = options
     // If a mesh exists, update its rotation
     if (this.mesh)
       this.mesh.rotation.set(options.x, options.y, options.z)
@@ -278,7 +278,7 @@ export abstract class FComponent extends FComponentCore {
    * ```
    */
   setScale(options: { x: number, y: number, z: number }): void {
-    this.transform.scale.set(options.x, options.y, options.z)
+    this.transform.scale = options
     // If a mesh exists
     if (this.mesh) {
       // If the mesh is a classic polyhedron
@@ -402,9 +402,8 @@ export abstract class FComponent extends FComponentCore {
     return super.onCollisionWith(classOrObject, callback)
   }
 
-  /**
-   * Setters & getters for transform properties
-   */
+  // Setters & getters
+
   get position(): { x: number, y: number, z: number } {
     return this.transform.position
   }

@@ -88,7 +88,7 @@ export class FCollider {
       throw new Error('FibboError: FScene must have a world to create a collider')
 
     // If rotation degree is given, convert it to radians
-    if (options.rotationDegree) {
+    if (options.rotationDegree !== undefined) {
       // Convert the degree to radians
       options.rotation = (options.rotationDegree * Math.PI) / 180
     }

@@ -25,10 +25,6 @@ export class FSprite extends FComponent {
    * The texture of the sprite.
    */
   texture: PIXI.Texture
-  /**
-   * Callbacks for when the texture is loaded
-   */
-  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
 
   constructor(scene: FScene, options: FSpriteOptions) {
     super(scene, options)
@@ -103,22 +99,5 @@ export class FSprite extends FComponent {
 
   onFrame(delta: number): void {
     super.onFrame(delta)
-  }
-
-  /**
-   * Add a callback to be called when the texture is loaded.
-   * @param callback The callback function.
-   */
-  onLoaded(callback: () => void) {
-    this.__CALLBACKS_ON_LOADED__.push(callback)
-  }
-
-  /**
-   * Emit the onLoaded callbacks.
-   */
-  emitOnLoaded() {
-    this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
-      callback()
-    })
   }
 }

@@ -1,12 +1,14 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { FRectangle, FScene, FShapes } from '@fibbojs/2d'
 import RAPIER from '@dimforge/rapier2d'
+import { FRectangle, FScene, FShapes } from '../../src'
 
 describe('fCollider', () => {
   let scene: FScene
 
   beforeEach(async () => {
-    scene = new FScene()
+    scene = new FScene({
+      autoLoop: false,
+    })
     await scene.init()
     await scene.initPhysics()
   })
@@ -14,7 +16,7 @@ describe('fCollider', () => {
   it('should create a collider with default options', () => {
     const rectangle = new FRectangle(scene, {
       position: { x: 0, y: 0 },
-      rotation: 0,
+      rotationDegree: 0,
       scale: { x: 1, y: 1 },
     })
     rectangle.initCollider()

@@ -1,12 +1,14 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { FRectangle, FScene, FShapes } from '@fibbojs/2d'
 import RAPIER from '@dimforge/rapier2d'
+import { FRectangle, FScene, FShapes } from '../../src'
 
 describe('fRigidBody', () => {
   let scene: FScene
 
   beforeEach(async () => {
-    scene = new FScene()
+    scene = new FScene({
+      autoLoop: false,
+    })
     await scene.init()
     await scene.initPhysics()
   })
@@ -14,7 +16,7 @@ describe('fRigidBody', () => {
   it('should create a rigidBody with default options', () => {
     const rectangle = new FRectangle(scene, {
       position: { x: 0, y: 0 },
-      rotation: 0,
+      rotationDegree: 0,
       scale: { x: 1, y: 1 },
     })
     rectangle.initRigidBody()
@@ -192,5 +194,62 @@ describe('fRigidBody', () => {
     expect(rectangle.rigidBody.rotation).closeTo(0.5, 0.0001)
     expect(rectangle.rigidBody.scale.x).toEqual(6)
     expect(rectangle.rigidBody.scale.y).toEqual(8)
+  })
+
+  it('should move the rigidBody according to its X velocity', async () => {
+    const rectangle = new FRectangle(scene, {
+      position: { x: 0, y: 0 },
+      rotation: 0,
+      scale: { x: 1, y: 1 },
+    })
+    // Lock translations on Y axis
+    rectangle.initRigidBody({
+      enabledTranslations: {
+        enableX: true,
+        enableY: false,
+      },
+    })
+    expect(rectangle.rigidBody).toBeDefined()
+    // Set velocity
+    rectangle.rigidBody.setVelocity({ x: 1, y: 0 })
+    // Run 60 frames
+    for (let i = 0; i < 60; i++) {
+      scene.frame(1 / 60)
+    }
+    // Validate velocity
+    expect(rectangle.rigidBody.velocity.x).toEqual(1)
+    expect(rectangle.rigidBody.velocity.y).toEqual(0)
+    // Validate new position
+    expect(rectangle.rigidBody.position.x).closeTo(1, 0.1)
+    expect(rectangle.rigidBody.position.y).toEqual(0)
+  })
+
+  it('should move the rigidBody according to its Y velocity', async () => {
+    const rectangle = new FRectangle(scene, {
+      position: { x: 0, y: 0 },
+      rotation: 0,
+      scale: { x: 1, y: 1 },
+    })
+    // Lock translations on X axis
+    rectangle.initRigidBody({
+      enabledTranslations: {
+        enableX: false,
+        enableY: true,
+      },
+    })
+    expect(rectangle.rigidBody).toBeDefined()
+    // Set velocity
+    rectangle.rigidBody.velocity = { x: 0, y: 100 }
+    // Run 60 frames
+    for (let i = 0; i < 60; i++) {
+      scene.frame(1 / 60)
+    }
+    // Validate velocity
+    expect(rectangle.rigidBody.velocity.x).toEqual(0)
+    expect(rectangle.rigidBody.velocity.y).closeTo(90, 1)
+    // Validate new position
+    expect(rectangle.rigidBody.position.x).toEqual(0)
+    expect(rectangle.rigidBody.position.y).toBeGreaterThan(90)
+    expect(rectangle.rigidBody.position.y).toBeLessThanOrEqual(100)
   })
 })

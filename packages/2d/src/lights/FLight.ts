@@ -43,7 +43,7 @@ export abstract class FLight extends FLightCore {
   __LOOK_AT__: { x: number, y: number }
 
   constructor(scene: FScene, options?: FLightOptions) {
-    super()
+    super(scene)
 
     // Define default options
     const DEFAULT_OPTIONS = {

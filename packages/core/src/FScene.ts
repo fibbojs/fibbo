@@ -6,6 +6,7 @@ import type { FLight } from './FLight'
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
   domNode?: HTMLElement
+  autoLoop?: boolean
 }
 
 /**
@@ -81,6 +82,7 @@ export abstract class FScene {
     const DEFAULT_OPTIONS = {
       gravity: { x: 0, y: -9.81, z: 0 },
       domNode: document.body,
+      autoLoop: true,
     }
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
@@ -100,10 +102,10 @@ export abstract class FScene {
     let delta = 0
 
     /**
-     * Animation loop
+     * Auto loop function that calls the frame method every frame.
      */
-    const animate = () => {
-      requestAnimationFrame(animate)
+    const autoLoop = () => {
+      requestAnimationFrame(autoLoop)
 
       // Calculate delta time
       currentTime = (new Date()).getTime()
@@ -111,10 +113,11 @@ export abstract class FScene {
       lastTime = currentTime
 
       // Call onFrame callbacks
-      this.__CALLBACKS_ON_FRAME__.forEach(callback => callback(delta))
+      this.frame(delta)
     }
 
-    animate()
+    if (options.autoLoop)
+      autoLoop()
 
     // Initialize the components array
     this.components = []
@@ -158,6 +161,16 @@ export abstract class FScene {
       this.lights.splice(index, 1)
     }
     this.__CALLBACKS_ON_LIGHT_REMOVED__.forEach(callback => callback(light))
+  }
+
+  /**
+   * Compute a frame with the given delta time.
+   * By default, it is called every frame, but this behavior can be changed by giving the `autoLoop` option as `false` when creating the scene.
+   * @param delta The time in seconds since the last frame.
+   */
+  frame(delta: number): void {
+    // Call onFrame callbacks
+    this.__CALLBACKS_ON_FRAME__.forEach(callback => callback(delta))
   }
 
   /**

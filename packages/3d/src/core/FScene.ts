@@ -85,8 +85,8 @@ export class FScene extends FSceneCore {
 
     // Handle window resize
     window.addEventListener('resize', () => {
-      this.camera.aspect = window.innerWidth / window.innerHeight
-      this.camera.updateProjectionMatrix()
+      this.camera.__CAMERA__.aspect = window.innerWidth / window.innerHeight
+      this.camera.__CAMERA__.updateProjectionMatrix()
 
       this.renderer.setSize(window.innerWidth, window.innerHeight)
     })
@@ -104,7 +104,7 @@ export class FScene extends FSceneCore {
       // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
     }
     // Create a default camera
-    this.camera = new FFixedCamera()
+    this.camera = new FFixedCamera(this)
 
     // Add renderer to DOM
     this.__DOM_NODE__.appendChild(this.renderer.domElement)
@@ -118,7 +118,7 @@ export class FScene extends FSceneCore {
       this.camera.onFrame(delta)
 
       // Render the scene
-      this.renderer.render(this.scene, this.camera)
+      this.renderer.render(this.scene, this.camera.__CAMERA__)
     })
 
     // Call the onReady callbacks
@@ -201,14 +201,14 @@ export class FScene extends FSceneCore {
     else {
       if (component.mesh)
         this.scene.add(component.mesh)
-    }
 
-    // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
-    // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
+      // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+      if (component.sensor)
+        this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
+      // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+      else if (component.collider)
+        this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
+    }
   }
 
   removeComponent(component: FComponent): void {

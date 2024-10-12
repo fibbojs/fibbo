@@ -18,6 +18,8 @@ import { FPolygon } from './FPolygon'
 export class FRectangle extends FPolygon {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 
   onFrame(delta: number): void {

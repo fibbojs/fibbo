@@ -16,11 +16,6 @@ export interface FModelOptions extends FComponentOptions {
  */
 export abstract class FModel extends FComponent {
   /**
-   * Callbacks for when the model is loaded
-   */
-  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
-
-  /**
    * The name of the model.
    * Shouldn't contain file extensions.
    */
@@ -103,15 +98,8 @@ export abstract class FModel extends FComponent {
   }
 
   /**
-   * Add a callback to be called when the model is loaded.
-   * @param callback The callback function.
-   */
-  onLoaded(callback: () => void) {
-    this.__CALLBACKS_ON_LOADED__.push(callback)
-  }
-
-  /**
    * Emit the onLoaded callbacks.
+   * It was overridden to add shadow support.
    */
   emitOnLoaded() {
     if (this.scene.__ENABLE_SHADOWS__ && this.mesh) {

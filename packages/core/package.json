@@ -40,7 +40,9 @@
   "scripts": {
     "build": "unbuild",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "vitest --config ../../vitest.config.ts --workspace ../../vitest.workspace.ts",
+    "test:ui": "vitest --ui --config ../../vitest.config.ts --workspace ../../vitest.workspace.ts",
+    "test:run": "vitest run --config ../../vitest.config.ts --workspace ../../vitest.workspace.ts",
     "typecheck": "tsc --noEmit"
   }
 }

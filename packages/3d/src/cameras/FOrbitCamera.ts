@@ -1,5 +1,6 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { FComponent } from '../core/FComponent'
+import type { FScene } from '../core/FScene'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -24,15 +25,12 @@ export class FOrbitCamera extends FCamera {
   // Orbit controls
   controls: OrbitControls
 
-  /**
-   * @param options Options for the camera.
-   */
-  constructor(options: FAttachedCameraOptions) {
-    super(options)
+  constructor(scene: FScene, options: FAttachedCameraOptions) {
+    super(scene, options)
     this.attachedComponent = options.target
 
     // Create orbit controls
-    this.controls = new OrbitControls(this, this.attachedComponent.scene.renderer.domElement)
+    this.controls = new OrbitControls(this.__CAMERA__, this.attachedComponent.scene.renderer.domElement)
   }
 
   onFrame(_delta: number): void {
@@ -43,10 +41,12 @@ export class FOrbitCamera extends FCamera {
     this.controls.update()
   }
 
-  setPosition(x: number, y: number, z: number): void {
-    super.setPosition(x, y, z)
-    // Set the position of the camera relative to the attached model
-    this.position.set(this.attachedComponent.transform.position.x + x, this.attachedComponent.transform.position.y + y, this.attachedComponent.transform.position.z + z)
+  setPosition(position: { x: number, y: number, z: number }): void {
+    super.setPosition({
+      x: this.attachedComponent.transform.position.x + position.x,
+      y: this.attachedComponent.transform.position.y + position.y,
+      z: this.attachedComponent.transform.position.z + position.z,
+    })
     // Set the target of the camera to the attached model
     this.lookAt(this.attachedComponent.transform.position)
   }

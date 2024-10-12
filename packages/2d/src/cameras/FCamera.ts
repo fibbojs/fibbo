@@ -32,7 +32,7 @@ export abstract class FCamera extends FCameraCore {
    * @param options The options for the camera.
    */
   constructor(scene: FScene, options?: FCameraOptions) {
-    super()
+    super(scene)
     // Store scene
     this.scene = scene
 

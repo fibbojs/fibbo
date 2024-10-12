@@ -1,9 +1,14 @@
 import type { FController } from './FController'
+import type { FScene } from './FScene'
 
 /**
  * ID_COUNTER is used to generate unique identifiers for components.
  */
 let ID_COUNTER = 0
+
+export interface FComponentOptions {
+  addToScene?: boolean
+}
 
 /**
  * Data being sent to collision callbacks.
@@ -33,17 +38,45 @@ export abstract class FComponent {
   public __ID__: number
 
   /**
+   * Callbacks for when the component is loaded (could be a texture, a 3D model, etc).
+   */
+  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
+
+  /**
    * Callbacks for when a collision occurs with a given class or object.
    * It is a dictionary where the key is the class name or object id and the value is an array of callbacks.
    */
   public __CALLBACKS_ON_COLLISION__: { [key: string]: ((data: OnCollisionWithData) => void)[] } = {}
 
   /**
+   * The scene the component is attached to.
+   */
+  public scene?: FScene
+
+  /**
    * The controller attached to the component.
    */
   public controller?: FController
 
-  constructor() {
+  constructor(scene: FScene, options?: FComponentOptions) {
+    // Define default options
+    const DEFAULT_OPTIONS = {
+      addToScene: true,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (options.addToScene === undefined)
+      throw new Error('FibboError: FComponent requires addToScene option')
+
+    // Store the scene
+    this.scene = scene
+
+    // Add the component to the scene if addToScene is true
+    if (options.addToScene)
+      this.scene.addComponent(this)
+
+    // Generate a unique ID
     this.__ID__ = ID_COUNTER++
   }
 
@@ -58,6 +91,23 @@ export abstract class FComponent {
     if (this.controller) {
       this.controller.onFrame(delta)
     }
+  }
+
+  /**
+   * Add a callback to be called when the component is loaded (could be a texture, a 3D model, etc).
+   * @param callback The callback function.
+   */
+  onLoaded(callback: () => void) {
+    this.__CALLBACKS_ON_LOADED__.push(callback)
+  }
+
+  /**
+   * Emit the onLoaded callbacks.
+   */
+  emitOnLoaded() {
+    this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
+      callback()
+    })
   }
 
   /**

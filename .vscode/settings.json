@@ -53,6 +53,7 @@
     "**/tsconfig.json": true,
     "**/*.d.ts": true,
     "**/.gitignore": true,
-    "**/vitest.workspace.ts": true
+    "**/vitest.workspace.ts": true,
+    "**/vitest.config.ts": true
   }
 }

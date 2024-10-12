@@ -1,5 +1,5 @@
-import * as THREE from 'three'
 import type { FComponent } from '../core/FComponent'
+import type { FScene } from '../core/FScene'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
@@ -29,10 +29,11 @@ export class FAttachedCamera extends FCamera {
   offset: { x: number, y: number, z: number } = { x: 0, y: 5, z: 5 }
 
   /**
-   * @param attachedComponent Model that the camera is attached to
+   * @param scene Scene that the camera is in
+   * @param attachedComponent Component that the camera is attached to
    */
-  constructor(attachedComponent: FComponent) {
-    super()
+  constructor(scene: FScene, attachedComponent: FComponent) {
+    super(scene)
     this.attachedComponent = attachedComponent
   }
 
@@ -45,11 +46,14 @@ export class FAttachedCamera extends FCamera {
     this.position.y = this.attachedComponent.mesh.position.y + this.offset.y
     this.position.z = this.attachedComponent.mesh.position.z + this.offset.z
     // Make the camera look at the model
-    this.lookAt(this.attachedComponent.mesh.position.x, this.attachedComponent.mesh.position.y, this.attachedComponent.mesh.position.z)
+    this.lookAt({
+      x: this.attachedComponent.mesh.position.x,
+      y: this.attachedComponent.mesh.position.y,
+      z: this.attachedComponent.mesh.position.z,
+    })
   }
 
-  setPosition(x: number, y: number, z: number): void {
-    super.setPosition(x, y, z)
-    this.offset = new THREE.Vector3(x, y, z)
+  setPosition(position: { x: number, y: number, z: number }): void {
+    super.setPosition(position)
   }
 }
