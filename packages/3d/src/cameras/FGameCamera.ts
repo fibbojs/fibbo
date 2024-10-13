@@ -55,17 +55,17 @@ export class FGameCamera extends FOrbitCamera {
   onFrame(delta: number): void {
     super.onFrame(delta)
 
-    if (!this.attachedComponent.mesh)
+    if (!this.attachedComponent.__MESH__)
       return
 
     // Calculate the difference between the previous and current position of the attached model
-    const positionDifference = this.attachedComponent.mesh.position.clone().sub(this.previousModelPosition)
+    const positionDifference = this.attachedComponent.__MESH__.position.clone().sub(this.previousModelPosition)
     // Move the camera by the same amount
     this.position.x += positionDifference.x
     this.position.y += positionDifference.y
     this.position.z += positionDifference.z
     // Update the previous position
-    this.previousModelPosition = this.attachedComponent.mesh.position.clone()
+    this.previousModelPosition = this.attachedComponent.__MESH__.position.clone()
 
     // Move the camera based on mouse movement if pointer is locked
     if (this.isPointerLocked && this.lastMouseMoveEvent) {

@@ -34,10 +34,10 @@ export class FOrbitCamera extends FCamera {
   }
 
   onFrame(_delta: number): void {
-    if (this.attachedComponent.mesh === undefined)
+    if (this.attachedComponent.__MESH__ === undefined)
       return
 
-    this.controls.target = this.attachedComponent.mesh.position
+    this.controls.target = this.attachedComponent.__MESH__.position
     this.controls.update()
   }
 

@@ -195,7 +195,7 @@ export class FScene extends FSceneCore {
 
     // Wait for the component to be loaded before adding it to the scene
     component.onLoaded(() => {
-      this.viewport.addChild(component.container)
+      this.viewport.addChild(component.__CONTAINER__)
 
       // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
       if (component.sensor)
@@ -210,7 +210,7 @@ export class FScene extends FSceneCore {
     super.removeComponent(component)
 
     // Remove container from the viewport
-    this.viewport.removeChild(component.container)
+    this.viewport.removeChild(component.__CONTAINER__)
 
     // Remove colliders and rigidBodies from rapier world
     if (component.rigidBody)

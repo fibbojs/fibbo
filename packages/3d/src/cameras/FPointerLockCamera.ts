@@ -41,12 +41,12 @@ export class FPointerLockCamera extends FCamera {
   }
 
   onFrame(_delta: number): void {
-    if (this.attachedComponent.mesh === undefined)
+    if (this.attachedComponent.__MESH__ === undefined)
       return
 
     // Position the camera at the model's position + offset
-    this.position.x = this.attachedComponent.mesh.position.x
-    this.position.y = this.attachedComponent.mesh.position.y
-    this.position.z = this.attachedComponent.mesh.position.z
+    this.position.x = this.attachedComponent.__MESH__.position.x
+    this.position.y = this.attachedComponent.__MESH__.position.y
+    this.position.z = this.attachedComponent.__MESH__.position.z
   }
 }

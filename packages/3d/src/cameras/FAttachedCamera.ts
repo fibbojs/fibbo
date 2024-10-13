@@ -38,18 +38,18 @@ export class FAttachedCamera extends FCamera {
   }
 
   onFrame(_delta: number): void {
-    if (this.attachedComponent.mesh === undefined)
+    if (this.attachedComponent.__MESH__ === undefined)
       return
 
     // Position the camera at the model's position + offset
-    this.position.x = this.attachedComponent.mesh.position.x + this.offset.x
-    this.position.y = this.attachedComponent.mesh.position.y + this.offset.y
-    this.position.z = this.attachedComponent.mesh.position.z + this.offset.z
+    this.position.x = this.attachedComponent.__MESH__.position.x + this.offset.x
+    this.position.y = this.attachedComponent.__MESH__.position.y + this.offset.y
+    this.position.z = this.attachedComponent.__MESH__.position.z + this.offset.z
     // Make the camera look at the model
     this.lookAt({
-      x: this.attachedComponent.mesh.position.x,
-      y: this.attachedComponent.mesh.position.y,
-      z: this.attachedComponent.mesh.position.z,
+      x: this.attachedComponent.__MESH__.position.x,
+      y: this.attachedComponent.__MESH__.position.y,
+      z: this.attachedComponent.__MESH__.position.z,
     })
   }
 

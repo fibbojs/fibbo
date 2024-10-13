@@ -1,6 +1,6 @@
 import type { FComponentOptions as FComponentOptionsCore, OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
-import { Container } from 'pixi.js'
+import * as PIXI from 'pixi.js'
 import * as RAPIER from '@dimforge/rapier2d'
 import type { FController } from '../controllers/FController'
 import type { FScene } from './FScene'
@@ -39,7 +39,7 @@ export abstract class FComponent extends FComponentCore {
   /**
    * PIXI container
    */
-  container: Container
+  __CONTAINER__: PIXI.Container
 
   /**
    * Transforms
@@ -72,7 +72,7 @@ export abstract class FComponent extends FComponentCore {
     super(scene)
     this.scene = scene
     // Create a new PIXI container
-    this.container = new Container()
+    this.__CONTAINER__ = new PIXI.Container()
 
     // Define default options
     const DEFAULT_OPTIONS = {
@@ -94,11 +94,11 @@ export abstract class FComponent extends FComponentCore {
       rotationDegree: options.rotationDegree,
     })
     // Set the container values
-    this.container.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
-    this.container.scale.set(this.transform.scale.x * 100, this.transform.scale.y * 100)
-    this.container.rotation = this.transform.rotation
+    this.__CONTAINER__.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
+    this.__CONTAINER__.scale.set(this.transform.scale.x * 100, this.transform.scale.y * 100)
+    this.__CONTAINER__.rotation = this.transform.rotation
     // Set the pivot of the container to the center
-    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
+    this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
   }
 
   onFrame(_delta: number): void {
@@ -117,15 +117,15 @@ export abstract class FComponent extends FComponentCore {
       newContainerRotation -= this.rigidBody.__RIGIDBODY_ROTATION_OFFSET__
 
       // Apply the new transforms to the container
-      this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
-      this.container.rotation = -newContainerRotation
+      this.__CONTAINER__.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
+      this.__CONTAINER__.rotation = -newContainerRotation
 
       // Update position and rotation properties of the component according to the rigidBody
       this.transform.position = {
-        x: this.container.position.x / 100,
-        y: -this.container.position.y / 100,
+        x: this.__CONTAINER__.position.x / 100,
+        y: -this.__CONTAINER__.position.y / 100,
       }
-      this.transform.rotation = this.container.rotation
+      this.transform.rotation = this.__CONTAINER__.rotation
     }
     // Else if the collider exist, update the container position and rotation according to the collider
     else if (this.collider) {
@@ -143,26 +143,26 @@ export abstract class FComponent extends FComponentCore {
       newContainerRotation -= this.collider.__COLLIDER_ROTATION_OFFSET__
 
       // Apply the new transforms to the container
-      this.container.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
-      this.container.rotation = -newContainerRotation
+      this.__CONTAINER__.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
+      this.__CONTAINER__.rotation = -newContainerRotation
       // Update position and rotation properties of the component according to the collider
       this.transform.position = {
-        x: this.container.position.x / 100,
-        y: -this.container.position.y / 100,
+        x: this.__CONTAINER__.position.x / 100,
+        y: -this.__CONTAINER__.position.y / 100,
       }
-      this.transform.rotation = this.container.rotation
+      this.transform.rotation = this.__CONTAINER__.rotation
     }
     else {
       // If the rigidBody and collider doesn't exist, update the container position and rotation according to the default values
       // The y position is inverted because the y axis is inverted in PIXI.js compared to Rapier
-      this.container.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
-      this.container.rotation = this.transform.rotation
+      this.__CONTAINER__.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
+      this.__CONTAINER__.rotation = this.transform.rotation
       // Update position and rotation properties of the component according to the default values
       this.transform.position = {
-        x: this.container.position.x / 100,
-        y: -this.container.position.y / 100,
+        x: this.__CONTAINER__.position.x / 100,
+        y: -this.__CONTAINER__.position.y / 100,
       }
-      this.transform.rotation = this.container.rotation
+      this.transform.rotation = this.__CONTAINER__.rotation
     }
 
     // If a sensor exists, update its transforms
@@ -185,7 +185,7 @@ export abstract class FComponent extends FComponentCore {
    */
   setPosition(options: { x: number, y: number }): void {
     this.transform.position = { x: options.x, y: options.y }
-    this.container.position.set(options.x * 100, -options.y * 100)
+    this.__CONTAINER__.position.set(options.x * 100, -options.y * 100)
     // If a rigidBody exists, update its position
     if (this.rigidBody)
       this.rigidBody.updatePosition()
@@ -207,7 +207,7 @@ export abstract class FComponent extends FComponentCore {
    */
   setRotation(r: number): void {
     this.transform.rotation = r
-    this.container.rotation = r
+    this.__CONTAINER__.rotation = r
     // If a rigidBody exists, update its rotation
     if (this.rigidBody)
       this.rigidBody.updateRotation()
@@ -243,8 +243,8 @@ export abstract class FComponent extends FComponentCore {
    */
   setScale(options: { x: number, y: number }): void {
     this.transform.scale = { x: options.x, y: options.y }
-    this.container.height = options.y * 100
-    this.container.width = options.x * 100
+    this.__CONTAINER__.height = options.y * 100
+    this.__CONTAINER__.width = options.x * 100
     // If a rigidBody exists, update its scale
     if (this.rigidBody)
       this.rigidBody.updateScale()

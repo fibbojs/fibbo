@@ -53,7 +53,7 @@ export class FGLTF extends FModel {
       // Called when the resource is loaded
       (gltf) => {
         // Get the mesh from the glTF scene
-        this.mesh = gltf.scene
+        this.__MESH__ = gltf.scene
 
         // Define mesh transforms
         this.defineMeshTransforms()

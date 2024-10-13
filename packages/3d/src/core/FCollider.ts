@@ -125,14 +125,14 @@ export class FCollider {
         colliderDesc = RAPIER.ColliderDesc.capsule(options.scale.y / 2, options.scale.x / 2)
         break
       case FShapes.MESH:
-      // If component.mesh isn't defined, throw an error
+      // If component.__MESH__ isn't defined, throw an error
       {
-        if (!component.mesh)
+        if (!component.__MESH__)
           throw new Error('FibboError: Mesh collider can only be created from a THREE.Mesh')
         // Flag to check if a THREE.Mesh was found
         let found = false
         // Traverse the mesh tree until we find a THREE.Mesh
-        component.mesh.traverse((child) => {
+        component.__MESH__.traverse((child) => {
           if (!found && child instanceof THREE.Mesh) {
             colliderDesc = RAPIER.ColliderDesc.trimesh(
               child.geometry.attributes.position.array as Float32Array,

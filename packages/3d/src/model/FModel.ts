@@ -102,8 +102,8 @@ export abstract class FModel extends FComponent {
    * It was overridden to add shadow support.
    */
   emitOnLoaded() {
-    if (this.scene.__ENABLE_SHADOWS__ && this.mesh) {
-      this.mesh.traverse((child) => {
+    if (this.scene.__ENABLE_SHADOWS__ && this.__MESH__) {
+      this.__MESH__.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = true
           child.receiveShadow = true
@@ -120,20 +120,20 @@ export abstract class FModel extends FComponent {
    */
   defineMeshTransforms() {
     // If the mesh is not defined, return
-    if (!this.mesh)
+    if (!this.__MESH__)
       return
 
     // If a position is defined, apply it
     if (this.transform.position)
-      this.mesh.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+      this.__MESH__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
 
     // If a scale is defined, apply it
     if (this.transform.scale)
-      this.mesh.scale.set(this.transform.scale.x / 2, this.transform.scale.y / 2, this.transform.scale.z / 2)
+      this.__MESH__.scale.set(this.transform.scale.x / 2, this.transform.scale.y / 2, this.transform.scale.z / 2)
 
     // If a rotation is defined, apply it
     if (this.transform.rotation)
-      this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+      this.__MESH__.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
   }
 
   /**

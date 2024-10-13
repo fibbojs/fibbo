@@ -187,8 +187,8 @@ export class FScene extends FSceneCore {
     if (component instanceof FModel) {
       // Wait for the model to be loaded before adding it to the scene
       component.onLoaded(() => {
-        if (component.mesh)
-          this.scene.add(component.mesh)
+        if (component.__MESH__)
+          this.scene.add(component.__MESH__)
 
         // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
         if (component.sensor)
@@ -199,8 +199,8 @@ export class FScene extends FSceneCore {
       })
     }
     else {
-      if (component.mesh)
-        this.scene.add(component.mesh)
+      if (component.__MESH__)
+        this.scene.add(component.__MESH__)
 
       // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
       if (component.sensor)
@@ -215,8 +215,8 @@ export class FScene extends FSceneCore {
     super.removeComponent(component)
 
     // Remove mesh from scene
-    if (component.mesh)
-      this.scene.remove(component.mesh)
+    if (component.__MESH__)
+      this.scene.remove(component.__MESH__)
 
     // Remove colliders and rigidBodies from rapier world
     if (component.rigidBody)

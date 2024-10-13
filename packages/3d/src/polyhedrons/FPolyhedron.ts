@@ -13,7 +13,7 @@ export abstract class FPolyhedron extends FComponent {
    * mesh is redefined from FComponent without the ? because it is
    * directly available after the constructor, as a polyhedron is created synchronously.
    */
-  mesh: THREE.Mesh
+  __MESH__: THREE.Mesh
 
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
@@ -24,11 +24,11 @@ export abstract class FPolyhedron extends FComponent {
       // Turn on depthWrite if shadows are enabled
       depthWrite: this.scene.__ENABLE_SHADOWS__,
     })
-    this.mesh = new THREE.Mesh(geometry, material)
+    this.__MESH__ = new THREE.Mesh(geometry, material)
     // If shadows are enabled, cast and receive shadows
     if (scene.__ENABLE_SHADOWS__) {
-      this.mesh.castShadow = true
-      this.mesh.receiveShadow = true
+      this.__MESH__.castShadow = true
+      this.__MESH__.receiveShadow = true
     }
   }
 
@@ -46,6 +46,6 @@ export abstract class FPolyhedron extends FComponent {
    */
   setColor(color: number): void {
     const material = new THREE.MeshPhongMaterial({ color })
-    this.mesh.material = material
+    this.__MESH__.material = material
   }
 }

@@ -39,7 +39,7 @@ export abstract class FComponent extends FComponentCore {
   /**
    * Mesh
    */
-  mesh?: THREE.Mesh | THREE.Group
+  __MESH__?: THREE.Mesh | THREE.Group
 
   /**
    * Transforms
@@ -108,7 +108,7 @@ export abstract class FComponent extends FComponentCore {
   onFrame(_delta: number): void {
     super.onFrame(_delta)
     // If the rigidBody and mesh exist, update the mesh position and rotation according to the rigidBody
-    if (this.rigidBody && this.collider && this.mesh) {
+    if (this.rigidBody && this.collider && this.__MESH__) {
       // Translation
       const newMeshPosition = this.rigidBody.__RIGIDBODY__.translation()
       // Remove offset
@@ -131,8 +131,8 @@ export abstract class FComponent extends FComponentCore {
       newMeshRotation.z -= this.collider.__COLLIDER_ROTATION_OFFSET__.z
 
       // Apply the new transforms to the mesh
-      this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.mesh.setRotationFromEuler(newMeshRotation)
+      this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.__MESH__.setRotationFromEuler(newMeshRotation)
 
       // Update position and rotation properties of the component according to the rigidBody
       this.transform.position = newMeshPosition
@@ -148,7 +148,7 @@ export abstract class FComponent extends FComponentCore {
       }
     }
     // If the collider and mesh exist, update the mesh position and rotation according to the collider
-    else if (this.collider && this.mesh) {
+    else if (this.collider && this.__MESH__) {
       // Translation
       const newMeshPosition = this.collider.__COLLIDER__.translation()
       // Remove offset
@@ -171,16 +171,16 @@ export abstract class FComponent extends FComponentCore {
       newMeshRotation.z -= this.collider.__COLLIDER_ROTATION_OFFSET__.z
 
       // Apply the new transforms to the mesh
-      this.mesh.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.mesh.setRotationFromEuler(newMeshRotation)
+      this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      this.__MESH__.setRotationFromEuler(newMeshRotation)
       // Update position and rotation properties of the component
       this.transform.position = newMeshPosition
       this.transform.rotation = newMeshRotation
     }
     // If the rigidBody and collider doesn't exist, update the mesh position and rotation according to the default values
-    else if (this.mesh) {
-      this.mesh.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
-      this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+    else if (this.__MESH__) {
+      this.__MESH__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+      this.__MESH__.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
       // If a sensor exists, update its position and rotation according to the default values
       if (this.sensor) {
         this.sensor.__RIGIDBODY__.setTranslation({ x: this.transform.position.x, y: this.transform.position.y, z: this.transform.position.z }, true)
@@ -204,8 +204,8 @@ export abstract class FComponent extends FComponentCore {
   setPosition(options: { x: number, y: number, z: number }): void {
     this.transform.position = options
     // If a mesh exists, update its position
-    if (this.mesh)
-      this.mesh.position.set(options.x, options.y, options.z)
+    if (this.__MESH__)
+      this.__MESH__.position.set(options.x, options.y, options.z)
     // If a rigidBody exists, update its position
     if (this.rigidBody)
       this.rigidBody.updatePosition()
@@ -231,8 +231,8 @@ export abstract class FComponent extends FComponentCore {
   setRotation(options: { x: number, y: number, z: number }): void {
     this.transform.rotation = options
     // If a mesh exists, update its rotation
-    if (this.mesh)
-      this.mesh.rotation.set(options.x, options.y, options.z)
+    if (this.__MESH__)
+      this.__MESH__.rotation.set(options.x, options.y, options.z)
     // If a rigidBody exists, update its rotation
     if (this.rigidBody)
       this.rigidBody.updateRotation()
@@ -280,15 +280,15 @@ export abstract class FComponent extends FComponentCore {
   setScale(options: { x: number, y: number, z: number }): void {
     this.transform.scale = options
     // If a mesh exists
-    if (this.mesh) {
+    if (this.__MESH__) {
       // If the mesh is a classic polyhedron
-      if (this.mesh instanceof THREE.Mesh && (this.mesh.geometry instanceof THREE.BoxGeometry || this.mesh.geometry instanceof THREE.SphereGeometry)) {
-        this.mesh.scale.set(options.x, options.y, options.z)
+      if (this.__MESH__ instanceof THREE.Mesh && (this.__MESH__.geometry instanceof THREE.BoxGeometry || this.__MESH__.geometry instanceof THREE.SphereGeometry)) {
+        this.__MESH__.scale.set(options.x, options.y, options.z)
       }
       // We don't know the type of the mesh, probably a custom mesh
       else {
         // I don't really know why the scale should be devided by 2 for custom meshes, but it works
-        this.mesh.scale.set(options.x / 2, options.y / 2, options.z / 2)
+        this.__MESH__.scale.set(options.x / 2, options.y / 2, options.z / 2)
       }
     }
     // If a rigidBody exists, update its scale

@@ -146,7 +146,7 @@ import Character from './classes/Character'
   scene.addComponent(character)
 
   // Attach a camera to the character
-  scene.camera = new FGameCamera({ target: character })
+  scene.camera = new FGameCamera(scene, { target: character })
 
   /**
    * Create other objects
