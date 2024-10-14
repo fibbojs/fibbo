@@ -20,7 +20,4 @@ export class FFixedCamera extends FCamera {
   constructor(scene: FScene, options?: FCameraOptions) {
     super(scene, options)
   }
-
-  onFrame(_delta: number): void {
-  }
 }

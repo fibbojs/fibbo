@@ -101,8 +101,8 @@ export abstract class FComponent extends FComponentCore {
     this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
   }
 
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
+  frame(_delta: number): void {
+    super.frame(_delta)
     // If the rigidBody exist, update the container position and rotation according to the rigidBody
     if (this.rigidBody && this.collider) {
       // Translation

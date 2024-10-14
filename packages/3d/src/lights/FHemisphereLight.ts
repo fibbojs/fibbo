@@ -33,6 +33,4 @@ export class FHemisphereLight extends FLight {
     // Apply the transform
     this.applyTransform()
   }
-
-  onFrame(_delta: number): void {}
 }

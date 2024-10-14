@@ -33,7 +33,7 @@ export class FOrbitCamera extends FCamera {
     this.controls = new OrbitControls(this.__CAMERA__, this.attachedComponent.scene.renderer.domElement)
   }
 
-  onFrame(_delta: number): void {
+  frame(_delta: number): void {
     if (this.attachedComponent.__MESH__ === undefined)
       return
 

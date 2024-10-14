@@ -29,7 +29,7 @@ export class FCharacterControllerKP extends FCharacterControllerK {
     })
   }
 
-  onFrame(delta: number): void {
+  frame(delta: number): void {
     // Get the corrected movement
     const correctedMovement = this.getCorrectedMovements()
 

@@ -70,8 +70,6 @@ export abstract class FLight extends FLightCore {
     this.__LOOK_AT__ = options.lookAt
   }
 
-  abstract onFrame(_delta: number): void
-
   applyTransform(): void {
     // Set the position
     this.light.position.set(this.transform.position.x, this.transform.position.y)

@@ -45,17 +45,14 @@ export abstract class FScene {
   // Callbacks
   /**
    * Callbacks for when a frame is rendered.
-   * It is an array of functions that take the delta time as an argument.
    */
   public __CALLBACKS_ON_FRAME__: ((delta: number) => void)[] = []
   /**
    * Callbacks for when a component is added to the scene.
-   * It is an array of functions that take the component as an argument.
    */
   public __CALLBACKS_ON_COMPONENT_ADDED__: ((component: FComponent) => void)[] = []
   /**
    * Callbacks for when a component is remove from the scene.
-   * It is an array of functions that take the component as an argument.
    */
   public __CALLBACKS_ON_COMPONENT_REMOVED__: ((component: FComponent) => void)[] = []
   /**
@@ -64,12 +61,10 @@ export abstract class FScene {
   public __CALLBACKS_ON_READY__: (() => void)[] = []
   /**
    * Callbacks for when a light is added to the scene.
-   * It is an array of functions that take the light as an argument.
    */
   public __CALLBACKS_ON_LIGHT_ADDED__: ((light: FLight) => void)[] = []
   /**
    * Callbacks for when a light is added to the scene.
-   * It is an array of functions that take the light as an argument.
    */
   public __CALLBACKS_ON_LIGHT_REMOVED__: ((light: FLight) => void)[] = []
 

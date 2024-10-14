@@ -50,8 +50,6 @@ export abstract class FCamera extends FCameraCore {
     this.position = options.position
   }
 
-  abstract onFrame(_delta: number): void
-
   abstract __ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__(): void
 
   setZoom(zoom: number): void {

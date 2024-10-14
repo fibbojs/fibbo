@@ -119,14 +119,14 @@ export class FScene extends FSceneCore {
     // Create a default free camera
     this.camera = new FFreeCamera(this)
 
-    // onFrame
+    // On each frame
     this.onFrame((delta) => {
-      // Call the onFrame method of each component
+      // Call the frame method of each component
       this.components.forEach((component) => {
-        component.onFrame(delta)
+        component.frame(delta)
       })
-      // Call the onFrame method of the camera
-      this.camera.onFrame(delta)
+      // Call the frame method of the camera
+      this.camera.frame(delta)
     })
 
     // Call the onReady callbacks

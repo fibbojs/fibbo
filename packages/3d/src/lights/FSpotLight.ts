@@ -58,6 +58,4 @@ export class FSpotLight extends FLight {
       }
     }
   }
-
-  onFrame(_delta: number): void {}
 }

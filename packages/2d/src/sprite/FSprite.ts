@@ -96,8 +96,4 @@ export class FSprite extends FComponent {
   setScaleHeight(height: number) {
     this.setScale({ x: height * this.texture.width / this.texture.height, y: height })
   }
-
-  onFrame(delta: number): void {
-    super.onFrame(delta)
-  }
 }

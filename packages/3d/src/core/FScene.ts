@@ -109,13 +109,13 @@ export class FScene extends FSceneCore {
     // Add renderer to DOM
     this.__DOM_NODE__.appendChild(this.renderer.domElement)
 
-    // onFrame loop
+    // Each frame
     this.onFrame((delta) => {
-      // Call onFrame for each component
-      this.components.forEach(component => component.onFrame(delta))
+      // Call frame for each component
+      this.components.forEach(component => component.frame(delta))
 
-      // Camera
-      this.camera.onFrame(delta)
+      // Call frame for the camera
+      this.camera.frame(delta)
 
       // Render the scene
       this.renderer.render(this.scene, this.camera.__CAMERA__)

@@ -105,8 +105,8 @@ export abstract class FComponent extends FComponentCore {
     })
   }
 
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
+  frame(_delta: number): void {
+    super.frame(_delta)
     // If the rigidBody and mesh exist, update the mesh position and rotation according to the rigidBody
     if (this.rigidBody && this.collider && this.__MESH__) {
       // Translation

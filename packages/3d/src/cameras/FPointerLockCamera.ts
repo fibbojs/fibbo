@@ -40,7 +40,7 @@ export class FPointerLockCamera extends FCamera {
     })
   }
 
-  onFrame(_delta: number): void {
+  frame(_delta: number): void {
     if (this.attachedComponent.__MESH__ === undefined)
       return
 

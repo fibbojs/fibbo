@@ -43,6 +43,4 @@ export class FLightProbe extends FLight {
       }
     }
   }
-
-  onFrame(_delta: number): void {}
 }

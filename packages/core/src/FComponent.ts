@@ -38,6 +38,11 @@ export abstract class FComponent {
   public __ID__: number
 
   /**
+   * Callbacks for when a frame is rendered.
+   */
+  public __CALLBACKS_ON_FRAME__: (() => void)[] = []
+
+  /**
    * Callbacks for when the component is loaded (could be a texture, a 3D model, etc).
    */
   public __CALLBACKS_ON_LOADED__: (() => void)[] = []
@@ -82,15 +87,22 @@ export abstract class FComponent {
 
   /**
    * Update the component. Should be called every frame.
-   * The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-   * Any changes on its transform should be done on the controller, not here.
+   * The purpose of this method is to render the component, its mesh/sprite, and its properties.
    * @param delta The time since the last frame.
    */
-  onFrame(delta: number): void {
-    // If a controller is attached, update it
+  frame(delta: number): void {
+    // If a controller is attached, call the frame method
     if (this.controller) {
-      this.controller.onFrame(delta)
+      this.controller.frame(delta)
     }
+  }
+
+  /**
+   * Add a callback to be called every frame.
+   * @param callback The callback function.
+   */
+  onFrame(callback: () => void) {
+    this.__CALLBACKS_ON_FRAME__.push(callback)
   }
 
   /**

@@ -21,8 +21,4 @@ export class FRectangle extends FPolygon {
     // Emit the onLoaded event
     this.emitOnLoaded()
   }
-
-  onFrame(delta: number): void {
-    super.onFrame(delta)
-  }
 }

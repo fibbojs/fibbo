@@ -36,7 +36,7 @@ export class FCharacterControllerD extends FCharacterController {
     })
   }
 
-  onFrame(_delta: number): void {
+  frame(_delta: number): void {
     // Get camera direction
     const cameraDirection = this.scene.camera.getCameraDirection()
     // Ignore the y axis

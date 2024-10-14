@@ -52,8 +52,8 @@ export class FGameCamera extends FOrbitCamera {
     })
   }
 
-  onFrame(delta: number): void {
-    super.onFrame(delta)
+  frame(delta: number): void {
+    super.frame(delta)
 
     if (!this.attachedComponent.__MESH__)
       return

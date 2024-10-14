@@ -28,10 +28,6 @@ export class FCircle extends FPolygon {
     this.emitOnLoaded()
   }
 
-  onFrame(delta: number): void {
-    super.onFrame(delta)
-  }
-
   initRigidBody(options?: {
     position?: PIXI.PointData
     scale?: PIXI.PointData

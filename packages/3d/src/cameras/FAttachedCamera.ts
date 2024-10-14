@@ -37,7 +37,7 @@ export class FAttachedCamera extends FCamera {
     this.attachedComponent = attachedComponent
   }
 
-  onFrame(_delta: number): void {
+  frame(_delta: number): void {
     if (this.attachedComponent.__MESH__ === undefined)
       return
 

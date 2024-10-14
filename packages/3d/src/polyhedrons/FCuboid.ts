@@ -19,8 +19,4 @@ export class FCuboid extends FPolyhedron {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
   }
-
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
-  }
 }

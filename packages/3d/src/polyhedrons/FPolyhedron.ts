@@ -32,10 +32,6 @@ export abstract class FPolyhedron extends FComponent {
     }
   }
 
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
-  }
-
   /**
    * Change the color of the polyhedron.
    * @param color The color of the polyhedron.

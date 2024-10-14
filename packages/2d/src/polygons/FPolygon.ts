@@ -17,8 +17,4 @@ export abstract class FPolygon extends FComponent {
     // Set the pivot of the container to the center
     this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
   }
-
-  onFrame(delta: number): void {
-    super.onFrame(delta)
-  }
 }

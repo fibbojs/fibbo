@@ -33,10 +33,6 @@ export class FCapsule extends FPolyhedron {
     }
   }
 
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
-  }
-
   initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
       shape: FShapes.CAPSULE,

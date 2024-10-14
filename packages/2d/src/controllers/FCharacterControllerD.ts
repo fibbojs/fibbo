@@ -35,7 +35,7 @@ export class FCharacterControllerD extends FCharacterController {
     })
   }
 
-  onFrame(_delta: number): void {
+  frame(_delta: number): void {
     // Apply movement on the y axis
     if (this.inputs.up) {
       this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: 0.15 * this.speed }, true)

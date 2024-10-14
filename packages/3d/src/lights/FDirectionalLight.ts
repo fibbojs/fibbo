@@ -42,6 +42,4 @@ export class FDirectionalLight extends FLight {
       }
     }
   }
-
-  onFrame(_delta: number): void {}
 }
