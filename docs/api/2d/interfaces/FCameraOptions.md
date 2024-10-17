@@ -22,4 +22,4 @@
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:5](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L5)
+[2d/src/cameras/FCamera.ts:5](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/cameras/FCamera.ts#L5)

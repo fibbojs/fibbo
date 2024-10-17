@@ -96,7 +96,7 @@ import Character from './classes/Character'
     // Cast the component to FRectangle
     const square = component as FRectangle
     // Change the color of the square to a random color
-    square.container.tint = Math.random() * 0xFFFFFF
+    square.__CONTAINER__.tint = Math.random() * 0xFFFFFF
   })
   character.onCollisionWith(circle, () => {
     console.log('Sprite collided with the circle!')
@@ -117,6 +117,9 @@ import Character from './classes/Character'
 
     // Remove the collision callback with FRectangle
     removeCollisionCallbackWithFRectangle()
+
+    // Make character 2 times bigger on Y axis
+    character.setScale({ x: 0.5, y: 1 })
 
     // Zoom in the camera
     scene.camera.setZoom(1)

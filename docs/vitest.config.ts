@@ -6,6 +6,7 @@ export default defineConfig({
     coverage: {
       enabled: true,
       include: ['packages'],
+      exclude: ['packages/**/dist', 'packages/**/coverage', 'packages/**/test'],
       reporter: [['html', { subdir: 'coverage' }]],
     },
   },

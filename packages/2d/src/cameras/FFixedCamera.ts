@@ -11,9 +11,6 @@ export class FFixedCamera extends FCamera {
     super(scene, options)
   }
 
-  onFrame(_delta: number): void {
-  }
-
   __ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__(): void {
     // Disable all plugins on the pixi viewport
     this.scene.viewport.plugins.pause('drag')

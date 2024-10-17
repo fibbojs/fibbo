@@ -23,7 +23,7 @@ import * as THREE from 'three'
       const sphere = new FSphere(scene)
       sphere.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
       // @ts-expect-error Disable typing for the mesh property
-      sphere.mesh.material.color.set(new THREE.Color(0x2C2C2C))
+      sphere.__MESH__.material.color.set(new THREE.Color(0x2C2C2C))
 
       // Create a cube for the hitbox
       const cube = new FCuboid(scene)
@@ -31,11 +31,11 @@ import * as THREE from 'three'
       cube.setScale({ x: GRID_GAP, y: 1, z: GRID_GAP })
       // Make the cube invisible
       // @ts-expect-error Disable typing for the mesh property
-      cube.mesh.material.transparent = true
+      cube.__MESH__.material.transparent = true
       // @ts-expect-error Disable typing for the mesh property
-      cube.mesh.material.opacity = 0
+      cube.__MESH__.material.opacity = 0
       // Attach coordinates to the cube
-      cube.mesh.userData = { x: i, y: j }
+      cube.__MESH__.userData = { x: i, y: j }
 
       // Add the sphere to the scene
       scene.addComponent(sphere)
@@ -51,11 +51,11 @@ import * as THREE from 'three'
   const cameraTarget = new FCuboid(scene)
   cameraTarget.setPosition({ x: 0, y: 1, z: 0 })
   // Create a camera
-  const camera = new FOrbitCamera({
+  const camera = new FOrbitCamera(scene, {
     target: cameraTarget,
   })
-  camera.setPosition(14, 12, 14)
-  camera.lookAt(0, 0, 0)
+  camera.setPosition({ x: 14, y: 12, z: 14 })
+  camera.lookAt({ x: 0, y: 0, z: 0 })
   scene.camera = camera
 
   // Create raycaster and pointer
@@ -79,11 +79,11 @@ import * as THREE from 'three'
       // Move the spheres back to their original position
         for (let i = 0; i < GRID_ROWS; i++) {
           for (let j = 0; j < GRID_COLS; j++) {
-            grid[i][j].mesh.position.lerp(
+            grid[i][j].__MESH__.position.lerp(
               new THREE.Vector3(
-                grid[i][j].mesh.position.x,
+                grid[i][j].__MESH__.position.x,
                 1,
-                grid[i][j].mesh.position.z,
+                grid[i][j].__MESH__.position.z,
               )
               , 0.1,
             )
@@ -102,19 +102,19 @@ import * as THREE from 'three'
             if (distance < RADIUS) {
             // Change the color of the sphere based on the distance
             // @ts-expect-error Disable typing for the mesh property
-              sphere.mesh.material.color.set(new THREE.Color(`hsl(${(distance / RADIUS) * 360}, 90%, 70%)`))
+              sphere.__MESH__.material.color.set(new THREE.Color(`hsl(${(distance / RADIUS) * 360}, 90%, 70%)`))
               // Elevate the sphere based on the distance
-              sphere.mesh.position.lerp(
+              sphere.__MESH__.position.lerp(
                 new THREE.Vector3(
-                  sphere.mesh.position.x,
+                  sphere.__MESH__.position.x,
                   1 + ELEVATION * (1 - distance / RADIUS),
-                  sphere.mesh.position.z,
+                  sphere.__MESH__.position.z,
                 )
                 , 0.1,
               )
             }
             // @ts-expect-error Disable typing for the mesh property
-            else { sphere.mesh.material.color.set(new THREE.Color(0x2C2C2C)) }
+            else { sphere.__MESH__.material.color.set(new THREE.Color(0x2C2C2C)) }
           }
         }
       }

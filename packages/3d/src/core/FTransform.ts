@@ -15,15 +15,15 @@ export class FTransform {
   /**
    * The position of the component.
    */
-  position: THREE.Vector3
+  position: { x: number, y: number, z: number }
   /**
    * The scale of the component.
    */
-  scale: THREE.Vector3
+  scale: { x: number, y: number, z: number }
   /**
    * The rotation of the component.
    */
-  rotation: THREE.Vector3
+  rotation: { x: number, y: number, z: number }
 
   /**
    * Create a new FTransform.
@@ -55,14 +55,26 @@ export class FTransform {
       throw new Error('FibboError: FTransform requires position, scale, rotation and shape options')
 
     // Set the transform values
-    this.position = new THREE.Vector3(options.position.x, options.position.y, options.position.z)
-    this.scale = new THREE.Vector3(options.scale.x, options.scale.y, options.scale.z)
+    this.position = options.position
+    this.scale = options.scale
     this.rotation = options.rotationDegree
-      ? new THREE.Vector3(
-        THREE.MathUtils.degToRad(options.rotationDegree.x),
-        THREE.MathUtils.degToRad(options.rotationDegree.y),
-        THREE.MathUtils.degToRad(options.rotationDegree.z),
-      )
-      : options.rotation ? new THREE.Vector3(options.rotation.x, options.rotation.y, options.rotation.z) : new THREE.Vector3(0, 0, 0)
+      ? { x: THREE.MathUtils.degToRad(options.rotationDegree.x), y: THREE.MathUtils.degToRad(options.rotationDegree.y), z: THREE.MathUtils.degToRad(options.rotationDegree.z) }
+      : options.rotation || { x: 0, y: 0, z: 0 }
+  }
+
+  // Setters and getters for the transform values
+
+  /**
+   * Get the rotation in degrees.
+   */
+  get rotationDegree() {
+    return { x: THREE.MathUtils.radToDeg(this.rotation.x), y: THREE.MathUtils.radToDeg(this.rotation.y), z: THREE.MathUtils.radToDeg(this.rotation.z) }
+  }
+
+  /**
+   * Set the rotation in degrees.
+   */
+  set rotationDegree(rotation: { x: number, y: number, z: number }) {
+    this.rotation = { x: THREE.MathUtils.degToRad(rotation.x), y: THREE.MathUtils.degToRad(rotation.y), z: THREE.MathUtils.degToRad(rotation.z) }
   }
 }

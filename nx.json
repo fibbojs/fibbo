@@ -32,7 +32,15 @@
       "cache": true
     },
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "build"],
+      "cache": true
+    },
+    "test:ui": {
+      "dependsOn": ["^build", "build"],
+      "cache": true
+    },
+    "test:run": {
+      "dependsOn": ["^build", "build"],
       "cache": true
     },
     "docs:build": {

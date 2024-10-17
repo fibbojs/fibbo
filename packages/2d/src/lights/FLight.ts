@@ -17,8 +17,8 @@ export abstract class FLight extends FLightCore {
   /**
    * Internal flags
    */
-  public __IS_3D__: boolean = true
-  public __IS_2D__: boolean = false
+  public __IS_3D__: boolean = false
+  public __IS_2D__: boolean = true
   declare public __ID__: number
   public __CALLBACKS_ON_COLLISION__: { [key: string]: (() => void)[] } = {}
 
@@ -43,7 +43,7 @@ export abstract class FLight extends FLightCore {
   __LOOK_AT__: { x: number, y: number }
 
   constructor(scene: FScene, options?: FLightOptions) {
-    super()
+    super(scene)
 
     // Define default options
     const DEFAULT_OPTIONS = {
@@ -69,8 +69,6 @@ export abstract class FLight extends FLightCore {
     })
     this.__LOOK_AT__ = options.lookAt
   }
-
-  abstract onFrame(_delta: number): void
 
   applyTransform(): void {
     // Set the position

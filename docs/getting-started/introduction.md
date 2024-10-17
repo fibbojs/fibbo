@@ -1,6 +1,6 @@
 # Introduction
 
-Fibbo is a free and [open-source](https://github.com/fibbojs/fibbo) web-based game engine that allows you to create interactive experiences using JavaScript, right in your browser.
+Fibbo (pronounced [fˈa͡ɪbo͡ʊ](http://ipa-reader.xyz/?text=f%CB%88a%CD%A1%C9%AAbo%CD%A1%CA%8A)) is a free and [open-source](https://github.com/fibbojs/fibbo) web-based game engine that allows you to create interactive experiences using JavaScript, right in your browser.
 
 It is designed to be simple to use, extensible, and flexible. You can use it to create games, simulations, visualizations, and more.
 

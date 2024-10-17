@@ -27,6 +27,4 @@ export class FAmbientLight extends FLight {
     // Apply the transform
     this.applyTransform()
   }
-
-  onFrame(_delta: number): void {}
 }

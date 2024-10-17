@@ -11,8 +11,4 @@ export default class GltfCube extends FGLTF {
     this.setRotationDegree({ x: 20, y: 0, z: 0 })
     this.initRigidBody()
   }
-
-  onFrame(delta: number) {
-    super.onFrame(delta)
-  }
 }

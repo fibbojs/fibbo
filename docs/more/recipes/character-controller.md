@@ -11,10 +11,10 @@ Here are the available character controllers in Fibbo :
 
 | Controller            | Description                                                                                               | Common usage |
 | --------------------- | --------------------------------------------------------------------------------------------------------- | ------------ |
-| FCharacterControllerD | The "D" stands for dynamic. It it based on a dynamic rigid-body so it is affected by the scene's gravity. | Not recommended as movements do not feel game-like. |
+| FCharacterControllerD | The "D" stands for dynamic. It it based on a dynamic rigidBody so it is affected by the scene's gravity. | Not recommended as movements do not feel game-like. |
 | FCharacterControllerK | The "K" stands for kinematic. It is an abstract controller used for `FCharacterControllerKP` and `FCharacterControllerKV`. | |
-| FCharacterControllerKP | The "KP" stands for kinematic position-based. It is based on a kinematic position-based rigid-body, and has its own gravity. | Recommended for most use cases as position-based behavior generally feel more natural to think about. It is also the only controller including rotation movements by default in 3D. |
-| FCharacterControllerKV | The "KV" stands for kinematic velocity-based. It is based on a kinematic velocity-based rigid-body, and has its own gravity. | Less recommended but very similar to `FCharacterControllerKP`. |
+| FCharacterControllerKP | The "KP" stands for kinematic position-based. It is based on a kinematic position-based rigidBody, and has its own gravity. | Recommended for most use cases as position-based behavior generally feel more natural to think about. It is also the only controller including rotation movements by default in 3D. |
+| FCharacterControllerKV | The "KV" stands for kinematic velocity-based. It is based on a kinematic velocity-based rigidBody, and has its own gravity. | Less recommended but very similar to `FCharacterControllerKP`. |
 
 ## Using a character controller
 

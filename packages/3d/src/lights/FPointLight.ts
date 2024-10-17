@@ -36,6 +36,4 @@ export class FPointLight extends FLight {
       }
     }
   }
-
-  onFrame(_delta: number): void {}
 }

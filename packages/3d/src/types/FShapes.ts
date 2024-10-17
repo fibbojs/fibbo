@@ -1,6 +1,6 @@
 // FShapes type
 export enum FShapes {
-  CUBE = 'Cube',
+  CUBOID = 'Cuboid',
   SPHERE = 'Sphere',
   CAPSULE = 'Capsule',
   MESH = 'Mesh',

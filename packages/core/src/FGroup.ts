@@ -38,7 +38,7 @@ export abstract class FGroup {
    * Update all components in the group.
    * @param delta The time since the last frame.
    */
-  onFrame(delta: number) {
-    this.components.forEach(c => c.onFrame(delta))
+  frame(delta: number) {
+    this.components.forEach(c => c.frame(delta))
   }
 }

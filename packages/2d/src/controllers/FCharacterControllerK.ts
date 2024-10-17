@@ -53,7 +53,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
     }
     // Compute the desired movement
     this.characterController.computeColliderMovement(
-      this.component.collider?.collider as RAPIER.Collider,
+      this.component.collider?.__COLLIDER__ as RAPIER.Collider,
       desiredMovement,
       RAPIER.QueryFilterFlags.EXCLUDE_SENSORS,
     )

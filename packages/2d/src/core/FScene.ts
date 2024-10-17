@@ -119,14 +119,14 @@ export class FScene extends FSceneCore {
     // Create a default free camera
     this.camera = new FFreeCamera(this)
 
-    // onFrame
+    // On each frame
     this.onFrame((delta) => {
-      // Call the onFrame method of each component
+      // Call the frame method of each component
       this.components.forEach((component) => {
-        component.onFrame(delta)
+        component.frame(delta)
       })
-      // Call the onFrame method of the camera
-      this.camera.onFrame(delta)
+      // Call the frame method of the camera
+      this.camera.frame(delta)
     })
 
     // Call the onReady callbacks
@@ -193,52 +193,38 @@ export class FScene extends FSceneCore {
   addComponent(component: FComponent) {
     super.addComponent(component)
 
-    // Detect if the FComponent is a FSprite instance
-    if (component instanceof FSprite) {
-      // Wait for the sprite to be loaded before adding it to the scene
-      component.onLoaded(() => {
-        this.viewport.addChild(component.container)
+    // Wait for the component to be loaded before adding it to the scene
+    component.onLoaded(() => {
+      this.viewport.addChild(component.__CONTAINER__)
 
-        // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        if (component.sensor)
-          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
-        // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        else if (component.collider)
-          this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
-      })
-    }
-    else {
-      // The component is not a FSprite instance, it can be added directly
-      this.viewport.addChild(component.container)
-    }
-
-    // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
-    // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-    else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
+      // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+      if (component.sensor)
+        this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
+      // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+      else if (component.collider)
+        this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
+    })
   }
 
   removeComponent(component: FComponent): void {
     super.removeComponent(component)
 
     // Remove container from the viewport
-    this.viewport.removeChild(component.container)
+    this.viewport.removeChild(component.__CONTAINER__)
 
     // Remove colliders and rigidBodies from rapier world
     if (component.rigidBody)
-      this.world.removeRigidBody(component.rigidBody.rigidBody)
+      this.world.removeRigidBody(component.rigidBody.__RIGIDBODY__)
     if (component.collider)
-      this.world.removeCollider(component.collider.collider, false)
+      this.world.removeCollider(component.collider.__COLLIDER__, false)
     if (component.sensor)
-      this.world.removeCollider(component.sensor.collider.collider, false)
+      this.world.removeCollider(component.sensor.collider.__COLLIDER__, false)
 
     // Remove handle from rapier map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
+      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.__COLLIDER__.handle)
     if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
+      this.__RAPIER_TO_COMPONENT__.delete(component.collider.__COLLIDER__.handle)
   }
 
   /**

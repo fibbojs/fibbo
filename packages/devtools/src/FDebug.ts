@@ -48,7 +48,7 @@ export class FDebug {
     })
 
     // Make the component array reactive
-    this.scene.components = reactive(this.scene.components)
+    this.scene.components = reactive(this.scene.components) as any
 
     // 3D specific debug behavior
     if (scene.__IS_3D__) {

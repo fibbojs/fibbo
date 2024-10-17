@@ -1,10 +1,10 @@
 # Colliders
 
-Colliders represent the geometric shapes that generate contacts and collision events when they touch. Attaching one or multiple colliders to a rigid-body allow the rigid-body to be affected by contact forces.
+Colliders represent the geometric shapes that generate contacts and collision events when they touch. Attaching one or multiple colliders to a rigidBody allow the rigidBody to be affected by contact forces.
 
-The only use case for a collider without a rigid-body might be to create ground or walls that are not supposed to move and which you do not want to detect contacts against.
+The only use case for a collider without a rigidBody might be to create ground or walls that are not supposed to move and which you do not want to detect contacts against.
 
-Any other use case might require attaching the collider to a rigid-body.
+Any other use case might require attaching the collider to a rigidBody.
 
 ## Adding a collider to a component
 
