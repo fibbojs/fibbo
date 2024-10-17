@@ -4,8 +4,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Fibbo',
   description: 'Documentation for Fibbo',
-  head: [['link', { rel: 'icon', href: '/fibbo/favicon.ico' }]],
-  base: '/fibbo/',
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  base: '/',
   themeConfig: {
     logo: {
       light: '/logo-full-light.png',

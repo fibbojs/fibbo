@@ -7,7 +7,7 @@ export default defineConfig({
     wasm(),
     topLevelAwait(),
   ],
-  base: '/fibbo/playground-2d/',
+  base: '/playground-2d/',
   build: {
     rollupOptions: {
       // Solution found here: https://github.com/dimforge/rapier.js/issues/278

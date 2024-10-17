@@ -5,7 +5,7 @@
   "private": true,
   "author": "Augustin Mercier <mercier.augustin@outlook.fr>",
   "license": "Apache-2.0",
-  "homepage": "https://fibbojs.github.io/fibbo",
+  "homepage": "https://fibbo.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibbojs/fibbo.git"

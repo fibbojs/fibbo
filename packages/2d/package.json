@@ -8,7 +8,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://fibbojs.github.io/fibbo",
+  "homepage": "https://fibbo.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibbojs/fibbo.git"

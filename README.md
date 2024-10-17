@@ -1,4 +1,4 @@
-[![@fibbojs/core](./docs/public/banner.png)](https://fibbojs.github.io/fibbo/)
+[![@fibbojs/core](./docs/public/banner.png)](https://fibbo.dev/)
 
 # Fibbo
 
@@ -13,14 +13,14 @@ It is designed to be simple to use, extensible, and flexible. You can use it to 
 
 Fibbo exposes a simple object-oriented API that allows you to create and manipulate objects in a scene, both in 2D or 3D. You can add objects to the scene, move them around, rotate them, and much more.
 
-- [🏡 Documentation](https://fibbojs.github.io/fibbo/)
-- [🧪 Test Report](https://fibbojs.github.io/fibbo/test-reports)
-- [🎮 2D Playground](https://fibbojs.github.io/fibbo/playground-2d)
-- [🎮 3D Playground](https://fibbojs.github.io/fibbo/playground-3d)
+- [🏡 Documentation](https://fibbo.dev/)
+- [🧪 Test Report](https://fibbo.dev/test-reports)
+- [🎮 2D Playground](https://fibbo.dev/playground-2d)
+- [🎮 3D Playground](https://fibbo.dev/playground-3d)
 
 ## Installation
 
-See the [installation guide](https://fibbojs.github.io/fibbo/getting-started/installation) for more information.
+See the [installation guide](https://fibbo.dev/getting-started/installation) for more information.
 
 ## Tech stack
 
@@ -85,7 +85,7 @@ You can now open your browser and navigate to `http://localhost:5173/fibbo`.
 
 ## Contributing
 
-See the [contributing guide](https://fibbojs.github.io/fibbo/more/contributing) for more information.
+See the [contributing guide](https://fibbo.dev/more/contributing) for more information.
 
 ## Credits
 
@@ -102,4 +102,4 @@ See the [contributing guide](https://fibbojs.github.io/fibbo/more/contributing) 
 [license-href]: https://npmjs.com/package/@fibbojs/core
 
 [test-src]: https://img.shields.io/badge/test-report-28CF8D?style=flat&colorA=18181B&colorB=28CF8D
-[test-href]: https://fibbojs.github.io/fibbo/test-reports
+[test-href]: https://fibbo.dev/test-reports
