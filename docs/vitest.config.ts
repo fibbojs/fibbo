@@ -7,7 +7,6 @@ export default defineConfig({
       enabled: true,
       include: ['packages'],
       reporter: [['html', { subdir: 'coverage' }]],
-      reportsDirectory: 'fibbo',
     },
   },
 })

@@ -60,7 +60,7 @@ jobs:
         run: ./node_modules/.bin/nx build @fibbojs/playground-3d
       # Move test reports to the docs folder
       - name: Move test reports to the docs folder
-        run: mv html docs/.vitepress/dist/test-reports && mv fibbo/coverage docs/.vitepress/dist/coverage
+        run: mv html docs/.vitepress/dist/test-reports && mv coverage docs/.vitepress/dist/coverage
       # Move playgrounds to the docs folder
       - name: Move playgrounds to the docs folder
         run: mv apps/playground-2d/dist docs/.vitepress/dist/playground-2d && mv apps/playground-3d/dist docs/.vitepress/dist/playground-3d
