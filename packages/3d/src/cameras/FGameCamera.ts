@@ -19,7 +19,7 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  */
 export class FGameCamera extends FOrbitCamera {
   // Previous position of the attached component (at each frame)
-  private previousModelPosition: { x: number, y: number, z: number }
+  private previousComponentPosition: { x: number, y: number, z: number }
   // Flag to track if the pointer is locked
   isPointerLocked: boolean = false
   // Last mouse move event
@@ -28,11 +28,11 @@ export class FGameCamera extends FOrbitCamera {
   constructor(scene: FScene, options: FAttachedCameraOptions) {
     super(scene, options)
     // Clone the model's position
-    this.previousModelPosition = options.target.transform.position
-    this.setPosition({ x: 0, y: 20, z: 20 })
+    this.previousComponentPosition = structuredClone(options.target.position)
+    this.setPosition({ x: 0, y: 8, z: 8 })
 
     this.controls.enableDamping = true
-    this.controls.maxDistance = 5
+    this.controls.maxDistance = 10
 
     /**
      * Add event listeners
@@ -58,14 +58,17 @@ export class FGameCamera extends FOrbitCamera {
     if (!this.attachedComponent.__MESH__)
       return
 
-    // Calculate the difference between the previous and current position of the attached model
-    const positionDifference = this.attachedComponent.__MESH__.position.clone().sub(this.previousModelPosition)
-    // Move the camera by the same amount
-    this.position.x += positionDifference.x
-    this.position.y += positionDifference.y
-    this.position.z += positionDifference.z
-    // Update the previous position
-    this.previousModelPosition = this.attachedComponent.__MESH__.position.clone()
+    // Move the camera by the difference in the attached component's position
+    const componentPosition = this.attachedComponent.__MESH__.position
+    const positionDelta = {
+      x: componentPosition.x - this.previousComponentPosition.x,
+      y: componentPosition.y - this.previousComponentPosition.y,
+      z: componentPosition.z - this.previousComponentPosition.z,
+    }
+    this.__CAMERA__.position.x += positionDelta.x
+    this.__CAMERA__.position.y += positionDelta.y
+    this.__CAMERA__.position.z += positionDelta.z
+    this.previousComponentPosition = structuredClone(componentPosition)
 
     // Move the camera based on mouse movement if pointer is locked
     if (this.isPointerLocked && this.lastMouseMoveEvent) {
@@ -74,12 +77,10 @@ export class FGameCamera extends FOrbitCamera {
       const movementY = this.lastMouseMoveEvent.movementY || 0
 
       // Rotate the camera based on mouse movement
-      /**
-       * Let's be honest, I don't know why this works.
-       * But it does.
-       */
-      this.__CAMERA__.translateX(-movementX * 0.01)
-      this.__CAMERA__.translateY(movementY * 0.01)
+      // Let's be honest, I don't know why this works.
+      // But it does
+      this.__CAMERA__.translateX(-movementX * 0.02)
+      this.__CAMERA__.translateY(movementY * 0.02)
       this.lastMouseMoveEvent = undefined
     }
 

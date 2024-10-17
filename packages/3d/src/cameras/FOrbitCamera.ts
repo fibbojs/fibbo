@@ -1,3 +1,4 @@
+import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
@@ -34,10 +35,11 @@ export class FOrbitCamera extends FCamera {
   }
 
   frame(_delta: number): void {
-    if (this.attachedComponent.__MESH__ === undefined)
-      return
-
-    this.controls.target = this.attachedComponent.__MESH__.position
+    this.controls.target = new THREE.Vector3(
+      this.attachedComponent.transform.position.x,
+      this.attachedComponent.transform.position.y,
+      this.attachedComponent.transform.position.z,
+    )
     this.controls.update()
   }
 

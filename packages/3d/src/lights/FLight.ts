@@ -84,20 +84,179 @@ export abstract class FLight extends FLightCore {
     }
   }
 
-  set color(color: THREE.ColorRepresentation) {
-    this.light.color.set(color)
+  setPosition(position: { x: number, y: number, z: number }): void {
+    this.light.position.set(position.x, position.y, position.z)
+    this.transform.position = position
+  }
+
+  setRotation(rotation: { x: number, y: number, z: number }): void {
+    this.light.rotation.set(rotation.x, rotation.y, rotation.z)
+    this.transform.rotation = rotation
+  }
+
+  setRotationDegree(rotationDegree: { x: number, y: number, z: number }): void {
+    const rotation = {
+      x: THREE.MathUtils.degToRad(rotationDegree.x),
+      y: THREE.MathUtils.degToRad(rotationDegree.y),
+      z: THREE.MathUtils.degToRad(rotationDegree.z),
+    }
+    this.light.rotation.set(rotation.x, rotation.y, rotation.z)
+    this.transform.rotation = rotation
+  }
+
+  setScale(scale: { x: number, y: number, z: number }): void {
+    this.light.scale.set(scale.x, scale.y, scale.z)
+    this.transform.scale = scale
+  }
+
+  // Setters & Getters
+
+  get position(): { x: number, y: number, z: number } {
+    return this.transform.position
+  }
+
+  set position(position: { x: number, y: number, z: number }) {
+    this.setPosition(position)
+  }
+
+  get x(): number {
+    return this.transform.position.x
+  }
+
+  set x(x: number) {
+    this.position = { x, y: this.y, z: this.z }
+  }
+
+  get y(): number {
+    return this.transform.position.y
+  }
+
+  set y(y: number) {
+    this.position = { x: this.x, y, z: this.z }
+  }
+
+  get z(): number {
+    return this.transform.position.z
+  }
+
+  set z(z: number) {
+    this.position = { x: this.x, y: this.y, z }
+  }
+
+  get rotation(): { x: number, y: number, z: number } {
+    return this.transform.rotation
+  }
+
+  set rotation(rotation: { x: number, y: number, z: number }) {
+    this.setRotation(rotation)
+  }
+
+  get rotationX(): number {
+    return this.transform.rotation.x
+  }
+
+  set rotationX(x: number) {
+    this.rotation = { x, y: this.rotationY, z: this.rotationZ }
+  }
+
+  get rotationY(): number {
+    return this.transform.rotation.y
+  }
+
+  set rotationY(y: number) {
+    this.rotation = { x: this.rotationX, y, z: this.rotationZ }
+  }
+
+  get rotationZ(): number {
+    return this.transform.rotation.z
+  }
+
+  set rotationZ(z: number) {
+    this.rotation = { x: this.rotationX, y: this.rotationY, z }
+  }
+
+  get rotationDegree(): { x: number, y: number, z: number } {
+    return {
+      x: THREE.MathUtils.radToDeg(this.transform.rotation.x),
+      y: THREE.MathUtils.radToDeg(this.transform.rotation.y),
+      z: THREE.MathUtils.radToDeg(this.transform.rotation.z),
+    }
+  }
+
+  set rotationDegree(rotationDegree: { x: number, y: number, z: number }) {
+    this.setRotationDegree(rotationDegree)
+  }
+
+  get rotationDegreeX(): number {
+    return THREE.MathUtils.radToDeg(this.transform.rotation.x)
+  }
+
+  set rotationDegreeX(x: number) {
+    this.rotationDegree = { x, y: this.rotationDegreeY, z: this.rotationDegreeZ }
+  }
+
+  get rotationDegreeY(): number {
+    return THREE.MathUtils.radToDeg(this.transform.rotation.y)
+  }
+
+  set rotationDegreeY(y: number) {
+    this.rotationDegree = { x: this.rotationDegreeX, y, z: this.rotationDegreeZ }
+  }
+
+  get rotationDegreeZ(): number {
+    return THREE.MathUtils.radToDeg(this.transform.rotation.z)
+  }
+
+  set rotationDegreeZ(z: number) {
+    this.rotationDegree = { x: this.rotationDegreeX, y: this.rotationDegreeY, z }
+  }
+
+  get scale(): { x: number, y: number, z: number } {
+    return this.transform.scale
+  }
+
+  set scale(scale: { x: number, y: number, z: number }) {
+    this.setScale(scale)
+  }
+
+  get scaleX(): number {
+    return this.transform.scale.x
+  }
+
+  set scaleX(x: number) {
+    this.scale = { x, y: this.scaleY, z: this.scaleZ }
+  }
+
+  get scaleY(): number {
+    return this.transform.scale.y
+  }
+
+  set scaleY(y: number) {
+    this.scale = { x: this.scaleX, y, z: this.scaleZ }
+  }
+
+  get scaleZ(): number {
+    return this.transform.scale.z
+  }
+
+  set scaleZ(z: number) {
+    this.scale = { x: this.scaleX, y: this.scaleY, z }
   }
 
   get color(): THREE.Color {
     return this.light.color
   }
 
-  set intensity(intensity: number) {
-    this.light.intensity = intensity
+  set color(color: THREE.ColorRepresentation) {
+    this.light.color.set(color)
   }
 
   get intensity(): number {
     return this.light.intensity
+  }
+
+  set intensity(intensity: number) {
+    this.light.intensity = intensity
   }
 
   get lookAt(): { x: number, y: number, z: number } {
