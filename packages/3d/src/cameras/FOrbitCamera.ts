@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
+import type { FVector3 } from '../types/FVector3'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -43,12 +44,12 @@ export class FOrbitCamera extends FCamera {
     this.controls.update()
   }
 
-  setPosition(position: { x: number, y: number, z: number }): void {
-    super.setPosition({
+  setPosition(position: FVector3): void {
+    this.transform.position = {
       x: this.attachedComponent.transform.position.x + position.x,
       y: this.attachedComponent.transform.position.y + position.y,
       z: this.attachedComponent.transform.position.z + position.z,
-    })
+    }
     // Set the target of the camera to the attached model
     this.lookAt(this.attachedComponent.transform.position)
   }

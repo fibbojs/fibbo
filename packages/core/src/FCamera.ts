@@ -9,9 +9,4 @@ export abstract class FCamera extends FComponent {
   constructor(scene: FScene) {
     super(scene, { addToScene: false })
   }
-
-  /**
-   * Set the zoom of the camera.
-   */
-  abstract setZoom(zoom: number): void
 }

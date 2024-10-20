@@ -1,4 +1,5 @@
 import type { FController } from './FController'
+import { FLight } from './FLight'
 import type { FScene } from './FScene'
 
 /**
@@ -78,8 +79,14 @@ export abstract class FComponent {
     this.scene = scene
 
     // Add the component to the scene if addToScene is true
-    if (options.addToScene)
-      this.scene.addComponent(this)
+    if (options.addToScene) {
+      if (this instanceof FLight) {
+        this.scene.addLight(this)
+      }
+      else {
+        this.scene.addComponent(this)
+      }
+    }
 
     // Generate a unique ID
     this.__ID__ = ID_COUNTER++

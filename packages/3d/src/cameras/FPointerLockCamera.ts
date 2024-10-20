@@ -45,8 +45,8 @@ export class FPointerLockCamera extends FCamera {
       return
 
     // Position the camera at the model's position + offset
-    this.position.x = this.attachedComponent.__MESH__.position.x
-    this.position.y = this.attachedComponent.__MESH__.position.y
-    this.position.z = this.attachedComponent.__MESH__.position.z
+    this.transform.x = this.attachedComponent.__MESH__.position.x
+    this.transform.y = this.attachedComponent.__MESH__.position.y
+    this.transform.z = this.attachedComponent.__MESH__.position.z
   }
 }

@@ -1,4 +1,5 @@
 import type { FScene } from '../core/FScene'
+import type { FVector3 } from '../types/FVector3'
 import { FOrbitCamera } from './FOrbitCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -19,7 +20,7 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  */
 export class FGameCamera extends FOrbitCamera {
   // Previous position of the attached component (at each frame)
-  private previousComponentPosition: { x: number, y: number, z: number }
+  private previousComponentPosition: FVector3
   // Flag to track if the pointer is locked
   isPointerLocked: boolean = false
   // Last mouse move event
@@ -28,7 +29,7 @@ export class FGameCamera extends FOrbitCamera {
   constructor(scene: FScene, options: FAttachedCameraOptions) {
     super(scene, options)
     // Clone the model's position
-    this.previousComponentPosition = structuredClone(options.target.position)
+    this.previousComponentPosition = structuredClone(options.target.transform.position)
     this.setPosition({ x: 0, y: 8, z: 8 })
 
     this.controls.enableDamping = true

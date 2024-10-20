@@ -199,15 +199,15 @@ export abstract class FComponent extends FComponentCore {
 
   /**
    * Set the rotation of the component in radians.
-   * @param r The rotation in radians.
+   * @param rotation The rotation in radians.
    * @example
    * ```ts
    * component.setRotation(Math.PI / 2)
    * ```
    */
-  setRotation(r: number): void {
-    this.transform.rotation = r
-    this.__CONTAINER__.rotation = r
+  setRotation(rotation: number): void {
+    this.transform.rotation = rotation
+    this.__CONTAINER__.rotation = rotation
     // If a rigidBody exists, update its rotation
     if (this.rigidBody)
       this.rigidBody.updateRotation()
@@ -221,14 +221,14 @@ export abstract class FComponent extends FComponentCore {
 
   /**
    * Set the rotation of the component in degrees.
-   * @param r The rotation in degrees.
+   * @param rotation The rotation in degrees.
    * @example
    * ```ts
    * component.setRotationDegree(90)
    * ```
    */
-  setRotationDegree(r: number): void {
-    this.setRotation(r * (Math.PI / 180))
+  setRotationDegree(rotation: number): void {
+    this.setRotation(rotation * (Math.PI / 180))
   }
 
   /**
@@ -348,14 +348,14 @@ export abstract class FComponent extends FComponentCore {
     return super.onCollisionWith(classOrObject, callback)
   }
 
-  // Setters & getters for transform properties
+  // Setters & Getters
 
   get position(): { x: number, y: number } {
     return this.transform.position
   }
 
-  set position(p: { x: number, y: number }) {
-    this.setPosition(p)
+  set position(position: { x: number, y: number }) {
+    this.setPosition(position)
   }
 
   get x(): number {
@@ -378,16 +378,16 @@ export abstract class FComponent extends FComponentCore {
     return this.transform.rotation
   }
 
-  set rotation(r: number) {
-    this.setRotation(r)
+  set rotation(rotation: number) {
+    this.setRotation(rotation)
   }
 
   get rotationDegree(): number {
     return this.transform.rotation * (180 / Math.PI)
   }
 
-  set rotationDegree(r: number) {
-    this.setRotationDegree(r)
+  set rotationDegree(rotation: number) {
+    this.setRotationDegree(rotation)
   }
 
   get scale(): { x: number, y: number } {

@@ -3,6 +3,7 @@ import { FCamera as FCameraCore } from '@fibbojs/core'
 import type { FTransformOptions } from '../core/FTransform'
 import { FTransform } from '../core/FTransform'
 import type { FScene } from '../core/FScene'
+import type { FVector3 } from '../types/FVector3'
 
 export interface FCameraOptions extends FTransformOptions {}
 
@@ -46,6 +47,7 @@ export abstract class FCamera extends FCameraCore {
 
     // Store transform
     this.transform = new FTransform({
+      component: this,
       position: options.position,
       rotation: options.rotation,
       rotationDegree: options.rotationDegree,
@@ -58,54 +60,38 @@ export abstract class FCamera extends FCameraCore {
   }
 
   /**
-   * Set the position of the camera.
+   * Update the position of the camera according to the transform.
+   * This method should be called after updating the transform properties.
    */
-  setPosition(position: { x: number, y: number, z: number }): void {
-    this.__CAMERA__.position.set(position.x, position.y, position.z)
-    this.transform.position = position
+  __UPDATE_POSITION__(): void {
+    this.__CAMERA__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
   }
 
   /**
-   * Set the scale of the camera.
+   * Update the rotation of the camera according to the transform.
+   * This method should be called after updating the transform properties.
    */
-  setScale(scale: { x: number, y: number, z: number }): void {
-    this.__CAMERA__.scale.set(scale.x, scale.y, scale.z)
-    this.transform.scale = scale
+  __UPDATE_ROTATION__(): void {
+    this.__CAMERA__.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
   }
 
   /**
-   * Set the rotation of the camera.
+   * Update the scale of the camera according to the transform.
+   * This method should be called after updating the transform properties.
+   * This method does not make sense for cameras, but it is implemented for consistency.
    */
-  setRotation(rotation: { x: number, y: number, z: number }): void {
-    this.__CAMERA__.rotation.set(rotation.x, rotation.y, rotation.z)
-    this.transform.rotation = rotation
+  __UPDATE_SCALE__(): void {
+    this.__CAMERA__.scale.set(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
   }
 
   /**
-   * Set the rotation of the camera in degrees.
+   * Make the camera look at a target.
+   * @param target The target to look at.
+   * @param target.x The x coordinate of the target.
+   * @param target.y The y coordinate of the target.
+   * @param target.z The z coordinate of the target.
    */
-  setRotationDegree(rotation: { x: number, y: number, z: number }): void {
-    const rotationRad = {
-      x: THREE.MathUtils.degToRad(rotation.x),
-      y: THREE.MathUtils.degToRad(rotation.y),
-      z: THREE.MathUtils.degToRad(rotation.z),
-    }
-    this.__CAMERA__.rotation.set(rotationRad.x, rotationRad.y, rotationRad.z)
-    this.transform.rotation = rotationRad
-  }
-
-  /**
-   * Set the zoom of the camera.
-   */
-  setZoom(zoom: number): void {
-    this.__CAMERA__.zoom = zoom
-    this.__CAMERA__.updateProjectionMatrix()
-  }
-
-  /**
-   * Look at a point in the scene.
-   */
-  lookAt(target: { x: number, y: number, z: number }): void {
+  lookAt(target: FVector3) {
     this.__CAMERA__.lookAt(target.x, target.y, target.z)
   }
 
@@ -121,141 +107,14 @@ export abstract class FCamera extends FCameraCore {
     return direction
   }
 
-  // Setters & getters
-
-  get position() {
-    return this.transform.position
-  }
-
-  set position(position: { x: number, y: number, z: number }) {
-    this.setPosition(position)
-  }
-
-  get x() {
-    return this.transform.position.x
-  }
-
-  set x(x: number) {
-    this.setPosition({ x, y: this.y, z: this.z })
-  }
-
-  get y() {
-    return this.transform.position.y
-  }
-
-  set y(y: number) {
-    this.setPosition({ x: this.x, y, z: this.z })
-  }
-
-  get z() {
-    return this.transform.position.z
-  }
-
-  set z(z: number) {
-    this.setPosition({ x: this.x, y: this.y, z })
-  }
-
-  get rotation() {
-    return this.transform.rotation
-  }
-
-  set rotation(rotation: { x: number, y: number, z: number }) {
-    this.setRotation(rotation)
-  }
-
-  get rotationX() {
-    return this.transform.rotation.x
-  }
-
-  set rotationX(x: number) {
-    this.setRotation({ x, y: this.rotationY, z: this.rotationZ })
-  }
-
-  get rotationY() {
-    return this.transform.rotation.y
-  }
-
-  set rotationY(y: number) {
-    this.setRotation({ x: this.rotationX, y, z: this.rotationZ })
-  }
-
-  get rotationZ() {
-    return this.transform.rotation.z
-  }
-
-  set rotationZ(z: number) {
-    this.setRotation({ x: this.rotationX, y: this.rotationY, z })
-  }
-
-  get rotationDegree() {
-    return this.transform.rotationDegree
-  }
-
-  set rotationDegree(rotation: { x: number, y: number, z: number }) {
-    this.setRotation(rotation)
-  }
-
-  get rotationDegreeX() {
-    return this.transform.rotationDegree.x
-  }
-
-  set rotationDegreeX(x: number) {
-    this.setRotationDegree({ x, y: this.rotationDegreeY, z: this.rotationDegreeZ })
-  }
-
-  get rotationDegreeY() {
-    return this.transform.rotationDegree.y
-  }
-
-  set rotationDegreeY(y: number) {
-    this.setRotationDegree({ x: this.rotationDegreeX, y, z: this.rotationDegreeZ })
-  }
-
-  get rotationDegreeZ() {
-    return this.transform.rotationDegree.z
-  }
-
-  set rotationDegreeZ(z: number) {
-    this.setRotationDegree({ x: this.rotationDegreeX, y: this.rotationDegreeY, z })
-  }
-
-  get scale() {
-    return this.transform.scale
-  }
-
-  set scale(scale: { x: number, y: number, z: number }) {
-    this.setScale(scale)
-  }
-
-  get scaleX() {
-    return this.transform.scale.x
-  }
-
-  set scaleX(x: number) {
-    this.setScale({ x, y: this.scaleY, z: this.scaleZ })
-  }
-
-  get scaleY() {
-    return this.transform.scale.y
-  }
-
-  set scaleY(y: number) {
-    this.setScale({ x: this.scaleX, y, z: this.scaleZ })
-  }
-
-  get scaleZ() {
-    return this.transform.scale.z
-  }
-
-  set scaleZ(z: number) {
-    this.setScale({ x: this.scaleX, y: this.scaleY, z })
-  }
+  // Setters & Getters
 
   get zoom() {
     return this.__CAMERA__.zoom
   }
 
   set zoom(zoom: number) {
-    this.setZoom(zoom)
+    this.__CAMERA__.zoom = zoom
+    this.__CAMERA__.updateProjectionMatrix()
   }
 }

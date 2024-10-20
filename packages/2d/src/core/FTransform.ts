@@ -57,4 +57,14 @@ export class FTransform {
     this.scale = options.scale
     this.rotation = options.rotationDegree ? options.rotationDegree * (Math.PI / 180) : options.rotation ?? 0
   }
+
+  // Setters & Getters
+
+  get rotationDegree() {
+    return this.rotation * (180 / Math.PI)
+  }
+
+  set rotationDegree(rotation: number) {
+    this.rotation = rotation * (Math.PI / 180)
+  }
 }

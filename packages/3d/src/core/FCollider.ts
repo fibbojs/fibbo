@@ -1,14 +1,16 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import { FShapes } from '../types/FShapes'
+import type { FVector3 } from '../types/FVector3'
 import type { FComponent } from './FComponent'
 import type { FRigidBody } from './FRigidBody'
+import { FTransform } from './FTransform'
 
 export interface FColliderOptions {
-  position?: { x: number, y: number, z: number }
-  scale?: { x: number, y: number, z: number }
-  rotation?: { x: number, y: number, z: number }
-  rotationDegree?: { x: number, y: number, z: number }
+  position?: FVector3
+  scale?: FVector3
+  rotation?: FVector3
+  rotationDegree?: FVector3
   shape?: FShapes
   rigidBody?: FRigidBody
   sensor?: boolean
@@ -27,21 +29,25 @@ export class FCollider {
    * Position Offset for the collider.
    * This is used to adjust the collider position relative to the component.
    */
-  __COLLIDER_POSITION_OFFSET__: { x: number, y: number, z: number }
+  __POSITION_OFFSET__: FVector3
   /**
    * Rotation Offset for the collider.
    * This is used to adjust the collider position relative to the component.
    */
-  __COLLIDER_ROTATION_OFFSET__: { x: number, y: number, z: number }
+  __ROTATION_OFFSET__: FVector3
   /**
    * Scale Offset for the collider.
    * This is used to adjust the collider scale relative to the component.
    */
-  __COLLIDER_SCALE_OFFSET__: { x: number, y: number, z: number }
+  __SCALE_OFFSET__: FVector3
   /**
    * The component the collider is attached to.
    */
   component: FComponent
+  /**
+   * The transform of the rigidBody.
+   */
+  transform: FTransform
   /**
    * The shape of the collider.
    */
@@ -98,9 +104,9 @@ export class FCollider {
     }
 
     // Store the options
-    this.__COLLIDER_POSITION_OFFSET__ = { x: options.position.x, y: options.position.y, z: options.position.z }
-    this.__COLLIDER_ROTATION_OFFSET__ = { x: options.rotation.x, y: options.rotation.y, z: options.rotation.z }
-    this.__COLLIDER_SCALE_OFFSET__ = { x: options.scale.x, y: options.scale.y, z: options.scale.z }
+    this.__POSITION_OFFSET__ = { x: options.position.x, y: options.position.y, z: options.position.z }
+    this.__ROTATION_OFFSET__ = { x: options.rotation.x, y: options.rotation.y, z: options.rotation.z }
+    this.__SCALE_OFFSET__ = { x: options.scale.x, y: options.scale.y, z: options.scale.z }
     this.component = component
     this.shape = options.shape
 
@@ -179,254 +185,93 @@ export class FCollider {
       colliderDesc.setActiveCollisionTypes(RAPIER.ActiveCollisionTypes.ALL)
     }
 
+    // Create the transform
+    this.transform = new FTransform({
+      position: options.position,
+      rotation: options.rotation,
+      scale: options.scale,
+    })
+
     // Create the collider
     this.__COLLIDER__ = component.scene.world.createCollider(colliderDesc, options.rigidBody?.__RIGIDBODY__)
   }
 
   /**
-   * Set the position of the collider.
-   * @param position The new position of the collider.
-   * @param position.x The new x position of the collider.
-   * @param position.y The new y position of the collider.
-   * @param position.z The new z position of the collider.
+   * Update the position of the collider according to the transform.
+   * This method should be called after updating the transform properties.
+   * @param initiator By default (false), the collider won't be considered as the initiator of the position update.
+   * This means the offset will be added to the position.
+   * Setting this to true will propagate the event to other objects (component, sensor,...).
    */
-  setPosition(position: { x: number, y: number, z: number }) {
-    this.__COLLIDER__.setTranslation(position)
+  __UPDATE_POSITION__(initiator: boolean = false): void {
+    const newPosition = {
+      x: this.component.transform.position.x,
+      y: this.component.transform.position.y,
+      z: this.component.transform.position.z,
+    }
+    // If the collider is the initiator, propagate the position update
+    if (initiator) {
+      this.component.__UPDATE_POSITION__()
+      this.component.sensor?.__UPDATE_POSITION__()
+    }
+    // Else, it was propagated to the collider, so add the offset
+    else {
+      newPosition.x += this.__POSITION_OFFSET__.x
+      newPosition.y += this.__POSITION_OFFSET__.y
+      newPosition.z += this.__POSITION_OFFSET__.z
+    }
+    // Update the collider position
+    this.__COLLIDER__.setTranslation(newPosition)
   }
 
   /**
-   * Set the rotation of the collider.
-   * @param rotation The new rotation of the collider.
-   * @param rotation.x The new x rotation of the collider.
-   * @param rotation.y The new y rotation of the collider.
-   * @param rotation.z The new z rotation of the collider.
+   * Update the rotation of the collider according to the transform.
+   * This method should be called after updating the transform properties.
+   * @param initiator By default (false), the collider won't be considered as the initiator of the rotation update.
+   * This means the offset will be added to the rotation.
+   * Setting this to true will propagate the event to other objects (component, sensor,...).
    */
-  setRotation(rotation: { x: number, y: number, z: number }) {
-    this.__COLLIDER__.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, rotation.z)))
+  __UPDATE_ROTATION__(initiator: boolean = false): void {
+    const newRotation = new THREE.Euler(
+      this.component.transform.rotation.x,
+      this.component.transform.rotation.y,
+      this.component.transform.rotation.z,
+    )
+    // If the collider is the initiator, propagate the rotation update
+    if (initiator) {
+      this.component.__UPDATE_ROTATION__()
+      this.component.sensor?.__UPDATE_ROTATION__()
+    }
+    // Else, it was propagated to the collider, so add the offset
+    else {
+      newRotation.x += this.__ROTATION_OFFSET__.x
+      newRotation.y += this.__ROTATION_OFFSET__.y
+      newRotation.z += this.__ROTATION_OFFSET__.z
+    }
+    // Update the collider rotation
+    this.__COLLIDER__.setRotation(new THREE.Quaternion().setFromEuler(newRotation))
   }
 
   /**
-   * Set the rotation of the collider in degrees.
-   * @param rotation The new rotation of the collider in degrees.
-   * @param rotation.x The new x rotation of the collider in degrees.
-   * @param rotation.y The new y rotation of the collider in degrees.
-   * @param rotation.z The new z rotation of the collider in degrees.
+   * Update the scale of the collider according to the transform.
+   * This method should be called after updating the transform properties.
+   * @param initiator By default (false), the collider won't be considered as the initiator of the scale update.
+   * This means the offset will be added to the scale.
+   * Setting this to true will propagate the event to other objects (component, sensor,...).
    */
-  setRotationDegree(rotation: { x: number, y: number, z: number }) {
-    this.setRotation({
-      x: THREE.MathUtils.degToRad(rotation.x),
-      y: THREE.MathUtils.degToRad(rotation.y),
-      z: THREE.MathUtils.degToRad(rotation.z),
-    })
-  }
-
-  /**
-   * Set the scale of the collider.
-   * @param scale The new scale of the collider.
-   * @param scale.x The new x scale of the collider.
-   * @param scale.y The new y scale of the collider.
-   * @param scale.z The new z scale of the collider.
-   */
-  setScale(scale: { x: number, y: number, z: number }) {
+  __UPDATE_SCALE__(initiator: boolean = false): void {
+    // If the collider is the initiator, propagate the scale update
+    if (initiator) {
+      this.component.__UPDATE_SCALE__()
+      this.component.sensor?.__UPDATE_SCALE__()
+    }
     // If the collider is a cuboid, update its half extents
     if (this.__COLLIDER__.shape instanceof RAPIER.Cuboid) {
-      this.__COLLIDER__.setShape(new RAPIER.Cuboid(scale.x / 2, scale.y / 2, scale.z / 2))
+      this.__COLLIDER__.setShape(new RAPIER.Cuboid(this.transform.scale.x / 2, this.transform.scale.y / 2, this.transform.scale.z / 2))
     }
     // If the collider is a ball, update its radius
     else if (this.__COLLIDER__.shape instanceof RAPIER.Ball) {
-      this.__COLLIDER__.setShape(new RAPIER.Ball(Math.max(scale.x, scale.y, scale.z) / 2))
+      this.__COLLIDER__.setShape(new RAPIER.Ball(Math.max(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z) / 2))
     }
-  }
-
-  /**
-   * Update the position of the collider according to its component's position.
-   * This takes into account the position offset.
-   */
-  updatePosition() {
-    this.setPosition({
-      x: this.component.transform.position.x + this.__COLLIDER_POSITION_OFFSET__.x,
-      y: this.component.transform.position.y + this.__COLLIDER_POSITION_OFFSET__.y,
-      z: this.component.transform.position.z + this.__COLLIDER_POSITION_OFFSET__.z,
-    })
-  }
-
-  /**
-   * Update the rotation of the collider according to its component's rotation.
-   * This takes into account the rotation offset.
-   */
-  updateRotation() {
-    this.setRotation({
-      x: this.component.transform.rotation.x + this.__COLLIDER_ROTATION_OFFSET__.x,
-      y: this.component.transform.rotation.y + this.__COLLIDER_ROTATION_OFFSET__.y,
-      z: this.component.transform.rotation.z + this.__COLLIDER_ROTATION_OFFSET__.z,
-    })
-  }
-
-  /**
-   * Update the scale of the collider according to its component's scale.
-   * This takes into account the scale offset.
-   */
-  updateScale() {
-    this.setScale({
-      x: this.component.transform.scale.x * this.__COLLIDER_SCALE_OFFSET__.x,
-      y: this.component.transform.scale.y * this.__COLLIDER_SCALE_OFFSET__.y,
-      z: this.component.transform.scale.z * this.__COLLIDER_SCALE_OFFSET__.z,
-    })
-  }
-
-  // Setters & getters for transform properties
-
-  get position() {
-    return this.__COLLIDER__.translation()
-  }
-
-  set position(position: { x: number, y: number, z: number }) {
-    this.setPosition(position)
-  }
-
-  get x() {
-    return this.__COLLIDER__.translation().x
-  }
-
-  set x(x: number) {
-    this.setPosition({ x, y: this.y, z: this.z })
-  }
-
-  get y() {
-    return this.__COLLIDER__.translation().y
-  }
-
-  set y(y: number) {
-    this.setPosition({ x: this.x, y, z: this.z })
-  }
-
-  get z() {
-    return this.__COLLIDER__.translation().z
-  }
-
-  set z(z: number) {
-    this.setPosition({ x: this.x, y: this.y, z })
-  }
-
-  get rotation() {
-    const quaternion = this.__COLLIDER__.rotation()
-    const euler = new THREE.Euler().setFromQuaternion(
-      new THREE.Quaternion(
-        quaternion.x,
-        quaternion.y,
-        quaternion.z,
-        quaternion.w,
-      ),
-    )
-    return { x: euler.x, y: euler.y, z: euler.z }
-  }
-
-  set rotation(rotation: { x: number, y: number, z: number }) {
-    this.setRotation(rotation)
-  }
-
-  get rotationX() {
-    return this.rotation.x
-  }
-
-  set rotationX(x: number) {
-    this.setRotation({ x, y: this.rotation.y, z: this.rotation.z })
-  }
-
-  get rotationY() {
-    return this.rotation.y
-  }
-
-  set rotationY(y: number) {
-    this.setRotation({ x: this.rotation.x, y, z: this.rotation.z })
-  }
-
-  get rotationZ() {
-    return this.rotation.z
-  }
-
-  set rotationZ(z: number) {
-    this.setRotation({ x: this.rotation.x, y: this.rotation.y, z })
-  }
-
-  get rotationDegree() {
-    const euler = this.rotation
-    return { x: THREE.MathUtils.radToDeg(euler.x), y: THREE.MathUtils.radToDeg(euler.y), z: THREE.MathUtils.radToDeg(euler.z) }
-  }
-
-  set rotationDegree(rotation: { x: number, y: number, z: number }) {
-    this.setRotationDegree(rotation)
-  }
-
-  get rotationDegreeX() {
-    return this.rotationDegree.x
-  }
-
-  set rotationDegreeX(x: number) {
-    this.setRotationDegree({ x, y: this.rotationDegree.y, z: this.rotationDegree.z })
-  }
-
-  get rotationDegreeY() {
-    return this.rotationDegree.y
-  }
-
-  set rotationDegreeY(y: number) {
-    this.setRotationDegree({ x: this.rotationDegree.x, y, z: this.rotationDegree.z })
-  }
-
-  get rotationDegreeZ() {
-    return this.rotationDegree.z
-  }
-
-  set rotationDegreeZ(z: number) {
-    this.setRotationDegree({ x: this.rotationDegree.x, y: this.rotationDegree.y, z })
-  }
-
-  get scale() {
-    if (this.__COLLIDER__.shape instanceof RAPIER.Cuboid) {
-      return {
-        x: this.__COLLIDER__.shape.halfExtents.x * 2,
-        y: this.__COLLIDER__.shape.halfExtents.y * 2,
-        z: this.__COLLIDER__.shape.halfExtents.z * 2,
-      }
-    }
-    else if (this.__COLLIDER__.shape instanceof RAPIER.Ball) {
-      return {
-        x: this.__COLLIDER__.shape.radius * 2,
-        y: this.__COLLIDER__.shape.radius * 2,
-        z: this.__COLLIDER__.shape.radius * 2,
-      }
-    }
-    else {
-      return { x: 0, y: 0, z: 0 }
-    }
-  }
-
-  set scale(scale: { x: number, y: number, z: number }) {
-    this.setScale(scale)
-  }
-
-  get scaleX() {
-    return this.scale.x
-  }
-
-  set scaleX(x: number) {
-    this.setScale({ x, y: this.scale.y, z: this.scale.z })
-  }
-
-  get scaleY() {
-    return this.scale.y
-  }
-
-  set scaleY(y: number) {
-    this.setScale({ x: this.scale.x, y, z: this.scale.z })
-  }
-
-  get scaleZ() {
-    return this.scale.z
-  }
-
-  set scaleZ(z: number) {
-    this.setScale({ x: this.scale.x, y: this.scale.y, z })
   }
 }

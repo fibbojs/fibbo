@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import RAPIER from '@dimforge/rapier3d'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../core/FScene'
+import type { FVector3 } from '../types/FVector3'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 
@@ -44,7 +45,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
   /**
    * Return the corrected movements for the current frame.
    */
-  getCorrectedMovements(): { x: number, y: number, z: number } {
+  getCorrectedMovements(): FVector3 {
     let worldDirection = new THREE.Vector3(0, 0, 0)
     // Compute the movement direction
     worldDirection.x = this.inputs.left ? 1 : this.inputs.right ? -1 : 0

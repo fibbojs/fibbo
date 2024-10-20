@@ -3,6 +3,7 @@ import RAPIER from '@dimforge/rapier3d'
 import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
+import { FSensor } from '../core/FSensor'
 import type { FControllerOptions } from './FController'
 import { FController } from './FController'
 
@@ -109,7 +110,7 @@ export abstract class FCharacterController extends FController {
     })
 
     // Initialize a sensor
-    this.component.initSensor({
+    this.component.sensor = new FSensor(this.component, {
       shape: FShapes.CAPSULE,
       scale: { x: 1.1, y: 1.1, z: 1.1 },
     })

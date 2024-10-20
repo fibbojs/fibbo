@@ -32,7 +32,8 @@ export class FLightProbe extends FLight {
     // Create the light probe
     this.light = new THREE.LightProbe(options.sh, options.intensity)
     // Apply the transform
-    this.applyTransform()
+    this.__UPDATE_POSITION__()
+    this.__UPDATE_ROTATION__()
 
     // If shadows are enabled, set the light to cast shadows
     if (this.scene.__ENABLE_SHADOWS__) {

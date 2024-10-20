@@ -6,10 +6,11 @@ import type { FCamera } from '../cameras/FCamera'
 import { FFixedCamera } from '../cameras/FFixedCamera'
 import { FModel } from '../model/FModel'
 import type { FLight } from '../lights/FLight'
+import type { FVector3 } from '../types/FVector3'
 import type { FComponent } from './FComponent'
 
 export interface FSceneOptions extends FSceneOptionsCore {
-  gravity?: { x: number, y: number, z: number }
+  gravity?: FVector3
   shadows?: boolean
 }
 
@@ -63,7 +64,7 @@ export class FScene extends FSceneCore {
   declare camera: FCamera
 
   // Rapier
-  declare gravity: { x: number, y: number, z: number }
+  declare gravity: FVector3
   declare world: RAPIER.World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent> = new Map()

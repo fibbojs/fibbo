@@ -31,6 +31,7 @@ export class FHemisphereLight extends FLight {
     // Create the hemisphere light
     this.light = new THREE.HemisphereLight(options.color, options.intensity)
     // Apply the transform
-    this.applyTransform()
+    this.__UPDATE_POSITION__()
+    this.__UPDATE_ROTATION__()
   }
 }

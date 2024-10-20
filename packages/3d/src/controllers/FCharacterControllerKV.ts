@@ -1,5 +1,6 @@
 import RAPIER from '@dimforge/rapier3d'
 import type { FScene } from '../core/FScene'
+import { FRigidBody } from '../core/FRigidBody'
 import { FCharacterControllerK } from './FCharacterControllerK'
 import type { FCharacterControllerOptions } from './FCharacterController'
 
@@ -22,7 +23,7 @@ export class FCharacterControllerKV extends FCharacterControllerK {
     super(scene, options)
 
     // Initialize the rigidBody
-    this.component.initRigidBody({
+    this.component.rigidBody = new FRigidBody(this.component, {
       rigidBodyType: RAPIER.RigidBodyType.KinematicVelocityBased,
       ...options,
     })

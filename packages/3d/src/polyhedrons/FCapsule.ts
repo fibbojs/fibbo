@@ -1,9 +1,6 @@
 import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
-import { FShapes } from '../types/FShapes'
 import type { FComponentOptions } from '../core/FComponent'
-import type { FColliderOptions } from '../core/FCollider'
-import type { FRigidBodyOptions } from '../core/FRigidBody'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -31,19 +28,5 @@ export class FCapsule extends FPolyhedron {
       this.__MESH__.castShadow = true
       this.__MESH__.receiveShadow = true
     }
-  }
-
-  initRigidBody(options?: FRigidBodyOptions): void {
-    super.initRigidBody({
-      shape: FShapes.CAPSULE,
-      ...options,
-    })
-  }
-
-  initCollider(options?: FColliderOptions): void {
-    super.initCollider({
-      shape: FShapes.CAPSULE,
-      ...options,
-    })
   }
 }

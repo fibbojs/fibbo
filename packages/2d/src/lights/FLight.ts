@@ -70,13 +70,73 @@ export abstract class FLight extends FLightCore {
     this.__LOOK_AT__ = options.lookAt
   }
 
-  applyTransform(): void {
-    // Set the position
-    this.light.position.set(this.transform.position.x, this.transform.position.y)
-    // Set the scale
-    this.light.scale.set(this.transform.scale.x, this.transform.scale.y)
-    // Set the rotation
-    this.light.rotation = this.transform.rotation
+  setPosition(position: { x: number, y: number }): void {
+    this.transform.position = position
+    this.light.position.set(position.x, position.y)
+  }
+
+  setRotation(rotation: number): void {
+    this.transform.rotation = rotation
+    this.light.rotation = rotation
+  }
+
+  setRotationDegree(rotationDegree: number): void {
+    this.setRotation(rotationDegree * (Math.PI / 180))
+  }
+
+  setScale(scale: { x: number, y: number }): void {
+    this.transform.scale = scale
+    this.light.scale.set(scale.x, scale.y)
+  }
+
+  // Setters & Getters
+
+  get position(): { x: number, y: number } {
+    return this.transform.position
+  }
+
+  set position(position: { x: number, y: number }) {
+    this.setPosition(position)
+  }
+
+  get rotation(): number {
+    return this.transform.rotation
+  }
+
+  set rotation(rotation: number) {
+    this.setRotation(rotation)
+  }
+
+  get rotationDegree(): number {
+    return this.transform.rotationDegree
+  }
+
+  set rotationDegree(rotationDegree: number) {
+    this.setRotationDegree(rotationDegree)
+  }
+
+  get scale(): { x: number, y: number } {
+    return this.transform.scale
+  }
+
+  set scale(scale: { x: number, y: number }) {
+    this.setScale(scale)
+  }
+
+  get scaleX(): number {
+    return this.transform.scale.x
+  }
+
+  set scaleX(scaleX: number) {
+    this.scale = { x: scaleX, y: this.scaleY }
+  }
+
+  get scaleY(): number {
+    return this.transform.scale.y
+  }
+
+  set scaleY(scaleY: number) {
+    this.setScale({ x: this.scaleX, y: scaleY })
   }
 
   set color(color: number) {

@@ -1,5 +1,6 @@
 import { FCamera as FCameraCore } from '@fibbojs/core'
 import type { FScene } from '../core/FScene'
+import { FTransform } from '../core/FTransform'
 
 export interface FCameraOptions {
   position?: { x: number, y: number }
@@ -20,11 +21,12 @@ export abstract class FCamera extends FCameraCore {
    */
   scene: FScene
 
-  // FTransform isn't used as a 2D camera doesn't need scale or rotation
   /**
-   * Position of the camera.
+   * Transform of the camera.
+   * It is used to store the position of the camera.
+   * The scale and rotation of the transform are not used.
    */
-  position: { x: number, y: number }
+  transform: FTransform
 
   /**
    * Create a new 2D camera.
@@ -47,12 +49,46 @@ export abstract class FCamera extends FCameraCore {
       throw new Error('FibboError: FCamera requires position')
 
     // Store options
-    this.position = options.position
+    this.transform = new FTransform({
+      position: options.position,
+    })
   }
 
   abstract __ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__(): void
 
   setZoom(zoom: number): void {
     this.scene.viewport.setZoom(zoom)
+  }
+
+  setPosition(position: { x: number, y: number }): void {
+    this.transform.position = position
+    this.scene.viewport.x = position.x
+    this.scene.viewport.y = position.y
+  }
+
+  // Setters & Getters
+
+  get position() {
+    return this.transform.position
+  }
+
+  set position(position: { x: number, y: number }) {
+    this.setPosition(position)
+  }
+
+  get x() {
+    return this.transform.position.x
+  }
+
+  set x(x: number) {
+    this.setPosition({ x, y: this.y })
+  }
+
+  get y() {
+    return this.transform.position.y
+  }
+
+  set y(y: number) {
+    this.setPosition({ x: this.x, y })
   }
 }
