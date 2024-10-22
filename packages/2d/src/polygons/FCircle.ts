@@ -26,6 +26,10 @@ export class FCircle extends FPolygon {
     this.__CONTAINER__ = new PIXI.Graphics()
       .circle(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100 / 2)
       .fill(new PIXI.FillGradient(0, 0, 10, 10).addColorStop(0, 0x0000FF).addColorStop(1, 0xFFFF00))
+    // Reset transform
+    this.__SET_POSITION__(this.transform.position)
+    this.__SET_ROTATION__(this.transform.rotation)
+    this.__SET_SCALE__(this.transform.scale)
     // Emit the onLoaded event
     this.emitOnLoaded()
   }

@@ -7,7 +7,6 @@ function addBelowGround(scene: FScene, position: { x: number, y: number }) {
     position,
   })
   ground.initCollider()
-  scene.addComponent(ground)
 }
 
 function addGround(scene: FScene, position: { x: number, y: number }) {
@@ -16,7 +15,6 @@ function addGround(scene: FScene, position: { x: number, y: number }) {
     position,
   })
   ground.initCollider()
-  scene.addComponent(ground)
 }
 
 function addBackground(scene: FScene, position: { x: number, y: number }) {
@@ -25,9 +23,8 @@ function addBackground(scene: FScene, position: { x: number, y: number }) {
     position,
   })
   background.onLoaded(() => {
-    background.container.zIndex = -1
+    background.__CONTAINER__.zIndex = -1
   })
-  scene.addComponent(background)
 }
 
 function addBackgroundDark(scene: FScene, position: { x: number, y: number }) {
@@ -36,9 +33,8 @@ function addBackgroundDark(scene: FScene, position: { x: number, y: number }) {
     position,
   })
   background.onLoaded(() => {
-    background.container.zIndex = -1
+    background.__CONTAINER__.zIndex = -1
   })
-  scene.addComponent(background)
 }
 
 function addBackgroundVariation(scene: FScene, position: { x: number, y: number }, variation = 0) {
@@ -53,9 +49,8 @@ function addBackgroundVariation(scene: FScene, position: { x: number, y: number 
     position,
   })
   background.onLoaded(() => {
-    background.container.zIndex = -1
+    background.__CONTAINER__.zIndex = -1
   })
-  scene.addComponent(background)
 }
 
 export function loadLevel(scene: FScene) {

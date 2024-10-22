@@ -98,13 +98,6 @@ export abstract class FComponent extends FComponentCore {
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
     this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__(true))
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
-
-    // Set the container values
-    this.__CONTAINER__.position.set(this.transform.position.x * 100, -this.transform.position.y * 100)
-    this.__CONTAINER__.rotation = this.transform.rotation
-    this.__CONTAINER__.scale.set(this.transform.scale.x * 100, this.transform.scale.y * 100)
-    // Set the pivot of the container to the center
-    this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
   }
 
   frame(_delta: number): void {
@@ -234,16 +227,15 @@ export abstract class FComponent extends FComponentCore {
 
   __SET_ROTATION__(rotation: number): void {
     // Rotate the container
-    this.__CONTAINER__.rotation = rotation
+    this.__CONTAINER__.rotation = -rotation
     // Update the transform
     this.transform.__ROTATION__ = rotation
   }
 
   __SET_SCALE__(scale: FVector2): void {
     // Scale the container
-    this.__CONTAINER__.scale.set(scale.x * 100, scale.y * 100)
-    // Set the pivot of the container to the center
-    this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
+    this.__CONTAINER__.height = scale.y * 100
+    this.__CONTAINER__.width = scale.x * 100
     // Update the transform
     this.transform.__SCALE__ = scale
   }

@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js'
 import type { FComponentOptions } from '../core/FComponent'
 import { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
+import type { FVector2 } from '../types/FVector2'
 
 export interface FSpriteOptions extends FComponentOptions {
   texture: string
@@ -17,23 +18,26 @@ export interface FSpriteOptions extends FComponentOptions {
  * const scene = new FScene()
  *
  * const sprite = new FSprite(scene, '/my-texture.png')
- * scene.addComponent(sprite)
  * ```
  */
 export class FSprite extends FComponent {
   /**
+   * PIXI container
+   */
+  __CONTAINER__: PIXI.Sprite
+  /**
    * The texture of the sprite.
    */
-  texture: PIXI.Texture
+  __TEXTURE__: PIXI.Texture
 
   constructor(scene: FScene, options: FSpriteOptions) {
     super(scene, options)
 
     // Define the texture and container while loading
-    this.texture = PIXI.Texture.EMPTY
+    this.__TEXTURE__ = PIXI.Texture.EMPTY
     this.__CONTAINER__ = new PIXI.Graphics()
       .rect(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100, this.transform.scale.y * 100)
-      .fill(new PIXI.FillGradient(0, 0, 100, 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
+      .fill(new PIXI.FillGradient(0, 0, 100, 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00)) as unknown as PIXI.Sprite
     // Set the pivot of the container to the center
     this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
 
@@ -65,15 +69,17 @@ export class FSprite extends FComponent {
     // Interpret the path
     const path = interpretPath(texture)
     // Load the texture
-    this.texture = await PIXI.Assets.load(path)
-    this.texture.source.scaleMode = 'nearest'
+    this.__TEXTURE__ = await PIXI.Assets.load(path)
+    this.__TEXTURE__.source.scaleMode = 'nearest'
     // Create a sprite
-    this.__CONTAINER__ = new PIXI.Sprite(this.texture)
+    this.__CONTAINER__ = new PIXI.Sprite(this.__TEXTURE__)
+    this.__CONTAINER__.anchor.set(0.5, 0.5)
     this.__CONTAINER__.zIndex = 0
-    // Set the pivot of the container to the center
-    this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
+    // Reset transform
+    this.__SET_POSITION__(this.transform.position)
+    this.__SET_ROTATION__(this.transform.rotation)
     // Set the scale of the component so it fits the texture by its width
-    // Width will be 1 unit, height will be calculated according to the aspect ratio
+    // Width will be the actual width, height will be calculated according to the aspect ratio
     this.setScaleWidth(this.transform.scale.x)
     // Call the onLoaded method
     this.emitOnLoaded()
@@ -85,7 +91,7 @@ export class FSprite extends FComponent {
    * @param width The width of the sprite.
    */
   setScaleWidth(width: number) {
-    this.__SET_SCALE__({ x: width, y: width * this.texture.height / this.texture.width })
+    this.__SET_SCALE__({ x: width, y: width * this.__TEXTURE__.height / this.__TEXTURE__.width })
   }
 
   /**
@@ -94,6 +100,6 @@ export class FSprite extends FComponent {
    * @param height The height of the sprite.
    */
   setScaleHeight(height: number) {
-    this.__SET_SCALE__({ x: height * this.texture.width / this.texture.height, y: height })
+    this.__SET_SCALE__({ x: height * this.__TEXTURE__.width / this.__TEXTURE__.height, y: height })
   }
 }

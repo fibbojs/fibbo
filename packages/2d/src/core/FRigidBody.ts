@@ -105,19 +105,19 @@ export class FRigidBody {
 
     // Configure transform
     this.transform = new FTransform({
-      position: options.position,
-      rotation: options.rotation,
-      rotationDegree: options.rotationDegree,
-      scale: options.scale,
+      position: options.position ? options.position : { x: 0, y: 0 },
+      rotation: options.rotation ? options.rotation : (options.rotationDegree ? undefined : 0),
+      rotationDegree: options.rotationDegree ? options.rotationDegree : (options.rotation ? undefined : 0),
+      scale: options.scale ? options.scale : { x: 1, y: 1 },
     })
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
     this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__(true))
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
     this.offset = new FTransform({
-      position: options.positionOffset || { x: 0, y: 0 },
-      rotation: options.rotationOffset,
-      rotationDegree: options.rotationDegreeOffset,
-      scale: options.scaleOffset || { x: 0, y: 0 },
+      position: options.positionOffset ? options.positionOffset : { x: 0, y: 0 },
+      rotation: options.rotationOffset ? options.rotationOffset : (options.rotationDegreeOffset ? undefined : 0),
+      rotationDegree: options.rotationDegreeOffset ? options.rotationDegreeOffset : (options.rotationOffset ? undefined : 0),
+      scale: options.scaleOffset ? options.scaleOffset : { x: 0, y: 0 },
     })
 
     // Create a rigidBody description according to the type
@@ -200,9 +200,9 @@ export class FRigidBody {
   __UPDATE_POSITION__(initiator: boolean = false): void {
     // If the rigidBody is the initiator
     if (initiator) {
+      // Update the rigidBody position
+      this.__SET_POSITION__(this.transform.position)
       if (this.component) {
-        // Update the rigidBody position
-        this.__SET_POSITION__(this.transform.position)
         // Propagate the position update
         this.component.__UPDATE_POSITION__()
         this.component.sensor?.__UPDATE_POSITION__()
@@ -229,9 +229,9 @@ export class FRigidBody {
   __UPDATE_ROTATION__(initiator: boolean = false): void {
     // If the rigidBody is the initiator
     if (initiator) {
+      // Update the rigidBody rotation
+      this.__SET_ROTATION__(this.transform.rotation)
       if (this.component) {
-        // Update the rigidBody rotation
-        this.__SET_ROTATION__(this.transform.rotation)
         // Propagate the rotation update
         this.component.__UPDATE_ROTATION__()
         this.component.sensor?.__UPDATE_ROTATION__()

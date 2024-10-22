@@ -4,7 +4,6 @@ import type { FSceneOptions as FSceneOptionsCore } from '@fibbojs/core'
 import type RAPIER from '@dimforge/rapier3d'
 import type { FCamera } from '../cameras/FCamera'
 import { FFixedCamera } from '../cameras/FFixedCamera'
-import { FModel } from '../model/FModel'
 import type { FLight } from '../lights/FLight'
 import type { FVector3 } from '../types/FVector3'
 import type { FComponent } from './FComponent'
@@ -17,7 +16,7 @@ export interface FSceneOptions extends FSceneOptionsCore {
 }
 
 /**
- * A scene which contains the models, the Three.js scene and the Rapier world.
+ * A scene which contains the components, the Three.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts
@@ -31,19 +30,17 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *
  *  // Create a ground
  *  const ground = new FCuboid(scene)
- *  ground.setScale(15, 0.1, 15)
- *  ground.setPosition(0, -0.1, 0)
+ *  ground.transform.setScale(15, 0.1, 15)
+ *  ground.transform.setPosition(0, -0.1, 0)
  *  ground.initCollider()
  *  ground.setColor(0x1F1F1F)
- *  scene.addComponent(ground)
  *
  *  // Create a cube
  *  const cube = new FCuboid(scene)
  *  cube.initRigidBody()
- *  scene.addComponent(cube)
  *
  *  // Attach a camera to the cube
- *  scene.camera = new FGameCamera(cube)
+ *  scene.camera = new FGameCamera(scene, {target: cube})
  * })()
  * ```
  */
@@ -205,6 +202,7 @@ export class FScene extends FSceneCore {
   addComponent(component: FComponent) {
     super.addComponent(component)
 
+    // Add mesh to scene
     if (component.__MESH__)
       this.scene.add(component.__MESH__)
 

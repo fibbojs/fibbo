@@ -13,6 +13,7 @@ export interface FColliderOptions {
   scale?: FVector2
   positionOffset?: FVector2
   rotationOffset?: number
+  rotationDegreeOffset?: number
   scaleOffset?: FVector2
   shape?: FShapes
   rigidBody?: FRigidBody
@@ -90,18 +91,19 @@ export class FCollider {
 
     // Configure transform
     this.transform = new FTransform({
-      position: options.position,
-      rotation: options.rotation,
-      rotationDegree: options.rotationDegree,
-      scale: options.scale,
+      position: options.position ? options.position : { x: 0, y: 0 },
+      rotation: options.rotation ? options.rotation : (options.rotationDegree ? undefined : 0),
+      rotationDegree: options.rotationDegree ? options.rotationDegree : (options.rotation ? undefined : 0),
+      scale: options.scale ? options.scale : { x: 1, y: 1 },
     })
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
     this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__(true))
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
     this.offset = new FTransform({
-      position: options.positionOffset || { x: 0, y: 0 },
-      rotation: options.rotationOffset || 0,
-      scale: options.scaleOffset || { x: 0, y: 0 },
+      position: options.positionOffset ? options.positionOffset : { x: 0, y: 0 },
+      rotation: options.rotationOffset ? options.rotationOffset : (options.rotationDegreeOffset ? undefined : 0),
+      rotationDegree: options.rotationDegreeOffset ? options.rotationDegreeOffset : (options.rotationOffset ? undefined : 0),
+      scale: options.scaleOffset ? options.scaleOffset : { x: 0, y: 0 },
     })
 
     // Create a collider description according to the shape given
@@ -150,9 +152,9 @@ export class FCollider {
   __UPDATE_POSITION__(initiator: boolean = false): void {
     // If the collider is the initiator
     if (initiator) {
+      // Update the collider position
+      this.__SET_POSITION__(this.transform.position)
       if (this.component) {
-        // Update the collider position
-        this.__SET_POSITION__(this.transform.position)
         // Propagate the position update
         this.component.__UPDATE_POSITION__()
         this.component.sensor?.__UPDATE_POSITION__()
@@ -179,9 +181,9 @@ export class FCollider {
   __UPDATE_ROTATION__(initiator: boolean = false): void {
     // If the collider is the initiator
     if (initiator) {
+      // Update the collider rotation
+      this.__SET_ROTATION__(this.transform.rotation)
       if (this.component) {
-        // Update the collider rotation
-        this.__SET_ROTATION__(this.transform.rotation)
         // Propagate the rotation update
         this.component.__UPDATE_ROTATION__()
         this.component.sensor?.__UPDATE_ROTATION__()
@@ -205,9 +207,9 @@ export class FCollider {
   __UPDATE_SCALE__(initiator: boolean = false): void {
     // If the collider is the initiator
     if (initiator) {
+      // Update the collider scale
+      this.__SET_SCALE__(this.transform.scale)
       if (this.component) {
-        // Update the collider scale
-        this.__SET_SCALE__(this.transform.scale)
         // Propagate the scale update
         this.component.__UPDATE_SCALE__()
         this.component.sensor?.__UPDATE_SCALE__()

@@ -15,7 +15,7 @@ export interface FSceneOptions extends FSceneOptionsCore {
 }
 
 /**
- * A scene which contains the models, the Pixi.js scene and the Rapier world.
+ * A scene which contains the components, the Pixi.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts
@@ -28,7 +28,6 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *
  *  const square = new FRectangle(scene)
  *  square.initRigidBody()
- *  scene.addComponent(square)
  * })()
  * ```
  */
@@ -214,17 +213,15 @@ export class FScene extends FSceneCore {
   addComponent(component: FComponent) {
     super.addComponent(component)
 
-    // Wait for the component to be loaded before adding it to the scene
-    component.onLoaded(() => {
-      this.viewport.addChild(component.__CONTAINER__)
+    // Add the component to the viewport
+    this.viewport.addChild(component.__CONTAINER__)
 
-      // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-      if (component.sensor)
-        this.addHandle(component.sensor.collider.__COLLIDER__.handle, component)
-      // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-      else if (component.collider)
-        this.addHandle(component.collider.__COLLIDER__.handle, component)
-    })
+    // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    if (component.sensor)
+      this.addHandle(component.sensor.collider.__COLLIDER__.handle, component)
+    // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    else if (component.collider)
+      this.addHandle(component.collider.__COLLIDER__.handle, component)
   }
 
   removeComponent(component: FComponent): void {
