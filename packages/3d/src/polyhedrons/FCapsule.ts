@@ -1,6 +1,9 @@
 import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
 import type { FComponentOptions } from '../core/FComponent'
+import { FShapes } from '../types/FShapes'
+import type { FRigidBodyOptions } from '../core/FRigidBody'
+import type { FColliderOptions } from '../core/FCollider'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -30,5 +33,26 @@ export class FCapsule extends FPolyhedron {
     }
     // Emit the onLoaded event
     this.emitOnLoaded()
+  }
+
+  initCollider(options?: FColliderOptions): void {
+    super.initCollider({
+      shape: FShapes.CAPSULE,
+      ...options,
+    })
+  }
+
+  initRigidBody(options?: FRigidBodyOptions): void {
+    super.initRigidBody({
+      shape: FShapes.CAPSULE,
+      ...options,
+    })
+  }
+
+  initSensor(options?: FRigidBodyOptions): void {
+    super.initSensor({
+      shape: FShapes.CAPSULE,
+      ...options,
+    })
   }
 }
