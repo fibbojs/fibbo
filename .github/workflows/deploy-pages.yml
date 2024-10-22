@@ -45,10 +45,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       # Build all packages
       - name: Build all packages
         run: npx nx run-many --target=build --all
+      # Install Playwright for browser testing
+      - name: Install Playwright
+        run: npx playwright install --with-deps
       # Run tests and generate reports with Vitest
       - name: Generate test reports
         run: npm run test:report
