@@ -207,6 +207,22 @@ export class FRigidBody {
   }
 
   /**
+   * Set the linear velocity of the rigidBody.
+   * @param velocity The new linear velocity of the rigidBody.
+   */
+  setLinvel(velocity: FVector3): void {
+    this.__RIGIDBODY__.setLinvel(new RAPIER.Vector3(velocity.x, velocity.y, velocity.z), true)
+  }
+
+  /**
+   * Set the angular velocity of the rigidBody.
+   * @param velocity The new angular velocity of the rigidBody.
+   */
+  setAngvel(velocity: FVector3): void {
+    this.__RIGIDBODY__.setAngvel(new RAPIER.Vector3(velocity.x, velocity.y, velocity.z), true)
+  }
+
+  /**
    * Update the position of the rigidBody according to the transform.
    * This method should be called after updating the transform properties.
    * @param initiator By default (false), the rigidBody won't be considered as the initiator of the position update.
