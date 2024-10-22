@@ -9,6 +9,7 @@ import type { FScene } from './FScene'
 export interface FColliderOptions {
   position?: FVector2
   rotation?: number
+  rotationDegree?: number
   scale?: FVector2
   positionOffset?: FVector2
   rotationOffset?: number
@@ -70,14 +71,14 @@ export class FCollider {
     // Apply default options
     const DEFAULT_OPTIONS = {
       position: { x: 0, y: 0 },
-      scale: { x: 1, y: 1 },
       rotation: 0,
-      shape: FShapes.CIRCLE,
+      scale: { x: 1, y: 1 },
+      shape: FShapes.RECTANGLE,
       sensor: false,
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.scale || !options.shape || options.sensor === undefined)
+    if (!options.position || (options.rotation === undefined && options.rotationDegree === undefined) || !options.scale || !options.shape || options.sensor === undefined)
       throw new Error('FibboError: options missing in FCollider constructor')
 
     // Check if the world exists
@@ -91,6 +92,7 @@ export class FCollider {
     this.transform = new FTransform({
       position: options.position,
       rotation: options.rotation,
+      rotationDegree: options.rotationDegree,
       scale: options.scale,
     })
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
@@ -236,7 +238,7 @@ export class FCollider {
    * @param rotation The new rotation of the collider in degrees.
    */
   __SET_ROTATION__(rotation: number): void {
-    this.__COLLIDER__.setRotation(rotation * (Math.PI / 180))
+    this.__COLLIDER__.setRotation(rotation)
     this.transform.__ROTATION__ = rotation
   }
 

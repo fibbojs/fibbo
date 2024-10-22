@@ -2,6 +2,18 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import RAPIER from '@dimforge/rapier2d'
 import { FRectangle, FScene, FShapes } from '../../src'
 
+function validateRapierRigidBody(rigidBody: RAPIER.RigidBody, transform: {
+  position: { x: number, y: number }
+  rotation: number
+}) {
+  // Validate RAPIER collider
+  expect(rigidBody).toBeDefined()
+  expect(rigidBody.translation().x).toEqual(transform.position.x)
+  expect(rigidBody.translation().y).toEqual(transform.position.y)
+  const rotation = rigidBody.rotation()
+  expect(rotation).closeTo(transform.rotation, 0.0001)
+}
+
 describe('fRigidBody', () => {
   let scene: FScene
 
@@ -13,59 +25,66 @@ describe('fRigidBody', () => {
     await scene.initPhysics()
   })
 
-  it('should create a rigidBody with default options', () => {
+  it('should create a collider with default options', () => {
     const rectangle = new FRectangle(scene, {
       position: { x: 0, y: 0 },
-      rotationDegree: 0,
+      rotation: 0,
       scale: { x: 1, y: 1 },
     })
     rectangle.initRigidBody()
     expect(rectangle.rigidBody).toBeDefined()
+    if (!rectangle.rigidBody)
+      return
     // Validate offset
-    expect(rectangle.rigidBody.__RIGIDBODY_POSITION_OFFSET__).toEqual({ x: 0, y: 0 })
-    expect(rectangle.rigidBody.__RIGIDBODY_ROTATION_OFFSET__).toEqual(0)
-    expect(rectangle.rigidBody.collider.__COLLIDER_SCALE_OFFSET__).toEqual({ x: 1, y: 1 })
+    expect(rectangle.rigidBody.offset.position).toEqual({ x: 0, y: 0 })
+    expect(rectangle.rigidBody.offset.rotation).toEqual(0)
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(0)
-    expect(rectangle.rigidBody.position.y).toEqual(0)
-    expect(rectangle.rigidBody.rotation).toEqual(0)
-    expect(rectangle.rigidBody.scale.x).toEqual(1)
-    expect(rectangle.rigidBody.scale.y).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(0)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(0)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(1)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(1)
     expect(rectangle.rigidBody.collider.shape).toEqual(FShapes.RECTANGLE)
-    // Validate scaleX and scaleY
-    rectangle.rigidBody.scaleX = 2
-    rectangle.rigidBody.scaleY = 3
-    expect(rectangle.rigidBody.scaleX).toEqual(2)
-    expect(rectangle.rigidBody.scaleY).toEqual(3)
-    expect(rectangle.rigidBody.scaleX).toEqual(rectangle.rigidBody.scale.x)
-    expect(rectangle.rigidBody.scaleY).toEqual(rectangle.rigidBody.scale.y)
+    // Validate scaleX, scaleY
+    rectangle.rigidBody.transform.scaleX = 2
+    rectangle.rigidBody.transform.scaleY = 3
+    expect(rectangle.rigidBody.transform.scaleX).toEqual(2)
+    expect(rectangle.rigidBody.transform.scaleY).toEqual(3)
+    expect(rectangle.rigidBody.transform.scaleX).toEqual(rectangle.rigidBody.transform.scale.x)
+    expect(rectangle.rigidBody.transform.scaleY).toEqual(rectangle.rigidBody.transform.scale.y)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
   })
 
-  it('should create a rigidBody with custom transforms', () => {
+  it('should create a collider with custom transforms', () => {
     const rectangle = new FRectangle(scene, {
       position: { x: 1, y: 1 },
       rotation: 0.1,
       scale: { x: 1, y: 2 },
     })
     rectangle.initRigidBody({
-      position: { x: -2, y: 3 },
-      rotation: 0.3,
-      scale: { x: 2, y: 2 },
+      positionOffset: { x: -2, y: 3 },
+      rotationOffset: 0.2,
+      scaleOffset: { x: 2, y: 2 },
     })
     expect(rectangle.rigidBody).toBeDefined()
+    if (!rectangle.rigidBody)
+      return
     // Validate offset
-    expect(rectangle.rigidBody.__RIGIDBODY_POSITION_OFFSET__).toEqual({ x: -2, y: 3 })
-    expect(rectangle.rigidBody.__RIGIDBODY_ROTATION_OFFSET__).toEqual(0.3)
-    expect(rectangle.rigidBody.collider.__COLLIDER_SCALE_OFFSET__).toEqual({ x: 2, y: 2 })
+    expect(rectangle.rigidBody.offset.position).toEqual({ x: -2, y: 3 })
+    expect(rectangle.rigidBody.offset.rotation).toEqual(0.2)
+    expect(rectangle.rigidBody.collider.offset.scale).toEqual({ x: 2, y: 2 })
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(-1)
-    expect(rectangle.rigidBody.position.y).toEqual(4)
-    expect(rectangle.rigidBody.rotation).closeTo(0.4, 0.0001)
-    expect(rectangle.rigidBody.scale.x).toEqual(2)
-    expect(rectangle.rigidBody.scale.y).toEqual(4)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(-1)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(4)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.3, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(3)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(4)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
   })
 
-  it('should create a rigidBody with a circle shape', () => {
+  it('should create a collider with a circle shape', () => {
     const rectangle = new FRectangle(scene, {
       position: { x: 0, y: 0 },
       rotation: 0,
@@ -75,55 +94,65 @@ describe('fRigidBody', () => {
       shape: FShapes.CIRCLE,
     })
     expect(rectangle.rigidBody).toBeDefined()
+    if (!rectangle.rigidBody)
+      return
     // Validate shape
     expect(rectangle.rigidBody.collider.shape).toEqual(FShapes.CIRCLE)
     expect(rectangle.rigidBody.collider.__COLLIDER__.shape).toBeDefined()
     expect(rectangle.rigidBody.collider.__COLLIDER__.shape.type).toEqual(RAPIER.ShapeType.Ball)
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(0)
-    expect(rectangle.rigidBody.position.y).toEqual(0)
-    expect(rectangle.rigidBody.rotation).toEqual(0)
-    expect(rectangle.rigidBody.scale.x).toEqual(1)
-    expect(rectangle.rigidBody.scale.y).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(0)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(0)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(1)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(1)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
   })
 
-  it('should modify rigidBody transforms', () => {
+  it('should modify collider transforms', () => {
     const rectangle = new FRectangle(scene, {
-      position: { x: 0, y: 0 },
-      rotation: 0,
+      position: { x: 1, y: 0 },
+      rotation: 0.2,
       scale: { x: 1, y: 1 },
     })
     rectangle.initRigidBody()
     expect(rectangle.rigidBody).toBeDefined()
+    if (!rectangle.rigidBody)
+      return
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(0)
-    expect(rectangle.rigidBody.position.y).toEqual(0)
-    expect(rectangle.rigidBody.rotation).toEqual(0)
-    expect(rectangle.rigidBody.scale.x).toEqual(1)
-    expect(rectangle.rigidBody.scale.y).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(0)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.2, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(1)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(1)
     // Modify transforms with functions
-    rectangle.rigidBody.setPosition({ x: 1, y: 1 })
-    rectangle.rigidBody.setRotation(0.1)
-    rectangle.rigidBody.setScale({ x: 2, y: 2 })
+    rectangle.rigidBody.transform.setPosition({ x: 1, y: 1 })
+    rectangle.rigidBody.transform.setRotation(0.3)
+    rectangle.rigidBody.transform.setScale({ x: 2, y: 2 })
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(1)
-    expect(rectangle.rigidBody.position.y).toEqual(1)
-    expect(rectangle.rigidBody.rotation).closeTo(0.1, 0.0001)
-    expect(rectangle.rigidBody.scale.x).toEqual(2)
-    expect(rectangle.rigidBody.scale.y).toEqual(2)
-    // Moify transforms with setters
-    rectangle.rigidBody.position = { x: 2, y: 2 }
-    rectangle.rigidBody.rotation = 0.2
-    rectangle.rigidBody.scale = { x: 3, y: 4 }
+    expect(rectangle.rigidBody.transform.position.x).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(1)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.3, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(2)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(2)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
+    // Modify transforms with setters
+    rectangle.rigidBody.transform.position = { x: 2, y: 4 }
+    rectangle.rigidBody.transform.rotation = 0.4
+    rectangle.rigidBody.transform.scale = { x: 3, y: 5 }
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(2)
-    expect(rectangle.rigidBody.position.y).toEqual(2)
-    expect(rectangle.rigidBody.rotation).closeTo(0.2, 0.0001)
-    expect(rectangle.rigidBody.scale.x).toEqual(3)
-    expect(rectangle.rigidBody.scale.y).toEqual(4)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(2)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(4)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.4, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(3)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(5)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
   })
 
-  it('should modify rigidBody transforms with a circle shape', () => {
+  it('should modify collider transforms with a circle shape', () => {
     const rectangle = new FRectangle(scene, {
       position: { x: 0, y: 0 },
       rotation: 0,
@@ -133,123 +162,79 @@ describe('fRigidBody', () => {
       shape: FShapes.CIRCLE,
     })
     expect(rectangle.rigidBody).toBeDefined()
+    if (!rectangle.rigidBody)
+      return
     // Validate shape
     expect(rectangle.rigidBody.collider.shape).toEqual(FShapes.CIRCLE)
     expect(rectangle.rigidBody.collider.__COLLIDER__.shape).toBeDefined()
     expect(rectangle.rigidBody.collider.__COLLIDER__.shape.type).toEqual(RAPIER.ShapeType.Ball)
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(0)
-    expect(rectangle.rigidBody.position.y).toEqual(0)
-    expect(rectangle.rigidBody.rotation).toEqual(0)
-    expect(rectangle.rigidBody.scale.x).toEqual(1)
-    expect(rectangle.rigidBody.scale.y).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(0)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(0)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(1)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(1)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
     // Modify transforms with functions
-    rectangle.rigidBody.setPosition({ x: 1, y: 1 })
-    rectangle.rigidBody.setRotation(0.1)
-    rectangle.rigidBody.setScale({ x: 2, y: 2 })
+    rectangle.rigidBody.transform.setPosition({ x: 1, y: 1 })
+    rectangle.rigidBody.transform.setRotation(0.1)
+    rectangle.rigidBody.transform.setScale({ x: 2, y: 2 })
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(1)
-    expect(rectangle.rigidBody.position.y).toEqual(1)
-    expect(rectangle.rigidBody.rotation).closeTo(0.1, 0.0001)
-    expect(rectangle.rigidBody.scale.x).toEqual(2)
-    expect(rectangle.rigidBody.scale.y).toEqual(2)
-    // Moify transforms with setters
-    rectangle.rigidBody.position = { x: 2, y: 2 }
-    rectangle.rigidBody.rotation = 0.2
-    rectangle.rigidBody.scale = { x: 3, y: 4 }
+    expect(rectangle.rigidBody.transform.position.x).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(1)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.1, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(2)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(2)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
+    // Modify transforms with setters
+    rectangle.rigidBody.transform.position = { x: 2, y: 4 }
+    rectangle.rigidBody.transform.rotation = 0.2
+    rectangle.rigidBody.transform.scale = { x: 3, y: 5 }
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(2)
-    expect(rectangle.rigidBody.position.y).toEqual(2)
-    expect(rectangle.rigidBody.rotation).closeTo(0.2, 0.0001)
-    // Circle shape has the same scale for x and y (the highest value is used)
-    expect(rectangle.rigidBody.scale.x).toEqual(4)
-    expect(rectangle.rigidBody.scale.y).toEqual(4)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(2)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(4)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.2, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(5)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(5)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
   })
 
-  it('should update rigidBody transforms with attached component transforms', () => {
+  it('should update collider transforms with attached component transforms', () => {
     const rectangle = new FRectangle(scene, {
       position: { x: 1, y: 1 },
       rotation: 0.1,
       scale: { x: 1, y: 0.5 },
     })
     rectangle.initRigidBody({
-      position: { x: -2, y: 3 },
-      rotation: 0.3,
-      scale: { x: 2, y: 2 },
+      positionOffset: { x: -2, y: 3 },
+      rotationOffset: 0.2,
+      scaleOffset: { x: 2, y: 4 },
     })
     expect(rectangle.rigidBody).toBeDefined()
+    if (!rectangle.rigidBody)
+      return
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(-1)
-    expect(rectangle.rigidBody.position.y).toEqual(4)
-    expect(rectangle.rigidBody.rotation).closeTo(0.4, 0.0001)
-    expect(rectangle.rigidBody.scale.x).toEqual(2)
-    expect(rectangle.rigidBody.scale.y).toEqual(1)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(-1)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(4)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.3, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(3)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(4.5)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
     // Modify component transforms
-    rectangle.setPosition({ x: 2, y: 2 })
-    rectangle.setRotation(0.2)
-    rectangle.setScale({ x: 3, y: 4 })
+    rectangle.transform.position = { x: 2, y: 2 }
+    rectangle.transform.rotation = 0.2
+    rectangle.transform.scale = { x: 3, y: 4 }
     // Validate transforms
-    expect(rectangle.rigidBody.position.x).toEqual(0)
-    expect(rectangle.rigidBody.position.y).toEqual(5)
-    expect(rectangle.rigidBody.rotation).closeTo(0.5, 0.0001)
-    expect(rectangle.rigidBody.scale.x).toEqual(6)
-    expect(rectangle.rigidBody.scale.y).toEqual(8)
-  })
-
-  it('should move the rigidBody according to its X velocity', async () => {
-    const rectangle = new FRectangle(scene, {
-      position: { x: 0, y: 0 },
-      rotation: 0,
-      scale: { x: 1, y: 1 },
-    })
-    // Lock translations on Y axis
-    rectangle.initRigidBody({
-      enabledTranslations: {
-        enableX: true,
-        enableY: false,
-      },
-    })
-    expect(rectangle.rigidBody).toBeDefined()
-    // Set velocity
-    rectangle.rigidBody.setVelocity({ x: 1, y: 0 })
-    // Run 60 frames
-    for (let i = 0; i < 60; i++) {
-      scene.frame(1 / 60)
-    }
-    // Validate velocity
-    expect(rectangle.rigidBody.velocity.x).toEqual(1)
-    expect(rectangle.rigidBody.velocity.y).toEqual(0)
-    // Validate new position
-    expect(rectangle.rigidBody.position.x).closeTo(1, 0.1)
-    expect(rectangle.rigidBody.position.y).toEqual(0)
-  })
-
-  it('should move the rigidBody according to its Y velocity', async () => {
-    const rectangle = new FRectangle(scene, {
-      position: { x: 0, y: 0 },
-      rotation: 0,
-      scale: { x: 1, y: 1 },
-    })
-    // Lock translations on X axis
-    rectangle.initRigidBody({
-      enabledTranslations: {
-        enableX: false,
-        enableY: true,
-      },
-    })
-    expect(rectangle.rigidBody).toBeDefined()
-    // Set velocity
-    rectangle.rigidBody.velocity = { x: 0, y: 100 }
-    // Run 60 frames
-    for (let i = 0; i < 60; i++) {
-      scene.frame(1 / 60)
-    }
-    // Validate velocity
-    expect(rectangle.rigidBody.velocity.x).toEqual(0)
-    expect(rectangle.rigidBody.velocity.y).closeTo(90, 1)
-    // Validate new position
-    expect(rectangle.rigidBody.position.x).toEqual(0)
-    expect(rectangle.rigidBody.position.y).toBeGreaterThan(90)
-    expect(rectangle.rigidBody.position.y).toBeLessThanOrEqual(100)
+    expect(rectangle.rigidBody.transform.position.x).toEqual(0)
+    expect(rectangle.rigidBody.transform.position.y).toEqual(5)
+    expect(rectangle.rigidBody.transform.rotation).closeTo(0.4, 0.0001)
+    expect(rectangle.rigidBody.transform.scale.x).toEqual(5)
+    expect(rectangle.rigidBody.transform.scale.y).toEqual(8)
+    // Validate RAPIER rigidBody
+    validateRapierRigidBody(rectangle.rigidBody.__RIGIDBODY__, rectangle.rigidBody.transform)
   })
 })

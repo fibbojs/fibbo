@@ -2,6 +2,8 @@ import * as PIXI from 'pixi.js'
 import type { FComponentOptions } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
+import type { FRigidBodyOptions } from '../core/FRigidBody'
+import type { FColliderOptions } from '../core/FCollider'
 import { FPolygon } from './FPolygon'
 
 /**
@@ -28,31 +30,22 @@ export class FCircle extends FPolygon {
     this.emitOnLoaded()
   }
 
-  initRigidBody(options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    shape?: FShapes
-    lockTranslations?: boolean
-    lockRotations?: boolean
-    enabledTranslations?: {
-      enableX: boolean
-      enableY: boolean
-    }
-  }): void {
+  initCollider(options?: FColliderOptions): void {
+    super.initCollider({
+      ...options,
+      shape: FShapes.CIRCLE,
+    })
+  }
+
+  initRigidBody(options?: FRigidBodyOptions): void {
     super.initRigidBody({
       ...options,
       shape: FShapes.CIRCLE,
     })
   }
 
-  initCollider(options?: {
-    position?: PIXI.PointData
-    scale?: PIXI.PointData
-    rotation?: number
-    shape?: FShapes
-  }): void {
-    super.initCollider({
+  initSensor(options?: FRigidBodyOptions): void {
+    super.initSensor({
       ...options,
       shape: FShapes.CIRCLE,
     })

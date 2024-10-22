@@ -83,8 +83,8 @@ export class FRigidBody {
     // Apply default options
     const DEFAULT_OPTIONS = {
       position: { x: 0, y: 0 },
-      scale: { x: 1, y: 1 },
       rotation: 0,
+      scale: { x: 1, y: 1 },
       shape: FShapes.RECTANGLE,
       rigidBodyType: FRigidBodyType.DYNAMIC,
       sensor: false,
@@ -96,8 +96,8 @@ export class FRigidBody {
     options = { ...DEFAULT_OPTIONS, ...options }
 
     // Validate options
-    if (!options.position || !options.rotation || !options.scale || !options.shape)
-      throw new Error('FibboError: initRigidBody requires transforms options')
+    if (!options.position || (options.rotation === undefined && options.rotationDegree === undefined) || !options.scale || !options.shape)
+      throw new Error('FibboError: options missing in FRigidBody constructor')
 
     // Check if the world exists
     if (!scene.world)
