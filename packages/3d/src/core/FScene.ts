@@ -193,6 +193,14 @@ export class FScene extends FSceneCore {
     }
   }
 
+  addHandle(handle: number, component: FComponent) {
+    this.__RAPIER_TO_COMPONENT__.set(handle, component)
+  }
+
+  removeHandle(handle: number) {
+    this.__RAPIER_TO_COMPONENT__.delete(handle)
+  }
+
   addComponent(component: FComponent) {
     super.addComponent(component)
 
@@ -201,10 +209,10 @@ export class FScene extends FSceneCore {
 
     // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
+      this.addHandle(component.sensor.collider.__COLLIDER__.handle, component)
     // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
+      this.addHandle(component.collider.__COLLIDER__.handle, component)
   }
 
   removeComponent(component: FComponent): void {
@@ -224,9 +232,9 @@ export class FScene extends FSceneCore {
 
     // Remove handle from rapier map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.__COLLIDER__.handle)
+      this.removeHandle(component.sensor.collider.__COLLIDER__.handle)
     if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.delete(component.collider.__COLLIDER__.handle)
+      this.removeHandle(component.collider.__COLLIDER__.handle)
   }
 
   addLight(light: FLight): void {

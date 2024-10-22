@@ -289,6 +289,7 @@ export abstract class FComponent extends FComponentCore {
       ...options,
     })
     this.collider.component = this
+    this.scene.addHandle(this.collider.__COLLIDER__.handle, this)
   }
 
   initRigidBody(options?: FRigidBodyOptions) {
@@ -297,6 +298,7 @@ export abstract class FComponent extends FComponentCore {
       ...options,
     })
     this.rigidBody.component = this
+    this.scene.addHandle(this.rigidBody.collider.__COLLIDER__.handle, this)
   }
 
   initSensor(options?: FRigidBodyOptions) {
@@ -305,5 +307,12 @@ export abstract class FComponent extends FComponentCore {
       ...options,
     })
     this.sensor.component = this
+    // If a rigidBody or collider is already defined, remove its handle from being used to detect collisions
+    if (this.rigidBody)
+      this.scene.removeHandle(this.rigidBody.__RIGIDBODY__.handle)
+    else if (this.collider)
+      this.scene.removeHandle(this.collider.__COLLIDER__.handle)
+    // Add the sensor's handle to the scene's handle map
+    this.scene.addHandle(this.sensor.collider.__COLLIDER__.handle, this)
   }
 }
