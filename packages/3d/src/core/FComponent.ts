@@ -284,17 +284,26 @@ export abstract class FComponent extends FComponentCore {
   }
 
   initCollider(options?: FColliderOptions) {
-    this.collider = new FCollider(this.scene, options)
+    this.collider = new FCollider(this.scene, {
+      mesh: this.__MESH__,
+      ...options,
+    })
     this.collider.component = this
   }
 
   initRigidBody(options?: FRigidBodyOptions) {
-    this.rigidBody = new FRigidBody(this.scene, options)
+    this.rigidBody = new FRigidBody(this.scene, {
+      mesh: this.__MESH__,
+      ...options,
+    })
     this.rigidBody.component = this
   }
 
   initSensor(options?: FRigidBodyOptions) {
-    this.sensor = new FSensor(this.scene, options)
+    this.sensor = new FSensor(this.scene, {
+      mesh: this.__MESH__,
+      ...options,
+    })
     this.sensor.component = this
   }
 }

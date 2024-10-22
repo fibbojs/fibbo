@@ -17,6 +17,7 @@ export interface FColliderOptions {
   rotationDegreeOffset?: FVector3
   scaleOffset?: FVector3
   shape?: FShapes
+  mesh?: THREE.Mesh | THREE.Group
   rigidBody?: FRigidBody
   sensor?: boolean
 }
@@ -122,6 +123,26 @@ export class FCollider {
       case FShapes.CAPSULE:
         colliderDesc = RAPIER.ColliderDesc.capsule(this.transform.scale.y / 2, this.transform.scale.x / 2)
         break
+      case FShapes.MESH: {
+        if (!options.mesh)
+          throw new Error(`FibboError: A mesh must be provided to create a mesh collider`)
+        // Flag to check if a THREE.Mesh was found
+        let found = false
+        // Traverse the mesh tree until we find a THREE.Mesh
+        options.mesh.traverse((child) => {
+          if (!found && child instanceof THREE.Mesh) {
+            colliderDesc = RAPIER.ColliderDesc.trimesh(
+              child.geometry.attributes.position.array as Float32Array,
+              child.geometry.index?.array as Uint32Array,
+            )
+            found = true
+          }
+        })
+        // If no THREE.Mesh was found, throw an error
+        if (!found || !colliderDesc)
+          throw new Error('FibboError: Mesh collider can only be created if a THREE.Mesh is found in the mesh tree')
+        break
+      }
       default:
         throw new Error(`FibboError: shape not supported : ${options.shape}`)
     }
@@ -286,39 +307,6 @@ export class FCollider {
       this.__COLLIDER__.setShape(new RAPIER.Capsule(scale.y / 2, scale.x / 2))
     }
     this.transform.__SCALE__ = scale
-  }
-
-  /**
-   * Generate a mesh collider from a component.
-   * @param component The component to generate the mesh collider from.
-   */
-  generateShapeFromComponent(component: FComponent): void {
-    if (!component.__MESH__)
-      throw new Error('FibboError: Mesh collider can only be created from a THREE.Mesh')
-    let colliderDesc
-    // Flag to check if a THREE.Mesh was found
-    let found = false
-    // Traverse the mesh tree until we find a THREE.Mesh
-    component.__MESH__.traverse((child) => {
-      if (!found && child instanceof THREE.Mesh) {
-        colliderDesc = RAPIER.ColliderDesc.trimesh(
-          child.geometry.attributes.position.array as Float32Array,
-          child.geometry.index?.array as Uint32Array,
-        )
-        found = true
-      }
-    })
-    // If no THREE.Mesh was found, throw an error
-    if (!found || !colliderDesc)
-      throw new Error('FibboError: Mesh collider can only be created if a THREE.Mesh is found in the component')
-    // Create the collider
-    this.__COLLIDER__ = component.scene.world.createCollider(colliderDesc, component.rigidBody?.__RIGIDBODY__)
-    // Move the collider to the position
-    this.__SET_POSITION__(this.transform.position)
-    // Rotate the collider
-    this.__SET_ROTATION__(this.transform.rotation)
-    // Define the shape as a mesh
-    this.shape = FShapes.MESH
   }
 
   // Setters & Getters

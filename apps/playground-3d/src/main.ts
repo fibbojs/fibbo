@@ -68,7 +68,7 @@ import Character from './classes/Character'
   blockGrassCorner.initCollider({
     positionOffset: { x: 0, y: 1, z: 0 },
     rotationDegreeOffset: { x: 0, y: 45, z: 0 },
-    scaleOffset: { x: 0.5, y: 0.5, z: 0.5 },
+    scaleOffset: { x: -2, y: -2, z: -2 },
   })
 
   const blockGrassOverhangLargeTall = new FOBJ(scene, {
@@ -88,7 +88,7 @@ import Character from './classes/Character'
   })
   blockGrassLargeSlope.onLoaded(() => {
     blockGrassLargeSlope.initCollider({
-      shape: FShapes.CUBOID,
+      shape: FShapes.MESH,
     })
   })
 
@@ -100,7 +100,7 @@ import Character from './classes/Character'
   })
   blockGrassLargeSlope2.onLoaded(() => {
     blockGrassLargeSlope2.initCollider({
-      shape: FShapes.CUBOID,
+      shape: FShapes.MESH,
     })
   })
 

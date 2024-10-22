@@ -18,6 +18,7 @@ export interface FRigidBodyOptions {
   rotationDegreeOffset?: FVector3
   scaleOffset?: FVector3
   shape?: FShapes
+  mesh?: THREE.Mesh | THREE.Group
   rigidBodyType?: FRigidBodyType
   sensor?: boolean
   lockTranslations?: boolean
