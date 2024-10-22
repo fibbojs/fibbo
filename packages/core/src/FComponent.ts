@@ -98,6 +98,10 @@ export abstract class FComponent {
     if (this.controller) {
       this.controller.frame(delta)
     }
+    // Call the onFrame callbacks
+    this.__CALLBACKS_ON_FRAME__.forEach((callback) => {
+      callback()
+    })
   }
 
   /**

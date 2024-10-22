@@ -173,7 +173,7 @@ export abstract class FComponent extends FComponentCore {
       // If a collider exists, the propagation comes from the collider
       else if (this.collider) {
         // Rotate the component
-        this.__SET_ROTATION__(this.collider.transform.rotation)
+        this.__SET_ROTATION__(this.collider.transform.rotation - this.collider.offset.rotation)
       }
     }
   }

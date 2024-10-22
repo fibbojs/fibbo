@@ -91,18 +91,18 @@ export class FCollider {
 
     // Configure transform
     this.transform = new FTransform({
-      position: options.position ? options.position : { x: 0, y: 0 },
-      rotation: options.rotation ? options.rotation : (options.rotationDegree ? undefined : 0),
-      rotationDegree: options.rotationDegree ? options.rotationDegree : (options.rotation ? undefined : 0),
-      scale: options.scale ? options.scale : { x: 1, y: 1 },
+      position: options.position,
+      rotation: options.rotation,
+      rotationDegree: options.rotationDegree,
+      scale: options.scale,
     })
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
     this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__(true))
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
     this.offset = new FTransform({
       position: options.positionOffset ? options.positionOffset : { x: 0, y: 0 },
-      rotation: options.rotationOffset ? options.rotationOffset : (options.rotationDegreeOffset ? undefined : 0),
-      rotationDegree: options.rotationDegreeOffset ? options.rotationDegreeOffset : (options.rotationOffset ? undefined : 0),
+      rotation: options.rotationOffset,
+      rotationDegree: options.rotationDegreeOffset,
       scale: options.scaleOffset ? options.scaleOffset : { x: 0, y: 0 },
     })
 
@@ -139,7 +139,7 @@ export class FCollider {
   frame(_delta: number): void {
     // As the collider should have moved, update the transform to sync with the collider
     this.transform.position = this.__COLLIDER__.translation()
-    this.transform.rotation = this.__COLLIDER__.rotation() * (180 / Math.PI)
+    this.transform.rotation = this.__COLLIDER__.rotation()
   }
 
   /**

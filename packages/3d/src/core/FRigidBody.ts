@@ -122,18 +122,18 @@ export class FRigidBody {
     // Configure transform
     this.transform = new FTransform({
       position: options.position,
-      rotation: options.rotation ? options.rotation : (options.rotationDegree ? undefined : { x: 0, y: 0, z: 0 }),
-      rotationDegree: options.rotationDegree ? options.rotationDegree : (options.rotation ? undefined : { x: 0, y: 0, z: 0 }),
+      rotation: options.rotation,
+      rotationDegree: options.rotationDegree,
       scale: options.scale,
     })
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
     this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__(true))
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
     this.offset = new FTransform({
-      position: options.positionOffset || { x: 0, y: 0, z: 0 },
-      rotation: options.rotationOffset ? options.rotationOffset : (options.rotationDegreeOffset ? undefined : { x: 0, y: 0, z: 0 }),
-      rotationDegree: options.rotationDegreeOffset ? options.rotationDegreeOffset : (options.rotationOffset ? undefined : { x: 0, y: 0, z: 0 }),
-      scale: options.scaleOffset || { x: 0, y: 0, z: 0 },
+      position: options.positionOffset ? options.positionOffset : { x: 0, y: 0, z: 0 },
+      rotation: options.rotationOffset,
+      rotationDegree: options.rotationDegreeOffset,
+      scale: options.scaleOffset ? options.scaleOffset : { x: 0, y: 0, z: 0 },
     })
 
     // Create a rigidBody description according to the type

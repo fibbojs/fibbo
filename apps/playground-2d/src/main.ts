@@ -28,11 +28,11 @@ import Character from './classes/Character'
 
   const square2 = new FRectangle(scene, {
     position: { x: 0, y: 3 },
-    scale: { x: 0.5, y: 0.5 },
     rotationDegree: 45,
+    scale: { x: 0.5, y: 0.5 },
   })
   square2.initCollider({
-    rotationDegree: 45,
+    rotationDegreeOffset: 45,
   })
 
   const square3 = new FRectangle(scene, {
