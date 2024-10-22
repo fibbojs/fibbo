@@ -26,7 +26,7 @@ You can change the camera used to render the scene by setting the `camera` prope
 
 ```typescript
 // Attach a camera to the character
-scene.camera = new FGameCamera({
+scene.camera = new FGameCamera(scene, {
   target: character,
 })
 ```
