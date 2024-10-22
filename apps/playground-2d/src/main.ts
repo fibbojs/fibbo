@@ -1,4 +1,3 @@
-/* eslint-disable no-new */
 import './style.css'
 import { FAttachedCamera, FCircle, FComponentEmpty, FRectangle, FScene, FShapes } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'

@@ -22,31 +22,31 @@ Note that shadows do not cast on certain materials, such as the [MeshBasicMateri
 
 ## Usage
 
-Lights can be added to a scene using the `addLight` method.
+Lights can be created as follows (they will be automatically added to the scene) :
 
 ```ts
 import { FAmbientLight, FDirectionalLight, FSpotLight } from '@fibbojs/3d'
 
 // Add directional light to represent the sun
-scene.addLight(new FDirectionalLight(scene, {
+new FDirectionalLight(scene, {
   position: { x: 20, y: 20, z: 0 },
   color: 0xFFFFFF,
   intensity: 2,
-}))
+})
 // Add spot light
-scene.addLight(new FSpotLight(scene, {
+new FSpotLight(scene, {
   position: { x: 4, y: 4, z: 4 },
   angle: 1,
   distance: 8,
   color: 0xFFFFFF,
   intensity: 20,
   lookAt: { x: 8, y: 0, z: 8 },
-}))
+})
 // Add ambient light
-scene.addLight(new FAmbientLight(scene, {
+new FAmbientLight(scene, {
   color: 0x404040,
   intensity: 20,
-}))
+})
 ```
 
 They can also be removed using the `removeLight` method.

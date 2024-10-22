@@ -17,6 +17,7 @@ export default antfu(
       'vue/block-order': ['error', {
         order: ['template', 'script', 'style'],
       }],
+      'no-new': 'off',
     },
   },
 )
