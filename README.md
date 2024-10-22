@@ -54,7 +54,7 @@ npm run dev:3d
 npm run dev:3d:windows
 ```
 
-You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-3d`.
+You can now open your browser and navigate to `http://localhost:5173/playground-3d`.
 
 - To develop on the 2D package, run the 2D playground :
 
@@ -64,7 +64,7 @@ npm run dev:2d
 npm run dev:2d:windows
 ```
 
-You can now open your browser and navigate to `http://localhost:5173/fibbo/playground-2d`.
+You can now open your browser and navigate to `http://localhost:5173/playground-2d`.
 
 ## Documentation
 
@@ -81,7 +81,7 @@ Also, the API Reference part is generated using [TypeDoc](https://typedoc.org/).
 npm run docs:generate
 ```
 
-You can now open your browser and navigate to `http://localhost:5173/fibbo`.
+You can now open your browser and navigate to `http://localhost:5173`.
 
 ## Contributing
 
