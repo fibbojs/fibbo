@@ -50,5 +50,6 @@ export * from './polyhedrons/FPolyhedron'
 export * from './polyhedrons/FSphere'
 
 // Types
+export * from './types/FRigidBodyType'
 export * from './types/FShapes'
 export * from './types/FVector3'

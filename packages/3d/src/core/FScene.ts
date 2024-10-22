@@ -8,6 +8,8 @@ import { FModel } from '../model/FModel'
 import type { FLight } from '../lights/FLight'
 import type { FVector3 } from '../types/FVector3'
 import type { FComponent } from './FComponent'
+import type { FRigidBody } from './FRigidBody'
+import type { FCollider } from './FCollider'
 
 export interface FSceneOptions extends FSceneOptionsCore {
   gravity?: FVector3
@@ -56,7 +58,10 @@ export class FScene extends FSceneCore {
   declare components: FComponent[]
   // Lights can be declared as it will be initialized by the parent class
   declare lights: FLight[]
-
+  // The colliders of the scene
+  declare colliders: FCollider[]
+  // The rigidBodies of the scene
+  declare rigidBodies: FRigidBody[]
   // Three.js
   THREE: typeof THREE = THREE
   declare scene: THREE.Scene
@@ -91,6 +96,10 @@ export class FScene extends FSceneCore {
 
       this.renderer.setSize(window.innerWidth, window.innerHeight)
     })
+
+    // Initialize collider and rigidBody arrays
+    this.colliders = []
+    this.rigidBodies = []
   }
 
   init() {
@@ -112,6 +121,9 @@ export class FScene extends FSceneCore {
 
     // Each frame
     this.onFrame((delta) => {
+      // Call frame for each collider and rigidBody
+      this.colliders.forEach(collider => collider.frame(delta))
+      this.rigidBodies.forEach(rigidBody => rigidBody.frame(delta))
       // Call frame for each component
       this.components.forEach(component => component.frame(delta))
 
@@ -184,32 +196,15 @@ export class FScene extends FSceneCore {
   addComponent(component: FComponent) {
     super.addComponent(component)
 
-    // Detect if the FComponent is a FGLTF instance
-    if (component instanceof FModel) {
-      // Wait for the model to be loaded before adding it to the scene
-      component.onLoaded(() => {
-        if (component.__MESH__)
-          this.scene.add(component.__MESH__)
+    if (component.__MESH__)
+      this.scene.add(component.__MESH__)
 
-        // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        if (component.sensor)
-          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
-        // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        else if (component.collider)
-          this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
-      })
-    }
-    else {
-      if (component.__MESH__)
-        this.scene.add(component.__MESH__)
-
-      // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-      if (component.sensor)
-        this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
-      // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-      else if (component.collider)
-        this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
-    }
+    // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    if (component.sensor)
+      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.__COLLIDER__.handle, component)
+    // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
+    else if (component.collider)
+      this.__RAPIER_TO_COMPONENT__.set(component.collider.__COLLIDER__.handle, component)
   }
 
   removeComponent(component: FComponent): void {
@@ -219,13 +214,13 @@ export class FScene extends FSceneCore {
     if (component.__MESH__)
       this.scene.remove(component.__MESH__)
 
-    // Remove colliders and rigidBodies from rapier world
+    // Remove colliders and rigidBodies from the scene
     if (component.rigidBody)
-      this.world.removeRigidBody(component.rigidBody.__RIGIDBODY__)
+      this.removeRigidBody(component.rigidBody)
     if (component.collider)
-      this.world.removeCollider(component.collider.__COLLIDER__, false)
+      this.removeCollider(component.collider)
     if (component.sensor)
-      this.world.removeCollider(component.sensor.collider.__COLLIDER__, false)
+      this.removeRigidBody(component.sensor)
 
     // Remove handle from rapier map
     if (component.sensor)
@@ -236,15 +231,36 @@ export class FScene extends FSceneCore {
 
   addLight(light: FLight): void {
     super.addLight(light)
-
     // Add the light to the THREE scene
-    this.scene.add(light.light)
+    this.scene.add(light.__LIGHT__)
   }
 
   removeLight(light: FLight): void {
     super.removeLight(light)
-
     // Remove the light from the THREE scene
-    this.scene.remove(light.light)
+    this.scene.remove(light.__LIGHT__)
+  }
+
+  addCollider(collider: FCollider): void {
+    this.colliders.push(collider)
+  }
+
+  removeCollider(collider: FCollider): void {
+    const index = this.colliders.indexOf(collider)
+    if (index !== -1)
+      this.colliders.splice(index, 1)
+    this.world.removeCollider(collider.__COLLIDER__, false)
+  }
+
+  addRigidBody(rigidBody: FRigidBody): void {
+    this.rigidBodies.push(rigidBody)
+  }
+
+  removeRigidBody(rigidBody: FRigidBody): void {
+    this.removeCollider(rigidBody.collider)
+    const index = this.rigidBodies.indexOf(rigidBody)
+    if (index !== -1)
+      this.rigidBodies.splice(index, 1)
+    this.world.removeRigidBody(rigidBody.__RIGIDBODY__)
   }
 }

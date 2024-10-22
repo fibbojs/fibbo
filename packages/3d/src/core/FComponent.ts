@@ -5,9 +5,12 @@ import { FComponent as FComponentCore } from '@fibbojs/core'
 import type { FController } from '../controllers/FController'
 import type { FVector3 } from '../types/FVector3'
 import type { FScene } from './FScene'
-import type { FCollider } from './FCollider'
-import type { FRigidBody } from './FRigidBody'
+import type { FColliderOptions } from './FCollider'
+import { FCollider } from './FCollider'
+import type { FRigidBodyOptions } from './FRigidBody'
+import { FRigidBody } from './FRigidBody'
 import { FTransform } from './FTransform'
+import { FSensor } from './FSensor'
 
 export interface FComponentOptions {
   position?: FVector3
@@ -95,99 +98,20 @@ export abstract class FComponent extends FComponentCore {
     if (!options.position || !options.scale || (!options.rotation && !options.rotationDegree))
       throw new Error('FibboError: FComponent requires position, scale and rotation options')
 
-    // Create the transform
+    // Configure transform
     this.transform = new FTransform({
-      component: this,
       position: options.position,
-      scale: options.scale,
       rotation: options.rotation,
       rotationDegree: options.rotationDegree,
+      scale: options.scale,
     })
+    this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
+    this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__(true))
+    this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
   }
 
   frame(_delta: number): void {
     super.frame(_delta)
-    // If the rigidBody and mesh exist, update the mesh position and rotation according to the rigidBody
-    if (this.rigidBody && this.collider && this.__MESH__) {
-      // Translation
-      const newMeshPosition = this.rigidBody.__RIGIDBODY__.translation()
-      // Remove offset
-      newMeshPosition.x -= this.collider.__POSITION_OFFSET__.x
-      newMeshPosition.y -= this.collider.__POSITION_OFFSET__.y
-      newMeshPosition.z -= this.collider.__POSITION_OFFSET__.z
-
-      // Rotation
-      const newMeshRotation = new THREE.Euler().setFromQuaternion(
-        new THREE.Quaternion(
-          this.rigidBody.__RIGIDBODY__.rotation().x,
-          this.rigidBody.__RIGIDBODY__.rotation().y,
-          this.rigidBody.__RIGIDBODY__.rotation().z,
-          this.rigidBody.__RIGIDBODY__.rotation().w,
-        ),
-      )
-      // Remove offset
-      newMeshRotation.x -= this.collider.__ROTATION_OFFSET__.x
-      newMeshRotation.y -= this.collider.__ROTATION_OFFSET__.y
-      newMeshRotation.z -= this.collider.__ROTATION_OFFSET__.z
-
-      // Apply the new transforms to the mesh
-      this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.__MESH__.setRotationFromEuler(newMeshRotation)
-
-      // Update position and rotation properties of the component according to the rigidBody
-      this.transform.position = newMeshPosition
-      this.transform.rotation = newMeshRotation
-      // If a sensor exists, update its position and rotation according to the rigidBody
-      if (this.sensor) {
-        // Apply offset to the sensor
-        newMeshPosition.x += this.sensor.collider.__POSITION_OFFSET__.x
-        newMeshPosition.y += this.sensor.collider.__POSITION_OFFSET__.y
-        newMeshPosition.z += this.sensor.collider.__POSITION_OFFSET__.z
-        this.sensor.__RIGIDBODY__.setTranslation(newMeshPosition, true)
-        this.sensor.__RIGIDBODY__.setRotation(new THREE.Quaternion().setFromEuler(newMeshRotation), true)
-      }
-    }
-    // If the collider and mesh exist, update the mesh position and rotation according to the collider
-    else if (this.collider && this.__MESH__) {
-      // Translation
-      const newMeshPosition = this.collider.__COLLIDER__.translation()
-      // Remove offset
-      newMeshPosition.x -= this.collider.__POSITION_OFFSET__.x
-      newMeshPosition.y -= this.collider.__POSITION_OFFSET__.y
-      newMeshPosition.z -= this.collider.__POSITION_OFFSET__.z
-
-      // Rotation
-      const newMeshRotation = new THREE.Euler().setFromQuaternion(
-        new THREE.Quaternion(
-          this.collider.__COLLIDER__.rotation().x,
-          this.collider.__COLLIDER__.rotation().y,
-          this.collider.__COLLIDER__.rotation().z,
-          this.collider.__COLLIDER__.rotation().w,
-        ),
-      )
-      // Remove offset
-      newMeshRotation.x -= this.collider.__ROTATION_OFFSET__.x
-      newMeshRotation.y -= this.collider.__ROTATION_OFFSET__.y
-      newMeshRotation.z -= this.collider.__ROTATION_OFFSET__.z
-
-      // Apply the new transforms to the mesh
-      this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-      this.__MESH__.setRotationFromEuler(newMeshRotation)
-      // Update position and rotation properties of the component
-      this.transform.position = newMeshPosition
-      this.transform.rotation = newMeshRotation
-    }
-    // If the rigidBody and collider doesn't exist, update the mesh position and rotation according to the default values
-    else if (this.__MESH__) {
-      this.__MESH__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
-      this.__MESH__.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
-      // If a sensor exists, update its position and rotation according to the default values
-      if (this.sensor) {
-        this.sensor.__RIGIDBODY__.setTranslation({ x: this.transform.position.x, y: this.transform.position.y, z: this.transform.position.z }, true)
-        this.sensor.__RIGIDBODY__.setRotation(new THREE.Quaternion().setFromEuler(new THREE.Euler(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)), true)
-      }
-    }
-    // If the mesh still doesn't exist, do nothing
   }
 
   /**
@@ -197,17 +121,38 @@ export abstract class FComponent extends FComponentCore {
    * Set this to true to propagate the position update to the rigidBody, collider and sensor.
    */
   __UPDATE_POSITION__(initiator: boolean = false): void {
-    // If a mesh exists, update its position
-    if (this.__MESH__)
-      this.__MESH__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
-    // If the component is the initiator, propagate the position update to the rigidBody, collider and sensor
+    // If the component is the initiator
     if (initiator) {
+      // Move the component
+      this.__SET_POSITION__(this.transform.position)
+      // Propagate the position update to the rigidBody, collider and sensor
       if (this.rigidBody)
         this.rigidBody.__UPDATE_POSITION__()
       else if (this.collider)
         this.collider.__UPDATE_POSITION__()
       if (this.sensor)
         this.sensor.__UPDATE_POSITION__()
+    }
+    else {
+      // The event was propagated to the component
+      // If a rigidBody exists, the propagation comes from the rigidBody
+      if (this.rigidBody) {
+        // Move the component
+        this.__SET_POSITION__({
+          x: this.rigidBody.transform.position.x - this.rigidBody.offset.position.x,
+          y: this.rigidBody.transform.position.y - this.rigidBody.offset.position.y,
+          z: this.rigidBody.transform.position.z - this.rigidBody.offset.position.z,
+        })
+      }
+      // If a collider exists, the propagation comes from the collider
+      else if (this.collider) {
+        // Move the component
+        this.__SET_POSITION__({
+          x: this.collider.transform.position.x - this.collider.offset.x,
+          y: this.collider.transform.position.y - this.collider.offset.y,
+          z: this.collider.transform.position.z - this.collider.offset.z,
+        })
+      }
     }
   }
 
@@ -218,17 +163,38 @@ export abstract class FComponent extends FComponentCore {
    * Set this to true to propagate the rotation update to the rigidBody, collider and sensor.
    */
   __UPDATE_ROTATION__(initiator: boolean = false): void {
-    // If a mesh exists, update its rotation
-    if (this.__MESH__)
-      this.__MESH__.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
-    // If the component is the initiator, propagate the rotation update to the rigidBody, collider and sensor
+    // If the component is the initiator
     if (initiator) {
+      // Rotate the component
+      this.__SET_ROTATION__(this.transform.rotation)
+      // Propagate the rotation update to the rigidBody, collider and sensor
       if (this.rigidBody)
         this.rigidBody.__UPDATE_ROTATION__()
       else if (this.collider)
         this.collider.__UPDATE_ROTATION__()
       if (this.sensor)
         this.sensor.__UPDATE_ROTATION__()
+    }
+    else {
+      // The event was propagated to the component
+      // If a rigidBody exists, the propagation comes from the rigidBody
+      if (this.rigidBody) {
+        // Rotate the component
+        this.__SET_ROTATION__({
+          x: this.rigidBody.transform.rotation.x - this.rigidBody.offset.rotationX,
+          y: this.rigidBody.transform.rotation.y - this.rigidBody.offset.rotationY,
+          z: this.rigidBody.transform.rotation.z - this.rigidBody.offset.rotationZ,
+        })
+      }
+      // If a collider exists, the propagation comes from the collider
+      else if (this.collider) {
+        // Rotate the component
+        this.__SET_ROTATION__({
+          x: this.collider.transform.rotation.x - this.collider.offset.rotationX,
+          y: this.collider.transform.rotation.y - this.collider.offset.rotationY,
+          z: this.collider.transform.rotation.z - this.collider.offset.rotationZ,
+        })
+      }
     }
   }
 
@@ -239,20 +205,11 @@ export abstract class FComponent extends FComponentCore {
    * Set this to true to propagate the scale update to the rigidBody, collider and sensor.
    */
   __UPDATE_SCALE__(initiator: boolean = false): void {
-    // If a mesh exists
-    if (this.__MESH__) {
-      // If the mesh is a classic polyhedron
-      if (this.__MESH__ instanceof THREE.Mesh && (this.__MESH__.geometry instanceof THREE.BoxGeometry || this.__MESH__.geometry instanceof THREE.SphereGeometry)) {
-        this.__MESH__.scale.set(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
-      }
-      // We don't know the type of the mesh, probably a custom mesh
-      else {
-        // I don't really know why the scale should be devided by 2 for custom meshes, but it works
-        this.__MESH__.scale.set(this.transform.scale.x / 2, this.transform.scale.y / 2, this.transform.scale.z / 2)
-      }
-    }
-    // If the component is the initiator, propagate the scale update to the rigidBody, collider and sensor
+    // If the component is the initiator
     if (initiator) {
+      // Scale the component
+      this.__SET_SCALE__(this.transform.scale)
+      // Propagate the scale update to the rigidBody, collider and sensor
       if (this.rigidBody)
         this.rigidBody.__UPDATE_SCALE__()
       else if (this.collider)
@@ -260,6 +217,60 @@ export abstract class FComponent extends FComponentCore {
       if (this.sensor)
         this.sensor.__UPDATE_SCALE__()
     }
+    else {
+      // The event was propagated to the component
+      // If a rigidBody exists, the propagation comes from the rigidBody
+      if (this.rigidBody) {
+        // Scale the component
+        this.__SET_SCALE__({
+          x: this.rigidBody.transform.scale.x - this.rigidBody.offset.scaleX,
+          y: this.rigidBody.transform.scale.y - this.rigidBody.offset.scaleY,
+          z: this.rigidBody.transform.scale.z - this.rigidBody.offset.scaleZ,
+        })
+      }
+      // If a collider exists, the propagation comes from the collider
+      else if (this.collider) {
+        // Scale the component
+        this.__SET_SCALE__({
+          x: this.collider.transform.scale.x - this.collider.offset.scaleX,
+          y: this.collider.transform.scale.y - this.collider.offset.scaleY,
+          z: this.collider.transform.scale.z - this.collider.offset.scaleZ,
+        })
+      }
+    }
+  }
+
+  __SET_POSITION__(position: FVector3): void {
+    // Move the mesh
+    if (this.__MESH__)
+      this.__MESH__.position.set(position.x, position.y, position.z)
+    // Update the transform
+    this.transform.__POSITION__ = position
+  }
+
+  __SET_ROTATION__(rotation: FVector3): void {
+    // Rotate the mesh
+    if (this.__MESH__)
+      this.__MESH__.rotation.set(rotation.x, rotation.y, rotation.z)
+    // Update the transform
+    this.transform.__ROTATION__ = rotation
+  }
+
+  __SET_SCALE__(scale: FVector3): void {
+    // Scale the mesh
+    if (this.__MESH__) {
+      // If the mesh is a classic polyhedron
+      if (this.__MESH__ instanceof THREE.Mesh && (this.__MESH__.geometry instanceof THREE.BoxGeometry || this.__MESH__.geometry instanceof THREE.SphereGeometry)) {
+        this.__MESH__.scale.set(scale.x, scale.y, scale.z)
+      }
+      // We don't know the type of the mesh, probably a custom mesh
+      else {
+        // I don't really know why the scale should be devided by 2 for custom meshes, but it works
+        this.__MESH__.scale.set(scale.x / 2, scale.y / 2, scale.z / 2)
+      }
+    }
+    // Update the transform
+    this.transform.__SCALE__ = scale
   }
 
   onCollisionWith(classOrObject: any, callback: (data: OnCollisionWithData) => void): () => void {
@@ -270,5 +281,20 @@ export abstract class FComponent extends FComponentCore {
     }
     // Call the core onCollisionWith method
     return super.onCollisionWith(classOrObject, callback)
+  }
+
+  initCollider(options?: FColliderOptions) {
+    this.collider = new FCollider(this.scene, options)
+    this.collider.component = this
+  }
+
+  initRigidBody(options?: FRigidBodyOptions) {
+    this.rigidBody = new FRigidBody(this.scene, options)
+    this.rigidBody.component = this
+  }
+
+  initSensor(options?: FRigidBodyOptions) {
+    this.sensor = new FSensor(this.scene, options)
+    this.sensor.component = this
   }
 }

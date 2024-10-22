@@ -28,5 +28,7 @@ export class FCapsule extends FPolyhedron {
       this.__MESH__.castShadow = true
       this.__MESH__.receiveShadow = true
     }
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 }

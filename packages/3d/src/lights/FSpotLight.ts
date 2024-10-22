@@ -38,7 +38,7 @@ export class FSpotLight extends FLight {
       throw new Error('FibboError: FSpotLight requires color and intensity')
 
     // Create the spot light
-    this.light = new THREE.SpotLight(
+    this.__LIGHT__ = new THREE.SpotLight(
       options.color,
       options.intensity,
       options.distance,
@@ -52,11 +52,14 @@ export class FSpotLight extends FLight {
 
     // If shadows are enabled, set the light to cast shadows
     if (this.scene.__ENABLE_SHADOWS__) {
-      this.light.castShadow = true
-      if (this.light.shadow) {
-        this.light.shadow.mapSize.width = 16384
-        this.light.shadow.mapSize.height = 16384
+      this.__LIGHT__.castShadow = true
+      if (this.__LIGHT__.shadow) {
+        this.__LIGHT__.shadow.mapSize.width = 16384
+        this.__LIGHT__.shadow.mapSize.height = 16384
       }
     }
+
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 }

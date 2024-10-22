@@ -62,9 +62,8 @@ export abstract class FCharacterControllerK extends FCharacterController {
       y: this.yVelocity * 0.01,
       z: worldDirection.z * 8 * 0.01,
     }
-    // Compute the desired movement
     this.characterController.computeColliderMovement(
-      this.component.collider?.__COLLIDER__ as RAPIER.Collider,
+      this.component.rigidBody ? this.component.rigidBody.collider.__COLLIDER__ : this.component.collider?.__COLLIDER__ as RAPIER.Collider,
       desiredMovement,
       RAPIER.QueryFilterFlags.EXCLUDE_SENSORS,
     )

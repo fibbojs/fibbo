@@ -45,13 +45,15 @@ export abstract class FCamera extends FCameraCore {
     // Create the Three.js camera
     this.__CAMERA__ = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 
-    // Store transform
+    // Configure transform
     this.transform = new FTransform({
-      component: this,
       position: options.position,
       rotation: options.rotation,
       rotationDegree: options.rotationDegree,
     })
+    this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__())
+    this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__())
+    this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__())
 
     // Set the position
     this.__CAMERA__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)

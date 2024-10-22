@@ -11,33 +11,33 @@
         <p>Position</p>
         <div class="f-component-property-group">
           <p>x : </p>
-          <InputNumber v-model:value="component.x" />
+          <InputNumber v-model:value="component.transform.x" />
           <p>y : </p>
-          <InputNumber v-model:value="component.y" />
+          <InputNumber v-model:value="component.transform.y" />
           <p>z : </p>
-          <InputNumber v-model:value="component.z" />
+          <InputNumber v-model:value="component.transform.z" />
         </div>
       </div>
       <div class="f-component-property">
         <p>Scale</p>
         <div class="f-component-property-group">
           <p>x : </p>
-          <InputNumber v-model:value="component.scaleX" />
+          <InputNumber v-model:value="component.transform.scaleX" />
           <p>y : </p>
-          <InputNumber v-model:value="component.scaleY" />
+          <InputNumber v-model:value="component.transform.scaleY" />
           <p>z : </p>
-          <InputNumber v-model:value="component.scaleZ" />
+          <InputNumber v-model:value="component.transform.scaleZ" />
         </div>
       </div>
       <div class="f-component-property">
         <p>Rotation (Degree)</p>
         <div class="f-component-property-group">
           <p>x : </p>
-          <InputNumber v-model:value="component.rotationDegreeX" />
+          <InputNumber v-model:value="component.transform.rotationDegreeX" />
           <p>y : </p>
-          <InputNumber v-model:value="component.rotationDegreeY" />
+          <InputNumber v-model:value="component.transform.rotationDegreeY" />
           <p>z : </p>
-          <InputNumber v-model:value="component.rotationDegreeZ" />
+          <InputNumber v-model:value="component.transform.rotationDegreeZ" />
         </div>
       </div>
     </div>

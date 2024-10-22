@@ -17,8 +17,8 @@ export default class Character extends FFBX {
 
   initRigidBody(options?: FRigidBodyOptions) {
     super.initRigidBody({
-      position: { x: 0, y: 0.25, z: 0 },
-      scale: { x: 0.25, y: 0.25, z: 0.25 },
+      positionOffset: { x: 0, y: 0.25, z: 0 },
+      scaleOffset: { x: -1.5, y: -1.5, z: -1.5 },
       ...options,
     })
   }
@@ -26,8 +26,8 @@ export default class Character extends FFBX {
   initSensor(options?: FRigidBodyOptions) {
     super.initSensor({
       ...options,
-      position: { x: 0, y: 0.25, z: 0 },
-      scale: { x: 0.6, y: 0.4, z: 0.6 },
+      positionOffset: { x: 0, y: 0.25, z: 0 },
+      scaleOffset: { x: -1.5, y: -1.5, z: -1.5 },
     })
   }
 }

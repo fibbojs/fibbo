@@ -1,13 +1,7 @@
 import * as THREE from 'three'
-import type { FCamera } from '../cameras/FCamera'
-import type { FLight } from '../lights/FLight'
 import type { FVector3 } from '../types/FVector3'
-import type { FComponent } from './FComponent'
-import type { FCollider } from './FCollider'
-import type { FRigidBody } from './FRigidBody'
 
 export interface FTransformOptions {
-  component?: FComponent | FCamera | FLight
   position?: FVector3
   scale?: FVector3
   rotation?: FVector3
@@ -19,10 +13,19 @@ export interface FTransformOptions {
  * @category Core
  */
 export class FTransform {
+  // Callback
   /**
-   * The component that the transform is attached to.
+   * Callback for when the position is updated.
    */
-  __COMPONENT__?: FComponent | FCamera | FLight | FCollider | FRigidBody
+  __CALLBACKS_ON_POSITION_UPDATED__: (() => void)[] = []
+  /**
+   * Callback for when the rotation is updated.
+   */
+  __CALLBACKS_ON_ROTATION_UPDATED__: (() => void)[] = []
+  /**
+   * Callback for when the scale is updated.
+   */
+  __CALLBACKS_ON_SCALE_UPDATED__: (() => void)[] = []
 
   /**
    * The position of the component.
@@ -59,13 +62,13 @@ export class FTransform {
     const DEFAULT_OPTIONS = {
       component: undefined,
       position: { x: 0, y: 0, z: 0 },
-      scale: { x: 1, y: 1, z: 1 },
       rotation: { x: 0, y: 0, z: 0 },
       rotationDegree: undefined,
+      scale: { x: 1, y: 1, z: 1 },
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.scale || !options.rotation)
+    if (!options.position || !options.scale || (!options.rotation && !options.rotationDegree))
       throw new Error('FibboError: FTransform requires position, scale, rotation and shape options')
 
     // Set the transform values
@@ -74,8 +77,30 @@ export class FTransform {
     this.__ROTATION__ = options.rotationDegree
       ? { x: THREE.MathUtils.degToRad(options.rotationDegree.x), y: THREE.MathUtils.degToRad(options.rotationDegree.y), z: THREE.MathUtils.degToRad(options.rotationDegree.z) }
       : options.rotation || { x: 0, y: 0, z: 0 }
-    // Store the component
-    this.__COMPONENT__ = options.component
+  }
+
+  /**
+   * Add a callback for when the position is updated.
+   * @param callback The callback to add.
+   */
+  onPositionUpdated(callback: () => void) {
+    this.__CALLBACKS_ON_POSITION_UPDATED__.push(callback)
+  }
+
+  /**
+   * Add a callback for when the rotation is updated.
+   * @param callback The callback to add.
+   */
+  onRotationUpdated(callback: () => void) {
+    this.__CALLBACKS_ON_ROTATION_UPDATED__.push(callback)
+  }
+
+  /**
+   * Add a callback for when the scale is updated.
+   * @param callback The callback to add.
+   */
+  onScaleUpdated(callback: () => void) {
+    this.__CALLBACKS_ON_SCALE_UPDATED__.push(callback)
   }
 
   /**
@@ -87,7 +112,7 @@ export class FTransform {
    */
   setPosition(position: FVector3) {
     this.__POSITION__ = position
-    this.__COMPONENT__?.__UPDATE_POSITION__(true)
+    this.__CALLBACKS_ON_POSITION_UPDATED__.forEach(callback => callback())
   }
 
   /**
@@ -99,7 +124,7 @@ export class FTransform {
    */
   setRotation(rotation: FVector3) {
     this.__ROTATION__ = rotation
-    this.__COMPONENT__?.__UPDATE_ROTATION__(true)
+    this.__CALLBACKS_ON_ROTATION_UPDATED__.forEach(callback => callback())
   }
 
   /**
@@ -110,12 +135,11 @@ export class FTransform {
    * @param rotationDegree.z The new rotation on the z axis in degrees.
    */
   setRotationDegree(rotationDegree: FVector3) {
-    this.__ROTATION__ = {
+    this.setRotation({
       x: THREE.MathUtils.degToRad(rotationDegree.x),
       y: THREE.MathUtils.degToRad(rotationDegree.y),
       z: THREE.MathUtils.degToRad(rotationDegree.z),
-    }
-    this.__COMPONENT__?.__UPDATE_ROTATION__(true)
+    })
   }
 
   /**
@@ -127,7 +151,7 @@ export class FTransform {
    */
   setScale(scale: FVector3) {
     this.__SCALE__ = scale
-    this.__COMPONENT__?.__UPDATE_SCALE__(true)
+    this.__CALLBACKS_ON_SCALE_UPDATED__.forEach(callback => callback())
   }
 
   // Setters & Getters

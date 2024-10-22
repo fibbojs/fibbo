@@ -1,7 +1,7 @@
-import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FScene, FShapes, FSphere, FSpotLight } from '@fibbojs/3d'
+/* eslint-disable no-new */
+import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FRigidBodyType, FScene, FShapes, FSphere, FSpotLight } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
-import RAPIER from '@dimforge/rapier3d'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 import './style.css'
@@ -20,25 +20,25 @@ import Character from './classes/Character'
     fDebug(scene)
 
   // Add directional light to represent the sun
-  scene.addLight(new FDirectionalLight(scene, {
+  new FDirectionalLight(scene, {
     position: { x: 20, y: 20, z: 0 },
     color: 0xFFFFFF,
     intensity: 2,
-  }))
+  })
   // Add spot light
-  scene.addLight(new FSpotLight(scene, {
+  new FSpotLight(scene, {
     position: { x: 4, y: 4, z: 4 },
     angle: 1,
     distance: 8,
     color: 0xFFFFFF,
     intensity: 20,
     lookAt: { x: 8, y: 0, z: 8 },
-  }))
+  })
   // Add ambient light
-  scene.addLight(new FAmbientLight(scene, {
+  new FAmbientLight(scene, {
     color: 0x404040,
     intensity: 20,
-  }))
+  })
 
   // Create a death zone
   const deathZone = new FComponentEmpty(scene, {
@@ -46,7 +46,6 @@ import Character from './classes/Character'
     scale: { x: 100, y: 1, z: 100 },
   })
   deathZone.initCollider()
-  scene.addComponent(deathZone)
 
   // Create a ground
   const ground = new FCuboid(scene, {
@@ -54,11 +53,10 @@ import Character from './classes/Character'
     scale: { x: 15, y: 0.1, z: 15 },
   })
   ground.initRigidBody({
-    rigidBodyType: RAPIER.RigidBodyType.Fixed,
+    rigidBodyType: FRigidBodyType.FIXED,
   })
   // Green ground
   ground.setColor(0x60D641)
-  scene.addComponent(ground)
 
   // Import 3d models
   const blockGrassCorner = new FOBJ(scene, {
@@ -68,11 +66,10 @@ import Character from './classes/Character'
     rotationDegree: { x: 0, y: -45, z: 0 },
   })
   blockGrassCorner.initCollider({
-    position: { x: 0, y: 1, z: 0 },
-    scale: { x: 0.5, y: 0.5, z: 0.5 },
-    rotationDegree: { x: 0, y: 45, z: 0 },
+    positionOffset: { x: 0, y: 1, z: 0 },
+    rotationDegreeOffset: { x: 0, y: 45, z: 0 },
+    scaleOffset: { x: 0.5, y: 0.5, z: 0.5 },
   })
-  scene.addComponent(blockGrassCorner)
 
   const blockGrassOverhangLargeTall = new FOBJ(scene, {
     name: 'block-grass-overhang-large-tall',
@@ -80,35 +77,32 @@ import Character from './classes/Character'
     scale: { x: 4, y: 4, z: 4 },
   })
   blockGrassOverhangLargeTall.initCollider({
-    position: { x: 0, y: 2, z: 0 },
+    positionOffset: { x: 0, y: 2, z: 0 },
   })
-  scene.addComponent(blockGrassOverhangLargeTall)
 
   const blockGrassLargeSlope = new FGLB(scene, {
     name: 'block-grass-large-slope',
     position: { x: -8.5, y: -1, z: -4 },
-    scale: { x: 2, y: 2, z: 2 },
     rotationDegree: { x: 0, y: -90, z: 0 },
+    scale: { x: 2, y: 2, z: 2 },
   })
   blockGrassLargeSlope.onLoaded(() => {
     blockGrassLargeSlope.initCollider({
-      shape: FShapes.MESH,
+      shape: FShapes.CUBOID,
     })
   })
-  scene.addComponent(blockGrassLargeSlope)
 
   const blockGrassLargeSlope2 = new FGLB(scene, {
     name: 'block-grass-large-slope',
     position: { x: -13, y: -2, z: -3 },
-    scale: { x: 2, y: 2, z: 2 },
     rotationDegree: { x: 0, y: -90, z: 0 },
+    scale: { x: 2, y: 2, z: 2 },
   })
   blockGrassLargeSlope2.onLoaded(() => {
     blockGrassLargeSlope2.initCollider({
-      shape: FShapes.MESH,
+      shape: FShapes.CUBOID,
     })
   })
-  scene.addComponent(blockGrassLargeSlope2)
 
   const blockGrassLarge = new FFBX(scene, {
     name: 'block-grass-large',
@@ -119,7 +113,6 @@ import Character from './classes/Character'
     position: { x: 0, y: 2, z: 0 },
     scale: { x: 1, y: 0.5, z: 1 },
   })
-  scene.addComponent(blockGrassLarge)
 
   // Add "stairs"
   for (let i = 0; i < 10; i++) {
@@ -129,7 +122,6 @@ import Character from './classes/Character'
     })
     cube.initCollider()
     cube.setColor(0x60D641)
-    scene.addComponent(cube)
   }
 
   // Create a second ground
@@ -139,11 +131,9 @@ import Character from './classes/Character'
   })
   ground2.initCollider()
   ground2.setColor(0x60D641)
-  scene.addComponent(ground2)
 
   // Create a character
   const character = new Character(scene)
-  scene.addComponent(character)
 
   // Attach a camera to the character
   scene.camera = new FGameCamera(scene, { target: character })
@@ -155,26 +145,21 @@ import Character from './classes/Character'
     position: { x: 2, y: 5, z: -2 },
   })
   sphere.initRigidBody()
-  scene.addComponent(sphere)
 
   const capsule = new FCapsule(scene, {
     position: { x: -5, y: 5, z: 5 },
     rotationDegree: { x: 0, y: 45, z: 0 },
   })
   capsule.initRigidBody()
-  scene.addComponent(capsule)
 
   const duck = new Duck(scene)
-  duck.setPosition({ x: -5, y: 5, z: -5 })
+  duck.transform.position = { x: -5, y: 5, z: -5 }
   duck.initRigidBody()
-  scene.addComponent(duck)
 
-  const gltfCube = new GltfCube(scene)
-  scene.addComponent(gltfCube)
+  new GltfCube(scene)
 
   const gltfCube2 = new GltfCube(scene)
-  gltfCube2.setPosition({ x: 2, y: 5, z: 2 })
-  scene.addComponent(gltfCube2)
+  gltfCube2.transform.position = { x: 2, y: 5, z: 2 }
 
   // Create 8 cubes dynamically in circle from 0 to 2PI on the second ground
   for (let i = 0; i < 8; i++) {
@@ -199,7 +184,6 @@ import Character from './classes/Character'
       })
       cube.initRigidBody()
     }
-    scene.addComponent(cube)
   }
 
   // Create a rotating cube
@@ -209,12 +193,11 @@ import Character from './classes/Character'
   rotatingCube.setColor(0x00FF00)
   rotatingCube.initSensor()
   let totalDelta = 0
-  scene.addComponent(rotatingCube)
   scene.onFrame((delta) => {
     // Each frame, move the cube on a circle of radius 3
     const x = Math.cos(totalDelta) * 3
     const y = Math.sin(totalDelta) * 3
-    rotatingCube.setPosition({ x, y, z: -5 })
+    rotatingCube.transform.position = { x, y, z: -5 }
     totalDelta += delta
   })
 
@@ -233,19 +216,18 @@ import Character from './classes/Character'
   })
   character.onCollisionWith(deathZone, () => {
     console.log('Character fell into the death zone!')
-    character.setPosition({ x: 0, y: 10, z: 0 })
+    character.transform.position = { x: 0, y: 10, z: 0 }
   })
 
   // Create keyboard
   const keyboard = new FKeyboard(scene)
   keyboard.onKeyDown('p', () => {
-    character.setPosition({ x: 0, y: 5, z: 0 })
+    character.transform.position = { x: 0, y: 5, z: 0 }
   })
 
   // After 3 seconds, add a third gltfCube
   setTimeout(() => {
     const gltfCube3 = new GltfCube(scene)
-    gltfCube3.setPosition({ x: -2, y: 5, z: -2 })
-    scene.addComponent(gltfCube3)
+    gltfCube3.transform.position = { x: -2, y: 5, z: -2 }
   }, 3000)
 })()

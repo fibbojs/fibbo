@@ -18,5 +18,7 @@ import { FPolyhedron } from './FPolyhedron'
 export class FCuboid extends FPolyhedron {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 }

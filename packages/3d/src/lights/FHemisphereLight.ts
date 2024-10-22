@@ -29,9 +29,11 @@ export class FHemisphereLight extends FLight {
       throw new Error('FibboError: FHemisphereLight requires color and intensity')
 
     // Create the hemisphere light
-    this.light = new THREE.HemisphereLight(options.color, options.intensity)
+    this.__LIGHT__ = new THREE.HemisphereLight(options.color, options.intensity)
     // Apply the transform
     this.__UPDATE_POSITION__()
     this.__UPDATE_ROTATION__()
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 }

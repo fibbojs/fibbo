@@ -30,18 +30,21 @@ export class FLightProbe extends FLight {
       throw new Error('FibboError: FLightProbe requires sh and intensity')
 
     // Create the light probe
-    this.light = new THREE.LightProbe(options.sh, options.intensity)
+    this.__LIGHT__ = new THREE.LightProbe(options.sh, options.intensity)
     // Apply the transform
     this.__UPDATE_POSITION__()
     this.__UPDATE_ROTATION__()
 
     // If shadows are enabled, set the light to cast shadows
     if (this.scene.__ENABLE_SHADOWS__) {
-      this.light.castShadow = true
-      if (this.light.shadow) {
-        this.light.shadow.mapSize.width = 65536
-        this.light.shadow.mapSize.height = 65536
+      this.__LIGHT__.castShadow = true
+      if (this.__LIGHT__.shadow) {
+        this.__LIGHT__.shadow.mapSize.width = 65536
+        this.__LIGHT__.shadow.mapSize.height = 65536
       }
     }
+
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 }

@@ -57,7 +57,7 @@ export abstract class FComponent {
   /**
    * The scene the component is attached to.
    */
-  public scene?: FScene
+  public scene: FScene
 
   /**
    * The controller attached to the component.
@@ -80,12 +80,9 @@ export abstract class FComponent {
 
     // Add the component to the scene if addToScene is true
     if (options.addToScene) {
-      if (this instanceof FLight) {
-        this.scene.addLight(this)
-      }
-      else {
+      this.onLoaded(() => {
         this.scene.addComponent(this)
-      }
+      })
     }
 
     // Generate a unique ID

@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js'
 import type { FScene } from '../core/FScene'
+import type { FVector3 } from '../types/FVector3'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
@@ -73,5 +74,13 @@ export class FFBX extends FModel {
     if (this.transform.scale) {
       this.__MESH__.scale.set(this.transform.scale.x / 200, this.transform.scale.y / 200, this.transform.scale.z / 200)
     }
+  }
+
+  __SET_SCALE__(scale: FVector3): void {
+    super.__SET_SCALE__({
+      x: scale.x / 200,
+      y: scale.y / 200,
+      z: scale.z / 200,
+    })
   }
 }
