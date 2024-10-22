@@ -111,7 +111,6 @@ export abstract class FCharacterController extends FController {
     // Initialize a sensor
     this.component.initSensor({
       shape: FShapes.CAPSULE,
-      scale: { x: 1.1, y: 1.1, z: 1.1 },
     })
   }
 

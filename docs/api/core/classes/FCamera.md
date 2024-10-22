@@ -12,7 +12,11 @@ The base class for cameras in Fibbo.
 
 ### new FCamera()
 
-> **new FCamera**(): [`FCamera`](FCamera.md)
+> **new FCamera**(`scene`): [`FCamera`](FCamera.md)
+
+#### Parameters
+
+• **scene**: [`FScene`](FScene.md)
 
 #### Returns
 
@@ -24,7 +28,7 @@ The base class for cameras in Fibbo.
 
 #### Defined in
 
-[core/src/FCamera.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FCamera.ts#L8)
+[core/src/FCamera.ts:9](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FCamera.ts#L9)
 
 ## Methods
 
@@ -76,7 +80,54 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[core/src/FComponent.ts:135](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L135)
+[core/src/FComponent.ts:201](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L201)
+
+***
+
+### emitOnLoaded()
+
+> **emitOnLoaded**(): `void`
+
+Emit the onLoaded callbacks.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`emitOnLoaded`](FComponent.md#emitonloaded)
+
+#### Defined in
+
+[core/src/FComponent.ts:123](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L123)
+
+***
+
+### frame()
+
+> **frame**(`delta`): `void`
+
+Update the component. Should be called every frame.
+The purpose of this method is to render the component, its mesh/sprite, and its properties.
+
+#### Parameters
+
+• **delta**: `number`
+
+The time since the last frame.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`frame`](FComponent.md#frame)
+
+#### Defined in
+
+[core/src/FComponent.ts:97](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L97)
 
 ***
 
@@ -130,23 +181,21 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[core/src/FComponent.ts:85](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L85)
+[core/src/FComponent.ts:151](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L151)
 
 ***
 
 ### onFrame()
 
-> **onFrame**(`delta`): `void`
+> **onFrame**(`callback`): `void`
 
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
+Add a callback to be called every frame.
 
 #### Parameters
 
-• **delta**: `number`
+• **callback**
 
-The time since the last frame.
+The callback function.
 
 #### Returns
 
@@ -158,27 +207,33 @@ The time since the last frame.
 
 #### Defined in
 
-[core/src/FComponent.ts:56](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L56)
+[core/src/FComponent.ts:108](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L108)
 
 ***
 
-### setZoom()
+### onLoaded()
 
-> `abstract` **setZoom**(`zoom`): `void`
+> **onLoaded**(`callback`): `void`
 
-Set the zoom of the camera.
+Add a callback to be called when the component is loaded (could be a texture, a 3D model, etc).
 
 #### Parameters
 
-• **zoom**: `number`
+• **callback**
+
+The callback function.
 
 #### Returns
 
 `void`
 
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`onLoaded`](FComponent.md#onloaded)
+
 #### Defined in
 
-[core/src/FCamera.ts:15](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FCamera.ts#L15)
+[core/src/FComponent.ts:116](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L116)
 
 ## Properties
 
@@ -199,7 +254,39 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[core/src/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L39)
+[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L55)
+
+***
+
+### \_\_CALLBACKS\_ON\_FRAME\_\_
+
+> **\_\_CALLBACKS\_ON\_FRAME\_\_**: () => `void`[] = `[]`
+
+Callbacks for when a frame is rendered.
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`__CALLBACKS_ON_FRAME__`](FComponent.md#__callbacks_on_frame__)
+
+#### Defined in
+
+[core/src/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L44)
+
+***
+
+### \_\_CALLBACKS\_ON\_LOADED\_\_
+
+> **\_\_CALLBACKS\_ON\_LOADED\_\_**: () => `void`[] = `[]`
+
+Callbacks for when the component is loaded (could be a texture, a 3D model, etc).
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`__CALLBACKS_ON_LOADED__`](FComponent.md#__callbacks_on_loaded__)
+
+#### Defined in
+
+[core/src/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L49)
 
 ***
 
@@ -216,7 +303,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L33)
+[core/src/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L39)
 
 ***
 
@@ -230,7 +317,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:27](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L27)
+[core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L33)
 
 ***
 
@@ -246,7 +333,7 @@ Internal flags
 
 #### Defined in
 
-[core/src/FComponent.ts:26](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L26)
+[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L32)
 
 ***
 
@@ -262,4 +349,20 @@ The controller attached to the component.
 
 #### Defined in
 
-[core/src/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FComponent.ts#L44)
+[core/src/FComponent.ts:65](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L65)
+
+***
+
+### scene
+
+> **scene**: [`FScene`](FScene.md)
+
+The scene the component is attached to.
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`scene`](FComponent.md#scene)
+
+#### Defined in
+
+[core/src/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L60)

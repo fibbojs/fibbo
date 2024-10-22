@@ -1,5 +1,6 @@
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'
 import type { FComponent } from '../core/FComponent'
+import type { FScene } from '../core/FScene'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -24,15 +25,12 @@ export class FPointerLockCamera extends FCamera {
   // Pointer Lock controls
   controls: PointerLockControls
 
-  /**
-   * @param options Options for the camera.
-   */
-  constructor(options: FAttachedCameraOptions) {
-    super(options)
+  constructor(scene: FScene, options: FAttachedCameraOptions) {
+    super(scene, options)
     this.attachedComponent = options.target
 
     // Create Pointer Lock controls
-    this.controls = new PointerLockControls(this, this.attachedComponent.scene.renderer.domElement)
+    this.controls = new PointerLockControls(this.__CAMERA__, this.attachedComponent.scene.renderer.domElement)
 
     this.attachedComponent.scene.scene.add(this.controls.getObject())
 
@@ -42,13 +40,13 @@ export class FPointerLockCamera extends FCamera {
     })
   }
 
-  onFrame(_delta: number): void {
-    if (this.attachedComponent.mesh === undefined)
+  frame(_delta: number): void {
+    if (this.attachedComponent.__MESH__ === undefined)
       return
 
     // Position the camera at the model's position + offset
-    this.position.x = this.attachedComponent.mesh.position.x
-    this.position.y = this.attachedComponent.mesh.position.y
-    this.position.z = this.attachedComponent.mesh.position.z
+    this.transform.x = this.attachedComponent.__MESH__.position.x
+    this.transform.y = this.attachedComponent.__MESH__.position.y
+    this.transform.z = this.attachedComponent.__MESH__.position.z
   }
 }

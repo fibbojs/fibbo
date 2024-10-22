@@ -1,9 +1,9 @@
 import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
-import { FShapes } from '../types/FShapes'
 import type { FComponentOptions } from '../core/FComponent'
-import type { FColliderOptions } from '../core/FCollider'
+import { FShapes } from '../types/FShapes'
 import type { FRigidBodyOptions } from '../core/FRigidBody'
+import type { FColliderOptions } from '../core/FCollider'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -25,16 +25,21 @@ export class FCapsule extends FPolyhedron {
     // Create a capsule
     const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
     const material = new THREE.MeshPhongMaterial({ color: 0x666666 })
-    this.mesh = new THREE.Mesh(geometry, material)
+    this.__MESH__ = new THREE.Mesh(geometry, material)
     // If shadows are enabled, cast and receive shadows
     if (scene.__ENABLE_SHADOWS__) {
-      this.mesh.castShadow = true
-      this.mesh.receiveShadow = true
+      this.__MESH__.castShadow = true
+      this.__MESH__.receiveShadow = true
     }
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
+  initCollider(options?: FColliderOptions): void {
+    super.initCollider({
+      shape: FShapes.CAPSULE,
+      ...options,
+    })
   }
 
   initRigidBody(options?: FRigidBodyOptions): void {
@@ -44,8 +49,8 @@ export class FCapsule extends FPolyhedron {
     })
   }
 
-  initCollider(options?: FColliderOptions): void {
-    super.initCollider({
+  initSensor(options?: FRigidBodyOptions): void {
+    super.initSensor({
       shape: FShapes.CAPSULE,
       ...options,
     })

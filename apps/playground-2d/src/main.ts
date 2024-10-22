@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 import './style.css'
 import { FAttachedCamera, FCircle, FComponentEmpty, FRectangle, FScene, FShapes } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
@@ -20,13 +21,10 @@ import Character from './classes/Character'
     scale: { x: 20, y: 0.1 },
   })
   deathZone.initCollider()
-  scene.addComponent(deathZone)
-
   // Load level
   loadLevel(scene)
 
-  const square = new MySquare(scene)
-  scene.addComponent(square)
+  new MySquare(scene)
 
   const square2 = new FRectangle(scene, {
     position: { x: 0, y: 3 },
@@ -36,7 +34,6 @@ import Character from './classes/Character'
   square2.initCollider({
     rotationDegree: 45,
   })
-  scene.addComponent(square2)
 
   const square3 = new FRectangle(scene, {
     position: { x: 4, y: 1 },
@@ -44,7 +41,6 @@ import Character from './classes/Character'
   square3.initCollider({
     shape: FShapes.CIRCLE,
   })
-  scene.addComponent(square3)
 
   const square4 = new FRectangle(scene, {
     position: { x: -2.2, y: 1 },
@@ -56,21 +52,18 @@ import Character from './classes/Character'
   square4.initSensor({
     scale: { x: 2.5, y: 2.5 },
   })
-  scene.addComponent(square4)
 
   const square5 = new FRectangle(scene, {
     position: { x: 1, y: 2 },
     scale: { x: 0.5, y: 0.5 },
   })
   square5.initSensor()
-  scene.addComponent(square5)
 
   const circle = new FCircle(scene, {
     position: { x: 0, y: 3 },
     scale: { x: 1, y: 1 },
   })
   circle.initRigidBody()
-  scene.addComponent(circle)
 
   // Create a rotating square
   const rotatingSquare = new FRectangle(scene, {
@@ -78,12 +71,11 @@ import Character from './classes/Character'
   })
   rotatingSquare.initSensor()
   let totalDelta = 0
-  scene.addComponent(rotatingSquare)
   scene.onFrame((delta) => {
     // Each frame, move the cube on a circle of radius 3
     const x = Math.cos(totalDelta) * 3
     const y = Math.sin(totalDelta) * 3
-    rotatingSquare.setPosition({ x, y })
+    rotatingSquare.transform.setPosition({ x, y })
     totalDelta += delta
   })
 
@@ -96,27 +88,26 @@ import Character from './classes/Character'
     // Cast the component to FRectangle
     const square = component as FRectangle
     // Change the color of the square to a random color
-    square.container.tint = Math.random() * 0xFFFFFF
+    square.__CONTAINER__.tint = Math.random() * 0xFFFFFF
   })
   character.onCollisionWith(circle, () => {
     console.log('Sprite collided with the circle!')
   })
   character.onCollisionWith(deathZone, () => {
-    character.setPosition({ x: 0, y: 5 })
+    character.transform.setPosition({ x: 0, y: 5 })
     console.log('Sprite collided with the death zone!')
   })
-  scene.addComponent(character)
 
   // Create keyboard
   const keyboard = new FKeyboard(scene)
   keyboard.onKeyDown('p', () => {
-    character.setPosition({ x: 0, y: 5 })
-
-    // Remove a square
-    scene.removeComponent(square4)
+    character.transform.setPosition({ x: 0, y: 5 })
 
     // Remove the collision callback with FRectangle
     removeCollisionCallbackWithFRectangle()
+
+    // Make character 2 times bigger on Y axis
+    character.transform.setScale({ x: 0.5, y: 1 })
 
     // Zoom in the camera
     scene.camera.setZoom(1)

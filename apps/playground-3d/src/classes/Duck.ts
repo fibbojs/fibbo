@@ -7,8 +7,4 @@ export default class Duck extends FGLB {
       name: 'Duck',
     })
   }
-
-  onFrame(delta: number) {
-    super.onFrame(delta)
-  }
 }

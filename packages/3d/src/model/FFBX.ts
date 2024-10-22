@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js'
 import type { FScene } from '../core/FScene'
+import type { FVector3 } from '../types/FVector3'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
@@ -35,7 +36,7 @@ export class FFBX extends FModel {
       // Called when the resource is loaded
       (fbx) => {
         // Get the mesh from the FBX scene
-        this.mesh = fbx
+        this.__MESH__ = fbx
 
         // Load textures
         fbx.traverse((child) => {
@@ -64,14 +65,22 @@ export class FFBX extends FModel {
 
   defineMeshTransforms() {
     // If the mesh is not defined, return
-    if (!this.mesh)
+    if (!this.__MESH__)
       return
 
     super.defineMeshTransforms()
 
     // Define the scale differently for FBX models as they are usually larger
     if (this.transform.scale) {
-      this.mesh.scale.set(this.transform.scale.x / 200, this.transform.scale.y / 200, this.transform.scale.z / 200)
+      this.__MESH__.scale.set(this.transform.scale.x / 200, this.transform.scale.y / 200, this.transform.scale.z / 200)
     }
+  }
+
+  __SET_SCALE__(scale: FVector3): void {
+    super.__SET_SCALE__({
+      x: scale.x / 200,
+      y: scale.y / 200,
+      z: scale.z / 200,
+    })
   }
 }

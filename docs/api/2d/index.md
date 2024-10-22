@@ -50,6 +50,7 @@
 
 ### Enumerations
 
+- [FRigidBodyType](enumerations/FRigidBodyType.md)
 - [FShapes](enumerations/FShapes.md)
 
 ### Interfaces
@@ -65,3 +66,4 @@
 - [FSceneOptions](interfaces/FSceneOptions.md)
 - [FSpriteOptions](interfaces/FSpriteOptions.md)
 - [FTransformOptions](interfaces/FTransformOptions.md)
+- [FVector2](interfaces/FVector2.md)

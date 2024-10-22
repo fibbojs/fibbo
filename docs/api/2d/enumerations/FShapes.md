@@ -10,14 +10,14 @@
 
 #### Defined in
 
-[2d/src/types/FShapes.ts:4](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/types/FShapes.ts#L4)
+[2d/src/types/FShapes.ts:4](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/types/FShapes.ts#L4)
 
 ***
 
-### SQUARE
+### RECTANGLE
 
-> **SQUARE**: `"Square"`
+> **RECTANGLE**: `"Rectangle"`
 
 #### Defined in
 
-[2d/src/types/FShapes.ts:3](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/types/FShapes.ts#L3)
+[2d/src/types/FShapes.ts:3](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/types/FShapes.ts#L3)

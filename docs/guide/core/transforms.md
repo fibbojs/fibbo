@@ -2,11 +2,18 @@
 
 In most game engines, a transform is an object responsible for handling the position, rotation, and scale of a component in the scene.
 
-In Fibbo, each component has a `transform` property that exposes these attributes.
+In Fibbo, each component (sprites, lights, cameras, ...) or physic object (colliders, rigidbodies, ...) has a `transform` property that exposes these attributes.
 
-However you should not modify the transform directly, but use the provided methods instead.
+The transform is meant to be accessed and modified using getters and setters.
 
 You can find the API reference for a [2d transform here](/api/2d/classes/FTransform) and for a [3d transform here](/api/3d/classes/FTransform).
+
+::: warning
+For now, transforms are not deeply reactive, so you need to use the provided setters to update the values. For example :
+- `transform.position = { x: 1, y: 2 }` is reactive
+- `transform.x = 1` is reactive
+- `transform.position.x = 1` is **NOT** reactive
+:::
 
 ## Position
 
@@ -14,18 +21,30 @@ The position of an object is a 2D/3D vector that represents its location in the 
 
 You can set the position as follows :
 
-```typescript
-const cube = new FCuboid()
-cube.setPosition({ x: 1, y: 2, z: 3 })
-// Or using the setter :
-cube.position = { x: 1, y: 2, z: 3 }
+::: code-group
+
+```typescript [2d]
+const rectangle = new FRectangle(scene)
+rectangle.transform.position = { x: 1, y: 2 }
+// Or using the function directly :
+rectangle.transform.setPosition({ x: 1, y: 2 })
+// Accessing a specific axis :
+rectangle.transform.x = 1
+rectangle.transform.y = 2
 ```
 
-You can also get the position of an object using the `position` property :
-
-```typescript
-const position = cube.position
+```typescript [3d]
+const cube = new FCuboid(scene)
+cube.transform.position = { x: 1, y: 2, z: 3 }
+// Or using the function directly :
+cube.transform.setPosition({ x: 1, y: 2, z: 3 })
+// Accessing a specific axis :
+cube.transform.x = 1
+cube.transform.y = 2
+cube.transform.z = 3
 ```
+
+:::
 
 ## Rotation
 
@@ -33,26 +52,51 @@ The rotation of an object is a either a number (in 2D scenes) or a 3D vector (in
 
 You can set the rotation as follows :
 
-```typescript
-const cube = new FCuboid()
-cube.setRotation({ x: 0, y: 0.7853981634, z: 0 })
-// Or using the setter :
-cube.rotation = { x: 0, y: 0.7853981634, z: 0 }
+::: code-group
+
+```typescript [2d]
+const rectangle = new FRectangle(scene)
+rectangle.transform.rotation = Math.PI / 2
+// Or using the function directly :
+rectangle.transform.setRotation(Math.PI / 2)
 ```
 
-You can also get the rotation of an object using the `rotation` property :
-
-```typescript
-const rotation = cube.rotation
+```typescript [3d]
+const cube = new FCuboid(scene)
+cube.transform.rotation = { x: Math.PI / 2, y: Math.PI / 2, z: Math.PI / 2 }
+// Or using the function directly :
+cube.transform.setRotation({ x: Math.PI / 2, y: Math.PI / 2, z: Math.PI / 2 })
+// Accessing a specific axis :
+cube.transform.rotationX = Math.PI / 2
+cube.transform.rotationY = Math.PI / 2
+cube.transform.rotationZ = Math.PI / 2
 ```
 
-In most cases, you'll want to use the `rotationDegree` alternative, which helps you set the rotation in degrees :
+:::
 
-```typescript
-cube.setRotationDegree({ x: 0, y: 45, z: 0 })
-cube.rotationDegree = { x: 0, y: 45, z: 0 }
-const rotationDegree = cube.rotationDegree
+Alternatively, you can use the `rotationDegree` property to set the rotation in degrees :
+
+::: code-group
+
+```typescript [2d]
+const rectangle = new FRectangle(scene)
+rectangle.transform.rotationDegree = 90
+// Or using the function directly :
+rectangle.transform.setRotationDegree(90)
 ```
+
+```typescript [3d]
+const cube = new FCuboid(scene)
+cube.transform.rotationDegree = { x: 90, y: 90, z: 90 }
+// Or using the function directly :
+cube.transform.setRotationDegree({ x: 90, y: 90, z: 90 })
+// Accessing a specific axis :
+cube.transform.rotationDegreeX = 90
+cube.transform.rotationDegreeY = 90
+cube.transform.rotationDegreeZ = 90
+```
+
+:::
 
 ## Scale
 
@@ -60,15 +104,27 @@ The scale of an object is a 2D/3D vector that represents its size in the scene. 
 
 You can set the scale as follows :
 
-```typescript
-const cube = new FCuboid()
-cube.setScale({ x: 2, y: 2, z: 2 })
-// Or using the setter :
-cube.scale = { x: 2, y: 2, z: 2 }
+::: code-group
+
+```typescript [2d]
+const rectangle = new FRectangle(scene)
+rectangle.transform.scale = { x: 2, y: 2 }
+// Or using the function directly :
+rectangle.transform.setScale({ x: 2, y: 2 })
+// Accessing a specific axis :
+rectangle.transform.scaleX = 2
+rectangle.transform.scaleY = 2
 ```
 
-You can also get the scale of an object using the `scale` property :
-
-```typescript
-const scale = cube.scale
+```typescript [3d]
+const cube = new FCuboid(scene)
+cube.transform.scale = { x: 2, y: 2, z: 2 }
+// Or using the function directly :
+cube.transform.setScale({ x: 2, y: 2, z: 2 })
+// Accessing a specific axis :
+cube.transform.scaleX = 2
+cube.transform.scaleY = 2
+cube.transform.scaleZ = 2
 ```
+
+:::

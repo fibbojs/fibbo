@@ -16,11 +16,6 @@ export interface FModelOptions extends FComponentOptions {
  */
 export abstract class FModel extends FComponent {
   /**
-   * Callbacks for when the model is loaded
-   */
-  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
-
-  /**
    * The name of the model.
    * Shouldn't contain file extensions.
    */
@@ -103,19 +98,12 @@ export abstract class FModel extends FComponent {
   }
 
   /**
-   * Add a callback to be called when the model is loaded.
-   * @param callback The callback function.
-   */
-  onLoaded(callback: () => void) {
-    this.__CALLBACKS_ON_LOADED__.push(callback)
-  }
-
-  /**
    * Emit the onLoaded callbacks.
+   * It was overridden to add shadow support.
    */
   emitOnLoaded() {
-    if (this.scene.__ENABLE_SHADOWS__ && this.mesh) {
-      this.mesh.traverse((child) => {
+    if (this.scene.__ENABLE_SHADOWS__ && this.__MESH__) {
+      this.__MESH__.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = true
           child.receiveShadow = true
@@ -132,20 +120,20 @@ export abstract class FModel extends FComponent {
    */
   defineMeshTransforms() {
     // If the mesh is not defined, return
-    if (!this.mesh)
+    if (!this.__MESH__)
       return
 
     // If a position is defined, apply it
     if (this.transform.position)
-      this.mesh.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+      this.__MESH__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
 
     // If a scale is defined, apply it
     if (this.transform.scale)
-      this.mesh.scale.set(this.transform.scale.x / 2, this.transform.scale.y / 2, this.transform.scale.z / 2)
+      this.__MESH__.scale.set(this.transform.scale.x / 2, this.transform.scale.y / 2, this.transform.scale.z / 2)
 
     // If a rotation is defined, apply it
     if (this.transform.rotation)
-      this.mesh.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
+      this.__MESH__.rotation.set(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)
   }
 
   /**

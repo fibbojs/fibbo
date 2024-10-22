@@ -30,7 +30,7 @@ A fixed camera.
 
 #### Defined in
 
-[2d/src/cameras/FFixedCamera.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FFixedCamera.ts#L10)
+[2d/src/cameras/FFixedCamera.ts:10](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FFixedCamera.ts#L10)
 
 ## Methods
 
@@ -48,7 +48,97 @@ A fixed camera.
 
 #### Defined in
 
-[2d/src/cameras/FFixedCamera.ts:17](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FFixedCamera.ts#L17)
+[2d/src/cameras/FFixedCamera.ts:14](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FFixedCamera.ts#L14)
+
+***
+
+### \_\_SET\_POSITION\_\_()
+
+> **\_\_SET\_POSITION\_\_**(`position`): `void`
+
+#### Parameters
+
+• **position**
+
+• **position.x**: `number`
+
+• **position.y**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__SET_POSITION__`](FCamera.md#__set_position__)
+
+#### Defined in
+
+[2d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L88)
+
+***
+
+### \_\_UPDATE\_POSITION\_\_()
+
+> **\_\_UPDATE\_POSITION\_\_**(): `void`
+
+Update the position of the camera according to the transform.
+This method should be called after updating the transform properties.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__UPDATE_POSITION__`](FCamera.md#__update_position__)
+
+#### Defined in
+
+[2d/src/cameras/FCamera.ts:67](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L67)
+
+***
+
+### \_\_UPDATE\_ROTATION\_\_()
+
+> **\_\_UPDATE\_ROTATION\_\_**(): `void`
+
+Update the rotation of the camera according to the transform.
+This method should be called after updating the transform properties.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__UPDATE_ROTATION__`](FCamera.md#__update_rotation__)
+
+#### Defined in
+
+[2d/src/cameras/FCamera.ts:75](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L75)
+
+***
+
+### \_\_UPDATE\_SCALE\_\_()
+
+> **\_\_UPDATE\_SCALE\_\_**(): `void`
+
+Update the scale of the camera according to the transform.
+This method should be called after updating the transform properties.
+This method does not make sense for cameras, but it is implemented for consistency.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__UPDATE_SCALE__`](FCamera.md#__update_scale__)
+
+#### Defined in
+
+[2d/src/cameras/FCamera.ts:84](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L84)
 
 ***
 
@@ -100,7 +190,54 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:116
+core/dist/index.d.ts:293
+
+***
+
+### emitOnLoaded()
+
+> **emitOnLoaded**(): `void`
+
+Emit the onLoaded callbacks.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`emitOnLoaded`](FCamera.md#emitonloaded)
+
+#### Defined in
+
+core/dist/index.d.ts:247
+
+***
+
+### frame()
+
+> **frame**(`delta`): `void`
+
+Update the component. Should be called every frame.
+The purpose of this method is to render the component, its mesh/sprite, and its properties.
+
+#### Parameters
+
+• **delta**: `number`
+
+The time since the last frame.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`frame`](FCamera.md#frame)
+
+#### Defined in
+
+core/dist/index.d.ts:233
 
 ***
 
@@ -154,41 +291,65 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-core/dist/index.d.ts:93
+core/dist/index.d.ts:270
 
 ***
 
 ### onFrame()
 
-> **onFrame**(`_delta`): `void`
+> **onFrame**(`callback`): `void`
 
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
+Add a callback to be called every frame.
 
 #### Parameters
 
-• **\_delta**: `number`
+• **callback**
+
+The callback function.
 
 #### Returns
 
 `void`
 
-#### Overrides
+#### Inherited from
 
 [`FCamera`](FCamera.md).[`onFrame`](FCamera.md#onframe)
 
 #### Defined in
 
-[2d/src/cameras/FFixedCamera.ts:14](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FFixedCamera.ts#L14)
+core/dist/index.d.ts:238
+
+***
+
+### onLoaded()
+
+> **onLoaded**(`callback`): `void`
+
+Add a callback to be called when the component is loaded (could be a texture, a 3D model, etc).
+
+#### Parameters
+
+• **callback**
+
+The callback function.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`onLoaded`](FCamera.md#onloaded)
+
+#### Defined in
+
+core/dist/index.d.ts:243
 
 ***
 
 ### setZoom()
 
 > **setZoom**(`zoom`): `void`
-
-Set the zoom of the camera.
 
 #### Parameters
 
@@ -204,7 +365,7 @@ Set the zoom of the camera.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:57](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L57)
+[2d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L59)
 
 ## Properties
 
@@ -225,7 +386,39 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:56
+core/dist/index.d.ts:216
+
+***
+
+### \_\_CALLBACKS\_ON\_FRAME\_\_
+
+> **\_\_CALLBACKS\_ON\_FRAME\_\_**: () => `void`[]
+
+Callbacks for when a frame is rendered.
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__CALLBACKS_ON_FRAME__`](FCamera.md#__callbacks_on_frame__)
+
+#### Defined in
+
+core/dist/index.d.ts:207
+
+***
+
+### \_\_CALLBACKS\_ON\_LOADED\_\_
+
+> **\_\_CALLBACKS\_ON\_LOADED\_\_**: () => `void`[]
+
+Callbacks for when the component is loaded (could be a texture, a 3D model, etc).
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`__CALLBACKS_ON_LOADED__`](FCamera.md#__callbacks_on_loaded__)
+
+#### Defined in
+
+core/dist/index.d.ts:211
 
 ***
 
@@ -242,7 +435,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:51
+core/dist/index.d.ts:203
 
 ***
 
@@ -258,7 +451,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:16](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L16)
+[2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -274,7 +467,7 @@ Internal flags
 
 #### Defined in
 
-core/dist/index.d.ts:45
+core/dist/index.d.ts:197
 
 ***
 
@@ -290,31 +483,7 @@ The controller attached to the component.
 
 #### Defined in
 
-core/dist/index.d.ts:62
-
-***
-
-### position
-
-> **position**: `object`
-
-Position of the camera.
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### Inherited from
-
-[`FCamera`](FCamera.md).[`position`](FCamera.md#position)
-
-#### Defined in
-
-[2d/src/cameras/FCamera.ts:27](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L27)
+core/dist/index.d.ts:226
 
 ***
 
@@ -330,4 +499,22 @@ The scene the camera is in.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/cameras/FCamera.ts#L21)
+[2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L22)
+
+***
+
+### transform
+
+> **transform**: [`FTransform`](FTransform.md)
+
+Transform of the camera.
+It is used to store the position of the camera.
+The scale and rotation of the transform are not used.
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`transform`](FCamera.md#transform)
+
+#### Defined in
+
+[2d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L29)

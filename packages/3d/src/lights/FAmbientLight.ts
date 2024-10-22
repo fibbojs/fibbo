@@ -23,10 +23,11 @@ export class FAmbientLight extends FLight {
       throw new Error('FibboError: FAmbientLight requires color and intensity')
 
     // Create the ambient light
-    this.light = new THREE.AmbientLight(options.color, options.intensity)
+    this.__LIGHT__ = new THREE.AmbientLight(options.color, options.intensity)
     // Apply the transform
-    this.applyTransform()
+    this.__UPDATE_POSITION__()
+    this.__UPDATE_ROTATION__()
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
-
-  onFrame(_delta: number): void {}
 }

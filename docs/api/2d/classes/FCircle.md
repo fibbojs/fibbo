@@ -19,224 +19,6 @@ scene.addComponent(circle)
 
 - [`FPolygon`](FPolygon.md)
 
-## Accessors
-
-### position
-
-> `get` **position**(): `object`
-
-Setters & getters for transform properties
-
-> `set` **position**(`p`): `void`
-
-#### Parameters
-
-• **p**
-
-• **p.x**: `number`
-
-• **p.y**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`position`](FPolygon.md#position)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:362](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L362)
-
-***
-
-### rotation
-
-> `get` **rotation**(): `number`
-
-> `set` **rotation**(`r`): `void`
-
-#### Parameters
-
-• **r**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`rotation`](FPolygon.md#rotation)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:386](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L386)
-
-***
-
-### rotationDegree
-
-> `get` **rotationDegree**(): `number`
-
-> `set` **rotationDegree**(`r`): `void`
-
-#### Parameters
-
-• **r**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`rotationDegree`](FPolygon.md#rotationdegree)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:394](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L394)
-
-***
-
-### scale
-
-> `get` **scale**(): `object`
-
-> `set` **scale**(`s`): `void`
-
-#### Parameters
-
-• **s**
-
-• **s.x**: `number`
-
-• **s.y**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`scale`](FPolygon.md#scale)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:402](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L402)
-
-***
-
-### scaleX
-
-> `get` **scaleX**(): `number`
-
-> `set` **scaleX**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`scaleX`](FPolygon.md#scalex)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:410](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L410)
-
-***
-
-### scaleY
-
-> `get` **scaleY**(): `number`
-
-> `set` **scaleY**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`scaleY`](FPolygon.md#scaley)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:418](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L418)
-
-***
-
-### x
-
-> `get` **x**(): `number`
-
-> `set` **x**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`x`](FPolygon.md#x)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:370](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L370)
-
-***
-
-### y
-
-> `get` **y**(): `number`
-
-> `set` **y**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`y`](FPolygon.md#y)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:378](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L378)
-
 ## Constructors
 
 ### new FCircle()
@@ -259,9 +41,159 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:21](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/polygons/FCircle.ts#L21)
+[2d/src/polygons/FCircle.ts:23](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/polygons/FCircle.ts#L23)
 
 ## Methods
+
+### \_\_SET\_POSITION\_\_()
+
+> **\_\_SET\_POSITION\_\_**(`position`): `void`
+
+#### Parameters
+
+• **position**: [`FVector2`](../interfaces/FVector2.md)
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__SET_POSITION__`](FPolygon.md#__set_position__)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:221](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L221)
+
+***
+
+### \_\_SET\_ROTATION\_\_()
+
+> **\_\_SET\_ROTATION\_\_**(`rotation`): `void`
+
+#### Parameters
+
+• **rotation**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__SET_ROTATION__`](FPolygon.md#__set_rotation__)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:228](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L228)
+
+***
+
+### \_\_SET\_SCALE\_\_()
+
+> **\_\_SET\_SCALE\_\_**(`scale`): `void`
+
+#### Parameters
+
+• **scale**: [`FVector2`](../interfaces/FVector2.md)
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__SET_SCALE__`](FPolygon.md#__set_scale__)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:235](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L235)
+
+***
+
+### \_\_UPDATE\_POSITION\_\_()
+
+> **\_\_UPDATE\_POSITION\_\_**(`initiator`): `void`
+
+Update the position of the component according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the component won't be considered as the initiator of the position update.
+Set this to true to propagate the position update to the rigidBody, collider and sensor.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__UPDATE_POSITION__`](FPolygon.md#__update_position__)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:113](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L113)
+
+***
+
+### \_\_UPDATE\_ROTATION\_\_()
+
+> **\_\_UPDATE\_ROTATION\_\_**(`initiator`): `void`
+
+Update the rotation of the component according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the component won't be considered as the initiator of the rotation update.
+Set this to true to propagate the rotation update to the rigidBody, collider and sensor.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__UPDATE_ROTATION__`](FPolygon.md#__update_rotation__)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:153](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L153)
+
+***
+
+### \_\_UPDATE\_SCALE\_\_()
+
+> **\_\_UPDATE\_SCALE\_\_**(`initiator`): `void`
+
+Update the scale of the component according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the component won't be considered as the initiator of the scale update.
+Set this to true to propagate the scale update to the rigidBody, collider and sensor.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__UPDATE_SCALE__`](FPolygon.md#__update_scale__)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:187](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L187)
+
+***
 
 ### emitCollisionWith()
 
@@ -311,7 +243,52 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:116
+core/dist/index.d.ts:293
+
+***
+
+### emitOnLoaded()
+
+> **emitOnLoaded**(): `void`
+
+Emit the onLoaded callbacks.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`emitOnLoaded`](FPolygon.md#emitonloaded)
+
+#### Defined in
+
+core/dist/index.d.ts:247
+
+***
+
+### frame()
+
+> **frame**(`_delta`): `void`
+
+Update the component. Should be called every frame.
+The purpose of this method is to render the component, its mesh/sprite, and its properties.
+
+#### Parameters
+
+• **\_delta**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`frame`](FPolygon.md#frame)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:103](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L103)
 
 ***
 
@@ -319,45 +296,13 @@ core/dist/index.d.ts:116
 
 > **initCollider**(`options`?): `void`
 
-Only init a collider for the component, without a rigid body.
-This is useful for static objects.
-
 #### Parameters
 
-• **options?**
-
-The options for the collider.
-
-• **options.position?**: `PointData`
-
-The position of the collider.
-
-• **options.rotation?**: `number`
-
-The rotation of the collider.
-
-• **options.scale?**: `PointData`
-
-The scale of the collider.
-
-• **options.shape?**: [`FShapes`](../enumerations/FShapes.md)
-
-The shape of the collider.
+• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
 
 #### Returns
 
 `void`
-
-#### Example
-
-```ts
-component.initCollider({
-  position: { x: 0, y: 0 },
-  scale: { x: 1, y: 1 },
-  rotation: 0,
-  shape: FShapes.SQUARE
-})
-```
 
 #### Overrides
 
@@ -365,7 +310,7 @@ component.initCollider({
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:51](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/polygons/FCircle.ts#L51)
+[2d/src/polygons/FCircle.ts:37](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/polygons/FCircle.ts#L37)
 
 ***
 
@@ -373,60 +318,13 @@ component.initCollider({
 
 > **initRigidBody**(`options`?): `void`
 
-Init a rigid body for the model.
-
 #### Parameters
 
-• **options?**
-
-The options for the rigid body.
-
-• **options.enabledTranslations?**
-
-Enable only specific translations of the rigid body.
-
-• **options.enabledTranslations.enableX?**: `boolean`
-
-• **options.enabledTranslations.enableY?**: `boolean`
-
-• **options.lockRotations?**: `boolean`
-
-Lock the rotations of the rigid body.
-
-• **options.lockTranslations?**: `boolean`
-
-Lock the translations of the rigid body.
-
-• **options.position?**: `PointData`
-
-The position of the rigid body.
-
-• **options.rotation?**: `number`
-
-The rotation of the rigid body.
-
-• **options.scale?**: `PointData`
-
-The scale of the rigid body.
-
-• **options.shape?**: [`FShapes`](../enumerations/FShapes.md)
-
-The shape of the rigid body.
+• **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
 #### Returns
 
 `void`
-
-#### Example
-
-```ts
-component.initRigidBody({
-  position: { x: 0, y: 0 },
-  scale: { x: 1, y: 1 },
-  rotation: 0,
-  shape: FShapes.SQUARE
-})
-```
 
 #### Overrides
 
@@ -434,7 +332,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:33](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/polygons/FCircle.ts#L33)
+[2d/src/polygons/FCircle.ts:44](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/polygons/FCircle.ts#L44)
 
 ***
 
@@ -442,37 +340,21 @@ component.initRigidBody({
 
 > **initSensor**(`options`?): `void`
 
-Init a sensor for the component.
-This is useful for triggerings events when the component collides with other components.
-
 #### Parameters
 
-• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
-
-The options for the collider.
+• **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
 #### Returns
 
 `void`
 
-#### Example
-
-```ts
-component.initSensor({
-  position: { x: 0, y: 0 },
-  scale: { x: 1, y: 1 },
-  rotation: { x: 0, y: 0 },
-  shape: FShapes.SQUARE
-})
-```
-
-#### Inherited from
+#### Overrides
 
 [`FPolygon`](FPolygon.md).[`initSensor`](FPolygon.md#initsensor)
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:340](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L340)
+[2d/src/polygons/FCircle.ts:51](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/polygons/FCircle.ts#L51)
 
 ***
 
@@ -526,177 +408,59 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:349](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L349)
+[2d/src/core/FComponent.ts:243](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L243)
 
 ***
 
 ### onFrame()
 
-> **onFrame**(`delta`): `void`
+> **onFrame**(`callback`): `void`
 
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
+Add a callback to be called every frame.
 
 #### Parameters
 
-• **delta**: `number`
+• **callback**
+
+The callback function.
 
 #### Returns
 
 `void`
 
-#### Overrides
+#### Inherited from
 
 [`FPolygon`](FPolygon.md).[`onFrame`](FPolygon.md#onframe)
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:29](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/polygons/FCircle.ts#L29)
+core/dist/index.d.ts:238
 
 ***
 
-### setPosition()
+### onLoaded()
 
-> **setPosition**(`options`): `void`
+> **onLoaded**(`callback`): `void`
 
-Set the position of the component.
+Add a callback to be called when the component is loaded (could be a texture, a 3D model, etc).
 
 #### Parameters
 
-• **options**
+• **callback**
 
-The options for the position.
-
-• **options.x**: `number`
-
-The x position.
-
-• **options.y**: `number`
-
-The y position.
+The callback function.
 
 #### Returns
 
 `void`
 
-#### Example
-
-```ts
-component.setPosition({ x: 0, y: 0 })
-```
-
 #### Inherited from
 
-[`FPolygon`](FPolygon.md).[`setPosition`](FPolygon.md#setposition)
+[`FPolygon`](FPolygon.md).[`onLoaded`](FPolygon.md#onloaded)
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:195](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L195)
-
-***
-
-### setRotation()
-
-> **setRotation**(`r`): `void`
-
-Set the rotation of the component in radians.
-
-#### Parameters
-
-• **r**: `number`
-
-The rotation in radians.
-
-#### Returns
-
-`void`
-
-#### Example
-
-```ts
-component.setRotation(Math.PI / 2)
-```
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`setRotation`](FPolygon.md#setrotation)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:244](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L244)
-
-***
-
-### setRotationDegree()
-
-> **setRotationDegree**(`r`): `void`
-
-Set the rotation of the component in degrees.
-
-#### Parameters
-
-• **r**: `number`
-
-The rotation in degrees.
-
-#### Returns
-
-`void`
-
-#### Example
-
-```ts
-component.setRotationDegree(90)
-```
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`setRotationDegree`](FPolygon.md#setrotationdegree)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:263](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L263)
-
-***
-
-### setScale()
-
-> **setScale**(`options`): `void`
-
-Set the scale of the component.
-
-#### Parameters
-
-• **options**
-
-The options for the scale.
-
-• **options.x**: `number`
-
-The x scale.
-
-• **options.y**: `number`
-
-The y scale.
-
-#### Returns
-
-`void`
-
-#### Example
-
-```ts
-component.setScale({ x: 1, y: 1 })
-```
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`setScale`](FPolygon.md#setscale)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:216](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L216)
+core/dist/index.d.ts:243
 
 ## Properties
 
@@ -717,7 +481,55 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:56
+core/dist/index.d.ts:216
+
+***
+
+### \_\_CALLBACKS\_ON\_FRAME\_\_
+
+> **\_\_CALLBACKS\_ON\_FRAME\_\_**: () => `void`[]
+
+Callbacks for when a frame is rendered.
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__CALLBACKS_ON_FRAME__`](FPolygon.md#__callbacks_on_frame__)
+
+#### Defined in
+
+core/dist/index.d.ts:207
+
+***
+
+### \_\_CALLBACKS\_ON\_LOADED\_\_
+
+> **\_\_CALLBACKS\_ON\_LOADED\_\_**: () => `void`[]
+
+Callbacks for when the component is loaded (could be a texture, a 3D model, etc).
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__CALLBACKS_ON_LOADED__`](FPolygon.md#__callbacks_on_loaded__)
+
+#### Defined in
+
+core/dist/index.d.ts:211
+
+***
+
+### \_\_CONTAINER\_\_
+
+> **\_\_CONTAINER\_\_**: `Container`\<`ContainerChild`\>
+
+PIXI container
+
+#### Inherited from
+
+[`FPolygon`](FPolygon.md).[`__CONTAINER__`](FPolygon.md#__container__)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L44)
 
 ***
 
@@ -734,7 +546,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:51
+core/dist/index.d.ts:203
 
 ***
 
@@ -750,7 +562,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L28)
+[2d/src/core/FComponent.ts:30](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L30)
 
 ***
 
@@ -766,13 +578,13 @@ Internal flags
 
 #### Defined in
 
-core/dist/index.d.ts:45
+core/dist/index.d.ts:197
 
 ***
 
-### collider?
+### collider
 
-> `optional` **collider**: [`FCollider`](FCollider.md)
+> **collider**: [`FCollider`](FCollider.md)
 
 RAPIER Collider
 
@@ -782,23 +594,7 @@ RAPIER Collider
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:57](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L57)
-
-***
-
-### container
-
-> **container**: `Container`\<`ContainerChild`\>
-
-PIXI container
-
-#### Inherited from
-
-[`FPolygon`](FPolygon.md).[`container`](FPolygon.md#container)
-
-#### Defined in
-
-[2d/src/core/FComponent.ts:42](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L42)
+[2d/src/core/FComponent.ts:59](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L59)
 
 ***
 
@@ -814,13 +610,13 @@ The controller attached to the component.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:37](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L37)
+[2d/src/core/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L39)
 
 ***
 
-### rigidBody?
+### rigidBody
 
-> `optional` **rigidBody**: [`FRigidBody`](FRigidBody.md)
+> **rigidBody**: [`FRigidBody`](FRigidBody.md)
 
 RAPIER RigidBody
 
@@ -830,7 +626,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:53](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L53)
+[2d/src/core/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L55)
 
 ***
 
@@ -846,13 +642,13 @@ The scene which the component is in.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L33)
+[2d/src/core/FComponent.ts:35](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L35)
 
 ***
 
-### sensor?
+### sensor
 
-> `optional` **sensor**: [`FRigidBody`](FRigidBody.md)
+> **sensor**: [`FRigidBody`](FRigidBody.md)
 
 Sensor (a collider that doesn't collide with other colliders, but still triggers events)
 
@@ -862,7 +658,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:61](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L61)
+[2d/src/core/FComponent.ts:63](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L63)
 
 ***
 
@@ -878,4 +674,4 @@ Transforms
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:47](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FComponent.ts#L47)
+[2d/src/core/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L49)

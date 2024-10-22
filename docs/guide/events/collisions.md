@@ -4,79 +4,81 @@ Collisions events are triggered when two objects collide with each other. This c
 
 ## Initialization
 
-To enable collisions events to be emitted on a component, you need to initialize a sensor collider on it. A sensor collider is a collider that does not affect the physics simulation, but only emits events when it collides with another collider.
+To enable collisions events to be emitted on a component, you need to initialize a sensor on it. A sensor is a essentially a [rigidBody](/guide/physics/rigidbody) with the sensor flag (which mean it does not affect the physics simulation). It only emits events when it collides with another collider.
 
-The available parameters are the same as for a [collider](/guide/physics/colliders).
+The available parameters are the same as for a [rigidBody](/guide/physics/rigidbody).
 
-```typescript
-import { FCuboid, FShape } from '@fibbojs/3d'
+::: code-group
+
+```typescript [2d]
+import { FRectangle, FShapes } from '@fibbojs/2d'
+
+const rectangle = new FRectangle()
+rectangle.initSensor({
+  position: { x: 0, y: 0 },
+  rotation: 0,
+  rotationDegree: 0,
+  scale: { x: 1, y: 1 },
+  shape: FShapes.RECTANGLE
+})
+```
+
+```typescript [3d]
+import { FCuboid, FShapes } from '@fibbojs/3d'
 
 const cube = new FCuboid()
 cube.initSensor({
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
   rotationDegree: { x: 0, y: 0, z: 0 },
-  shape: FShape.CUBE
+  shape: FShapes.CUBOID
 })
 ```
+
+:::
 
 ## Listening to collisions
 
 Every [`FComponent`](/api/core/classes/FComponent) has a [`onCollisionWith`](/api/core/classes/FComponent#oncollisionwith) method that allows you to listen to collisions events.
 
-```typescript
+::: code-group
+
+```typescript [2d]
+import { FCircle, FRectangle } from '@fibbojs/2d'
+
+const rectangle = new FRectangle(scene)
+const circle = new FCircle(scene)
+
+// Detect collisions with all rectangles
+rectangle.onCollisionWith(FRectangle, ({ component }) => {
+  console.log('Collision with a rectangle :', component)
+})
+// Detect collisions with the circle
+rectangle.onCollisionWith(circle, () => {
+  console.log('Collision with the circle')
+})
+```
+
+```typescript [3d]
 import { FCuboid, FSphere } from '@fibbojs/3d'
 
-const cube = new FCuboid()
-const sphere = new FSphere()
+const cube = new FCuboid(scene)
+const sphere = new FSphere(scene)
 
-cube.onCollisionWith((FCuboid) => {
-  console.log('Collision with a cuboid')
+// Detect collisions with all cuboids
+cube.onCollisionWith(FCuboid, ({ component }) => {
+  console.log('Collision with a cuboid :', component)
 })
-cube.onCollisionWith((sphere) => {
+// Detect collisions with the sphere
+cube.onCollisionWith(sphere, () => {
   console.log('Collision with the sphere')
 })
 ```
 
-You can either listen to collisions with a specific component type, or with any component class.
-
-Note that if you give a class and the component collide with a component extending this class, the event will be triggered.
-
-For example :
-
-```typescript
-import { FCuboid } from '@fibbojs/3d'
-import type { FComponentOptions } from '@fibbojs/3d'
-
-class MyCuboid extends FCuboid {
-  constructor(options?: FComponentOptions) {
-    super(options)
-  }
-}
-
-const cube = new FCuboid()
-const myCube = new MyCuboid()
-
-cube.onCollisionWith((FCuboid) => {
-  console.log('Collision with a cuboid')
-})
-```
-
-In this example, the event will be triggered when the `cube` collides with the `myCube` because `MyCuboid` extends `FCuboid`.
+:::
 
 ## Getting data about the collision
 
 When a collision event is triggered, you can get [data about the collision](/api/core/interfaces/OnCollisionWithData).
 
 For now, the only data available is the component that the collision event is triggered on.
-
-```typescript
-import { FCuboid, FSphere } from '@fibbojs/3d'
-
-const cube = new FCuboid()
-
-cube.onCollisionWith(FSphere, ({ component }) => {
-  console.log('Collision with the sphere')
-  console.log('The sphere component is', component)
-})
-```

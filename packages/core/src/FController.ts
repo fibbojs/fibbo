@@ -24,9 +24,8 @@ export abstract class FController {
 
   /**
    * Update the controller. Should be called every frame.
-   * The purpose of `onFrame` on FController is to update the component's transform in the desired way.
-   * Any rendering process should be done on the component, not here.
+   * The purpose of this method is to update the component transform based on the controller logic.
    * @param delta The time since the last frame.
    */
-  abstract onFrame(delta: number): void
+  abstract frame(delta: number): void
 }

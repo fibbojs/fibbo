@@ -3,18 +3,19 @@ import type { FSceneOptions as FSceneOptionsCore } from '@fibbojs/core'
 import * as PIXI from 'pixi.js'
 import { Viewport } from 'pixi-viewport'
 import type RAPIER from '@dimforge/rapier2d'
-import { FSprite } from '../sprite/FSprite'
 import type { FCamera } from '../cameras/FCamera'
 import { FFreeCamera } from '../cameras/FFreeCamera'
 import type { FLight } from '../lights/FLight'
 import type { FComponent } from './FComponent'
+import type { FCollider } from './FCollider'
+import type { FRigidBody } from './FRigidBody'
 
 export interface FSceneOptions extends FSceneOptionsCore {
   gravity?: { x: number, y: number }
 }
 
 /**
- * A scene which contains the models, the Pixi.js scene and the Rapier world.
+ * A scene which contains the components, the Pixi.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts
@@ -27,7 +28,6 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *
  *  const square = new FRectangle(scene)
  *  square.initRigidBody()
- *  scene.addComponent(square)
  * })()
  * ```
  */
@@ -41,6 +41,10 @@ export class FScene extends FSceneCore {
   declare components: FComponent[]
   // Lights can be declared as it will be initialized by the parent class
   declare lights: FLight[]
+  // The colliders of the scene
+  colliders: FCollider[]
+  // The rigidBodies of the scene
+  rigidBodies: FRigidBody[]
 
   // Camera
   declare __CAMERA__: FCamera
@@ -66,6 +70,10 @@ export class FScene extends FSceneCore {
     window.addEventListener('resize', () => {
       this.app.renderer.resize(window.innerWidth, window.innerHeight)
     })
+
+    // Initialize collider and rigidBody arrays
+    this.colliders = []
+    this.rigidBodies = []
   }
 
   /**
@@ -119,14 +127,14 @@ export class FScene extends FSceneCore {
     // Create a default free camera
     this.camera = new FFreeCamera(this)
 
-    // onFrame
+    // On each frame
     this.onFrame((delta) => {
-      // Call the onFrame method of each component
+      // Call the frame method of each component
       this.components.forEach((component) => {
-        component.onFrame(delta)
+        component.frame(delta)
       })
-      // Call the onFrame method of the camera
-      this.camera.onFrame(delta)
+      // Call the frame method of the camera
+      this.camera.frame(delta)
     })
 
     // Call the onReady callbacks
@@ -151,6 +159,10 @@ export class FScene extends FSceneCore {
       if (this.world) {
         this.world.timestep = delta
         this.world.step(this.eventQueue)
+
+        // Call frame for each collider and rigidBody
+        this.colliders.forEach(collider => collider.frame(delta))
+        this.rigidBodies.forEach(rigidBody => rigidBody.frame(delta))
 
         // Drain collision events
         this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {
@@ -190,56 +202,81 @@ export class FScene extends FSceneCore {
     }
   }
 
+  addHandle(handle: number, component: FComponent) {
+    this.__RAPIER_TO_COMPONENT__.set(handle, component)
+  }
+
+  removeHandle(handle: number) {
+    this.__RAPIER_TO_COMPONENT__.delete(handle)
+  }
+
   addComponent(component: FComponent) {
     super.addComponent(component)
 
-    // Detect if the FComponent is a FSprite instance
-    if (component instanceof FSprite) {
-      // Wait for the sprite to be loaded before adding it to the scene
-      component.onLoaded(() => {
-        this.viewport.addChild(component.container)
-
-        // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        if (component.sensor)
-          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
-        // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        else if (component.collider)
-          this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
-      })
-    }
-    else {
-      // The component is not a FSprite instance, it can be added directly
-      this.viewport.addChild(component.container)
-    }
+    // Add the component to the viewport
+    this.viewport.addChild(component.__CONTAINER__)
 
     // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
+      this.addHandle(component.sensor.collider.__COLLIDER__.handle, component)
     // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
+      this.addHandle(component.collider.__COLLIDER__.handle, component)
   }
 
   removeComponent(component: FComponent): void {
     super.removeComponent(component)
 
     // Remove container from the viewport
-    this.viewport.removeChild(component.container)
+    this.viewport.removeChild(component.__CONTAINER__)
 
     // Remove colliders and rigidBodies from rapier world
     if (component.rigidBody)
-      this.world.removeRigidBody(component.rigidBody.rigidBody)
+      this.removeRigidBody(component.rigidBody)
     if (component.collider)
-      this.world.removeCollider(component.collider.collider, false)
+      this.removeCollider(component.collider)
     if (component.sensor)
-      this.world.removeCollider(component.sensor.collider.collider, false)
+      this.removeRigidBody(component.sensor)
 
     // Remove handle from rapier map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
+      this.removeHandle(component.sensor.collider.__COLLIDER__.handle)
     if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
+      this.removeHandle(component.collider.__COLLIDER__.handle)
   }
+
+  addLight(light: FLight): void {
+    super.addLight(light)
+  }
+
+  removeLight(light: FLight): void {
+    super.removeLight(light)
+  }
+
+  addCollider(collider: FCollider): void {
+    this.colliders.push(collider)
+  }
+
+  removeCollider(collider: FCollider): void {
+    const index = this.colliders.indexOf(collider)
+    if (index !== -1)
+      this.colliders.splice(index, 1)
+    this.world.removeCollider(collider.__COLLIDER__, false)
+  }
+
+  addRigidBody(rigidBody: FRigidBody): void {
+    this.rigidBodies.push(rigidBody)
+  }
+
+  removeRigidBody(rigidBody: FRigidBody): void {
+    this.removeCollider(rigidBody.collider)
+    const index = this.rigidBodies.indexOf(rigidBody)
+    if (index !== -1)
+      this.rigidBodies.splice(index, 1)
+    this.world.removeRigidBody(rigidBody.__RIGIDBODY__)
+  }
+
+  // Setters & Getters
 
   /**
    * Getter for the camera.
@@ -256,13 +293,5 @@ export class FScene extends FSceneCore {
   set camera(camera: FCamera) {
     this.__CAMERA__ = camera
     camera.__ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__()
-  }
-
-  addLight(light: FLight): void {
-    super.addLight(light)
-  }
-
-  removeLight(light: FLight): void {
-    super.removeLight(light)
   }
 }

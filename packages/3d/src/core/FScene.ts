@@ -4,17 +4,19 @@ import type { FSceneOptions as FSceneOptionsCore } from '@fibbojs/core'
 import type RAPIER from '@dimforge/rapier3d'
 import type { FCamera } from '../cameras/FCamera'
 import { FFixedCamera } from '../cameras/FFixedCamera'
-import { FModel } from '../model/FModel'
 import type { FLight } from '../lights/FLight'
+import type { FVector3 } from '../types/FVector3'
 import type { FComponent } from './FComponent'
+import type { FRigidBody } from './FRigidBody'
+import type { FCollider } from './FCollider'
 
 export interface FSceneOptions extends FSceneOptionsCore {
-  gravity?: { x: number, y: number, z: number }
+  gravity?: FVector3
   shadows?: boolean
 }
 
 /**
- * A scene which contains the models, the Three.js scene and the Rapier world.
+ * A scene which contains the components, the Three.js scene and the Rapier world.
  * @category Core
  * @example
  * ```ts
@@ -28,19 +30,17 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *
  *  // Create a ground
  *  const ground = new FCuboid(scene)
- *  ground.setScale(15, 0.1, 15)
- *  ground.setPosition(0, -0.1, 0)
+ *  ground.transform.setScale(15, 0.1, 15)
+ *  ground.transform.setPosition(0, -0.1, 0)
  *  ground.initCollider()
  *  ground.setColor(0x1F1F1F)
- *  scene.addComponent(ground)
  *
  *  // Create a cube
  *  const cube = new FCuboid(scene)
  *  cube.initRigidBody()
- *  scene.addComponent(cube)
  *
  *  // Attach a camera to the cube
- *  scene.camera = new FGameCamera(cube)
+ *  scene.camera = new FGameCamera(scene, {target: cube})
  * })()
  * ```
  */
@@ -55,7 +55,10 @@ export class FScene extends FSceneCore {
   declare components: FComponent[]
   // Lights can be declared as it will be initialized by the parent class
   declare lights: FLight[]
-
+  // The colliders of the scene
+  colliders: FCollider[]
+  // The rigidBodies of the scene
+  rigidBodies: FRigidBody[]
   // Three.js
   THREE: typeof THREE = THREE
   declare scene: THREE.Scene
@@ -63,7 +66,7 @@ export class FScene extends FSceneCore {
   declare camera: FCamera
 
   // Rapier
-  declare gravity: { x: number, y: number, z: number }
+  declare gravity: FVector3
   declare world: RAPIER.World
   declare eventQueue: RAPIER.EventQueue
   __RAPIER_TO_COMPONENT__: Map<number, FComponent> = new Map()
@@ -85,11 +88,15 @@ export class FScene extends FSceneCore {
 
     // Handle window resize
     window.addEventListener('resize', () => {
-      this.camera.aspect = window.innerWidth / window.innerHeight
-      this.camera.updateProjectionMatrix()
+      this.camera.__CAMERA__.aspect = window.innerWidth / window.innerHeight
+      this.camera.__CAMERA__.updateProjectionMatrix()
 
       this.renderer.setSize(window.innerWidth, window.innerHeight)
     })
+
+    // Initialize collider and rigidBody arrays
+    this.colliders = []
+    this.rigidBodies = []
   }
 
   init() {
@@ -104,21 +111,21 @@ export class FScene extends FSceneCore {
       // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
     }
     // Create a default camera
-    this.camera = new FFixedCamera()
+    this.camera = new FFixedCamera(this)
 
     // Add renderer to DOM
     this.__DOM_NODE__.appendChild(this.renderer.domElement)
 
-    // onFrame loop
+    // Each frame
     this.onFrame((delta) => {
-      // Call onFrame for each component
-      this.components.forEach(component => component.onFrame(delta))
+      // Call frame for each component
+      this.components.forEach(component => component.frame(delta))
 
-      // Camera
-      this.camera.onFrame(delta)
+      // Call frame for the camera
+      this.camera.frame(delta)
 
       // Render the scene
-      this.renderer.render(this.scene, this.camera)
+      this.renderer.render(this.scene, this.camera.__CAMERA__)
     })
 
     // Call the onReady callbacks
@@ -142,6 +149,10 @@ export class FScene extends FSceneCore {
       // Step the physics world
       this.world.timestep = delta
       this.world.step(this.eventQueue)
+
+      // Call frame for each collider and rigidBody
+      this.colliders.forEach(collider => collider.frame(delta))
+      this.rigidBodies.forEach(rigidBody => rigidBody.frame(delta))
 
       // Drain collision events
       this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {
@@ -180,70 +191,83 @@ export class FScene extends FSceneCore {
     }
   }
 
+  addHandle(handle: number, component: FComponent) {
+    this.__RAPIER_TO_COMPONENT__.set(handle, component)
+  }
+
+  removeHandle(handle: number) {
+    this.__RAPIER_TO_COMPONENT__.delete(handle)
+  }
+
   addComponent(component: FComponent) {
     super.addComponent(component)
 
-    // Detect if the FComponent is a FGLTF instance
-    if (component instanceof FModel) {
-      // Wait for the model to be loaded before adding it to the scene
-      component.onLoaded(() => {
-        if (component.mesh)
-          this.scene.add(component.mesh)
-
-        // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        if (component.sensor)
-          this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
-        // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
-        else if (component.collider)
-          this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
-      })
-    }
-    else {
-      if (component.mesh)
-        this.scene.add(component.mesh)
-    }
+    // Add mesh to scene
+    if (component.__MESH__)
+      this.scene.add(component.__MESH__)
 
     // If a sensor is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.set(component.sensor.collider.collider.handle, component)
+      this.addHandle(component.sensor.collider.__COLLIDER__.handle, component)
     // Else if a collider is defined, add it's handle to the __RAPIER_TO_COMPONENT__ map
     else if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.set(component.collider.collider.handle, component)
+      this.addHandle(component.collider.__COLLIDER__.handle, component)
   }
 
   removeComponent(component: FComponent): void {
     super.removeComponent(component)
 
     // Remove mesh from scene
-    if (component.mesh)
-      this.scene.remove(component.mesh)
+    if (component.__MESH__)
+      this.scene.remove(component.__MESH__)
 
-    // Remove colliders and rigidBodies from rapier world
+    // Remove colliders and rigidBodies from the scene
     if (component.rigidBody)
-      this.world.removeRigidBody(component.rigidBody.rigidBody)
+      this.removeRigidBody(component.rigidBody)
     if (component.collider)
-      this.world.removeCollider(component.collider.collider, false)
+      this.removeCollider(component.collider)
     if (component.sensor)
-      this.world.removeCollider(component.sensor.collider.collider, false)
+      this.removeRigidBody(component.sensor)
 
     // Remove handle from rapier map
     if (component.sensor)
-      this.__RAPIER_TO_COMPONENT__.delete(component.sensor.collider.collider.handle)
+      this.removeHandle(component.sensor.collider.__COLLIDER__.handle)
     if (component.collider)
-      this.__RAPIER_TO_COMPONENT__.delete(component.collider.collider.handle)
+      this.removeHandle(component.collider.__COLLIDER__.handle)
   }
 
   addLight(light: FLight): void {
     super.addLight(light)
-
     // Add the light to the THREE scene
-    this.scene.add(light.light)
+    this.scene.add(light.__LIGHT__)
   }
 
   removeLight(light: FLight): void {
     super.removeLight(light)
-
     // Remove the light from the THREE scene
-    this.scene.remove(light.light)
+    this.scene.remove(light.__LIGHT__)
+  }
+
+  addCollider(collider: FCollider): void {
+    this.colliders.push(collider)
+  }
+
+  removeCollider(collider: FCollider): void {
+    const index = this.colliders.indexOf(collider)
+    if (index !== -1)
+      this.colliders.splice(index, 1)
+    this.world.removeCollider(collider.__COLLIDER__, false)
+  }
+
+  addRigidBody(rigidBody: FRigidBody): void {
+    this.rigidBodies.push(rigidBody)
+  }
+
+  removeRigidBody(rigidBody: FRigidBody): void {
+    this.removeCollider(rigidBody.collider)
+    const index = this.rigidBodies.indexOf(rigidBody)
+    if (index !== -1)
+      this.rigidBodies.splice(index, 1)
+    this.world.removeRigidBody(rigidBody.__RIGIDBODY__)
   }
 }

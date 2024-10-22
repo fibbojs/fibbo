@@ -1,11 +1,60 @@
-import { FComponent } from './FComponent'
+import type { FScene } from './FScene'
+
+export interface FLightOptions {
+  addToScene?: boolean
+}
 
 /**
  * The base class for lights in Fibbo.
  * @category Core
  */
-export abstract class FLight extends FComponent {
-  constructor() {
-    super()
+export abstract class FLight {
+  /**
+   * Callbacks for when the light is loaded.
+   */
+  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
+
+  /**
+   * The scene the light is attached to.
+   */
+  public scene: FScene
+
+  constructor(scene: FScene, options: FLightOptions = {}) {
+    // Define default options
+    const DEFAULT_OPTIONS = {
+      addToScene: true,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (options.addToScene === undefined)
+      throw new Error('FibboError: FComponent requires addToScene option')
+
+    // Store the scene
+    this.scene = scene
+
+    // If addToScene is true, wait for the light to be loaded and add it to the scene
+    if (options.addToScene) {
+      this.onLoaded(() => {
+        this.scene.addLight(this)
+      })
+    }
+  }
+
+  /**
+   * Add a callback to be called when the light is loaded.
+   * @param callback The callback function.
+   */
+  onLoaded(callback: () => void) {
+    this.__CALLBACKS_ON_LOADED__.push(callback)
+  }
+
+  /**
+   * Emit the onLoaded callbacks.
+   */
+  emitOnLoaded() {
+    this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
+      callback()
+    })
   }
 }

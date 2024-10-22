@@ -23,25 +23,27 @@ export class FDirectionalLight extends FLight {
       throw new Error('FibboError: FDirectionalLight requires color and intensity')
 
     // Create the directional light
-    this.light = new THREE.DirectionalLight(options.color, options.intensity)
+    this.__LIGHT__ = new THREE.DirectionalLight(options.color, options.intensity)
     // Apply the transform
-    this.applyTransform()
+    this.__UPDATE_POSITION__()
+    this.__UPDATE_ROTATION__()
 
     // If shadows are enabled, set the light to cast shadows
     if (this.scene.__ENABLE_SHADOWS__) {
-      this.light.castShadow = true
-      if (this.light.shadow && this.light.shadow.camera && this.light.shadow.camera instanceof THREE.OrthographicCamera) {
-        this.light.shadow.camera.near = 0.5
-        this.light.shadow.camera.far = 500
-        this.light.shadow.camera.left = -100
-        this.light.shadow.camera.right = 100
-        this.light.shadow.camera.top = 100
-        this.light.shadow.camera.bottom = -100
-        this.light.shadow.mapSize.width = 16384
-        this.light.shadow.mapSize.height = 16384
+      this.__LIGHT__.castShadow = true
+      if (this.__LIGHT__.shadow && this.__LIGHT__.shadow.camera && this.__LIGHT__.shadow.camera instanceof THREE.OrthographicCamera) {
+        this.__LIGHT__.shadow.camera.near = 0.5
+        this.__LIGHT__.shadow.camera.far = 500
+        this.__LIGHT__.shadow.camera.left = -100
+        this.__LIGHT__.shadow.camera.right = 100
+        this.__LIGHT__.shadow.camera.top = 100
+        this.__LIGHT__.shadow.camera.bottom = -100
+        this.__LIGHT__.shadow.mapSize.width = 16384
+        this.__LIGHT__.shadow.mapSize.height = 16384
       }
     }
-  }
 
-  onFrame(_delta: number): void {}
+    // Emit the onLoaded event
+    this.emitOnLoaded()
+  }
 }

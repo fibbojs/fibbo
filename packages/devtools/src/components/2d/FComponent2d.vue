@@ -11,25 +11,25 @@
         <p>Position</p>
         <div class="f-component-property-group">
           <p>x : </p>
-          <InputNumber v-model:value="component.x" />
+          <InputNumber v-model:value="component.transform.x" />
           <p>y : </p>
-          <InputNumber v-model:value="component.y" />
+          <InputNumber v-model:value="component.transform.y" />
         </div>
       </div>
       <div class="f-component-property">
         <p>Scale</p>
         <div class="f-component-property-group">
           <p>x : </p>
-          <InputNumber v-model:value="component.scaleX" />
+          <InputNumber v-model:value="component.transform.scaleX" />
           <p>y : </p>
-          <InputNumber v-model:value="component.scaleY" />
+          <InputNumber v-model:value="component.transform.scaleY" />
         </div>
       </div>
       <div class="f-component-property">
         <p>Rotation (Degree)</p>
         <div class="f-component-property-group">
           <p>r : </p>
-          <InputNumber v-model:value="component.rotationDegree" />
+          <InputNumber v-model:value="component.transform.rotationDegree" />
         </div>
       </div>
     </div>

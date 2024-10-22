@@ -1,5 +1,5 @@
-import RAPIER from '@dimforge/rapier2d'
 import type { FScene } from '../core/FScene'
+import { FRigidBodyType } from '../types/FRigidBodyType'
 import { FCharacterControllerK } from './FCharacterControllerK'
 import type { FCharacterControllerOptions } from './FCharacterController'
 
@@ -8,7 +8,7 @@ import type { FCharacterControllerOptions } from './FCharacterController'
  * @category Controller
  * @example
  * ```ts
- * import { FCapsule, FCharacterControllerKP, FScene } from '@fibbojs/3d'
+ * import { FCapsule, FCharacterControllerKP, FScene } from '@fibbojs/2d'
  *
  * const scene = new FScene()
  *
@@ -21,22 +21,22 @@ export class FCharacterControllerKP extends FCharacterControllerK {
   constructor(scene: FScene, options: FCharacterControllerOptions) {
     super(scene, options)
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
-      rigidBodyType: RAPIER.RigidBodyType.KinematicPositionBased,
+      rigidBodyType: FRigidBodyType.KINEMATIC_POSITION_BASED,
       lockRotations: true,
       ...options,
     })
   }
 
-  onFrame(delta: number): void {
+  frame(delta: number): void {
     // Get the corrected movement
     const correctedMovement = this.getCorrectedMovements()
 
-    // Apply the movement to the rigid body
-    this.component.rigidBody?.rigidBody.setNextKinematicTranslation({
-      x: this.component.rigidBody.rigidBody.translation().x + correctedMovement.x * delta * this.speed * 64,
-      y: this.component.rigidBody.rigidBody.translation().y + correctedMovement.y * delta * this.speed * 64,
+    // Apply the movement to the rigidBody
+    this.component.rigidBody?.__RIGIDBODY__.setNextKinematicTranslation({
+      x: this.component.rigidBody.__RIGIDBODY__.translation().x + correctedMovement.x * delta * this.speed * 64,
+      y: this.component.rigidBody.__RIGIDBODY__.translation().y + correctedMovement.y * delta * this.speed * 64,
     })
   }
 }

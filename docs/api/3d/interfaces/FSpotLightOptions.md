@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FSpotLight.ts#L8)
+[3d/src/lights/FSpotLight.ts:8](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/lights/FSpotLight.ts#L8)
 
 ***
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L8)
+[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/lights/FLight.ts#L9)
 
 ***
 
@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FSpotLight.ts#L10)
+[3d/src/lights/FSpotLight.ts:10](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/lights/FSpotLight.ts#L10)
 
 ***
 
@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FSpotLight.ts#L7)
+[3d/src/lights/FSpotLight.ts:7](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/lights/FSpotLight.ts#L7)
 
 ***
 
@@ -62,25 +62,13 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L9)
+[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/lights/FLight.ts#L10)
 
 ***
 
 ### lookAt?
 
-> `optional` **lookAt**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **lookAt**: [`FVector3`](FVector3.md)
 
 #### Inherited from
 
@@ -88,7 +76,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FLight.ts#L10)
+[3d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/lights/FLight.ts#L11)
 
 ***
 
@@ -98,25 +86,13 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:9](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/lights/FSpotLight.ts#L9)
+[3d/src/lights/FSpotLight.ts:9](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/lights/FSpotLight.ts#L9)
 
 ***
 
 ### position?
 
-> `optional` **position**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **position**: [`FVector3`](FVector3.md)
 
 #### Inherited from
 
@@ -124,25 +100,13 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:4](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L4)
+[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FTransform.ts#L5)
 
 ***
 
 ### rotation?
 
-> `optional` **rotation**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **rotation**: [`FVector3`](FVector3.md)
 
 #### Inherited from
 
@@ -150,25 +114,13 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L6)
+[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FTransform.ts#L6)
 
 ***
 
 ### rotationDegree?
 
-> `optional` **rotationDegree**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **rotationDegree**: [`FVector3`](FVector3.md)
 
 #### Inherited from
 
@@ -176,25 +128,13 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L7)
+[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FTransform.ts#L7)
 
 ***
 
 ### scale?
 
-> `optional` **scale**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **scale**: [`FVector3`](FVector3.md)
 
 #### Inherited from
 
@@ -202,4 +142,4 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FTransform.ts#L5)
+[3d/src/core/FTransform.ts:8](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FTransform.ts#L8)

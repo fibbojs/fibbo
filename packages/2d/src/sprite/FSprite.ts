@@ -17,29 +17,28 @@ export interface FSpriteOptions extends FComponentOptions {
  * const scene = new FScene()
  *
  * const sprite = new FSprite(scene, '/my-texture.png')
- * scene.addComponent(sprite)
  * ```
  */
 export class FSprite extends FComponent {
   /**
+   * PIXI container
+   */
+  __CONTAINER__: PIXI.Sprite
+  /**
    * The texture of the sprite.
    */
-  texture: PIXI.Texture
-  /**
-   * Callbacks for when the texture is loaded
-   */
-  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
+  __TEXTURE__: PIXI.Texture
 
   constructor(scene: FScene, options: FSpriteOptions) {
     super(scene, options)
 
     // Define the texture and container while loading
-    this.texture = PIXI.Texture.EMPTY
-    this.container = new PIXI.Graphics()
+    this.__TEXTURE__ = PIXI.Texture.EMPTY
+    this.__CONTAINER__ = new PIXI.Graphics()
       .rect(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100, this.transform.scale.y * 100)
-      .fill(new PIXI.FillGradient(0, 0, 100, 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00))
+      .fill(new PIXI.FillGradient(0, 0, 100, 100).addColorStop(0, 0xFF00FF).addColorStop(1, 0xFFFF00)) as unknown as PIXI.Sprite
     // Set the pivot of the container to the center
-    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
+    this.__CONTAINER__.pivot.set(this.__CONTAINER__.width / 2, this.__CONTAINER__.height / 2)
 
     // Load the texture
     this.loadTexture(options.texture)
@@ -69,15 +68,17 @@ export class FSprite extends FComponent {
     // Interpret the path
     const path = interpretPath(texture)
     // Load the texture
-    this.texture = await PIXI.Assets.load(path)
-    this.texture.source.scaleMode = 'nearest'
+    this.__TEXTURE__ = await PIXI.Assets.load(path)
+    this.__TEXTURE__.source.scaleMode = 'nearest'
     // Create a sprite
-    this.container = new PIXI.Sprite(this.texture)
-    this.container.zIndex = 0
-    // Set the pivot of the container to the center
-    this.container.pivot.set(this.container.width / 2, this.container.height / 2)
+    this.__CONTAINER__ = new PIXI.Sprite(this.__TEXTURE__)
+    this.__CONTAINER__.anchor.set(0.5, 0.5)
+    this.__CONTAINER__.zIndex = 0
+    // Reset transform
+    this.__SET_POSITION__(this.transform.position)
+    this.__SET_ROTATION__(this.transform.rotation)
     // Set the scale of the component so it fits the texture by its width
-    // Width will be 1 unit, height will be calculated according to the aspect ratio
+    // Width will be the actual width, height will be calculated according to the aspect ratio
     this.setScaleWidth(this.transform.scale.x)
     // Call the onLoaded method
     this.emitOnLoaded()
@@ -89,7 +90,7 @@ export class FSprite extends FComponent {
    * @param width The width of the sprite.
    */
   setScaleWidth(width: number) {
-    this.setScale({ x: width, y: width * this.texture.height / this.texture.width })
+    this.__SET_SCALE__({ x: width, y: width * this.__TEXTURE__.height / this.__TEXTURE__.width })
   }
 
   /**
@@ -98,27 +99,6 @@ export class FSprite extends FComponent {
    * @param height The height of the sprite.
    */
   setScaleHeight(height: number) {
-    this.setScale({ x: height * this.texture.width / this.texture.height, y: height })
-  }
-
-  onFrame(delta: number): void {
-    super.onFrame(delta)
-  }
-
-  /**
-   * Add a callback to be called when the texture is loaded.
-   * @param callback The callback function.
-   */
-  onLoaded(callback: () => void) {
-    this.__CALLBACKS_ON_LOADED__.push(callback)
-  }
-
-  /**
-   * Emit the onLoaded callbacks.
-   */
-  emitOnLoaded() {
-    this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
-      callback()
-    })
+    this.__SET_SCALE__({ x: height * this.__TEXTURE__.width / this.__TEXTURE__.height, y: height })
   }
 }

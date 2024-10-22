@@ -6,6 +6,7 @@ export default class Character extends FSprite {
     super(scene, {
       texture: 'character_0000.png',
       position: { x: 0, y: 10 },
+      // rotationDegree: 45,
       scale: { x: 0.5, y: 0.5 },
     })
 

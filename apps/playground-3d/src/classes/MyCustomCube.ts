@@ -8,8 +8,4 @@ export default class MyCustomCube extends FCuboid {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
   }
-
-  onFrame(delta: number) {
-    super.onFrame(delta)
-  }
 }

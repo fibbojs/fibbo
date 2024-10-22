@@ -1,9 +1,9 @@
 import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
-import { FShapes } from '../types/FShapes'
 import type { FComponentOptions } from '../core/FComponent'
-import type { FRigidBodyOptions } from '../core/FRigidBody'
 import type { FColliderOptions } from '../core/FCollider'
+import { FShapes } from '../types/FShapes'
+import type { FRigidBodyOptions } from '../core/FRigidBody'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -25,16 +25,21 @@ export class FSphere extends FPolyhedron {
     // Create a sphere
     const geometry = new THREE.SphereGeometry(0.5, 32, 32)
     const material = new THREE.MeshPhongMaterial({ color: 0x666666 })
-    this.mesh = new THREE.Mesh(geometry, material)
+    this.__MESH__ = new THREE.Mesh(geometry, material)
     // If shadows are enabled, cast and receive shadows
     if (scene.__ENABLE_SHADOWS__) {
-      this.mesh.castShadow = true
-      this.mesh.receiveShadow = true
+      this.__MESH__.castShadow = true
+      this.__MESH__.receiveShadow = true
     }
+    // Emit the onLoaded event
+    this.emitOnLoaded()
   }
 
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
+  initCollider(options?: FColliderOptions): void {
+    super.initCollider({
+      shape: FShapes.SPHERE,
+      ...options,
+    })
   }
 
   initRigidBody(options?: FRigidBodyOptions): void {
@@ -44,8 +49,8 @@ export class FSphere extends FPolyhedron {
     })
   }
 
-  initCollider(options?: FColliderOptions): void {
-    super.initCollider({
+  initSensor(options?: FRigidBodyOptions): void {
+    super.initSensor({
       shape: FShapes.SPHERE,
       ...options,
     })

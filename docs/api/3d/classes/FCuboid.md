@@ -19,464 +19,6 @@ scene.addComponent(cube)
 
 - [`FPolyhedron`](FPolyhedron.md)
 
-## Accessors
-
-### position
-
-> `get` **position**(): `object`
-
-Setters & getters for transform properties
-
-> `set` **position**(`position`): `void`
-
-#### Parameters
-
-• **position**
-
-• **position.x**: `number`
-
-• **position.y**: `number`
-
-• **position.z**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-##### z
-
-> **z**: `number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`position`](FPolyhedron.md#position)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:407](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L407)
-
-***
-
-### rotation
-
-> `get` **rotation**(): `object`
-
-> `set` **rotation**(`rotation`): `void`
-
-#### Parameters
-
-• **rotation**
-
-• **rotation.x**: `number`
-
-• **rotation.y**: `number`
-
-• **rotation.z**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-##### z
-
-> **z**: `number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotation`](FPolyhedron.md#rotation)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:439](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L439)
-
-***
-
-### rotationDegree
-
-> `get` **rotationDegree**(): `object`
-
-> `set` **rotationDegree**(`rotationDegree`): `void`
-
-#### Parameters
-
-• **rotationDegree**
-
-• **rotationDegree.x**: `number`
-
-• **rotationDegree.y**: `number`
-
-• **rotationDegree.z**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-##### z
-
-> **z**: `number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotationDegree`](FPolyhedron.md#rotationdegree)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:471](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L471)
-
-***
-
-### rotationDegreeX
-
-> `get` **rotationDegreeX**(): `number`
-
-> `set` **rotationDegreeX**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeX`](FPolyhedron.md#rotationdegreex)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:483](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L483)
-
-***
-
-### rotationDegreeY
-
-> `get` **rotationDegreeY**(): `number`
-
-> `set` **rotationDegreeY**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeY`](FPolyhedron.md#rotationdegreey)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:491](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L491)
-
-***
-
-### rotationDegreeZ
-
-> `get` **rotationDegreeZ**(): `number`
-
-> `set` **rotationDegreeZ**(`z`): `void`
-
-#### Parameters
-
-• **z**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotationDegreeZ`](FPolyhedron.md#rotationdegreez)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:499](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L499)
-
-***
-
-### rotationX
-
-> `get` **rotationX**(): `number`
-
-> `set` **rotationX**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotationX`](FPolyhedron.md#rotationx)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:447](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L447)
-
-***
-
-### rotationY
-
-> `get` **rotationY**(): `number`
-
-> `set` **rotationY**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotationY`](FPolyhedron.md#rotationy)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:455](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L455)
-
-***
-
-### rotationZ
-
-> `get` **rotationZ**(): `number`
-
-> `set` **rotationZ**(`z`): `void`
-
-#### Parameters
-
-• **z**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`rotationZ`](FPolyhedron.md#rotationz)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:463](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L463)
-
-***
-
-### scale
-
-> `get` **scale**(): `object`
-
-> `set` **scale**(`scale`): `void`
-
-#### Parameters
-
-• **scale**
-
-• **scale.x**: `number`
-
-• **scale.y**: `number`
-
-• **scale.z**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-##### z
-
-> **z**: `number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`scale`](FPolyhedron.md#scale)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:507](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L507)
-
-***
-
-### scaleX
-
-> `get` **scaleX**(): `number`
-
-> `set` **scaleX**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`scaleX`](FPolyhedron.md#scalex)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:515](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L515)
-
-***
-
-### scaleY
-
-> `get` **scaleY**(): `number`
-
-> `set` **scaleY**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`scaleY`](FPolyhedron.md#scaley)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:523](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L523)
-
-***
-
-### scaleZ
-
-> `get` **scaleZ**(): `number`
-
-> `set` **scaleZ**(`z`): `void`
-
-#### Parameters
-
-• **z**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`scaleZ`](FPolyhedron.md#scalez)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:531](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L531)
-
-***
-
-### x
-
-> `get` **x**(): `number`
-
-> `set` **x**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`x`](FPolyhedron.md#x)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:415](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L415)
-
-***
-
-### y
-
-> `get` **y**(): `number`
-
-> `set` **y**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`y`](FPolyhedron.md#y)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:423](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L423)
-
-***
-
-### z
-
-> `get` **z**(): `number`
-
-> `set` **z**(`z`): `void`
-
-#### Parameters
-
-• **z**: `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`z`](FPolyhedron.md#z)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:431](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L431)
-
 ## Constructors
 
 ### new FCuboid()
@@ -499,9 +41,159 @@ Setters & getters for transform properties
 
 #### Defined in
 
-[3d/src/polyhedrons/FCuboid.ts:19](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/polyhedrons/FCuboid.ts#L19)
+[3d/src/polyhedrons/FCuboid.ts:19](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/polyhedrons/FCuboid.ts#L19)
 
 ## Methods
+
+### \_\_SET\_POSITION\_\_()
+
+> **\_\_SET\_POSITION\_\_**(`position`): `void`
+
+#### Parameters
+
+• **position**: [`FVector3`](../interfaces/FVector3.md)
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__SET_POSITION__`](FPolyhedron.md#__set_position__)
+
+#### Defined in
+
+[3d/src/core/FComponent.ts:243](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L243)
+
+***
+
+### \_\_SET\_ROTATION\_\_()
+
+> **\_\_SET\_ROTATION\_\_**(`rotation`): `void`
+
+#### Parameters
+
+• **rotation**: [`FVector3`](../interfaces/FVector3.md)
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__SET_ROTATION__`](FPolyhedron.md#__set_rotation__)
+
+#### Defined in
+
+[3d/src/core/FComponent.ts:251](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L251)
+
+***
+
+### \_\_SET\_SCALE\_\_()
+
+> **\_\_SET\_SCALE\_\_**(`scale`): `void`
+
+#### Parameters
+
+• **scale**: [`FVector3`](../interfaces/FVector3.md)
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__SET_SCALE__`](FPolyhedron.md#__set_scale__)
+
+#### Defined in
+
+[3d/src/core/FComponent.ts:259](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L259)
+
+***
+
+### \_\_UPDATE\_POSITION\_\_()
+
+> **\_\_UPDATE\_POSITION\_\_**(`initiator`): `void`
+
+Update the position of the component according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the component won't be considered as the initiator of the position update.
+Set this to true to propagate the position update to the rigidBody, collider and sensor.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__UPDATE_POSITION__`](FPolyhedron.md#__update_position__)
+
+#### Defined in
+
+[3d/src/core/FComponent.ts:123](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L123)
+
+***
+
+### \_\_UPDATE\_ROTATION\_\_()
+
+> **\_\_UPDATE\_ROTATION\_\_**(`initiator`): `void`
+
+Update the rotation of the component according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the component won't be considered as the initiator of the rotation update.
+Set this to true to propagate the rotation update to the rigidBody, collider and sensor.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__UPDATE_ROTATION__`](FPolyhedron.md#__update_rotation__)
+
+#### Defined in
+
+[3d/src/core/FComponent.ts:165](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L165)
+
+***
+
+### \_\_UPDATE\_SCALE\_\_()
+
+> **\_\_UPDATE\_SCALE\_\_**(`initiator`): `void`
+
+Update the scale of the component according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the component won't be considered as the initiator of the scale update.
+Set this to true to propagate the scale update to the rigidBody, collider and sensor.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__UPDATE_SCALE__`](FPolyhedron.md#__update_scale__)
+
+#### Defined in
+
+[3d/src/core/FComponent.ts:207](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L207)
+
+***
 
 ### emitCollisionWith()
 
@@ -551,7 +243,52 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:116
+core/dist/index.d.ts:293
+
+***
+
+### emitOnLoaded()
+
+> **emitOnLoaded**(): `void`
+
+Emit the onLoaded callbacks.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`emitOnLoaded`](FPolyhedron.md#emitonloaded)
+
+#### Defined in
+
+core/dist/index.d.ts:247
+
+***
+
+### frame()
+
+> **frame**(`_delta`): `void`
+
+Update the component. Should be called every frame.
+The purpose of this method is to render the component, its mesh/sprite, and its properties.
+
+#### Parameters
+
+• **\_delta**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`frame`](FPolyhedron.md#frame)
+
+#### Defined in
+
+[3d/src/core/FComponent.ts:113](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L113)
 
 ***
 
@@ -559,29 +296,13 @@ core/dist/index.d.ts:116
 
 > **initCollider**(`options`?): `void`
 
-Only init a collider for the component, without a rigid body.
-This is useful for static objects.
-
 #### Parameters
 
 • **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
 
-The options for the collider.
-
 #### Returns
 
 `void`
-
-#### Example
-
-```ts
-component.initCollider({
-  position: { x: 0, y: 0, z: 0 },
-  scale: { x: 1, y: 1, z: 1 },
-  rotation: { x: 0, y: 0, z: 0 },
-  shape: FShapes.CUBE
-})
-```
 
 #### Inherited from
 
@@ -589,7 +310,7 @@ component.initCollider({
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:361](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L361)
+[3d/src/core/FComponent.ts:286](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L286)
 
 ***
 
@@ -597,28 +318,13 @@ component.initCollider({
 
 > **initRigidBody**(`options`?): `void`
 
-Init a rigid body for the component.
-
 #### Parameters
 
 • **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
-The options for the rigid body.
-
 #### Returns
 
 `void`
-
-#### Example
-
-```ts
-component.initRigidBody({
-  position: { x: 0, y: 0, z: 0 },
-  scale: { x: 1, y: 1, z: 1 },
-  rotation: { x: 0, y: 0, z: 0 },
-  shape: FShapes.CUBE
-})
-```
 
 #### Inherited from
 
@@ -626,7 +332,7 @@ component.initRigidBody({
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:332](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L332)
+[3d/src/core/FComponent.ts:295](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L295)
 
 ***
 
@@ -634,29 +340,13 @@ component.initRigidBody({
 
 > **initSensor**(`options`?): `void`
 
-Init a sensor for the component.
-This is useful for triggerings events when the component collides with other components.
-
 #### Parameters
 
-• **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
-
-The options for the collider.
+• **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
 #### Returns
 
 `void`
-
-#### Example
-
-```ts
-component.initSensor({
-  position: { x: 0, y: 0, z: 0 },
-  scale: { x: 1, y: 1, z: 1 },
-  rotation: { x: 0, y: 0, z: 0 },
-  shape: FShapes.CUBE
-})
-```
 
 #### Inherited from
 
@@ -664,7 +354,7 @@ component.initSensor({
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:385](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L385)
+[3d/src/core/FComponent.ts:304](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L304)
 
 ***
 
@@ -718,33 +408,59 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:394](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L394)
+[3d/src/core/FComponent.ts:276](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L276)
 
 ***
 
 ### onFrame()
 
-> **onFrame**(`_delta`): `void`
+> **onFrame**(`callback`): `void`
 
-Update the component. Should be called every frame.
-The purpose of `onFrame` on FComponent is really to render the component, its mesh/sprite and its properties.
-Any changes on its transform should be done on the controller, not here.
+Add a callback to be called every frame.
 
 #### Parameters
 
-• **\_delta**: `number`
+• **callback**
+
+The callback function.
 
 #### Returns
 
 `void`
 
-#### Overrides
+#### Inherited from
 
 [`FPolyhedron`](FPolyhedron.md).[`onFrame`](FPolyhedron.md#onframe)
 
 #### Defined in
 
-[3d/src/polyhedrons/FCuboid.ts:23](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/polyhedrons/FCuboid.ts#L23)
+core/dist/index.d.ts:238
+
+***
+
+### onLoaded()
+
+> **onLoaded**(`callback`): `void`
+
+Add a callback to be called when the component is loaded (could be a texture, a 3D model, etc).
+
+#### Parameters
+
+• **callback**
+
+The callback function.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`onLoaded`](FPolyhedron.md#onloaded)
+
+#### Defined in
+
+core/dist/index.d.ts:243
 
 ***
 
@@ -776,183 +492,7 @@ cube.setColor(0xFF0000)
 
 #### Defined in
 
-[3d/src/polyhedrons/FPolyhedron.ts:47](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/polyhedrons/FPolyhedron.ts#L47)
-
-***
-
-### setPosition()
-
-> **setPosition**(`options`): `void`
-
-Set the position of the component.
-
-#### Parameters
-
-• **options**
-
-The options for the position.
-
-• **options.x**: `number`
-
-The position on the x-axis.
-
-• **options.y**: `number`
-
-The position on the y-axis.
-
-• **options.z**: `number`
-
-The position on the z-axis.
-
-#### Returns
-
-`void`
-
-#### Example
-
-```ts
-component.setPosition({ x: 0, y: 1, z: 0 })
-```
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`setPosition`](FPolyhedron.md#setposition)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:204](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L204)
-
-***
-
-### setRotation()
-
-> **setRotation**(`options`): `void`
-
-Set the rotation of the component from radians.
-
-#### Parameters
-
-• **options**
-
-The options for the rotation.
-
-• **options.x**: `number`
-
-The rotation on the x-axis.
-
-• **options.y**: `number`
-
-The rotation on the y-axis.
-
-• **options.z**: `number`
-
-The rotation on the z-axis.
-
-#### Returns
-
-`void`
-
-#### Example
-
-```ts
-component.setRotation({ x: 0, y: 0, z: 0 })
-```
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`setRotation`](FPolyhedron.md#setrotation)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:269](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L269)
-
-***
-
-### setRotationDegree()
-
-> **setRotationDegree**(`options`): `void`
-
-Set the rotation of the component from degrees.
-
-#### Parameters
-
-• **options**
-
-The options for the rotation.
-
-• **options.x**: `number`
-
-The rotation in degrees on the x-axis.
-
-• **options.y**: `number`
-
-The rotation in degrees on the y-axis.
-
-• **options.z**: `number`
-
-The rotation in degrees on the z-axis.
-
-#### Returns
-
-`void`
-
-#### Example
-
-```ts
-component.setRotationDegree({ x: 0, y: 90, z: 0 })
-```
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`setRotationDegree`](FPolyhedron.md#setrotationdegree)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:293](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L293)
-
-***
-
-### setScale()
-
-> **setScale**(`options`): `void`
-
-Set the scale of the component.
-
-#### Parameters
-
-• **options**
-
-The options for the scale.
-
-• **options.x**: `number`
-
-The scale on the x-axis.
-
-• **options.y**: `number`
-
-The scale on the y-axis.
-
-• **options.z**: `number`
-
-The scale on the z-axis.
-
-#### Returns
-
-`void`
-
-#### Example
-
-```ts
-component.setScale({ x: 1, y: 1, z: 1 })
-```
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`setScale`](FPolyhedron.md#setscale)
-
-#### Defined in
-
-[3d/src/core/FComponent.ts:228](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L228)
+[3d/src/polyhedrons/FPolyhedron.ts:43](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/polyhedrons/FPolyhedron.ts#L43)
 
 ## Properties
 
@@ -973,7 +513,39 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:56
+core/dist/index.d.ts:216
+
+***
+
+### \_\_CALLBACKS\_ON\_FRAME\_\_
+
+> **\_\_CALLBACKS\_ON\_FRAME\_\_**: () => `void`[]
+
+Callbacks for when a frame is rendered.
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__CALLBACKS_ON_FRAME__`](FPolyhedron.md#__callbacks_on_frame__)
+
+#### Defined in
+
+core/dist/index.d.ts:207
+
+***
+
+### \_\_CALLBACKS\_ON\_LOADED\_\_
+
+> **\_\_CALLBACKS\_ON\_LOADED\_\_**: () => `void`[]
+
+Callbacks for when the component is loaded (could be a texture, a 3D model, etc).
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__CALLBACKS_ON_LOADED__`](FPolyhedron.md#__callbacks_on_loaded__)
+
+#### Defined in
+
+core/dist/index.d.ts:211
 
 ***
 
@@ -990,7 +562,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:51
+core/dist/index.d.ts:203
 
 ***
 
@@ -1004,7 +576,7 @@ core/dist/index.d.ts:51
 
 #### Defined in
 
-core/dist/index.d.ts:46
+core/dist/index.d.ts:198
 
 ***
 
@@ -1020,7 +592,24 @@ Internal flags
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:28](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L28)
+[3d/src/core/FComponent.ts:30](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L30)
+
+***
+
+### \_\_MESH\_\_
+
+> **\_\_MESH\_\_**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
+
+mesh is redefined from FComponent without the ? because it is
+directly available after the constructor, as a polyhedron is created synchronously.
+
+#### Inherited from
+
+[`FPolyhedron`](FPolyhedron.md).[`__MESH__`](FPolyhedron.md#__mesh__)
+
+#### Defined in
+
+[3d/src/polyhedrons/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/polyhedrons/FPolyhedron.ts#L16)
 
 ***
 
@@ -1036,7 +625,7 @@ Collider
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:57](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L57)
+[3d/src/core/FComponent.ts:59](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L59)
 
 ***
 
@@ -1052,24 +641,7 @@ The controller attached to the component.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:37](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L37)
-
-***
-
-### mesh
-
-> **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\>
-
-mesh is redefined from FComponent without the ? because it is
-directly available after the constructor, as a polyhedron is created synchronously.
-
-#### Inherited from
-
-[`FPolyhedron`](FPolyhedron.md).[`mesh`](FPolyhedron.md#mesh)
-
-#### Defined in
-
-[3d/src/polyhedrons/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/polyhedrons/FPolyhedron.ts#L16)
+[3d/src/core/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L39)
 
 ***
 
@@ -1085,7 +657,7 @@ RigidBody
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:53](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L53)
+[3d/src/core/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L55)
 
 ***
 
@@ -1101,7 +673,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L33)
+[3d/src/core/FComponent.ts:35](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L35)
 
 ***
 
@@ -1117,7 +689,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:61](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L61)
+[3d/src/core/FComponent.ts:63](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L63)
 
 ***
 
@@ -1133,4 +705,4 @@ Transforms
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:47](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FComponent.ts#L47)
+[3d/src/core/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FComponent.ts#L49)

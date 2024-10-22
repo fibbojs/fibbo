@@ -1,5 +1,6 @@
-import * as THREE from 'three'
 import type { FComponent } from '../core/FComponent'
+import type { FScene } from '../core/FScene'
+import type { FVector3 } from '../types/FVector3'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
@@ -26,30 +27,30 @@ export class FAttachedCamera extends FCamera {
   // Component that the camera is attached to
   attachedComponent: FComponent
   // Offset from the component's position
-  offset: { x: number, y: number, z: number } = { x: 0, y: 5, z: 5 }
+  offset: FVector3 = { x: 0, y: 5, z: 5 }
 
   /**
-   * @param attachedComponent Model that the camera is attached to
+   * @param scene Scene that the camera is in
+   * @param attachedComponent Component that the camera is attached to
    */
-  constructor(attachedComponent: FComponent) {
-    super()
+  constructor(scene: FScene, attachedComponent: FComponent) {
+    super(scene)
     this.attachedComponent = attachedComponent
   }
 
-  onFrame(_delta: number): void {
-    if (this.attachedComponent.mesh === undefined)
+  frame(_delta: number): void {
+    if (this.attachedComponent.__MESH__ === undefined)
       return
 
     // Position the camera at the model's position + offset
-    this.position.x = this.attachedComponent.mesh.position.x + this.offset.x
-    this.position.y = this.attachedComponent.mesh.position.y + this.offset.y
-    this.position.z = this.attachedComponent.mesh.position.z + this.offset.z
+    this.transform.x = this.attachedComponent.__MESH__.position.x + this.offset.x
+    this.transform.y = this.attachedComponent.__MESH__.position.y + this.offset.y
+    this.transform.z = this.attachedComponent.__MESH__.position.z + this.offset.z
     // Make the camera look at the model
-    this.lookAt(this.attachedComponent.mesh.position.x, this.attachedComponent.mesh.position.y, this.attachedComponent.mesh.position.z)
-  }
-
-  setPosition(x: number, y: number, z: number): void {
-    super.setPosition(x, y, z)
-    this.offset = new THREE.Vector3(x, y, z)
+    this.lookAt({
+      x: this.attachedComponent.__MESH__.position.x,
+      y: this.attachedComponent.__MESH__.position.y,
+      z: this.attachedComponent.__MESH__.position.z,
+    })
   }
 }

@@ -34,17 +34,16 @@ The options for the controller.
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FController.ts#L23)
+[2d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FController.ts#L23)
 
 ## Methods
 
-### onFrame()
+### frame()
 
-> `abstract` **onFrame**(`delta`): `void`
+> `abstract` **frame**(`delta`): `void`
 
 Update the controller. Should be called every frame.
-The purpose of `onFrame` on FController is to update the component's transform in the desired way.
-Any rendering process should be done on the component, not here.
+The purpose of this method is to update the component transform based on the controller logic.
 
 #### Parameters
 
@@ -58,7 +57,7 @@ The time since the last frame.
 
 #### Inherited from
 
-`FControllerCore.onFrame`
+`FControllerCore.frame`
 
 #### Defined in
 
@@ -79,4 +78,4 @@ It is redefined here to get the correct type (with 2D properties).
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FController.ts#L17)
+[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FController.ts#L17)

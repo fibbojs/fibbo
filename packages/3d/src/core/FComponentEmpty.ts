@@ -10,8 +10,4 @@ export class FComponentEmpty extends FComponent {
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene, options)
   }
-
-  onFrame(_delta: number): void {
-    super.onFrame(_delta)
-  }
 }

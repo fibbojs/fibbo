@@ -28,14 +28,14 @@ export class FDebug3d {
       const light = lightParam as FLight
       // Create a helper depending on the light type
       let helper
-      if (light.light instanceof scene.THREE.DirectionalLight)
-        helper = new scene.THREE.DirectionalLightHelper(light.light)
-      else if (light.light instanceof scene.THREE.HemisphereLight)
-        helper = new scene.THREE.HemisphereLightHelper(light.light, 1)
-      else if (light.light instanceof scene.THREE.PointLight)
-        helper = new scene.THREE.PointLightHelper(light.light)
-      else if (light.light instanceof scene.THREE.SpotLight)
-        helper = new scene.THREE.SpotLightHelper(light.light)
+      if (light.__LIGHT__ instanceof scene.THREE.DirectionalLight)
+        helper = new scene.THREE.DirectionalLightHelper(light.__LIGHT__)
+      else if (light.__LIGHT__ instanceof scene.THREE.HemisphereLight)
+        helper = new scene.THREE.HemisphereLightHelper(light.__LIGHT__, 1)
+      else if (light.__LIGHT__ instanceof scene.THREE.PointLight)
+        helper = new scene.THREE.PointLightHelper(light.__LIGHT__)
+      else if (light.__LIGHT__ instanceof scene.THREE.SpotLight)
+        helper = new scene.THREE.SpotLightHelper(light.__LIGHT__)
       else
         return
       // Add the helper to the scene

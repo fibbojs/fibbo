@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:22](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L22)
+[3d/src/core/FRigidBody.ts:31](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L31)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:17](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L17)
+[3d/src/core/FRigidBody.ts:26](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L26)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:16](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L16)
+[3d/src/core/FRigidBody.ts:25](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L25)
 
 ***
 
@@ -64,105 +64,107 @@
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:15](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L15)
+[3d/src/core/FRigidBody.ts:24](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L24)
+
+***
+
+### mesh?
+
+> `optional` **mesh**: `Mesh`\<`BufferGeometry`\<`NormalBufferAttributes`\>, `Material` \| `Material`[], `Object3DEventMap`\> \| `Group`\<`Object3DEventMap`\>
+
+#### Defined in
+
+[3d/src/core/FRigidBody.ts:21](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L21)
 
 ***
 
 ### position?
 
-> `optional` **position**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **position**: [`FVector3`](FVector3.md)
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L8)
+[3d/src/core/FRigidBody.ts:12](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L12)
+
+***
+
+### positionOffset?
+
+> `optional` **positionOffset**: [`FVector3`](FVector3.md)
+
+#### Defined in
+
+[3d/src/core/FRigidBody.ts:16](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L16)
 
 ***
 
 ### rigidBodyType?
 
-> `optional` **rigidBodyType**: `RigidBodyType`
+> `optional` **rigidBodyType**: [`FRigidBodyType`](../enumerations/FRigidBodyType.md)
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:13](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L13)
+[3d/src/core/FRigidBody.ts:22](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L22)
 
 ***
 
 ### rotation?
 
-> `optional` **rotation**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **rotation**: [`FVector3`](FVector3.md)
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L10)
+[3d/src/core/FRigidBody.ts:13](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L13)
 
 ***
 
 ### rotationDegree?
 
-> `optional` **rotationDegree**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **rotationDegree**: [`FVector3`](FVector3.md)
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:11](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L11)
+[3d/src/core/FRigidBody.ts:14](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L14)
+
+***
+
+### rotationDegreeOffset?
+
+> `optional` **rotationDegreeOffset**: [`FVector3`](FVector3.md)
+
+#### Defined in
+
+[3d/src/core/FRigidBody.ts:18](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L18)
+
+***
+
+### rotationOffset?
+
+> `optional` **rotationOffset**: [`FVector3`](FVector3.md)
+
+#### Defined in
+
+[3d/src/core/FRigidBody.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L17)
 
 ***
 
 ### scale?
 
-> `optional` **scale**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### z
-
-> **z**: `number`
+> `optional` **scale**: [`FVector3`](FVector3.md)
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:9](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L9)
+[3d/src/core/FRigidBody.ts:15](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L15)
+
+***
+
+### scaleOffset?
+
+> `optional` **scaleOffset**: [`FVector3`](FVector3.md)
+
+#### Defined in
+
+[3d/src/core/FRigidBody.ts:19](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L19)
 
 ***
 
@@ -172,7 +174,7 @@
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:14](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L14)
+[3d/src/core/FRigidBody.ts:23](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L23)
 
 ***
 
@@ -182,4 +184,4 @@
 
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:12](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/3d/src/core/FRigidBody.ts#L12)
+[3d/src/core/FRigidBody.ts:20](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L20)

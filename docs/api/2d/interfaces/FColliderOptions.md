@@ -6,29 +6,31 @@
 
 ### position?
 
-> `optional` **position**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
+> `optional` **position**: [`FVector2`](FVector2.md)
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:6](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FCollider.ts#L6)
+[2d/src/core/FCollider.ts:10](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L10)
+
+***
+
+### positionOffset?
+
+> `optional` **positionOffset**: [`FVector2`](FVector2.md)
+
+#### Defined in
+
+[2d/src/core/FCollider.ts:14](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L14)
 
 ***
 
 ### rigidBody?
 
-> `optional` **rigidBody**: `RigidBody`
+> `optional` **rigidBody**: [`FRigidBody`](../classes/FRigidBody.md)
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:11](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FCollider.ts#L11)
+[2d/src/core/FCollider.ts:19](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L19)
 
 ***
 
@@ -38,7 +40,7 @@
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FCollider.ts#L8)
+[2d/src/core/FCollider.ts:11](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L11)
 
 ***
 
@@ -48,25 +50,47 @@
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:9](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FCollider.ts#L9)
+[2d/src/core/FCollider.ts:12](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L12)
+
+***
+
+### rotationDegreeOffset?
+
+> `optional` **rotationDegreeOffset**: `number`
+
+#### Defined in
+
+[2d/src/core/FCollider.ts:16](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L16)
+
+***
+
+### rotationOffset?
+
+> `optional` **rotationOffset**: `number`
+
+#### Defined in
+
+[2d/src/core/FCollider.ts:15](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L15)
 
 ***
 
 ### scale?
 
-> `optional` **scale**: `object`
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
+> `optional` **scale**: [`FVector2`](FVector2.md)
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FCollider.ts#L7)
+[2d/src/core/FCollider.ts:13](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L13)
+
+***
+
+### scaleOffset?
+
+> `optional` **scaleOffset**: [`FVector2`](FVector2.md)
+
+#### Defined in
+
+[2d/src/core/FCollider.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L17)
 
 ***
 
@@ -76,7 +100,7 @@
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:12](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FCollider.ts#L12)
+[2d/src/core/FCollider.ts:20](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L20)
 
 ***
 
@@ -86,4 +110,4 @@
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:10](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/core/FCollider.ts#L10)
+[2d/src/core/FCollider.ts:18](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L18)

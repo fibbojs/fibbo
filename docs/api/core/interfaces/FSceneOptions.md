@@ -4,13 +4,23 @@
 
 ## Properties
 
+### autoLoop?
+
+> `optional` **autoLoop**: `boolean`
+
+#### Defined in
+
+[core/src/FScene.ts:9](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FScene.ts#L9)
+
+***
+
 ### domNode?
 
 > `optional` **domNode**: `HTMLElement`
 
 #### Defined in
 
-[core/src/FScene.ts:8](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FScene.ts#L8)
+[core/src/FScene.ts:8](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FScene.ts#L8)
 
 ***
 
@@ -20,4 +30,4 @@
 
 #### Defined in
 
-[core/src/FScene.ts:7](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/core/src/FScene.ts#L7)
+[core/src/FScene.ts:7](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FScene.ts#L7)

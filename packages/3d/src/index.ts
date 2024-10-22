@@ -24,6 +24,7 @@ export * from './core/FComponent'
 export * from './core/FComponentEmpty'
 export * from './core/FRigidBody'
 export * from './core/FScene'
+export * from './core/FSensor'
 export * from './core/FTransform'
 
 // Lights
@@ -49,4 +50,6 @@ export * from './polyhedrons/FPolyhedron'
 export * from './polyhedrons/FSphere'
 
 // Types
+export * from './types/FRigidBodyType'
 export * from './types/FShapes'
+export * from './types/FVector3'

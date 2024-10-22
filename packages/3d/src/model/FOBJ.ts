@@ -32,7 +32,7 @@ export class FOBJ extends FModel {
       // Called when the resource is loaded
       (obj) => {
         // Get the mesh from the OBJ object
-        this.mesh = obj
+        this.__MESH__ = obj
 
         // Load textures
         obj.traverse((child) => {

@@ -1,6 +1,6 @@
-import RAPIER from '@dimforge/rapier2d'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../core/FScene'
+import { FRigidBodyType } from '../types/FRigidBodyType'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 
@@ -9,7 +9,7 @@ import { FCharacterController } from './FCharacterController'
  * @category Controller
  * @example
  * ```ts
- * import { FCapsule, FCharacterControllerD, FScene } from '@fibbojs/3d'
+ * import { FCapsule, FCharacterControllerD, FScene } from '@fibbojs/2d'
  *
  * const scene = new FScene()
  *
@@ -24,31 +24,31 @@ export class FCharacterControllerD extends FCharacterController {
 
     const fKeyboard = new FKeyboard(scene)
     fKeyboard.onKeyDown(' ', () => {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0, y: 0.5 }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: 0.5 }, true)
     })
 
-    // Initialize the rigid body
+    // Initialize the rigidBody
     this.component.initRigidBody({
-      rigidBodyType: RAPIER.RigidBodyType.Dynamic,
+      rigidBodyType: FRigidBodyType.DYNAMIC,
       lockRotations: true,
       ...options,
     })
   }
 
-  onFrame(_delta: number): void {
+  frame(_delta: number): void {
     // Apply movement on the y axis
     if (this.inputs.up) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0, y: 0.15 * this.speed }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: 0.15 * this.speed }, true)
     }
     else if (this.inputs.down) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0, y: -0.15 * this.speed }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: -0.15 * this.speed }, true)
     }
     // Apply movement on the x axis
     if (this.inputs.left) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: -0.15 * this.speed, y: 0 }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: -0.15 * this.speed, y: 0 }, true)
     }
     else if (this.inputs.right) {
-      this.component.rigidBody?.rigidBody.applyImpulse({ x: 0.15 * this.speed, y: 0 }, true)
+      this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0.15 * this.speed, y: 0 }, true)
     }
   }
 }

@@ -7,7 +7,7 @@ A pre-defined character controller based on a Dynamic RigidBody.
 ## Example
 
 ```ts
-import { FCapsule, FCharacterControllerD, FScene } from '@fibbojs/3d'
+import { FCapsule, FCharacterControllerD, FScene } from '@fibbojs/2d'
 
 const scene = new FScene()
 
@@ -42,17 +42,16 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerD.ts:22](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterControllerD.ts#L22)
+[2d/src/controllers/FCharacterControllerD.ts:22](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FCharacterControllerD.ts#L22)
 
 ## Methods
 
-### onFrame()
+### frame()
 
-> **onFrame**(`_delta`): `void`
+> **frame**(`_delta`): `void`
 
 Update the controller. Should be called every frame.
-The purpose of `onFrame` on FController is to update the component's transform in the desired way.
-Any rendering process should be done on the component, not here.
+The purpose of this method is to update the component transform based on the controller logic.
 
 #### Parameters
 
@@ -64,11 +63,11 @@ Any rendering process should be done on the component, not here.
 
 #### Overrides
 
-[`FCharacterController`](FCharacterController.md).[`onFrame`](FCharacterController.md#onframe)
+[`FCharacterController`](FCharacterController.md).[`frame`](FCharacterController.md#frame)
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerD.ts:38](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterControllerD.ts#L38)
+[2d/src/controllers/FCharacterControllerD.ts:38](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FCharacterControllerD.ts#L38)
 
 ## Properties
 
@@ -85,7 +84,7 @@ It is redefined here to get the correct type (with 2D properties).
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FController.ts#L17)
+[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -117,7 +116,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:21](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterController.ts#L21)
+[2d/src/controllers/FCharacterController.ts:21](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FCharacterController.ts#L21)
 
 ***
 
@@ -133,7 +132,7 @@ The scene where the character is.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:36](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterController.ts#L36)
+[2d/src/controllers/FCharacterController.ts:36](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FCharacterController.ts#L36)
 
 ***
 
@@ -149,4 +148,4 @@ The speed of the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:31](https://github.com/fibbojs/fibbo/blob/d4e27f21b39d7470557f457413047335ba5e0d67/packages/2d/src/controllers/FCharacterController.ts#L31)
+[2d/src/controllers/FCharacterController.ts:31](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FCharacterController.ts#L31)
