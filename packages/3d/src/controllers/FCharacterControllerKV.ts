@@ -41,5 +41,6 @@ export class FCharacterControllerKV extends FCharacterControllerK {
       y: correctedMovement.y / delta,
       z: correctedMovement.z / delta,
     }, true)
+    this.component.rigidBody?.__RIGIDBODY__.setRotation(this.getCorrectedRotation(), true)
   }
 }
