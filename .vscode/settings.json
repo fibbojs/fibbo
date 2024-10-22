@@ -55,6 +55,7 @@
     "**/.gitignore": true,
     "**/vitest.workspace.ts": true,
     "**/vitest.config.ts": true,
-    "**/coverage": true
+    "**/coverage": true,
+    "**/html": true
   }
 }
