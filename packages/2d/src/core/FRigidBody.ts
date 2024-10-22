@@ -85,6 +85,7 @@ export class FRigidBody {
       position: { x: 0, y: 0 },
       rotation: 0,
       scale: { x: 1, y: 1 },
+      rotationOffset: 0,
       shape: FShapes.RECTANGLE,
       rigidBodyType: FRigidBodyType.DYNAMIC,
       sensor: false,
