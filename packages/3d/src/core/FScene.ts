@@ -59,9 +59,9 @@ export class FScene extends FSceneCore {
   // Lights can be declared as it will be initialized by the parent class
   declare lights: FLight[]
   // The colliders of the scene
-  declare colliders: FCollider[]
+  colliders: FCollider[]
   // The rigidBodies of the scene
-  declare rigidBodies: FRigidBody[]
+  rigidBodies: FRigidBody[]
   // Three.js
   THREE: typeof THREE = THREE
   declare scene: THREE.Scene
@@ -121,9 +121,6 @@ export class FScene extends FSceneCore {
 
     // Each frame
     this.onFrame((delta) => {
-      // Call frame for each collider and rigidBody
-      this.colliders.forEach(collider => collider.frame(delta))
-      this.rigidBodies.forEach(rigidBody => rigidBody.frame(delta))
       // Call frame for each component
       this.components.forEach(component => component.frame(delta))
 
@@ -155,6 +152,10 @@ export class FScene extends FSceneCore {
       // Step the physics world
       this.world.timestep = delta
       this.world.step(this.eventQueue)
+
+      // Call frame for each collider and rigidBody
+      this.colliders.forEach(collider => collider.frame(delta))
+      this.rigidBodies.forEach(rigidBody => rigidBody.frame(delta))
 
       // Drain collision events
       this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {

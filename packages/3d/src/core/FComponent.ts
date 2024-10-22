@@ -14,9 +14,9 @@ import { FSensor } from './FSensor'
 
 export interface FComponentOptions {
   position?: FVector3
-  scale?: FVector3
   rotation?: FVector3
   rotationDegree?: FVector3
+  scale?: FVector3
 }
 
 /**
@@ -69,10 +69,6 @@ export abstract class FComponent extends FComponentCore {
    * @param options.position.x The position on the x-axis.
    * @param options.position.y The position on the y-axis.
    * @param options.position.z The position on the z-axis.
-   * @param options.scale The scale of the component.
-   * @param options.scale.x The scale on the x-axis.
-   * @param options.scale.y The scale on the y-axis.
-   * @param options.scale.z The scale on the z-axis.
    * @param options.rotation The rotation of the component.
    * @param options.rotation.x The rotation in radians on the x-axis.
    * @param options.rotation.y The rotation in radians on the y-axis.
@@ -81,6 +77,10 @@ export abstract class FComponent extends FComponentCore {
    * @param options.rotationDegree.x The rotation in degrees on the x-axis.
    * @param options.rotationDegree.y The rotation in degrees on the y-axis.
    * @param options.rotationDegree.z The rotation in degrees on the z-axis.
+   * @param options.scale The scale of the component.
+   * @param options.scale.x The scale on the x-axis.
+   * @param options.scale.y The scale on the y-axis.
+   * @param options.scale.z The scale on the z-axis.
    */
   constructor(scene: FScene, options?: FComponentOptions) {
     super(scene)
@@ -95,8 +95,8 @@ export abstract class FComponent extends FComponentCore {
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.scale || (!options.rotation && !options.rotationDegree))
-      throw new Error('FibboError: FComponent requires position, scale and rotation options')
+    if (!options.position || (!options.rotation && !options.rotationDegree) || !options.scale)
+      throw new Error('FibboError: FComponent requires transform properties.')
 
     // Configure transform
     this.transform = new FTransform({

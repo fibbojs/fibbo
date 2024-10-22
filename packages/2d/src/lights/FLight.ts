@@ -25,7 +25,7 @@ export abstract class FLight extends FLightCore {
   /**
    * The original light object from PIXI.js.
    */
-  declare light: any
+  declare __LIGHT__: any
 
   /**
    * Scene the light is in.
@@ -61,98 +61,59 @@ export abstract class FLight extends FLightCore {
     // Store scene
     this.scene = scene
 
-    // Store options
+    // Configure transform
     this.transform = new FTransform({
       position: options.position,
       rotation: options.rotation,
       rotationDegree: options.rotationDegree,
     })
+    this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__())
+    this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__())
+    this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__())
+
     this.__LOOK_AT__ = options.lookAt
   }
 
-  setPosition(position: { x: number, y: number }): void {
-    this.transform.position = position
-    this.light.position.set(position.x, position.y)
+  /**
+   * Update the position of the light according to the transform.
+   * This method should be called after updating the transform properties.
+   */
+  __UPDATE_POSITION__(): void {
+    this.__LIGHT__.position.set(this.transform.position.x, this.transform.position.y)
   }
 
-  setRotation(rotation: number): void {
-    this.transform.rotation = rotation
-    this.light.rotation = rotation
+  /**
+   * Update the rotation of the light according to the transform.
+   * This method should be called after updating the transform properties.
+   */
+  __UPDATE_ROTATION__(): void {
+    this.__LIGHT__.rotation.set(this.transform.rotation)
   }
 
-  setRotationDegree(rotationDegree: number): void {
-    this.setRotation(rotationDegree * (Math.PI / 180))
-  }
-
-  setScale(scale: { x: number, y: number }): void {
-    this.transform.scale = scale
-    this.light.scale.set(scale.x, scale.y)
+  /**
+   * Update the scale of the light according to the transform.
+   * This method should be called after updating the transform properties.
+   */
+  __UPDATE_SCALE__(): void {
+    this.__LIGHT__.scale.set(this.transform.scale.x, this.transform.scale.y)
   }
 
   // Setters & Getters
 
-  get position(): { x: number, y: number } {
-    return this.transform.position
-  }
-
-  set position(position: { x: number, y: number }) {
-    this.setPosition(position)
-  }
-
-  get rotation(): number {
-    return this.transform.rotation
-  }
-
-  set rotation(rotation: number) {
-    this.setRotation(rotation)
-  }
-
-  get rotationDegree(): number {
-    return this.transform.rotationDegree
-  }
-
-  set rotationDegree(rotationDegree: number) {
-    this.setRotationDegree(rotationDegree)
-  }
-
-  get scale(): { x: number, y: number } {
-    return this.transform.scale
-  }
-
-  set scale(scale: { x: number, y: number }) {
-    this.setScale(scale)
-  }
-
-  get scaleX(): number {
-    return this.transform.scale.x
-  }
-
-  set scaleX(scaleX: number) {
-    this.scale = { x: scaleX, y: this.scaleY }
-  }
-
-  get scaleY(): number {
-    return this.transform.scale.y
-  }
-
-  set scaleY(scaleY: number) {
-    this.setScale({ x: this.scaleX, y: scaleY })
-  }
-
   set color(color: number) {
-    this.light.color = color
+    this.__LIGHT__.color = color
   }
 
   get color(): number {
-    return this.light.color
+    return this.__LIGHT__.color
   }
 
   set intensity(intensity: number) {
-    this.light.brightness = intensity
+    this.__LIGHT__.brightness = intensity
   }
 
   get intensity(): number {
-    return this.light.brightness
+    return this.__LIGHT__.brightness
   }
 
   get lookAt(): { x: number, y: number } {

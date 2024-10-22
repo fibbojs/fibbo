@@ -60,35 +60,34 @@ export abstract class FCamera extends FCameraCore {
     this.scene.viewport.setZoom(zoom)
   }
 
-  setPosition(position: { x: number, y: number }): void {
+  /**
+   * Update the position of the camera according to the transform.
+   * This method should be called after updating the transform properties.
+   */
+  __UPDATE_POSITION__(): void {
+    this.__SET_POSITION__(this.transform.position)
+  }
+
+  /**
+   * Update the rotation of the camera according to the transform.
+   * This method should be called after updating the transform properties.
+   */
+  __UPDATE_ROTATION__(): void {
+    console.warn('FCamera does not support rotation.')
+  }
+
+  /**
+   * Update the scale of the camera according to the transform.
+   * This method should be called after updating the transform properties.
+   * This method does not make sense for cameras, but it is implemented for consistency.
+   */
+  __UPDATE_SCALE__(): void {
+    console.warn('FCamera does not support scale.')
+  }
+
+  __SET_POSITION__(position: { x: number, y: number }): void {
     this.transform.position = position
     this.scene.viewport.x = position.x
     this.scene.viewport.y = position.y
-  }
-
-  // Setters & Getters
-
-  get position() {
-    return this.transform.position
-  }
-
-  set position(position: { x: number, y: number }) {
-    this.setPosition(position)
-  }
-
-  get x() {
-    return this.transform.position.x
-  }
-
-  set x(x: number) {
-    this.setPosition({ x, y: this.y })
-  }
-
-  get y() {
-    return this.transform.position.y
-  }
-
-  set y(y: number) {
-    this.setPosition({ x: this.x, y })
   }
 }

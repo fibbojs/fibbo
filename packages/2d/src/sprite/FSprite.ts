@@ -85,7 +85,7 @@ export class FSprite extends FComponent {
    * @param width The width of the sprite.
    */
   setScaleWidth(width: number) {
-    this.setScale({ x: width, y: width * this.texture.height / this.texture.width })
+    this.__SET_SCALE__({ x: width, y: width * this.texture.height / this.texture.width })
   }
 
   /**
@@ -94,6 +94,6 @@ export class FSprite extends FComponent {
    * @param height The height of the sprite.
    */
   setScaleHeight(height: number) {
-    this.setScale({ x: height * this.texture.width / this.texture.height, y: height })
+    this.__SET_SCALE__({ x: height * this.texture.width / this.texture.height, y: height })
   }
 }

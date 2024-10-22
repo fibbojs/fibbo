@@ -18,6 +18,6 @@ export class FFreeCamera extends FCamera {
     this.scene.viewport.plugins.resume('wheel')
     this.scene.viewport.plugins.resume('decelerate')
     // Move the camera to the target
-    this.scene.viewport.moveCenter(this.position.x * 100, -this.position.y * 100)
+    this.scene.viewport.moveCenter(this.transform.position.x * 100, -this.transform.position.y * 100)
   }
 }

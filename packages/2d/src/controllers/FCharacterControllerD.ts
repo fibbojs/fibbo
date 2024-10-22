@@ -1,6 +1,6 @@
-import RAPIER from '@dimforge/rapier2d'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../core/FScene'
+import { FRigidBodyType } from '../types/FRigidBodyType'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 
@@ -29,7 +29,7 @@ export class FCharacterControllerD extends FCharacterController {
 
     // Initialize the rigidBody
     this.component.initRigidBody({
-      rigidBodyType: RAPIER.RigidBodyType.Dynamic,
+      rigidBodyType: FRigidBodyType.DYNAMIC,
       lockRotations: true,
       ...options,
     })

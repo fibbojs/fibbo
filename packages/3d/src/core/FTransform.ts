@@ -3,13 +3,13 @@ import type { FVector3 } from '../types/FVector3'
 
 export interface FTransformOptions {
   position?: FVector3
-  scale?: FVector3
   rotation?: FVector3
   rotationDegree?: FVector3
+  scale?: FVector3
 }
 
 /**
- * 3D Transform for a component.
+ * 3D Transform
  * @category Core
  */
 export class FTransform {
@@ -28,26 +28,25 @@ export class FTransform {
   __CALLBACKS_ON_SCALE_UPDATED__: (() => void)[] = []
 
   /**
-   * The position of the component.
+   * The position of the transform.
    */
   __POSITION__: FVector3
   /**
-   * The scale of the component.
+   * The scale of the transform.
    */
   __SCALE__: FVector3
   /**
-   * The rotation of the component.
+   * The rotation of the transform.
    */
   __ROTATION__: FVector3
 
   /**
    * Create a new FTransform.
    * @param options The options for the transform.
-   * @param options.component The component that the transform is attached to. If provided, the transform will automatically update the component's position, rotation and scale when changed.
    * @param options.position The position of the transform. If not defined, it will default to `{ x: 0, y: 0, z: 0 }`.
-   * @param options.scale The scale of the transform. If not defined, it will default to `{ x: 1, y: 1, z: 1 }`.
    * @param options.rotation The rotation of the transform. If not defined, it will default to `{ x: 0, y: 0, z: 0 }`.
    * @param options.rotationDegree The rotation of the transform in degrees. If not defined, it will default to undefined.
+   * @param options.scale The scale of the transform. If not defined, it will default to `{ x: 1, y: 1, z: 1 }`.
    * @example
    * ```ts
    * const transform = new FTransform({
@@ -60,7 +59,6 @@ export class FTransform {
   constructor(options?: FTransformOptions) {
     // Apply default options
     const DEFAULT_OPTIONS = {
-      component: undefined,
       position: { x: 0, y: 0, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
       rotationDegree: undefined,
@@ -68,15 +66,15 @@ export class FTransform {
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.scale || (!options.rotation && !options.rotationDegree))
-      throw new Error('FibboError: FTransform requires position, scale, rotation and shape options')
+    if (!options.position || (!options.rotation && !options.rotationDegree) || !options.scale)
+      throw new Error('FibboError: options missing for FTransform')
 
     // Set the transform values
     this.__POSITION__ = options.position
-    this.__SCALE__ = options.scale
     this.__ROTATION__ = options.rotationDegree
       ? { x: THREE.MathUtils.degToRad(options.rotationDegree.x), y: THREE.MathUtils.degToRad(options.rotationDegree.y), z: THREE.MathUtils.degToRad(options.rotationDegree.z) }
       : options.rotation || { x: 0, y: 0, z: 0 }
+    this.__SCALE__ = options.scale
   }
 
   /**

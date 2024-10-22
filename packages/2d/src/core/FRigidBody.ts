@@ -1,15 +1,23 @@
 import * as RAPIER from '@dimforge/rapier2d'
+import type { FVector2 } from '../types/FVector2'
+import { FRigidBodyType } from '../types/FRigidBodyType'
 import { FShapes } from '../types/FShapes'
 import type { FComponent } from './FComponent'
 import { FCollider } from './FCollider'
+import { FTransform } from './FTransform'
+import type { FScene } from './FScene'
 
 export interface FRigidBodyOptions {
-  position?: { x: number, y: number }
-  scale?: { x: number, y: number }
+  position?: FVector2
   rotation?: number
   rotationDegree?: number
+  scale?: FVector2
+  positionOffset?: FVector2
+  rotationOffset?: number
+  rotationDegreeOffset?: number
+  scaleOffset?: FVector2
   shape?: FShapes
-  rigidBodyType?: RAPIER.RigidBodyType
+  rigidBodyType?: FRigidBodyType
   sensor?: boolean
   lockTranslations?: boolean
   lockRotations?: boolean
@@ -33,97 +41,107 @@ export class FRigidBody {
    */
   collider: FCollider
   /**
-   * Position Offset for the rigidBody.
-   * This is used to adjust the rigidBody position relative to the component.
-   */
-  __RIGIDBODY_POSITION_OFFSET__: { x: number, y: number }
-  /**
-   * Rotation Offset for the rigidBody.
-   * This is used to adjust the rigidBody position relative to the component.
-   */
-  __RIGIDBODY_ROTATION_OFFSET__: number
-  /**
    * The component the rigidBody is attached to.
    */
-  component: FComponent
+  __COMPONENT__?: FComponent
+  /**
+   * The transform of the rigidBody.
+   */
+  transform: FTransform
+  /**
+   * The transform offset of the rigidBody.
+   */
+  offset: FTransform
 
   /**
    * Creates a rigidBody for the given component.
-   * @param component The component which the rigidBody will be attached to.
+   * @param scene The scene the rigidBody belongs to.
    * @param options The options for the rigidBody.
-   * @param options.position The position of the rigidBody. If not defined, it will use the default position of the FComponent.
-   * @param options.scale The scale of the rigidBody. If not defined, it will use the default scale of the FComponent.
-   * @param options.rotation The rotation of the rigidBody. If not defined, it will use the default rotation of the FComponent.
-   * @param options.shape The shape of the rigidBody. If not defined, it will default to FShapes.CUBOID.
-   * @param options.rigidBodyType The type of the rigidBody. If not defined, it will default to RAPIER.RigidBodyType.Dynamic.
+   * @param options.position The position of the rigidBody. Default is { x: 0, y: 0 }.
+   * @param options.rotation The rotation of the rigidBody in radians. Default is 0.
+   * @param options.scale The scale of the rigidBody. Default is { x: 1, y: 1 }.
+   * @param options.positionOffset The position offset of the rigidBody. Only used if the rigidBody is attached to a component. Default is { x: 0, y: 0 }.
+   * @param options.rotationOffset The rotation offset of the rigidBody in radians. Only used if the rigidBody is attached to a component. Default is 0.
+   * @param options.scaleOffset The scale offset of the rigidBody. Only used if the rigidBody is attached to a component. Default is { x: 0, y: 0 }.
+   * @param options.shape The shape of the collider that will be generated from the rigidBody. If not defined, it will default to 'CUBOID'.
+   * @param options.rigidBodyType The type of the rigidBody. If not defined, it will default to FRigidBodyType.Dynamic.
    * @param options.lockTranslations If true, the rigidBody will not be able to move.
    * @param options.lockRotations If true, the rigidBody will not be able to rotate.
    * @param options.enabledTranslations If defined, it will enable or disable translations on the x and y axis.
    * @param options.enabledTranslations.enableX If true, the rigidBody will be able to move on the x-axis.
    * @param options.enabledTranslations.enableY If true, the rigidBody will be able to move on the y-axis.
-   * @param options.enabledTranslations.enableZ If true, the rigidBody will be able to move on the z-axis.
-   * @param options.enabledRotations If defined, it will enable or disable rotations on the x and y axis.
-   * @param options.enabledRotations.enableX If true, the rigidBody will be able to rotate on the x-axis.
-   * @param options.enabledRotations.enableY If true, the rigidBody will be able to rotate on the y-axis.
-   * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
    * @example
    * ```ts
-   * const rigidBody = new FRigidBody(component, {
+   * const rigidBody = new FRigidBody(scene, {
    *  position: { x: 0, y: 0 },
    *  scale: { x: 1, y: 1 },
-   *  rotation: 0,
-   *  shape: FShapes.RECTANGLE
+   *  shape: 'CUBOID'
    * })
    * ```
    */
-  constructor(component: FComponent, options?: FRigidBodyOptions) {
+  constructor(scene: FScene, options?: FRigidBodyOptions) {
     // Apply default options
     const DEFAULT_OPTIONS = {
-      position: { x: 0, y: 0, z: 0 },
-      scale: { x: 1, y: 1, z: 1 },
+      position: { x: 0, y: 0 },
+      scale: { x: 1, y: 1 },
       rotation: 0,
-      rotationDegree: undefined,
       shape: FShapes.RECTANGLE,
+      rigidBodyType: FRigidBodyType.DYNAMIC,
       sensor: false,
-      rigidBodyType: RAPIER.RigidBodyType.Dynamic,
       lockTranslations: false,
       lockRotations: false,
       enabledTranslations: undefined,
       enabledRotations: undefined,
     }
     options = { ...DEFAULT_OPTIONS, ...options }
+
     // Validate options
-    if (!options.position || !options.scale || options.rotation === undefined || !options.shape)
+    if (!options.position || !options.rotation || !options.scale || !options.shape)
       throw new Error('FibboError: initRigidBody requires transforms options')
 
     // Check if the world exists
-    if (!component.scene.world)
+    if (!scene.world)
       throw new Error('FibboError: FScene must have a world to create a rigidBody')
 
-    // Store the options
-    this.__RIGIDBODY_POSITION_OFFSET__ = { x: options.position.x, y: options.position.y }
-    this.__RIGIDBODY_ROTATION_OFFSET__ = options.rotation
-    this.component = component
-
-    // If rotation degree is given, convert it to radians
-    if (options.rotationDegree !== undefined) {
-      // Convert the degree to radians
-      options.rotation = (options.rotationDegree * Math.PI) / 180
-    }
+    // Configure transform
+    this.transform = new FTransform({
+      position: options.position,
+      rotation: options.rotation,
+      rotationDegree: options.rotationDegree,
+      scale: options.scale,
+    })
+    this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
+    this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__(true))
+    this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
+    this.offset = new FTransform({
+      position: options.positionOffset || { x: 0, y: 0 },
+      rotation: options.rotationOffset,
+      rotationDegree: options.rotationDegreeOffset,
+      scale: options.scaleOffset || { x: 0, y: 0 },
+    })
 
     // Create a rigidBody description according to the type
-    const rigidBodyDesc = new RAPIER.RigidBodyDesc(options.rigidBodyType as RAPIER.RigidBodyType)
+    const rigidBodyDesc = new RAPIER.RigidBodyDesc(
+      options.rigidBodyType === FRigidBodyType.DYNAMIC
+        ? RAPIER.RigidBodyType.Dynamic
+        : options.rigidBodyType === FRigidBodyType.KINEMATIC_POSITION_BASED
+          ? RAPIER.RigidBodyType.KinematicPositionBased
+          : options.rigidBodyType === FRigidBodyType.KINEMATIC_VELOCITY_BASED
+            ? RAPIER.RigidBodyType.KinematicVelocityBased
+            : RAPIER.RigidBodyType.Fixed,
+    )
+
     // Interprete the given position as relative to the component's position
     rigidBodyDesc.setTranslation(
-      component.transform.position.x + options.position.x,
-      component.transform.position.y + options.position.y,
+      this.transform.position.x,
+      this.transform.position.y,
     )
 
     // Interprete the given rotation as relative to the component's rotation
-    rigidBodyDesc.setRotation(component.transform.rotation + options.rotation)
+    rigidBodyDesc.setRotation(this.transform.rotation)
 
     // Create the rigidBody
-    this.__RIGIDBODY__ = component.scene.world.createRigidBody(rigidBodyDesc)
+    this.__RIGIDBODY__ = scene.world.createRigidBody(rigidBodyDesc)
 
     // Lock the translation if needed
     if (options.lockTranslations)
@@ -140,181 +158,162 @@ export class FRigidBody {
       )
     }
 
-    // Create the collider attached to the rigidBody
-    this.collider = new FCollider(component, {
+    // Create the collider
+    this.collider = new FCollider(scene, {
       ...options,
       rigidBody: this,
     })
+
+    // Add the rigidBody to the scene
+    scene.addRigidBody(this)
+  }
+
+  frame(_delta: number): void {
+    // As the rigidBody should have moved, update the transform to sync with the rigidBody
+    this.transform.position = { x: this.__RIGIDBODY__.translation().x, y: this.__RIGIDBODY__.translation().y }
+    this.transform.rotation = this.__RIGIDBODY__.rotation()
+  }
+
+  /**
+   * Set the linear velocity of the rigidBody.
+   * @param velocity The new linear velocity of the rigidBody.
+   */
+  setLinvel(velocity: FVector2): void {
+    this.__RIGIDBODY__.setLinvel(new RAPIER.Vector2(velocity.x, velocity.y), true)
+  }
+
+  /**
+   * Set the angular velocity of the rigidBody.
+   * @param velocity The new angular velocity of the rigidBody.
+   */
+  setAngvel(velocity: number): void {
+    this.__RIGIDBODY__.setAngvel(velocity, true)
+  }
+
+  /**
+   * Update the position of the rigidBody according to the transform.
+   * This method should be called after updating the transform properties.
+   * @param initiator By default (false), the rigidBody won't be considered as the initiator of the position update.
+   * This means the new position will be the position of the attached component, plus the offset.
+   * Setting this to true will propagate the event to other objects (component, sensor,...).
+   */
+  __UPDATE_POSITION__(initiator: boolean = false): void {
+    // If the rigidBody is the initiator
+    if (initiator) {
+      if (this.component) {
+        // Update the rigidBody position
+        this.__SET_POSITION__(this.transform.position)
+        // Propagate the position update
+        this.component.__UPDATE_POSITION__()
+        this.component.sensor?.__UPDATE_POSITION__()
+      }
+    }
+    // Else, it was propagated to the rigidBody, so move the rigidBody to the new position with the offset
+    else if (this.component) {
+      const newPosition = {
+        x: this.component.transform.position.x + this.offset.position.x,
+        y: this.component.transform.position.y + this.offset.position.y,
+      }
+      // Update the rigidBody position
+      this.__SET_POSITION__(newPosition)
+    }
+  }
+
+  /**
+   * Update the rotation of the rigidBody according to the transform.
+   * This method should be called after updating the transform properties.
+   * @param initiator By default (false), the rigidBody won't be considered as the initiator of the rotation update.
+   * This means the new rotation will be the rotation of the attached component, plus the offset.
+   * Setting this to true will propagate the event to other objects (component, sensor,...).
+   */
+  __UPDATE_ROTATION__(initiator: boolean = false): void {
+    // If the rigidBody is the initiator
+    if (initiator) {
+      if (this.component) {
+        // Update the rigidBody rotation
+        this.__SET_ROTATION__(this.transform.rotation)
+        // Propagate the rotation update
+        this.component.__UPDATE_ROTATION__()
+        this.component.sensor?.__UPDATE_ROTATION__()
+      }
+    }
+    // Else, it was propagated to the rigidBody, so rotate the rigidBody to the new rotation with the offset
+    else if (this.component) {
+      const newRotation = this.component.transform.rotation + this.offset.rotation
+      // Update the rigidBody rotation
+      this.__SET_ROTATION__(newRotation)
+    }
+  }
+
+  /**
+   * Update the scale of the rigidBody according to the transform.
+   * This method should be called after updating the transform properties.
+   * @param initiator By default (false), the rigidBody won't be considered as the initiator of the scale update.
+   * This means the new scale will be the scale of the attached component, plus the offset.
+   * Setting this to true will propagate the event to other objects (component, sensor,...).
+   */
+  __UPDATE_SCALE__(initiator: boolean = false): void {
+    // If the rigidBody is the initiator
+    if (initiator) {
+      // Update the rigidBody scale
+      this.__SET_SCALE__(this.transform.scale)
+      if (this.component) {
+        // Propagate the scale update
+        this.component.__UPDATE_SCALE__()
+        this.component.sensor?.__UPDATE_SCALE__()
+      }
+    }
+    // Else, it was propagated to the rigidBody, so scale the rigidBody to the new scale with the offset
+    else if (this.component) {
+      const newScale = {
+        x: this.component.transform.scale.x + this.offset.scale.x,
+        y: this.component.transform.scale.y + this.offset.scale.y,
+      }
+      // Update the rigidBody scale
+      this.__SET_SCALE__(newScale)
+    }
   }
 
   /**
    * Set the position of the rigidBody.
    * @param position The new position of the rigidBody.
-   * @param position.x The new x position of the rigidBody.
-   * @param position.y The new y position of the rigidBody.
    */
-  setPosition(position: { x: number, y: number }) {
+  __SET_POSITION__(position: FVector2): void {
     this.__RIGIDBODY__.setTranslation(position, true)
-    this.collider.setPosition(position)
+    this.transform.__POSITION__ = position
+    this.collider.__SET_POSITION__(position)
   }
 
   /**
    * Set the rotation of the rigidBody.
    * @param rotation The new rotation of the rigidBody.
    */
-  setRotation(rotation: number) {
+  __SET_ROTATION__(rotation: number): void {
     this.__RIGIDBODY__.setRotation(rotation, true)
-    this.collider.setRotation(rotation)
-  }
-
-  /**
-   * Set the rotation of the rigidBody in degrees.
-   * @param rotation The new rotation of the rigidBody in degrees.
-   */
-  setRotationDegree(rotation: number) {
-    const newRotation = (rotation * Math.PI) / 180
-    this.__RIGIDBODY__.setRotation(newRotation, true)
-    this.collider.setRotation(newRotation)
+    this.transform.__ROTATION__ = rotation
+    this.collider.__SET_ROTATION__(rotation)
   }
 
   /**
    * Set the scale of the rigidBody.
    * @param scale The new scale of the rigidBody.
-   * @param scale.x The new x scale of the rigidBody.
-   * @param scale.y The new y scale of the rigidBody.
    */
-  setScale(scale: { x: number, y: number }) {
-    this.collider.setScale(scale)
+  __SET_SCALE__(scale: FVector2): void {
+    this.transform.__SCALE__ = scale
+    this.collider.__SET_SCALE__(scale)
   }
 
-  /**
-   * Update the position of the rigidBody according to the component's position.
-   * This takes into account the position offset.
-   */
-  updatePosition() {
-    const newPosition = this.component.transform.position
-    newPosition.x += this.__RIGIDBODY_POSITION_OFFSET__.x
-    newPosition.y += this.__RIGIDBODY_POSITION_OFFSET__.y
-    this.setPosition(newPosition)
-    this.collider.setPosition(newPosition)
+  // Setters & Getters
+
+  get component(): FComponent | undefined {
+    return this.__COMPONENT__
   }
 
-  /**
-   * Update the rotation of the rigidBody according to the component's rotation.
-   * This takes into account the rotation offset.
-   */
-  updateRotation() {
-    const newRotation = this.component.transform.rotation + this.__RIGIDBODY_ROTATION_OFFSET__
-    this.setRotation(newRotation)
-    this.collider.setRotation(newRotation)
-  }
-
-  /**
-   * Update the scale of the rigidBody's collider according to the component's scale.
-   * This takes into account the scale offset.
-   * As a rigidBody does not have a scale, this will only update the attached collider's scale.
-   */
-  updateScale() {
-    this.collider.updateScale()
-  }
-
-  /**
-   * Set the velocity of the rigidBody.
-   * @param velocity The new velocity of the rigidBody.
-   * @param velocity.x The new x velocity of the rigidBody.
-   * @param velocity.y The new y velocity of the rigidBody.
-   */
-  setVelocity(velocity: { x: number, y: number }) {
-    this.__RIGIDBODY__.setLinvel(new RAPIER.Vector2(velocity.x, velocity.y), true)
-  }
-
-  // Setters & getters for transform properties
-
-  get position() {
-    return this.__RIGIDBODY__.translation()
-  }
-
-  set position(position: { x: number, y: number }) {
-    this.setPosition(position)
-  }
-
-  get x() {
-    return this.position.x
-  }
-
-  set x(x: number) {
-    this.setPosition({ x, y: this.position.y })
-  }
-
-  get y() {
-    return this.position.y
-  }
-
-  set y(y: number) {
-    this.setPosition({ x: this.position.x, y })
-  }
-
-  get rotation() {
-    return this.__RIGIDBODY__.rotation()
-  }
-
-  set rotation(rotation: number) {
-    this.setRotation(rotation)
-  }
-
-  get rotationDegree() {
-    return (this.rotation * 180) / Math.PI
-  }
-
-  set rotationDegree(rotation: number) {
-    this.setRotationDegree(rotation)
-  }
-
-  get scale() {
-    return this.collider.scale
-  }
-
-  set scale(scale: { x: number, y: number }) {
-    this.setScale(scale)
-  }
-
-  get scaleX() {
-    return this.collider.scaleX
-  }
-
-  set scaleX(x: number) {
-    this.setScale({ x, y: this.scaleY })
-  }
-
-  get scaleY() {
-    return this.collider.scaleY
-  }
-
-  set scaleY(y: number) {
-    this.setScale({ x: this.scaleX, y })
-  }
-
-  get velocity() {
-    return this.__RIGIDBODY__.linvel()
-  }
-
-  set velocity(velocity: { x: number, y: number }) {
-    this.setVelocity(velocity)
-  }
-
-  get velocityX() {
-    return this.velocity.x
-  }
-
-  set velocityX(x: number) {
-    this.setVelocity({ x, y: this.velocity.y })
-  }
-
-  get velocityY() {
-    return this.velocity.y
-  }
-
-  set velocityY(y: number) {
-    this.setVelocity({ x: this.velocity.x, y })
+  set component(component: FComponent | undefined) {
+    this.__COMPONENT__ = component
+    // Update the position, rotation and scale of the rigidBody
+    this.__UPDATE_POSITION__()
+    this.__UPDATE_ROTATION__()
+    this.__UPDATE_SCALE__()
   }
 }

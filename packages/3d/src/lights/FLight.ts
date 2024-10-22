@@ -71,6 +71,7 @@ export abstract class FLight extends FLightCore {
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__())
     this.transform.onRotationUpdated(() => this.__UPDATE_ROTATION__())
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__())
+
     this.__LOOK_AT__ = options.lookAt
   }
 

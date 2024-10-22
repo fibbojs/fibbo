@@ -112,7 +112,7 @@ export class FRigidBody {
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.scale || !options.rotation || !options.shape)
+    if (!options.position || (!options.rotation && !options.rotationDegree) || !options.scale || !options.shape)
       throw new Error('FibboError: initRigidBody requires transforms options')
 
     // Check if the world exists
@@ -122,8 +122,8 @@ export class FRigidBody {
     // Configure transform
     this.transform = new FTransform({
       position: options.position,
-      rotation: options.rotation,
-      rotationDegree: options.rotationDegree,
+      rotation: options.rotation ? options.rotation : (options.rotationDegree ? undefined : { x: 0, y: 0, z: 0 }),
+      rotationDegree: options.rotationDegree ? options.rotationDegree : (options.rotation ? undefined : { x: 0, y: 0, z: 0 }),
       scale: options.scale,
     })
     this.transform.onPositionUpdated(() => this.__UPDATE_POSITION__(true))
