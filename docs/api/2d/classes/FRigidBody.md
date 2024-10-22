@@ -6,201 +6,37 @@ A 2d rigidBody that can be attached to a component.
 
 ## Accessors
 
-### position
+### component
 
-> `get` **position**(): `object`
+> `get` **component**(): `undefined` \| [`FComponent`](FComponent.md)
 
-> `set` **position**(`position`): `void`
-
-#### Parameters
-
-• **position**
-
-• **position.x**: `number`
-
-• **position.y**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:223](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L223)
-
-***
-
-### rotation
-
-> `get` **rotation**(): `number`
-
-> `set` **rotation**(`rotation`): `void`
+> `set` **component**(`component`): `void`
 
 #### Parameters
 
-• **rotation**: `number`
+• **component**: `undefined` \| [`FComponent`](FComponent.md)
 
 #### Returns
 
-`number`
+`undefined` \| [`FComponent`](FComponent.md)
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:247](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L247)
-
-***
-
-### rotationDegree
-
-> `get` **rotationDegree**(): `number`
-
-> `set` **rotationDegree**(`rotation`): `void`
-
-#### Parameters
-
-• **rotation**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:255](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L255)
-
-***
-
-### scale
-
-> `get` **scale**(): `object`
-
-> `set` **scale**(`scale`): `void`
-
-#### Parameters
-
-• **scale**
-
-• **scale.x**: `number`
-
-• **scale.y**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:263](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L263)
-
-***
-
-### scaleX
-
-> `get` **scaleX**(): `number`
-
-> `set` **scaleX**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:271](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L271)
-
-***
-
-### scaleY
-
-> `get` **scaleY**(): `number`
-
-> `set` **scaleY**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:279](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L279)
-
-***
-
-### x
-
-> `get` **x**(): `number`
-
-> `set` **x**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:231](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L231)
-
-***
-
-### y
-
-> `get` **y**(): `number`
-
-> `set` **y**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:239](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L239)
+[2d/src/core/FRigidBody.ts:308](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L308)
 
 ## Constructors
 
 ### new FRigidBody()
 
-> **new FRigidBody**(`component`, `options`?): [`FRigidBody`](FRigidBody.md)
+> **new FRigidBody**(`scene`, `options`?): [`FRigidBody`](FRigidBody.md)
 
 Creates a rigidBody for the given component.
 
 #### Parameters
 
-• **component**: [`FComponent`](FComponent.md)
+• **scene**: [`FScene`](FScene.md)
 
-The component which the rigidBody will be attached to.
+The scene the rigidBody belongs to.
 
 • **options?**: [`FRigidBodyOptions`](../interfaces/FRigidBodyOptions.md)
 
@@ -213,39 +49,30 @@ The options for the rigidBody.
 #### Example
 
 ```ts
-const rigidBody = new FRigidBody(component, {
+const rigidBody = new FRigidBody(scene, {
   position: { x: 0, y: 0 },
   scale: { x: 1, y: 1 },
-  rotation: 0,
-  shape: FShapes.RECTANGLE
+  shape: 'CUBOID'
 })
 ```
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:79](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L79)
+[2d/src/core/FRigidBody.ts:82](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L82)
 
 ## Methods
 
-### setPosition()
+### \_\_SET\_POSITION\_\_()
 
-> **setPosition**(`position`): `void`
+> **\_\_SET\_POSITION\_\_**(`position`): `void`
 
 Set the position of the rigidBody.
 
 #### Parameters
 
-• **position**
+• **position**: [`FVector2`](../interfaces/FVector2.md)
 
 The new position of the rigidBody.
-
-• **position.x**: `number`
-
-The new x position of the rigidBody.
-
-• **position.y**: `number`
-
-The new y position of the rigidBody.
 
 #### Returns
 
@@ -253,13 +80,13 @@ The new y position of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:156](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L156)
+[2d/src/core/FRigidBody.ts:281](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L281)
 
 ***
 
-### setRotation()
+### \_\_SET\_ROTATION\_\_()
 
-> **setRotation**(`rotation`): `void`
+> **\_\_SET\_ROTATION\_\_**(`rotation`): `void`
 
 Set the rotation of the rigidBody.
 
@@ -275,68 +102,46 @@ The new rotation of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:165](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L165)
+[2d/src/core/FRigidBody.ts:291](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L291)
 
 ***
 
-### setRotationDegree()
+### \_\_SET\_SCALE\_\_()
 
-> **setRotationDegree**(`rotation`): `void`
-
-Set the rotation of the rigidBody in degrees.
-
-#### Parameters
-
-• **rotation**: `number`
-
-The new rotation of the rigidBody in degrees.
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:174](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L174)
-
-***
-
-### setScale()
-
-> **setScale**(`scale`): `void`
+> **\_\_SET\_SCALE\_\_**(`scale`): `void`
 
 Set the scale of the rigidBody.
 
 #### Parameters
 
-• **scale**
+• **scale**: [`FVector2`](../interfaces/FVector2.md)
 
 The new scale of the rigidBody.
 
-• **scale.x**: `number`
-
-The new x scale of the rigidBody.
-
-• **scale.y**: `number`
-
-The new y scale of the rigidBody.
-
 #### Returns
 
 `void`
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:186](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L186)
+[2d/src/core/FRigidBody.ts:301](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L301)
 
 ***
 
-### updatePosition()
+### \_\_UPDATE\_POSITION\_\_()
 
-> **updatePosition**(): `void`
+> **\_\_UPDATE\_POSITION\_\_**(`initiator`): `void`
 
-Update the position of the rigidBody according to the component's position.
-This takes into account the position offset.
+Update the position of the rigidBody according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the rigidBody won't be considered as the initiator of the position update.
+This means the new position will be the position of the attached component, plus the offset.
+Setting this to true will propagate the event to other objects (component, sensor,...).
 
 #### Returns
 
@@ -344,16 +149,24 @@ This takes into account the position offset.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:194](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L194)
+[2d/src/core/FRigidBody.ts:200](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L200)
 
 ***
 
-### updateRotation()
+### \_\_UPDATE\_ROTATION\_\_()
 
-> **updateRotation**(): `void`
+> **\_\_UPDATE\_ROTATION\_\_**(`initiator`): `void`
 
-Update the rotation of the rigidBody according to the component's rotation.
-This takes into account the rotation offset.
+Update the rotation of the rigidBody according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the rigidBody won't be considered as the initiator of the rotation update.
+This means the new rotation will be the rotation of the attached component, plus the offset.
+Setting this to true will propagate the event to other objects (component, sensor,...).
 
 #### Returns
 
@@ -361,17 +174,24 @@ This takes into account the rotation offset.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:206](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L206)
+[2d/src/core/FRigidBody.ts:229](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L229)
 
 ***
 
-### updateScale()
+### \_\_UPDATE\_SCALE\_\_()
 
-> **updateScale**(): `void`
+> **\_\_UPDATE\_SCALE\_\_**(`initiator`): `void`
 
-Update the scale of the rigidBody's collider according to the component's scale.
-This takes into account the scale offset.
-As a rigidBody does not have a scale, this will only update the attached collider's scale.
+Update the scale of the rigidBody according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the rigidBody won't be considered as the initiator of the scale update.
+This means the new scale will be the scale of the attached component, plus the offset.
+Setting this to true will propagate the event to other objects (component, sensor,...).
 
 #### Returns
 
@@ -379,41 +199,81 @@ As a rigidBody does not have a scale, this will only update the attached collide
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:217](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L217)
+[2d/src/core/FRigidBody.ts:255](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L255)
+
+***
+
+### frame()
+
+> **frame**(`_delta`): `void`
+
+#### Parameters
+
+• **\_delta**: `number`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[2d/src/core/FRigidBody.ts:171](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L171)
+
+***
+
+### setAngvel()
+
+> **setAngvel**(`velocity`): `void`
+
+Set the angular velocity of the rigidBody.
+
+#### Parameters
+
+• **velocity**: `number`
+
+The new angular velocity of the rigidBody.
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[2d/src/core/FRigidBody.ts:189](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L189)
+
+***
+
+### setLinvel()
+
+> **setLinvel**(`velocity`): `void`
+
+Set the linear velocity of the rigidBody.
+
+#### Parameters
+
+• **velocity**: [`FVector2`](../interfaces/FVector2.md)
+
+The new linear velocity of the rigidBody.
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[2d/src/core/FRigidBody.ts:181](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L181)
 
 ## Properties
 
-### \_\_RIGIDBODY\_POSITION\_OFFSET\_\_
+### \_\_COMPONENT\_\_?
 
-> **\_\_RIGIDBODY\_POSITION\_OFFSET\_\_**: `object`
+> `optional` **\_\_COMPONENT\_\_**: [`FComponent`](FComponent.md)
 
-Position Offset for the rigidBody.
-This is used to adjust the rigidBody position relative to the component.
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
+The component the rigidBody is attached to.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:39](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L39)
-
-***
-
-### \_\_RIGIDBODY\_ROTATION\_OFFSET\_\_
-
-> **\_\_RIGIDBODY\_ROTATION\_OFFSET\_\_**: `number`
-
-Rotation Offset for the rigidBody.
-This is used to adjust the rigidBody position relative to the component.
-
-#### Defined in
-
-[2d/src/core/FRigidBody.ts:44](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L44)
+[2d/src/core/FRigidBody.ts:46](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L46)
 
 ***
 
@@ -425,7 +285,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:30](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L30)
+[2d/src/core/FRigidBody.ts:38](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L38)
 
 ***
 
@@ -437,16 +297,28 @@ Fibbo Collider
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:34](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L34)
+[2d/src/core/FRigidBody.ts:42](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L42)
 
 ***
 
-### component
+### offset
 
-> **component**: [`FComponent`](FComponent.md)
+> **offset**: [`FTransform`](FTransform.md)
 
-The component the rigidBody is attached to.
+The transform offset of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:48](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FRigidBody.ts#L48)
+[2d/src/core/FRigidBody.ts:54](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L54)
+
+***
+
+### transform
+
+> **transform**: [`FTransform`](FTransform.md)
+
+The transform of the rigidBody.
+
+#### Defined in
+
+[2d/src/core/FRigidBody.ts:50](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FRigidBody.ts#L50)

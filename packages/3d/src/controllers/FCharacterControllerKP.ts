@@ -1,5 +1,4 @@
 import type { FScene } from '../core/FScene'
-import { FRigidBody } from '../core/FRigidBody'
 import { FRigidBodyType } from '../types/FRigidBodyType'
 import { FCharacterControllerK } from './FCharacterControllerK'
 import type { FCharacterControllerOptions } from './FCharacterController'

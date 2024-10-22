@@ -105,6 +105,7 @@ export default defineConfig({
             ] },
             { text: 'Core', collapsed: true, items: [
               { text: 'FRigidBody', link: '/api/2d/classes/FRigidBody.md' },
+              { text: 'FSensor', link: '/api/2d/classes/FSensor.md' },
               { text: 'FCollider', link: '/api/2d/classes/FCollider.md' },
               { text: 'FComponent', link: '/api/2d/classes/FComponent.md' },
               { text: 'FComponentEmpty', link: '/api/2d/classes/FComponentEmpty.md' },
@@ -123,9 +124,11 @@ export default defineConfig({
               { text: 'FSprite', link: '/api/2d/classes/FSprite.md' },
             ] },
             { text: 'Enumerations', collapsed: true, items: [
+              { text: 'FRigidBodyType', link: '/api/2d/enumerations/FRigidBodyType.md' },
               { text: 'FShapes', link: '/api/2d/enumerations/FShapes.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
+              { text: 'FVector2', link: '/api/2d/interfaces/FVector2.md' },
               { text: 'FRigidBodyOptions', link: '/api/2d/interfaces/FRigidBodyOptions.md' },
               { text: 'FColliderOptions', link: '/api/2d/interfaces/FColliderOptions.md' },
               { text: 'FComponentOptions', link: '/api/2d/interfaces/FComponentOptions.md' },
@@ -157,6 +160,7 @@ export default defineConfig({
             ] },
             { text: 'Core', collapsed: true, items: [
               { text: 'FRigidBody', link: '/api/3d/classes/FRigidBody.md' },
+              { text: 'FSensor', link: '/api/3d/classes/FSensor.md' },
               { text: 'FCollider', link: '/api/3d/classes/FCollider.md' },
               { text: 'FComponent', link: '/api/3d/classes/FComponent.md' },
               { text: 'FComponentEmpty', link: '/api/3d/classes/FComponentEmpty.md' },
@@ -186,9 +190,11 @@ export default defineConfig({
               { text: 'FSphere', link: '/api/3d/classes/FSphere.md' },
             ] },
             { text: 'Enumerations', collapsed: true, items: [
+              { text: 'FRigidBodyType', link: '/api/3d/enumerations/FRigidBodyType.md' },
               { text: 'FShapes', link: '/api/3d/enumerations/FShapes.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
+              { text: 'FVector3', link: '/api/3d/interfaces/FVector3.md' },
               { text: 'FRigidBodyOptions', link: '/api/3d/interfaces/FRigidBodyOptions.md' },
               { text: 'FColliderOptions', link: '/api/3d/interfaces/FColliderOptions.md' },
               { text: 'FComponentOptions', link: '/api/3d/interfaces/FComponentOptions.md' },
@@ -216,7 +222,9 @@ export default defineConfig({
             ] },
             { text: 'Interfaces', collapsed: true, items: [
               { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions.md' },
+              { text: 'FComponentOptions', link: '/api/core/interfaces/FComponentOptions.md' },
               { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData.md' },
+              { text: 'FLightOptions', link: '/api/core/interfaces/FLightOptions.md' },
               { text: 'FSceneOptions', link: '/api/core/interfaces/FSceneOptions.md' },
             ] },
           ] },

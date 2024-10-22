@@ -8,6 +8,20 @@
 
 ## Properties
 
+### autoLoop?
+
+> `optional` **autoLoop**: `boolean`
+
+#### Inherited from
+
+`FSceneOptionsCore.autoLoop`
+
+#### Defined in
+
+core/dist/index.d.ts:67
+
+***
+
 ### domNode?
 
 > `optional` **domNode**: `HTMLElement`
@@ -18,7 +32,7 @@
 
 #### Defined in
 
-core/dist/index.d.ts:186
+core/dist/index.d.ts:66
 
 ***
 
@@ -40,4 +54,4 @@ core/dist/index.d.ts:186
 
 #### Defined in
 
-[2d/src/core/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FScene.ts#L13)
+[2d/src/core/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FScene.ts#L14)

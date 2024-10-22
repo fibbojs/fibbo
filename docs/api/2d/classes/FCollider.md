@@ -6,201 +6,37 @@ A 2d collider that can be attached to a component.
 
 ## Accessors
 
-### position
+### component
 
-> `get` **position**(): `object`
+> `get` **component**(): `undefined` \| [`FComponent`](FComponent.md)
 
-> `set` **position**(`position`): `void`
-
-#### Parameters
-
-• **position**
-
-• **position.x**: `number`
-
-• **position.y**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:223](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L223)
-
-***
-
-### rotation
-
-> `get` **rotation**(): `number`
-
-> `set` **rotation**(`rotation`): `void`
+> `set` **component**(`component`): `void`
 
 #### Parameters
 
-• **rotation**: `number`
+• **component**: `undefined` \| [`FComponent`](FComponent.md)
 
 #### Returns
 
-`number`
+`undefined` \| [`FComponent`](FComponent.md)
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:247](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L247)
-
-***
-
-### rotationDegree
-
-> `get` **rotationDegree**(): `number`
-
-> `set` **rotationDegree**(`rotation`): `void`
-
-#### Parameters
-
-• **rotation**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:255](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L255)
-
-***
-
-### scale
-
-> `get` **scale**(): `object`
-
-> `set` **scale**(`scale`): `void`
-
-#### Parameters
-
-• **scale**
-
-• **scale.x**: `number`
-
-• **scale.y**: `number`
-
-#### Returns
-
-`object`
-
-##### x
-
-> **x**: `number`
-
-##### y
-
-> **y**: `number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:263](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L263)
-
-***
-
-### scaleX
-
-> `get` **scaleX**(): `number`
-
-> `set` **scaleX**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:285](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L285)
-
-***
-
-### scaleY
-
-> `get` **scaleY**(): `number`
-
-> `set` **scaleY**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:293](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L293)
-
-***
-
-### x
-
-> `get` **x**(): `number`
-
-> `set` **x**(`x`): `void`
-
-#### Parameters
-
-• **x**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:231](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L231)
-
-***
-
-### y
-
-> `get` **y**(): `number`
-
-> `set` **y**(`y`): `void`
-
-#### Parameters
-
-• **y**: `number`
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:239](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L239)
+[2d/src/core/FCollider.ts:270](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L270)
 
 ## Constructors
 
 ### new FCollider()
 
-> **new FCollider**(`component`, `options`?): [`FCollider`](FCollider.md)
+> **new FCollider**(`scene`, `options`?): [`FCollider`](FCollider.md)
 
 Creates a collider for a given component.
 
 #### Parameters
 
-• **component**: [`FComponent`](FComponent.md)
+• **scene**: [`FScene`](FScene.md)
 
-The component which the collider will be attached to.
+The scene the collider belongs to.
 
 • **options?**: [`FColliderOptions`](../interfaces/FColliderOptions.md)
 
@@ -213,77 +49,46 @@ The options for the collider.
 #### Example
 
 ```ts
-const collider = new FCollider(component, {
-  position: { x: 0, y: 1 },
+const collider = new FCollider(scene, {
+  position: { x: 0, y: 0 },
   scale: { x: 1, y: 1 },
-  rotation: 0,
-  shape: FShapes.RECTANGLE
+  shape: FShapes.CIRCLE
 })
 ```
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:70](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L70)
+[2d/src/core/FCollider.ts:71](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L71)
 
 ## Methods
 
-### setPosition()
+### \_\_SET\_POSITION\_\_()
 
-> **setPosition**(`position`): `void`
+> **\_\_SET\_POSITION\_\_**(`position`): `void`
 
 Set the position of the collider.
 
 #### Parameters
 
-• **position**
+• **position**: [`FVector2`](../interfaces/FVector2.md)
 
 The new position of the collider.
 
-• **position.x**: `number`
-
-The new x position of the collider.
-
-• **position.y**: `number`
-
-The new y position of the collider.
-
 #### Returns
 
 `void`
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:154](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L154)
+[2d/src/core/FCollider.ts:233](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L233)
 
 ***
 
-### setRotation()
+### \_\_SET\_ROTATION\_\_()
 
-> **setRotation**(`rotation`): `void`
+> **\_\_SET\_ROTATION\_\_**(`rotation`): `void`
 
 Set the rotation of the collider.
-
-#### Parameters
-
-• **rotation**: `number`
-
-The new rotation of the collider.
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:162](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L162)
-
-***
-
-### setRotationDegree()
-
-> **setRotationDegree**(`rotation`): `void`
-
-Set the rotation of the collider in degrees.
 
 #### Parameters
 
@@ -297,46 +102,46 @@ The new rotation of the collider in degrees.
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:170](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L170)
+[2d/src/core/FCollider.ts:242](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L242)
 
 ***
 
-### setScale()
+### \_\_SET\_SCALE\_\_()
 
-> **setScale**(`scale`): `void`
+> **\_\_SET\_SCALE\_\_**(`scale`): `void`
 
 Set the scale of the collider.
 
 #### Parameters
 
-• **scale**
+• **scale**: [`FVector2`](../interfaces/FVector2.md)
 
 The new scale of the collider.
 
-• **scale.x**: `number`
-
-The new x scale of the collider.
-
-• **scale.y**: `number`
-
-The new y scale of the collider.
-
 #### Returns
 
 `void`
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:180](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L180)
+[2d/src/core/FCollider.ts:251](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L251)
 
 ***
 
-### updatePosition()
+### \_\_UPDATE\_POSITION\_\_()
 
-> **updatePosition**(): `void`
+> **\_\_UPDATE\_POSITION\_\_**(`initiator`): `void`
 
-Update the position of the collider according to its component's position.
-This takes into account the position offset.
+Update the position of the collider according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the collider won't be considered as the initiator of the position update.
+This means the new position will be the position of the attached component, plus the offset.
+Setting this to true will propagate the event to other objects (component, sensor,...).
 
 #### Returns
 
@@ -344,16 +149,24 @@ This takes into account the position offset.
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:195](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L195)
+[2d/src/core/FCollider.ts:152](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L152)
 
 ***
 
-### updateRotation()
+### \_\_UPDATE\_ROTATION\_\_()
 
-> **updateRotation**(): `void`
+> **\_\_UPDATE\_ROTATION\_\_**(`initiator`): `void`
 
-Update the rotation of the collider according to its component's rotation.
-This takes into account the rotation offset.
+Update the rotation of the collider according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the collider won't be considered as the initiator of the rotation update.
+This means the new rotation will be the rotation of the attached component, plus the offset.
+Setting this to true will propagate the event to other objects (component, sensor,...).
 
 #### Returns
 
@@ -361,16 +174,24 @@ This takes into account the rotation offset.
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:206](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L206)
+[2d/src/core/FCollider.ts:181](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L181)
 
 ***
 
-### updateScale()
+### \_\_UPDATE\_SCALE\_\_()
 
-> **updateScale**(): `void`
+> **\_\_UPDATE\_SCALE\_\_**(`initiator`): `void`
 
-Update the scale of the collider according to its component's scale.
-This takes into account the scale offset.
+Update the scale of the collider according to the transform.
+This method should be called after updating the transform properties.
+
+#### Parameters
+
+• **initiator**: `boolean` = `false`
+
+By default (false), the collider won't be considered as the initiator of the scale update.
+This means the new scale will be the scale of the attached component, plus the offset.
+Setting this to true will propagate the event to other objects (component, sensor,...).
 
 #### Returns
 
@@ -378,64 +199,27 @@ This takes into account the scale offset.
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:214](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L214)
+[2d/src/core/FCollider.ts:207](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L207)
+
+***
+
+### frame()
+
+> **frame**(`_delta`): `void`
+
+#### Parameters
+
+• **\_delta**: `number`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[2d/src/core/FCollider.ts:139](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L139)
 
 ## Properties
-
-### \_\_COLLIDER\_POSITION\_OFFSET\_\_
-
-> **\_\_COLLIDER\_POSITION\_OFFSET\_\_**: `object`
-
-Position Offset for the collider.
-This is used to adjust the collider position relative to the component.
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:29](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L29)
-
-***
-
-### \_\_COLLIDER\_ROTATION\_OFFSET\_\_
-
-> **\_\_COLLIDER\_ROTATION\_OFFSET\_\_**: `number`
-
-Rotation Offset for the collider.
-This is used to adjust the collider position relative to the component.
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:34](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L34)
-
-***
-
-### \_\_COLLIDER\_SCALE\_OFFSET\_\_
-
-> **\_\_COLLIDER\_SCALE\_OFFSET\_\_**: `object`
-
-Scale Offset for the collider.
-This is used to adjust the collider scale relative to the component.
-
-#### x
-
-> **x**: `number`
-
-#### y
-
-> **y**: `number`
-
-#### Defined in
-
-[2d/src/core/FCollider.ts:39](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L39)
-
-***
 
 ### \_\_COLLIDER\_\_
 
@@ -445,19 +229,31 @@ RAPIER Collider
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:24](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L24)
+[2d/src/core/FCollider.ts:31](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L31)
 
 ***
 
-### component
+### \_\_COMPONENT\_\_?
 
-> **component**: [`FComponent`](FComponent.md)
+> `optional` **\_\_COMPONENT\_\_**: [`FComponent`](FComponent.md)
 
 The component the collider is attached to.
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:43](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L43)
+[2d/src/core/FCollider.ts:35](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L35)
+
+***
+
+### offset
+
+> **offset**: [`FTransform`](FTransform.md)
+
+The transform offset of the collider.
+
+#### Defined in
+
+[2d/src/core/FCollider.ts:43](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L43)
 
 ***
 
@@ -469,4 +265,16 @@ The shape of the collider.
 
 #### Defined in
 
-[2d/src/core/FCollider.ts:47](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FCollider.ts#L47)
+[2d/src/core/FCollider.ts:47](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L47)
+
+***
+
+### transform
+
+> **transform**: [`FTransform`](FTransform.md)
+
+The transform of the collider.
+
+#### Defined in
+
+[2d/src/core/FCollider.ts:39](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FCollider.ts#L39)

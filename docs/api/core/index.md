@@ -17,6 +17,8 @@
 
 ### Interfaces
 
+- [FComponentOptions](interfaces/FComponentOptions.md)
 - [FControllerOptions](interfaces/FControllerOptions.md)
+- [FLightOptions](interfaces/FLightOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)
 - [OnCollisionWithData](interfaces/OnCollisionWithData.md)

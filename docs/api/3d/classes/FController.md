@@ -34,17 +34,16 @@ The options for the controller.
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/3d/src/controllers/FController.ts#L23)
+[3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/controllers/FController.ts#L23)
 
 ## Methods
 
-### onFrame()
+### frame()
 
-> `abstract` **onFrame**(`delta`): `void`
+> `abstract` **frame**(`delta`): `void`
 
 Update the controller. Should be called every frame.
-The purpose of `onFrame` on FController is to update the component's transform in the desired way.
-Any rendering process should be done on the component, not here.
+The purpose of this method is to update the component transform based on the controller logic.
 
 #### Parameters
 
@@ -58,11 +57,11 @@ The time since the last frame.
 
 #### Inherited from
 
-`FControllerCore.onFrame`
+`FControllerCore.frame`
 
 #### Defined in
 
-core/dist/index.d.ts:27
+core/dist/index.d.ts:26
 
 ## Properties
 
@@ -79,4 +78,4 @@ It is redefined here to get the correct type (with 3D properties).
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/3d/src/controllers/FController.ts#L17)
+[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/controllers/FController.ts#L17)

@@ -1,5 +1,4 @@
 import type { FController } from './FController'
-import { FLight } from './FLight'
 import type { FScene } from './FScene'
 
 /**

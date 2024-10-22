@@ -30,6 +30,7 @@
 - [FComponentEmpty](classes/FComponentEmpty.md)
 - [FRigidBody](classes/FRigidBody.md)
 - [FScene](classes/FScene.md)
+- [FSensor](classes/FSensor.md)
 - [FTransform](classes/FTransform.md)
 
 #### Light
@@ -63,6 +64,7 @@
 
 ### Enumerations
 
+- [FRigidBodyType](enumerations/FRigidBodyType.md)
 - [FShapes](enumerations/FShapes.md)
 
 ### Interfaces
@@ -81,3 +83,4 @@
 - [FSceneOptions](interfaces/FSceneOptions.md)
 - [FSpotLightOptions](interfaces/FSpotLightOptions.md)
 - [FTransformOptions](interfaces/FTransformOptions.md)
+- [FVector3](interfaces/FVector3.md)

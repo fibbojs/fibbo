@@ -1,12 +1,12 @@
-[@fibbojs](/api/index) / [3d](/api/3d) / FRigidBody
+[@fibbojs](/api/index) / [3d](/api/3d) / FSensor
 
-# Class: FRigidBody
+# Class: FSensor
 
-A 3d rigidBody that can be attached to a component.
+A 3d sensor that can be attached to a component.
 
-## Extended by
+## Extends
 
-- [`FSensor`](FSensor.md)
+- [`FRigidBody`](FRigidBody.md)
 
 ## Accessors
 
@@ -24,15 +24,19 @@ A 3d rigidBody that can be attached to a component.
 
 `undefined` \| [`FComponent`](FComponent.md)
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`component`](FRigidBody.md#component)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:357](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L357)
 
 ## Constructors
 
-### new FRigidBody()
+### new FSensor()
 
-> **new FRigidBody**(`scene`, `options`?): [`FRigidBody`](FRigidBody.md)
+> **new FSensor**(`scene`, `options`?): [`FSensor`](FSensor.md)
 
 Creates a rigidBody for the given component.
 
@@ -48,12 +52,12 @@ The options for the rigidBody.
 
 #### Returns
 
-[`FRigidBody`](FRigidBody.md)
+[`FSensor`](FSensor.md)
 
 #### Example
 
 ```ts
-const rigidBody = new FRigidBody(scene, {
+const sensor = new FSensor(scene, {
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
   rotation: { x: 0, y: 0, z: 0 },
@@ -61,9 +65,13 @@ const rigidBody = new FRigidBody(scene, {
 })
 ```
 
+#### Overrides
+
+[`FRigidBody`](FRigidBody.md).[`constructor`](FRigidBody.md#constructors)
+
 #### Defined in
 
-[3d/src/core/FRigidBody.ts:98](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L98)
+[3d/src/core/FSensor.ts:40](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FSensor.ts#L40)
 
 ## Methods
 
@@ -82,6 +90,10 @@ The new position of the rigidBody.
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__SET_POSITION__`](FRigidBody.md#__set_position__)
 
 #### Defined in
 
@@ -105,6 +117,10 @@ The new rotation of the rigidBody.
 
 `void`
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__SET_ROTATION__`](FRigidBody.md#__set_rotation__)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:329](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L329)
@@ -126,6 +142,10 @@ The new scale of the rigidBody.
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__SET_SCALE__`](FRigidBody.md#__set_scale__)
 
 #### Defined in
 
@@ -152,6 +172,10 @@ Setting this to true will propagate the event to other objects (component, senso
 
 `void`
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__UPDATE_POSITION__`](FRigidBody.md#__update_position__)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:232](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L232)
@@ -176,6 +200,10 @@ Setting this to true will propagate the event to other objects (component, senso
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__UPDATE_ROTATION__`](FRigidBody.md#__update_rotation__)
 
 #### Defined in
 
@@ -202,6 +230,10 @@ Setting this to true will propagate the event to other objects (component, senso
 
 `void`
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__UPDATE_SCALE__`](FRigidBody.md#__update_scale__)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:292](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L292)
@@ -219,6 +251,10 @@ Setting this to true will propagate the event to other objects (component, senso
 #### Returns
 
 `void`
+
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`frame`](FRigidBody.md#frame)
 
 #### Defined in
 
@@ -242,6 +278,10 @@ The new angular velocity of the rigidBody.
 
 `void`
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`setAngvel`](FRigidBody.md#setangvel)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:221](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L221)
@@ -264,6 +304,10 @@ The new linear velocity of the rigidBody.
 
 `void`
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`setLinvel`](FRigidBody.md#setlinvel)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:213](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L213)
@@ -275,6 +319,10 @@ The new linear velocity of the rigidBody.
 > `optional` **\_\_COMPONENT\_\_**: [`FComponent`](FComponent.md)
 
 The component the rigidBody is attached to.
+
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__COMPONENT__`](FRigidBody.md#__component__)
 
 #### Defined in
 
@@ -288,6 +336,10 @@ The component the rigidBody is attached to.
 
 RAPIER RigidBody
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`__RIGIDBODY__`](FRigidBody.md#__rigidbody__)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:46](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L46)
@@ -299,6 +351,10 @@ RAPIER RigidBody
 > **collider**: [`FCollider`](FCollider.md)
 
 Fibbo Collider
+
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`collider`](FRigidBody.md#collider)
 
 #### Defined in
 
@@ -312,6 +368,10 @@ Fibbo Collider
 
 The transform offset of the rigidBody.
 
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`offset`](FRigidBody.md#offset)
+
 #### Defined in
 
 [3d/src/core/FRigidBody.ts:62](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/core/FRigidBody.ts#L62)
@@ -323,6 +383,10 @@ The transform offset of the rigidBody.
 > **transform**: [`FTransform`](FTransform.md)
 
 The transform of the rigidBody.
+
+#### Inherited from
+
+[`FRigidBody`](FRigidBody.md).[`transform`](FRigidBody.md#transform)
 
 #### Defined in
 

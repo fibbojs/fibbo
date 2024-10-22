@@ -3,7 +3,6 @@ import RAPIER from '@dimforge/rapier3d'
 import * as THREE from 'three'
 import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
-import { FSensor } from '../core/FSensor'
 import type { FControllerOptions } from './FController'
 import { FController } from './FController'
 

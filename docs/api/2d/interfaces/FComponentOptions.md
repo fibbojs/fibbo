@@ -2,11 +2,29 @@
 
 # Interface: FComponentOptions
 
+## Extends
+
+- `FComponentOptions`
+
 ## Extended by
 
 - [`FSpriteOptions`](FSpriteOptions.md)
 
 ## Properties
+
+### addToScene?
+
+> `optional` **addToScene**: `boolean`
+
+#### Inherited from
+
+`FComponentOptionsCore.addToScene`
+
+#### Defined in
+
+core/dist/index.d.ts:178
+
+***
 
 ### position?
 
@@ -22,7 +40,7 @@
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:14](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FComponent.ts#L14)
+[2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L16)
 
 ***
 
@@ -32,7 +50,7 @@
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FComponent.ts#L16)
+[2d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L17)
 
 ***
 
@@ -42,7 +60,7 @@
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FComponent.ts#L17)
+[2d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L18)
 
 ***
 
@@ -60,4 +78,4 @@
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/2d/src/core/FComponent.ts#L15)
+[2d/src/core/FComponent.ts:19](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L19)

@@ -21,14 +21,14 @@ import * as THREE from 'three'
     for (let j = 0; j < GRID_COLS; j++) {
     // Create the sphere to display
       const sphere = new FSphere(scene)
-      sphere.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
+      sphere.transform.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
       // @ts-expect-error Disable typing for the mesh property
       sphere.__MESH__.material.color.set(new THREE.Color(0x2C2C2C))
 
       // Create a cube for the hitbox
       const cube = new FCuboid(scene)
-      cube.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
-      cube.setScale({ x: GRID_GAP, y: 1, z: GRID_GAP })
+      cube.transform.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
+      cube.transform.setScale({ x: GRID_GAP, y: 1, z: GRID_GAP })
       // Make the cube invisible
       // @ts-expect-error Disable typing for the mesh property
       cube.__MESH__.material.transparent = true
@@ -49,12 +49,12 @@ import * as THREE from 'three'
 
   // Create a camera target
   const cameraTarget = new FCuboid(scene)
-  cameraTarget.setPosition({ x: 0, y: 1, z: 0 })
+  cameraTarget.transform.setPosition({ x: 0, y: 1, z: 0 })
   // Create a camera
   const camera = new FOrbitCamera(scene, {
     target: cameraTarget,
   })
-  camera.setPosition({ x: 14, y: 12, z: 14 })
+  camera.transform.setPosition({ x: 14, y: 12, z: 14 })
   camera.lookAt({ x: 0, y: 0, z: 0 })
   scene.camera = camera
 

@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/3d/src/controllers/FController.ts#L6)
+[3d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/controllers/FController.ts#L6)
 
 ***
 
@@ -30,4 +30,4 @@ The speed of the character.
 
 #### Defined in
 
-[3d/src/controllers/FCharacterController.ts:13](https://github.com/fibbojs/fibbo/blob/c8bca4c6d190e0a6b19c44fcd12f335601e086d6/packages/3d/src/controllers/FCharacterController.ts#L13)
+[3d/src/controllers/FCharacterController.ts:14](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/controllers/FCharacterController.ts#L14)

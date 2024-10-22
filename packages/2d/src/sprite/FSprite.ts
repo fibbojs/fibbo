@@ -2,7 +2,6 @@ import * as PIXI from 'pixi.js'
 import type { FComponentOptions } from '../core/FComponent'
 import { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
-import type { FVector2 } from '../types/FVector2'
 
 export interface FSpriteOptions extends FComponentOptions {
   texture: string

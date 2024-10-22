@@ -1,7 +1,6 @@
 import * as THREE from 'three'
 import { FKeyboard } from '@fibbojs/event'
 import type { FScene } from '../core/FScene'
-import { FRigidBody } from '../core/FRigidBody'
 import { FRigidBodyType } from '../types/FRigidBodyType'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
