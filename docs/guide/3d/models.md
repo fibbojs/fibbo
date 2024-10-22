@@ -35,7 +35,7 @@ To load a `.fbx` model, you can use the `FFBX` class. Here is an example :
 ```typescript
 import { FFBX } from '@fibbojs/3d'
 
-const fbx = new FFBX({
+const fbx = new FFBX(scene, {
   path: 'path/to/your/model.fbx',
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
@@ -49,7 +49,7 @@ To load a `.obj` model, you can use the `FOBJ` class. Here is an example :
 ```typescript
 import { FOBJ } from '@fibbojs/3d'
 
-const obj = new FOBJ({
+const obj = new FOBJ(scene, {
   path: 'path/to/your/model.obj',
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
@@ -63,7 +63,7 @@ To load a `.glb` model, you can use the `FGLB` class. Here is an example :
 ```typescript
 import { FGLB } from '@fibbojs/3d'
 
-const glb = new FGLB({
+const glb = new FGLB(scene, {
   path: 'path/to/your/model.glb',
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
@@ -81,7 +81,7 @@ To load a `.gltf` model, you can use the `FGLTF` class. Here is an example :
 ```typescript
 import { FGLTF } from '@fibbojs/3d'
 
-const gltf = new FGLTF({
+const gltf = new FGLTF(scene, {
   path: 'path/to/your/model.gltf',
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },

@@ -17,7 +17,7 @@ To create a cuboid, you can use the `FCuboid` class. Here is an example:
 ```typescript
 import { FCuboid } from '@fibbojs/3d'
 
-const cube = new FCuboid({
+const cube = new FCuboid(scene, {
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
 })
@@ -32,7 +32,7 @@ To create a sphere, you can use the `FSphere` class. Here is an example:
 ```typescript
 import { FSphere } from '@fibbojs/3d'
 
-const sphere = new FSphere({
+const sphere = new FSphere(scene, {
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
 })
@@ -47,7 +47,7 @@ To create a capsule, you can use the `FCapsule` class. Here is an example:
 ```typescript
 import { FCapsule } from '@fibbojs/3d'
 
-const capsule = new FCapsule({
+const capsule = new FCapsule(scene, {
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
 })

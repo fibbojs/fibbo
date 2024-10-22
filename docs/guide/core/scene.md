@@ -31,17 +31,6 @@ import { FScene } from '@fibbojs/3d'
 })()
 ```
 
-## Adding components to the scene
-
-Once the scene is created, you can add components to it using the `addComponent` method.
-
-```typescript
-const cube = new FCuboid()
-scene.addComponent(cube)
-```
-
-As soon as you add a component to the scene, it will be rendered on the screen each frame.
-
 ## Removing components from the scene
 
 You can remove a component from the scene using the `removeComponent` method.
@@ -74,9 +63,3 @@ scene.onComponentRemoved((component: FComponent) => {
   // Do something on a component removed from the scene
 })
 ```
-
-::: warning
-The `onFrame` method on a scene is used to add a callback that will be called every frame by the scene itself. You can add as many callbacks as you want, and they will be called in the order they were added.
-
-The `onFrame` method on a component is a method that will be called every frame by the scene, to update its components. You should not call this method directly : if you want to change the behavior of a component, you should extend it and override the `onFrame` method.
-:::

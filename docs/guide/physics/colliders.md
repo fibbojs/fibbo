@@ -8,40 +8,48 @@ Any other use case might require attaching the collider to a rigidBody.
 
 ## Adding a collider to a component
 
-Every [`FComponent`](/api/core/classes/FComponent) has a [`initCollider`](/api/3d/classes/FComponent#initcollider) method that allows you to create a collider and attach it to the component directly.
+Every [`FComponent`](/api/core/classes/FComponent) has an `initCollider` method that allows you to create a collider and attach it to the component directly.
 
-```typescript
-import { FCuboid, FShape } from '@fibbojs/3d'
+::: code-group
+
+```typescript [2d]
+import { FRectangle, FShapes } from '@fibbojs/3d'
+
+const rectangle = new FRectangle()
+rectangle.initCollider({
+  position: { x: 0, y: 0 },
+  rotation: 0,
+  rotationDegree: 0,
+  scale: { x: 1, y: 1 },
+  positionOffset: { x: 0, y: 0 },
+  rotationOffset: 0,
+  rotationDegreeOffset: 0,
+  scaleOffset: { x: 1, y: 1 },
+  shape: FShapes.RECTANGLE
+})
+```
+
+```typescript [3d]
+import { FCuboid, FShapes } from '@fibbojs/3d'
 
 const cube = new FCuboid()
 cube.initCollider({
   position: { x: 0, y: 0, z: 0 },
-  scale: { x: 1, y: 1, z: 1 },
   rotation: { x: 0, y: 0, z: 0 },
   rotationDegree: { x: 0, y: 0, z: 0 },
-  shape: FShape.CUBE
+  scale: { x: 1, y: 1, z: 1 },
+  positionOffset: { x: 0, y: 0, z: 0 },
+  rotationOffset: { x: 0, y: 0, z: 0 },
+  rotationDegreeOffset: { x: 0, y: 0, z: 0 },
+  scaleOffset: { x: 1, y: 1, z: 1 },
+  shape: FShapes.CUBOID
 })
 ```
 
-The [transform](/guide/core/transforms) of the component will be interpreted as relative to the collider. This means that if you set the position of the component to `{ x: 1, y: 1, z: 1 }` and the position of the collider to `{ x: 2, y: 0, z: 0 }`, the collider will be placed at `{ x: 3, y: 1, z: 1 }` in the scene.
+:::
 
-This is particularly useful as it allows to position the collider by defining offsets from the component's origin.
+As soon as a collider is attached to a component, the component's transform will be updated relatively to the collider's transform.
 
-## Creating a collider by hand
-
-You can also directly use the [`FCollider`](/api/3d/classes/FCollider) class to create a collider and attach it to a component.
-
-```typescript
-import { FCollider, FCuboid, FShape } from '@fibbojs/3d'
-
-const cube = new FCuboid()
-cube.collider = new FCollider({
-  position: { x: 0, y: 0, z: 0 },
-  scale: { x: 1, y: 1, z: 1 },
-  rotation: { x: 0, y: 0, z: 0 },
-  rotationDegree: { x: 0, y: 0, z: 0 },
-  shape: FShape.CUBE
-})
-```
+An offset can be applied to the collider's transform so it can be placed relatively to the component's transform.
 
 To learn more about colliders, you can refer to the [Rapier documentation](https://rapier.rs/docs/user_guides/javascript/colliders).
