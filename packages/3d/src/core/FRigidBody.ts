@@ -202,8 +202,17 @@ export class FRigidBody {
 
   frame(_delta: number): void {
     // As the rigidBody should have moved, update the transform to sync with the rigidBody
-    this.transform.position = this.__RIGIDBODY__.translation()
-    this.transform.rotation = new THREE.Euler().setFromQuaternion(new THREE.Quaternion().copy(this.__RIGIDBODY__.rotation()))
+    this.transform.__POSITION__ = this.__RIGIDBODY__.translation()
+    this.transform.__ROTATION__ = new THREE.Euler().setFromQuaternion(new THREE.Quaternion().copy(this.__RIGIDBODY__.rotation()))
+    // Propagate the position and rotation update if the rigidBody is attached to a component
+    if (this.component) {
+      // Propagate the position update
+      this.component.__UPDATE_POSITION__()
+      this.component.sensor?.__UPDATE_POSITION__()
+      // Propagate the rotation update
+      this.component.__UPDATE_ROTATION__()
+      this.component.sensor?.__UPDATE_ROTATION__()
+    }
   }
 
   /**
@@ -232,9 +241,9 @@ export class FRigidBody {
   __UPDATE_POSITION__(initiator: boolean = false): void {
     // If the rigidBody is the initiator
     if (initiator) {
+      // Update the rigidBody position
+      this.__SET_POSITION__(this.transform.position)
       if (this.component) {
-        // Update the rigidBody position
-        this.__SET_POSITION__(this.transform.position)
         // Propagate the position update
         this.component.__UPDATE_POSITION__()
         this.component.sensor?.__UPDATE_POSITION__()
@@ -262,9 +271,9 @@ export class FRigidBody {
   __UPDATE_ROTATION__(initiator: boolean = false): void {
     // If the rigidBody is the initiator
     if (initiator) {
+      // Update the rigidBody rotation
+      this.__SET_ROTATION__(this.transform.rotation)
       if (this.component) {
-        // Update the rigidBody rotation
-        this.__SET_ROTATION__(this.transform.rotation)
         // Propagate the rotation update
         this.component.__UPDATE_ROTATION__()
         this.component.sensor?.__UPDATE_ROTATION__()

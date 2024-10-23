@@ -38,8 +38,8 @@ export class FDirectionalLight extends FLight {
         this.__LIGHT__.shadow.camera.right = 100
         this.__LIGHT__.shadow.camera.top = 100
         this.__LIGHT__.shadow.camera.bottom = -100
-        this.__LIGHT__.shadow.mapSize.width = 16384
-        this.__LIGHT__.shadow.mapSize.height = 16384
+        this.__LIGHT__.shadow.mapSize.width = 2 ** this.shadowQuality
+        this.__LIGHT__.shadow.mapSize.height = 2 ** this.shadowQuality
       }
     }
 

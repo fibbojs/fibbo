@@ -39,8 +39,8 @@ export class FLightProbe extends FLight {
     if (this.scene.__ENABLE_SHADOWS__) {
       this.__LIGHT__.castShadow = true
       if (this.__LIGHT__.shadow) {
-        this.__LIGHT__.shadow.mapSize.width = 65536
-        this.__LIGHT__.shadow.mapSize.height = 65536
+        this.__LIGHT__.shadow.mapSize.width = 2 ** this.shadowQuality
+        this.__LIGHT__.shadow.mapSize.height = 2 ** this.shadowQuality
       }
     }
 

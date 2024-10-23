@@ -9,6 +9,7 @@ export interface FLightOptions extends FTransformOptions {
   color?: THREE.ColorRepresentation
   intensity?: number
   lookAt?: FVector3
+  shadowQuality?: number
 }
 
 /**
@@ -44,6 +45,11 @@ export abstract class FLight extends FLightCore {
    */
   __LOOK_AT__: FVector3 | undefined
 
+  /**
+   * Quality of the shadow. Default is 5.
+   */
+  __SHADOW_QUALITY__: number
+
   constructor(scene: FScene, options?: FLightOptions) {
     super(scene)
 
@@ -52,11 +58,12 @@ export abstract class FLight extends FLightCore {
       position: { x: 5, y: 5, z: 5 },
       rotation: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
+      shadowQuality: 5,
     }
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position)
+    if (!options.position || !options.shadowQuality)
       throw new Error('FibboError: FLight requires position and lookAt options.')
 
     // Store scene
@@ -73,6 +80,7 @@ export abstract class FLight extends FLightCore {
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__())
 
     this.__LOOK_AT__ = options.lookAt
+    this.__SHADOW_QUALITY__ = options.shadowQuality
   }
 
   /**
@@ -137,5 +145,13 @@ export abstract class FLight extends FLightCore {
     if (this.__LIGHT__ instanceof THREE.SpotLight) {
       this.__LIGHT__.lookAt(lookAt.x, lookAt.y, lookAt.z)
     }
+  }
+
+  get shadowQuality(): number {
+    return this.__SHADOW_QUALITY__
+  }
+
+  set shadowQuality(quality: number) {
+    this.__SHADOW_QUALITY__ = quality
   }
 }

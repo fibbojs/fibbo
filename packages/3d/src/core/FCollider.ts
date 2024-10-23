@@ -167,8 +167,17 @@ export class FCollider {
 
   frame(_delta: number): void {
     // As the collider should have moved, update the transform to sync with the collider
-    this.transform.position = this.__COLLIDER__.translation()
-    this.transform.rotation = new THREE.Euler().setFromQuaternion(new THREE.Quaternion().copy(this.__COLLIDER__.rotation()))
+    this.transform.__POSITION__ = this.__COLLIDER__.translation()
+    this.transform.__ROTATION__ = new THREE.Euler().setFromQuaternion(new THREE.Quaternion().copy(this.__COLLIDER__.rotation()))
+    // Propagate the position and rotation update if the collider is attached to a component
+    if (this.component) {
+      // Propagate the position update
+      this.component.__UPDATE_POSITION__()
+      this.component.sensor?.__UPDATE_POSITION__()
+      // Propagate the rotation update
+      this.component.__UPDATE_ROTATION__()
+      this.component.sensor?.__UPDATE_ROTATION__()
+    }
   }
 
   /**
@@ -181,9 +190,9 @@ export class FCollider {
   __UPDATE_POSITION__(initiator: boolean = false): void {
     // If the collider is the initiator
     if (initiator) {
+      // Update the collider position
+      this.__SET_POSITION__(this.transform.position)
       if (this.component) {
-        // Update the collider position
-        this.__SET_POSITION__(this.transform.position)
         // Propagate the position update
         this.component.__UPDATE_POSITION__()
         this.component.sensor?.__UPDATE_POSITION__()
@@ -211,9 +220,9 @@ export class FCollider {
   __UPDATE_ROTATION__(initiator: boolean = false): void {
     // If the collider is the initiator
     if (initiator) {
+      // Update the collider rotation
+      this.__SET_ROTATION__(this.transform.rotation)
       if (this.component) {
-        // Update the collider rotation
-        this.__SET_ROTATION__(this.transform.rotation)
         // Propagate the rotation update
         this.component.__UPDATE_ROTATION__()
         this.component.sensor?.__UPDATE_ROTATION__()
@@ -241,9 +250,9 @@ export class FCollider {
   __UPDATE_SCALE__(initiator: boolean = false): void {
     // If the collider is the initiator
     if (initiator) {
+      // Update the collider scale
+      this.__SET_SCALE__(this.transform.scale)
       if (this.component) {
-        // Update the collider scale
-        this.__SET_SCALE__(this.transform.scale)
         // Propagate the scale update
         this.component.__UPDATE_SCALE__()
         this.component.sensor?.__UPDATE_SCALE__()

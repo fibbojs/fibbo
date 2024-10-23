@@ -89,8 +89,8 @@ export abstract class FComponent extends FComponentCore {
     // Define default values
     const DEFAULT_OPTIONS = {
       position: { x: 0, y: 1, z: 0 },
-      scale: { x: 1, y: 1, z: 1 },
       rotation: { x: 0, y: 0, z: 0 },
+      scale: { x: 1, y: 1, z: 1 },
     }
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
