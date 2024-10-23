@@ -139,8 +139,17 @@ export class FCollider {
 
   frame(_delta: number): void {
     // As the collider should have moved, update the transform to sync with the collider
-    this.transform.position = this.__COLLIDER__.translation()
-    this.transform.rotation = this.__COLLIDER__.rotation()
+    this.transform.__POSITION__ = this.__COLLIDER__.translation()
+    this.transform.__ROTATION__ = this.__COLLIDER__.rotation()
+    // Propagate the position and rotation update if the collider is attached to a component
+    if (this.component) {
+      // Propagate the position update
+      this.component.__UPDATE_POSITION__()
+      this.component.sensor?.__UPDATE_POSITION__()
+      // Propagate the rotation update
+      this.component.__UPDATE_ROTATION__()
+      this.component.sensor?.__UPDATE_ROTATION__()
+    }
   }
 
   /**
