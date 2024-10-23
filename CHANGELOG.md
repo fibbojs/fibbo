@@ -1,3 +1,14 @@
+## 0.0.11 (2024-10-23)
+
+
+### 🩹 Fixes
+
+- optimize 2d colliders and rigidbodies ([861aec7](https://github.com/fibbojs/fibbo/commit/861aec7))
+
+### ❤️  Thank You
+
+- Gugustinette
+
 ## 0.0.10 (2024-10-22)
 
 This was a version bump only, there were no code changes.
