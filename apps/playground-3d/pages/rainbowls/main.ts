@@ -1,10 +1,16 @@
 import '../../src/style.css'
-import { FCuboid, FOrbitCamera, FScene, FSphere } from '@fibbojs/3d'
+import { FAmbientLight, FComponentEmpty, FCuboid, FOrbitCamera, FScene, FSphere } from '@fibbojs/3d'
 import * as THREE from 'three'
 
 (async () => {
   const scene = new FScene()
   scene.init()
+
+  // Add ambient light
+  new FAmbientLight(scene, {
+    color: 0xFFFFFF,
+    intensity: 1,
+  })
 
   // Define the radius for the rainbow effect
   const RADIUS = 5
@@ -48,7 +54,7 @@ import * as THREE from 'three'
   }
 
   // Create a camera target
-  const cameraTarget = new FCuboid(scene)
+  const cameraTarget = new FComponentEmpty(scene)
   cameraTarget.transform.setPosition({ x: 0, y: 1, z: 0 })
   // Create a camera
   const camera = new FOrbitCamera(scene, {
@@ -69,7 +75,7 @@ import * as THREE from 'three'
     pointer.y = -(event.clientY / window.innerHeight) * 2 + 1
 
     // Update the picking ray with the camera and pointer position
-    raycaster.setFromCamera(pointer, scene.camera as unknown as THREE.Camera)
+    raycaster.setFromCamera(pointer, scene.camera.__CAMERA__ as unknown as THREE.Camera)
 
     // calculate objects intersecting the picking ray
     const intersects = raycaster.intersectObjects(scene.scene.children as unknown as THREE.Object3D[])
