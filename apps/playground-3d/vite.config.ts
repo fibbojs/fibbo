@@ -1,3 +1,4 @@
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import wasm from 'vite-plugin-wasm'
 import topLevelAwait from 'vite-plugin-top-level-await'
@@ -10,6 +11,10 @@ export default defineConfig({
   base: '/playground-3d/',
   build: {
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        rainbowls: resolve(__dirname, 'demos/rainbowls/index.html'),
+      },
       // Solution found here: https://github.com/dimforge/rapier.js/issues/278
       // Without this option, treeshaking seems to ditch required code from Rapier
       // Basically results in : "TypeError: Cannot read properties of undefined (reading 'rawintegrationparameters_new')"

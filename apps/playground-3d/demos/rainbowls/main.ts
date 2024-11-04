@@ -1,10 +1,12 @@
 import '../../src/style.css'
 import { FAmbientLight, FComponentEmpty, FCuboid, FOrbitCamera, FScene, FSphere } from '@fibbojs/3d'
 import * as THREE from 'three'
+import { Navbar } from '../../components/Navbar'
 
 (async () => {
   const scene = new FScene()
   scene.init()
+  new Navbar()
 
   // Add ambient light
   new FAmbientLight(scene, {

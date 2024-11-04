@@ -1,6 +1,7 @@
 import { FAmbientLight, FCapsule, FComponentEmpty, FCuboid, FDirectionalLight, FFBX, FGLB, FGameCamera, FOBJ, FRigidBodyType, FScene, FShapes, FSphere, FSpotLight } from '@fibbojs/3d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
+import { Navbar } from '../components/Navbar'
 import Duck from './classes/Duck'
 import GltfCube from './classes/GltfCube'
 import './style.css'
@@ -14,9 +15,9 @@ import Character from './classes/Character'
   })
   scene.init()
   await scene.initPhysics()
-  // Debug the scene
   if (import.meta.env.DEV)
     fDebug(scene)
+  new Navbar()
 
   // Add directional light to represent the sun
   new FDirectionalLight(scene, {
