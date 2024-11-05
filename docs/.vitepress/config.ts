@@ -4,7 +4,10 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Fibbo',
   description: 'Documentation for Fibbo',
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['script', { src: '/press-f.js', type: 'module' }],
+  ],
   base: '/',
   themeConfig: {
     logo: {
