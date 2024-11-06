@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "description": "A web game engine written in TypeScript",
-  "author": "Augustin Mercier 'Gugustinette' <mercier.augustin@outlook.fr>",
+  "author": "Augustin Mercier 'Gugustinette' <mercier.augustin@proton.me>",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
