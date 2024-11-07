@@ -244,6 +244,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/fibbojs/fibbo' },
       { icon: 'npm', link: 'https://www.npmjs.com/package/@fibbojs/fibbo' },
+      { icon: 'bluesky', link: 'https://bsky.app/profile/fibbo.dev' },
     ],
   },
   ignoreDeadLinks: true,
