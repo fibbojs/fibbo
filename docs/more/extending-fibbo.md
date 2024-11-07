@@ -6,10 +6,10 @@ This concept was highly inspired by the [Nuxt module system](https://nuxt.com/mo
 
 ## Usage
 
-- Clone the repository
+- Clone the template
 
 ```bash
-npx tiged fibbojs/starter-module starter-module
+fibbo init module [module-name]
 ```
 
 - Do not forget to modify the following fields :

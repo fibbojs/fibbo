@@ -1,17 +1,17 @@
 # Upgrading
 
-Fibbo still has no dedicated CLI for migrating to newer versions. However, you can manually upgrade your project by installing the latest versions of the packages you are using.
+The [Fibbo CLI](https://github.com/fibbojs/cli) has a dedicated command to upgrade your Fibbo project to the latest version.
 
-## Upgrade to the latest version
+Make sure to open a terminal in the root directory of your project, then run the following command :
 
 ::: code-group
 
 ```bash [2d]
-npm install @fibbojs/core@latest @fibbojs/2d@latest @fibbojs/event@latest @fibbojs/devtools@latest
+fibbo upgrade
 ```
 
 ```bash [3d]
-npm install @fibbojs/core@latest @fibbojs/3d@latest @fibbojs/event@latest @fibbojs/devtools@latest
+fibbo upgrade
 ```
 
 :::
