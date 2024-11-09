@@ -1,48 +1,71 @@
 <template>
-  <div class="f-debug-panel">
-    <h1>{{ title }}</h1>
-    <div v-if="scene.components.length > 0">
-      <FComponents2d
-        v-if="scene.components[0].__IS_2D__"
-        :components="scene.components as FComponent2d[]"
-      />
-      <FComponents3d
-        v-if="scene.components[0].__IS_3D__"
-        :components="scene.components as FComponent3d[]"
-      />
-    </div>
+  <div class="f-debug">
+    <DebugPanel
+      :class="{
+        visible: panelVisible,
+      }"
+      :title="props.title"
+      :scene="props.scene"
+    />
+    <ToggleButton @click="toggleVisible" />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps } from 'vue'
+import { defineProps, ref } from 'vue'
 import type { FScene } from '@fibbojs/core'
-import type { FComponent as FComponent2d } from '@fibbojs/2d'
-import type { FComponent as FComponent3d } from '@fibbojs/3d'
-import FComponents2d from './2d/FComponents2d.vue'
-import FComponents3d from './3d/FComponents3d.vue'
+import DebugPanel from './DebugPanel.vue'
+import ToggleButton from './ToggleButton.vue'
 
-defineProps({
+const props = defineProps({
   title: String,
   scene: {
     type: Object as PropType<FScene>,
     default: null,
   },
 })
+
+const panelVisible = ref(false)
+
+function toggleVisible() {
+  panelVisible.value = !panelVisible.value
+}
 </script>
 
 <style lang="scss">
+#toggle-button {
+  background-color: red;
+  height: 2rem;
+  width: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.839);
+  }
+}
+
 .f-debug-panel {
-  position: absolute;
+  position: fixed;
   top: 10px;
-  left: 10px;
+  left: -100%;
   bottom: 10px;
   width: 300px;
   background: #151617;
   border-radius: 8px;
   overflow: auto;
   padding: 10px;
+  transition: all 0.2s ease;
+
+  &.visible {
+    left: 10px;
+  }
 
   * {
     color: #BFC0C1;
