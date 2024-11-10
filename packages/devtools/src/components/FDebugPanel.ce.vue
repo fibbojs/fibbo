@@ -7,7 +7,12 @@
       :title="props.title"
       :scene="props.scene"
     />
-    <ToggleButton @click="toggleVisible" />
+    <ToggleButton
+      :class="{
+        visible: panelVisible,
+      }"
+      @click="toggleVisible"
+    />
   </div>
 </template>
 
@@ -34,20 +39,72 @@ function toggleVisible() {
 </script>
 
 <style lang="scss">
+@keyframes animSvgIn {
+  from {
+    opacity: 0%;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 100%;
+    transform: scale(1.0);
+  }
+}
+
 #toggle-button {
-  background-color: red;
-  height: 2rem;
-  width: 2rem;
+  background-color: #151617;
+  height: 40px;
+  width: 40px;
   position: fixed;
   top: 50%;
-  left: 1rem;
+  left: 5px;
   transform: translateY(-50%);
   border-radius: 100%;
   transition: all 0.2s ease;
+  display: grid;
+  place-items: center;
 
   &:hover {
     cursor: pointer;
-    background-color: rgba(255, 0, 0, 0.839);
+
+    #fibbo-logo {
+      path {
+        stroke: white;
+      }
+    }
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    animation-name: animSvgIn;
+    animation-duration: 0.2s;
+
+    path {
+      transition: all 0.2s ease;
+    }
+  }
+
+  #fibbo-logo {
+    display: block;
+    path {
+      stroke: rgb(147, 147, 147);
+      stroke-width: 20;
+    }
+  }
+  #close-cross {
+    display: none;
+    width: 18px;
+    height: 18px;
+  }
+
+  &.visible {
+    #fibbo-logo {
+      display: none;
+    }
+    #close-cross {
+      display: block;
+    }
   }
 }
 
@@ -64,7 +121,7 @@ function toggleVisible() {
   transition: all 0.2s ease;
 
   &.visible {
-    left: 10px;
+    left: 25px;
   }
 
   * {
