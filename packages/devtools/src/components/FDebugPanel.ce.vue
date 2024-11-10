@@ -119,9 +119,11 @@ function toggleVisible() {
   overflow: auto;
   padding: 10px;
   transition: all 0.2s ease;
+  transform: scale(0.6);
 
   &.visible {
     left: 25px;
+    transform: scale(1.0);
   }
 
   * {
