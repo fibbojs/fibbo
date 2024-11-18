@@ -52,7 +52,7 @@ function toggleVisible() {
 }
 
 #toggle-button {
-  background-color: #151617;
+  background: #151617;
   height: 40px;
   width: 40px;
   position: fixed;
@@ -120,6 +120,7 @@ function toggleVisible() {
   padding: 10px;
   transition: all 0.2s ease;
   transform: scale(0.6);
+  font-size: 14px;
 
   &.visible {
     left: 25px;
@@ -132,6 +133,40 @@ function toggleVisible() {
 
   h1 {
     margin: 0 0 10px;
+  }
+
+  .f-debug-tabs__header {
+    position: relative;
+    background: #101212;
+    display: flex;
+    flex-direction: row;
+    padding: 6px;
+    column-gap: 6px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    border-radius: 12px;
+
+    .f-debug-tabs__tab {
+      display: grid;
+      place-content: center;
+      width: 100%;
+      padding: 6px;
+      border-radius: 6px;
+      transition: background 0.1s;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .f-debug-tabs__selector {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      width: 50%;
+      background: #1E1F20;
+      border-radius: 6px;
+      transition: left 0.2s ease;
+    }
   }
 
   .f-components {
@@ -150,6 +185,8 @@ function toggleVisible() {
       border-radius: 8px;
       transition: background 0.1s;
       cursor: pointer;
+      height: 18px;
+      padding: 4px;
 
       .f-component-header-arrow {
         display: grid;
@@ -227,6 +264,49 @@ function toggleVisible() {
     height: 16px;
     display: grid;
     place-items: center;
+  }
+}
+
+/* Gets applied if supported only */
+@supports (
+  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+) {
+  #toggle-button {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .f-debug-panel {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .f-debug-tabs__header {
+    background: rgba(0, 0, 0, 0.7) !important;
+
+    .f-debug-tabs__selector {
+      background: rgba(70, 70, 70, 0.2) !important;
+    }
+  }
+
+  .f-component {
+    .f-component-header {
+      &:hover {
+        background: rgba(0, 0, 0, 0.4) !important;
+      }
+    }
+
+    .f-component-properties {
+      .f-component-property {
+        .f-component-property-group {
+          > input {
+            background: rgba(0, 0, 0, 0.4) !important;
+          }
+        }
+      }
+    }
   }
 }
 </style>
