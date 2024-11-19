@@ -8,3 +8,6 @@ declare module '*.ce.vue' {
   const component: ReturnType<typeof defineComponent>
   export default component
 }
+
+// Fibbo version
+declare const __FIBBO_VERSION__: string

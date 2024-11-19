@@ -1,6 +1,9 @@
 <template>
   <div class="f-debug-panel" :class="{ glassmorphism }">
-    <h1>{{ title }}</h1>
+    <header>
+      <FLogoFibbo />
+      <span>Fibbo Devtools (v{{ version }})</span>
+    </header>
     <Tabs :tabs="['Components', 'Settings']">
       <template #Components>
         <FComponents :scene="scene" />
@@ -17,12 +20,14 @@ import type { PropType } from 'vue'
 import { defineProps, ref } from 'vue'
 import type { FScene } from '@fibbojs/core'
 import { State } from '../../State'
+import FLogoFibbo from '../icons/FLogoFibbo.vue'
 import Tabs from './Tabs.vue'
 import FComponents from './FComponents.vue'
 import Settings from './Settings.vue'
 
 defineProps({
   title: String,
+  version: String,
   scene: {
     type: Object as PropType<FScene>,
     default: null,
@@ -68,6 +73,23 @@ State.onGlassmorphismChange((value) => {
 
   > * {
     flex: 1 1 auto;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-height: 48px;
+    column-gap: 8px;
+
+    .fibbo-logo {
+      width: 24px;
+      height: 24px;
+
+      path {
+        stroke: rgb(147, 147, 147);
+      }
+    }
   }
 }
 

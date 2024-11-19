@@ -75,6 +75,7 @@ export class FDebug {
     // Mount the Vue instance
     createApp(FDebugComponent, {
       title: 'Fibbo',
+      version: __FIBBO_VERSION__,
       scene: this.scene,
     }).mount('#f-debug')
   }

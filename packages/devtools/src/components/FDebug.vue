@@ -5,6 +5,7 @@
         visible: panelVisible,
       }"
       :title="props.title"
+      :version="props.version"
       :scene="props.scene"
     />
     <ToggleButton
@@ -25,6 +26,7 @@ import ToggleButton from './common/ToggleButton.vue'
 
 const props = defineProps({
   title: String,
+  version: String,
   scene: {
     type: Object as PropType<FScene>,
     default: null,

@@ -22,4 +22,7 @@ export default defineConfig({
     },
   },
   plugins: [vue(), wasm()],
+  define: {
+    __FIBBO_VERSION__: JSON.stringify(process.env.npm_package_version),
+  },
 })
