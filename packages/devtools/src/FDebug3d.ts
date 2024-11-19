@@ -1,4 +1,5 @@
 import type { FLight, FScene } from '@fibbojs/3d'
+import { State } from './State'
 
 /**
  * A helper class to debug a given 3d scene
@@ -23,6 +24,7 @@ export class FDebug3d {
     /**
      * When a light is added to the scene, add a helper for it
      */
+    const lightHelpers: any[] = []
     scene.onLightAdded((lightParam) => {
       // Cast light to a 3D FLight
       const light = lightParam as FLight
@@ -40,26 +42,45 @@ export class FDebug3d {
         return
       // Add the helper to the scene
       scene.scene.add(helper as any)
+      // Add the helper to the list of helpers
+      lightHelpers.push(helper)
     })
 
     /**
      * Display debug lines on each frame
      */
     scene.onFrame(() => {
-      // Remove previous debug lines
-      const previousLines = scene.scene.getObjectByName('DEBUG_LINES')
-      if (previousLines)
-        scene.scene.remove(previousLines)
+      if (State.hitboxes) {
+        // Remove previous debug lines
+        const previousLines = scene.scene.getObjectByName('DEBUG_LINES')
+        if (previousLines)
+          scene.scene.remove(previousLines)
 
-      // Render new debug lines
-      const { vertices, colors } = scene.world.debugRender()
-      const geometry = new scene.THREE.BufferGeometry()
-      geometry.setAttribute('position', new scene.THREE.Float32BufferAttribute(vertices, 3))
-      geometry.setAttribute('color', new scene.THREE.Float32BufferAttribute(colors, 3))
-      const material = new scene.THREE.LineBasicMaterial({ vertexColors: true })
-      const lines = new scene.THREE.LineSegments(geometry, material)
-      lines.name = 'DEBUG_LINES'
-      scene.scene.add(lines)
+        // Render new debug lines
+        const { vertices, colors } = scene.world.debugRender()
+        const geometry = new scene.THREE.BufferGeometry()
+        geometry.setAttribute('position', new scene.THREE.Float32BufferAttribute(vertices, 3))
+        geometry.setAttribute('color', new scene.THREE.Float32BufferAttribute(colors, 3))
+        const material = new scene.THREE.LineBasicMaterial({ vertexColors: true })
+        const lines = new scene.THREE.LineSegments(geometry, material)
+        lines.name = 'DEBUG_LINES'
+        scene.scene.add(lines)
+      }
+    })
+
+    State.onHitboxesChange((newState) => {
+      if (!newState) {
+        // Remove previous debug lines
+        const previousLines = scene.scene.getObjectByName('DEBUG_LINES')
+        if (previousLines)
+          scene.scene.remove(previousLines)
+      }
+    })
+
+    State.onHelpersChange((newState) => {
+      gridHelper.visible = newState
+      axesHelper.visible = newState
+      lightHelpers.forEach(helper => helper.visible = newState)
     })
   }
 }

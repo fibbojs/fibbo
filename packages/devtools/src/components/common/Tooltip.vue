@@ -62,13 +62,13 @@ function onMouseMove(event: MouseEvent) {
 .tooltip-wrapper {
   .tooltip {
     position: fixed;
+    width: 300px;
     z-index: 1000;
     background: #000000;
     color: #FFFFFF;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
-    white-space: nowrap;
     pointer-events: none;
     transition: opacity 0.1s ease;
   }
