@@ -1,7 +1,9 @@
 <template>
   <div class="f-debug-panel" :class="{ glassmorphism }">
     <header>
-      <FLogoFibbo />
+      <a href="https://fibbo.dev" target="_blank" rel="noopener noreferrer">
+        <FLogoFibbo />
+      </a>
       <span>Fibbo Devtools (v{{ version }})</span>
     </header>
     <Tabs :tabs="['Components', 'Settings']">
@@ -53,7 +55,7 @@ State.onGlassmorphismChange((value) => {
   background: #151617;
   border-radius: 8px;
   padding: 10px;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   transform: scale(0.6);
   font-size: 14px;
 
@@ -81,6 +83,12 @@ State.onGlassmorphismChange((value) => {
     align-items: center;
     max-height: 48px;
     column-gap: 8px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .fibbo-logo {
       width: 24px;
