@@ -52,37 +52,50 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.f-debug-tabs__header {
-  position: relative;
-  background: #101212;
+.f-debug-tabs {
   display: flex;
-  flex-direction: row;
-  padding: 6px;
-  column-gap: 6px;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: repeat(auto-fill, 1fr);
-  border-radius: 12px;
+  flex-direction: column;
+  height: 500px;
 
-  .f-debug-tabs__tab {
-    display: grid;
-    place-content: center;
-    width: 100%;
+  .f-debug-tabs__header {
+    flex: 0 1 auto;
+    position: relative;
+    background: #101212;
+    display: flex;
+    flex-direction: row;
     padding: 6px;
-    border-radius: 6px;
-    transition: background 0.1s;
-    cursor: pointer;
-    z-index: 1;
+    column-gap: 6px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    border-radius: 12px;
+
+    .f-debug-tabs__tab {
+      display: grid;
+      place-content: center;
+      width: 100%;
+      padding: 6px;
+      border-radius: 6px;
+      transition: background 0.1s;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .f-debug-tabs__selector {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      width: 50%;
+      background: #1E1F20;
+      border-radius: 6px;
+      transition: left 0.2s ease;
+    }
   }
 
-  .f-debug-tabs__selector {
-    position: absolute;
-    top: 6px;
-    bottom: 6px;
-    width: 50%;
-    background: #1E1F20;
-    border-radius: 6px;
-    transition: left 0.2s ease;
+  .f-debug-tabs__content {
+    flex: 1 1 auto;
+    position: relative;
+    overflow: auto;
   }
 }
 

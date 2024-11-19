@@ -20,8 +20,8 @@
 import type { PropType } from 'vue'
 import { defineProps, ref } from 'vue'
 import type { FScene } from '@fibbojs/core'
-import DebugPanel from './DebugPanel.vue'
-import ToggleButton from './ToggleButton.vue'
+import DebugPanel from './common/DebugPanel.vue'
+import ToggleButton from './common/ToggleButton.vue'
 
 const props = defineProps({
   title: String,
