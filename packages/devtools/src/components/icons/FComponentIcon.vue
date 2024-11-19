@@ -36,3 +36,12 @@ defineProps({
   },
 })
 </script>
+
+<style scoped lang="scss">
+.f-component-icon {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+}
+</style>

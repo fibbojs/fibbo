@@ -27,3 +27,52 @@ const props = defineProps({
 
 const iconName = useComponentIcon(props.component)
 </script>
+
+<style scoped lang="scss">
+.f-component-header {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  align-items: center;
+  border-radius: 8px;
+  transition: background 0.1s;
+  cursor: pointer;
+  height: 18px;
+  padding: 4px;
+
+  .f-component-header-arrow {
+    display: grid;
+    place-items: center;
+    width: 16px;
+    transition: transform 0.1s;
+  }
+
+  .f-component-name {
+    margin: 0;
+  }
+
+  .f-component-id {
+    color: #4d4e4e;
+  }
+
+  &:hover {
+    background: #1E1F20;
+  }
+}
+
+.f-component-header--open {
+  .f-component-header-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@supports (
+  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+) {
+  .f-component-header {
+    &:hover {
+      background: rgba(0, 0, 0, 0.4) !important;
+    }
+  }
+}
+</style>

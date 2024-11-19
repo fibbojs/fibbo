@@ -1,13 +1,10 @@
-import { defineCustomElement, reactive } from 'vue'
+import { createApp, reactive } from 'vue'
 import type { FScene } from '@fibbojs/core'
 import type { FScene as FScene2d } from '@fibbojs/2d'
 import type { FScene as FScene3d } from '@fibbojs/3d'
-import FDebugPanel from './components/FDebugPanel.ce.vue'
+import FDebugComponent from './components/FDebug.vue'
 import { FDebug2d } from './FDebug2d'
 import { FDebug3d } from './FDebug3d'
-
-// Define the custom Web Component from the Vue component
-const FDebugPanelElement = defineCustomElement(FDebugPanel)
 
 /**
  * A helper class to debug a given scene
@@ -39,13 +36,18 @@ export class FDebug {
     // Define the scene
     this.scene = scene
 
-    // Define the custom element in the browser
-    customElements.define('f-debug-panel', FDebugPanelElement)
-    // Create and inject the custom element into the DOM
-    const debugPanel = new FDebugPanelElement({
-      title: 'Fibbo',
-      scene: this.scene,
-    })
+    // Fetch the CSS
+    fetch(import.meta.url.replace('index.es.js', 'style.css'))
+      .then(res => res.text())
+      .then((css) => {
+        // Extract the CSS content
+        css = css
+          .split('const __vite__css = "')[1]
+          .split('\\n"')[0]
+        const style = document.createElement('style')
+        style.innerHTML = css
+        document.head.appendChild(style)
+      })
 
     // Make the component array reactive
     this.scene.components = reactive(this.scene.components) as any
@@ -61,8 +63,16 @@ export class FDebug {
       this.debugger2d = new FDebug2d(scene as FScene2d)
     }
 
-    // Add the debug panel to the body
+    // Create a HTML element for the debug panel
+    const debugPanel = document.createElement('div')
+    debugPanel.id = 'f-debug'
+    // Append the debug panel to the body
     document.body.appendChild(debugPanel)
+    // Mount the Vue instance
+    createApp(FDebugComponent, {
+      title: 'Fibbo',
+      scene: this.scene,
+    }).mount('#f-debug')
   }
 }
 

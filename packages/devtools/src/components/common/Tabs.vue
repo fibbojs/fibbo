@@ -38,22 +38,63 @@ const selector = ref<HTMLElement | null>(null)
 function selectTab(id: string) {
   selectedTabId.value = id
   if (selector.value) {
-    const tabs = selector.value.parentElement?.querySelectorAll('.f-debug-tabs__tab')
-    if (tabs) {
-      const tab = tabs[props.tabs.indexOf(id)] as HTMLElement
-      selector.value.style.left = `${tab.offsetLeft}px`
-    }
+    selector.value.style.width = `calc(${100 / props.tabs.length}% - 12px)`
+    selector.value.style.left = `calc(${props.tabs.indexOf(id) * (100 / props.tabs.length)}% + 6px)`
   }
 }
 
 onMounted(() => {
   if (selector.value) {
-    const tabs = selector.value.parentElement?.querySelectorAll('.f-debug-tabs__tab')
-    if (tabs) {
-      const tab = tabs[0] as HTMLElement
-      selector.value.style.width = `${tab.offsetWidth}px`
-      selector.value.style.left = `${tab.offsetLeft}px`
-    }
+    selector.value.style.width = `calc(${100 / props.tabs.length}% - 12px)`
+    selector.value.style.left = `calc(${props.tabs.indexOf(selectedTabId.value) * (100 / props.tabs.length)}% + 6px)`
   }
 })
 </script>
+
+<style scoped lang="scss">
+.f-debug-tabs__header {
+  position: relative;
+  background: #101212;
+  display: flex;
+  flex-direction: row;
+  padding: 6px;
+  column-gap: 6px;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  border-radius: 12px;
+
+  .f-debug-tabs__tab {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.1s;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .f-debug-tabs__selector {
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    width: 50%;
+    background: #1E1F20;
+    border-radius: 6px;
+    transition: left 0.2s ease;
+  }
+}
+
+@supports (
+  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+) {
+  .f-debug-tabs__header {
+    background: rgba(0, 0, 0, 0.7) !important;
+
+    .f-debug-tabs__selector {
+      background: rgba(70, 70, 70, 0.2) !important;
+    }
+  }
+}
+</style>

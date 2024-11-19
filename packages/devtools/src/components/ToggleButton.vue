@@ -20,3 +20,84 @@
     </svg>
   </div>
 </template>
+
+<style scoped lang="scss">
+@keyframes animSvgIn {
+  from {
+    opacity: 0%;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 100%;
+    transform: scale(1.0);
+  }
+}
+
+#toggle-button {
+  background: #151617;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  transition: all 0.2s ease;
+  display: grid;
+  place-items: center;
+
+  &:hover {
+    cursor: pointer;
+
+    #fibbo-logo {
+      path {
+        stroke: white;
+      }
+    }
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    animation-name: animSvgIn;
+    animation-duration: 0.2s;
+
+    path {
+      transition: all 0.2s ease;
+    }
+  }
+
+  #fibbo-logo {
+    display: block;
+    path {
+      stroke: rgb(147, 147, 147);
+      stroke-width: 20;
+    }
+  }
+  #close-cross {
+    display: none;
+    width: 18px;
+    height: 18px;
+  }
+
+  &.visible {
+    #fibbo-logo {
+      display: none;
+    }
+    #close-cross {
+      display: block;
+    }
+  }
+}
+
+@supports (
+  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+) {
+  #toggle-button {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+</style>
