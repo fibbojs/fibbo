@@ -1,5 +1,6 @@
 import type { FScene } from '@fibbojs/2d'
 import type { DebugRenderBuffers } from '@dimforge/rapier2d'
+import { State } from './State'
 
 /**
  * A helper class to debug a given 2d scene
@@ -15,6 +16,7 @@ export class FDebug2d {
   constructor(scene: FScene) {
     // Add help grid
     const helpGrid = new scene.PIXI.Graphics()
+    helpGrid.visible = State.helpers
     // Draw the grid
     for (let i = -1000; i <= 1000; i += 100) {
       helpGrid.moveTo(i, -1000)
@@ -34,6 +36,7 @@ export class FDebug2d {
 
     // Initiliaze debug graphics
     const DEBUG_GRAPHICS = new scene.PIXI.Graphics()
+    DEBUG_GRAPHICS.visible = State.hitboxes
     DEBUG_GRAPHICS.zIndex = 1000000
     scene.viewport.addChild(DEBUG_GRAPHICS)
 
@@ -64,6 +67,13 @@ export class FDebug2d {
         DEBUG_GRAPHICS.moveTo(x1, y1)
         DEBUG_GRAPHICS.lineTo(x2, y2)
       }
+    })
+
+    State.onHelpersChange((newState) => {
+      helpGrid.visible = newState
+    })
+    State.onHitboxesChange((newState) => {
+      DEBUG_GRAPHICS.visible = newState
     })
   }
 }
