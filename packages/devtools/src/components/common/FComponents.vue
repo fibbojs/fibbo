@@ -42,6 +42,9 @@ defineProps({
   .f-component-properties {
     display: flex;
     flex-direction: column;
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 0.15s ease;
 
     p {
       margin: 0;
@@ -80,7 +83,7 @@ defineProps({
   }
 
   .f-component-properties--hidden {
-    display: none;
+    max-height: 0px;
   }
 }
 </style>
