@@ -5,6 +5,7 @@ import type { FScene as FScene3d } from '@fibbojs/3d'
 import FDebugComponent from './components/FDebug.vue'
 import { FDebug2d } from './FDebug2d'
 import { FDebug3d } from './FDebug3d'
+import { State } from './State'
 
 /**
  * A helper class to debug a given scene
@@ -35,6 +36,9 @@ export class FDebug {
   constructor(scene: FScene) {
     // Define the scene
     this.scene = scene
+
+    // Load devtools state from local storage
+    State.load()
 
     // Fetch the CSS
     fetch(import.meta.url.replace('index.es.js', 'style.css'))

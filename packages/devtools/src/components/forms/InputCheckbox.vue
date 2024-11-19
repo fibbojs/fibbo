@@ -58,7 +58,7 @@ function updateValue(event: Event) {
     position: relative;
     height: 24px;
     width: 40px;
-    background: #1E1F20;
+    background: rgba(0, 0, 0, 0.7);
     transition: all 0.2s ease;
     border-radius: 8px;
 
@@ -81,14 +81,6 @@ function updateValue(event: Event) {
     .slider-toggle {
       left: calc(100% - 20px);
     }
-  }
-}
-
-@supports (
-  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
-) {
-  .switch .slider {
-    background: rgba(0, 0, 0, 0.7);
   }
 }
 </style>

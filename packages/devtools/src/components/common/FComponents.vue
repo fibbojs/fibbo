@@ -61,7 +61,7 @@ defineProps({
         > input {
           padding: 0 4px;
           border-radius: 4px;
-          background: #1E1F20;
+          background: rgba(0, 0, 0, 0.4);
           border: none;
           width: 32px;
 
@@ -81,22 +81,6 @@ defineProps({
 
   .f-component-properties--hidden {
     display: none;
-  }
-}
-
-@supports (
-  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
-) {
-  .f-component {
-    .f-component-properties {
-      .f-component-property {
-        .f-component-property-group {
-          > input {
-            background: rgba(0, 0, 0, 0.4) !important;
-          }
-        }
-      }
-    }
   }
 }
 </style>

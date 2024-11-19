@@ -56,23 +56,13 @@ const iconName = useComponentIcon(props.component)
   }
 
   &:hover {
-    background: #1E1F20;
+    background: rgba(0, 0, 0, 0.4);
   }
 }
 
 .f-component-header--open {
   .f-component-header-arrow {
     transform: rotate(90deg);
-  }
-}
-
-@supports (
-  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
-) {
-  .f-component-header {
-    &:hover {
-      background: rgba(0, 0, 0, 0.4) !important;
-    }
   }
 }
 </style>

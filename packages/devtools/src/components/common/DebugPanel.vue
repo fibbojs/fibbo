@@ -1,5 +1,5 @@
 <template>
-  <div class="f-debug-panel">
+  <div class="f-debug-panel" :class="{ glassmorphism }">
     <h1>{{ title }}</h1>
     <Tabs :tabs="['Components', 'Settings']">
       <template #Components>
@@ -14,8 +14,9 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps } from 'vue'
+import { defineProps, ref } from 'vue'
 import type { FScene } from '@fibbojs/core'
+import { State } from '../../State'
 import Tabs from './Tabs.vue'
 import FComponents from './FComponents.vue'
 import Settings from './Settings.vue'
@@ -26,6 +27,12 @@ defineProps({
     type: Object as PropType<FScene>,
     default: null,
   },
+})
+
+const glassmorphism = ref(State.glassmorphism)
+
+State.onGlassmorphismChange((value) => {
+  glassmorphism.value = value
 })
 </script>
 
@@ -68,10 +75,11 @@ defineProps({
 @supports (
   (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
 ) {
-  .f-debug-panel {
-    background: rgba(0, 0, 0, 0.7);
+  .f-debug-panel.glassmorphism {
+    background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
 }
 </style>
+q

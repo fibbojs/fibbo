@@ -1,5 +1,5 @@
 <template>
-  <div id="toggle-button">
+  <div id="toggle-button" :class="{ glassmorphism }">
     <!-- Figgo logo -->
     <svg id="fibbo-logo" width="422" height="458" viewBox="0 0 422 458" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_62_36)">
@@ -20,6 +20,17 @@
     </svg>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { State } from '../../State'
+
+const glassmorphism = ref(State.glassmorphism)
+
+State.onGlassmorphismChange((value) => {
+  glassmorphism.value = value
+})
+</script>
 
 <style scoped lang="scss">
 @keyframes animSvgIn {
@@ -94,7 +105,7 @@
 @supports (
   (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
 ) {
-  #toggle-button {
+  #toggle-button.glassmorphism {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

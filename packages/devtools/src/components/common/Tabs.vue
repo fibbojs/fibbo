@@ -60,7 +60,7 @@ onMounted(() => {
   .f-debug-tabs__header {
     flex: 0 1 auto;
     position: relative;
-    background: #101212;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: row;
     padding: 6px;
@@ -86,7 +86,7 @@ onMounted(() => {
       top: 6px;
       bottom: 6px;
       width: 50%;
-      background: #1E1F20;
+      background: rgba(70, 70, 70, 0.2);
       border-radius: 6px;
       transition: left 0.2s ease;
     }
@@ -96,18 +96,6 @@ onMounted(() => {
     flex: 1 1 auto;
     position: relative;
     overflow: auto;
-  }
-}
-
-@supports (
-  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
-) {
-  .f-debug-tabs__header {
-    background: rgba(0, 0, 0, 0.7) !important;
-
-    .f-debug-tabs__selector {
-      background: rgba(70, 70, 70, 0.2) !important;
-    }
   }
 }
 </style>
