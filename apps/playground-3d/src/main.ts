@@ -214,7 +214,7 @@ import Character from './classes/Character'
     // cube.setColor(Math.random() * 0xFFFFFF)
   })
   character.onCollisionWith(sphere, () => {
-    console.error('Character collided with the sphere.')
+    console.log('Character collided with the sphere.')
   })
   character.onCollisionWith(deathZone, () => {
     console.log('Character fell into the death zone.')
