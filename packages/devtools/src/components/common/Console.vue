@@ -1,11 +1,16 @@
 <template>
   <div class="f-debug-console">
-    <div v-for="log in logs" :key="log.id" :class="log.type" class="f-debug-console__log">
-      <span>{{ log.content.join(' ') }}</span>
-      <button @click="log.showDetails = !log.showDetails">
-        Details
-      </button>
-      <div v-if="log.showDetails" class="object-details">
+    <div
+      v-for="log in logs" :key="log.id" :class="{
+        'warn': log.type === 'warn',
+        'error': log.type === 'error',
+        'show-details': log.showDetails,
+      }" class="f-debug-console__log"
+    >
+      <div class="f-debug-console__log-content" @click="log.showDetails = !log.showDetails">
+        {{ log.content.join(' ') }}
+      </div>
+      <div v-if="log.showDetails" class="f-debug-console__log-details">
         <ConsoleJson :data="log.content" />
       </div>
     </div>
@@ -36,50 +41,34 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   row-gap: 2px;
-  padding: 10px;
-  border-radius: 4px;
 
   .f-debug-console__log {
-    position: relative;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 2px;
+    border-radius: 4px;
+    transition: all 0.15s ease;
 
-    &.warn > span {
+    &.warn > .f-debug-console__log-content {
       color: #ff9800;
     }
 
-    &.error > span {
+    &.error > .f-debug-console__log-content {
       color: #f44336;
     }
 
-    button {
-      opacity: 0;
-      position: absolute;
-      top: 0px;
-      right: 4px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 2px 4px;
-      transition: opacity 0.1s;
-
-      &:active {
-        border: none;
-        outline: none;
-      }
+    &:hover {
+      background: rgba(0, 0, 0, 0.4);
     }
 
-    .object-details {
+    .f-debug-console__log-details {
       margin-top: 4px;
       padding: 8px;
       border-radius: 2px;
 
       pre {
         white-space: break-spaces;
-      }
-    }
-
-    &:hover {
-      button {
-        opacity: 1;
       }
     }
   }
