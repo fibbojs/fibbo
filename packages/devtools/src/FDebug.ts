@@ -78,6 +78,11 @@ export class FDebug {
 
     // Make the component array reactive
     this.scene.components = reactive(this.scene.components) as any
+    // Make sure added components are reactive
+    scene.onComponentAdded((component) => {
+      // @ts-expect-error - Core FComponent does not have transform property
+      component.transform = reactive(component.transform)
+    })
 
     // 3D specific debug behavior
     if (scene.__IS_3D__) {
