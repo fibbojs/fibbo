@@ -6,6 +6,7 @@ import FDebugComponent from './components/FDebug.vue'
 import { FDebug2d } from './FDebug2d'
 import { FDebug3d } from './FDebug3d'
 import { State } from './State'
+import { FLogger } from './FLogger'
 
 /**
  * A helper class to debug a given scene
@@ -39,6 +40,28 @@ export class FDebug {
 
     // Load devtools state from local storage
     State.load()
+
+    /**
+     * Override console methods
+     */
+    // Override console.log
+    const originalConsoleLog = console.log
+    console.log = (...args: any[]) => {
+      originalConsoleLog(...args)
+      FLogger.log(...args)
+    }
+    // Override console.warn
+    const originalConsoleWarn = console.warn
+    console.warn = (...args: any[]) => {
+      originalConsoleWarn(...args)
+      FLogger.warn(...args)
+    }
+    // Override console.error
+    const originalConsoleError = console.error
+    console.error = (...args: any[]) => {
+      originalConsoleError(...args)
+      FLogger.error(...args)
+    }
 
     // Fetch the CSS
     fetch(import.meta.url.replace('index.es.js', 'style.css'))

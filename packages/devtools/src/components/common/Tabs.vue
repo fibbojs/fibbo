@@ -10,7 +10,8 @@
         }"
         @click="selectTab(tab)"
       >
-        {{ tab }}
+        <slot :name="`${tab}Icon`" />
+        <span>{{ tab }}</span>
       </div>
       <div ref="selector" class="f-debug-tabs__selector" />
     </div>
@@ -51,7 +52,7 @@ onMounted(() => {
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .f-debug-tabs {
   display: flex;
   flex-direction: column;
@@ -71,14 +72,25 @@ onMounted(() => {
     border-radius: 12px;
 
     .f-debug-tabs__tab {
-      display: grid;
-      place-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       padding: 6px;
       border-radius: 6px;
       transition: background 0.1s;
       cursor: pointer;
       z-index: 1;
+
+      span {
+        font-size: 11px;
+      }
+
+      svg {
+        height: 1.4em;
+        width: auto;
+      }
     }
 
     .f-debug-tabs__selector {

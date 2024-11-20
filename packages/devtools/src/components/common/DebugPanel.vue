@@ -6,9 +6,21 @@
       </a>
       <span>Fibbo Devtools (v{{ version }})</span>
     </header>
-    <Tabs :tabs="['Components', 'Settings']">
+    <Tabs :tabs="['Components', 'Console', 'Settings']">
+      <template #ComponentsIcon>
+        <FIconComponent />
+      </template>
       <template #Components>
         <FComponents :scene="scene" />
+      </template>
+      <template #ConsoleIcon>
+        <FIconConsole />
+      </template>
+      <template #Console>
+        <Console />
+      </template>
+      <template #SettingsIcon>
+        <FIconSettings />
       </template>
       <template #Settings>
         <Settings />
@@ -23,9 +35,13 @@ import { defineProps, ref } from 'vue'
 import type { FScene } from '@fibbojs/core'
 import { State } from '../../State'
 import FLogoFibbo from '../icons/FLogoFibbo.vue'
+import FIconComponent from '../icons/FIconComponent.vue'
+import FIconSettings from '../icons/FIconSettings.vue'
+import FIconConsole from '../icons/FIconConsole.vue'
 import Tabs from './Tabs.vue'
 import FComponents from './FComponents.vue'
 import Settings from './Settings.vue'
+import Console from './Console.vue'
 
 defineProps({
   title: String,
