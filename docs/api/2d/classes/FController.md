@@ -34,7 +34,7 @@ The options for the controller.
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FController.ts#L23)
+[2d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/controllers/FController.ts#L23)
 
 ## Methods
 
@@ -78,4 +78,4 @@ It is redefined here to get the correct type (with 2D properties).
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/controllers/FController.ts#L17)
+[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/controllers/FController.ts#L17)

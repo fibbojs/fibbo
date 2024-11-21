@@ -22,7 +22,7 @@ The base class for lights in Fibbo.
 
 #### Defined in
 
-[core/src/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FLight.ts#L22)
+[core/src/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/core/src/FLight.ts#L22)
 
 ## Methods
 
@@ -38,7 +38,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-[core/src/FLight.ts:55](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FLight.ts#L55)
+[core/src/FLight.ts:55](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/core/src/FLight.ts#L55)
 
 ***
 
@@ -60,7 +60,7 @@ The callback function.
 
 #### Defined in
 
-[core/src/FLight.ts:48](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FLight.ts#L48)
+[core/src/FLight.ts:48](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/core/src/FLight.ts#L48)
 
 ## Properties
 
@@ -72,7 +72,7 @@ Callbacks for when the light is loaded.
 
 #### Defined in
 
-[core/src/FLight.ts:15](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FLight.ts#L15)
+[core/src/FLight.ts:15](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/core/src/FLight.ts#L15)
 
 ***
 
@@ -84,4 +84,4 @@ The scene the light is attached to.
 
 #### Defined in
 
-[core/src/FLight.ts:20](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FLight.ts#L20)
+[core/src/FLight.ts:20](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/core/src/FLight.ts#L20)

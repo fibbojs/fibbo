@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[core/src/FLight.ts:4](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FLight.ts#L4)
+[core/src/FLight.ts:4](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/core/src/FLight.ts#L4)

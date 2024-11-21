@@ -14,4 +14,4 @@ The component that collided with the component.
 
 #### Defined in
 
-[core/src/FComponent.ts:21](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/core/src/FComponent.ts#L21)
+[core/src/FComponent.ts:20](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/core/src/FComponent.ts#L20)

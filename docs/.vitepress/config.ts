@@ -137,6 +137,8 @@ export default defineConfig({
               { text: 'FComponentOptions', link: '/api/2d/interfaces/FComponentOptions.md' },
               { text: 'FTransformOptions', link: '/api/2d/interfaces/FTransformOptions.md' },
               { text: 'FSceneOptions', link: '/api/2d/interfaces/FSceneOptions.md' },
+              { text: 'GradientStep', link: '/api/2d/interfaces/GradientStep.md' },
+              { text: 'FPolygonOptions', link: '/api/2d/interfaces/FPolygonOptions.md' },
               { text: 'FAttachedCameraOptions', link: '/api/2d/interfaces/FAttachedCameraOptions.md' },
               { text: 'FCameraOptions', link: '/api/2d/interfaces/FCameraOptions.md' },
               { text: 'FSpriteOptions', link: '/api/2d/interfaces/FSpriteOptions.md' },

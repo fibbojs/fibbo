@@ -9,7 +9,7 @@
 echo "📚 Generating API documentation..."
 
 # Generate API documentation (hide the output)
-typedoc &> /dev/null
+./node_modules/.bin/typedoc &> /dev/null
 
 echo "✅ API documentation generated successfully!"
 
@@ -79,8 +79,11 @@ generate_interface_entries() {
 
   find "packages/$package_dir/src" -type f -name "*.ts" -print0 | while IFS= read -r -d $'\0' file; do
     grep -q "export interface " "$file" && {
-      local interface_name=$(grep "export interface " "$file" | awk '{print $3}' | sed 's/{//')
-      echo "              { text: '$interface_name', link: '/api/$package_dir/interfaces/$interface_name.md' },"
+      local interfaces=$(grep "export interface " "$file" | awk '{print $3}' | sed 's/{//')
+      # Iterate through each interface in the file
+      for interface_name in $interfaces; do
+        echo "              { text: '$interface_name', link: '/api/$package_dir/interfaces/$interface_name.md' },"
+      done
     }
   done
 }

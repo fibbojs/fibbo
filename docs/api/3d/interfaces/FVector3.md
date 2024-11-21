@@ -14,7 +14,7 @@ The x coordinate of the vector.
 
 #### Defined in
 
-[3d/src/types/FVector3.ts:8](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/types/FVector3.ts#L8)
+[3d/src/types/FVector3.ts:8](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/types/FVector3.ts#L8)
 
 ***
 
@@ -26,7 +26,7 @@ The y coordinate of the vector.
 
 #### Defined in
 
-[3d/src/types/FVector3.ts:12](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/types/FVector3.ts#L12)
+[3d/src/types/FVector3.ts:12](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/types/FVector3.ts#L12)
 
 ***
 
@@ -38,4 +38,4 @@ The z coordinate of the vector.
 
 #### Defined in
 
-[3d/src/types/FVector3.ts:16](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/types/FVector3.ts#L16)
+[3d/src/types/FVector3.ts:16](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/types/FVector3.ts#L16)

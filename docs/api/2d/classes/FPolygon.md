@@ -13,6 +13,26 @@ A simple polygon in Fibbo.
 - [`FCircle`](FCircle.md)
 - [`FRectangle`](FRectangle.md)
 
+## Accessors
+
+### color
+
+> `get` **color**(): `undefined` \| `number`
+
+> `set` **color**(`value`): `void`
+
+#### Parameters
+
+• **value**: `undefined` \| `number`
+
+#### Returns
+
+`undefined` \| `number`
+
+#### Defined in
+
+[2d/src/polygons/FPolygon.ts:63](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L63)
+
 ## Constructors
 
 ### new FPolygon()
@@ -23,7 +43,7 @@ A simple polygon in Fibbo.
 
 • **scene**: [`FScene`](FScene.md)
 
-• **options?**: [`FComponentOptions`](../interfaces/FComponentOptions.md)
+• **options?**: [`FPolygonOptions`](../interfaces/FPolygonOptions.md)
 
 #### Returns
 
@@ -35,9 +55,32 @@ A simple polygon in Fibbo.
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:10](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/polygons/FPolygon.ts#L10)
+[2d/src/polygons/FPolygon.ts:33](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L33)
 
 ## Methods
+
+### \_\_DRAW\_SHAPE\_\_()
+
+> `abstract` **\_\_DRAW\_SHAPE\_\_**(`graphics`): `void`
+
+Draw the shape of the polygon.
+This method should be implemented by the child class.
+
+#### Parameters
+
+• **graphics**: `Graphics`
+
+The PIXI.Graphics object to draw the shape on.
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[2d/src/polygons/FPolygon.ts:59](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L59)
+
+***
 
 ### \_\_SET\_POSITION\_\_()
 
@@ -57,7 +100,7 @@ A simple polygon in Fibbo.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:221](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L221)
+[2d/src/core/FComponent.ts:221](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L221)
 
 ***
 
@@ -79,7 +122,7 @@ A simple polygon in Fibbo.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:228](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L228)
+[2d/src/core/FComponent.ts:228](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L228)
 
 ***
 
@@ -101,7 +144,7 @@ A simple polygon in Fibbo.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:235](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L235)
+[2d/src/core/FComponent.ts:235](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L235)
 
 ***
 
@@ -129,7 +172,7 @@ Set this to true to propagate the position update to the rigidBody, collider and
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:113](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L113)
+[2d/src/core/FComponent.ts:113](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L113)
 
 ***
 
@@ -157,7 +200,7 @@ Set this to true to propagate the rotation update to the rigidBody, collider and
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:153](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L153)
+[2d/src/core/FComponent.ts:153](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L153)
 
 ***
 
@@ -185,7 +228,7 @@ Set this to true to propagate the scale update to the rigidBody, collider and se
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:187](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L187)
+[2d/src/core/FComponent.ts:187](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L187)
 
 ***
 
@@ -282,7 +325,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:103](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L103)
+[2d/src/core/FComponent.ts:103](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L103)
 
 ***
 
@@ -304,7 +347,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:253](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L253)
+[2d/src/core/FComponent.ts:253](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L253)
 
 ***
 
@@ -326,7 +369,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:259](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L259)
+[2d/src/core/FComponent.ts:259](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L259)
 
 ***
 
@@ -348,7 +391,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:265](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L265)
+[2d/src/core/FComponent.ts:265](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L265)
 
 ***
 
@@ -402,7 +445,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:243](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L243)
+[2d/src/core/FComponent.ts:243](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L243)
 
 ***
 
@@ -511,19 +554,43 @@ core/dist/index.d.ts:211
 
 ***
 
+### \_\_COLOR\_\_?
+
+> `optional` **\_\_COLOR\_\_**: `number`
+
+The color of the polygon.
+
+#### Defined in
+
+[2d/src/polygons/FPolygon.ts:24](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L24)
+
+***
+
 ### \_\_CONTAINER\_\_
 
-> **\_\_CONTAINER\_\_**: `Container`\<`ContainerChild`\>
+> **\_\_CONTAINER\_\_**: `Graphics`
 
 PIXI container
 
-#### Inherited from
+#### Overrides
 
 [`FComponent`](FComponent.md).[`__CONTAINER__`](FComponent.md#__container__)
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L44)
+[2d/src/polygons/FPolygon.ts:31](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L31)
+
+***
+
+### \_\_GRADIENT\_\_?
+
+> `optional` **\_\_GRADIENT\_\_**: [`GradientStep`](../interfaces/GradientStep.md)[]
+
+The gradient of the polygon.
+
+#### Defined in
+
+[2d/src/polygons/FPolygon.ts:28](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L28)
 
 ***
 
@@ -556,7 +623,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:30](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L30)
+[2d/src/core/FComponent.ts:30](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L30)
 
 ***
 
@@ -588,7 +655,7 @@ RAPIER Collider
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:59](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L59)
+[2d/src/core/FComponent.ts:59](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L59)
 
 ***
 
@@ -604,7 +671,7 @@ The controller attached to the component.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L39)
+[2d/src/core/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L39)
 
 ***
 
@@ -620,7 +687,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L55)
+[2d/src/core/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L55)
 
 ***
 
@@ -636,7 +703,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:35](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L35)
+[2d/src/core/FComponent.ts:35](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L35)
 
 ***
 
@@ -652,7 +719,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:63](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L63)
+[2d/src/core/FComponent.ts:63](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L63)
 
 ***
 
@@ -668,4 +735,4 @@ Transforms
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FComponent.ts#L49)
+[2d/src/core/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L49)

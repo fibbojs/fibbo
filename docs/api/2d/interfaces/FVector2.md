@@ -14,7 +14,7 @@ The x coordinate of the vector.
 
 #### Defined in
 
-[2d/src/types/FVector2.ts:8](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/types/FVector2.ts#L8)
+[2d/src/types/FVector2.ts:8](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/types/FVector2.ts#L8)
 
 ***
 
@@ -26,4 +26,4 @@ The y coordinate of the vector.
 
 #### Defined in
 
-[2d/src/types/FVector2.ts:12](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/types/FVector2.ts#L12)
+[2d/src/types/FVector2.ts:12](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/types/FVector2.ts#L12)

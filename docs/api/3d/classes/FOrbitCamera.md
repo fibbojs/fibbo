@@ -47,7 +47,7 @@ scene.camera = new FOrbitCamera(cube)
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L114)
+[3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L114)
 
 ## Constructors
 
@@ -71,7 +71,7 @@ scene.camera = new FOrbitCamera(cube)
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:30](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FOrbitCamera.ts#L30)
+[3d/src/cameras/FOrbitCamera.ts:30](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FOrbitCamera.ts#L30)
 
 ## Methods
 
@@ -92,7 +92,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L68)
+[3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L68)
 
 ***
 
@@ -113,7 +113,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L76)
+[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L76)
 
 ***
 
@@ -135,7 +135,7 @@ This method does not make sense for cameras, but it is implemented for consisten
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L85)
+[3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L85)
 
 ***
 
@@ -232,7 +232,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:38](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FOrbitCamera.ts#L38)
+[3d/src/cameras/FOrbitCamera.ts:38](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FOrbitCamera.ts#L38)
 
 ***
 
@@ -255,7 +255,7 @@ The direction of the camera. It is a normalized vector.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L105)
+[3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L105)
 
 ***
 
@@ -281,7 +281,7 @@ The target to look at.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L96)
+[3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L96)
 
 ***
 
@@ -405,7 +405,7 @@ core/dist/index.d.ts:243
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:47](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FOrbitCamera.ts#L47)
+[3d/src/cameras/FOrbitCamera.ts:47](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FOrbitCamera.ts#L47)
 
 ***
 
@@ -423,7 +423,7 @@ core/dist/index.d.ts:243
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:57](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FOrbitCamera.ts#L57)
+[3d/src/cameras/FOrbitCamera.ts:57](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FOrbitCamera.ts#L57)
 
 ## Properties
 
@@ -492,7 +492,7 @@ Three.js camera object.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L24)
+[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L24)
 
 ***
 
@@ -523,7 +523,7 @@ core/dist/index.d.ts:203
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -539,7 +539,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L18)
+[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L18)
 
 ***
 
@@ -549,7 +549,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:26](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FOrbitCamera.ts#L26)
+[3d/src/cameras/FOrbitCamera.ts:26](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FOrbitCamera.ts#L26)
 
 ***
 
@@ -575,7 +575,7 @@ core/dist/index.d.ts:226
 
 #### Defined in
 
-[3d/src/cameras/FOrbitCamera.ts:28](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FOrbitCamera.ts#L28)
+[3d/src/cameras/FOrbitCamera.ts:28](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FOrbitCamera.ts#L28)
 
 ***
 
@@ -607,4 +607,4 @@ Transform of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/3d/src/cameras/FCamera.ts#L29)
+[3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L29)

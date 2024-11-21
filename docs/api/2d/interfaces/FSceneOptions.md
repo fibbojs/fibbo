@@ -54,4 +54,4 @@ core/dist/index.d.ts:66
 
 #### Defined in
 
-[2d/src/core/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/core/FScene.ts#L14)
+[2d/src/core/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FScene.ts#L14)

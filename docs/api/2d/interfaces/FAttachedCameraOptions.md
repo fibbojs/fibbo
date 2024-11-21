@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:6](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FCamera.ts#L6)
+[2d/src/cameras/FCamera.ts:6](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/cameras/FCamera.ts#L6)
 
 ***
 
@@ -36,4 +36,4 @@
 
 #### Defined in
 
-[2d/src/cameras/FAttachedCamera.ts:7](https://github.com/fibbojs/fibbo/blob/31a9adc82b7f9e94d4aaa254912cda4482699c0d/packages/2d/src/cameras/FAttachedCamera.ts#L7)
+[2d/src/cameras/FAttachedCamera.ts:7](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/cameras/FAttachedCamera.ts#L7)
