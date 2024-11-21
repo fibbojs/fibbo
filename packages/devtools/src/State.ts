@@ -3,11 +3,13 @@ export class State {
   private static __HITBOXES__: boolean = false
   private static __HELPERS__: boolean = true
   private static __GLASSMORPHISM__: boolean = true
+  private static __COMPONENT_ROUND_TRANSFORM__: boolean = true
 
   // Callbacks
   private static __CALLBACKS_ON_HITBOXES_CHANGE__: ((newState: boolean) => void)[] = []
   private static __CALLBACKS_ON_HELPERS_CHANGE__: ((newState: boolean) => void)[] = []
   private static __CALLBACKS_ON_GLASSMORPHISM_CHANGE__: ((newState: boolean) => void)[] = []
+  private static __CALLBACKS_ON_COMPONENT_ROUND_TRANSFORM_CHANGE__: ((newState: boolean) => void)[] = []
 
   // Methods
   static load() {
@@ -15,9 +17,10 @@ export class State {
     const state = localStorage.getItem('f-debug-state')
     if (state) {
       const parsedState = JSON.parse(state)
-      this.hitboxes = parsedState.hitboxes
-      this.helpers = parsedState.helpers
-      this.glassmorphism = parsedState.glassmorphism
+      this.hitboxes = parsedState.hitboxes ?? false
+      this.helpers = parsedState.helpers ?? true
+      this.glassmorphism = parsedState.glassmorphism ?? true
+      this.componentRoundTransform = parsedState.componentRoundTransform ?? true
     }
   }
 
@@ -27,6 +30,7 @@ export class State {
       hitboxes: this.hitboxes,
       helpers: this.helpers,
       glassmorphism: this.glassmorphism,
+      componentRoundTransform: this.componentRoundTransform,
     }))
   }
 
@@ -40,6 +44,10 @@ export class State {
 
   static onGlassmorphismChange(callback: (newState: boolean) => void) {
     this.__CALLBACKS_ON_GLASSMORPHISM_CHANGE__.push(callback)
+  }
+
+  static onComponentCropTransformChange(callback: (newState: boolean) => void) {
+    this.__CALLBACKS_ON_COMPONENT_ROUND_TRANSFORM_CHANGE__.push(callback)
   }
 
   // Getters & setters
@@ -70,6 +78,16 @@ export class State {
   static set glassmorphism(newState: boolean) {
     this.__GLASSMORPHISM__ = newState
     this.__CALLBACKS_ON_GLASSMORPHISM_CHANGE__.forEach(callback => callback(newState))
+    State.store()
+  }
+
+  static get componentRoundTransform() {
+    return this.__COMPONENT_ROUND_TRANSFORM__
+  }
+
+  static set componentRoundTransform(newState: boolean) {
+    this.__COMPONENT_ROUND_TRANSFORM__ = newState
+    this.__CALLBACKS_ON_COMPONENT_ROUND_TRANSFORM_CHANGE__.forEach(callback => callback(newState))
     State.store()
   }
 }

@@ -18,6 +18,12 @@
       title="Glassmorphism"
       tooltip="Enable fancy glassmorphism effect on the devtools panel."
     />
+    <Setting
+      id="devtools-component-round-transform"
+      v-model:value="settingComponentRoundTransform"
+      title="Round component transforms"
+      tooltip="Round the transform values to 2 decimal places in the component inspector."
+    />
   </div>
 </template>
 
@@ -29,6 +35,7 @@ import Setting from './Setting.vue'
 const settingHitboxes = ref(State.hitboxes)
 const settingHelpers = ref(State.helpers)
 const settingGlassmorphism = ref(State.glassmorphism)
+const settingComponentRoundTransform = ref(State.componentRoundTransform)
 
 watch(settingHitboxes, (value) => {
   State.hitboxes = value
@@ -38,6 +45,9 @@ watch(settingHelpers, (value) => {
 })
 watch(settingGlassmorphism, (value) => {
   State.glassmorphism = value
+})
+watch(settingComponentRoundTransform, (value) => {
+  State.componentRoundTransform = value
 })
 </script>
 
