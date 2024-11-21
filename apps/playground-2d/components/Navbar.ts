@@ -9,6 +9,7 @@ export class Navbar {
     this.__DOM__.innerHTML = `
     <a href="/playground-2d/">Home</a>
     <a href="/playground-2d/demos/squairbows/">Squairbows</a>
+    <a href="/playground-2d/demos/perlin-rainbow/">Perlin Rainbow</a>
     <style>
       #demo-navbar {
         position: fixed;

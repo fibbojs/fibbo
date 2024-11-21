@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         squairbows: resolve(__dirname, 'demos/squairbows/index.html'),
+        perlinRainbow: resolve(__dirname, 'demos/perlin-rainbow/index.html'),
       },
       // Solution found here: https://github.com/dimforge/rapier.js/issues/278
       // Without this option, treeshaking seems to ditch required code from Rapier
