@@ -209,15 +209,15 @@ import Character from './classes/Character'
   character.onCollisionWith(FCuboid, ({ component }) => {
     // Cast the component to FCuboid
     const cube = component as FCuboid
-    console.log('Collision with cube : ', cube)
+    console.log('Character collided with a cube', cube)
     // Change the color of the cube to a random color
     // cube.setColor(Math.random() * 0xFFFFFF)
   })
   character.onCollisionWith(sphere, () => {
-    console.log('Character collided with the sphere!')
+    console.log('Character collided with the sphere.')
   })
   character.onCollisionWith(deathZone, () => {
-    console.log('Character fell into the death zone!')
+    console.log('Character fell into the death zone.')
     character.transform.position = { x: 0, y: 10, z: 0 }
   })
 

@@ -1,7 +1,7 @@
 <!-- Custom input:number vue component -->
 <template>
   <input
-    :value="cropValue(value)"
+    :value="State.componentRoundTransform ? roundTransform(value) : value"
     type="number"
     @input="updateValue"
   >
@@ -9,7 +9,8 @@
 
 <script setup lang="ts">
 import { defineEmits, defineProps } from 'vue'
-import { cropValue } from '../../utils/cropValue'
+import { roundTransform } from '../../utils/roundTransform'
+import { State } from '../../State'
 
 defineProps({
   value: {
