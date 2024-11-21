@@ -9,6 +9,8 @@ import MyCustomCube from './classes/MyCustomCube'
 import Character from './classes/Character'
 
 (async () => {
+  new Navbar()
+
   // Initialize the scene
   const scene = new FScene({
     shadows: true,
@@ -17,7 +19,6 @@ import Character from './classes/Character'
   await scene.initPhysics()
   if (import.meta.env.DEV)
     fDebug(scene)
-  new Navbar()
 
   // Add directional light to represent the sun
   new FDirectionalLight(scene, {

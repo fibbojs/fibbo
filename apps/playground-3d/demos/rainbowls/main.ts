@@ -4,9 +4,10 @@ import * as THREE from 'three'
 import { Navbar } from '../../components/Navbar'
 
 (async () => {
+  new Navbar()
+
   const scene = new FScene()
   scene.init()
-  new Navbar()
 
   // Add ambient light
   new FAmbientLight(scene, {

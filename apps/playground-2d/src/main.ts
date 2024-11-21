@@ -2,11 +2,14 @@ import './style.css'
 import { FAttachedCamera, FCircle, FComponentEmpty, FRectangle, FScene, FShapes } from '@fibbojs/2d'
 import { fDebug } from '@fibbojs/devtools'
 import { FKeyboard } from '@fibbojs/event'
+import { Navbar } from '../components/Navbar'
 import MySquare from './classes/MySquare'
 import { loadLevel } from './level'
 import Character from './classes/Character'
 
 (async () => {
+  new Navbar()
+
   const scene = new FScene()
   await scene.init()
   await scene.initPhysics()
@@ -61,6 +64,10 @@ import Character from './classes/Character'
   const circle = new FCircle(scene, {
     position: { x: 0, y: 3 },
     scale: { x: 1, y: 1 },
+    gradient: [
+      { position: 0, color: 0x0000FF },
+      { position: 1, color: 0xFFFF00 },
+    ],
   })
   circle.initRigidBody()
 
