@@ -13,7 +13,7 @@ It is mainly composed of the following attributes :
 - [`sensor`](/guide/events/collisions) : (optional) The sensor of the component, used for detecting and emitting collisions events.
 
 And the following methods :
-- `frame` : Called every frame by the [Scene](/guide/scene) to update the component.
+- `frame` : Called every frame by the [Scene](/guide/core/scene) to update the component.
 - `onFrame` : A method that takes a callback to be called every frame.
 - `initCollider` : Initialize the collider of the component.
 - `initRigidBody` : Initialize the rigidBody of the component.
@@ -28,13 +28,13 @@ To create a component, you can just import it and create a new instance :
 ```typescript [2d]
 import { FRectangle } from '@fibbojs/2d'
 
-const rectangle = new FRectangle(scene)
+new FRectangle(scene)
 ```
 
 ```typescript [3d]
 import { FCuboid } from '@fibbojs/3d'
 
-const cube = new FCuboid(scene)
+new FCuboid(scene)
 ```
 
 :::
@@ -48,7 +48,7 @@ Various options can be passed to the constructor :
 ```typescript [2d]
 import { FRectangle } from '@fibbojs/2d'
 
-const cube = new FRectangle(scene, {
+new FRectangle(scene, {
   position: { x: 1, y: 2 },
   rotation: 0,
   rotationDegree: 0,
@@ -59,7 +59,7 @@ const cube = new FRectangle(scene, {
 ```typescript [3d]
 import { FCuboid } from '@fibbojs/3d'
 
-const cube = new FCuboid(scene, {
+new FCuboid(scene, {
   position: { x: 1, y: 2, z: 3 },
   rotation: { x: 0, y: 0, z: 0 },
   rotationDegree: { x: 0, y: 0, z: 0 },

@@ -18,6 +18,7 @@ import { FRectangle } from '@fibbojs/2d'
 const square = new FRectangle(scene, {
   position: { x: 0, y: 5 },
   scale: { x: 1, y: 1 },
+  color: 0xFF0000,
 })
 ```
 
@@ -33,6 +34,7 @@ import { FCircle } from '@fibbojs/2d'
 const circle = new FCircle(scene, {
   position: { x: 0, y: 5 },
   scale: { x: 1, y: 1 },
+  color: 0xFF0000,
 })
 ```
 

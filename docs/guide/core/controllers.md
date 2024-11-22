@@ -2,7 +2,17 @@
 
 Every [`FComponent`](/api/core/classes/FComponent) in Fibbo can have a [`FController`](/api/core/classes/FController) attached to it. A controller is instanciated given its component and is responsible for updating the component's properties every frame.
 
-A controller's [`frame`](/api/core/classes/FController#onframe) method is where you should put your typical movement logic. This method is called every frame by the attached component itself. To help you get started, here is a simple example of a controller that makes a cube rotate around its Y axis :
+## Why use controllers ?
+
+Technically, controller are not required to make a component move or animate (you could just override the `frame` method in your component most of the time), but they are a good way to separate the logic of a component from its rendering.
+
+Also, this allows you to reuse the same controller for multiple components, which can be useful if you want to create a group of similar objects that share the same behavior.
+
+## How to use controllers ?
+
+A controller's [`frame`](/api/core/classes/FController#onframe) method is where you should put your typical movement logic. By default, this method is called every frame by the attached component itself.
+
+To help you get started, here is a simple example of a controller that makes a component rotate around its one axis :
 
 ::: code-group
 
