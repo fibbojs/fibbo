@@ -63,8 +63,14 @@ export class FDebug {
       FLogger.error(...args)
     }
 
-    // Fetch the CSS
-    fetch(import.meta.url.replace('index.es.js', 'style.css'))
+    // import.meta.url will typically be something like :
+    // In local playground : http://localhost:5173/playground-3d/@fs/Users/[USERNAME]/Desktop/fibbo/packages/devtools/dist/index.es.js?t=1732299741683
+    // In development : http://localhost:5173/starter-3d/node_modules/.vite/deps/@fibbojs_devtools.js?v=6af81429
+    const URL = import.meta.url.includes('/packages/devtools/dist/index.es.js')
+      ? import.meta.url.replace('/packages/devtools/dist/index.es.js', '/packages/devtools/dist/style.css')
+      : `${import.meta.url.split('/node_modules/')[0]}/node_modules/@fibbojs/devtools/dist/style.css`
+    // Fetch the CSS file
+    fetch(URL)
       .then(res => res.text())
       .then((css) => {
         // Extract the CSS content
