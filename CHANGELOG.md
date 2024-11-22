@@ -1,3 +1,14 @@
+## 0.0.13 (2024-11-22)
+
+
+### 🩹 Fixes
+
+- style.css import in devtools ([434e7f1](https://github.com/fibbojs/fibbo/commit/434e7f1))
+
+### ❤️  Thank You
+
+- Gugustinette
+
 ## 0.0.12 (2024-11-22)
 
 This was a version bump only, there were no code changes.
