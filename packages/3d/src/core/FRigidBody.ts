@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
+import type { FVector3 } from '@fibbojs/core'
+import { FMathUtil } from '@fibbojs/util'
 import { FShapes } from '../types/FShapes'
-import type { FVector3 } from '../types/FVector3'
 import { FRigidBodyType } from '../types/FRigidBodyType'
 import type { FComponent } from './FComponent'
 import { FCollider } from './FCollider'
@@ -203,7 +204,7 @@ export class FRigidBody {
   frame(_delta: number): void {
     // As the rigidBody should have moved, update the transform to sync with the rigidBody
     this.transform.__POSITION__ = this.__RIGIDBODY__.translation()
-    this.transform.__ROTATION__ = new THREE.Euler().setFromQuaternion(new THREE.Quaternion().copy(this.__RIGIDBODY__.rotation()))
+    this.transform.__ROTATION__ = FMathUtil.quaternionToRad(this.__RIGIDBODY__.rotation())
     // Propagate the position and rotation update if the rigidBody is attached to a component
     if (this.component) {
       // Propagate the position update

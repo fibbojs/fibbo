@@ -49,6 +49,7 @@
     "@dimforge/rapier3d": "0.14.0",
     "@fibbojs/core": "0.0.13",
     "@fibbojs/event": "0.0.13",
+    "@fibbojs/util": "0.0.13",
     "@types/three": "0.168.0",
     "three": "0.168.0"
   }

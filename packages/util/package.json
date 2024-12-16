@@ -1,8 +1,8 @@
 {
-  "name": "@fibbojs/2d",
+  "name": "@fibbojs/util",
   "type": "module",
   "version": "0.0.13",
-  "description": "2D package for Fibbo",
+  "description": "Util package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@proton.me>",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -44,13 +44,5 @@
     "test:ui": "vitest --ui --config ../../vitest.config.ts --workspace ../../vitest.workspace.ts",
     "test:run": "vitest run --config ../../vitest.config.ts --workspace ../../vitest.workspace.ts",
     "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@dimforge/rapier2d": "0.14.0",
-    "@fibbojs/core": "0.0.13",
-    "@fibbojs/event": "0.0.13",
-    "@fibbojs/util": "0.0.13",
-    "pixi-viewport": "5.0.3",
-    "pixi.js": "8.3.4"
   }
 }

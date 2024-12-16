@@ -1,6 +1,6 @@
+import type { FVector3 } from '@fibbojs/core'
 import type { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
-import type { FVector3 } from '../types/FVector3'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 

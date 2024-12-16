@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
+import type { FVector3 } from '@fibbojs/core'
+import { FMathUtil } from '@fibbojs/util'
 import { FShapes } from '../types/FShapes'
-import type { FVector3 } from '../types/FVector3'
 import type { FComponent } from './FComponent'
 import type { FRigidBody } from './FRigidBody'
 import { FTransform } from './FTransform'
@@ -168,7 +169,7 @@ export class FCollider {
   frame(_delta: number): void {
     // As the collider should have moved, update the transform to sync with the collider
     this.transform.__POSITION__ = this.__COLLIDER__.translation()
-    this.transform.__ROTATION__ = new THREE.Euler().setFromQuaternion(new THREE.Quaternion().copy(this.__COLLIDER__.rotation()))
+    this.transform.__ROTATION__ = FMathUtil.quaternionToRad(this.__COLLIDER__.rotation())
     // Propagate the position and rotation update if the collider is attached to a component
     if (this.component) {
       // Propagate the position update

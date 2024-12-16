@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js'
+import type { FVector2 } from '@fibbojs/core'
 import type { FScene } from '../core/FScene'
-import type { FVector2 } from '../types/FVector2'
 import type { FPolygonOptions } from './FPolygon'
 import { FPolygon } from './FPolygon'
 

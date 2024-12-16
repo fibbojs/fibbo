@@ -1,9 +1,8 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
-import type { OnCollisionWithData } from '@fibbojs/core'
+import type { FVector3, OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
 import type { FController } from '../controllers/FController'
-import type { FVector3 } from '../types/FVector3'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
@@ -139,18 +138,18 @@ export abstract class FComponent extends FComponentCore {
       if (this.rigidBody) {
         // Move the component
         this.__SET_POSITION__({
-          x: this.rigidBody.transform.position.x - this.rigidBody.offset.position.x,
-          y: this.rigidBody.transform.position.y - this.rigidBody.offset.position.y,
-          z: this.rigidBody.transform.position.z - this.rigidBody.offset.position.z,
+          x: this.rigidBody.transform.x - this.rigidBody.offset.x,
+          y: this.rigidBody.transform.y - this.rigidBody.offset.y,
+          z: this.rigidBody.transform.z - this.rigidBody.offset.z,
         })
       }
       // If a collider exists, the propagation comes from the collider
       else if (this.collider) {
         // Move the component
         this.__SET_POSITION__({
-          x: this.collider.transform.position.x - this.collider.offset.x,
-          y: this.collider.transform.position.y - this.collider.offset.y,
-          z: this.collider.transform.position.z - this.collider.offset.z,
+          x: this.collider.transform.x - this.collider.offset.x,
+          y: this.collider.transform.y - this.collider.offset.y,
+          z: this.collider.transform.z - this.collider.offset.z,
         })
       }
     }
@@ -181,18 +180,18 @@ export abstract class FComponent extends FComponentCore {
       if (this.rigidBody) {
         // Rotate the component
         this.__SET_ROTATION__({
-          x: this.rigidBody.transform.rotation.x - this.rigidBody.offset.rotationX,
-          y: this.rigidBody.transform.rotation.y - this.rigidBody.offset.rotationY,
-          z: this.rigidBody.transform.rotation.z - this.rigidBody.offset.rotationZ,
+          x: this.rigidBody.transform.rotationX - this.rigidBody.offset.rotationX,
+          y: this.rigidBody.transform.rotationY - this.rigidBody.offset.rotationY,
+          z: this.rigidBody.transform.rotationZ - this.rigidBody.offset.rotationZ,
         })
       }
       // If a collider exists, the propagation comes from the collider
       else if (this.collider) {
         // Rotate the component
         this.__SET_ROTATION__({
-          x: this.collider.transform.rotation.x - this.collider.offset.rotationX,
-          y: this.collider.transform.rotation.y - this.collider.offset.rotationY,
-          z: this.collider.transform.rotation.z - this.collider.offset.rotationZ,
+          x: this.collider.transform.rotationX - this.collider.offset.rotationX,
+          y: this.collider.transform.rotationY - this.collider.offset.rotationY,
+          z: this.collider.transform.rotationZ - this.collider.offset.rotationZ,
         })
       }
     }
@@ -245,7 +244,9 @@ export abstract class FComponent extends FComponentCore {
     if (this.__MESH__)
       this.__MESH__.position.set(position.x, position.y, position.z)
     // Update the transform
-    this.transform.__POSITION__ = position
+    this.transform.__POSITION__.x = position.x
+    this.transform.__POSITION__.y = position.y
+    this.transform.__POSITION__.z = position.z
   }
 
   __SET_ROTATION__(rotation: FVector3): void {
@@ -253,7 +254,9 @@ export abstract class FComponent extends FComponentCore {
     if (this.__MESH__)
       this.__MESH__.rotation.set(rotation.x, rotation.y, rotation.z)
     // Update the transform
-    this.transform.__ROTATION__ = rotation
+    this.transform.__ROTATION__.x = rotation.x
+    this.transform.__ROTATION__.y = rotation.y
+    this.transform.__ROTATION__.z = rotation.z
   }
 
   __SET_SCALE__(scale: FVector3): void {
