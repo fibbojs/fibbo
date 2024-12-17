@@ -20,17 +20,17 @@ export class FAssetUtil {
    * @returns The interpreted path.
    */
   static interpretPath(path: string) {
-    // Resource URL (if it starts http, treat as a URL)
+    // Resource URL (if it starts with http, treat as a URL)
     if (path.startsWith('http')) {
       return path
     }
-    // Absolute path (if it starts with /), add the current domain + path
+    // Absolute path (if it starts with /), add the current origin + path
     else if (path.startsWith('/')) {
-      return `${window.location.origin}${path}`
+      return `${window.location.href}${path}`
     }
     // Otherwise, treat as a relative path starting to the assets folder
     else {
-      return `${window.location.origin}/${FAssetUtil.__ASSETS_PATH__}/${path}`
+      return `${window.location.href}/${FAssetUtil.__ASSETS_PATH__}/${path}`
     }
   }
 }
