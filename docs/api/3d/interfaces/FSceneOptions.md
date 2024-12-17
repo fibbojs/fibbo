@@ -38,7 +38,7 @@ core/dist/index.d.ts:66
 
 ### gravity?
 
-> `optional` **gravity**: [`FVector3`](FVector3.md)
+> `optional` **gravity**: `FVector3`
 
 #### Overrides
 
@@ -46,7 +46,7 @@ core/dist/index.d.ts:66
 
 #### Defined in
 
-[3d/src/core/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/core/FScene.ts#L14)
+[3d/src/core/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FScene.ts#L13)
 
 ***
 
@@ -56,4 +56,4 @@ core/dist/index.d.ts:66
 
 #### Defined in
 
-[3d/src/core/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/core/FScene.ts#L15)
+[3d/src/core/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FScene.ts#L14)

@@ -67,5 +67,4 @@
 - [FSceneOptions](interfaces/FSceneOptions.md)
 - [FSpriteOptions](interfaces/FSpriteOptions.md)
 - [FTransformOptions](interfaces/FTransformOptions.md)
-- [FVector2](interfaces/FVector2.md)
 - [GradientStep](interfaces/GradientStep.md)

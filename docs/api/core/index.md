@@ -21,4 +21,7 @@
 - [FControllerOptions](interfaces/FControllerOptions.md)
 - [FLightOptions](interfaces/FLightOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)
+- [FVector2](interfaces/FVector2.md)
+- [FVector3](interfaces/FVector3.md)
+- [FVector4](interfaces/FVector4.md)
 - [OnCollisionWithData](interfaces/OnCollisionWithData.md)

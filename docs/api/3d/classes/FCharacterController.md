@@ -35,7 +35,7 @@ An abstract pre-defined character controller.
 
 #### Defined in
 
-[3d/src/controllers/FCharacterController.ts:41](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/controllers/FCharacterController.ts#L41)
+[3d/src/controllers/FCharacterController.ts:41](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FCharacterController.ts#L41)
 
 ## Methods
 
@@ -79,7 +79,7 @@ Uses the camera so the character nevers faces the camera.
 
 #### Defined in
 
-[3d/src/controllers/FCharacterController.ts:121](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/controllers/FCharacterController.ts#L121)
+[3d/src/controllers/FCharacterController.ts:121](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FCharacterController.ts#L121)
 
 ## Properties
 
@@ -96,7 +96,7 @@ It is redefined here to get the correct type (with 3D properties).
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/controllers/FController.ts#L17)
+[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -124,7 +124,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[3d/src/controllers/FCharacterController.ts:24](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/controllers/FCharacterController.ts#L24)
+[3d/src/controllers/FCharacterController.ts:24](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FCharacterController.ts#L24)
 
 ***
 
@@ -136,7 +136,7 @@ The scene where the character is.
 
 #### Defined in
 
-[3d/src/controllers/FCharacterController.ts:39](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/controllers/FCharacterController.ts#L39)
+[3d/src/controllers/FCharacterController.ts:39](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FCharacterController.ts#L39)
 
 ***
 
@@ -148,4 +148,4 @@ The speed of the character.
 
 #### Defined in
 
-[3d/src/controllers/FCharacterController.ts:34](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/controllers/FCharacterController.ts#L34)
+[3d/src/controllers/FCharacterController.ts:34](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FCharacterController.ts#L34)

@@ -41,7 +41,7 @@ scene.addComponent(circle)
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:63](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L63)
+[2d/src/polygons/FPolygon.ts:63](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FPolygon.ts#L63)
 
 ## Constructors
 
@@ -65,7 +65,7 @@ scene.addComponent(circle)
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:23](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FCircle.ts#L23)
+[2d/src/polygons/FCircle.ts:23](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FCircle.ts#L23)
 
 ## Methods
 
@@ -92,7 +92,7 @@ The PIXI.Graphics object to draw the shape on.
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:48](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FCircle.ts#L48)
+[2d/src/polygons/FCircle.ts:48](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FCircle.ts#L48)
 
 ***
 
@@ -102,7 +102,7 @@ The PIXI.Graphics object to draw the shape on.
 
 #### Parameters
 
-• **position**: [`FVector2`](../interfaces/FVector2.md)
+• **position**: `FVector2`
 
 #### Returns
 
@@ -114,7 +114,7 @@ The PIXI.Graphics object to draw the shape on.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:221](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L221)
+[2d/src/core/FComponent.ts:220](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L220)
 
 ***
 
@@ -136,7 +136,7 @@ The PIXI.Graphics object to draw the shape on.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:228](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L228)
+[2d/src/core/FComponent.ts:227](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L227)
 
 ***
 
@@ -146,7 +146,7 @@ The PIXI.Graphics object to draw the shape on.
 
 #### Parameters
 
-• **scale**: [`FVector2`](../interfaces/FVector2.md)
+• **scale**: `FVector2`
 
 #### Returns
 
@@ -158,7 +158,7 @@ The PIXI.Graphics object to draw the shape on.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:235](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L235)
+[2d/src/core/FComponent.ts:234](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L234)
 
 ***
 
@@ -186,7 +186,7 @@ Set this to true to propagate the position update to the rigidBody, collider and
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:113](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L113)
+[2d/src/core/FComponent.ts:112](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L112)
 
 ***
 
@@ -214,7 +214,7 @@ Set this to true to propagate the rotation update to the rigidBody, collider and
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:153](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L153)
+[2d/src/core/FComponent.ts:152](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L152)
 
 ***
 
@@ -242,7 +242,7 @@ Set this to true to propagate the scale update to the rigidBody, collider and se
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:187](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L187)
+[2d/src/core/FComponent.ts:186](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L186)
 
 ***
 
@@ -339,7 +339,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:103](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L103)
+[2d/src/core/FComponent.ts:102](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L102)
 
 ***
 
@@ -361,7 +361,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:52](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FCircle.ts#L52)
+[2d/src/polygons/FCircle.ts:52](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FCircle.ts#L52)
 
 ***
 
@@ -383,7 +383,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:59](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FCircle.ts#L59)
+[2d/src/polygons/FCircle.ts:59](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FCircle.ts#L59)
 
 ***
 
@@ -405,7 +405,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/polygons/FCircle.ts:66](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FCircle.ts#L66)
+[2d/src/polygons/FCircle.ts:66](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FCircle.ts#L66)
 
 ***
 
@@ -459,7 +459,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:243](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L243)
+[2d/src/core/FComponent.ts:242](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L242)
 
 ***
 
@@ -580,7 +580,7 @@ The color of the polygon.
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:24](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L24)
+[2d/src/polygons/FPolygon.ts:24](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FPolygon.ts#L24)
 
 ***
 
@@ -596,7 +596,7 @@ PIXI container
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:31](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L31)
+[2d/src/polygons/FPolygon.ts:31](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FPolygon.ts#L31)
 
 ***
 
@@ -612,7 +612,7 @@ The gradient of the polygon.
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:28](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/polygons/FPolygon.ts#L28)
+[2d/src/polygons/FPolygon.ts:28](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FPolygon.ts#L28)
 
 ***
 
@@ -645,7 +645,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:30](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L30)
+[2d/src/core/FComponent.ts:29](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L29)
 
 ***
 
@@ -677,7 +677,7 @@ RAPIER Collider
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:59](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L59)
+[2d/src/core/FComponent.ts:58](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L58)
 
 ***
 
@@ -693,7 +693,7 @@ The controller attached to the component.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L39)
+[2d/src/core/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L38)
 
 ***
 
@@ -709,7 +709,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L55)
+[2d/src/core/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L54)
 
 ***
 
@@ -725,7 +725,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:35](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L35)
+[2d/src/core/FComponent.ts:34](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L34)
 
 ***
 
@@ -741,7 +741,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:63](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L63)
+[2d/src/core/FComponent.ts:62](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L62)
 
 ***
 
@@ -757,4 +757,4 @@ Transforms
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/2d/src/core/FComponent.ts#L49)
+[2d/src/core/FComponent.ts:48](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L48)

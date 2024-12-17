@@ -4,7 +4,8 @@
     "./packages/core/src/index.ts",
     "./packages/3d/src/index.ts",
     "./packages/2d/src/index.ts",
-    "./packages/event/src/index.ts"
+    "./packages/event/src/index.ts",
+    "./packages/util/src/index.ts"
   ],
   "out": "./docs/api",
   "categorizeByGroup": true,

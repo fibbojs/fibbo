@@ -131,7 +131,6 @@ export default defineConfig({
               { text: 'FShapes', link: '/api/2d/enumerations/FShapes.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
-              { text: 'FVector2', link: '/api/2d/interfaces/FVector2.md' },
               { text: 'FRigidBodyOptions', link: '/api/2d/interfaces/FRigidBodyOptions.md' },
               { text: 'FColliderOptions', link: '/api/2d/interfaces/FColliderOptions.md' },
               { text: 'FComponentOptions', link: '/api/2d/interfaces/FComponentOptions.md' },
@@ -199,7 +198,6 @@ export default defineConfig({
               { text: 'FShapes', link: '/api/3d/enumerations/FShapes.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
-              { text: 'FVector3', link: '/api/3d/interfaces/FVector3.md' },
               { text: 'FRigidBodyOptions', link: '/api/3d/interfaces/FRigidBodyOptions.md' },
               { text: 'FColliderOptions', link: '/api/3d/interfaces/FColliderOptions.md' },
               { text: 'FComponentOptions', link: '/api/3d/interfaces/FComponentOptions.md' },
@@ -226,6 +224,9 @@ export default defineConfig({
               { text: 'FScene', link: '/api/core/classes/FScene.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
+              { text: 'FVector3', link: '/api/core/interfaces/FVector3.md' },
+              { text: 'FVector2', link: '/api/core/interfaces/FVector2.md' },
+              { text: 'FVector4', link: '/api/core/interfaces/FVector4.md' },
               { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions.md' },
               { text: 'FComponentOptions', link: '/api/core/interfaces/FComponentOptions.md' },
               { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData.md' },
@@ -236,6 +237,12 @@ export default defineConfig({
           { text: 'event', link: '/api/event/index.md', collapsed: true, items: [
             { text: 'Event', collapsed: true, items: [
               { text: 'FKeyboard', link: '/api/event/classes/FKeyboard.md' },
+            ] },
+          ] },
+          { text: 'util', link: '/api/util/index.md', collapsed: true, items: [
+            { text: 'Core', collapsed: true, items: [
+              { text: 'FAssetUtil', link: '/api/util/classes/FAssetUtil.md' },
+              { text: 'FMathUtil', link: '/api/util/classes/FMathUtil.md' },
             ] },
           ] },
         ] },

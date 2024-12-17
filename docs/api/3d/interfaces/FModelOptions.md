@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[3d/src/model/FModel.ts:10](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/model/FModel.ts#L10)
+[3d/src/model/FModel.ts:11](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/model/FModel.ts#L11)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[3d/src/model/FModel.ts:7](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/model/FModel.ts#L7)
+[3d/src/model/FModel.ts:8](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/model/FModel.ts#L8)
 
 ***
 
@@ -34,13 +34,13 @@
 
 #### Defined in
 
-[3d/src/model/FModel.ts:8](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/model/FModel.ts#L8)
+[3d/src/model/FModel.ts:9](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/model/FModel.ts#L9)
 
 ***
 
 ### position?
 
-> `optional` **position**: [`FVector3`](FVector3.md)
+> `optional` **position**: `FVector3`
 
 #### Inherited from
 
@@ -48,13 +48,13 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/core/FComponent.ts#L16)
+[3d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L15)
 
 ***
 
 ### rotation?
 
-> `optional` **rotation**: [`FVector3`](FVector3.md)
+> `optional` **rotation**: `FVector3`
 
 #### Inherited from
 
@@ -62,13 +62,13 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/core/FComponent.ts#L17)
+[3d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L16)
 
 ***
 
 ### rotationDegree?
 
-> `optional` **rotationDegree**: [`FVector3`](FVector3.md)
+> `optional` **rotationDegree**: `FVector3`
 
 #### Inherited from
 
@@ -76,13 +76,13 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/core/FComponent.ts#L18)
+[3d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L17)
 
 ***
 
 ### scale?
 
-> `optional` **scale**: [`FVector3`](FVector3.md)
+> `optional` **scale**: `FVector3`
 
 #### Inherited from
 
@@ -90,7 +90,7 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:19](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/core/FComponent.ts#L19)
+[3d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L18)
 
 ***
 
@@ -100,4 +100,4 @@
 
 #### Defined in
 
-[3d/src/model/FModel.ts:9](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/model/FModel.ts#L9)
+[3d/src/model/FModel.ts:10](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/model/FModel.ts#L10)

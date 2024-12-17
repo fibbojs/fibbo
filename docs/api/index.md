@@ -6,3 +6,4 @@
 - [3d](/api/3d)
 - [core](/api/core)
 - [event](/api/event)
+- [util](/api/util)

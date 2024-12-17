@@ -43,7 +43,7 @@ scene.camera = new FPointerLockCamera(cube)
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L114)
+[3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L114)
 
 ## Constructors
 
@@ -67,7 +67,7 @@ scene.camera = new FPointerLockCamera(cube)
 
 #### Defined in
 
-[3d/src/cameras/FPointerLockCamera.ts:28](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FPointerLockCamera.ts#L28)
+[3d/src/cameras/FPointerLockCamera.ts:28](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FPointerLockCamera.ts#L28)
 
 ## Methods
 
@@ -88,7 +88,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L68)
+[3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L68)
 
 ***
 
@@ -109,7 +109,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L76)
+[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L76)
 
 ***
 
@@ -131,7 +131,7 @@ This method does not make sense for cameras, but it is implemented for consisten
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L85)
+[3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L85)
 
 ***
 
@@ -228,7 +228,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[3d/src/cameras/FPointerLockCamera.ts:43](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FPointerLockCamera.ts#L43)
+[3d/src/cameras/FPointerLockCamera.ts:43](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FPointerLockCamera.ts#L43)
 
 ***
 
@@ -251,7 +251,7 @@ The direction of the camera. It is a normalized vector.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L105)
+[3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L105)
 
 ***
 
@@ -263,7 +263,7 @@ Make the camera look at a target.
 
 #### Parameters
 
-• **target**: [`FVector3`](../interfaces/FVector3.md)
+• **target**: `FVector3`
 
 The target to look at.
 
@@ -277,7 +277,7 @@ The target to look at.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L96)
+[3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L96)
 
 ***
 
@@ -452,7 +452,7 @@ Three.js camera object.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L24)
+[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L24)
 
 ***
 
@@ -483,7 +483,7 @@ core/dist/index.d.ts:203
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -499,7 +499,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L18)
+[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L18)
 
 ***
 
@@ -509,7 +509,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FPointerLockCamera.ts:24](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FPointerLockCamera.ts#L24)
+[3d/src/cameras/FPointerLockCamera.ts:24](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FPointerLockCamera.ts#L24)
 
 ***
 
@@ -535,7 +535,7 @@ core/dist/index.d.ts:226
 
 #### Defined in
 
-[3d/src/cameras/FPointerLockCamera.ts:26](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FPointerLockCamera.ts#L26)
+[3d/src/cameras/FPointerLockCamera.ts:26](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FPointerLockCamera.ts#L26)
 
 ***
 
@@ -567,4 +567,4 @@ Transform of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/b496854a6f37e79caf42562bf7512dfda8184f7a/packages/3d/src/cameras/FCamera.ts#L29)
+[3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L29)

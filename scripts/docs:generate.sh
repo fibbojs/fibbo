@@ -32,6 +32,7 @@ beautifyStructure 2d
 beautifyStructure 3d
 beautifyStructure core
 beautifyStructure event
+beautifyStructure util
 
 # Replace every occurence of "[fibbojs](*)" with "[@fibbojs](/api/index)"
 find ./docs/api -type f -name "*.md" -exec sed -i '' 's/\[fibbojs\]([^)]*)/\[@fibbojs\](\/api\/index)/g' {} \;
@@ -99,7 +100,7 @@ echo "      '/api/': [" >> $TEMP_FILE
 echo "        { text: 'API Reference', items: [" >> $TEMP_FILE
 
 # Iterate through each package directory
-for package_dir in 2d 3d core event; do
+for package_dir in 2d 3d core event util; do
   echo "          { text: '$package_dir', link: '/api/$package_dir/index.md', collapsed: true, items: [" >> $TEMP_FILE
 
   # Generate navbar entries for each category
