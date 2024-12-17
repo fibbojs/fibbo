@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import type { FVector3 } from '@fibbojs/core'
 import type { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
-import type { FVector3 } from '../types/FVector3'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 

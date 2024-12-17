@@ -1,5 +1,5 @@
 import * as RAPIER from '@dimforge/rapier2d'
-import type { FVector2 } from '../types/FVector2'
+import type { FVector2 } from '@fibbojs/core'
 import { FShapes } from '../types/FShapes'
 import type { FComponent } from './FComponent'
 import type { FRigidBody } from './FRigidBody'

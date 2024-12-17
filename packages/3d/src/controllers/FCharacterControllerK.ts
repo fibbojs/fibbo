@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import RAPIER from '@dimforge/rapier3d'
 import { FKeyboard } from '@fibbojs/event'
+import type { FVector3 } from '@fibbojs/core'
 import type { FScene } from '../core/FScene'
-import type { FVector3 } from '../types/FVector3'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 

@@ -1,4 +1,5 @@
-import type { FVector2 } from '../types/FVector2'
+import type { FVector2 } from '@fibbojs/core'
+import { FMathUtil } from '@fibbojs/util'
 
 export interface FTransformOptions {
   position?: { x: number, y: number }
@@ -70,7 +71,7 @@ export class FTransform {
 
     // Set the transform values
     this.__POSITION__ = options.position
-    this.__ROTATION__ = options.rotationDegree !== undefined ? options.rotationDegree * (Math.PI / 180) : options.rotation || 0
+    this.__ROTATION__ = options.rotationDegree !== undefined ? FMathUtil.degreeToRad(options.rotationDegree) : options.rotation || 0
     this.__SCALE__ = options.scale
   }
 
@@ -197,7 +198,7 @@ export class FTransform {
    * Get the rotation in degrees.
    */
   get rotationDegree() {
-    return this.__ROTATION__ * (180 / Math.PI)
+    return FMathUtil.radToDegree(this.__ROTATION__)
   }
 
   /**
@@ -205,7 +206,7 @@ export class FTransform {
    * @param rotationDegree The new rotation in degrees.
    */
   set rotationDegree(rotationDegree: number) {
-    this.setRotation(rotationDegree * (Math.PI / 180))
+    this.setRotation(FMathUtil.degreeToRad(rotationDegree))
   }
 
   /**

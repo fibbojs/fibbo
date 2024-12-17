@@ -1,4 +1,5 @@
 import * as PIXI from 'pixi.js'
+import { FAssetUtil } from '@fibbojs/util'
 import type { FComponentOptions } from '../core/FComponent'
 import { FComponent } from '../core/FComponent'
 import type { FScene } from '../core/FScene'
@@ -49,24 +50,8 @@ export class FSprite extends FComponent {
    * @param texture The path to the texture.
    */
   async loadTexture(texture: string) {
-    // Interpret path function
-    function interpretPath(path: string) {
-      // Resource URL (if it starts http, treat as a URL)
-      if (path.startsWith('http')) {
-        return path
-      }
-      // Absolute path (if it starts with /), add the current domain + path
-      else if (path.startsWith('/')) {
-        return `${window.location.href}${path}`
-      }
-      // Otherwise, treat as a relative path starting to the assets folder
-      else {
-        return `${window.location.href}/assets/${path}`
-      }
-    }
-
     // Interpret the path
-    const path = interpretPath(texture)
+    const path = FAssetUtil.interpretPath(texture)
     // Load the texture
     this.__TEXTURE__ = await PIXI.Assets.load(path)
     this.__TEXTURE__.source.scaleMode = 'nearest'

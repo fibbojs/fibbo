@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { FAssetUtil } from '@fibbojs/util'
 import type { FScene } from '../core/FScene'
 import { FComponent } from '../core/FComponent'
 import type { FComponentOptions } from '../core/FComponent'
@@ -71,28 +72,12 @@ export abstract class FModel extends FComponent {
     this.textures = options.textures
     this.fileExtension = options.fileExtension
 
-    // Interpret path function
-    function interpretPath(path: string) {
-      // Resource URL (if it starts http, treat as a URL)
-      if (path.startsWith('http')) {
-        return path
-      }
-      // Absolute path (if it starts with /), add the current domain + path
-      else if (path.startsWith('/')) {
-        return `${window.location.href}${path}`
-      }
-      // Otherwise, treat as a relative path starting to the assets folder
-      else {
-        return `${window.location.href}/assets/${path}`
-      }
-    }
-
     // Interpret the path
-    this.path = interpretPath(this.path)
+    this.path = FAssetUtil.interpretPath(this.path)
     // Interpret the textures
     this.textures = Object.fromEntries(
       Object.entries(this.textures).map(([materialName, texturePath]) => {
-        return [materialName, interpretPath(texturePath)]
+        return [materialName, FAssetUtil.interpretPath(texturePath)]
       }),
     )
   }

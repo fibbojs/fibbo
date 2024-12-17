@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js'
+import type { FVector3 } from '@fibbojs/core'
 import type { FScene } from '../core/FScene'
-import type { FVector3 } from '../types/FVector3'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 

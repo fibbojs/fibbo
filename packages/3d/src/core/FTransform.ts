@@ -1,5 +1,6 @@
 import * as THREE from 'three'
-import type { FVector3 } from '../types/FVector3'
+import type { FVector3 } from '@fibbojs/core'
+import { FMathUtil } from '@fibbojs/util'
 
 export interface FTransformOptions {
   position?: FVector3
@@ -74,7 +75,7 @@ export class FTransform {
     // Set the transform values
     this.__POSITION__ = options.position
     this.__ROTATION__ = options.rotationDegree
-      ? { x: THREE.MathUtils.degToRad(options.rotationDegree.x), y: THREE.MathUtils.degToRad(options.rotationDegree.y), z: THREE.MathUtils.degToRad(options.rotationDegree.z) }
+      ? { x: FMathUtil.degreeToRad(options.rotationDegree.x), y: FMathUtil.degreeToRad(options.rotationDegree.y), z: FMathUtil.degreeToRad(options.rotationDegree.z) }
       : options.rotation || { x: 0, y: 0, z: 0 }
     this.__SCALE__ = options.scale
   }
@@ -136,9 +137,9 @@ export class FTransform {
    */
   setRotationDegree(rotationDegree: FVector3) {
     this.setRotation({
-      x: THREE.MathUtils.degToRad(rotationDegree.x),
-      y: THREE.MathUtils.degToRad(rotationDegree.y),
-      z: THREE.MathUtils.degToRad(rotationDegree.z),
+      x: FMathUtil.degreeToRad(rotationDegree.x),
+      y: FMathUtil.degreeToRad(rotationDegree.y),
+      z: FMathUtil.degreeToRad(rotationDegree.z),
     })
   }
 
@@ -287,9 +288,9 @@ export class FTransform {
    */
   get rotationDegree() {
     return {
-      x: THREE.MathUtils.radToDeg(this.__ROTATION__.x),
-      y: THREE.MathUtils.radToDeg(this.__ROTATION__.y),
-      z: THREE.MathUtils.radToDeg(this.__ROTATION__.z),
+      x: FMathUtil.radToDegree(this.__ROTATION__.x),
+      y: FMathUtil.radToDegree(this.__ROTATION__.y),
+      z: FMathUtil.radToDegree(this.__ROTATION__.z),
     }
   }
 
@@ -308,7 +309,7 @@ export class FTransform {
    * Get the rotation in degrees on the x axis.
    */
   get rotationDegreeX() {
-    return THREE.MathUtils.radToDeg(this.__ROTATION__.x)
+    return FMathUtil.radToDegree(this.__ROTATION__.x)
   }
 
   /**
@@ -316,14 +317,14 @@ export class FTransform {
    * @param x The new rotation on the x axis in degrees.
    */
   set rotationDegreeX(x: number) {
-    this.setRotationDegree({ x, y: THREE.MathUtils.radToDeg(this.__ROTATION__.y), z: THREE.MathUtils.radToDeg(this.__ROTATION__.z) })
+    this.setRotationDegree({ x, y: FMathUtil.radToDegree(this.__ROTATION__.y), z: FMathUtil.radToDegree(this.__ROTATION__.z) })
   }
 
   /**
    * Get the rotation in degrees on the y axis.
    */
   get rotationDegreeY() {
-    return THREE.MathUtils.radToDeg(this.__ROTATION__.y)
+    return FMathUtil.radToDegree(this.__ROTATION__.y)
   }
 
   /**
@@ -331,14 +332,14 @@ export class FTransform {
    * @param y The new rotation on the y axis in degrees.
    */
   set rotationDegreeY(y: number) {
-    this.setRotationDegree({ x: THREE.MathUtils.radToDeg(this.__ROTATION__.x), y, z: THREE.MathUtils.radToDeg(this.__ROTATION__.z) })
+    this.setRotationDegree({ x: FMathUtil.radToDegree(this.__ROTATION__.x), y, z: FMathUtil.radToDegree(this.__ROTATION__.z) })
   }
 
   /**
    * Get the rotation in degrees on the z axis.
    */
   get rotationDegreeZ() {
-    return THREE.MathUtils.radToDeg(this.__ROTATION__.z)
+    return FMathUtil.radToDegree(this.__ROTATION__.z)
   }
 
   /**
@@ -346,7 +347,7 @@ export class FTransform {
    * @param z The new rotation on the z axis in degrees.
    */
   set rotationDegreeZ(z: number) {
-    this.setRotationDegree({ x: THREE.MathUtils.radToDeg(this.__ROTATION__.x), y: THREE.MathUtils.radToDeg(this.__ROTATION__.y), z })
+    this.setRotationDegree({ x: FMathUtil.radToDegree(this.__ROTATION__.x), y: FMathUtil.radToDegree(this.__ROTATION__.y), z })
   }
 
   /**

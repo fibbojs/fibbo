@@ -37,4 +37,3 @@ export * from './sprite/FSprite'
 // Types
 export * from './types/FRigidBodyType'
 export * from './types/FShapes'
-export * from './types/FVector2'
