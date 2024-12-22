@@ -10,10 +10,16 @@ export class CustomWorker extends Worker {
     super(new URL(path, import.meta.url), { type: 'module' })
   }
 
+  /**
+   * Start the corresponding pipeline.
+   */
   start() {
     this.postMessage(PipelineCommands.START)
   }
 
+  /**
+   * Stop the corresponding pipeline.
+   */
   stop() {
     this.postMessage(PipelineCommands.STOP)
   }

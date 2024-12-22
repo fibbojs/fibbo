@@ -48,8 +48,16 @@ export abstract class Pipeline {
     this.frameRate = 30
   }
 
+  /**
+   * The frame method is the main method that is called by the pipeline.
+   * It should implement the desired behavior of the pipeline.
+   */
   abstract frame(): void
 
+  /**
+   * Handle a message sent to the pipeline.
+   * @param event The message event.
+   */
   handleMessage(event: MessageEvent) {
     const command = event.data
 
