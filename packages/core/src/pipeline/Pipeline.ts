@@ -16,17 +16,36 @@ export enum PipelineState {
  * @category Pipeline
  */
 export abstract class Pipeline {
+  /**
+   * The web worker instance.
+   */
   sw: DedicatedWorkerGlobalScope
+  /**
+   * The current state of the pipeline.
+   */
   state: PipelineState
+  /**
+   * The interval id that is used to run the pipeline.
+   * Corresponds to the id returned by setInterval.
+   */
   intervalId: ReturnType<typeof setInterval> | null = null
-  frameRate: number = 30 // 30 FPS
+  /**
+   * The frame rate of the pipeline.
+   * This is the number of frames per second that the pipeline will run at.
+   * e.g. 30 will run the pipeline at 30 frames per second.
+   * The default value is 30.
+   */
+  frameRate: number
 
   constructor(sw: DedicatedWorkerGlobalScope) {
+    // Save the web worker instance
     this.sw = sw
     this.sw.addEventListener('message', (event) => {
       this.handleMessage(event)
     })
+    // Set the initial state of the pipeline
     this.state = PipelineState.STOPPED
+    this.frameRate = 30
   }
 
   abstract frame(): void
