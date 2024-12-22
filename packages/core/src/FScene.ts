@@ -2,6 +2,7 @@ import type RAPIER2D from '@dimforge/rapier2d'
 import type RAPIER3D from '@dimforge/rapier3d'
 import type { FComponent } from './FComponent'
 import type { FLight } from './FLight'
+import { CustomWorker } from './pipeline/CustomWorker'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
@@ -20,6 +21,12 @@ export abstract class FScene {
    */
   public __IS_3D__: boolean = false
   public __IS_2D__: boolean = false
+
+  /**
+   * Pipelines
+   */
+  private __RENDER_PIPELINE__: CustomWorker | null = null
+  private __PHYSIC_PIPELINE__: CustomWorker | null = null
 
   /**
    * DOM element that the renderer will be appended to
@@ -118,6 +125,12 @@ export abstract class FScene {
     this.components = []
     // Initialize the lights array
     this.lights = []
+
+    // Initialize workers
+    this.__RENDER_PIPELINE__ = new CustomWorker('./pipeline/RenderPipelineWorker.mjs')
+    this.__RENDER_PIPELINE__.start()
+    this.__PHYSIC_PIPELINE__ = new CustomWorker('./pipeline/PhysicPipelineWorker.mjs')
+    this.__PHYSIC_PIPELINE__.start()
   }
 
   /**
