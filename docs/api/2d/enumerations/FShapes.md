@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[2d/src/types/FShapes.ts:4](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/types/FShapes.ts#L4)
+[packages/2d/src/types/FShapes.ts:4](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/types/FShapes.ts#L4)
 
 ***
 
@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[2d/src/types/FShapes.ts:3](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/types/FShapes.ts#L3)
+[packages/2d/src/types/FShapes.ts:3](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/types/FShapes.ts#L3)

@@ -22,7 +22,7 @@ A 3d collider that can be attached to a component.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:325](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L325)
+[packages/3d/src/core/FCollider.ts:325](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L325)
 
 ## Constructors
 
@@ -59,7 +59,7 @@ const collider = new FCollider(scene, {
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:77](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L77)
+[packages/3d/src/core/FCollider.ts:77](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L77)
 
 ## Methods
 
@@ -81,7 +81,7 @@ The new position of the collider.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:278](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L278)
+[packages/3d/src/core/FCollider.ts:278](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L278)
 
 ***
 
@@ -103,7 +103,7 @@ The new rotation of the collider.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:287](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L287)
+[packages/3d/src/core/FCollider.ts:287](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L287)
 
 ***
 
@@ -125,7 +125,7 @@ The new scale of the collider.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:296](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L296)
+[packages/3d/src/core/FCollider.ts:296](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L296)
 
 ***
 
@@ -150,7 +150,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:191](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L191)
+[packages/3d/src/core/FCollider.ts:191](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L191)
 
 ***
 
@@ -175,7 +175,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:221](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L221)
+[packages/3d/src/core/FCollider.ts:221](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L221)
 
 ***
 
@@ -200,7 +200,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:251](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L251)
+[packages/3d/src/core/FCollider.ts:251](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L251)
 
 ***
 
@@ -218,7 +218,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:169](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L169)
+[packages/3d/src/core/FCollider.ts:169](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L169)
 
 ## Properties
 
@@ -230,7 +230,7 @@ RAPIER Collider
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:34](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L34)
+[packages/3d/src/core/FCollider.ts:34](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L34)
 
 ***
 
@@ -242,7 +242,7 @@ The component the collider is attached to.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:38](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L38)
+[packages/3d/src/core/FCollider.ts:38](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L38)
 
 ***
 
@@ -254,7 +254,7 @@ The transform offset of the collider.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:46](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L46)
+[packages/3d/src/core/FCollider.ts:46](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L46)
 
 ***
 
@@ -266,7 +266,7 @@ The shape of the collider.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:50](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L50)
+[packages/3d/src/core/FCollider.ts:50](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L50)
 
 ***
 
@@ -278,4 +278,4 @@ The transform of the collider.
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:42](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FCollider.ts#L42)
+[packages/3d/src/core/FCollider.ts:42](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FCollider.ts#L42)

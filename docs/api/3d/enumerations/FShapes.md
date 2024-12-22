@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[3d/src/types/FShapes.ts:5](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/types/FShapes.ts#L5)
+[packages/3d/src/types/FShapes.ts:5](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/types/FShapes.ts#L5)
 
 ***
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[3d/src/types/FShapes.ts:3](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/types/FShapes.ts#L3)
+[packages/3d/src/types/FShapes.ts:3](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/types/FShapes.ts#L3)
 
 ***
 
@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[3d/src/types/FShapes.ts:6](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/types/FShapes.ts#L6)
+[packages/3d/src/types/FShapes.ts:6](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/types/FShapes.ts#L6)
 
 ***
 
@@ -40,4 +40,4 @@
 
 #### Defined in
 
-[3d/src/types/FShapes.ts:4](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/types/FShapes.ts#L4)
+[packages/3d/src/types/FShapes.ts:4](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/types/FShapes.ts#L4)

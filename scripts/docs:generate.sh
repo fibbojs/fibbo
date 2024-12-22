@@ -68,8 +68,11 @@ generate_enum_entries() {
 
   find "packages/$package_dir/src" -type f -name "*.ts" -print0 | while IFS= read -r -d $'\0' file; do
     grep -q "export enum" "$file" && {
-      local filename=$(basename "$file" .ts)
-      echo "              { text: '$filename', link: '/api/$package_dir/enumerations/$filename.md' },"
+      local enums=$(grep "export enum " "$file" | awk '{print $3}' | sed 's/{//')
+      # Iterate through each enumeration in the file
+      for enum_name in $enums; do
+        echo "              { text: '$enum_name', link: '/api/$package_dir/enumerations/$enum_name.md' },"
+      done
     }
   done
 }

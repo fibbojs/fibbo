@@ -37,7 +37,7 @@ Defaults to a cube.
 
 #### Defined in
 
-[3d/src/polyhedrons/FPolyhedron.ts:18](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/polyhedrons/FPolyhedron.ts#L18)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:18](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/polyhedrons/FPolyhedron.ts#L18)
 
 ## Methods
 
@@ -59,7 +59,7 @@ Defaults to a cube.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:242](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L242)
+[packages/3d/src/core/FComponent.ts:242](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L242)
 
 ***
 
@@ -81,7 +81,7 @@ Defaults to a cube.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:252](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L252)
+[packages/3d/src/core/FComponent.ts:252](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L252)
 
 ***
 
@@ -103,7 +103,7 @@ Defaults to a cube.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:262](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L262)
+[packages/3d/src/core/FComponent.ts:262](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L262)
 
 ***
 
@@ -131,7 +131,7 @@ Set this to true to propagate the position update to the rigidBody, collider and
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:122](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L122)
+[packages/3d/src/core/FComponent.ts:122](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L122)
 
 ***
 
@@ -159,7 +159,7 @@ Set this to true to propagate the rotation update to the rigidBody, collider and
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:164](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L164)
+[packages/3d/src/core/FComponent.ts:164](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L164)
 
 ***
 
@@ -187,7 +187,7 @@ Set this to true to propagate the scale update to the rigidBody, collider and se
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:206](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L206)
+[packages/3d/src/core/FComponent.ts:206](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L206)
 
 ***
 
@@ -239,7 +239,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:293
+packages/core/dist/index.d.ts:298
 
 ***
 
@@ -259,7 +259,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-core/dist/index.d.ts:247
+packages/core/dist/index.d.ts:252
 
 ***
 
@@ -284,7 +284,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:112](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L112)
+[packages/3d/src/core/FComponent.ts:112](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L112)
 
 ***
 
@@ -306,7 +306,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:289](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L289)
+[packages/3d/src/core/FComponent.ts:289](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L289)
 
 ***
 
@@ -328,7 +328,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:298](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L298)
+[packages/3d/src/core/FComponent.ts:298](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L298)
 
 ***
 
@@ -350,7 +350,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:307](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L307)
+[packages/3d/src/core/FComponent.ts:307](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L307)
 
 ***
 
@@ -404,7 +404,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:279](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L279)
+[packages/3d/src/core/FComponent.ts:279](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L279)
 
 ***
 
@@ -430,7 +430,7 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:238
+packages/core/dist/index.d.ts:243
 
 ***
 
@@ -456,7 +456,7 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:243
+packages/core/dist/index.d.ts:248
 
 ***
 
@@ -484,7 +484,7 @@ cube.setColor(0xFF0000)
 
 #### Defined in
 
-[3d/src/polyhedrons/FPolyhedron.ts:43](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/polyhedrons/FPolyhedron.ts#L43)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:43](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/polyhedrons/FPolyhedron.ts#L43)
 
 ## Properties
 
@@ -505,7 +505,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:216
+packages/core/dist/index.d.ts:221
 
 ***
 
@@ -521,7 +521,7 @@ Callbacks for when a frame is rendered.
 
 #### Defined in
 
-core/dist/index.d.ts:207
+packages/core/dist/index.d.ts:212
 
 ***
 
@@ -537,7 +537,7 @@ Callbacks for when the component is loaded (could be a texture, a 3D model, etc)
 
 #### Defined in
 
-core/dist/index.d.ts:211
+packages/core/dist/index.d.ts:216
 
 ***
 
@@ -554,7 +554,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:203
+packages/core/dist/index.d.ts:208
 
 ***
 
@@ -568,7 +568,7 @@ core/dist/index.d.ts:203
 
 #### Defined in
 
-core/dist/index.d.ts:198
+packages/core/dist/index.d.ts:203
 
 ***
 
@@ -584,7 +584,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:29](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L29)
+[packages/3d/src/core/FComponent.ts:29](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L29)
 
 ***
 
@@ -601,7 +601,7 @@ directly available after the constructor, as a polyhedron is created synchronous
 
 #### Defined in
 
-[3d/src/polyhedrons/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/polyhedrons/FPolyhedron.ts#L16)
+[packages/3d/src/polyhedrons/FPolyhedron.ts:16](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/polyhedrons/FPolyhedron.ts#L16)
 
 ***
 
@@ -617,7 +617,7 @@ Collider
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:58](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L58)
+[packages/3d/src/core/FComponent.ts:58](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L58)
 
 ***
 
@@ -633,7 +633,7 @@ The controller attached to the component.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L38)
+[packages/3d/src/core/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L38)
 
 ***
 
@@ -649,7 +649,7 @@ RigidBody
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L54)
+[packages/3d/src/core/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L54)
 
 ***
 
@@ -665,7 +665,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:34](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L34)
+[packages/3d/src/core/FComponent.ts:34](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L34)
 
 ***
 
@@ -681,7 +681,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:62](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L62)
+[packages/3d/src/core/FComponent.ts:62](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L62)
 
 ***
 
@@ -697,4 +697,4 @@ Transforms
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:48](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FComponent.ts#L48)
+[packages/3d/src/core/FComponent.ts:48](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FComponent.ts#L48)

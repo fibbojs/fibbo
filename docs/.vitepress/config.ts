@@ -223,6 +223,16 @@ export default defineConfig({
               { text: 'FLight', link: '/api/core/classes/FLight.md' },
               { text: 'FScene', link: '/api/core/classes/FScene.md' },
             ] },
+            { text: 'Pipeline', collapsed: true, items: [
+              { text: 'CustomWorker', link: '/api/core/classes/CustomWorker.md' },
+              { text: 'Pipeline', link: '/api/core/classes/Pipeline.md' },
+              { text: 'RenderPipeline', link: '/api/core/classes/RenderPipeline.md' },
+              { text: 'PhysicPipeline', link: '/api/core/classes/PhysicPipeline.md' },
+            ] },
+            { text: 'Enumerations', collapsed: true, items: [
+              { text: 'PipelineCommands', link: '/api/core/enumerations/PipelineCommands.md' },
+              { text: 'PipelineState', link: '/api/core/enumerations/PipelineState.md' },
+            ] },
             { text: 'Interfaces', collapsed: true, items: [
               { text: 'FVector3', link: '/api/core/interfaces/FVector3.md' },
               { text: 'FVector2', link: '/api/core/interfaces/FVector2.md' },

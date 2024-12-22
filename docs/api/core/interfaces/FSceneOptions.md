@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[core/src/FScene.ts:9](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/core/src/FScene.ts#L9)
+[packages/core/src/FScene.ts:10](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FScene.ts#L10)
 
 ***
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[core/src/FScene.ts:8](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/core/src/FScene.ts#L8)
+[packages/core/src/FScene.ts:9](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FScene.ts#L9)
 
 ***
 
@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[core/src/FScene.ts:7](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/core/src/FScene.ts#L7)
+[packages/core/src/FScene.ts:8](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FScene.ts#L8)
