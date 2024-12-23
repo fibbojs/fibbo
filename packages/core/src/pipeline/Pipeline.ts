@@ -1,25 +1,21 @@
-/// <reference lib="WebWorker" />
-
-export enum PipelineCommands {
-  START = 'start',
-  STOP = 'stop',
-}
-
 export enum PipelineState {
   RUNNING = 'running',
   STOPPED = 'stopped',
 }
 
+export interface PipelineOptions {
+  frameRate?: number
+}
+
 /**
- * Pipeline class that abstract the usage of a web worker.
- * This is used for running background tasks that are generally CPU intensive.
+ * The Pipeline class is an abstract class that can be used to create pipelines.
+ * A pipeline is a sequence of stages that are executed in order.
+ * Each stage is called a frame and is executed at a specific frame rate.
+ * Keep in mind that if the frame method takes longer to execute than the frame rate,
+ * the pipeline will not be able to keep up with the desired frame rate.
  * @category Pipeline
  */
 export abstract class Pipeline {
-  /**
-   * The web worker instance.
-   */
-  sw: DedicatedWorkerGlobalScope
   /**
    * The current state of the pipeline.
    */
@@ -37,15 +33,22 @@ export abstract class Pipeline {
    */
   frameRate: number
 
-  constructor(sw: DedicatedWorkerGlobalScope) {
-    // Save the web worker instance
-    this.sw = sw
-    this.sw.addEventListener('message', (event) => {
-      this.handleMessage(event)
-    })
+  constructor(options: PipelineOptions = {}) {
+    // Define default values for the options
+    const DEFAULT_OPTIONS = {
+      frameRate: 30,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate the options
+    if (options.frameRate === undefined)
+      throw new Error('FibboError: The frame rate must be defined')
+
+    // Store the options
+    this.frameRate = options.frameRate
+
     // Set the initial state of the pipeline
     this.state = PipelineState.STOPPED
-    this.frameRate = 30
   }
 
   /**
@@ -55,31 +58,30 @@ export abstract class Pipeline {
   abstract frame(): void
 
   /**
-   * Handle a message sent to the pipeline.
-   * @param event The message event.
+   * Start the pipeline.
    */
-  handleMessage(event: MessageEvent) {
-    const command = event.data
+  start(): void {
+    if (this.intervalId !== null) {
+      return
+    }
+    // Start the pipeline by setting an interval with the frame rate
+    this.intervalId = setInterval(() => {
+      this.frame()
+    }, 1000 / this.frameRate)
+    // Update the pipeline state
+    this.state = PipelineState.RUNNING
+  }
 
-    if (command === PipelineCommands.START) {
-      if (this.intervalId !== null) {
-        return
-      }
-      // Start the pipeline by setting an interval with the frame rate
-      this.intervalId = setInterval(() => {
-        this.frame()
-      }, 1000 / this.frameRate)
-      // Update the pipeline state
-      this.state = PipelineState.RUNNING
+  /**
+   * Stop the pipeline.
+   */
+  stop(): void {
+    // Stop the pipeline by clearing the interval
+    if (this.intervalId !== null) {
+      clearInterval(this.intervalId)
     }
-    else if (command === PipelineCommands.STOP) {
-      // Stop the pipeline by clearing the interval
-      if (this.intervalId !== null) {
-        clearInterval(this.intervalId)
-      }
-      this.intervalId = null
-      // Update the pipeline state
-      this.state = PipelineState.STOPPED
-    }
+    this.intervalId = null
+    // Update the pipeline state
+    this.state = PipelineState.STOPPED
   }
 }

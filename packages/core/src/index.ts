@@ -9,10 +9,8 @@ export * from './FLight'
 export * from './FScene'
 
 // Pipeline
-export * from './pipeline/CustomWorker'
-export * from './pipeline/PhysicPipeline'
+export * from './pipeline/GamePipeline'
 export * from './pipeline/Pipeline'
-export * from './pipeline/RenderPipeline'
 
 // Types
 export * from './types/FVector2'
