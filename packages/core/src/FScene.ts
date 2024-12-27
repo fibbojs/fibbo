@@ -2,7 +2,10 @@ import type RAPIER2D from '@dimforge/rapier2d'
 import type RAPIER3D from '@dimforge/rapier3d'
 import type { FComponent } from './FComponent'
 import type { FLight } from './FLight'
-import { CustomWorker } from './pipeline/CustomWorker'
+import type { BackgroundPipeline } from './pipeline/BackgroundPipeline'
+import type { StandardPipeline } from './pipeline/StandardPipeline'
+import { MainPipeline } from './pipeline/MainPipeline'
+import { PipelineState } from './pipeline/Pipeline'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
@@ -16,17 +19,15 @@ export interface FSceneOptions {
  * @category Core
  */
 export abstract class FScene {
-  /**
-   * Internal flags
-   */
+  // Internal flags
   public __IS_3D__: boolean = false
   public __IS_2D__: boolean = false
 
   /**
    * Pipelines
    */
-  private __RENDER_PIPELINE__: CustomWorker | null = null
-  private __PHYSIC_PIPELINE__: CustomWorker | null = null
+  __STANDARD_PIPELINES__: StandardPipeline[]
+  __BACKGROUND_PIPELINES__: BackgroundPipeline[]
 
   /**
    * DOM element that the renderer will be appended to
@@ -97,11 +98,11 @@ export abstract class FScene {
     this.__DOM_NODE__ = options.domNode
 
     /**
-     * Time management
+     * Pipelines
      */
-    let lastTime = (new Date()).getTime()
-    let currentTime = 0
-    let delta = 0
+    this.__STANDARD_PIPELINES__ = []
+    this.__BACKGROUND_PIPELINES__ = []
+    this.addStandardPipeline(new MainPipeline({ scene: this }))
 
     /**
      * Auto loop function that calls the frame method every frame.
@@ -109,28 +110,32 @@ export abstract class FScene {
     const autoLoop = () => {
       requestAnimationFrame(autoLoop)
 
-      // Calculate delta time
-      currentTime = (new Date()).getTime()
-      delta = (currentTime - lastTime) / 1000
-      lastTime = currentTime
-
-      // Call onFrame callbacks
-      this.frame(delta)
+      this.__STANDARD_PIPELINES__.forEach((pipeline) => {
+        // If the pipeline should be running
+        if (pipeline.state === PipelineState.RUNNING) {
+          // Calculate elapsed time
+          const currentTime = (new Date()).getTime()
+          const elapsedTime = currentTime - pipeline.lastTime
+          // If enough time has passed to match the expected framerate
+          if (elapsedTime > 1000 / pipeline.frameRate) {
+            const delta = (currentTime - pipeline.lastTime) / 1000
+            // Keep track of the last time the pipeline was called
+            pipeline.lastTime = currentTime
+            // Call the pipeline
+            pipeline.frame(delta)
+          }
+        }
+      })
     }
-
-    if (options.autoLoop)
-      autoLoop()
 
     // Initialize the components array
     this.components = []
     // Initialize the lights array
     this.lights = []
 
-    // Initialize workers
-    this.__RENDER_PIPELINE__ = new CustomWorker('./pipeline/RenderPipelineWorker.mjs')
-    this.__RENDER_PIPELINE__.start()
-    this.__PHYSIC_PIPELINE__ = new CustomWorker('./pipeline/PhysicPipelineWorker.mjs')
-    this.__PHYSIC_PIPELINE__.start()
+    // Launch the autoLoop if needed
+    if (options.autoLoop)
+      autoLoop()
   }
 
   /**
@@ -169,6 +174,44 @@ export abstract class FScene {
       this.lights.splice(index, 1)
     }
     this.__CALLBACKS_ON_LIGHT_REMOVED__.forEach(callback => callback(light))
+  }
+
+  /**
+   * Add a standard pipeline.
+   */
+  addStandardPipeline(pipeline: StandardPipeline) {
+    this.__STANDARD_PIPELINES__.push(pipeline)
+    pipeline.start()
+  }
+
+  /**
+   * Remove a standard pipeline.
+   */
+  removeStandardPipeline(pipeline: StandardPipeline) {
+    pipeline.stop()
+    const index = this.__STANDARD_PIPELINES__.indexOf(pipeline)
+    if (index !== -1) {
+      this.__STANDARD_PIPELINES__.splice(index, 1)
+    }
+  }
+
+  /**
+   * Add a background pipeline.
+   */
+  addBackgroundPipeline(pipeline: BackgroundPipeline) {
+    this.__BACKGROUND_PIPELINES__.push(pipeline)
+    pipeline.start()
+  }
+
+  /**
+   * Remove a background pipeline.
+   */
+  removeBackgroundPipeline(pipeline: BackgroundPipeline) {
+    pipeline.stop()
+    const index = this.__BACKGROUND_PIPELINES__.indexOf(pipeline)
+    if (index !== -1) {
+      this.__BACKGROUND_PIPELINES__.splice(index, 1)
+    }
   }
 
   /**

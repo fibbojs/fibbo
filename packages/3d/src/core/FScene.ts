@@ -5,6 +5,8 @@ import type RAPIER from '@dimforge/rapier3d'
 import type { FCamera } from '../cameras/FCamera'
 import { FFixedCamera } from '../cameras/FFixedCamera'
 import type { FLight } from '../lights/FLight'
+import { RenderPipeline } from '../pipeline/RenderPipeline'
+import { PhysicPipeline } from '../pipeline/PhysicPipeline'
 import type { FComponent } from './FComponent'
 import type { FRigidBody } from './FRigidBody'
 import type { FCollider } from './FCollider'
@@ -115,17 +117,8 @@ export class FScene extends FSceneCore {
     // Add renderer to DOM
     this.__DOM_NODE__.appendChild(this.renderer.domElement)
 
-    // Each frame
-    this.onFrame((delta) => {
-      // Call frame for each component
-      this.components.forEach(component => component.frame(delta))
-
-      // Call frame for the camera
-      this.camera.frame(delta)
-
-      // Render the scene
-      this.renderer.render(this.scene, this.camera.__CAMERA__)
-    })
+    // Initialize the render pipeline
+    this.addStandardPipeline(new RenderPipeline({ scene: this }))
 
     // Call the onReady callbacks
     this.__CALLBACKS_ON_READY__.forEach((callback) => {
@@ -143,21 +136,8 @@ export class FScene extends FSceneCore {
     // Initialize Rapier event queue
     this.eventQueue = new RAPIER.EventQueue(true)
 
-    // onFrame loop
-    this.onFrame((delta) => {
-      // Step the physics world
-      this.world.timestep = delta
-      this.world.step(this.eventQueue)
-
-      // Call frame for each collider and rigidBody
-      this.colliders.forEach(collider => collider.frame(delta))
-      this.rigidBodies.forEach(rigidBody => rigidBody.frame(delta))
-
-      // Drain collision events
-      this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {
-        this.handleCollision(handle1, handle2, started)
-      })
-    })
+    // Initialize the physic pipeline
+    this.addStandardPipeline(new PhysicPipeline({ scene: this }))
   }
 
   /**

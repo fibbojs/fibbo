@@ -11,24 +11,14 @@ export enum PipelineState {
 }
 
 /**
- * Pipeline class that abstract the usage of a web worker.
- * This is used for running background tasks that are generally CPU intensive.
+ * Pipeline class that helps handling many processes at a time.
  * @category Pipeline
  */
 export abstract class Pipeline {
   /**
-   * The web worker instance.
-   */
-  sw: DedicatedWorkerGlobalScope
-  /**
    * The current state of the pipeline.
    */
   state: PipelineState
-  /**
-   * The interval id that is used to run the pipeline.
-   * Corresponds to the id returned by setInterval.
-   */
-  intervalId: ReturnType<typeof setInterval> | null = null
   /**
    * The frame rate of the pipeline.
    * This is the number of frames per second that the pipeline will run at.
@@ -37,12 +27,7 @@ export abstract class Pipeline {
    */
   frameRate: number
 
-  constructor(sw: DedicatedWorkerGlobalScope) {
-    // Save the web worker instance
-    this.sw = sw
-    this.sw.addEventListener('message', (event) => {
-      this.handleMessage(event)
-    })
+  constructor() {
     // Set the initial state of the pipeline
     this.state = PipelineState.STOPPED
     this.frameRate = 30
@@ -52,34 +37,15 @@ export abstract class Pipeline {
    * The frame method is the main method that is called by the pipeline.
    * It should implement the desired behavior of the pipeline.
    */
-  abstract frame(): void
+  abstract frame(delta: number): void
 
   /**
-   * Handle a message sent to the pipeline.
-   * @param event The message event.
+   * Start the pipeline
    */
-  handleMessage(event: MessageEvent) {
-    const command = event.data
+  abstract start(): void
 
-    if (command === PipelineCommands.START) {
-      if (this.intervalId !== null) {
-        return
-      }
-      // Start the pipeline by setting an interval with the frame rate
-      this.intervalId = setInterval(() => {
-        this.frame()
-      }, 1000 / this.frameRate)
-      // Update the pipeline state
-      this.state = PipelineState.RUNNING
-    }
-    else if (command === PipelineCommands.STOP) {
-      // Stop the pipeline by clearing the interval
-      if (this.intervalId !== null) {
-        clearInterval(this.intervalId)
-      }
-      this.intervalId = null
-      // Update the pipeline state
-      this.state = PipelineState.STOPPED
-    }
-  }
+  /**
+   * Stop the pipeline
+   */
+  abstract stop(): void
 }

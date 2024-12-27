@@ -1,8 +1,8 @@
 /// <reference lib="WebWorker" />
 
-import { PhysicPipeline } from './PhysicPipeline'
+import { PhysicWorker } from './PhysicWorker'
 
 export type {}
 declare let self: DedicatedWorkerGlobalScope
 
-new PhysicPipeline(self)
+new PhysicWorker(self)
