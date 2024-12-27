@@ -35,6 +35,11 @@ export abstract class FScene {
   __DOM_NODE__: HTMLElement
 
   /**
+   * Animation frame request ID
+   */
+  __ANIMATION_FRAME_REQUEST_ID__: number | undefined
+
+  /**
    * The components in the scene.
    */
   components: FComponent[]
@@ -108,7 +113,7 @@ export abstract class FScene {
      * Auto loop function that calls the frame method every frame.
      */
     const autoLoop = () => {
-      requestAnimationFrame(autoLoop)
+      this.__ANIMATION_FRAME_REQUEST_ID__ = requestAnimationFrame(autoLoop)
 
       this.__STANDARD_PIPELINES__.forEach((pipeline) => {
         // If the pipeline should be running
@@ -117,7 +122,7 @@ export abstract class FScene {
           const currentTime = (new Date()).getTime()
           const elapsedTime = currentTime - pipeline.lastTime
           // If enough time has passed to match the expected framerate
-          if (elapsedTime > 1000 / pipeline.frameRate) {
+          if (elapsedTime > (1000 / pipeline.frameRate) - 5) {
             const delta = (currentTime - pipeline.lastTime) / 1000
             // Keep track of the last time the pipeline was called
             pipeline.lastTime = currentTime
@@ -134,8 +139,23 @@ export abstract class FScene {
     this.lights = []
 
     // Launch the autoLoop if needed
-    if (options.autoLoop)
+    if (options.autoLoop) {
       autoLoop()
+
+      // Listen to tab visibility changes
+      document.addEventListener('visibilitychange', () => {
+        // Stop the pipeline system when tab is hidden
+        if (document.hidden) {
+          if (this.__ANIMATION_FRAME_REQUEST_ID__ !== undefined) {
+            cancelAnimationFrame(this.__ANIMATION_FRAME_REQUEST_ID__)
+          }
+        }
+        // Start pipelines again when tab is visible
+        else {
+          autoLoop()
+        }
+      })
+    }
   }
 
   /**

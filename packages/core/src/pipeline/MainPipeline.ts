@@ -18,6 +18,10 @@ export class MainPipeline extends StandardPipeline {
   }
 
   frame(delta: number) {
+    // Call frame on the scene
     this.scene.frame(delta)
+
+    // Call frame for each component
+    this.scene.components.forEach(component => component.frame(delta))
   }
 }

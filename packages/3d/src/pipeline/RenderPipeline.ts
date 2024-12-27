@@ -18,9 +18,6 @@ export class RenderPipeline extends StandardPipeline {
   }
 
   frame(delta: number) {
-    // Call frame for each component
-    this.scene.components.forEach(component => component.frame(delta))
-
     // Call frame for the camera
     this.scene.camera.frame(delta)
 

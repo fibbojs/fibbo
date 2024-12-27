@@ -31,7 +31,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
     const fKeyboard = new FKeyboard(scene)
     // Bind the keyboard events
     fKeyboard.onKeyDown(' ', () => {
-      this.yVelocity = 10
+      this.yVelocity = 6
     })
 
     // The gap the controller will leave between the character and its environment
@@ -59,7 +59,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
     // Create movement vector
     const desiredMovement = {
       x: worldDirection.x * 8 * 0.01,
-      y: this.yVelocity * 0.01,
+      y: this.yVelocity * 0.02,
       z: worldDirection.z * 8 * 0.01,
     }
     this.characterController.computeColliderMovement(
