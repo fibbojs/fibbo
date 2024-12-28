@@ -152,6 +152,11 @@ export abstract class FScene {
         }
         // Start pipelines again when tab is visible
         else {
+          // Reset the lastTime for each pipeline
+          const currentTime = (new Date()).getTime()
+          this.__STANDARD_PIPELINES__.forEach((pipeline) => {
+            pipeline.lastTime = currentTime
+          })
           autoLoop()
         }
       })
