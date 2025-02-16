@@ -14,7 +14,6 @@ export class RenderPipeline extends StandardPipeline {
   constructor(options: RenderPipelineOptions) {
     super()
     this.scene = options.scene
-    this.frameRate = 60
   }
 
   frame(delta: number) {

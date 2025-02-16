@@ -10,9 +10,9 @@ export default class Character extends FFBX {
     })
 
     // Initialize the character controller
-    this.controller = new FCharacterControllerKP(scene, {
+    this.addController(new FCharacterControllerKP(scene, {
       component: this,
-    })
+    }))
   }
 
   initRigidBody(options?: FRigidBodyOptions) {

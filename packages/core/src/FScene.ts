@@ -4,6 +4,7 @@ import type { FComponent } from './FComponent'
 import type { FLight } from './FLight'
 import { MainPipeline } from './pipeline/MainPipeline'
 import { PipelineManager } from './pipeline/PipelineManager'
+import type { FController } from './FController'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
@@ -40,6 +41,11 @@ export abstract class FScene {
    * The lights in the scene.
    */
   lights: FLight[] = []
+
+  /**
+   * Controllers that will run in the physic pipeline.
+   */
+  __PHYSIC_CONTROLLERS__: FController[] = []
 
   // Rapier
   gravity: { x: number, y: number, z: number } | { x: number, y: number }

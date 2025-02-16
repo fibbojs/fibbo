@@ -4,6 +4,7 @@ import type { FComponent } from '../core/FComponent'
 
 export interface FControllerOptions extends FControllerOptionsCore {
   component: FComponent
+  runInPhysicPipeline?: boolean
 }
 
 /**

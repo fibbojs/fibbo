@@ -118,7 +118,7 @@ export class FScene extends FSceneCore {
     this.__DOM_NODE__.appendChild(this.renderer.domElement)
 
     // Initialize the render pipeline
-    this.addStandardPipeline(new RenderPipeline({ scene: this }))
+    this.__PIPELINE_MANAGER__.addStandardPipeline(new RenderPipeline({ scene: this }))
 
     // Call the onReady callbacks
     this.__CALLBACKS_ON_READY__.forEach((callback) => {
@@ -137,7 +137,7 @@ export class FScene extends FSceneCore {
     this.eventQueue = new RAPIER.EventQueue(true)
 
     // Initialize the physic pipeline
-    this.addStandardPipeline(new PhysicPipeline({ scene: this }))
+    this.__PIPELINE_MANAGER__.addIntervalPipeline(new PhysicPipeline({ scene: this }))
   }
 
   /**

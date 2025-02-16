@@ -33,9 +33,9 @@ export abstract class FComponent extends FComponentCore {
    */
   scene: FScene
 
-  // The controller attached to the component.
+  // The controllers attached to the component.
   // Redefined here to be able to use the updated FController type.
-  declare controller?: FController
+  declare controllers: FController[]
 
   /**
    * Mesh
@@ -240,9 +240,25 @@ export abstract class FComponent extends FComponentCore {
   }
 
   __SET_POSITION__(position: FVector3): void {
-    // Move the mesh
-    if (this.__MESH__)
-      this.__MESH__.position.set(position.x, position.y, position.z)
+    // Use interpolation to move the mesh
+    // Compute the distance between the current position and the new position
+    const distance = Math.sqrt(
+      (position.x - this.transform.__POSITION__.x) ** 2
+      + (position.y - this.transform.__POSITION__.y) ** 2
+      + (position.z - this.transform.__POSITION__.z) ** 2,
+    )
+    // If the distance is too big, don't interpolate
+    if (distance > 1) {
+      // Move the mesh
+      if (this.__MESH__)
+        this.__MESH__.position.set(position.x, position.y, position.z)
+    }
+    // If the distance is small, interpolate
+    else {
+      // Interpolate the position
+      if (this.__MESH__)
+        this.__MESH__.position.lerp(new THREE.Vector3(position.x, position.y, position.z), 0.36)
+    }
     // Update the transform
     this.transform.__POSITION__.x = position.x
     this.transform.__POSITION__.y = position.y

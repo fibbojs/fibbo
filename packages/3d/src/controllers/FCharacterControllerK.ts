@@ -45,7 +45,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
   /**
    * Return the corrected movements for the current frame.
    */
-  getCorrectedMovements(): FVector3 {
+  getCorrectedMovements(delta: number): FVector3 {
     let worldDirection = new THREE.Vector3(0, 0, 0)
     // Compute the movement direction
     worldDirection.x = this.inputs.left ? 1 : this.inputs.right ? -1 : 0
@@ -58,9 +58,9 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
     // Create movement vector
     const desiredMovement = {
-      x: worldDirection.x * 8 * 0.01,
-      y: this.yVelocity * 0.02,
-      z: worldDirection.z * 8 * 0.01,
+      x: worldDirection.x * 8 * delta,
+      y: this.yVelocity * delta,
+      z: worldDirection.z * 8 * delta,
     }
     this.characterController.computeColliderMovement(
       this.component.rigidBody ? this.component.rigidBody.collider.__COLLIDER__ : this.component.collider?.__COLLIDER__ as RAPIER.Collider,
@@ -70,7 +70,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
     // If yVelocity is not 0, apply gravity
     if (this.yVelocity > this.scene.world.gravity.y) {
-      this.yVelocity += this.scene.world.gravity.y * 0.00981 * 4
+      this.yVelocity += this.scene.world.gravity.y * 0.00981 * 8
     }
     else {
       this.yVelocity = this.scene.world.gravity.y
