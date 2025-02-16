@@ -1,15 +1,14 @@
 import { Pipeline, PipelineState } from './Pipeline'
 
 /**
- * Pipeline class.
+ * A standard pipeline is a pipeline that runs at max FPS, using [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame).
+ * This means that the frame method will be called as fast as possible.
+ * Do not compute heavy tasks using this pipeline, as it will run at max FPS depending on the user's screen refresh rate.
  * @category Pipeline
  */
 export abstract class StandardPipeline extends Pipeline {
-  lastTime: number
-
   constructor() {
     super()
-    this.lastTime = (new Date()).getTime()
   }
 
   start(): void {

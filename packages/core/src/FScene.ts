@@ -2,10 +2,8 @@ import type RAPIER2D from '@dimforge/rapier2d'
 import type RAPIER3D from '@dimforge/rapier3d'
 import type { FComponent } from './FComponent'
 import type { FLight } from './FLight'
-import type { BackgroundPipeline } from './pipeline/BackgroundPipeline'
-import type { StandardPipeline } from './pipeline/StandardPipeline'
 import { MainPipeline } from './pipeline/MainPipeline'
-import { PipelineState } from './pipeline/Pipeline'
+import { PipelineManager } from './pipeline/PipelineManager'
 
 export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
@@ -26,18 +24,12 @@ export abstract class FScene {
   /**
    * Pipelines
    */
-  __STANDARD_PIPELINES__: StandardPipeline[]
-  __BACKGROUND_PIPELINES__: BackgroundPipeline[]
+  __PIPELINE_MANAGER__: PipelineManager
 
   /**
    * DOM element that the renderer will be appended to
    */
   __DOM_NODE__: HTMLElement
-
-  /**
-   * Animation frame request ID
-   */
-  __ANIMATION_FRAME_REQUEST_ID__: number | undefined
 
   /**
    * The components in the scene.
@@ -102,65 +94,17 @@ export abstract class FScene {
     this.gravity = options.gravity
     this.__DOM_NODE__ = options.domNode
 
-    /**
-     * Pipelines
-     */
-    this.__STANDARD_PIPELINES__ = []
-    this.__BACKGROUND_PIPELINES__ = []
-    this.addStandardPipeline(new MainPipeline({ scene: this }))
-
-    /**
-     * Auto loop function that calls the frame method every frame.
-     */
-    const autoLoop = () => {
-      this.__ANIMATION_FRAME_REQUEST_ID__ = requestAnimationFrame(autoLoop)
-
-      this.__STANDARD_PIPELINES__.forEach((pipeline) => {
-        // If the pipeline should be running
-        if (pipeline.state === PipelineState.RUNNING) {
-          // Calculate elapsed time
-          const currentTime = (new Date()).getTime()
-          const elapsedTime = currentTime - pipeline.lastTime
-          // If enough time has passed to match the expected framerate
-          if (elapsedTime > (1000 / pipeline.frameRate) - 5) {
-            const delta = (currentTime - pipeline.lastTime) / 1000
-            // Keep track of the last time the pipeline was called
-            pipeline.lastTime = currentTime
-            // Call the pipeline
-            pipeline.frame(delta)
-          }
-        }
-      })
-    }
-
     // Initialize the components array
     this.components = []
     // Initialize the lights array
     this.lights = []
 
-    // Launch the autoLoop if needed
-    if (options.autoLoop) {
-      autoLoop()
-
-      // Listen to tab visibility changes
-      document.addEventListener('visibilitychange', () => {
-        // Stop the pipeline system when tab is hidden
-        if (document.hidden) {
-          if (this.__ANIMATION_FRAME_REQUEST_ID__ !== undefined) {
-            cancelAnimationFrame(this.__ANIMATION_FRAME_REQUEST_ID__)
-          }
-        }
-        // Start pipelines again when tab is visible
-        else {
-          // Reset the lastTime for each pipeline
-          const currentTime = (new Date()).getTime()
-          this.__STANDARD_PIPELINES__.forEach((pipeline) => {
-            pipeline.lastTime = currentTime
-          })
-          autoLoop()
-        }
-      })
-    }
+    /**
+     * Initialize the pipeline manager.
+     */
+    this.__PIPELINE_MANAGER__ = new PipelineManager({ scene: this, autoLoop: options.autoLoop })
+    // Add the main pipeline
+    this.__PIPELINE_MANAGER__.addThrottledPipeline(new MainPipeline({ scene: this }))
   }
 
   /**
@@ -199,44 +143,6 @@ export abstract class FScene {
       this.lights.splice(index, 1)
     }
     this.__CALLBACKS_ON_LIGHT_REMOVED__.forEach(callback => callback(light))
-  }
-
-  /**
-   * Add a standard pipeline.
-   */
-  addStandardPipeline(pipeline: StandardPipeline) {
-    this.__STANDARD_PIPELINES__.push(pipeline)
-    pipeline.start()
-  }
-
-  /**
-   * Remove a standard pipeline.
-   */
-  removeStandardPipeline(pipeline: StandardPipeline) {
-    pipeline.stop()
-    const index = this.__STANDARD_PIPELINES__.indexOf(pipeline)
-    if (index !== -1) {
-      this.__STANDARD_PIPELINES__.splice(index, 1)
-    }
-  }
-
-  /**
-   * Add a background pipeline.
-   */
-  addBackgroundPipeline(pipeline: BackgroundPipeline) {
-    this.__BACKGROUND_PIPELINES__.push(pipeline)
-    pipeline.start()
-  }
-
-  /**
-   * Remove a background pipeline.
-   */
-  removeBackgroundPipeline(pipeline: BackgroundPipeline) {
-    pipeline.stop()
-    const index = this.__BACKGROUND_PIPELINES__.indexOf(pipeline)
-    if (index !== -1) {
-      this.__BACKGROUND_PIPELINES__.splice(index, 1)
-    }
   }
 
   /**

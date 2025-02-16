@@ -5,6 +5,7 @@ import { Pipeline, PipelineCommands, PipelineState } from './Pipeline'
 /**
  * Hided worker behind the BackgroundPipeline class.
  * @category Pipeline
+ * @deprecated Marked as deprecated while we are not sure if we will keep it.
  */
 export abstract class BackgroundWorker extends Pipeline {
   /**

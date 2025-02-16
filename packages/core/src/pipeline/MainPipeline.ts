@@ -1,14 +1,15 @@
 import type { FScene } from '../FScene'
-import { StandardPipeline } from './StandardPipeline'
+import { ThrottledPipeline } from './ThrottledPipeline'
 
 export interface MainPipelineOptions {
   scene: FScene
 }
 
 /**
- * Main game loop.
+ * Main game loop pipeline.
+ * It is a throttled pipeline, attempting to match 60 FPS as close as possible.
  */
-export class MainPipeline extends StandardPipeline {
+export class MainPipeline extends ThrottledPipeline {
   scene: FScene
 
   constructor(options: MainPipelineOptions) {
