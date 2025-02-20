@@ -25,13 +25,13 @@ export abstract class FCharacterControllerK extends FCharacterController {
     super(scene, options)
 
     // Set the default yVelocity
-    this.yVelocity = scene.world.gravity.y
+    this.yVelocity = 0
 
     // Create a keyboard instance
     const fKeyboard = new FKeyboard(scene)
     // Bind the keyboard events
     fKeyboard.onKeyDown(' ', () => {
-      this.yVelocity = 6
+      this.yVelocity = 0.1
     })
 
     // The gap the controller will leave between the character and its environment
@@ -40,6 +40,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
     this.characterController = scene.world.createCharacterController(offset)
     // Configure autostep
     this.characterController.enableAutostep(0.5, 0.1, true)
+    this.characterController.enableSnapToGround(0.1)
   }
 
   /**
@@ -58,9 +59,9 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
     // Create movement vector
     const desiredMovement = {
-      x: worldDirection.x * 8 * delta,
-      y: this.yVelocity * delta,
-      z: worldDirection.z * 8 * delta,
+      x: worldDirection.x * this.speed / 10,
+      y: this.yVelocity,
+      z: worldDirection.z * this.speed / 10,
     }
     this.characterController.computeColliderMovement(
       this.component.rigidBody ? this.component.rigidBody.collider.__COLLIDER__ : this.component.collider?.__COLLIDER__ as RAPIER.Collider,
@@ -69,11 +70,11 @@ export abstract class FCharacterControllerK extends FCharacterController {
     )
 
     // If yVelocity is not 0, apply gravity
-    if (this.yVelocity > this.scene.world.gravity.y) {
-      this.yVelocity += this.scene.world.gravity.y * 0.00981 * 8
+    if (this.characterController.computedGrounded()) {
+      this.yVelocity = 0
     }
     else {
-      this.yVelocity = this.scene.world.gravity.y
+      this.yVelocity -= 9.81 * delta / 20
     }
 
     // Return the corrected movement
