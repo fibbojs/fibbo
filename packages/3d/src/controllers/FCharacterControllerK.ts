@@ -59,9 +59,9 @@ export abstract class FCharacterControllerK extends FCharacterController {
 
     // Create movement vector
     const desiredMovement = {
-      x: worldDirection.x * this.speed / 10,
+      x: worldDirection.x * this.speed * delta * 10,
       y: this.yVelocity,
-      z: worldDirection.z * this.speed / 10,
+      z: worldDirection.z * this.speed * delta * 10,
     }
     this.characterController.computeColliderMovement(
       this.component.rigidBody ? this.component.rigidBody.collider.__COLLIDER__ : this.component.collider?.__COLLIDER__ as RAPIER.Collider,
