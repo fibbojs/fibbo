@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import type { FVector3, OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
+import { FMathUtil } from '@fibbojs/util'
 import type { FController } from '../controllers/FController'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
@@ -240,29 +241,33 @@ export abstract class FComponent extends FComponentCore {
   }
 
   __SET_POSITION__(position: FVector3): void {
-    // Use interpolation to move the mesh
     // Compute the distance between the current position and the new position
     const distance = Math.sqrt(
       (position.x - this.transform.__POSITION__.x) ** 2
       + (position.y - this.transform.__POSITION__.y) ** 2
       + (position.z - this.transform.__POSITION__.z) ** 2,
     )
-    // If the distance is too big, don't interpolate
-    if (distance > 1) {
-      // Move the mesh
-      if (this.__MESH__)
-        this.__MESH__.position.set(position.x, position.y, position.z)
-    }
-    // If the distance is small, interpolate
-    else {
+    // If the distance is small enough, interpolate
+    if (distance < 1) {
       // Interpolate the position
-      if (this.__MESH__)
-        this.__MESH__.position.lerp(new THREE.Vector3(position.x, position.y, position.z), 0.36)
+      if (this.__MESH__) {
+        const newMeshPosition = FMathUtil.lerp3(this.__MESH__.position, position, 0.36)
+        this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+        // Update the transform
+        this.transform.__POSITION__.x = newMeshPosition.x
+        this.transform.__POSITION__.y = newMeshPosition.y
+        this.transform.__POSITION__.z = newMeshPosition.z
+      }
     }
-    // Update the transform
-    this.transform.__POSITION__.x = position.x
-    this.transform.__POSITION__.y = position.y
-    this.transform.__POSITION__.z = position.z
+    // The distance is too big to interpolate
+    else {
+      // Move the mesh instantly
+      this.__MESH__?.position.set(position.x, position.y, position.z)
+      // Update the transform
+      this.transform.__POSITION__.x = position.x
+      this.transform.__POSITION__.y = position.y
+      this.transform.__POSITION__.z = position.z
+    }
   }
 
   __SET_ROTATION__(rotation: FVector3): void {
