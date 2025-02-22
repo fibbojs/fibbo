@@ -139,7 +139,7 @@ import Character from './classes/Character'
   const character = new Character(scene)
 
   // Attach a camera to the character
-  // scene.camera = new FGameCamera(scene, { target: character })
+  scene.camera = new FGameCamera(scene, { target: character })
 
   /**
    * Create other objects

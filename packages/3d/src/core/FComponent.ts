@@ -128,15 +128,21 @@ export abstract class FComponent extends FComponentCore {
         + (this.__MESH__.position.z - this.transform.__POSITION__.z) ** 2,
       )
       // If the distance is small enough but not too big, interpolate
-      if (distance < 1 && distance > 0.01) {
-        // Interpolate the position
-        const lerpFactor = 1 - Math.exp(-delta * 100)
-        const newMeshPosition = FMathUtil.lerp3(this.__MESH__.position, this.transform.position, lerpFactor)
+      if (distance < 1 && distance > 0.001) {
+        // Get the difference between the transform position and the mesh position
+        const diff = {
+          x: this.transform.position.x - this.__MESH__.position.x,
+          y: this.transform.position.y - this.__MESH__.position.y,
+          z: this.transform.position.z - this.__MESH__.position.z,
+        }
+        // Add a fraction of the difference to the mesh position
+        const newMeshPosition = {
+          x: this.__MESH__.position.x + diff.x * 20 * delta,
+          y: this.__MESH__.position.y + diff.y * 20 * delta,
+          z: this.__MESH__.position.z + diff.z * 20 * delta,
+        }
+        // Move the mesh
         this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-        // Update the transform
-        this.transform.__POSITION__.x = newMeshPosition.x
-        this.transform.__POSITION__.y = newMeshPosition.y
-        this.transform.__POSITION__.z = newMeshPosition.z
       }
       // The distance is too big to interpolate
       else {
@@ -277,33 +283,12 @@ export abstract class FComponent extends FComponentCore {
   }
 
   __SET_POSITION__(position: FVector3): void {
-    // Compute the distance between the current position and the new position
-    const distance = Math.sqrt(
-      (position.x - this.transform.__POSITION__.x) ** 2
-      + (position.y - this.transform.__POSITION__.y) ** 2
-      + (position.z - this.transform.__POSITION__.z) ** 2,
-    )
-    // If the distance is small enough, interpolate
-    if (distance < 1) {
-      // Interpolate the position
-      if (this.__MESH__) {
-        const newMeshPosition = FMathUtil.lerp3(this.__MESH__.position, position, 0.36)
-        this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
-        // Update the transform
-        this.transform.__POSITION__.x = newMeshPosition.x
-        this.transform.__POSITION__.y = newMeshPosition.y
-        this.transform.__POSITION__.z = newMeshPosition.z
-      }
-    }
-    // The distance is too big to interpolate
-    else {
-      // Move the mesh instantly
-      this.__MESH__?.position.set(position.x, position.y, position.z)
-      // Update the transform
-      this.transform.__POSITION__.x = position.x
-      this.transform.__POSITION__.y = position.y
-      this.transform.__POSITION__.z = position.z
-    }
+    // Move the mesh
+    this.__MESH__?.position.set(position.x, position.y, position.z)
+    // Update the transform
+    this.transform.__POSITION__.x = position.x
+    this.transform.__POSITION__.y = position.y
+    this.transform.__POSITION__.z = position.z
   }
 
   __SET_ROTATION__(rotation: FVector3): void {
