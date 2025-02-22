@@ -29,10 +29,11 @@ export class FGameCamera extends FOrbitCamera {
   constructor(scene: FScene, options: FAttachedCameraOptions) {
     super(scene, options)
     // Clone the model's position
-    this.previousComponentPosition = structuredClone(options.target.transform.position)
+    this.previousComponentPosition = structuredClone(options.target.__MESH__?.position || { x: 0, y: 0, z: 0 })
     this.setPosition({ x: 0, y: 8, z: 8 })
 
     this.controls.enableDamping = true
+    this.controls.minDistance = 2
     this.controls.maxDistance = 10
 
     /**

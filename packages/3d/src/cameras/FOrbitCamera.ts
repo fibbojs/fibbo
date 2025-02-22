@@ -46,6 +46,10 @@ export class FOrbitCamera extends FCamera {
     this.controls.update()
   }
 
+  /**
+   * Set the position of the camera relative to the attached model.
+   * @param position The position to set the camera to.
+   */
   setPosition(position: FVector3): void {
     if (!this.attachedComponent.__MESH__)
       return
@@ -58,6 +62,10 @@ export class FOrbitCamera extends FCamera {
     this.lookAt(this.attachedComponent.transform.position)
   }
 
+  /**
+   * Set the zoom of the camera.
+   * @param zoom The zoom level to set the camera to.
+   */
   setZoom(zoom: number): void {
     const oldMinDistance = this.controls.minDistance
     const oldMaxDistance = this.controls.maxDistance

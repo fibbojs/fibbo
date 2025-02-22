@@ -22,5 +22,8 @@ export class RenderPipeline extends StandardPipeline {
 
     // Render the scene
     this.scene.renderer.render(this.scene.scene, this.scene.camera.__CAMERA__)
+
+    // Call render for each component
+    this.scene.components.forEach(component => component.render(delta))
   }
 }

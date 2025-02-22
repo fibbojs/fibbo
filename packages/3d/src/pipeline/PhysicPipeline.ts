@@ -15,7 +15,7 @@ export class PhysicPipeline extends IntervalPipeline {
   constructor(options: PhysicPipelineOptions) {
     super()
     this.scene = options.scene
-    this.frameRate = 60
+    this.frameRate = 30
   }
 
   frame(delta: number) {
