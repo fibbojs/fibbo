@@ -112,6 +112,13 @@ export abstract class FComponent {
     if (index !== -1) {
       this.controllers.splice(index, 1)
     }
+    // If the controller should run in the physic pipeline, remove it from the scene's dedicated array
+    if (controller.__RUN_IN_PHYSIC_PIPELINE__) {
+      const index = this.scene.__PHYSIC_CONTROLLERS__.indexOf(controller)
+      if (index !== -1) {
+        this.scene.__PHYSIC_CONTROLLERS__.splice(index, 1)
+      }
+    }
   }
 
   /**
