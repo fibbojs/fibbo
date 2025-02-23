@@ -128,7 +128,7 @@ export abstract class FComponent extends FComponentCore {
         + (this.__MESH__.position.z - this.transform.__POSITION__.z) ** 2,
       )
       // If the distance is small enough but not too big, interpolate
-      if (distance < 1 && distance > 0.001) {
+      if (distance < 4 && distance > 0.001) {
         // Get the difference between the transform position and the mesh position
         const diff = {
           x: this.transform.position.x - this.__MESH__.position.x,

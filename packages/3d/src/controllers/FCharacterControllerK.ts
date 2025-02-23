@@ -21,17 +21,33 @@ export abstract class FCharacterControllerK extends FCharacterController {
    */
   characterController: RAPIER.KinematicCharacterController
 
+  /**
+   * Tells if the character is grounded.
+   */
+  isGrounded: boolean
+  /**
+   * Tells if the character was grounded in the last frame.
+   */
+  __LAST_IS_GROUNDED__: boolean
+
   constructor(scene: FScene, options: FCharacterControllerOptions) {
     super(scene, options)
 
     // Set the default yVelocity
     this.yVelocity = 0
+    // Set the default isGrounded
+    this.isGrounded = false
+    this.__LAST_IS_GROUNDED__ = false
 
     // Create a keyboard instance
     const fKeyboard = new FKeyboard(scene)
     // Bind the keyboard events
     fKeyboard.onKeyDown(' ', () => {
-      this.yVelocity = 0.1
+      // Verify if the character is grounded
+      if (this.isGrounded) {
+        // Apply a vertical impulse
+        this.yVelocity = 0.5
+      }
     })
 
     // The gap the controller will leave between the character and its environment
@@ -74,7 +90,23 @@ export abstract class FCharacterControllerK extends FCharacterController {
       this.yVelocity = 0
     }
     else {
-      this.yVelocity -= 9.81 * delta / 20
+      this.yVelocity -= 9.81 * delta / 5
+    }
+
+    /**
+     * There's a bug with `computedGrounded` method that makes it alternate between true and false when the character is effectively grounded.
+     * This is a workaround to fix this issue.
+     * We basically add a 1 frame delay to the isGrounded property by storing the last value of computedGrounded and checking if it's false 2 frames in a row.
+     */
+    if (!this.__LAST_IS_GROUNDED__ && !this.characterController.computedGrounded()) {
+      this.isGrounded = false
+    }
+    if (this.characterController.computedGrounded()) {
+      this.isGrounded = true
+      this.__LAST_IS_GROUNDED__ = true
+    }
+    else {
+      this.__LAST_IS_GROUNDED__ = false
     }
 
     // Return the corrected movement
