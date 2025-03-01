@@ -47,7 +47,7 @@ export abstract class FScene {
   /**
    * The camera of the scene.
    */
-  camera?: FCamera
+  __CAMERA__?: FCamera
 
   /**
    * Controllers that will run in the physic pipeline.
@@ -217,5 +217,19 @@ export abstract class FScene {
    */
   onReady(callback: () => void) {
     this.__CALLBACKS_ON_READY__.push(callback)
+  }
+
+  /**
+   * The camera of the scene.
+   */
+  get camera(): FCamera | undefined {
+    return this.__CAMERA__
+  }
+
+  /**
+   * The camera of the scene.
+   */
+  set camera(camera: FCamera) {
+    this.__CAMERA__ = camera
   }
 }

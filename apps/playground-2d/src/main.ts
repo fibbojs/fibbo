@@ -81,7 +81,7 @@ import Character from './classes/Character'
     // Each frame, move the cube on a circle of radius 3
     const x = Math.cos(totalDelta) * 3
     const y = Math.sin(totalDelta) * 3
-    rotatingSquare.transform.setPosition({ x, y })
+    rotatingSquare.transform.__POSITION__ = { x, y }
     totalDelta += delta
   })
 

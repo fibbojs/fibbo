@@ -6,6 +6,8 @@ import type RAPIER from '@dimforge/rapier2d'
 import type { FCamera } from '../cameras/FCamera'
 import { FFreeCamera } from '../cameras/FFreeCamera'
 import type { FLight } from '../lights/FLight'
+import { RenderPipeline } from '../pipeline/RenderPipeline'
+import { PhysicPipeline } from '../pipeline/PhysicPipeline'
 import type { FComponent } from './FComponent'
 import type { FCollider } from './FCollider'
 import type { FRigidBody } from './FRigidBody'
@@ -127,15 +129,8 @@ export class FScene extends FSceneCore {
     // Create a default free camera
     this.camera = new FFreeCamera(this)
 
-    // On each frame
-    this.onFrame((delta) => {
-      // Call the frame method of each component
-      this.components.forEach((component) => {
-        component.frame(delta)
-      })
-      // Call the frame method of the camera
-      this.camera.frame(delta)
-    })
+    // Initialize the render pipeline
+    this.__PIPELINE_MANAGER__.addStandardPipeline(new RenderPipeline({ scene: this }))
 
     // Call the onReady callbacks
     this.__CALLBACKS_ON_READY__.forEach((callback) => {
@@ -153,23 +148,8 @@ export class FScene extends FSceneCore {
     // Initialize Rapier event queue
     this.eventQueue = new RAPIER.EventQueue(true)
 
-    // onFrame
-    this.onFrame((delta) => {
-      // Physics
-      if (this.world) {
-        this.world.timestep = delta
-        this.world.step(this.eventQueue)
-
-        // Call frame for each collider and rigidBody
-        this.colliders.forEach(collider => collider.frame(delta))
-        this.rigidBodies.forEach(rigidBody => rigidBody.frame(delta))
-
-        // Drain collision events
-        this.eventQueue.drainCollisionEvents((handle1: RAPIER.ColliderHandle, handle2: RAPIER.ColliderHandle, started: boolean) => {
-          this.handleCollision(handle1, handle2, started)
-        })
-      }
-    })
+    // Initialize the physic pipeline
+    this.__PIPELINE_MANAGER__.addIntervalPipeline(new PhysicPipeline({ scene: this }))
   }
 
   /**
@@ -280,7 +260,6 @@ export class FScene extends FSceneCore {
 
   /**
    * Getter for the camera.
-   * This is required because the camera is a private property.
    */
   get camera() {
     return this.__CAMERA__

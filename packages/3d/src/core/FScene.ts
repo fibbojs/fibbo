@@ -64,7 +64,7 @@ export class FScene extends FSceneCore {
   THREE: typeof THREE = THREE
   declare scene: THREE.Scene
   declare renderer: THREE.WebGLRenderer
-  declare camera: FCamera
+  declare __CAMERA__: FCamera
 
   // Rapier
   declare gravity: FVector3
@@ -248,5 +248,13 @@ export class FScene extends FSceneCore {
     if (index !== -1)
       this.rigidBodies.splice(index, 1)
     this.world.removeRigidBody(rigidBody.__RIGIDBODY__)
+  }
+
+  get camera(): FCamera {
+    return this.__CAMERA__
+  }
+
+  set camera(camera: FCamera) {
+    this.__CAMERA__ = camera
   }
 }

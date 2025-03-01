@@ -179,7 +179,7 @@ export abstract class FComponent extends FComponentCore {
       // The event was propagated to the component
       // If a rigidBody exists, the propagation comes from the rigidBody
       if (this.rigidBody) {
-        // Move the component
+        // Update the transform
         this.transform.__POSITION__ = {
           x: this.rigidBody.transform.x - this.rigidBody.offset.x,
           y: this.rigidBody.transform.y - this.rigidBody.offset.y,
@@ -188,7 +188,7 @@ export abstract class FComponent extends FComponentCore {
       }
       // If a collider exists, the propagation comes from the collider
       else if (this.collider) {
-        // Move the component
+        // Update the transform
         this.transform.__POSITION__ = {
           x: this.collider.transform.x - this.collider.offset.x,
           y: this.collider.transform.y - this.collider.offset.y,

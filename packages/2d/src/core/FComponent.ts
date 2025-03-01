@@ -33,9 +33,9 @@ export abstract class FComponent extends FComponentCore {
    */
   scene: FScene
 
-  // The controller attached to the component.
+  // The controllers attached to the component.
   // Redefined here to be able to use the updated FController type.
-  declare controller?: FController
+  declare controllers: FController[]
 
   /**
    * PIXI container
@@ -99,8 +99,42 @@ export abstract class FComponent extends FComponentCore {
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
   }
 
-  frame(_delta: number): void {
-    super.frame(_delta)
+  frame(delta: number): void {
+    super.frame(delta)
+  }
+
+  render(delta: number): void {
+    // If the transform position differs from the container position
+    if (this.__CONTAINER__ && (
+      this.transform.position.x !== this.__CONTAINER__.position.x / 100
+      || this.transform.position.y !== -this.__CONTAINER__.position.y / 100
+    )) {
+      // Compute the distance between the transform position (new) and the container position (old)
+      const distance = Math.sqrt(
+        (this.__CONTAINER__.position.x / 100 - this.transform.__POSITION__.x) ** 2
+        + (-this.__CONTAINER__.position.y / 100 - this.transform.__POSITION__.y) ** 2,
+      )
+      // If the distance is small enough but not too big, interpolate
+      if (distance < 4 && distance > 0.001) {
+        // Get the difference between the transform position and the container position
+        const diff = {
+          x: this.transform.position.x - this.__CONTAINER__.position.x / 100,
+          y: this.transform.position.y - -this.__CONTAINER__.position.y / 100,
+        }
+        // Add a fraction of the difference to the container position
+        const newContainerPosition = {
+          x: this.__CONTAINER__.position.x / 100 + diff.x * 30 * delta,
+          y: -this.__CONTAINER__.position.y / 100 + diff.y * 30 * delta,
+        }
+        // Move the container
+        this.__CONTAINER__.position.set(newContainerPosition.x * 100, -newContainerPosition.y * 100)
+      }
+      // The distance is too big to interpolate
+      else {
+        // Move the container instantly
+        this.__SET_POSITION__(this.transform.position)
+      }
+    }
   }
 
   /**
@@ -126,19 +160,19 @@ export abstract class FComponent extends FComponentCore {
       // The event was propagated to the component
       // If a rigidBody exists, the propagation comes from the rigidBody
       if (this.rigidBody) {
-        // Move the component
-        this.__SET_POSITION__({
+        // Update the transform
+        this.transform.__POSITION__ = {
           x: this.rigidBody.transform.position.x - this.rigidBody.offset.position.x,
           y: this.rigidBody.transform.position.y - this.rigidBody.offset.position.y,
-        })
+        }
       }
       // If a collider exists, the propagation comes from the collider
       else if (this.collider) {
-        // Move the component
-        this.__SET_POSITION__({
+        // Update the transform
+        this.transform.__POSITION__ = {
           x: this.collider.transform.position.x - this.collider.offset.x,
           y: this.collider.transform.position.y - this.collider.offset.y,
-        })
+        }
       }
     }
   }

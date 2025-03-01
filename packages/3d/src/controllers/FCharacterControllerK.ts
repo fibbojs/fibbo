@@ -63,29 +63,30 @@ export abstract class FCharacterControllerK extends FCharacterController {
    * Return the corrected movements for the current frame.
    */
   getCorrectedMovements(delta: number): FVector3 {
-    let worldDirection = new THREE.Vector3(0, 0, 0)
+    let movementDirection = new THREE.Vector3(0, 0, 0)
     // Compute the movement direction
-    worldDirection.x = this.inputs.left ? 1 : this.inputs.right ? -1 : 0
-    worldDirection.z = this.inputs.forward ? 1 : this.inputs.backward ? -1 : 0
+    movementDirection.x = this.inputs.left ? 1 : this.inputs.right ? -1 : 0
+    movementDirection.z = this.inputs.forward ? 1 : this.inputs.backward ? -1 : 0
     // Normalize the movement direction
-    worldDirection = worldDirection.normalize()
+    movementDirection = movementDirection.normalize()
     // Apply the camera direction to the movement direction
     const cameraDirection = this.scene.camera.getCameraDirection()
-    worldDirection.applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.atan2(cameraDirection.x, cameraDirection.z))
+    movementDirection.applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.atan2(cameraDirection.x, cameraDirection.z))
 
-    // Create movement vector
+    // Create desired movement
     const desiredMovement = {
-      x: worldDirection.x * this.speed * delta * 10,
+      x: movementDirection.x * this.speed * delta * 10,
       y: this.yVelocity,
-      z: worldDirection.z * this.speed * delta * 10,
+      z: movementDirection.z * this.speed * delta * 10,
     }
+    // Compute the desired movement
     this.characterController.computeColliderMovement(
       this.component.rigidBody ? this.component.rigidBody.collider.__COLLIDER__ : this.component.collider?.__COLLIDER__ as RAPIER.Collider,
       desiredMovement,
       RAPIER.QueryFilterFlags.EXCLUDE_SENSORS,
     )
 
-    // If yVelocity is not 0, apply gravity
+    // If the character is grounded, reset the yVelocity
     if (this.characterController.computedGrounded()) {
       this.yVelocity = 0
     }
