@@ -47,7 +47,7 @@ scene.camera = new FOrbitCamera(cube)
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L114)
+[3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L114)
 
 ## Constructors
 
@@ -71,7 +71,7 @@ scene.camera = new FOrbitCamera(cube)
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:30](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FOrbitCamera.ts#L30)
+[3d/src/cameras/FOrbitCamera.ts:30](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FOrbitCamera.ts#L30)
 
 ## Methods
 
@@ -92,7 +92,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L68)
+[3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L68)
 
 ***
 
@@ -113,7 +113,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L76)
+[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L76)
 
 ***
 
@@ -135,7 +135,33 @@ This method does not make sense for cameras, but it is implemented for consisten
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L85)
+[3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L85)
+
+***
+
+### addController()
+
+> **addController**(`controller`): `void`
+
+Add a controller to the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to add.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`addController`](FCamera.md#addcontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:413
 
 ***
 
@@ -187,7 +213,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-packages/core/dist/index.d.ts:298
+core/dist/index.d.ts:484
 
 ***
 
@@ -207,7 +233,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:252
+core/dist/index.d.ts:438
 
 ***
 
@@ -232,7 +258,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:38](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FOrbitCamera.ts#L38)
+[3d/src/cameras/FOrbitCamera.ts:38](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FOrbitCamera.ts#L38)
 
 ***
 
@@ -255,7 +281,7 @@ The direction of the camera. It is a normalized vector.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L105)
+[3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L105)
 
 ***
 
@@ -281,7 +307,7 @@ The target to look at.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L96)
+[3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L96)
 
 ***
 
@@ -335,7 +361,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-packages/core/dist/index.d.ts:275
+core/dist/index.d.ts:461
 
 ***
 
@@ -361,7 +387,7 @@ The callback function.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:243
+core/dist/index.d.ts:429
 
 ***
 
@@ -387,7 +413,33 @@ The callback function.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:248
+core/dist/index.d.ts:434
+
+***
+
+### removeController()
+
+> **removeController**(`controller`): `void`
+
+Remove a controller from the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to remove.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`removeController`](FCamera.md#removecontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:418
 
 ***
 
@@ -395,9 +447,13 @@ packages/core/dist/index.d.ts:248
 
 > **setPosition**(`position`): `void`
 
+Set the position of the camera relative to the attached model.
+
 #### Parameters
 
 • **position**: `FVector3`
+
+The position to set the camera to.
 
 #### Returns
 
@@ -405,7 +461,7 @@ packages/core/dist/index.d.ts:248
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:47](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FOrbitCamera.ts#L47)
+[3d/src/cameras/FOrbitCamera.ts:53](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FOrbitCamera.ts#L53)
 
 ***
 
@@ -413,9 +469,13 @@ packages/core/dist/index.d.ts:248
 
 > **setZoom**(`zoom`): `void`
 
+Set the zoom of the camera.
+
 #### Parameters
 
 • **zoom**: `number`
+
+The zoom level to set the camera to.
 
 #### Returns
 
@@ -423,7 +483,7 @@ packages/core/dist/index.d.ts:248
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:57](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FOrbitCamera.ts#L57)
+[3d/src/cameras/FOrbitCamera.ts:69](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FOrbitCamera.ts#L69)
 
 ## Properties
 
@@ -444,7 +504,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-packages/core/dist/index.d.ts:221
+core/dist/index.d.ts:397
 
 ***
 
@@ -460,7 +520,7 @@ Callbacks for when a frame is rendered.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:212
+core/dist/index.d.ts:388
 
 ***
 
@@ -476,7 +536,7 @@ Callbacks for when the component is loaded (could be a texture, a 3D model, etc)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:216
+core/dist/index.d.ts:392
 
 ***
 
@@ -492,7 +552,7 @@ Three.js camera object.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L24)
+[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L24)
 
 ***
 
@@ -509,7 +569,7 @@ It is generated automatically.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:208
+core/dist/index.d.ts:384
 
 ***
 
@@ -523,7 +583,7 @@ packages/core/dist/index.d.ts:208
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -539,7 +599,7 @@ Internal flags
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L18)
+[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L18)
 
 ***
 
@@ -549,23 +609,23 @@ Internal flags
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:26](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FOrbitCamera.ts#L26)
+[3d/src/cameras/FOrbitCamera.ts:26](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FOrbitCamera.ts#L26)
 
 ***
 
-### controller?
+### controllers
 
-> `optional` **controller**: `FController`
+> **controllers**: `FController`[]
 
-The controller attached to the component.
+The controllers attached to the component.
 
 #### Inherited from
 
-[`FCamera`](FCamera.md).[`controller`](FCamera.md#controller)
+[`FCamera`](FCamera.md).[`controllers`](FCamera.md#controllers)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:231
+core/dist/index.d.ts:407
 
 ***
 
@@ -575,7 +635,7 @@ packages/core/dist/index.d.ts:231
 
 #### Defined in
 
-[packages/3d/src/cameras/FOrbitCamera.ts:28](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FOrbitCamera.ts#L28)
+[3d/src/cameras/FOrbitCamera.ts:28](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FOrbitCamera.ts#L28)
 
 ***
 
@@ -591,7 +651,7 @@ The scene the component is attached to.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:227
+core/dist/index.d.ts:403
 
 ***
 
@@ -607,4 +667,4 @@ Transform of the camera.
 
 #### Defined in
 
-[packages/3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/cameras/FCamera.ts#L29)
+[3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L29)

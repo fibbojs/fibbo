@@ -22,4 +22,18 @@
 
 #### Defined in
 
-[packages/2d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/controllers/FController.ts#L6)
+[2d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/controllers/FController.ts#L6)
+
+***
+
+### runInPhysicPipeline?
+
+> `optional` **runInPhysicPipeline**: `boolean`
+
+#### Inherited from
+
+`FControllerOptionsCore.runInPhysicPipeline`
+
+#### Defined in
+
+core/dist/index.d.ts:6

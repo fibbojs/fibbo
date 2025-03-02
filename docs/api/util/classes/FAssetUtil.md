@@ -40,7 +40,7 @@ The interpreted path.
 
 #### Defined in
 
-[packages/util/src/FAssetUtil.ts:22](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/util/src/FAssetUtil.ts#L22)
+[util/src/FAssetUtil.ts:22](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/util/src/FAssetUtil.ts#L22)
 
 ## Properties
 
@@ -58,4 +58,4 @@ The path to the assets directory.
 
 #### Defined in
 
-[packages/util/src/FAssetUtil.ts:11](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/util/src/FAssetUtil.ts#L11)
+[util/src/FAssetUtil.ts:11](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/util/src/FAssetUtil.ts#L11)

@@ -130,6 +130,8 @@ export default defineConfig({
               { text: 'FShapes', link: '/api/2d/enumerations/FShapes.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
+              { text: 'RenderPipelineOptions', link: '/api/2d/interfaces/RenderPipelineOptions.md' },
+              { text: 'PhysicPipelineOptions', link: '/api/2d/interfaces/PhysicPipelineOptions.md' },
               { text: 'FRigidBodyOptions', link: '/api/2d/interfaces/FRigidBodyOptions.md' },
               { text: 'FColliderOptions', link: '/api/2d/interfaces/FColliderOptions.md' },
               { text: 'FComponentOptions', link: '/api/2d/interfaces/FComponentOptions.md' },
@@ -197,6 +199,8 @@ export default defineConfig({
               { text: 'FShapes', link: '/api/3d/enumerations/FShapes.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
+              { text: 'RenderPipelineOptions', link: '/api/3d/interfaces/RenderPipelineOptions.md' },
+              { text: 'PhysicPipelineOptions', link: '/api/3d/interfaces/PhysicPipelineOptions.md' },
               { text: 'FRigidBodyOptions', link: '/api/3d/interfaces/FRigidBodyOptions.md' },
               { text: 'FColliderOptions', link: '/api/3d/interfaces/FColliderOptions.md' },
               { text: 'FComponentOptions', link: '/api/3d/interfaces/FComponentOptions.md' },
@@ -215,6 +219,7 @@ export default defineConfig({
           ] },
           { text: 'core', link: '/api/core/index.md', collapsed: true, items: [
             { text: 'Core', collapsed: true, items: [
+              { text: 'PipelineManager', link: '/api/core/classes/PipelineManager.md' },
               { text: 'FController', link: '/api/core/classes/FController.md' },
               { text: 'FGroup', link: '/api/core/classes/FGroup.md' },
               { text: 'FCamera', link: '/api/core/classes/FCamera.md' },
@@ -223,16 +228,20 @@ export default defineConfig({
               { text: 'FScene', link: '/api/core/classes/FScene.md' },
             ] },
             { text: 'Pipeline', collapsed: true, items: [
-              { text: 'CustomWorker', link: '/api/core/classes/CustomWorker.md' },
+              { text: 'ThrottledPipeline', link: '/api/core/classes/ThrottledPipeline.md' },
+              { text: 'IntervalPipeline', link: '/api/core/classes/IntervalPipeline.md' },
               { text: 'Pipeline', link: '/api/core/classes/Pipeline.md' },
-              { text: 'RenderPipeline', link: '/api/core/classes/RenderPipeline.md' },
-              { text: 'PhysicPipeline', link: '/api/core/classes/PhysicPipeline.md' },
+              { text: 'StandardPipeline', link: '/api/core/classes/StandardPipeline.md' },
+              { text: 'BackgroundWorker', link: '/api/core/classes/BackgroundWorker.md' },
+              { text: 'BackgroundPipeline', link: '/api/core/classes/BackgroundPipeline.md' },
             ] },
             { text: 'Enumerations', collapsed: true, items: [
               { text: 'PipelineCommands', link: '/api/core/enumerations/PipelineCommands.md' },
               { text: 'PipelineState', link: '/api/core/enumerations/PipelineState.md' },
             ] },
             { text: 'Interfaces', collapsed: true, items: [
+              { text: 'PipelineManagerOptions', link: '/api/core/interfaces/PipelineManagerOptions.md' },
+              { text: 'MainPipelineOptions', link: '/api/core/interfaces/MainPipelineOptions.md' },
               { text: 'FVector3', link: '/api/core/interfaces/FVector3.md' },
               { text: 'FVector2', link: '/api/core/interfaces/FVector2.md' },
               { text: 'FVector4', link: '/api/core/interfaces/FVector4.md' },

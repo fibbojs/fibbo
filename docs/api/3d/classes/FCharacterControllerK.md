@@ -35,7 +35,7 @@ An abstract pre-defined character controller based on Kinematic rigidbodies.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterControllerK.ts:24](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterControllerK.ts#L24)
+[3d/src/controllers/FCharacterControllerK.ts:33](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterControllerK.ts#L33)
 
 ## Methods
 
@@ -62,15 +62,19 @@ The time since the last frame.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:26
+core/dist/index.d.ts:32
 
 ***
 
 ### getCorrectedMovements()
 
-> **getCorrectedMovements**(): `FVector3`
+> **getCorrectedMovements**(`delta`): `FVector3`
 
 Return the corrected movements for the current frame.
+
+#### Parameters
+
+• **delta**: `number`
 
 #### Returns
 
@@ -78,7 +82,7 @@ Return the corrected movements for the current frame.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterControllerK.ts:48](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterControllerK.ts#L48)
+[3d/src/controllers/FCharacterControllerK.ts:65](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterControllerK.ts#L65)
 
 ***
 
@@ -99,9 +103,37 @@ Uses the camera so the character nevers faces the camera.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterController.ts:121](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterController.ts#L121)
+[3d/src/controllers/FCharacterController.ts:123](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterController.ts#L123)
 
 ## Properties
+
+### \_\_LAST\_IS\_GROUNDED\_\_
+
+> **\_\_LAST\_IS\_GROUNDED\_\_**: `boolean`
+
+Tells if the character was grounded in the last frame.
+
+#### Defined in
+
+[3d/src/controllers/FCharacterControllerK.ts:31](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterControllerK.ts#L31)
+
+***
+
+### \_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_
+
+> **\_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_**: `boolean`
+
+True if the controller should run in the physic pipeline.
+
+#### Inherited from
+
+[`FCharacterController`](FCharacterController.md).[`__RUN_IN_PHYSIC_PIPELINE__`](FCharacterController.md#__run_in_physic_pipeline__)
+
+#### Defined in
+
+core/dist/index.d.ts:20
+
+***
 
 ### characterController
 
@@ -111,7 +143,7 @@ The character controller that will be used to move the character.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterControllerK.ts:22](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterControllerK.ts#L22)
+[3d/src/controllers/FCharacterControllerK.ts:22](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterControllerK.ts#L22)
 
 ***
 
@@ -128,7 +160,7 @@ It is redefined here to get the correct type (with 3D properties).
 
 #### Defined in
 
-[packages/3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FController.ts#L17)
+[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -160,7 +192,19 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterController.ts:24](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterController.ts#L24)
+[3d/src/controllers/FCharacterController.ts:24](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterController.ts#L24)
+
+***
+
+### isGrounded
+
+> **isGrounded**: `boolean`
+
+Tells if the character is grounded.
+
+#### Defined in
+
+[3d/src/controllers/FCharacterControllerK.ts:27](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterControllerK.ts#L27)
 
 ***
 
@@ -176,7 +220,7 @@ The scene where the character is.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterController.ts:39](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterController.ts#L39)
+[3d/src/controllers/FCharacterController.ts:39](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterController.ts#L39)
 
 ***
 
@@ -192,7 +236,7 @@ The speed of the character.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterController.ts:34](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterController.ts#L34)
+[3d/src/controllers/FCharacterController.ts:34](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterController.ts#L34)
 
 ***
 
@@ -204,4 +248,4 @@ The y velocity of the character. Used to apply gravity.
 
 #### Defined in
 
-[packages/3d/src/controllers/FCharacterControllerK.ts:17](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/controllers/FCharacterControllerK.ts#L17)
+[3d/src/controllers/FCharacterControllerK.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterControllerK.ts#L17)

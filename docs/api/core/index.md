@@ -14,13 +14,14 @@
 - [FGroup](classes/FGroup.md)
 - [FLight](classes/FLight.md)
 - [FScene](classes/FScene.md)
+- [PipelineManager](classes/PipelineManager.md)
 
 #### Pipeline
 
-- [CustomWorker](classes/CustomWorker.md)
-- [PhysicPipeline](classes/PhysicPipeline.md)
+- [IntervalPipeline](classes/IntervalPipeline.md)
 - [Pipeline](classes/Pipeline.md)
-- [RenderPipeline](classes/RenderPipeline.md)
+- [StandardPipeline](classes/StandardPipeline.md)
+- [ThrottledPipeline](classes/ThrottledPipeline.md)
 
 ### Enumerations
 
@@ -37,3 +38,4 @@
 - [FVector3](interfaces/FVector3.md)
 - [FVector4](interfaces/FVector4.md)
 - [OnCollisionWithData](interfaces/OnCollisionWithData.md)
+- [PipelineManagerOptions](interfaces/PipelineManagerOptions.md)

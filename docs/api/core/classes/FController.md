@@ -22,7 +22,7 @@ The options for the controller.
 
 #### Defined in
 
-[packages/core/src/FController.ts:21](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FController.ts#L21)
+[core/src/FController.ts:27](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L27)
 
 ## Methods
 
@@ -45,9 +45,21 @@ The time since the last frame.
 
 #### Defined in
 
-[packages/core/src/FController.ts:30](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FController.ts#L30)
+[core/src/FController.ts:37](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L37)
 
 ## Properties
+
+### \_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_
+
+> **\_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_**: `boolean`
+
+True if the controller should run in the physic pipeline.
+
+#### Defined in
+
+[core/src/FController.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L20)
+
+***
 
 ### component
 
@@ -57,4 +69,4 @@ The component attached to the controller.
 
 #### Defined in
 
-[packages/core/src/FController.ts:15](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FController.ts#L15)
+[core/src/FController.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L16)

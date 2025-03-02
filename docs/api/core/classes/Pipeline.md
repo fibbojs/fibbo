@@ -2,23 +2,19 @@
 
 # Class: `abstract` Pipeline
 
-Pipeline class that abstract the usage of a web worker.
-This is used for running background tasks that are generally CPU intensive.
+Pipeline class that helps handling many processes at a time.
 
 ## Extended by
 
-- [`PhysicPipeline`](PhysicPipeline.md)
-- [`RenderPipeline`](RenderPipeline.md)
+- [`IntervalPipeline`](IntervalPipeline.md)
+- [`StandardPipeline`](StandardPipeline.md)
+- [`ThrottledPipeline`](ThrottledPipeline.md)
 
 ## Constructors
 
 ### new Pipeline()
 
-> **new Pipeline**(`sw`): [`Pipeline`](Pipeline.md)
-
-#### Parameters
-
-• **sw**: `DedicatedWorkerGlobalScope`
+> **new Pipeline**(): [`Pipeline`](Pipeline.md)
 
 #### Returns
 
@@ -26,31 +22,20 @@ This is used for running background tasks that are generally CPU intensive.
 
 #### Defined in
 
-[packages/core/src/pipeline/Pipeline.ts:24](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L24)
+[core/src/pipeline/Pipeline.ts:30](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L30)
 
 ## Methods
 
 ### frame()
 
-> `abstract` **frame**(): `void`
+> `abstract` **frame**(`delta`): `void`
 
-#### Returns
-
-`void`
-
-#### Defined in
-
-[packages/core/src/pipeline/Pipeline.ts:32](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L32)
-
-***
-
-### handleMessage()
-
-> **handleMessage**(`event`): `void`
+The frame method is the main method that is called by the pipeline.
+It should implement the desired behavior of the pipeline.
 
 #### Parameters
 
-• **event**: `MessageEvent`\<`any`\>
+• **delta**: `number`
 
 #### Returns
 
@@ -58,27 +43,54 @@ This is used for running background tasks that are generally CPU intensive.
 
 #### Defined in
 
-[packages/core/src/pipeline/Pipeline.ts:34](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L34)
+[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L40)
+
+***
+
+### start()
+
+> `abstract` **start**(): `void`
+
+Start the pipeline
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[core/src/pipeline/Pipeline.ts:45](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L45)
+
+***
+
+### stop()
+
+> `abstract` **stop**(): `void`
+
+Stop the pipeline
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[core/src/pipeline/Pipeline.ts:50](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L50)
 
 ## Properties
 
 ### frameRate
 
-> **frameRate**: `number` = `30`
+> **frameRate**: `number`
+
+The frame rate of the pipeline.
+This is the number of frames per second that the pipeline will run at.
+e.g. 30 will run the pipeline at 30 frames per second.
+The default value is 30.
 
 #### Defined in
 
-[packages/core/src/pipeline/Pipeline.ts:22](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L22)
-
-***
-
-### intervalId
-
-> **intervalId**: `null` \| `Timeout` = `null`
-
-#### Defined in
-
-[packages/core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L21)
+[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L28)
 
 ***
 
@@ -86,16 +98,8 @@ This is used for running background tasks that are generally CPU intensive.
 
 > **state**: [`PipelineState`](../enumerations/PipelineState.md)
 
-#### Defined in
-
-[packages/core/src/pipeline/Pipeline.ts:20](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L20)
-
-***
-
-### sw
-
-> **sw**: `DedicatedWorkerGlobalScope`
+The current state of the pipeline.
 
 #### Defined in
 
-[packages/core/src/pipeline/Pipeline.ts:19](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L19)
+[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L21)

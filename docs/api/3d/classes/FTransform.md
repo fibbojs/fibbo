@@ -28,7 +28,7 @@ The new position.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:163](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L163)
+[3d/src/core/FTransform.ts:162](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L162)
 
 ***
 
@@ -54,7 +54,7 @@ The new rotation.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:226](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L226)
+[3d/src/core/FTransform.ts:225](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L225)
 
 ***
 
@@ -80,7 +80,7 @@ The new rotation in degrees.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:289](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L289)
+[3d/src/core/FTransform.ts:288](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L288)
 
 ***
 
@@ -106,7 +106,7 @@ The new rotation on the x axis in degrees.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:311](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L311)
+[3d/src/core/FTransform.ts:310](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L310)
 
 ***
 
@@ -132,7 +132,7 @@ The new rotation on the y axis in degrees.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:326](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L326)
+[3d/src/core/FTransform.ts:325](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L325)
 
 ***
 
@@ -158,7 +158,7 @@ The new rotation on the z axis in degrees.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:341](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L341)
+[3d/src/core/FTransform.ts:340](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L340)
 
 ***
 
@@ -184,7 +184,7 @@ The new rotation on the x axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:244](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L244)
+[3d/src/core/FTransform.ts:243](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L243)
 
 ***
 
@@ -210,7 +210,7 @@ The new rotation on the y axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:259](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L259)
+[3d/src/core/FTransform.ts:258](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L258)
 
 ***
 
@@ -236,7 +236,7 @@ The new rotation on the z axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:274](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L274)
+[3d/src/core/FTransform.ts:273](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L273)
 
 ***
 
@@ -262,7 +262,7 @@ The new scale.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:356](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L356)
+[3d/src/core/FTransform.ts:355](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L355)
 
 ***
 
@@ -288,7 +288,7 @@ The new scale on the x axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:374](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L374)
+[3d/src/core/FTransform.ts:373](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L373)
 
 ***
 
@@ -314,7 +314,7 @@ The new scale on the y axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:389](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L389)
+[3d/src/core/FTransform.ts:388](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L388)
 
 ***
 
@@ -340,7 +340,7 @@ The new scale on the z axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:404](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L404)
+[3d/src/core/FTransform.ts:403](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L403)
 
 ***
 
@@ -366,7 +366,7 @@ The new position on the x axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:181](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L181)
+[3d/src/core/FTransform.ts:180](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L180)
 
 ***
 
@@ -392,7 +392,7 @@ The new position on the y axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:196](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L196)
+[3d/src/core/FTransform.ts:195](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L195)
 
 ***
 
@@ -418,7 +418,7 @@ The new position on the z axis.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:211](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L211)
+[3d/src/core/FTransform.ts:210](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L210)
 
 ## Constructors
 
@@ -450,7 +450,7 @@ const transform = new FTransform({
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:60](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L60)
+[3d/src/core/FTransform.ts:59](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L59)
 
 ## Methods
 
@@ -472,7 +472,7 @@ The callback to add.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:87](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L87)
+[3d/src/core/FTransform.ts:86](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L86)
 
 ***
 
@@ -494,7 +494,7 @@ The callback to add.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:95](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L95)
+[3d/src/core/FTransform.ts:94](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L94)
 
 ***
 
@@ -516,7 +516,7 @@ The callback to add.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:103](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L103)
+[3d/src/core/FTransform.ts:102](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L102)
 
 ***
 
@@ -538,7 +538,7 @@ The new position.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:114](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L114)
+[3d/src/core/FTransform.ts:113](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L113)
 
 ***
 
@@ -560,7 +560,7 @@ The new rotation.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:126](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L126)
+[3d/src/core/FTransform.ts:125](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L125)
 
 ***
 
@@ -582,7 +582,7 @@ The new rotation in degrees.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:138](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L138)
+[3d/src/core/FTransform.ts:137](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L137)
 
 ***
 
@@ -604,7 +604,7 @@ The new scale.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:153](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L153)
+[3d/src/core/FTransform.ts:152](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L152)
 
 ## Properties
 
@@ -616,7 +616,7 @@ Callback for when the position is updated.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:21](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L21)
+[3d/src/core/FTransform.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L20)
 
 ***
 
@@ -628,7 +628,7 @@ Callback for when the rotation is updated.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:25](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L25)
+[3d/src/core/FTransform.ts:24](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L24)
 
 ***
 
@@ -640,7 +640,7 @@ Callback for when the scale is updated.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:29](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L29)
+[3d/src/core/FTransform.ts:28](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L28)
 
 ***
 
@@ -652,7 +652,7 @@ The position of the transform.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:34](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L34)
+[3d/src/core/FTransform.ts:33](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L33)
 
 ***
 
@@ -664,7 +664,7 @@ The rotation of the transform.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:42](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L42)
+[3d/src/core/FTransform.ts:41](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L41)
 
 ***
 
@@ -676,4 +676,4 @@ The scale of the transform.
 
 #### Defined in
 
-[packages/3d/src/core/FTransform.ts:38](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/3d/src/core/FTransform.ts#L38)
+[3d/src/core/FTransform.ts:37](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L37)

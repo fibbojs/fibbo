@@ -30,7 +30,7 @@ A camera attached to a given target.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FAttachedCamera.ts#L20)
+[2d/src/cameras/FAttachedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FAttachedCamera.ts#L20)
 
 ## Methods
 
@@ -48,7 +48,7 @@ A camera attached to a given target.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:33](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FAttachedCamera.ts#L33)
+[2d/src/cameras/FAttachedCamera.ts:33](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FAttachedCamera.ts#L33)
 
 ***
 
@@ -74,7 +74,7 @@ A camera attached to a given target.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L88)
+[2d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L88)
 
 ***
 
@@ -95,7 +95,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:67](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L67)
+[2d/src/cameras/FCamera.ts:67](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L67)
 
 ***
 
@@ -116,7 +116,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:75](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L75)
+[2d/src/cameras/FCamera.ts:75](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L75)
 
 ***
 
@@ -138,7 +138,33 @@ This method does not make sense for cameras, but it is implemented for consisten
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:84](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L84)
+[2d/src/cameras/FCamera.ts:84](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L84)
+
+***
+
+### addController()
+
+> **addController**(`controller`): `void`
+
+Add a controller to the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to add.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`addController`](FCamera.md#addcontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:413
 
 ***
 
@@ -190,7 +216,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-packages/core/dist/index.d.ts:298
+core/dist/index.d.ts:484
 
 ***
 
@@ -210,7 +236,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:252
+core/dist/index.d.ts:438
 
 ***
 
@@ -235,7 +261,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:25](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FAttachedCamera.ts#L25)
+[2d/src/cameras/FAttachedCamera.ts:25](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FAttachedCamera.ts#L25)
 
 ***
 
@@ -289,7 +315,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-packages/core/dist/index.d.ts:275
+core/dist/index.d.ts:461
 
 ***
 
@@ -315,7 +341,7 @@ The callback function.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:243
+core/dist/index.d.ts:429
 
 ***
 
@@ -341,7 +367,33 @@ The callback function.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:248
+core/dist/index.d.ts:434
+
+***
+
+### removeController()
+
+> **removeController**(`controller`): `void`
+
+Remove a controller from the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to remove.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`removeController`](FCamera.md#removecontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:418
 
 ***
 
@@ -363,7 +415,7 @@ packages/core/dist/index.d.ts:248
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L59)
+[2d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L59)
 
 ## Properties
 
@@ -384,7 +436,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-packages/core/dist/index.d.ts:221
+core/dist/index.d.ts:397
 
 ***
 
@@ -400,7 +452,7 @@ Callbacks for when a frame is rendered.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:212
+core/dist/index.d.ts:388
 
 ***
 
@@ -416,7 +468,7 @@ Callbacks for when the component is loaded (could be a texture, a 3D model, etc)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:216
+core/dist/index.d.ts:392
 
 ***
 
@@ -433,7 +485,7 @@ It is generated automatically.
 
 #### Defined in
 
-packages/core/dist/index.d.ts:208
+core/dist/index.d.ts:384
 
 ***
 
@@ -449,7 +501,7 @@ Internal flags
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L17)
+[2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L17)
 
 ***
 
@@ -465,23 +517,23 @@ Internal flags
 
 #### Defined in
 
-packages/core/dist/index.d.ts:202
+core/dist/index.d.ts:378
 
 ***
 
-### controller?
+### controllers
 
-> `optional` **controller**: `FController`
+> **controllers**: `FController`[]
 
-The controller attached to the component.
+The controllers attached to the component.
 
 #### Inherited from
 
-[`FCamera`](FCamera.md).[`controller`](FCamera.md#controller)
+[`FCamera`](FCamera.md).[`controllers`](FCamera.md#controllers)
 
 #### Defined in
 
-packages/core/dist/index.d.ts:231
+core/dist/index.d.ts:407
 
 ***
 
@@ -497,7 +549,7 @@ The scene the camera is in.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L22)
+[2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L22)
 
 ***
 
@@ -509,7 +561,7 @@ The target to follow.
 
 #### Defined in
 
-[packages/2d/src/cameras/FAttachedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FAttachedCamera.ts#L18)
+[2d/src/cameras/FAttachedCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FAttachedCamera.ts#L18)
 
 ***
 
@@ -527,4 +579,4 @@ The scale and rotation of the transform are not used.
 
 #### Defined in
 
-[packages/2d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/2d/src/cameras/FCamera.ts#L29)
+[2d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L29)

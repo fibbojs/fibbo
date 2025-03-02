@@ -1,8 +1,12 @@
 [@fibbojs](/api/index) / [core](/api/core) / FGroup
 
-# Class: `abstract` FGroup
+# Class: ~~`abstract` FGroup~~
 
 The base class for all groups of components in Fibbo.
+
+## Deprecated
+
+Marked as deprecated while we are not sure if we will keep this class.
 
 ## Constructors
 
@@ -29,11 +33,11 @@ The components to add to the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:19](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FGroup.ts#L19)
+[core/src/FGroup.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L20)
 
 ## Methods
 
-### addComponent()
+### ~~addComponent()~~
 
 > **addComponent**(`component`): `void`
 
@@ -49,11 +53,11 @@ Add a component to the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:26](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FGroup.ts#L26)
+[core/src/FGroup.ts:27](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L27)
 
 ***
 
-### frame()
+### ~~frame()~~
 
 > **frame**(`delta`): `void`
 
@@ -71,11 +75,11 @@ The time since the last frame.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:41](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FGroup.ts#L41)
+[core/src/FGroup.ts:42](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L42)
 
 ***
 
-### removeComponent()
+### ~~removeComponent()~~
 
 > **removeComponent**(`component`): `void`
 
@@ -91,11 +95,11 @@ Remove a component from the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:33](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FGroup.ts#L33)
+[core/src/FGroup.ts:34](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L34)
 
 ## Properties
 
-### components
+### ~~components~~
 
 > **components**: [`FComponent`](FComponent.md)[] = `[]`
 
@@ -103,4 +107,4 @@ The components in the group.
 
 #### Defined in
 
-[packages/core/src/FGroup.ts:11](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FGroup.ts#L11)
+[core/src/FGroup.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L12)

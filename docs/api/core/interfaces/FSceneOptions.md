@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[packages/core/src/FScene.ts:10](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FScene.ts#L10)
+[core/src/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FScene.ts#L13)
 
 ***
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[packages/core/src/FScene.ts:9](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FScene.ts#L9)
+[core/src/FScene.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FScene.ts#L12)
 
 ***
 
@@ -30,4 +30,24 @@
 
 #### Defined in
 
-[packages/core/src/FScene.ts:8](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/FScene.ts#L8)
+[core/src/FScene.ts:11](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FScene.ts#L11)
+
+***
+
+### mainFrameRate?
+
+> `optional` **mainFrameRate**: `number`
+
+#### Defined in
+
+[core/src/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FScene.ts#L14)
+
+***
+
+### physicFrameRate?
+
+> `optional` **physicFrameRate**: `number`
+
+#### Defined in
+
+[core/src/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FScene.ts#L15)

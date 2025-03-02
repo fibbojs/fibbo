@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[packages/core/src/pipeline/Pipeline.ts:9](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L9)
+[core/src/pipeline/Pipeline.ts:9](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L9)
 
 ***
 
@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[packages/core/src/pipeline/Pipeline.ts:10](https://github.com/fibbojs/fibbo/blob/ca0e011a21c87d9c4978217c9b9041de6ed31595/packages/core/src/pipeline/Pipeline.ts#L10)
+[core/src/pipeline/Pipeline.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L10)
