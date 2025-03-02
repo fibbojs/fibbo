@@ -4,6 +4,7 @@ import type { FScene } from '../core/FScene'
 
 export interface PhysicPipelineOptions {
   scene: FScene
+  frameRate?: number
 }
 
 /**
@@ -15,7 +16,7 @@ export class PhysicPipeline extends IntervalPipeline {
   constructor(options: PhysicPipelineOptions) {
     super()
     this.scene = options.scene
-    this.frameRate = 30
+    this.frameRate = options.frameRate ?? 30
   }
 
   frame(delta: number) {

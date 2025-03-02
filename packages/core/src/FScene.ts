@@ -11,6 +11,8 @@ export interface FSceneOptions {
   gravity?: { x: number, y: number, z: number } | { x: number, y: number }
   domNode?: HTMLElement
   autoLoop?: boolean
+  mainFrameRate?: number
+  physicFrameRate?: number
 }
 
 /**
@@ -28,6 +30,11 @@ export abstract class FScene {
    * By default, it contains the main pipeline.
    */
   __PIPELINE_MANAGER__: PipelineManager
+  /**
+   * Physic frame rate.
+   * It is stored here as the initialisation of the physics pipeline is handled by child classes.
+   */
+  __PHYSIC_FRAME_RATE__: number
 
   /**
    * DOM element that the renderer will be appended to
@@ -96,16 +103,19 @@ export abstract class FScene {
       gravity: { x: 0, y: -9.81, z: 0 },
       domNode: document.body,
       autoLoop: true,
+      mainFrameRate: 60,
+      physicFrameRate: 30,
     }
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate the options
-    if (options.domNode === undefined || options.gravity === undefined)
-      throw new Error('FibboError: The gravity option and the DOM node must be defined')
+    if (options.domNode === undefined || options.gravity === undefined || options.physicFrameRate === undefined)
+      throw new Error('FibboError: The gravity option, DOM node and physic framerate must be defined')
 
     // Store the options
     this.gravity = options.gravity
     this.__DOM_NODE__ = options.domNode
+    this.__PHYSIC_FRAME_RATE__ = options.physicFrameRate
 
     // Initialize the components array
     this.components = []
@@ -115,7 +125,7 @@ export abstract class FScene {
     // Initialize the pipeline manager
     this.__PIPELINE_MANAGER__ = new PipelineManager({ scene: this, autoLoop: options.autoLoop })
     // Add the main pipeline
-    this.__PIPELINE_MANAGER__.addThrottledPipeline(new MainPipeline({ scene: this }))
+    this.__PIPELINE_MANAGER__.addThrottledPipeline(new MainPipeline({ scene: this, frameRate: options.mainFrameRate }))
   }
 
   /**

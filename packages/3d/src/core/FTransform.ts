@@ -1,4 +1,3 @@
-import * as THREE from 'three'
 import type { FVector3 } from '@fibbojs/core'
 import { FMathUtil } from '@fibbojs/util'
 

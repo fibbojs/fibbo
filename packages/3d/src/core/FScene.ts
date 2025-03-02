@@ -137,7 +137,7 @@ export class FScene extends FSceneCore {
     this.eventQueue = new RAPIER.EventQueue(true)
 
     // Initialize the physic pipeline
-    this.__PIPELINE_MANAGER__.addIntervalPipeline(new PhysicPipeline({ scene: this }))
+    this.__PIPELINE_MANAGER__.addIntervalPipeline(new PhysicPipeline({ scene: this, frameRate: this.__PHYSIC_FRAME_RATE__ }))
   }
 
   /**

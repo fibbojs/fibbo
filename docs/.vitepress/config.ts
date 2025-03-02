@@ -79,7 +79,6 @@ export default defineConfig({
           items: [
             { text: 'Recipes', collapsed: true, items: [
               { text: 'Character controller', link: '/more/recipes/character-controller' },
-              { text: 'Custom controller', link: '/more/recipes/custom-controller' },
             ] },
             { text: 'Deployment', link: '/more/deployment' },
             { text: 'Upgrading', link: '/more/upgrading' },

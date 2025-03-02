@@ -3,6 +3,7 @@ import { ThrottledPipeline } from './ThrottledPipeline'
 
 export interface MainPipelineOptions {
   scene: FScene
+  frameRate?: number
 }
 
 /**
@@ -15,7 +16,7 @@ export class MainPipeline extends ThrottledPipeline {
   constructor(options: MainPipelineOptions) {
     super()
     this.scene = options.scene
-    this.frameRate = 60
+    this.frameRate = options.frameRate || 60
   }
 
   frame(delta: number) {
