@@ -1,3 +1,7 @@
+## 0.0.15 (2025-03-02)
+
+This was a version bump only, there were no code changes.
+
 ## 0.0.14 (2024-12-17)
 
 This was a version bump only, there were no code changes.

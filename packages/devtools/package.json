@@ -1,7 +1,7 @@
 {
   "name": "@fibbojs/devtools",
   "type": "module",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Devtools package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@proton.me>",
   "license": "Apache-2.0",
@@ -46,9 +46,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/2d": "0.0.14",
-    "@fibbojs/3d": "0.0.14",
-    "@fibbojs/core": "0.0.14",
+    "@fibbojs/2d": "0.0.15",
+    "@fibbojs/3d": "0.0.15",
+    "@fibbojs/core": "0.0.15",
     "vue": "3.5.0"
   }
 }
