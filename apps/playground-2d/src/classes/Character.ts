@@ -11,9 +11,9 @@ export default class Character extends FSprite {
     })
 
     // Initialize the character controller
-    this.controller = new FCharacterControllerKP(scene, {
+    this.addController(new FCharacterControllerKP(scene, {
       component: this,
-    })
+    }))
   }
 
   initSensor(options?: FRigidBodyOptions): void {

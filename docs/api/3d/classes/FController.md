@@ -34,7 +34,7 @@ The options for the controller.
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FController.ts#L23)
+[3d/src/controllers/FController.ts:23](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FController.ts#L23)
 
 ## Methods
 
@@ -61,9 +61,25 @@ The time since the last frame.
 
 #### Defined in
 
-core/dist/index.d.ts:26
+core/dist/index.d.ts:32
 
 ## Properties
+
+### \_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_
+
+> **\_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_**: `boolean`
+
+True if the controller should run in the physic pipeline.
+
+#### Inherited from
+
+`FControllerCore.__RUN_IN_PHYSIC_PIPELINE__`
+
+#### Defined in
+
+core/dist/index.d.ts:20
+
+***
 
 ### component
 
@@ -78,4 +94,4 @@ It is redefined here to get the correct type (with 3D properties).
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FController.ts#L17)
+[3d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FController.ts#L17)

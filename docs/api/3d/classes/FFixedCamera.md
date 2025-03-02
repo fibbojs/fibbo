@@ -42,7 +42,7 @@ scene.camera.lookAt(0, 0, 0)
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L114)
+[3d/src/cameras/FCamera.ts:114](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L114)
 
 ## Constructors
 
@@ -66,7 +66,7 @@ scene.camera.lookAt(0, 0, 0)
 
 #### Defined in
 
-[3d/src/cameras/FFixedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FFixedCamera.ts#L20)
+[3d/src/cameras/FFixedCamera.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FFixedCamera.ts#L20)
 
 ## Methods
 
@@ -87,7 +87,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L68)
+[3d/src/cameras/FCamera.ts:68](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L68)
 
 ***
 
@@ -108,7 +108,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L76)
+[3d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L76)
 
 ***
 
@@ -130,7 +130,33 @@ This method does not make sense for cameras, but it is implemented for consisten
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L85)
+[3d/src/cameras/FCamera.ts:85](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L85)
+
+***
+
+### addController()
+
+> **addController**(`controller`): `void`
+
+Add a controller to the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to add.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`addController`](FCamera.md#addcontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:413
 
 ***
 
@@ -182,7 +208,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:293
+core/dist/index.d.ts:484
 
 ***
 
@@ -202,7 +228,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-core/dist/index.d.ts:247
+core/dist/index.d.ts:438
 
 ***
 
@@ -229,7 +255,7 @@ The time since the last frame.
 
 #### Defined in
 
-core/dist/index.d.ts:233
+core/dist/index.d.ts:424
 
 ***
 
@@ -252,7 +278,7 @@ The direction of the camera. It is a normalized vector.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L105)
+[3d/src/cameras/FCamera.ts:105](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L105)
 
 ***
 
@@ -278,7 +304,7 @@ The target to look at.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L96)
+[3d/src/cameras/FCamera.ts:96](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L96)
 
 ***
 
@@ -332,7 +358,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-core/dist/index.d.ts:270
+core/dist/index.d.ts:461
 
 ***
 
@@ -358,7 +384,7 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:238
+core/dist/index.d.ts:429
 
 ***
 
@@ -384,7 +410,33 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:243
+core/dist/index.d.ts:434
+
+***
+
+### removeController()
+
+> **removeController**(`controller`): `void`
+
+Remove a controller from the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to remove.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FCamera`](FCamera.md).[`removeController`](FCamera.md#removecontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:418
 
 ## Properties
 
@@ -405,7 +457,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:216
+core/dist/index.d.ts:397
 
 ***
 
@@ -421,7 +473,7 @@ Callbacks for when a frame is rendered.
 
 #### Defined in
 
-core/dist/index.d.ts:207
+core/dist/index.d.ts:388
 
 ***
 
@@ -437,7 +489,7 @@ Callbacks for when the component is loaded (could be a texture, a 3D model, etc)
 
 #### Defined in
 
-core/dist/index.d.ts:211
+core/dist/index.d.ts:392
 
 ***
 
@@ -453,7 +505,7 @@ Three.js camera object.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L24)
+[3d/src/cameras/FCamera.ts:24](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L24)
 
 ***
 
@@ -470,7 +522,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:203
+core/dist/index.d.ts:384
 
 ***
 
@@ -484,7 +536,7 @@ core/dist/index.d.ts:203
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L19)
+[3d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -500,23 +552,23 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L18)
+[3d/src/cameras/FCamera.ts:18](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L18)
 
 ***
 
-### controller?
+### controllers
 
-> `optional` **controller**: `FController`
+> **controllers**: `FController`[]
 
-The controller attached to the component.
+The controllers attached to the component.
 
 #### Inherited from
 
-[`FCamera`](FCamera.md).[`controller`](FCamera.md#controller)
+[`FCamera`](FCamera.md).[`controllers`](FCamera.md#controllers)
 
 #### Defined in
 
-core/dist/index.d.ts:226
+core/dist/index.d.ts:407
 
 ***
 
@@ -532,7 +584,7 @@ The scene the component is attached to.
 
 #### Defined in
 
-core/dist/index.d.ts:222
+core/dist/index.d.ts:403
 
 ***
 
@@ -548,4 +600,4 @@ Transform of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/cameras/FCamera.ts#L29)
+[3d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FCamera.ts#L29)

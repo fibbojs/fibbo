@@ -1,4 +1,4 @@
-import type { FVector3, FVector4 } from '@fibbojs/core'
+import type { FVector2, FVector3, FVector4 } from '@fibbojs/core'
 
 /**
  * A class that provides math utilities.

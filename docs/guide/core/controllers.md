@@ -4,9 +4,9 @@ Every [`FComponent`](/api/core/classes/FComponent) in Fibbo can have a [`FContro
 
 ## Why use controllers ?
 
-Technically, controller are not required to make a component move or animate (you could just override the `frame` method in your component most of the time), but they are a good way to separate the logic of a component from its rendering.
+Technically, controllers are not required to make a component move or animate (you could just override the `frame` method in your component most of the time), but they are a good way to separate the logic of a component from its rendering.
 
-Also, this allows you to reuse the same controller for multiple components, which can be useful if you want to create a group of similar objects that share the same behavior.
+Also, this allows you to reuse the same controller for multiple components, which can be useful if you want to create multiple groups of objects that share the same behavior.
 
 ## How to use controllers ?
 
@@ -32,9 +32,9 @@ export class MyRotateController extends FController {
 
 // Usage
 const rectangle = new FRectangle()
-rectangle.controller = new MyRotateController({
+rectangle.addController(new MyRotateController({
   component: cube
-})
+}))
 ```
 
 ```typescript [3d]
@@ -53,9 +53,9 @@ export class MyRotateController extends FController {
 
 // Usage
 const cube = new FCuboid()
-cube.controller = new MyRotateController({
+cube.addContreoller(new MyRotateController({
   component: cube
-})
+}))
 ```
 
 :::

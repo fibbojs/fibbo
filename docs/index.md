@@ -31,9 +31,16 @@ features:
 - [Fibbo's 3D Playground](https://fibbo.dev/playground-3d/) - A 3D playground to test Fibbo's 3D features.
 - [Rocket Starflop](https://gugustinette.github.io/rocket-starflop/) - An arcade shoot'em up game.
 
+## Stargazers
+
+<ClientOnly>
+  <Stargazers />
+</ClientOnly>
+
 ## Our Team
 
 <script setup>
+import Stargazers from './components/Stargazers.vue'
 import { VPTeamMembers } from 'vitepress/theme'
 
 const members = [

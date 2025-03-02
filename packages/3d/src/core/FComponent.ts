@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
 import type { FVector3, OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
+import { FMathUtil } from '@fibbojs/util'
 import type { FController } from '../controllers/FController'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
@@ -33,9 +34,9 @@ export abstract class FComponent extends FComponentCore {
    */
   scene: FScene
 
-  // The controller attached to the component.
+  // The controllers attached to the component.
   // Redefined here to be able to use the updated FController type.
-  declare controller?: FController
+  declare controllers: FController[]
 
   /**
    * Mesh
@@ -109,8 +110,50 @@ export abstract class FComponent extends FComponentCore {
     this.transform.onScaleUpdated(() => this.__UPDATE_SCALE__(true))
   }
 
-  frame(_delta: number): void {
-    super.frame(_delta)
+  frame(delta: number): void {
+    super.frame(delta)
+  }
+
+  render(delta: number): void {
+    // If the transform position differs from the mesh position
+    if (this.__MESH__ && (
+      this.transform.position.x !== this.__MESH__.position.x
+      || this.transform.position.y !== this.__MESH__.position.y
+      || this.transform.position.z !== this.__MESH__.position.z
+    )) {
+      // Compute the distance between the transform position (new) and the mesh position (old)
+      const distance = Math.sqrt(
+        (this.__MESH__.position.x - this.transform.__POSITION__.x) ** 2
+        + (this.__MESH__.position.y - this.transform.__POSITION__.y) ** 2
+        + (this.__MESH__.position.z - this.transform.__POSITION__.z) ** 2,
+      )
+      // If the distance is small enough but not too big, interpolate
+      if (distance < 4 && distance > 0.001) {
+        // Get the difference between the transform position and the mesh position
+        const diff = {
+          x: this.transform.position.x - this.__MESH__.position.x,
+          y: this.transform.position.y - this.__MESH__.position.y,
+          z: this.transform.position.z - this.__MESH__.position.z,
+        }
+        // Add a fraction of the difference to the mesh position
+        const newMeshPosition = {
+          x: this.__MESH__.position.x + diff.x * 20 * delta,
+          y: this.__MESH__.position.y + diff.y * 20 * delta,
+          z: this.__MESH__.position.z + diff.z * 20 * delta,
+        }
+        // Move the mesh
+        this.__MESH__.position.set(newMeshPosition.x, newMeshPosition.y, newMeshPosition.z)
+      }
+      // The distance is too big to interpolate
+      else {
+        // Move the mesh instantly
+        this.__MESH__.position.set(this.transform.position.x, this.transform.position.y, this.transform.position.z)
+        // Update the transform
+        this.transform.__POSITION__.x = this.transform.position.x
+        this.transform.__POSITION__.y = this.transform.position.y
+        this.transform.__POSITION__.z = this.transform.position.z
+      }
+    }
   }
 
   /**
@@ -136,21 +179,21 @@ export abstract class FComponent extends FComponentCore {
       // The event was propagated to the component
       // If a rigidBody exists, the propagation comes from the rigidBody
       if (this.rigidBody) {
-        // Move the component
-        this.__SET_POSITION__({
+        // Update the transform
+        this.transform.__POSITION__ = {
           x: this.rigidBody.transform.x - this.rigidBody.offset.x,
           y: this.rigidBody.transform.y - this.rigidBody.offset.y,
           z: this.rigidBody.transform.z - this.rigidBody.offset.z,
-        })
+        }
       }
       // If a collider exists, the propagation comes from the collider
       else if (this.collider) {
-        // Move the component
-        this.__SET_POSITION__({
+        // Update the transform
+        this.transform.__POSITION__ = {
           x: this.collider.transform.x - this.collider.offset.x,
           y: this.collider.transform.y - this.collider.offset.y,
           z: this.collider.transform.z - this.collider.offset.z,
-        })
+        }
       }
     }
   }
@@ -241,8 +284,7 @@ export abstract class FComponent extends FComponentCore {
 
   __SET_POSITION__(position: FVector3): void {
     // Move the mesh
-    if (this.__MESH__)
-      this.__MESH__.position.set(position.x, position.y, position.z)
+    this.__MESH__?.position.set(position.x, position.y, position.z)
     // Update the transform
     this.transform.__POSITION__.x = position.x
     this.transform.__POSITION__.y = position.y

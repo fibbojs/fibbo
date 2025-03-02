@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[core/src/FComponent.ts:10](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/core/src/FComponent.ts#L10)
+[core/src/FComponent.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FComponent.ts#L10)

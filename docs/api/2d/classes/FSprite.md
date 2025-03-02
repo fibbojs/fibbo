@@ -40,7 +40,7 @@ const sprite = new FSprite(scene, '/my-texture.png')
 
 #### Defined in
 
-[2d/src/sprite/FSprite.ts:33](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/sprite/FSprite.ts#L33)
+[2d/src/sprite/FSprite.ts:33](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/sprite/FSprite.ts#L33)
 
 ## Methods
 
@@ -62,7 +62,7 @@ const sprite = new FSprite(scene, '/my-texture.png')
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:220](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L220)
+[2d/src/core/FComponent.ts:254](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L254)
 
 ***
 
@@ -84,7 +84,7 @@ const sprite = new FSprite(scene, '/my-texture.png')
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:227](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L227)
+[2d/src/core/FComponent.ts:261](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L261)
 
 ***
 
@@ -106,7 +106,7 @@ const sprite = new FSprite(scene, '/my-texture.png')
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:234](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L234)
+[2d/src/core/FComponent.ts:268](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L268)
 
 ***
 
@@ -134,7 +134,7 @@ Set this to true to propagate the position update to the rigidBody, collider and
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:112](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L112)
+[2d/src/core/FComponent.ts:146](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L146)
 
 ***
 
@@ -162,7 +162,7 @@ Set this to true to propagate the rotation update to the rigidBody, collider and
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:152](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L152)
+[2d/src/core/FComponent.ts:186](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L186)
 
 ***
 
@@ -190,7 +190,33 @@ Set this to true to propagate the scale update to the rigidBody, collider and se
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:186](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L186)
+[2d/src/core/FComponent.ts:220](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L220)
+
+***
+
+### addController()
+
+> **addController**(`controller`): `void`
+
+Add a controller to the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to add.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`addController`](FComponent.md#addcontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:413
 
 ***
 
@@ -242,7 +268,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:293
+core/dist/index.d.ts:484
 
 ***
 
@@ -262,20 +288,22 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-core/dist/index.d.ts:247
+core/dist/index.d.ts:438
 
 ***
 
 ### frame()
 
-> **frame**(`_delta`): `void`
+> **frame**(`delta`): `void`
 
 Update the component. Should be called every frame.
 The purpose of this method is to render the component, its mesh/sprite, and its properties.
 
 #### Parameters
 
-• **\_delta**: `number`
+• **delta**: `number`
+
+The time since the last frame.
 
 #### Returns
 
@@ -287,7 +315,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:102](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L102)
+[2d/src/core/FComponent.ts:102](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L102)
 
 ***
 
@@ -309,7 +337,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:252](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L252)
+[2d/src/core/FComponent.ts:286](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L286)
 
 ***
 
@@ -331,7 +359,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:258](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L258)
+[2d/src/core/FComponent.ts:292](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L292)
 
 ***
 
@@ -353,7 +381,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:264](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L264)
+[2d/src/core/FComponent.ts:298](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L298)
 
 ***
 
@@ -375,7 +403,7 @@ The path to the texture.
 
 #### Defined in
 
-[2d/src/sprite/FSprite.ts:52](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/sprite/FSprite.ts#L52)
+[2d/src/sprite/FSprite.ts:52](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/sprite/FSprite.ts#L52)
 
 ***
 
@@ -429,7 +457,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:242](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L242)
+[2d/src/core/FComponent.ts:276](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L276)
 
 ***
 
@@ -455,7 +483,7 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:238
+core/dist/index.d.ts:429
 
 ***
 
@@ -481,7 +509,55 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:243
+core/dist/index.d.ts:434
+
+***
+
+### removeController()
+
+> **removeController**(`controller`): `void`
+
+Remove a controller from the component.
+
+#### Parameters
+
+• **controller**: `FController`
+
+The controller to remove.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`removeController`](FComponent.md#removecontroller)
+
+#### Defined in
+
+core/dist/index.d.ts:418
+
+***
+
+### render()
+
+> **render**(`delta`): `void`
+
+#### Parameters
+
+• **delta**: `number`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`FComponent`](FComponent.md).[`render`](FComponent.md#render)
+
+#### Defined in
+
+[2d/src/core/FComponent.ts:106](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L106)
 
 ***
 
@@ -504,7 +580,7 @@ The height of the sprite.
 
 #### Defined in
 
-[2d/src/sprite/FSprite.ts:86](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/sprite/FSprite.ts#L86)
+[2d/src/sprite/FSprite.ts:86](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/sprite/FSprite.ts#L86)
 
 ***
 
@@ -527,7 +603,7 @@ The width of the sprite.
 
 #### Defined in
 
-[2d/src/sprite/FSprite.ts:77](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/sprite/FSprite.ts#L77)
+[2d/src/sprite/FSprite.ts:77](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/sprite/FSprite.ts#L77)
 
 ## Properties
 
@@ -548,7 +624,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:216
+core/dist/index.d.ts:397
 
 ***
 
@@ -564,7 +640,7 @@ Callbacks for when a frame is rendered.
 
 #### Defined in
 
-core/dist/index.d.ts:207
+core/dist/index.d.ts:388
 
 ***
 
@@ -580,7 +656,7 @@ Callbacks for when the component is loaded (could be a texture, a 3D model, etc)
 
 #### Defined in
 
-core/dist/index.d.ts:211
+core/dist/index.d.ts:392
 
 ***
 
@@ -596,7 +672,7 @@ PIXI container
 
 #### Defined in
 
-[2d/src/sprite/FSprite.ts:27](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/sprite/FSprite.ts#L27)
+[2d/src/sprite/FSprite.ts:27](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/sprite/FSprite.ts#L27)
 
 ***
 
@@ -613,7 +689,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:203
+core/dist/index.d.ts:384
 
 ***
 
@@ -629,7 +705,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:29](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L29)
+[2d/src/core/FComponent.ts:29](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L29)
 
 ***
 
@@ -645,7 +721,7 @@ Internal flags
 
 #### Defined in
 
-core/dist/index.d.ts:197
+core/dist/index.d.ts:378
 
 ***
 
@@ -657,7 +733,7 @@ The texture of the sprite.
 
 #### Defined in
 
-[2d/src/sprite/FSprite.ts:31](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/sprite/FSprite.ts#L31)
+[2d/src/sprite/FSprite.ts:31](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/sprite/FSprite.ts#L31)
 
 ***
 
@@ -673,23 +749,23 @@ RAPIER Collider
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:58](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L58)
+[2d/src/core/FComponent.ts:58](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L58)
 
 ***
 
-### controller?
+### controllers
 
-> `optional` **controller**: [`FController`](FController.md)
+> **controllers**: [`FController`](FController.md)[]
 
-The controller attached to the component.
+The controllers attached to the component.
 
 #### Inherited from
 
-[`FComponent`](FComponent.md).[`controller`](FComponent.md#controller)
+[`FComponent`](FComponent.md).[`controllers`](FComponent.md#controllers)
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L38)
+[2d/src/core/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L38)
 
 ***
 
@@ -705,7 +781,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L54)
+[2d/src/core/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L54)
 
 ***
 
@@ -721,7 +797,7 @@ The scene which the component is in.
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:34](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L34)
+[2d/src/core/FComponent.ts:34](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L34)
 
 ***
 
@@ -737,7 +813,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:62](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L62)
+[2d/src/core/FComponent.ts:62](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L62)
 
 ***
 
@@ -753,4 +829,4 @@ Transforms
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:48](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L48)
+[2d/src/core/FComponent.ts:48](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L48)

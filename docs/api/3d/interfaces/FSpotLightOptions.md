@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:8](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FSpotLight.ts#L8)
+[3d/src/lights/FSpotLight.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FSpotLight.ts#L8)
 
 ***
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FLight.ts#L9)
+[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L9)
 
 ***
 
@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:10](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FSpotLight.ts#L10)
+[3d/src/lights/FSpotLight.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FSpotLight.ts#L10)
 
 ***
 
@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:7](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FSpotLight.ts#L7)
+[3d/src/lights/FSpotLight.ts:7](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FSpotLight.ts#L7)
 
 ***
 
@@ -62,7 +62,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FLight.ts#L10)
+[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L10)
 
 ***
 
@@ -76,7 +76,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FLight.ts#L11)
+[3d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L11)
 
 ***
 
@@ -86,7 +86,7 @@
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:9](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FSpotLight.ts#L9)
+[3d/src/lights/FSpotLight.ts:9](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FSpotLight.ts#L9)
 
 ***
 
@@ -100,7 +100,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FTransform.ts#L6)
+[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L5)
 
 ***
 
@@ -114,7 +114,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FTransform.ts#L7)
+[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L6)
 
 ***
 
@@ -128,7 +128,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:8](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FTransform.ts#L8)
+[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L7)
 
 ***
 
@@ -142,7 +142,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:9](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FTransform.ts#L9)
+[3d/src/core/FTransform.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L8)
 
 ***
 
@@ -156,4 +156,4 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/lights/FLight.ts#L12)
+[3d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L12)

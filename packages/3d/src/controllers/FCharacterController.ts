@@ -39,10 +39,9 @@ export abstract class FCharacterController extends FController {
   scene: FScene
 
   constructor(scene: FScene, options: FCharacterControllerOptions) {
-    super(options)
-
     // Define default values
     const DEFAULT_OPTIONS = {
+      runInPhysicPipeline: true,
       speed: 1,
     }
     // Apply default options
@@ -50,6 +49,9 @@ export abstract class FCharacterController extends FController {
     // Validate options
     if (!options.speed)
       throw new Error('FibboError: FCharacter requires speed option')
+
+    // Call the parent constructor
+    super(options)
 
     // Store options
     this.scene = scene

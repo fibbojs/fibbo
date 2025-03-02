@@ -18,7 +18,7 @@
 
 #### Defined in
 
-core/dist/index.d.ts:67
+core/dist/index.d.ts:215
 
 ***
 
@@ -32,7 +32,7 @@ core/dist/index.d.ts:67
 
 #### Defined in
 
-core/dist/index.d.ts:66
+core/dist/index.d.ts:214
 
 ***
 
@@ -46,7 +46,35 @@ core/dist/index.d.ts:66
 
 #### Defined in
 
-[3d/src/core/FScene.ts:13](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FScene.ts#L13)
+[3d/src/core/FScene.ts:15](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FScene.ts#L15)
+
+***
+
+### mainFrameRate?
+
+> `optional` **mainFrameRate**: `number`
+
+#### Inherited from
+
+`FSceneOptionsCore.mainFrameRate`
+
+#### Defined in
+
+core/dist/index.d.ts:216
+
+***
+
+### physicFrameRate?
+
+> `optional` **physicFrameRate**: `number`
+
+#### Inherited from
+
+`FSceneOptionsCore.physicFrameRate`
+
+#### Defined in
+
+core/dist/index.d.ts:217
 
 ***
 
@@ -56,4 +84,4 @@ core/dist/index.d.ts:66
 
 #### Defined in
 
-[3d/src/core/FScene.ts:14](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/core/FScene.ts#L14)
+[3d/src/core/FScene.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FScene.ts#L16)

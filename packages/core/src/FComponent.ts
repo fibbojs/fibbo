@@ -59,9 +59,9 @@ export abstract class FComponent {
   public scene: FScene
 
   /**
-   * The controller attached to the component.
+   * The controllers attached to the component.
    */
-  public controller?: FController
+  public controllers: FController[]
 
   constructor(scene: FScene, options?: FComponentOptions) {
     // Define default options
@@ -86,6 +86,39 @@ export abstract class FComponent {
 
     // Generate a unique ID
     this.__ID__ = ID_COUNTER++
+
+    // Initialize the controllers array
+    this.controllers = []
+  }
+
+  /**
+   * Add a controller to the component.
+   * @param controller The controller to add.
+   */
+  addController(controller: FController): void {
+    this.controllers.push(controller)
+    // If the controller should run in the physic pipeline, add it to the scene's dedicated array
+    if (controller.__RUN_IN_PHYSIC_PIPELINE__) {
+      this.scene.__PHYSIC_CONTROLLERS__.push(controller)
+    }
+  }
+
+  /**
+   * Remove a controller from the component.
+   * @param controller The controller to remove.
+   */
+  removeController(controller: FController): void {
+    const index = this.controllers.indexOf(controller)
+    if (index !== -1) {
+      this.controllers.splice(index, 1)
+    }
+    // If the controller should run in the physic pipeline, remove it from the scene's dedicated array
+    if (controller.__RUN_IN_PHYSIC_PIPELINE__) {
+      const index = this.scene.__PHYSIC_CONTROLLERS__.indexOf(controller)
+      if (index !== -1) {
+        this.scene.__PHYSIC_CONTROLLERS__.splice(index, 1)
+      }
+    }
   }
 
   /**
@@ -94,10 +127,13 @@ export abstract class FComponent {
    * @param delta The time since the last frame.
    */
   frame(delta: number): void {
-    // If a controller is attached, call the frame method
-    if (this.controller) {
-      this.controller.frame(delta)
-    }
+    // For each controller, call the frame method
+    this.controllers?.forEach((controller) => {
+      // Check if the controller should run in the physic pipeline (to prevent double calls)
+      if (!controller.__RUN_IN_PHYSIC_PIPELINE__) {
+        controller.frame(delta)
+      }
+    })
     // Call the onFrame callbacks
     this.__CALLBACKS_ON_FRAME__.forEach((callback) => {
       callback()

@@ -18,7 +18,21 @@
 
 #### Defined in
 
-[3d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FController.ts#L6)
+[3d/src/controllers/FController.ts:6](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FController.ts#L6)
+
+***
+
+### runInPhysicPipeline?
+
+> `optional` **runInPhysicPipeline**: `boolean`
+
+#### Inherited from
+
+[`FControllerOptions`](FControllerOptions.md).[`runInPhysicPipeline`](FControllerOptions.md#runinphysicpipeline)
+
+#### Defined in
+
+core/dist/index.d.ts:6
 
 ***
 
@@ -30,4 +44,4 @@ The speed of the character.
 
 #### Defined in
 
-[3d/src/controllers/FCharacterController.ts:13](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/3d/src/controllers/FCharacterController.ts#L13)
+[3d/src/controllers/FCharacterController.ts:13](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/controllers/FCharacterController.ts#L13)

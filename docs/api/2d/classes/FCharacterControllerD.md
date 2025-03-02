@@ -42,7 +42,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerD.ts:22](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/controllers/FCharacterControllerD.ts#L22)
+[2d/src/controllers/FCharacterControllerD.ts:22](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/controllers/FCharacterControllerD.ts#L22)
 
 ## Methods
 
@@ -67,9 +67,25 @@ The purpose of this method is to update the component transform based on the con
 
 #### Defined in
 
-[2d/src/controllers/FCharacterControllerD.ts:38](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/controllers/FCharacterControllerD.ts#L38)
+[2d/src/controllers/FCharacterControllerD.ts:38](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/controllers/FCharacterControllerD.ts#L38)
 
 ## Properties
+
+### \_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_
+
+> **\_\_RUN\_IN\_PHYSIC\_PIPELINE\_\_**: `boolean`
+
+True if the controller should run in the physic pipeline.
+
+#### Inherited from
+
+[`FCharacterController`](FCharacterController.md).[`__RUN_IN_PHYSIC_PIPELINE__`](FCharacterController.md#__run_in_physic_pipeline__)
+
+#### Defined in
+
+core/dist/index.d.ts:20
+
+***
 
 ### component
 
@@ -84,7 +100,7 @@ It is redefined here to get the correct type (with 2D properties).
 
 #### Defined in
 
-[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/controllers/FController.ts#L17)
+[2d/src/controllers/FController.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/controllers/FController.ts#L17)
 
 ***
 
@@ -116,7 +132,7 @@ The inputs that will be used to move the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:21](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/controllers/FCharacterController.ts#L21)
+[2d/src/controllers/FCharacterController.ts:21](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/controllers/FCharacterController.ts#L21)
 
 ***
 
@@ -132,7 +148,7 @@ The scene where the character is.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:36](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/controllers/FCharacterController.ts#L36)
+[2d/src/controllers/FCharacterController.ts:36](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/controllers/FCharacterController.ts#L36)
 
 ***
 
@@ -148,4 +164,4 @@ The speed of the character.
 
 #### Defined in
 
-[2d/src/controllers/FCharacterController.ts:31](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/controllers/FCharacterController.ts#L31)
+[2d/src/controllers/FCharacterController.ts:31](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/controllers/FCharacterController.ts#L31)

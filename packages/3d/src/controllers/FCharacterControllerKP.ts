@@ -32,13 +32,13 @@ export class FCharacterControllerKP extends FCharacterControllerK {
     /**
      * Get the corrected movements for the current frame
      */
-    const correctedMovement = this.getCorrectedMovements()
+    const correctedMovement = this.getCorrectedMovements(delta)
 
     // Apply the movement to the rigidBody
     this.component.rigidBody?.__RIGIDBODY__.setNextKinematicTranslation({
-      x: this.component.rigidBody.__RIGIDBODY__.translation().x + correctedMovement.x * delta * this.speed * 64,
-      y: this.component.rigidBody.__RIGIDBODY__.translation().y + correctedMovement.y * delta * this.speed * 64,
-      z: this.component.rigidBody.__RIGIDBODY__.translation().z + correctedMovement.z * delta * this.speed * 64,
+      x: this.component.rigidBody.__RIGIDBODY__.translation().x + correctedMovement.x,
+      y: this.component.rigidBody.__RIGIDBODY__.translation().y + correctedMovement.y,
+      z: this.component.rigidBody.__RIGIDBODY__.translation().z + correctedMovement.z,
     })
 
     // If one of the inputs is true, apply the corrected rotation

@@ -18,7 +18,7 @@
 
 #### Defined in
 
-core/dist/index.d.ts:178
+core/dist/index.d.ts:359
 
 ***
 
@@ -28,7 +28,7 @@ core/dist/index.d.ts:178
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:12](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FPolygon.ts#L12)
+[2d/src/polygons/FPolygon.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/polygons/FPolygon.ts#L12)
 
 ***
 
@@ -38,7 +38,7 @@ core/dist/index.d.ts:178
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:13](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/polygons/FPolygon.ts#L13)
+[2d/src/polygons/FPolygon.ts:13](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/polygons/FPolygon.ts#L13)
 
 ***
 
@@ -60,7 +60,7 @@ core/dist/index.d.ts:178
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L15)
+[2d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L15)
 
 ***
 
@@ -74,7 +74,7 @@ core/dist/index.d.ts:178
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L16)
+[2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L16)
 
 ***
 
@@ -88,7 +88,7 @@ core/dist/index.d.ts:178
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L17)
+[2d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L17)
 
 ***
 
@@ -110,4 +110,4 @@ core/dist/index.d.ts:178
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/fe513db46f793b2520946de03583c9b4464b47bc/packages/2d/src/core/FComponent.ts#L18)
+[2d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L18)

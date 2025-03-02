@@ -3,6 +3,7 @@ import type { FComponent } from './FComponent'
 /**
  * The base class for all groups of components in Fibbo.
  * @category Core
+ * @deprecated Marked as deprecated while we are not sure if we will keep this class.
  */
 export abstract class FGroup {
   /**
