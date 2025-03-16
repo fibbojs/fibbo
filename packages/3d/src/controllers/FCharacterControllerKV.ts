@@ -1,5 +1,6 @@
 import type { FScene } from '../core/FScene'
 import { FRigidBodyType } from '../types/FRigidBodyType'
+import { FShapes } from '../types/FShapes'
 import { FCharacterControllerK } from './FCharacterControllerK'
 import type { FCharacterControllerOptions } from './FCharacterController'
 
@@ -24,6 +25,7 @@ export class FCharacterControllerKV extends FCharacterControllerK {
     // Initialize the rigidBody
     this.component.initRigidBody({
       rigidBodyType: FRigidBodyType.KINEMATIC_VELOCITY_BASED,
+      shape: FShapes.CAPSULE,
       ...options,
     })
   }
