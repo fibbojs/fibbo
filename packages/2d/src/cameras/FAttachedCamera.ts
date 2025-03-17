@@ -1,5 +1,4 @@
 import type { FComponent } from '../core/FComponent'
-import type { FScene } from '../core/FScene'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
@@ -17,8 +16,8 @@ export class FAttachedCamera extends FCamera {
    */
   target: FComponent
 
-  constructor(scene: FScene, options: FAttachedCameraOptions) {
-    super(scene, options)
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
     this.target = options.target
   }
 

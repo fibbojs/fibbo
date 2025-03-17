@@ -31,7 +31,7 @@ describe('fRigidBody', () => {
   })
 
   it('should create a collider with default options', () => {
-    const cuboid = new FCuboid(scene, {
+    const cuboid = new FCuboid({
       position: { x: 0, y: 0, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
@@ -69,7 +69,7 @@ describe('fRigidBody', () => {
   })
 
   it('should create a collider with custom transforms', () => {
-    const cuboid = new FCuboid(scene, {
+    const cuboid = new FCuboid({
       position: { x: 1, y: 1, z: 1 },
       rotation: { x: 0.1, y: 0.2, z: 0.3 },
       scale: { x: 1, y: 2, z: 3 },
@@ -101,7 +101,7 @@ describe('fRigidBody', () => {
   })
 
   it('should create a collider with a sphere shape', () => {
-    const cuboid = new FCuboid(scene, {
+    const cuboid = new FCuboid({
       position: { x: 0, y: 0, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
@@ -131,7 +131,7 @@ describe('fRigidBody', () => {
   })
 
   it('should modify collider transforms', () => {
-    const cuboid = new FCuboid(scene, {
+    const cuboid = new FCuboid({
       position: { x: 1, y: 0, z: 0 },
       rotation: { x: 0, y: 0.2, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
@@ -185,7 +185,7 @@ describe('fRigidBody', () => {
   })
 
   it('should modify collider transforms with a sphere shape', () => {
-    const cuboid = new FCuboid(scene, {
+    const cuboid = new FCuboid({
       position: { x: 0, y: 0, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
@@ -248,7 +248,7 @@ describe('fRigidBody', () => {
   })
 
   it('should update collider transforms with attached component transforms', () => {
-    const cuboid = new FCuboid(scene, {
+    const cuboid = new FCuboid({
       position: { x: 1, y: 1, z: 1 },
       rotation: { x: 0.1, y: 0.2, z: 0.3 },
       scale: { x: 1, y: 0.5, z: 1 },

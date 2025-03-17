@@ -9,6 +9,7 @@ export default defineConfig({
       enabled: true,
       include: ['packages'],
       exclude: ['packages/**/dist', 'packages/**/coverage', 'packages/**/test'],
+      provider: 'v8',
     },
   },
 })

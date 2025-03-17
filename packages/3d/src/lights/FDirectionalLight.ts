@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import type { FScene } from '../core/FScene'
 import type { FLightOptions } from './FLight'
 import { FLight } from './FLight'
 
@@ -8,8 +7,8 @@ import { FLight } from './FLight'
  * @category Light
  */
 export class FDirectionalLight extends FLight {
-  constructor(scene: FScene, options?: FLightOptions) {
-    super(scene, options)
+  constructor(options?: FLightOptions) {
+    super(options)
 
     // Define default options
     const DEFAULT_OPTIONS = {

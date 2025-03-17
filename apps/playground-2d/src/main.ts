@@ -18,17 +18,17 @@ import Character from './classes/Character'
     fDebug(scene)
 
   // Create a death zone
-  const deathZone = new FComponentEmpty(scene, {
+  const deathZone = new FComponentEmpty({
     position: { x: 0, y: -5 },
     scale: { x: 20, y: 0.1 },
   })
   deathZone.initCollider()
   // Load level
-  loadLevel(scene)
+  loadLevel()
 
-  new MySquare(scene)
+  new MySquare()
 
-  const square2 = new FRectangle(scene, {
+  const square2 = new FRectangle({
     position: { x: 0, y: 3 },
     rotationDegree: 45,
     scale: { x: 0.5, y: 0.5 },
@@ -37,14 +37,14 @@ import Character from './classes/Character'
     rotationDegreeOffset: 45,
   })
 
-  const square3 = new FRectangle(scene, {
+  const square3 = new FRectangle({
     position: { x: 4, y: 1 },
   })
   square3.initCollider({
     shape: FShapes.CIRCLE,
   })
 
-  const square4 = new FRectangle(scene, {
+  const square4 = new FRectangle({
     position: { x: -2.2, y: 1 },
     scale: { x: 0.5, y: 0.5 },
   })
@@ -55,13 +55,13 @@ import Character from './classes/Character'
     scale: { x: 2.5, y: 2.5 },
   })
 
-  const square5 = new FRectangle(scene, {
+  const square5 = new FRectangle({
     position: { x: 1, y: 2 },
     scale: { x: 0.5, y: 0.5 },
   })
   square5.initSensor()
 
-  const circle = new FCircle(scene, {
+  const circle = new FCircle({
     position: { x: 0, y: 3 },
     scale: { x: 1, y: 1 },
     gradient: [
@@ -72,7 +72,7 @@ import Character from './classes/Character'
   circle.initRigidBody()
 
   // Create a rotating square
-  const rotatingSquare = new FRectangle(scene, {
+  const rotatingSquare = new FRectangle({
     position: { x: 0, y: 5 },
   })
   rotatingSquare.initSensor()
@@ -88,7 +88,7 @@ import Character from './classes/Character'
   /**
    * Create character
    */
-  const character = new Character(scene)
+  const character = new Character()
   const removeCollisionCallbackWithFRectangle = character.onCollisionWith(FRectangle, ({ component }) => {
     console.log('Sprite collided with a square!')
     // Cast the component to FRectangle
@@ -105,7 +105,7 @@ import Character from './classes/Character'
   })
 
   // Create keyboard
-  const keyboard = new FKeyboard(scene)
+  const keyboard = new FKeyboard()
   keyboard.onKeyDown('p', () => {
     character.transform.setPosition({ x: 0, y: 5 })
 
@@ -120,7 +120,7 @@ import Character from './classes/Character'
   })
 
   // Attach a camera to the character
-  scene.camera = new FAttachedCamera(scene, {
+  scene.camera = new FAttachedCamera({
     target: character,
   })
 })()

@@ -27,7 +27,7 @@ import { FCuboid, FGameCamera, FScene } from '@fibbojs/3d'
   cube.initRigidBody()
 
   // Attach a camera to the cube
-  scene.camera = new FGameCamera(scene, { target: cube })
+  scene.camera = new FGameCamera({ target: cube })
 })()
 ```
 

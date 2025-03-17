@@ -54,7 +54,7 @@ function hslToRgb(h: number, s: number, l: number): [number, number, number] {
   const GRID_GAP = 0.5
   for (let i = 0; i < GRID_ROWS; i++) {
     for (let j = 0; j < GRID_COLS; j++) {
-      const square = new FRectangle(scene, {
+      const square = new FRectangle({
         position: { x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 },
         scale: { x: 0.5, y: 0.5 },
         color: 0x2C2C2C,
@@ -96,7 +96,7 @@ function hslToRgb(h: number, s: number, l: number): [number, number, number] {
   }
 
   // Create a fixed camera
-  scene.camera = new FFixedCamera(scene, {
+  scene.camera = new FFixedCamera({
     position: { x: 0, y: -0.2 },
   })
   scene.camera.setZoom(0.5)

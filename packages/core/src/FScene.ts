@@ -98,6 +98,9 @@ export abstract class FScene {
     if (typeof window === 'undefined' || typeof document === 'undefined')
       throw new Error('FibboError: FScene must be instantiated in a browser environment')
 
+    // Define globalThis.__FIBBO_ACTUAL_SCENE__ as the current scene
+    globalThis.__FIBBO_ACTUAL_SCENE__ = this
+
     // Define default values for the options
     const DEFAULT_OPTIONS = {
       gravity: { x: 0, y: -9.81, z: 0 },

@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import type { FScene } from '../core/FScene'
 import type { FComponentOptions } from '../core/FComponent'
 import { FShapes } from '../types/FShapes'
 import type { FRigidBodyOptions } from '../core/FRigidBody'
@@ -15,19 +14,19 @@ import { FPolyhedron } from './FPolyhedron'
  *
  * const scene = new FScene()
  *
- * const capsule = new FCapsule(scene)
+ * const capsule = new FCapsule()
  * scene.addComponent(capsule)
  * ```
  */
 export class FCapsule extends FPolyhedron {
-  constructor(scene: FScene, options?: FComponentOptions) {
-    super(scene, options)
+  constructor(options?: FComponentOptions) {
+    super(options)
     // Create a capsule
     const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
     const material = new THREE.MeshPhongMaterial({ color: 0x666666 })
     this.__MESH__ = new THREE.Mesh(geometry, material)
     // If shadows are enabled, cast and receive shadows
-    if (scene.__ENABLE_SHADOWS__) {
+    if (this.scene.__ENABLE_SHADOWS__) {
       this.__MESH__.castShadow = true
       this.__MESH__.receiveShadow = true
     }

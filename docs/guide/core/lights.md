@@ -28,14 +28,14 @@ Lights can be created as follows (they will be automatically added to the scene)
 import { FAmbientLight, FDirectionalLight, FSpotLight } from '@fibbojs/3d'
 
 // Add directional light to represent the sun
-new FDirectionalLight(scene, {
+new FDirectionalLight({
   position: { x: 20, y: 20, z: 0 },
   color: 0xFFFFFF,
   intensity: 3,
   shadowQuality: 12,
 })
 // Add spot light
-new FSpotLight(scene, {
+new FSpotLight({
   position: { x: 4, y: 4, z: 4 },
   angle: 1,
   distance: 8,
@@ -45,7 +45,7 @@ new FSpotLight(scene, {
   shadowQuality: 7,
 })
 // Add ambient light
-new FAmbientLight(scene, {
+new FAmbientLight({
   color: 0x404040,
   intensity: 20,
 })

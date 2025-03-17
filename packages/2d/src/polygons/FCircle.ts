@@ -1,5 +1,4 @@
 import * as PIXI from 'pixi.js'
-import type { FScene } from '../core/FScene'
 import { FShapes } from '../types/FShapes'
 import type { FRigidBodyOptions } from '../core/FRigidBody'
 import type { FColliderOptions } from '../core/FCollider'
@@ -15,13 +14,13 @@ import { FPolygon } from './FPolygon'
  *
  * const scene = new FScene()
  *
- * const circle = new FCircle(scene)
+ * const circle = new FCircle()
  * scene.addComponent(circle)
  * ```
  */
 export class FCircle extends FPolygon {
-  constructor(scene: FScene, options?: FPolygonOptions) {
-    super(scene, options)
+  constructor(options?: FPolygonOptions) {
+    super(options)
     // Create the circle
     this.__CONTAINER__ = new PIXI.Graphics()
       .circle(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100 / 2)

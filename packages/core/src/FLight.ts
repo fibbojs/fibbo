@@ -1,6 +1,7 @@
 import type { FScene } from './FScene'
 
 export interface FLightOptions {
+  scene?: FScene
   addToScene?: boolean
 }
 
@@ -19,19 +20,20 @@ export abstract class FLight {
    */
   public scene: FScene
 
-  constructor(scene: FScene, options: FLightOptions = {}) {
+  constructor(options?: FLightOptions) {
     // Define default options
     const DEFAULT_OPTIONS = {
+      scene: globalThis.__FIBBO_ACTUAL_SCENE__,
       addToScene: true,
     }
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (options.addToScene === undefined)
+    if (options.scene === undefined || options.addToScene === undefined)
       throw new Error('FibboError: FComponent requires addToScene option')
 
     // Store the scene
-    this.scene = scene
+    this.scene = options.scene
 
     // If addToScene is true, wait for the light to be loaded and add it to the scene
     if (options.addToScene) {

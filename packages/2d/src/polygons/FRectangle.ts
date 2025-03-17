@@ -1,6 +1,5 @@
 import * as PIXI from 'pixi.js'
 import type { FVector2 } from '@fibbojs/core'
-import type { FScene } from '../core/FScene'
 import type { FPolygonOptions } from './FPolygon'
 import { FPolygon } from './FPolygon'
 
@@ -13,13 +12,13 @@ import { FPolygon } from './FPolygon'
  *
  * const scene = new FScene()
  *
- * const square = new FRectangle(scene)
+ * const square = new FRectangle()
  * scene.addComponent(square)
  * ```
  */
 export class FRectangle extends FPolygon {
-  constructor(scene: FScene, options?: FPolygonOptions) {
-    super(scene, options)
+  constructor(options?: FPolygonOptions) {
+    super(options)
     // Create the rectangle
     this.__CONTAINER__ = new PIXI.Graphics()
       .rect(this.transform.position.x, this.transform.position.y, this.transform.scale.x * 100, this.transform.scale.y * 100)

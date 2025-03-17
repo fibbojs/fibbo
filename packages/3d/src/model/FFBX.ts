@@ -1,7 +1,6 @@
 import * as THREE from 'three'
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js'
 import type { FVector3 } from '@fibbojs/core'
-import type { FScene } from '../core/FScene'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
@@ -14,15 +13,15 @@ import type { FModelOptions } from './FModel'
  *
  * const scene = new FScene()
  *
- * const fbx = new FFBX(scene, {
+ * const fbx = new FFBX({
  *   path: 'model.fbx',
  * })
  * scene.addComponent(fbx)
  * ```
  */
 export class FFBX extends FModel {
-  constructor(scene: FScene, options: FModelOptions) {
-    super(scene, {
+  constructor(options: FModelOptions) {
+    super({
       fileExtension: 'fbx',
       ...options,
     })

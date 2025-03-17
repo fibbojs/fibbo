@@ -1,9 +1,8 @@
 import { FGLTF } from '@fibbojs/3d'
-import type { FScene } from '@fibbojs/3d'
 
 export default class GltfCube extends FGLTF {
-  constructor(scene: FScene) {
-    super(scene, {
+  constructor() {
+    super({
       name: 'Cube',
     })
     this.transform.position = { x: -4, y: 5, z: 2 }

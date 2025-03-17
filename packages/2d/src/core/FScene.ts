@@ -28,7 +28,7 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *  await scene.init()
  *  await scene.initPhysics()
  *
- *  const square = new FRectangle(scene)
+ *  const square = new FRectangle()
  *  square.initRigidBody()
  * })()
  * ```
@@ -127,7 +127,7 @@ export class FScene extends FSceneCore {
     this.viewport.setZoom(0.8, true)
 
     // Create a default free camera
-    this.camera = new FFreeCamera(this)
+    this.camera = new FFreeCamera({ scene: this })
 
     // Initialize the render pipeline
     this.__PIPELINE_MANAGER__.addStandardPipeline(new RenderPipeline({ scene: this }))

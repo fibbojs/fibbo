@@ -7,6 +7,7 @@ import type { FScene } from './FScene'
 let ID_COUNTER = 0
 
 export interface FComponentOptions {
+  scene?: FScene
   addToScene?: boolean
 }
 
@@ -63,19 +64,20 @@ export abstract class FComponent {
    */
   public controllers: FController[]
 
-  constructor(scene: FScene, options?: FComponentOptions) {
+  constructor(options?: FComponentOptions) {
     // Define default options
     const DEFAULT_OPTIONS = {
+      scene: globalThis.__FIBBO_ACTUAL_SCENE__,
       addToScene: true,
     }
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (options.addToScene === undefined)
+    if (options.scene === undefined || options.addToScene === undefined)
       throw new Error('FibboError: FComponent requires addToScene option')
 
     // Store the scene
-    this.scene = scene
+    this.scene = options.scene
 
     // Add the component to the scene if addToScene is true
     if (options.addToScene) {

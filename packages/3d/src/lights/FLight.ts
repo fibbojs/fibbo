@@ -1,11 +1,15 @@
 import * as THREE from 'three'
 import { FLight as FLightCore } from '@fibbojs/core'
-import type { FVector3 } from '@fibbojs/core'
+import type { FLightOptions as FLightOptionsCore, FVector3 } from '@fibbojs/core'
 import type { FTransformOptions } from '../core/FTransform'
 import { FTransform } from '../core/FTransform'
 import type { FScene } from '../core/FScene'
 
-export interface FLightOptions extends FTransformOptions {
+export interface FLightOptions extends FLightOptionsCore {
+  position?: FTransformOptions['position']
+  rotation?: FTransformOptions['rotation']
+  rotationDegree?: FTransformOptions['rotationDegree']
+  scale?: FTransformOptions['scale']
   color?: THREE.ColorRepresentation
   intensity?: number
   lookAt?: FVector3
@@ -33,7 +37,7 @@ export abstract class FLight extends FLightCore {
   /**
    * Scene the light is in.
    */
-  scene: FScene
+  declare scene: FScene
 
   /**
    * Transform of the light.
@@ -50,8 +54,8 @@ export abstract class FLight extends FLightCore {
    */
   __SHADOW_QUALITY__: number
 
-  constructor(scene: FScene, options?: FLightOptions) {
-    super(scene)
+  constructor(options?: FLightOptions) {
+    super(options)
 
     // Define default options
     const DEFAULT_OPTIONS = {
@@ -63,11 +67,8 @@ export abstract class FLight extends FLightCore {
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || !options.shadowQuality)
-      throw new Error('FibboError: FLight requires position and lookAt options.')
-
-    // Store scene
-    this.scene = scene
+    if (!options.position || options.shadowQuality === undefined)
+      throw new Error('FibboError: options missing in FLight constructor')
 
     // Configure transform
     this.transform = new FTransform({

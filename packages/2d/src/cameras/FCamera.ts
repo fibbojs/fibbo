@@ -1,9 +1,11 @@
 import { FCamera as FCameraCore } from '@fibbojs/core'
+import type { FCameraOptions as FCameraOptionsCore } from '@fibbojs/core'
 import type { FScene } from '../core/FScene'
+import type { FTransformOptions } from '../core/FTransform'
 import { FTransform } from '../core/FTransform'
 
-export interface FCameraOptions {
-  position?: { x: number, y: number }
+export interface FCameraOptions extends FCameraOptionsCore {
+  position?: FTransformOptions['position']
 }
 
 /**
@@ -16,10 +18,7 @@ export abstract class FCamera extends FCameraCore {
    */
   public __IS_2D__: boolean = true
 
-  /**
-   * The scene the camera is in.
-   */
-  scene: FScene
+  declare scene: FScene
 
   /**
    * Transform of the camera.
@@ -28,15 +27,8 @@ export abstract class FCamera extends FCameraCore {
    */
   transform: FTransform
 
-  /**
-   * Create a new 2D camera.
-   * @param scene The scene the camera is in.
-   * @param options The options for the camera.
-   */
-  constructor(scene: FScene, options?: FCameraOptions) {
-    super(scene)
-    // Store scene
-    this.scene = scene
+  constructor(options?: FCameraOptions) {
+    super(options)
 
     // Define default options
     const DEFAULT_OPTIONS = {

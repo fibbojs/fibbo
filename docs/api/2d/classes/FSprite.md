@@ -11,7 +11,7 @@ import { FScene, FSprite } from '@fibbojs/2d'
 
 const scene = new FScene()
 
-const sprite = new FSprite(scene, '/my-texture.png')
+const sprite = new FSprite('/my-texture.png')
 ```
 
 ## Extends

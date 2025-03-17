@@ -10,7 +10,7 @@ import { Navbar } from '../../components/Navbar'
   scene.init()
 
   // Add ambient light
-  new FAmbientLight(scene, {
+  new FAmbientLight({
     color: 0xFFFFFF,
     intensity: 1,
   })
@@ -29,13 +29,13 @@ import { Navbar } from '../../components/Navbar'
     grid[i] = []
     for (let j = 0; j < GRID_COLS; j++) {
     // Create the sphere to display
-      const sphere = new FSphere(scene)
+      const sphere = new FSphere()
       sphere.transform.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
       // @ts-expect-error Disable typing for the mesh property
       sphere.__MESH__.material.color.set(new THREE.Color(0x2C2C2C))
 
       // Create a cube for the hitbox
-      const cube = new FCuboid(scene)
+      const cube = new FCuboid()
       cube.transform.setPosition({ x: i * GRID_GAP - GRID_ROWS * GRID_GAP / 2, y: 1, z: j * GRID_GAP - GRID_COLS * GRID_GAP / 2 })
       cube.transform.setScale({ x: GRID_GAP, y: 1, z: GRID_GAP })
       // Make the cube invisible
@@ -57,10 +57,10 @@ import { Navbar } from '../../components/Navbar'
   }
 
   // Create a camera target
-  const cameraTarget = new FComponentEmpty(scene)
+  const cameraTarget = new FComponentEmpty()
   cameraTarget.transform.setPosition({ x: 0, y: 1, z: 0 })
   // Create a camera
-  const camera = new FOrbitCamera(scene, {
+  const camera = new FOrbitCamera({
     target: cameraTarget,
   })
   camera.transform.setPosition({ x: 14, y: 12, z: 14 })

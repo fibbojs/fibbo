@@ -30,18 +30,18 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *  await scene.initPhysics()
  *
  *  // Create a ground
- *  const ground = new FCuboid(scene)
+ *  const ground = new FCuboid()
  *  ground.transform.setScale(15, 0.1, 15)
  *  ground.transform.setPosition(0, -0.1, 0)
  *  ground.initCollider()
  *  ground.setColor(0x1F1F1F)
  *
  *  // Create a cube
- *  const cube = new FCuboid(scene)
+ *  const cube = new FCuboid()
  *  cube.initRigidBody()
  *
  *  // Attach a camera to the cube
- *  scene.camera = new FGameCamera(scene, {target: cube})
+ *  scene.camera = new FGameCamera({target: cube})
  * })()
  * ```
  */
@@ -112,7 +112,9 @@ export class FScene extends FSceneCore {
       // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
     }
     // Create a default camera
-    this.camera = new FFixedCamera(this)
+    this.camera = new FFixedCamera({
+      scene: this,
+    })
 
     // Add renderer to DOM
     this.__DOM_NODE__.appendChild(this.renderer.domElement)

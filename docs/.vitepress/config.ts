@@ -246,6 +246,7 @@ export default defineConfig({
               { text: 'FVector2', link: '/api/core/interfaces/FVector2.md' },
               { text: 'FVector4', link: '/api/core/interfaces/FVector4.md' },
               { text: 'FControllerOptions', link: '/api/core/interfaces/FControllerOptions.md' },
+              { text: 'FCameraOptions', link: '/api/core/interfaces/FCameraOptions.md' },
               { text: 'FComponentOptions', link: '/api/core/interfaces/FComponentOptions.md' },
               { text: 'OnCollisionWithData', link: '/api/core/interfaces/OnCollisionWithData.md' },
               { text: 'FLightOptions', link: '/api/core/interfaces/FLightOptions.md' },
@@ -255,6 +256,9 @@ export default defineConfig({
           { text: 'event', link: '/api/event/index.md', collapsed: true, items: [
             { text: 'Event', collapsed: true, items: [
               { text: 'FKeyboard', link: '/api/event/classes/FKeyboard.md' },
+            ] },
+            { text: 'Interfaces', collapsed: true, items: [
+              { text: 'FKeyboardOptions', link: '/api/event/interfaces/FKeyboardOptions.md' },
             ] },
           ] },
           { text: 'util', link: '/api/util/index.md', collapsed: true, items: [

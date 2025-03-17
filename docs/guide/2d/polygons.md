@@ -15,7 +15,7 @@ To create a rectangle, you can use the `FRectangle` class. Here is an example:
 ```typescript
 import { FRectangle } from '@fibbojs/2d'
 
-const square = new FRectangle(scene, {
+const square = new FRectangle({
   position: { x: 0, y: 5 },
   scale: { x: 1, y: 1 },
   color: 0xFF0000,
@@ -31,7 +31,7 @@ To create a circle, you can use the `FCircle` class. Here is an example:
 ```typescript
 import { FCircle } from '@fibbojs/2d'
 
-const circle = new FCircle(scene, {
+const circle = new FCircle({
   position: { x: 0, y: 5 },
   scale: { x: 1, y: 1 },
   color: 0xFF0000,

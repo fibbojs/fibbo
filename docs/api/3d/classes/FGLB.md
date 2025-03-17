@@ -12,7 +12,7 @@ import { FGLB, FScene } from '@fibbojs/3d'
 
 const scene = new FScene()
 
-const glb = new FGLB(scene, {
+const glb = new FGLB({
   path: 'model.glb',
 })
 scene.addComponent(glb)

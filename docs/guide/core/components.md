@@ -48,7 +48,7 @@ Various options can be passed to the constructor :
 ```typescript [2d]
 import { FRectangle } from '@fibbojs/2d'
 
-new FRectangle(scene, {
+new FRectangle({
   position: { x: 1, y: 2 },
   rotation: 0,
   rotationDegree: 0,
@@ -59,7 +59,7 @@ new FRectangle(scene, {
 ```typescript [3d]
 import { FCuboid } from '@fibbojs/3d'
 
-new FCuboid(scene, {
+new FCuboid({
   position: { x: 1, y: 2, z: 3 },
   rotation: { x: 0, y: 0, z: 0 },
   rotationDegree: { x: 0, y: 0, z: 0 },

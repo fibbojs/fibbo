@@ -1,5 +1,4 @@
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import type { FScene } from '../core/FScene'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
@@ -27,15 +26,15 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  *
  * const scene = new FScene()
  *
- * const gltf = new FGLTF(scene, {
+ * const gltf = new FGLTF({
  *  path: 'model.glb',
  * })
  * scene.addComponent(gltf)
  * ```
  */
 export class FGLTF extends FModel {
-  constructor(scene: FScene, options: FModelOptions) {
-    super(scene, {
+  constructor(options: FModelOptions) {
+    super({
       fileExtension: 'gltf',
       ...options,
     })

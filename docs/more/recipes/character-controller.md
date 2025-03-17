@@ -23,10 +23,10 @@ Character controllers should be used the same way as any other controller. Here 
 ```typescript
 import { FCapsule, FCharacterControllerKP } from '@fibbojs/3d'
 
-const character = new FCapsule(scene, {
+const character = new FCapsule({
   position: { x: 0, y: 10, z: 0 },
 })
-character.controller = new FCharacterControllerKP(scene, {
+character.controller = new FCharacterControllerKP({
   component: character,
 })
 ```

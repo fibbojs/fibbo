@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import { FAssetUtil } from '@fibbojs/util'
-import type { FScene } from '../core/FScene'
 import { FComponent } from '../core/FComponent'
 import type { FComponentOptions } from '../core/FComponent'
 
@@ -48,12 +47,12 @@ export abstract class FModel extends FComponent {
   public fileExtension: string
 
   /**
-   * @param scene The 3D scene where the model will be added.
    * @param options The options for the component (inherits from FComponent).
+   * @param options.scene The 3D scene where the model will be added.
    * @param options.path The path for the model file to load.
    */
-  constructor(scene: FScene, options: FModelOptions) {
-    super(scene, options)
+  constructor(options: FModelOptions) {
+    super(options)
 
     // Apply default options
     const DEFAULT_OPTIONS = {

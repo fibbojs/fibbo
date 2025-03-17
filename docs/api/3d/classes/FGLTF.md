@@ -11,7 +11,7 @@ import { FGLTF, FScene } from '@fibbojs/3d'
 
 const scene = new FScene()
 
-const gltf = new FGLTF(scene, {
+const gltf = new FGLTF({
   path: 'model.glb',
 })
 scene.addComponent(gltf)

@@ -10,8 +10,8 @@ import type { FScene } from './FScene'
 export class FSensor extends FRigidBody {
   /**
    * Creates a rigidBody for the given component.
-   * @param scene The scene the rigidBody belongs to.
    * @param options The options for the rigidBody.
+   * @param options.scene The scene the rigidBody belongs to.
    * @param options.position The position of the rigidBody.
    * @param options.scale The scale of the rigidBody.
    * @param options.rotation The rotation of the rigidBody.
@@ -29,7 +29,7 @@ export class FSensor extends FRigidBody {
    * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
    * @example
    * ```ts
-   * const sensor = new FSensor(scene, {
+   * const sensor = new FSensor({
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },
    *  rotation: { x: 0, y: 0, z: 0 },
@@ -37,8 +37,8 @@ export class FSensor extends FRigidBody {
    * })
    * ```
    */
-  constructor(scene: FScene, options?: FRigidBodyOptions) {
-    super(scene, {
+  constructor(options?: FRigidBodyOptions) {
+    super({
       sensor: true,
       rigidBodyType: FRigidBodyType.KINEMATIC_POSITION_BASED,
       ...options,

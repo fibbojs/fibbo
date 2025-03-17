@@ -1,6 +1,5 @@
 import type { FVector3 } from '@fibbojs/core'
 import type { FComponent } from '../core/FComponent'
-import type { FScene } from '../core/FScene'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
@@ -17,10 +16,11 @@ export interface FAttachedCameraOptions extends FCameraOptions {
  *
  * const scene = new FScene()
  *
- * const cube = new FCuboid(scene)
- * scene.addComponent(cube)
+ * const cube = new FCuboid()
  *
- * scene.camera = new FAttachedCamera(cube)
+ * scene.camera = new FAttachedCamera({
+ *  target: cube
+ * })
  * ```
  */
 export class FAttachedCamera extends FCamera {
@@ -30,12 +30,12 @@ export class FAttachedCamera extends FCamera {
   offset: FVector3 = { x: 0, y: 5, z: 5 }
 
   /**
-   * @param scene Scene that the camera is in
-   * @param attachedComponent Component that the camera is attached to
+   * @param options Options for the camera
+   * @param options.target Component that the camera is attached to
    */
-  constructor(scene: FScene, attachedComponent: FComponent) {
-    super(scene)
-    this.attachedComponent = attachedComponent
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
+    this.attachedComponent = options.target
   }
 
   frame(_delta: number): void {

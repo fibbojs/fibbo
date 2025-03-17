@@ -1,7 +1,6 @@
 import type * as PIXI from 'pixi.js'
 import type { FComponentOptions } from '../core/FComponent'
 import { FComponent } from '../core/FComponent'
-import type { FScene } from '../core/FScene'
 
 export interface GradientStep {
   position: number
@@ -30,13 +29,12 @@ export abstract class FPolygon extends FComponent {
   // Declare __CONTAINER__ as PIXI.Graphics to be able to use the Graphics methods
   declare __CONTAINER__: PIXI.Graphics
 
-  constructor(scene: FScene, options?: FPolygonOptions) {
-    super(scene, options)
+  constructor(options?: FPolygonOptions) {
+    super(options)
 
     // Apply default options
     const DEFAULT_OPTIONS = {
       color: 0xB978ED,
-      gradient: undefined,
       alpha: 1,
     }
     options = { ...DEFAULT_OPTIONS, ...options }

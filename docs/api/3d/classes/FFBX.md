@@ -11,7 +11,7 @@ import { FFBX, FScene } from '@fibbojs/3d'
 
 const scene = new FScene()
 
-const fbx = new FFBX(scene, {
+const fbx = new FFBX({
   path: 'model.fbx',
 })
 scene.addComponent(fbx)

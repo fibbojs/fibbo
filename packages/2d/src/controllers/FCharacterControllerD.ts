@@ -1,5 +1,4 @@
 import { FKeyboard } from '@fibbojs/event'
-import type { FScene } from '../core/FScene'
 import { FRigidBodyType } from '../types/FRigidBodyType'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
@@ -13,16 +12,18 @@ import { FCharacterController } from './FCharacterController'
  *
  * const scene = new FScene()
  *
- * const capsule = new FCapsule(scene)
- * capsule.controller = new FCharacterControllerD(scene)
+ * const capsule = new FCapsule()
+ * capsule.controller = new FCharacterControllerD()
  * scene.addComponent(capsule)
  * ```
  */
 export class FCharacterControllerD extends FCharacterController {
-  constructor(scene: FScene, options: FCharacterControllerOptions) {
-    super(scene, options)
+  constructor(options: FCharacterControllerOptions) {
+    super(options)
 
-    const fKeyboard = new FKeyboard(scene)
+    const fKeyboard = new FKeyboard({
+      scene: this.scene,
+    })
     fKeyboard.onKeyDown(' ', () => {
       this.component.rigidBody?.__RIGIDBODY__.applyImpulse({ x: 0, y: 0.5 }, true)
     })

@@ -13,5 +13,8 @@
   "plugin": ["typedoc-plugin-markdown"],
   "hidePageHeader": true,
   "entryFileName": "index",
-  "modulesFileName": "index"
+  "modulesFileName": "index",
+  "compilerOptions": {
+    "strictNullChecks": false
+  }
 }

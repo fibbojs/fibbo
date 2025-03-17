@@ -1,4 +1,3 @@
-import type { FScene } from '../core/FScene'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
@@ -7,8 +6,8 @@ import { FCamera } from './FCamera'
  * @category Camera
  */
 export class FFreeCamera extends FCamera {
-  constructor(scene: FScene, options?: FCameraOptions) {
-    super(scene, options)
+  constructor(options?: FCameraOptions) {
+    super(options)
   }
 
   __ON_CAMERA_ADDED_TO_SCENE_PLEASE_DO_NOT_CALL_THIS_BY_HAND__(): void {

@@ -51,7 +51,7 @@
     "**/dist": true,
     "**/node_modules": true,
     "**/tsconfig.json": true,
-    "**/*.d.ts": true,
+    "**/*.d.ts": false,
     "**/.gitignore": true,
     "**/vitest.workspace.ts": true,
     "**/vitest.config.ts": true,

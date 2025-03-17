@@ -53,7 +53,7 @@ The options for the rigidBody.
 #### Example
 
 ```ts
-const rigidBody = new FRigidBody(scene, {
+const rigidBody = new FRigidBody({
   position: { x: 0, y: 0, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
   rotation: { x: 0, y: 0, z: 0 },

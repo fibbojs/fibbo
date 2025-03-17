@@ -11,7 +11,7 @@ import { FOBJ, FScene } from '@fibbojs/3d'
 
 const scene = new FScene()
 
-const obj = new FOBJ(scene, {
+const obj = new FOBJ({
   path: 'model.obj',
 })
 scene.addComponent(obj)
