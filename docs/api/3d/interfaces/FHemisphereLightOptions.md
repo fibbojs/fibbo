@@ -8,6 +8,20 @@
 
 ## Properties
 
+### addToScene?
+
+> `optional` **addToScene**: `boolean`
+
+#### Inherited from
+
+[`FLightOptions`](FLightOptions.md).[`addToScene`](FLightOptions.md#addtoscene)
+
+#### Defined in
+
+core/dist/index.d.ts:37
+
+***
+
 ### color?
 
 > `optional` **color**: `ColorRepresentation`
@@ -18,7 +32,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L9)
+[3d/src/lights/FLight.ts:13](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L13)
 
 ***
 
@@ -28,7 +42,7 @@
 
 #### Defined in
 
-[3d/src/lights/FHemisphereLight.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FHemisphereLight.ts#L8)
+[3d/src/lights/FHemisphereLight.ts:7](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FHemisphereLight.ts#L7)
 
 ***
 
@@ -42,7 +56,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L10)
+[3d/src/lights/FLight.ts:14](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L14)
 
 ***
 
@@ -56,7 +70,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L11)
+[3d/src/lights/FLight.ts:15](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L15)
 
 ***
 
@@ -70,7 +84,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L5)
+[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L9)
 
 ***
 
@@ -84,7 +98,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L6)
+[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L10)
 
 ***
 
@@ -98,7 +112,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L7)
+[3d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L11)
 
 ***
 
@@ -112,7 +126,21 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L8)
+[3d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L12)
+
+***
+
+### scene?
+
+> `optional` **scene**: `FScene`
+
+#### Inherited from
+
+[`FLightOptions`](FLightOptions.md).[`scene`](FLightOptions.md#scene)
+
+#### Defined in
+
+core/dist/index.d.ts:36
 
 ***
 
@@ -126,7 +154,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L12)
+[3d/src/lights/FLight.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L16)
 
 ***
 
@@ -136,4 +164,4 @@
 
 #### Defined in
 
-[3d/src/lights/FHemisphereLight.ts:7](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FHemisphereLight.ts#L7)
+[3d/src/lights/FHemisphereLight.ts:6](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FHemisphereLight.ts#L6)

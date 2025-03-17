@@ -8,13 +8,27 @@
 
 ## Properties
 
+### addToScene?
+
+> `optional` **addToScene**: `boolean`
+
+#### Inherited from
+
+[`FComponentOptions`](FComponentOptions.md).[`addToScene`](FComponentOptions.md#addtoscene)
+
+#### Defined in
+
+core/dist/index.d.ts:361
+
+***
+
 ### fileExtension?
 
 > `optional` **fileExtension**: `string`
 
 #### Defined in
 
-[3d/src/model/FModel.ts:11](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/model/FModel.ts#L11)
+[3d/src/model/FModel.ts:10](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/model/FModel.ts#L10)
 
 ***
 
@@ -24,7 +38,7 @@
 
 #### Defined in
 
-[3d/src/model/FModel.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/model/FModel.ts#L8)
+[3d/src/model/FModel.ts:7](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/model/FModel.ts#L7)
 
 ***
 
@@ -34,7 +48,7 @@
 
 #### Defined in
 
-[3d/src/model/FModel.ts:9](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/model/FModel.ts#L9)
+[3d/src/model/FModel.ts:8](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/model/FModel.ts#L8)
 
 ***
 
@@ -48,7 +62,7 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FComponent.ts#L16)
+[3d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L16)
 
 ***
 
@@ -62,7 +76,7 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FComponent.ts#L17)
+[3d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L17)
 
 ***
 
@@ -76,7 +90,7 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FComponent.ts#L18)
+[3d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L18)
 
 ***
 
@@ -90,7 +104,21 @@
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:19](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FComponent.ts#L19)
+[3d/src/core/FComponent.ts:19](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L19)
+
+***
+
+### scene?
+
+> `optional` **scene**: `FScene`
+
+#### Inherited from
+
+[`FComponentOptions`](FComponentOptions.md).[`scene`](FComponentOptions.md#scene)
+
+#### Defined in
+
+core/dist/index.d.ts:360
 
 ***
 
@@ -100,4 +128,4 @@
 
 #### Defined in
 
-[3d/src/model/FModel.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/model/FModel.ts#L10)
+[3d/src/model/FModel.ts:9](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/model/FModel.ts#L9)

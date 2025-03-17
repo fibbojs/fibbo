@@ -26,7 +26,21 @@
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:6](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L6)
+[2d/src/cameras/FCamera.ts:8](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L8)
+
+***
+
+### scene?
+
+> `optional` **scene**: `FScene`
+
+#### Inherited from
+
+[`FCameraOptions`](FCameraOptions.md).[`scene`](FCameraOptions.md#scene)
+
+#### Defined in
+
+core/dist/index.d.ts:493
 
 ***
 
@@ -36,4 +50,4 @@
 
 #### Defined in
 
-[2d/src/cameras/FAttachedCamera.ts:7](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FAttachedCamera.ts#L7)
+[2d/src/cameras/FAttachedCamera.ts:6](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FAttachedCamera.ts#L6)

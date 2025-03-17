@@ -22,7 +22,7 @@ The options for the controller.
 
 #### Defined in
 
-[core/src/FController.ts:27](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L27)
+[core/src/FController.ts:27](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FController.ts#L27)
 
 ## Methods
 
@@ -45,7 +45,7 @@ The time since the last frame.
 
 #### Defined in
 
-[core/src/FController.ts:37](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L37)
+[core/src/FController.ts:37](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FController.ts#L37)
 
 ## Properties
 
@@ -57,7 +57,7 @@ True if the controller should run in the physic pipeline.
 
 #### Defined in
 
-[core/src/FController.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L20)
+[core/src/FController.ts:20](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FController.ts#L20)
 
 ***
 
@@ -69,4 +69,4 @@ The component attached to the controller.
 
 #### Defined in
 
-[core/src/FController.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FController.ts#L16)
+[core/src/FController.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FController.ts#L16)

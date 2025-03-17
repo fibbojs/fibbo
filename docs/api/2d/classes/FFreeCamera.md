@@ -12,11 +12,9 @@ A free camera that can be moved around.
 
 ### new FFreeCamera()
 
-> **new FFreeCamera**(`scene`, `options`?): [`FFreeCamera`](FFreeCamera.md)
+> **new FFreeCamera**(`options`?): [`FFreeCamera`](FFreeCamera.md)
 
 #### Parameters
-
-• **scene**: [`FScene`](FScene.md)
 
 • **options?**: [`FCameraOptions`](../interfaces/FCameraOptions.md)
 
@@ -30,7 +28,7 @@ A free camera that can be moved around.
 
 #### Defined in
 
-[2d/src/cameras/FFreeCamera.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FFreeCamera.ts#L10)
+[2d/src/cameras/FFreeCamera.ts:9](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FFreeCamera.ts#L9)
 
 ## Methods
 
@@ -48,7 +46,7 @@ A free camera that can be moved around.
 
 #### Defined in
 
-[2d/src/cameras/FFreeCamera.ts:14](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FFreeCamera.ts#L14)
+[2d/src/cameras/FFreeCamera.ts:13](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FFreeCamera.ts#L13)
 
 ***
 
@@ -74,7 +72,7 @@ A free camera that can be moved around.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:88](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L88)
+[2d/src/cameras/FCamera.ts:80](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L80)
 
 ***
 
@@ -95,7 +93,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:67](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L67)
+[2d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L59)
 
 ***
 
@@ -116,7 +114,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:75](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L75)
+[2d/src/cameras/FCamera.ts:67](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L67)
 
 ***
 
@@ -138,7 +136,7 @@ This method does not make sense for cameras, but it is implemented for consisten
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:84](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L84)
+[2d/src/cameras/FCamera.ts:76](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L76)
 
 ***
 
@@ -164,7 +162,7 @@ The controller to add.
 
 #### Defined in
 
-core/dist/index.d.ts:413
+core/dist/index.d.ts:415
 
 ***
 
@@ -216,7 +214,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-core/dist/index.d.ts:484
+core/dist/index.d.ts:486
 
 ***
 
@@ -236,7 +234,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-core/dist/index.d.ts:438
+core/dist/index.d.ts:440
 
 ***
 
@@ -263,7 +261,7 @@ The time since the last frame.
 
 #### Defined in
 
-core/dist/index.d.ts:424
+core/dist/index.d.ts:426
 
 ***
 
@@ -317,7 +315,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-core/dist/index.d.ts:461
+core/dist/index.d.ts:463
 
 ***
 
@@ -343,7 +341,7 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:429
+core/dist/index.d.ts:431
 
 ***
 
@@ -369,7 +367,7 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:434
+core/dist/index.d.ts:436
 
 ***
 
@@ -395,7 +393,7 @@ The controller to remove.
 
 #### Defined in
 
-core/dist/index.d.ts:418
+core/dist/index.d.ts:420
 
 ***
 
@@ -417,7 +415,7 @@ core/dist/index.d.ts:418
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:59](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L59)
+[2d/src/cameras/FCamera.ts:51](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L51)
 
 ## Properties
 
@@ -438,7 +436,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-core/dist/index.d.ts:397
+core/dist/index.d.ts:399
 
 ***
 
@@ -454,7 +452,7 @@ Callbacks for when a frame is rendered.
 
 #### Defined in
 
-core/dist/index.d.ts:388
+core/dist/index.d.ts:390
 
 ***
 
@@ -470,7 +468,7 @@ Callbacks for when the component is loaded (could be a texture, a 3D model, etc)
 
 #### Defined in
 
-core/dist/index.d.ts:392
+core/dist/index.d.ts:394
 
 ***
 
@@ -487,7 +485,7 @@ It is generated automatically.
 
 #### Defined in
 
-core/dist/index.d.ts:384
+core/dist/index.d.ts:386
 
 ***
 
@@ -503,7 +501,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L17)
+[2d/src/cameras/FCamera.ts:19](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L19)
 
 ***
 
@@ -519,7 +517,7 @@ Internal flags
 
 #### Defined in
 
-core/dist/index.d.ts:378
+core/dist/index.d.ts:380
 
 ***
 
@@ -535,7 +533,7 @@ The controllers attached to the component.
 
 #### Defined in
 
-core/dist/index.d.ts:407
+core/dist/index.d.ts:409
 
 ***
 
@@ -543,7 +541,7 @@ core/dist/index.d.ts:407
 
 > **scene**: [`FScene`](FScene.md)
 
-The scene the camera is in.
+The scene the component is attached to.
 
 #### Inherited from
 
@@ -551,7 +549,7 @@ The scene the camera is in.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L22)
+[2d/src/cameras/FCamera.ts:21](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L21)
 
 ***
 
@@ -569,4 +567,4 @@ The scale and rotation of the transform are not used.
 
 #### Defined in
 
-[2d/src/cameras/FCamera.ts:29](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/cameras/FCamera.ts#L29)
+[2d/src/cameras/FCamera.ts:28](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/cameras/FCamera.ts#L28)

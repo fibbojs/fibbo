@@ -86,6 +86,8 @@ export class FCollider {
       rotationOffset: { x: 0, y: 0, z: 0 },
       sensor: false,
     }
+    // eslint-disable-next-line ts/ban-ts-comment
+    // @ts-ignore
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (options.scene === undefined || !options.position || !options.scale || !options.rotation || !options.shape || options.sensor === undefined)

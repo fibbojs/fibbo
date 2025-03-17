@@ -33,7 +33,7 @@ The components to add to the group.
 
 #### Defined in
 
-[core/src/FGroup.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L20)
+[core/src/FGroup.ts:20](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FGroup.ts#L20)
 
 ## Methods
 
@@ -53,7 +53,7 @@ Add a component to the group.
 
 #### Defined in
 
-[core/src/FGroup.ts:27](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L27)
+[core/src/FGroup.ts:27](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FGroup.ts#L27)
 
 ***
 
@@ -75,7 +75,7 @@ The time since the last frame.
 
 #### Defined in
 
-[core/src/FGroup.ts:42](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L42)
+[core/src/FGroup.ts:42](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FGroup.ts#L42)
 
 ***
 
@@ -95,7 +95,7 @@ Remove a component from the group.
 
 #### Defined in
 
-[core/src/FGroup.ts:34](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L34)
+[core/src/FGroup.ts:34](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FGroup.ts#L34)
 
 ## Properties
 
@@ -107,4 +107,4 @@ The components in the group.
 
 #### Defined in
 
-[core/src/FGroup.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FGroup.ts#L12)
+[core/src/FGroup.ts:12](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FGroup.ts#L12)

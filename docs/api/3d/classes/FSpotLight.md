@@ -30,7 +30,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:123](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L123)
+[3d/src/lights/FLight.ts:124](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L124)
 
 ***
 
@@ -54,13 +54,13 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:131](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L131)
+[3d/src/lights/FLight.ts:132](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L132)
 
 ***
 
 ### lookAt
 
-> `get` **lookAt**(): `undefined` \| `FVector3`
+> `get` **lookAt**(): `FVector3`
 
 > `set` **lookAt**(`lookAt`): `void`
 
@@ -70,7 +70,7 @@ A spot light in 3d space.
 
 #### Returns
 
-`undefined` \| `FVector3`
+`FVector3`
 
 #### Inherited from
 
@@ -78,7 +78,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:139](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L139)
+[3d/src/lights/FLight.ts:140](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L140)
 
 ***
 
@@ -102,19 +102,15 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:150](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L150)
+[3d/src/lights/FLight.ts:151](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L151)
 
 ## Constructors
 
 ### new FSpotLight()
 
-> **new FSpotLight**(`scene`, `options`?): [`FSpotLight`](FSpotLight.md)
+> **new FSpotLight**(`options`?): [`FSpotLight`](FSpotLight.md)
 
 #### Parameters
-
-• **scene**: [`FScene`](FScene.md)
-
-— The scene the light belongs to.
 
 • **options?**: [`FSpotLightOptions`](../interfaces/FSpotLightOptions.md)
 
@@ -130,7 +126,7 @@ A spot light in 3d space.
 
 #### Defined in
 
-[3d/src/lights/FSpotLight.ts:26](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FSpotLight.ts#L26)
+[3d/src/lights/FSpotLight.ts:25](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FSpotLight.ts#L25)
 
 ## Methods
 
@@ -151,7 +147,7 @@ This method should be called after updating the position, so the light can look 
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:115](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L115)
+[3d/src/lights/FLight.ts:116](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L116)
 
 ***
 
@@ -172,7 +168,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:90](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L90)
+[3d/src/lights/FLight.ts:91](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L91)
 
 ***
 
@@ -193,7 +189,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:99](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L99)
+[3d/src/lights/FLight.ts:100](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L100)
 
 ***
 
@@ -214,7 +210,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:107](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L107)
+[3d/src/lights/FLight.ts:108](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L108)
 
 ***
 
@@ -234,7 +230,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-core/dist/index.d.ts:60
+core/dist/index.d.ts:61
 
 ***
 
@@ -260,7 +256,7 @@ The callback function.
 
 #### Defined in
 
-core/dist/index.d.ts:56
+core/dist/index.d.ts:57
 
 ## Properties
 
@@ -278,7 +274,7 @@ core/dist/index.d.ts:56
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:26](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L26)
+[3d/src/lights/FLight.ts:30](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L30)
 
 ***
 
@@ -294,7 +290,7 @@ Callbacks for when the light is loaded.
 
 #### Defined in
 
-core/dist/index.d.ts:46
+core/dist/index.d.ts:47
 
 ***
 
@@ -308,7 +304,7 @@ core/dist/index.d.ts:46
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:25](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L25)
+[3d/src/lights/FLight.ts:29](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L29)
 
 ***
 
@@ -322,7 +318,7 @@ core/dist/index.d.ts:46
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:24](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L24)
+[3d/src/lights/FLight.ts:28](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L28)
 
 ***
 
@@ -338,13 +334,13 @@ Internal flags
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:23](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L23)
+[3d/src/lights/FLight.ts:27](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L27)
 
 ***
 
 ### \_\_LIGHT\_\_
 
-> **\_\_LIGHT\_\_**: `Light`\<`undefined` \| `LightShadow`\<`Camera`\>\>
+> **\_\_LIGHT\_\_**: `Light`\<`LightShadow`\<`Camera`\>\>
 
 The original light object from Three.js.
 
@@ -354,13 +350,13 @@ The original light object from Three.js.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:31](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L31)
+[3d/src/lights/FLight.ts:35](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L35)
 
 ***
 
 ### \_\_LOOK\_AT\_\_
 
-> **\_\_LOOK\_AT\_\_**: `undefined` \| `FVector3`
+> **\_\_LOOK\_AT\_\_**: `FVector3`
 
 Look at target of the light.
 
@@ -370,7 +366,7 @@ Look at target of the light.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:46](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L46)
+[3d/src/lights/FLight.ts:50](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L50)
 
 ***
 
@@ -386,7 +382,7 @@ Quality of the shadow. Default is 5.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:51](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L51)
+[3d/src/lights/FLight.ts:55](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L55)
 
 ***
 
@@ -402,7 +398,7 @@ Scene the light is in.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:36](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L36)
+[3d/src/lights/FLight.ts:40](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L40)
 
 ***
 
@@ -418,4 +414,4 @@ Transform of the light.
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:41](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L41)
+[3d/src/lights/FLight.ts:45](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L45)

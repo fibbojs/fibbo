@@ -9,7 +9,7 @@
 echo "📚 Generating API documentation..."
 
 # Generate API documentation (hide the output)
-./node_modules/.bin/typedoc &> /dev/null
+./node_modules/.bin/typedoc --tsconfig tsconfig.json &> /dev/null
 
 echo "✅ API documentation generated successfully!"
 
@@ -107,20 +107,11 @@ for package_dir in 2d 3d core event util; do
   echo "          { text: '$package_dir', link: '/api/$package_dir/index.md', collapsed: true, items: [" >> $TEMP_FILE
 
   # Generate navbar entries for each category
-  # I don't know why, but the category is the 3rd word for the event package and the 4th word for the other packages
-  if [[ "$package_dir" == "event" ]]; then
-    for category in $(find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" | xargs grep "@category" | awk '{print $3}' | sort | uniq); do
-      echo "            { text: '$category', collapsed: true, items: [" >> $TEMP_FILE
-      generate_classes_entries "$package_dir" "$category" >> $TEMP_FILE
-      echo "            ] }," >> $TEMP_FILE
-    done
-  else
-    for category in $(find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" | xargs grep "@category" | awk '{print $4}' | sort | uniq); do
-      echo "            { text: '$category', collapsed: true, items: [" >> $TEMP_FILE
-      generate_classes_entries "$package_dir" "$category" >> $TEMP_FILE
-      echo "            ] }," >> $TEMP_FILE
-    done
-  fi
+  for category in $(find "packages/$package_dir/src" -type f -name "*.ts" -not -name "index.ts" | xargs grep "@category" | awk '{print $4}' | sort | uniq); do
+    echo "            { text: '$category', collapsed: true, items: [" >> $TEMP_FILE
+    generate_classes_entries "$package_dir" "$category" >> $TEMP_FILE
+    echo "            ] }," >> $TEMP_FILE
+  done
 
   # Generate navbar entries for enumerations
   find "packages/$package_dir/src" -type f -name "*.ts" -print0 | while IFS= read -r -d $'\0' file; do

@@ -99,6 +99,8 @@ export abstract class FScene {
       throw new Error('FibboError: FScene must be instantiated in a browser environment')
 
     // Define globalThis.__FIBBO_ACTUAL_SCENE__ as the current scene
+    // eslint-disable-next-line ts/ban-ts-comment
+    // @ts-ignore
     globalThis.__FIBBO_ACTUAL_SCENE__ = this
 
     // Define default values for the options

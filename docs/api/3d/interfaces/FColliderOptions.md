@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:21](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L21)
+[3d/src/core/FCollider.ts:22](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L22)
 
 ***
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L12)
+[3d/src/core/FCollider.ts:13](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L13)
 
 ***
 
@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L16)
+[3d/src/core/FCollider.ts:17](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L17)
 
 ***
 
@@ -40,7 +40,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:22](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L22)
+[3d/src/core/FCollider.ts:23](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L23)
 
 ***
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:13](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L13)
+[3d/src/core/FCollider.ts:14](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L14)
 
 ***
 
@@ -60,7 +60,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:14](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L14)
+[3d/src/core/FCollider.ts:15](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L15)
 
 ***
 
@@ -70,7 +70,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:18](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L18)
+[3d/src/core/FCollider.ts:19](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L19)
 
 ***
 
@@ -80,7 +80,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L17)
+[3d/src/core/FCollider.ts:18](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L18)
 
 ***
 
@@ -90,7 +90,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:15](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L15)
+[3d/src/core/FCollider.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L16)
 
 ***
 
@@ -100,7 +100,17 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:19](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L19)
+[3d/src/core/FCollider.ts:20](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L20)
+
+***
+
+### scene?
+
+> `optional` **scene**: [`FScene`](../classes/FScene.md)
+
+#### Defined in
+
+[3d/src/core/FCollider.ts:12](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L12)
 
 ***
 
@@ -110,7 +120,7 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:23](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L23)
+[3d/src/core/FCollider.ts:24](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L24)
 
 ***
 
@@ -120,4 +130,4 @@
 
 #### Defined in
 
-[3d/src/core/FCollider.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FCollider.ts#L20)
+[3d/src/core/FCollider.ts:21](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FCollider.ts#L21)

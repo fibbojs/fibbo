@@ -30,6 +30,7 @@
 
 ### Interfaces
 
+- [FCameraOptions](interfaces/FCameraOptions.md)
 - [FComponentOptions](interfaces/FComponentOptions.md)
 - [FControllerOptions](interfaces/FControllerOptions.md)
 - [FLightOptions](interfaces/FLightOptions.md)

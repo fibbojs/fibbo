@@ -111,6 +111,8 @@ export class FRigidBody {
       lockTranslations: false,
       lockRotations: false,
     }
+    // eslint-disable-next-line ts/ban-ts-comment
+    // @ts-ignore
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (options.scene === undefined || !options.position || (!options.rotation && !options.rotationDegree) || !options.scale || !options.shape)

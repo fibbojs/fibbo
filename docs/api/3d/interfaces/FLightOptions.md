@@ -4,7 +4,7 @@
 
 ## Extends
 
-- [`FTransformOptions`](FTransformOptions.md)
+- `FLightOptions`
 
 ## Extended by
 
@@ -14,13 +14,27 @@
 
 ## Properties
 
+### addToScene?
+
+> `optional` **addToScene**: `boolean`
+
+#### Inherited from
+
+`FLightOptionsCore.addToScene`
+
+#### Defined in
+
+core/dist/index.d.ts:37
+
+***
+
 ### color?
 
 > `optional` **color**: `ColorRepresentation`
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L9)
+[3d/src/lights/FLight.ts:13](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L13)
 
 ***
 
@@ -30,7 +44,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L10)
+[3d/src/lights/FLight.ts:14](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L14)
 
 ***
 
@@ -40,7 +54,7 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L11)
+[3d/src/lights/FLight.ts:15](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L15)
 
 ***
 
@@ -48,13 +62,9 @@
 
 > `optional` **position**: `FVector3`
 
-#### Inherited from
-
-[`FTransformOptions`](FTransformOptions.md).[`position`](FTransformOptions.md#position)
-
 #### Defined in
 
-[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L5)
+[3d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L9)
 
 ***
 
@@ -62,13 +72,9 @@
 
 > `optional` **rotation**: `FVector3`
 
-#### Inherited from
-
-[`FTransformOptions`](FTransformOptions.md).[`rotation`](FTransformOptions.md#rotation)
-
 #### Defined in
 
-[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L6)
+[3d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L10)
 
 ***
 
@@ -76,13 +82,9 @@
 
 > `optional` **rotationDegree**: `FVector3`
 
-#### Inherited from
-
-[`FTransformOptions`](FTransformOptions.md).[`rotationDegree`](FTransformOptions.md#rotationdegree)
-
 #### Defined in
 
-[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L7)
+[3d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L11)
 
 ***
 
@@ -90,13 +92,23 @@
 
 > `optional` **scale**: `FVector3`
 
+#### Defined in
+
+[3d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L12)
+
+***
+
+### scene?
+
+> `optional` **scene**: `FScene`
+
 #### Inherited from
 
-[`FTransformOptions`](FTransformOptions.md).[`scale`](FTransformOptions.md#scale)
+`FLightOptionsCore.scene`
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L8)
+core/dist/index.d.ts:36
 
 ***
 
@@ -106,4 +118,4 @@
 
 #### Defined in
 
-[3d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/lights/FLight.ts#L12)
+[3d/src/lights/FLight.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/lights/FLight.ts#L16)
