@@ -1,4 +1,3 @@
-import type { FScene } from '../core/FScene'
 import type { FCameraOptions } from './FCamera'
 import { FCamera } from './FCamera'
 
@@ -17,7 +16,7 @@ import { FCamera } from './FCamera'
  * ```
  */
 export class FFixedCamera extends FCamera {
-  constructor(scene: FScene, options?: FCameraOptions) {
-    super(scene, options)
+  constructor(options?: FCameraOptions) {
+    super(options)
   }
 }

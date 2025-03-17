@@ -1,5 +1,9 @@
 import type { FScene } from '@fibbojs/core'
 
+export interface FKeyboardOptions {
+  scene: FScene
+}
+
 /**
  * A helper class to manage keyboard events.
  * Events will be triggered on each frame.
@@ -35,7 +39,17 @@ export class FKeyboard {
    */
   callbackKeyUp: Record<string, Array<() => void>>
 
-  constructor(scene: FScene) {
+  constructor(options?: FKeyboardOptions) {
+    // Define default options
+    const DEFAULT_OPTIONS = {
+      scene: globalThis.__FIBBO_ACTUAL_SCENE__,
+    }
+    // Apply default options
+    options = { ...DEFAULT_OPTIONS, ...options }
+    // Validate options
+    if (options.scene === undefined)
+      throw new Error('FibboError: FKeyboard requires scene option')
+
     // Initialize the keys map
     this.keys = {}
     // Initialize the callbacks map
@@ -65,7 +79,7 @@ export class FKeyboard {
     })
 
     // On each frame, call the callback for each key being pressed
-    scene.onFrame(() => {
+    options.scene.onFrame(() => {
       for (const key in this.keys) {
         if (this.keys[key] && this.callback[key]) {
           for (const cb of this.callback[key]) {

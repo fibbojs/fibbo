@@ -1,9 +1,14 @@
 import { FLight as FLightCore } from '@fibbojs/core'
+import type { FLightOptions as FLightOptionsCore } from '@fibbojs/core'
 import type { FTransformOptions } from '../core/FTransform'
 import { FTransform } from '../core/FTransform'
 import type { FScene } from '../core/FScene'
 
-export interface FLightOptions extends FTransformOptions {
+export interface FLightOptions extends FLightOptionsCore {
+  position?: FTransformOptions['position']
+  rotation?: FTransformOptions['rotation']
+  rotationDegree?: FTransformOptions['rotationDegree']
+  scale?: FTransformOptions['scale']
   color?: number
   intensity?: number
   lookAt?: { x: number, y: number }
@@ -27,10 +32,7 @@ export abstract class FLight extends FLightCore {
    */
   declare __LIGHT__: any
 
-  /**
-   * Scene the light is in.
-   */
-  scene: FScene
+  declare scene: FScene
 
   /**
    * Transform of the light.
@@ -42,8 +44,8 @@ export abstract class FLight extends FLightCore {
    */
   __LOOK_AT__: { x: number, y: number }
 
-  constructor(scene: FScene, options?: FLightOptions) {
-    super(scene)
+  constructor(options?: FLightOptions) {
+    super(options)
 
     // Define default options
     const DEFAULT_OPTIONS = {
@@ -57,9 +59,6 @@ export abstract class FLight extends FLightCore {
     // Validate options
     if (!options.position || !options.lookAt)
       throw new Error('FibboError: FLight requires position and lookAt options.')
-
-    // Store scene
-    this.scene = scene
 
     // Configure transform
     this.transform = new FTransform({

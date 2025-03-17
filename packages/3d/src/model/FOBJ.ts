@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js'
-import type { FScene } from '../core/FScene'
 import { FModel } from './FModel'
 import type { FModelOptions } from './FModel'
 
@@ -13,15 +12,15 @@ import type { FModelOptions } from './FModel'
  *
  * const scene = new FScene();
  *
- * const obj = new FOBJ(scene, {
+ * const obj = new FOBJ({
  *   path: 'model.obj',
  * });
  * scene.addComponent(obj);
  * ```
  */
 export class FOBJ extends FModel {
-  constructor(scene: FScene, options: FModelOptions) {
-    super(scene, options)
+  constructor(options: FModelOptions) {
+    super(options)
 
     // Create OBJ Loader
     const loader = new OBJLoader()

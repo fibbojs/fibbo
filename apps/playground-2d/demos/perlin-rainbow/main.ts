@@ -68,9 +68,8 @@ function generateChunk(chunk: number = 0) {
  * @param layer The layer to display
  * @param chunk The chunk of perlin noise
  * @param rectangles The list of rectangles to add the new rectangles to
- * @param scene The scene to display the rectangles in
  */
-function displayLayer(layer: number, chunk: number[][][], rectangles: FRectangle[], scene: FScene) {
+function displayLayer(layer: number, chunk: number[][][], rectangles: FRectangle[]) {
   for (let x = 0; x < chunkSize; x++) {
     for (let y = 0; y < chunkSize; y++) {
       const grayScale = chunk[x][y][layer]
@@ -84,7 +83,7 @@ function displayLayer(layer: number, chunk: number[][][], rectangles: FRectangle
         const [r, g, b] = hslToRgb(grayScale / 0xFFFFFF * 360, 100, 50)
         color = r << 16 | g << 8 | b
       }
-      rectangles.push(new FRectangle(scene, {
+      rectangles.push(new FRectangle({
         position: {
           x: (x - chunkSize / 2) * SQUARE_SCALE,
           y: (y - chunkSize / 2) * SQUARE_SCALE,
@@ -116,7 +115,7 @@ function displayLayer(layer: number, chunk: number[][][], rectangles: FRectangle
   let currentLayer = 0
   setInterval(() => {
     rectangles.forEach(rectangle => scene.removeComponent(rectangle))
-    displayLayer(currentLayer, chunk, rectangles, scene)
+    displayLayer(currentLayer, chunk, rectangles)
     currentLayer = (currentLayer + 1) % chunkSize
     // When the layer is 15, generate a new chunk
     if (currentLayer === 0) {
@@ -126,7 +125,7 @@ function displayLayer(layer: number, chunk: number[][][], rectangles: FRectangle
   }, 100)
 
   // Create a fixed camera
-  scene.camera = new FFixedCamera(scene, {
+  scene.camera = new FFixedCamera({
     position: { x: 0, y: -0.2 },
   })
   scene.camera.setZoom(2)

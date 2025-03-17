@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:5](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L5)
+[3d/src/cameras/FCamera.ts:8](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L8)
 
 ***
 
@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:6](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L6)
+[3d/src/cameras/FCamera.ts:9](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L9)
 
 ***
 
@@ -46,7 +46,7 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:7](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L7)
+[3d/src/cameras/FCamera.ts:10](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L10)
 
 ***
 
@@ -60,7 +60,21 @@
 
 #### Defined in
 
-[3d/src/core/FTransform.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/core/FTransform.ts#L8)
+[3d/src/cameras/FCamera.ts:11](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L11)
+
+***
+
+### scene?
+
+> `optional` **scene**: `FScene`
+
+#### Inherited from
+
+[`FCameraOptions`](FCameraOptions.md).[`scene`](FCameraOptions.md#scene)
+
+#### Defined in
+
+core/dist/index.d.ts:493
 
 ***
 
@@ -70,4 +84,4 @@
 
 #### Defined in
 
-[3d/src/cameras/FAttachedCamera.ts:8](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/3d/src/cameras/FAttachedCamera.ts#L8)
+[3d/src/cameras/FAttachedCamera.ts:7](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FAttachedCamera.ts#L7)

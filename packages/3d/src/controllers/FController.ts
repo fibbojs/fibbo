@@ -14,7 +14,7 @@ export abstract class FController extends FControllerCore {
    * The component attached to the controller.
    * It is redefined here to get the correct type (with 3D properties).
    */
-  public component: FComponent
+  declare component: FComponent
 
   /**
    * @param options The options for the controller.

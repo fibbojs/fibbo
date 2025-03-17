@@ -20,13 +20,24 @@ Here are the available character controllers in Fibbo :
 
 Character controllers should be used the same way as any other controller. Here is an example of how to use the `FCharacterControllerKP` :
 
-```typescript
+::: code-group
+
+```typescript [2d]
+import { FCharacterControllerKP, FRectangle } from '@fibbojs/2d'
+
+const rectangle = new FRectangle()
+rectangle.addController(new FCharacterControllerKP({
+  component: rectangle,
+}))
+```
+
+```typescript [3d]
 import { FCapsule, FCharacterControllerKP } from '@fibbojs/3d'
 
-const character = new FCapsule(scene, {
-  position: { x: 0, y: 10, z: 0 },
-})
-character.controller = new FCharacterControllerKP(scene, {
+const character = new FCapsule()
+character.addController(new FCharacterControllerKP({
   component: character,
-})
+}))
 ```
+
+:::

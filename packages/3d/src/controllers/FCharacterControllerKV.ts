@@ -1,4 +1,3 @@
-import type { FScene } from '../core/FScene'
 import { FRigidBodyType } from '../types/FRigidBodyType'
 import { FShapes } from '../types/FShapes'
 import { FCharacterControllerK } from './FCharacterControllerK'
@@ -13,14 +12,14 @@ import type { FCharacterControllerOptions } from './FCharacterController'
  *
  * const scene = new FScene()
  *
- * const capsule = new FCapsule(scene)
- * capsule.controller = new FCharacterControllerKV(scene)
+ * const capsule = new FCapsule()
+ * capsule.controller = new FCharacterControllerKV()
  * scene.addComponent(capsule)
  * ```
  */
 export class FCharacterControllerKV extends FCharacterControllerK {
-  constructor(scene: FScene, options: FCharacterControllerOptions) {
-    super(scene, options)
+  constructor(options: FCharacterControllerOptions) {
+    super(options)
 
     // Initialize the rigidBody
     this.component.initRigidBody({

@@ -1,22 +1,22 @@
 import * as THREE from 'three'
 import * as RAPIER from '@dimforge/rapier3d'
-import type { FVector3, OnCollisionWithData } from '@fibbojs/core'
+import type { FComponentOptions as FComponentOptionsCore, FVector3, OnCollisionWithData } from '@fibbojs/core'
 import { FComponent as FComponentCore } from '@fibbojs/core'
-import { FMathUtil } from '@fibbojs/util'
 import type { FController } from '../controllers/FController'
 import type { FScene } from './FScene'
 import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
 import type { FRigidBodyOptions } from './FRigidBody'
 import { FRigidBody } from './FRigidBody'
+import type { FTransformOptions } from './FTransform'
 import { FTransform } from './FTransform'
 import { FSensor } from './FSensor'
 
-export interface FComponentOptions {
-  position?: FVector3
-  rotation?: FVector3
-  rotationDegree?: FVector3
-  scale?: FVector3
+export interface FComponentOptions extends FComponentOptionsCore {
+  position?: FTransformOptions['position']
+  rotation?: FTransformOptions['rotation']
+  rotationDegree?: FTransformOptions['rotationDegree']
+  scale?: FTransformOptions['scale']
 }
 
 /**
@@ -29,10 +29,9 @@ export abstract class FComponent extends FComponentCore {
    */
   public __IS_3D__: boolean = true
 
-  /**
-   * The scene which the component is in.
-   */
-  scene: FScene
+  // The scene which the component is in.
+  // Redefined here to be able to use the updated FScene type.
+  declare scene: FScene
 
   // The controllers attached to the component.
   // Redefined here to be able to use the updated FController type.
@@ -63,7 +62,6 @@ export abstract class FComponent extends FComponentCore {
   sensor?: FRigidBody
 
   /**
-   * @param scene The 3D scene where the component will be added.
    * @param options The options for the component.
    * @param options.position The position of the component.
    * @param options.position.x The position on the x-axis.
@@ -82,9 +80,8 @@ export abstract class FComponent extends FComponentCore {
    * @param options.scale.y The scale on the y-axis.
    * @param options.scale.z The scale on the z-axis.
    */
-  constructor(scene: FScene, options?: FComponentOptions) {
-    super(scene)
-    this.scene = scene
+  constructor(options?: FComponentOptions) {
+    super(options)
 
     // Define default values
     const DEFAULT_OPTIONS = {
@@ -329,7 +326,8 @@ export abstract class FComponent extends FComponentCore {
   }
 
   initCollider(options?: FColliderOptions) {
-    this.collider = new FCollider(this.scene, {
+    this.collider = new FCollider({
+      scene: this.scene,
       mesh: this.__MESH__,
       ...options,
     })
@@ -338,7 +336,8 @@ export abstract class FComponent extends FComponentCore {
   }
 
   initRigidBody(options?: FRigidBodyOptions) {
-    this.rigidBody = new FRigidBody(this.scene, {
+    this.rigidBody = new FRigidBody({
+      scene: this.scene,
       mesh: this.__MESH__,
       ...options,
     })
@@ -347,7 +346,8 @@ export abstract class FComponent extends FComponentCore {
   }
 
   initSensor(options?: FRigidBodyOptions) {
-    this.sensor = new FSensor(this.scene, {
+    this.sensor = new FSensor({
+      scene: this.scene,
       mesh: this.__MESH__,
       ...options,
     })

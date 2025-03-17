@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import type { FVector3 } from '@fibbojs/core'
 import type { FComponent } from '../core/FComponent'
-import type { FScene } from '../core/FScene'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -15,10 +14,11 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  *
  * const scene = new FScene()
  *
- * const cube = new FCuboid(scene)
- * scene.addComponent(cube)
+ * const cube = new FCuboid()
  *
- * scene.camera = new FOrbitCamera(cube)
+ * scene.camera = new FOrbitCamera({
+ *  target: cube
+ * })
  * ```
  */
 export class FOrbitCamera extends FCamera {
@@ -27,8 +27,8 @@ export class FOrbitCamera extends FCamera {
   // Orbit controls
   controls: OrbitControls
 
-  constructor(scene: FScene, options: FAttachedCameraOptions) {
-    super(scene, options)
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
     this.attachedComponent = options.target
 
     // Create orbit controls

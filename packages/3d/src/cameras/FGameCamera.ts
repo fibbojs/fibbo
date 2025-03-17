@@ -1,5 +1,4 @@
 import type { FVector3 } from '@fibbojs/core'
-import type { FScene } from '../core/FScene'
 import { FOrbitCamera } from './FOrbitCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -12,10 +11,11 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  *
  * const scene = new FScene()
  *
- * const cube = new FCuboid(scene)
- * scene.addComponent(cube)
+ * const cube = new FCuboid()
  *
- * scene.camera = new FGameCamera(cube)
+ * scene.camera = new FGameCamera({
+ *  target: cube
+ * })
  * ```
  */
 export class FGameCamera extends FOrbitCamera {
@@ -26,8 +26,8 @@ export class FGameCamera extends FOrbitCamera {
   // Last mouse move event
   lastMouseMoveEvent: MouseEvent | undefined
 
-  constructor(scene: FScene, options: FAttachedCameraOptions) {
-    super(scene, options)
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
     // Clone the model's position
     this.previousComponentPosition = structuredClone(options.target.__MESH__?.position || { x: 0, y: 0, z: 0 })
     this.setPosition({ x: 0, y: 8, z: 8 })

@@ -26,7 +26,7 @@ Do not compute heavy tasks using this pipeline, as it will run at max FPS depend
 
 #### Defined in
 
-[core/src/pipeline/StandardPipeline.ts:10](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/StandardPipeline.ts#L10)
+[core/src/pipeline/StandardPipeline.ts:10](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/StandardPipeline.ts#L10)
 
 ## Methods
 
@@ -51,7 +51,7 @@ It should implement the desired behavior of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L40)
+[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L40)
 
 ***
 
@@ -71,7 +71,7 @@ Start the pipeline
 
 #### Defined in
 
-[core/src/pipeline/StandardPipeline.ts:14](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/StandardPipeline.ts#L14)
+[core/src/pipeline/StandardPipeline.ts:14](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/StandardPipeline.ts#L14)
 
 ***
 
@@ -91,7 +91,7 @@ Stop the pipeline
 
 #### Defined in
 
-[core/src/pipeline/StandardPipeline.ts:19](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/StandardPipeline.ts#L19)
+[core/src/pipeline/StandardPipeline.ts:19](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/StandardPipeline.ts#L19)
 
 ## Properties
 
@@ -110,7 +110,7 @@ The default value is 30.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L28)
+[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L28)
 
 ***
 
@@ -126,4 +126,4 @@ The current state of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/pipeline/Pipeline.ts#L21)
+[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L21)

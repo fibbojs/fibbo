@@ -1,4 +1,3 @@
-import type { FScene } from '../core/FScene'
 import type { FComponentOptions } from '../core/FComponent'
 import { FPolyhedron } from './FPolyhedron'
 
@@ -11,13 +10,13 @@ import { FPolyhedron } from './FPolyhedron'
  *
  * const scene = new FScene()
  *
- * const cube = new FCuboid(scene)
+ * const cube = new FCuboid()
  * scene.addComponent(cube)
  * ```
  */
 export class FCuboid extends FPolyhedron {
-  constructor(scene: FScene, options?: FComponentOptions) {
-    super(scene, options)
+  constructor(options?: FComponentOptions) {
+    super(options)
     // Emit the onLoaded event
     this.emitOnLoaded()
   }

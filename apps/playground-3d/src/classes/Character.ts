@@ -1,16 +1,16 @@
 import { FCharacterControllerKP, FFBX } from '@fibbojs/3d'
-import type { FRigidBodyOptions, FScene } from '@fibbojs/3d'
+import type { FRigidBodyOptions } from '@fibbojs/3d'
 
 export default class Character extends FFBX {
-  constructor(scene: FScene) {
-    super(scene, {
+  constructor() {
+    super({
       name: 'character-female-e',
       position: { x: 0, y: 10, z: 0 },
       scale: { x: 2, y: 2, z: 2 },
     })
 
     // Initialize the character controller
-    this.addController(new FCharacterControllerKP(scene, {
+    this.addController(new FCharacterControllerKP({
       component: this,
     }))
   }

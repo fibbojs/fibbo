@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import type { FScene } from '../core/FScene'
 import type { FLightOptions } from './FLight'
 import { FLight } from './FLight'
 
@@ -13,8 +12,8 @@ export interface FHemisphereLightOptions extends FLightOptions {
  * @category Light
  */
 export class FHemisphereLight extends FLight {
-  constructor(scene: FScene, options?: FHemisphereLightOptions) {
-    super(scene, options)
+  constructor(options?: FHemisphereLightOptions) {
+    super(options)
 
     // Define default options
     const DEFAULT_OPTIONS = {

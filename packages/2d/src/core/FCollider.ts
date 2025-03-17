@@ -7,6 +7,7 @@ import { FTransform } from './FTransform'
 import type { FScene } from './FScene'
 
 export interface FColliderOptions {
+  scene?: FScene
   position?: FVector2
   rotation?: number
   rotationDegree?: number
@@ -48,8 +49,8 @@ export class FCollider {
 
   /**
    * Creates a collider for a given component.
-   * @param scene The scene the collider belongs to.
    * @param options The options for the collider.
+   * @param options.scene The scene the collider belongs to.
    * @param options.position The position of the collider. Default is { x: 0, y: 0 }.
    * @param options.rotation The rotation of the collider in degrees. Default is 0.
    * @param options.scale The scale of the collider. Default is { x: 1, y: 1 }.
@@ -61,16 +62,17 @@ export class FCollider {
    * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts
-   * const collider = new FCollider(scene, {
+   * const collider = new FCollider({
    *  position: { x: 0, y: 0 },
    *  scale: { x: 1, y: 1 },
    *  shape: FShapes.CIRCLE
    * })
    * ```
    */
-  constructor(scene: FScene, options?: FColliderOptions) {
+  constructor(options?: FColliderOptions) {
     // Apply default options
     const DEFAULT_OPTIONS = {
+      scene: globalThis.__FIBBO_ACTUAL_SCENE__,
       position: { x: 0, y: 0 },
       rotation: 0,
       scale: { x: 1, y: 1 },
@@ -80,11 +82,11 @@ export class FCollider {
     }
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || (options.rotation === undefined && options.rotationDegree === undefined) || !options.scale || !options.shape || options.sensor === undefined)
+    if (options.scene === undefined || !options.position || (options.rotation === undefined && options.rotationDegree === undefined) || !options.scale || !options.shape || options.sensor === undefined)
       throw new Error('FibboError: options missing in FCollider constructor')
 
     // Check if the world exists
-    if (!scene.world)
+    if (!options.scene.world)
       throw new Error('FibboError: FScene must have a world to create a collider')
 
     // Store the options
@@ -131,10 +133,10 @@ export class FCollider {
     }
 
     // Create the collider
-    this.__COLLIDER__ = scene.world.createCollider(colliderDesc, options.rigidBody?.__RIGIDBODY__)
+    this.__COLLIDER__ = options.scene.world.createCollider(colliderDesc, options.rigidBody?.__RIGIDBODY__)
 
     // Add the collider to the scene
-    scene.addCollider(this)
+    options.scene.addCollider(this)
   }
 
   frame(_delta: number): void {

@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import { FKeyboard } from '@fibbojs/event'
-import type { FScene } from '../core/FScene'
 import { FRigidBodyType } from '../types/FRigidBodyType'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
@@ -14,16 +13,18 @@ import { FCharacterController } from './FCharacterController'
  *
  * const scene = new FScene()
  *
- * const capsule = new FCapsule(scene)
- * capsule.controller = new FCharacterControllerD(scene)
+ * const capsule = new FCapsule()
+ * capsule.controller = new FCharacterControllerD()
  * scene.addComponent(capsule)
  * ```
  */
 export class FCharacterControllerD extends FCharacterController {
-  constructor(scene: FScene, options: FCharacterControllerOptions) {
-    super(scene, options)
+  constructor(options: FCharacterControllerOptions) {
+    super(options)
 
-    const fKeyboard = new FKeyboard(scene)
+    const fKeyboard = new FKeyboard({
+      scene: this.scene,
+    })
     fKeyboard.on(' ', () => {
       this.component.rigidBody?.__RIGIDBODY__.applyImpulse(new THREE.Vector3(0, 0.1, 0), true)
     })

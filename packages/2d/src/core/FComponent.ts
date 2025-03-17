@@ -8,14 +8,15 @@ import type { FColliderOptions } from './FCollider'
 import { FCollider } from './FCollider'
 import type { FRigidBodyOptions } from './FRigidBody'
 import { FRigidBody } from './FRigidBody'
+import type { FTransformOptions } from './FTransform'
 import { FTransform } from './FTransform'
 import { FSensor } from './FSensor'
 
 export interface FComponentOptions extends FComponentOptionsCore {
-  position?: { x: number, y: number }
-  rotation?: number
-  rotationDegree?: number
-  scale?: { x: number, y: number }
+  position?: FTransformOptions['position']
+  rotation?: FTransformOptions['rotation']
+  rotationDegree?: FTransformOptions['rotationDegree']
+  scale?: FTransformOptions['scale']
 }
 
 /**
@@ -28,10 +29,9 @@ export abstract class FComponent extends FComponentCore {
    */
   public __IS_2D__: boolean = true
 
-  /**
-   * The scene which the component is in.
-   */
-  scene: FScene
+  // The scene which the component is in.
+  // Redefined here to be able to use the updated FScene type.
+  declare scene: FScene
 
   // The controllers attached to the component.
   // Redefined here to be able to use the updated FController type.
@@ -62,16 +62,16 @@ export abstract class FComponent extends FComponentCore {
   declare sensor: FRigidBody
 
   /**
-   * @param scene The 2D scene where the component will be added.
    * @param options The options for the component.
+   * @param options.scene The 2D scene where the component will be added.
    * @param options.position The position of the component.
    * @param options.rotation The rotation of the component.
    * @param options.rotationDegree The rotation of the component in degrees. If this is provided, the rotation will be converted to radians.
    * @param options.scale The scale of the component.
    */
-  constructor(scene: FScene, options?: FComponentOptions) {
-    super(scene)
-    this.scene = scene
+  constructor(options?: FComponentOptions) {
+    super(options)
+
     // Create a new PIXI container
     this.__CONTAINER__ = new PIXI.Container()
 
@@ -284,19 +284,28 @@ export abstract class FComponent extends FComponentCore {
   }
 
   initCollider(options?: FColliderOptions) {
-    this.collider = new FCollider(this.scene, options)
+    this.collider = new FCollider({
+      scene: this.scene,
+      ...options,
+    })
     this.collider.component = this
     this.scene.addHandle(this.collider.__COLLIDER__.handle, this)
   }
 
   initRigidBody(options?: FRigidBodyOptions) {
-    this.rigidBody = new FRigidBody(this.scene, options)
+    this.rigidBody = new FRigidBody({
+      scene: this.scene,
+      ...options,
+    })
     this.rigidBody.component = this
     this.scene.addHandle(this.rigidBody.collider.__COLLIDER__.handle, this)
   }
 
   initSensor(options?: FRigidBodyOptions) {
-    this.sensor = new FSensor(this.scene, options)
+    this.sensor = new FSensor({
+      scene: this.scene,
+      ...options,
+    })
     this.sensor.component = this
     // If a rigidBody or collider is already defined, remove its handle from being used to detect collisions
     if (this.rigidBody)

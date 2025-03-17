@@ -8,6 +8,7 @@ export default defineConfig({
       include: ['packages'],
       exclude: ['packages/**/dist', 'packages/**/coverage', 'packages/**/test'],
       reporter: [['html', { subdir: 'coverage' }]],
+      provider: 'v8',
     },
   },
 })

@@ -7,7 +7,7 @@ import type { FComponentOptions } from './FComponent'
  * @category Core
  */
 export class FComponentEmpty extends FComponent {
-  constructor(scene: FScene, options?: FComponentOptions) {
-    super(scene, options)
+  constructor(options?: FComponentOptions) {
+    super(options)
   }
 }

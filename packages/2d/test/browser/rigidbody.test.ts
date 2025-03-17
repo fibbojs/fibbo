@@ -26,7 +26,7 @@ describe('fRigidBody', () => {
   })
 
   it('should create a collider with default options', () => {
-    const rectangle = new FRectangle(scene, {
+    const rectangle = new FRectangle({
       position: { x: 0, y: 0 },
       rotation: 0,
       scale: { x: 1, y: 1 },
@@ -57,7 +57,7 @@ describe('fRigidBody', () => {
   })
 
   it('should create a collider with custom transforms', () => {
-    const rectangle = new FRectangle(scene, {
+    const rectangle = new FRectangle({
       position: { x: 1, y: 1 },
       rotation: 0.1,
       scale: { x: 1, y: 2 },
@@ -85,7 +85,7 @@ describe('fRigidBody', () => {
   })
 
   it('should create a collider with a circle shape', () => {
-    const rectangle = new FRectangle(scene, {
+    const rectangle = new FRectangle({
       position: { x: 0, y: 0 },
       rotation: 0,
       scale: { x: 1, y: 1 },
@@ -111,7 +111,7 @@ describe('fRigidBody', () => {
   })
 
   it('should modify collider transforms', () => {
-    const rectangle = new FRectangle(scene, {
+    const rectangle = new FRectangle({
       position: { x: 1, y: 0 },
       rotation: 0.2,
       scale: { x: 1, y: 1 },
@@ -153,7 +153,7 @@ describe('fRigidBody', () => {
   })
 
   it('should modify collider transforms with a circle shape', () => {
-    const rectangle = new FRectangle(scene, {
+    const rectangle = new FRectangle({
       position: { x: 0, y: 0 },
       rotation: 0,
       scale: { x: 1, y: 1 },
@@ -203,7 +203,7 @@ describe('fRigidBody', () => {
   })
 
   it('should update collider transforms with attached component transforms', () => {
-    const rectangle = new FRectangle(scene, {
+    const rectangle = new FRectangle({
       position: { x: 1, y: 1 },
       rotation: 0.1,
       scale: { x: 1, y: 0.5 },

@@ -8,13 +8,11 @@ The base class for lights in Fibbo.
 
 ### new FLight()
 
-> **new FLight**(`scene`, `options`): [`FLight`](FLight.md)
+> **new FLight**(`options`?): [`FLight`](FLight.md)
 
 #### Parameters
 
-• **scene**: [`FScene`](FScene.md)
-
-• **options**: [`FLightOptions`](../interfaces/FLightOptions.md) = `{}`
+• **options?**: [`FLightOptions`](../interfaces/FLightOptions.md)
 
 #### Returns
 
@@ -22,7 +20,7 @@ The base class for lights in Fibbo.
 
 #### Defined in
 
-[core/src/FLight.ts:22](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FLight.ts#L22)
+[core/src/FLight.ts:23](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FLight.ts#L23)
 
 ## Methods
 
@@ -38,7 +36,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-[core/src/FLight.ts:55](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FLight.ts#L55)
+[core/src/FLight.ts:57](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FLight.ts#L57)
 
 ***
 
@@ -60,7 +58,7 @@ The callback function.
 
 #### Defined in
 
-[core/src/FLight.ts:48](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FLight.ts#L48)
+[core/src/FLight.ts:50](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FLight.ts#L50)
 
 ## Properties
 
@@ -72,7 +70,7 @@ Callbacks for when the light is loaded.
 
 #### Defined in
 
-[core/src/FLight.ts:15](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FLight.ts#L15)
+[core/src/FLight.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FLight.ts#L16)
 
 ***
 
@@ -84,4 +82,4 @@ The scene the light is attached to.
 
 #### Defined in
 
-[core/src/FLight.ts:20](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/core/src/FLight.ts#L20)
+[core/src/FLight.ts:21](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FLight.ts#L21)

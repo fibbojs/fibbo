@@ -24,7 +24,7 @@ You can set the position as follows :
 ::: code-group
 
 ```typescript [2d]
-const rectangle = new FRectangle(scene)
+const rectangle = new FRectangle()
 rectangle.transform.position = { x: 1, y: 2 }
 // Or using the function directly :
 rectangle.transform.setPosition({ x: 1, y: 2 })
@@ -34,7 +34,7 @@ rectangle.transform.y = 2
 ```
 
 ```typescript [3d]
-const cube = new FCuboid(scene)
+const cube = new FCuboid()
 cube.transform.position = { x: 1, y: 2, z: 3 }
 // Or using the function directly :
 cube.transform.setPosition({ x: 1, y: 2, z: 3 })
@@ -55,14 +55,14 @@ You can set the rotation as follows :
 ::: code-group
 
 ```typescript [2d]
-const rectangle = new FRectangle(scene)
+const rectangle = new FRectangle()
 rectangle.transform.rotation = Math.PI / 2
 // Or using the function directly :
 rectangle.transform.setRotation(Math.PI / 2)
 ```
 
 ```typescript [3d]
-const cube = new FCuboid(scene)
+const cube = new FCuboid()
 cube.transform.rotation = { x: Math.PI / 2, y: Math.PI / 2, z: Math.PI / 2 }
 // Or using the function directly :
 cube.transform.setRotation({ x: Math.PI / 2, y: Math.PI / 2, z: Math.PI / 2 })
@@ -79,14 +79,14 @@ Alternatively, you can use the `rotationDegree` property to set the rotation in 
 ::: code-group
 
 ```typescript [2d]
-const rectangle = new FRectangle(scene)
+const rectangle = new FRectangle()
 rectangle.transform.rotationDegree = 90
 // Or using the function directly :
 rectangle.transform.setRotationDegree(90)
 ```
 
 ```typescript [3d]
-const cube = new FCuboid(scene)
+const cube = new FCuboid()
 cube.transform.rotationDegree = { x: 90, y: 90, z: 90 }
 // Or using the function directly :
 cube.transform.setRotationDegree({ x: 90, y: 90, z: 90 })
@@ -107,7 +107,7 @@ You can set the scale as follows :
 ::: code-group
 
 ```typescript [2d]
-const rectangle = new FRectangle(scene)
+const rectangle = new FRectangle()
 rectangle.transform.scale = { x: 2, y: 2 }
 // Or using the function directly :
 rectangle.transform.setScale({ x: 2, y: 2 })
@@ -117,7 +117,7 @@ rectangle.transform.scaleY = 2
 ```
 
 ```typescript [3d]
-const cube = new FCuboid(scene)
+const cube = new FCuboid()
 cube.transform.scale = { x: 2, y: 2, z: 2 }
 // Or using the function directly :
 cube.transform.setScale({ x: 2, y: 2, z: 2 })

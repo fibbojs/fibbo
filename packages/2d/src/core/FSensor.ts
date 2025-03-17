@@ -1,7 +1,6 @@
 import { FRigidBodyType } from '../types/FRigidBodyType'
 import type { FRigidBodyOptions } from './FRigidBody'
 import { FRigidBody } from './FRigidBody'
-import type { FScene } from './FScene'
 
 /**
  * A 2d sensor that can be attached to a component.
@@ -10,8 +9,8 @@ import type { FScene } from './FScene'
 export class FSensor extends FRigidBody {
   /**
    * Creates a sensor for the given component.
-   * @param scene The scene the sensor belongs to.
    * @param options The options for the sensor.
+   * @param options.scene The scene the sensor belongs to.
    * @param options.position The position of the sensor. Default is { x: 0, y: 0 }.
    * @param options.rotation The rotation of the sensor in radians. Default is 0.
    * @param options.scale The scale of the sensor. Default is { x: 1, y: 1 }.
@@ -27,7 +26,7 @@ export class FSensor extends FRigidBody {
    * @param options.enabledTranslations.enableY If true, the sensor will be able to move on the y-axis.
    * @example
    * ```ts
-   * const sensor = new FSensor(scene, {
+   * const sensor = new FSensor({
    *  position: { x: 0, y: 0, z: 0 },
    *  rotation: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },
@@ -35,8 +34,8 @@ export class FSensor extends FRigidBody {
    * })
    * ```
    */
-  constructor(scene: FScene, options?: FRigidBodyOptions) {
-    super(scene, {
+  constructor(options?: FRigidBodyOptions) {
+    super({
       sensor: true,
       rigidBodyType: FRigidBodyType.KINEMATIC_POSITION_BASED,
       ...options,

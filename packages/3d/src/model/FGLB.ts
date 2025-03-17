@@ -1,4 +1,3 @@
-import type { FScene } from '../core/FScene'
 import type { FModelOptions } from './FModel'
 import { FGLTF } from './FGLTF'
 
@@ -12,15 +11,15 @@ import { FGLTF } from './FGLTF'
  *
  * const scene = new FScene()
  *
- * const glb = new FGLB(scene, {
+ * const glb = new FGLB({
  *  path: 'model.glb',
  * })
  * scene.addComponent(glb)
  * ```
  */
 export class FGLB extends FGLTF {
-  constructor(scene: FScene, options: FModelOptions) {
-    super(scene, {
+  constructor(options: FModelOptions) {
+    super({
       fileExtension: 'glb',
       ...options,
     })

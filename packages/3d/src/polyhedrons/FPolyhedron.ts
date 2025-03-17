@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import type { FScene } from '../core/FScene'
 import { FComponent } from '../core/FComponent'
 import type { FComponentOptions } from '../core/FComponent'
 
@@ -13,10 +12,10 @@ export abstract class FPolyhedron extends FComponent {
    * mesh is redefined from FComponent without the ? because it is
    * directly available after the constructor, as a polyhedron is created synchronously.
    */
-  __MESH__: THREE.Mesh
+  declare __MESH__: THREE.Mesh
 
-  constructor(scene: FScene, options?: FComponentOptions) {
-    super(scene, options)
+  constructor(options?: FComponentOptions) {
+    super(options)
     // Create a cube
     const geometry = new THREE.BoxGeometry(this.transform.scale.x, this.transform.scale.y, this.transform.scale.z)
     const material = new THREE.MeshPhongMaterial({
@@ -26,7 +25,7 @@ export abstract class FPolyhedron extends FComponent {
     })
     this.__MESH__ = new THREE.Mesh(geometry, material)
     // If shadows are enabled, cast and receive shadows
-    if (scene.__ENABLE_SHADOWS__) {
+    if (this.scene.__ENABLE_SHADOWS__) {
       this.__MESH__.castShadow = true
       this.__MESH__.receiveShadow = true
     }

@@ -2,7 +2,6 @@ import * as PIXI from 'pixi.js'
 import { FAssetUtil } from '@fibbojs/util'
 import type { FComponentOptions } from '../core/FComponent'
 import { FComponent } from '../core/FComponent'
-import type { FScene } from '../core/FScene'
 
 export interface FSpriteOptions extends FComponentOptions {
   texture: string
@@ -17,21 +16,21 @@ export interface FSpriteOptions extends FComponentOptions {
  *
  * const scene = new FScene()
  *
- * const sprite = new FSprite(scene, '/my-texture.png')
+ * const sprite = new FSprite('/my-texture.png')
  * ```
  */
 export class FSprite extends FComponent {
   /**
    * PIXI container
    */
-  __CONTAINER__: PIXI.Sprite
+  declare __CONTAINER__: PIXI.Sprite
   /**
    * The texture of the sprite.
    */
   __TEXTURE__: PIXI.Texture
 
-  constructor(scene: FScene, options: FSpriteOptions) {
-    super(scene, options)
+  constructor(options: FSpriteOptions) {
+    super(options)
 
     // Define the texture and container while loading
     this.__TEXTURE__ = PIXI.Texture.EMPTY

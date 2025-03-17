@@ -18,7 +18,7 @@
 
 #### Defined in
 
-core/dist/index.d.ts:359
+core/dist/index.d.ts:361
 
 ***
 
@@ -28,7 +28,7 @@ core/dist/index.d.ts:359
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:12](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/polygons/FPolygon.ts#L12)
+[2d/src/polygons/FPolygon.ts:11](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/polygons/FPolygon.ts#L11)
 
 ***
 
@@ -38,7 +38,7 @@ core/dist/index.d.ts:359
 
 #### Defined in
 
-[2d/src/polygons/FPolygon.ts:13](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/polygons/FPolygon.ts#L13)
+[2d/src/polygons/FPolygon.ts:12](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/polygons/FPolygon.ts#L12)
 
 ***
 
@@ -60,7 +60,7 @@ core/dist/index.d.ts:359
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:15](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L15)
+[2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/core/FComponent.ts#L16)
 
 ***
 
@@ -74,7 +74,7 @@ core/dist/index.d.ts:359
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L16)
+[2d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/core/FComponent.ts#L17)
 
 ***
 
@@ -88,7 +88,7 @@ core/dist/index.d.ts:359
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L17)
+[2d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/core/FComponent.ts#L18)
 
 ***
 
@@ -110,4 +110,18 @@ core/dist/index.d.ts:359
 
 #### Defined in
 
-[2d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FComponent.ts#L18)
+[2d/src/core/FComponent.ts:19](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/core/FComponent.ts#L19)
+
+***
+
+### scene?
+
+> `optional` **scene**: `FScene`
+
+#### Inherited from
+
+[`FComponentOptions`](FComponentOptions.md).[`scene`](FComponentOptions.md#scene)
+
+#### Defined in
+
+core/dist/index.d.ts:360

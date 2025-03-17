@@ -18,7 +18,7 @@
 
 #### Defined in
 
-core/dist/index.d.ts:215
+core/dist/index.d.ts:216
 
 ***
 
@@ -32,7 +32,7 @@ core/dist/index.d.ts:215
 
 #### Defined in
 
-core/dist/index.d.ts:214
+core/dist/index.d.ts:215
 
 ***
 
@@ -54,7 +54,7 @@ core/dist/index.d.ts:214
 
 #### Defined in
 
-[2d/src/core/FScene.ts:16](https://github.com/fibbojs/fibbo/blob/ab9e99b1ad4aed8e9a4d4f1553a9997678261528/packages/2d/src/core/FScene.ts#L16)
+[2d/src/core/FScene.ts:16](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/2d/src/core/FScene.ts#L16)
 
 ***
 
@@ -68,7 +68,7 @@ core/dist/index.d.ts:214
 
 #### Defined in
 
-core/dist/index.d.ts:216
+core/dist/index.d.ts:217
 
 ***
 
@@ -82,4 +82,4 @@ core/dist/index.d.ts:216
 
 #### Defined in
 
-core/dist/index.d.ts:217
+core/dist/index.d.ts:218

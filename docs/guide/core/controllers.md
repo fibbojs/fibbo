@@ -53,7 +53,7 @@ export class MyRotateController extends FController {
 
 // Usage
 const cube = new FCuboid()
-cube.addContreoller(new MyRotateController({
+cube.addController(new MyRotateController({
   component: cube
 }))
 ```

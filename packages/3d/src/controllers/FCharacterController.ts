@@ -38,7 +38,7 @@ export abstract class FCharacterController extends FController {
    */
   scene: FScene
 
-  constructor(scene: FScene, options: FCharacterControllerOptions) {
+  constructor(options: FCharacterControllerOptions) {
     // Define default values
     const DEFAULT_OPTIONS = {
       runInPhysicPipeline: true,
@@ -47,14 +47,14 @@ export abstract class FCharacterController extends FController {
     // Apply default options
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.speed)
-      throw new Error('FibboError: FCharacter requires speed option')
+    if (options.speed === undefined)
+      throw new Error('FibboError: options missing in FCharacterController constructor')
 
     // Call the parent constructor
     super(options)
 
     // Store options
-    this.scene = scene
+    this.scene = options.component.scene
     this.speed = options.speed
 
     // Map of the movements (will be updated by the keyboard)
@@ -66,7 +66,9 @@ export abstract class FCharacterController extends FController {
     }
 
     // Create a keyboard instance
-    const fKeyboard = new FKeyboard(scene)
+    const fKeyboard = new FKeyboard({
+      scene: this.scene,
+    })
 
     // Key down
     fKeyboard.onKeyDown('w', () => {

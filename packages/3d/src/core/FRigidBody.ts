@@ -10,6 +10,7 @@ import { FTransform } from './FTransform'
 import type { FScene } from './FScene'
 
 export interface FRigidBodyOptions {
+  scene?: FScene
   position?: FVector3
   rotation?: FVector3
   rotationDegree?: FVector3
@@ -64,8 +65,8 @@ export class FRigidBody {
 
   /**
    * Creates a rigidBody for the given component.
-   * @param scene The scene the rigidBody belongs to.
    * @param options The options for the rigidBody.
+   * @param options.scene The scene the rigidBody belongs to.
    * @param options.position The position of the rigidBody. Default is { x: 0, y: 0, z: 0 }.
    * @param options.rotation The rotation of the rigidBody. Default is { x: 0, y: 0, z: 0 }.
    * @param options.rotationDegree The rotation of the rigidBody in degrees.
@@ -88,7 +89,7 @@ export class FRigidBody {
    * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
    * @example
    * ```ts
-   * const rigidBody = new FRigidBody(scene, {
+   * const rigidBody = new FRigidBody({
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },
    *  rotation: { x: 0, y: 0, z: 0 },
@@ -96,9 +97,10 @@ export class FRigidBody {
    * })
    * ```
    */
-  constructor(scene: FScene, options?: FRigidBodyOptions) {
+  constructor(options?: FRigidBodyOptions) {
     // Apply default options
     const DEFAULT_OPTIONS = {
+      scene: globalThis.__FIBBO_ACTUAL_SCENE__,
       position: { x: 0, y: 0, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
@@ -108,16 +110,16 @@ export class FRigidBody {
       sensor: false,
       lockTranslations: false,
       lockRotations: false,
-      enabledTranslations: undefined,
-      enabledRotations: undefined,
     }
+    // eslint-disable-next-line ts/ban-ts-comment
+    // @ts-ignore
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
-    if (!options.position || (!options.rotation && !options.rotationDegree) || !options.scale || !options.shape)
-      throw new Error('FibboError: initRigidBody requires transforms options')
+    if (options.scene === undefined || !options.position || (!options.rotation && !options.rotationDegree) || !options.scale || !options.shape)
+      throw new Error('FibboError: options missing in FRigidBody constructor')
 
     // Check if the world exists
-    if (!scene.world)
+    if (!options.scene.world)
       throw new Error('FibboError: FScene must have a world to create a rigidBody')
 
     // Configure transform
@@ -164,7 +166,7 @@ export class FRigidBody {
     ))
 
     // Create the rigidBody
-    this.__RIGIDBODY__ = scene.world.createRigidBody(rigidBodyDesc)
+    this.__RIGIDBODY__ = options.scene.world.createRigidBody(rigidBodyDesc)
 
     // Lock the translation if needed
     if (options.lockTranslations)
@@ -192,13 +194,14 @@ export class FRigidBody {
     }
 
     // Create the collider
-    this.collider = new FCollider(scene, {
+    this.collider = new FCollider({
       ...options,
+      scene: options.scene,
       rigidBody: this,
     })
 
     // Add the rigidBody to the scene
-    scene.addRigidBody(this)
+    options.scene.addRigidBody(this)
   }
 
   frame(_delta: number): void {

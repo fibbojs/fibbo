@@ -1,9 +1,9 @@
 import { FCharacterControllerKP, FSprite } from '@fibbojs/2d'
-import type { FRigidBodyOptions, FScene } from '@fibbojs/2d'
+import type { FRigidBodyOptions } from '@fibbojs/2d'
 
 export default class Character extends FSprite {
-  constructor(scene: FScene) {
-    super(scene, {
+  constructor() {
+    super({
       texture: 'character_0000.png',
       position: { x: 0, y: 10 },
       // rotationDegree: 45,
@@ -11,7 +11,7 @@ export default class Character extends FSprite {
     })
 
     // Initialize the character controller
-    this.addController(new FCharacterControllerKP(scene, {
+    this.addController(new FCharacterControllerKP({
       component: this,
     }))
   }

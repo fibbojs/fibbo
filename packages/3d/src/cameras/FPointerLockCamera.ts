@@ -1,6 +1,5 @@
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'
 import type { FComponent } from '../core/FComponent'
-import type { FScene } from '../core/FScene'
 import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
@@ -13,10 +12,11 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  *
  * const scene = new FScene()
  *
- * const cube = new FCuboid(scene)
- * scene.addComponent(cube)
+ * const cube = new FCuboid()
  *
- * scene.camera = new FPointerLockCamera(cube)
+ * scene.camera = new FPointerLockCamera({
+ *  target: cube
+ * })
  * ```
  */
 export class FPointerLockCamera extends FCamera {
@@ -25,8 +25,8 @@ export class FPointerLockCamera extends FCamera {
   // Pointer Lock controls
   controls: PointerLockControls
 
-  constructor(scene: FScene, options: FAttachedCameraOptions) {
-    super(scene, options)
+  constructor(options: FAttachedCameraOptions) {
+    super(options)
     this.attachedComponent = options.target
 
     // Create Pointer Lock controls

@@ -46,8 +46,8 @@ Every [`FComponent`](/api/core/classes/FComponent) has a [`onCollisionWith`](/ap
 ```typescript [2d]
 import { FCircle, FRectangle } from '@fibbojs/2d'
 
-const rectangle = new FRectangle(scene)
-const circle = new FCircle(scene)
+const rectangle = new FRectangle()
+const circle = new FCircle()
 
 // Detect collisions with all rectangles
 rectangle.onCollisionWith(FRectangle, ({ component }) => {
@@ -62,8 +62,8 @@ rectangle.onCollisionWith(circle, () => {
 ```typescript [3d]
 import { FCuboid, FSphere } from '@fibbojs/3d'
 
-const cube = new FCuboid(scene)
-const sphere = new FSphere(scene)
+const cube = new FCuboid()
+const sphere = new FSphere()
 
 // Detect collisions with all cuboids
 cube.onCollisionWith(FCuboid, ({ component }) => {

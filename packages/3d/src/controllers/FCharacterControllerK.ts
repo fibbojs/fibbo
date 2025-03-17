@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import RAPIER from '@dimforge/rapier3d'
 import { FKeyboard } from '@fibbojs/event'
 import type { FVector3 } from '@fibbojs/core'
-import type { FScene } from '../core/FScene'
 import type { FCharacterControllerOptions } from './FCharacterController'
 import { FCharacterController } from './FCharacterController'
 
@@ -30,8 +29,8 @@ export abstract class FCharacterControllerK extends FCharacterController {
    */
   __LAST_IS_GROUNDED__: boolean
 
-  constructor(scene: FScene, options: FCharacterControllerOptions) {
-    super(scene, options)
+  constructor(options: FCharacterControllerOptions) {
+    super(options)
 
     // Set the default yVelocity
     this.yVelocity = 0
@@ -40,7 +39,9 @@ export abstract class FCharacterControllerK extends FCharacterController {
     this.__LAST_IS_GROUNDED__ = false
 
     // Create a keyboard instance
-    const fKeyboard = new FKeyboard(scene)
+    const fKeyboard = new FKeyboard({
+      scene: this.scene,
+    })
     // Bind the keyboard events
     fKeyboard.onKeyDown(' ', () => {
       // Verify if the character is grounded
@@ -53,7 +54,7 @@ export abstract class FCharacterControllerK extends FCharacterController {
     // The gap the controller will leave between the character and its environment
     const offset = 0.01
     // Create the character controller
-    this.characterController = scene.world.createCharacterController(offset)
+    this.characterController = this.scene.world.createCharacterController(offset)
     // Configure autostep
     this.characterController.enableAutostep(0.5, 0.1, true)
     this.characterController.enableSnapToGround(0.1)

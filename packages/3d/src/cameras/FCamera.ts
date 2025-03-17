@@ -1,11 +1,15 @@
 import * as THREE from 'three'
 import { FCamera as FCameraCore } from '@fibbojs/core'
-import type { FVector3 } from '@fibbojs/core'
+import type { FCameraOptions as FCameraOptionsCore, FVector3 } from '@fibbojs/core'
 import type { FTransformOptions } from '../core/FTransform'
 import { FTransform } from '../core/FTransform'
-import type { FScene } from '../core/FScene'
 
-export interface FCameraOptions extends FTransformOptions {}
+export interface FCameraOptions extends FCameraOptionsCore {
+  position?: FTransformOptions['position']
+  rotation?: FTransformOptions['rotation']
+  rotationDegree?: FTransformOptions['rotationDegree']
+  scale?: FTransformOptions['scale']
+}
 
 /**
  * The base class for 3d cameras in Fibbo.
@@ -28,8 +32,8 @@ export abstract class FCamera extends FCameraCore {
    */
   transform: FTransform
 
-  constructor(scene: FScene, options?: FCameraOptions) {
-    super(scene)
+  constructor(options?: FCameraOptions) {
+    super(options)
 
     // Define default options
     const DEFAULT_OPTIONS = {
