@@ -4,14 +4,6 @@ The [Fibbo CLI](https://github.com/fibbojs/cli) has a dedicated command to upgra
 
 Make sure to open a terminal in the root directory of your project, then run the following command :
 
-::: code-group
-
-```bash [2d]
+```bash
 fibbo upgrade
 ```
-
-```bash [3d]
-fibbo upgrade
-```
-
-:::

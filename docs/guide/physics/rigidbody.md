@@ -34,7 +34,7 @@ Every [`FComponent`](/api/core/classes/FComponent) has a [`initRigidBody`](/api/
 ```typescript [2d]
 import { FRectangle, FShapes } from '@fibbojs/2d'
 
-const rectangle = new FRectangle(scene)
+const rectangle = new FRectangle()
 rectangle.initRigidBody({
   positionOffset: { x: 0, y: 0 },
   rotationOffset: 0,
@@ -48,7 +48,7 @@ rectangle.initRigidBody({
 ```typescript [3d]
 import { FCuboid, FShapes } from '@fibbojs/3d'
 
-const cube = new FCuboid(scene)
+const cube = new FCuboid()
 cube.initRigidBody({
   positionOffset: { x: 0, y: 0, z: 0 },
   rotationOffset: { x: 0, y: 0, z: 0 },

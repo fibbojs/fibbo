@@ -4,12 +4,12 @@ The `@fibbojs/event` package provides a convenient way to listen to keyboard eve
 
 ## Initialization
 
-You can create a new `FKeyboard` instance and start listening to keyboard events. The [`FScene`](/guide/core/scene) must be passed as a parameter to the constructor.
+You can create a new `FKeyboard` instance and start listening to keyboard events.
 
 ```typescript
 import { FKeyboard } from '@fibbojs/event'
 
-const keyboard = new FKeyboard(scene)
+const keyboard = new FKeyboard()
 keyboard.on('a', () => {
   console.log('The "a" key was pressed')
 })
