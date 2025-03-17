@@ -1,7 +1,7 @@
 {
   "name": "@fibbojs/event",
   "type": "module",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Event package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@proton.me>",
   "license": "Apache-2.0",
@@ -46,6 +46,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/core": "0.0.15"
+    "@fibbojs/core": "0.0.16"
   }
 }

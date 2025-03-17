@@ -1,3 +1,14 @@
+## 0.0.16 (2025-03-17)
+
+
+### 🚀 Features
+
+- make scene optional in constructors ([#56](https://github.com/fibbojs/fibbo/pull/56))
+
+### ❤️  Thank You
+
+- Gugustinette @Gugustinette
+
 ## 0.0.15 (2025-03-02)
 
 This was a version bump only, there were no code changes.
