@@ -37,7 +37,7 @@ interface Stargazer {
 const stargazers: Ref<Stargazer[]> = ref([])
 
 onMounted(() => {
-  fetch('https://api.github.com/repos/fibbojs/fibbo/stargazers')
+  fetch('https://api.github.com/repos/fibbojs/fibbo/stargazers?per_page=100')
     .then(response => response.json())
     .then((data) => {
       // Reverse the array to show the latest stargazers first
