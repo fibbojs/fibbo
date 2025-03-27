@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import llmstxt from 'vitepress-plugin-llms'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -279,4 +280,9 @@ export default defineConfig({
     ],
   },
   ignoreDeadLinks: true,
+  vite: {
+    plugins: [llmstxt({
+      customLLMsTxtTemplate: `# Fibbo\n\nFibbo is a web-based game engine, built on top of Three.js, Rapier and PixiJS.\nIt offers a unified object-oriented API and modern web-like DX in the context of making games.\n\n## Table of content\n\n{toc}`,
+    })],
+  },
 })
