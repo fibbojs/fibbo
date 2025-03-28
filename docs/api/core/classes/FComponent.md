@@ -24,7 +24,7 @@ The base class for all 2D and 3D components in Fibbo.
 
 #### Defined in
 
-[core/src/FComponent.ts:67](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L67)
+[core/src/FComponent.ts:67](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L67)
 
 ## Methods
 
@@ -46,7 +46,7 @@ The controller to add.
 
 #### Defined in
 
-[core/src/FComponent.ts:100](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L100)
+[core/src/FComponent.ts:100](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L100)
 
 ***
 
@@ -94,7 +94,7 @@ player.emitCollisionWith({
 
 #### Defined in
 
-[core/src/FComponent.ts:242](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L242)
+[core/src/FComponent.ts:242](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L242)
 
 ***
 
@@ -110,7 +110,7 @@ Emit the onLoaded callbacks.
 
 #### Defined in
 
-[core/src/FComponent.ts:164](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L164)
+[core/src/FComponent.ts:164](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L164)
 
 ***
 
@@ -133,7 +133,7 @@ The time since the last frame.
 
 #### Defined in
 
-[core/src/FComponent.ts:131](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L131)
+[core/src/FComponent.ts:131](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L131)
 
 ***
 
@@ -183,7 +183,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[core/src/FComponent.ts:192](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L192)
+[core/src/FComponent.ts:192](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L192)
 
 ***
 
@@ -205,7 +205,7 @@ The callback function.
 
 #### Defined in
 
-[core/src/FComponent.ts:149](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L149)
+[core/src/FComponent.ts:149](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L149)
 
 ***
 
@@ -227,7 +227,7 @@ The callback function.
 
 #### Defined in
 
-[core/src/FComponent.ts:157](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L157)
+[core/src/FComponent.ts:157](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L157)
 
 ***
 
@@ -249,7 +249,7 @@ The controller to remove.
 
 #### Defined in
 
-[core/src/FComponent.ts:112](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L112)
+[core/src/FComponent.ts:112](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L112)
 
 ## Properties
 
@@ -266,7 +266,7 @@ It is a dictionary where the key is the class name or object id and the value is
 
 #### Defined in
 
-[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L55)
+[core/src/FComponent.ts:55](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L55)
 
 ***
 
@@ -278,7 +278,7 @@ Callbacks for when a frame is rendered.
 
 #### Defined in
 
-[core/src/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L44)
+[core/src/FComponent.ts:44](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L44)
 
 ***
 
@@ -290,7 +290,7 @@ Callbacks for when the component is loaded (could be a texture, a 3D model, etc)
 
 #### Defined in
 
-[core/src/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L49)
+[core/src/FComponent.ts:49](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L49)
 
 ***
 
@@ -303,7 +303,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L39)
+[core/src/FComponent.ts:39](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L39)
 
 ***
 
@@ -313,7 +313,7 @@ It is generated automatically.
 
 #### Defined in
 
-[core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L33)
+[core/src/FComponent.ts:33](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L33)
 
 ***
 
@@ -325,7 +325,7 @@ Internal flags
 
 #### Defined in
 
-[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L32)
+[core/src/FComponent.ts:32](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L32)
 
 ***
 
@@ -337,7 +337,7 @@ The controllers attached to the component.
 
 #### Defined in
 
-[core/src/FComponent.ts:65](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L65)
+[core/src/FComponent.ts:65](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L65)
 
 ***
 
@@ -349,4 +349,4 @@ The scene the component is attached to.
 
 #### Defined in
 
-[core/src/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/FComponent.ts#L60)
+[core/src/FComponent.ts:60](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FComponent.ts#L60)

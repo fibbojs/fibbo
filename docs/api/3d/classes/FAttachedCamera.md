@@ -44,7 +44,7 @@ scene.camera = new FAttachedCamera({
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:118](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L118)
+[3d/src/cameras/FCamera.ts:118](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L118)
 
 ## Constructors
 
@@ -68,7 +68,7 @@ Options for the camera
 
 #### Defined in
 
-[3d/src/cameras/FAttachedCamera.ts:36](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FAttachedCamera.ts#L36)
+[3d/src/cameras/FAttachedCamera.ts:36](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FAttachedCamera.ts#L36)
 
 ## Methods
 
@@ -89,7 +89,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:72](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L72)
+[3d/src/cameras/FCamera.ts:72](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L72)
 
 ***
 
@@ -110,7 +110,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:80](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L80)
+[3d/src/cameras/FCamera.ts:80](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L80)
 
 ***
 
@@ -132,7 +132,7 @@ This method does not make sense for cameras, but it is implemented for consisten
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:89](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L89)
+[3d/src/cameras/FCamera.ts:89](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L89)
 
 ***
 
@@ -255,7 +255,7 @@ The purpose of this method is to render the component, its mesh/sprite, and its 
 
 #### Defined in
 
-[3d/src/cameras/FAttachedCamera.ts:41](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FAttachedCamera.ts#L41)
+[3d/src/cameras/FAttachedCamera.ts:41](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FAttachedCamera.ts#L41)
 
 ***
 
@@ -278,7 +278,7 @@ The direction of the camera. It is a normalized vector.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:109](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L109)
+[3d/src/cameras/FCamera.ts:109](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L109)
 
 ***
 
@@ -304,7 +304,7 @@ The target to look at.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:100](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L100)
+[3d/src/cameras/FCamera.ts:100](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L100)
 
 ***
 
@@ -505,7 +505,7 @@ Three.js camera object.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:28](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L28)
+[3d/src/cameras/FCamera.ts:28](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L28)
 
 ***
 
@@ -536,7 +536,7 @@ core/dist/index.d.ts:386
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:23](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L23)
+[3d/src/cameras/FCamera.ts:23](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L23)
 
 ***
 
@@ -552,7 +552,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L22)
+[3d/src/cameras/FCamera.ts:22](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L22)
 
 ***
 
@@ -562,7 +562,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/cameras/FAttachedCamera.ts:28](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FAttachedCamera.ts#L28)
+[3d/src/cameras/FAttachedCamera.ts:28](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FAttachedCamera.ts#L28)
 
 ***
 
@@ -588,7 +588,7 @@ core/dist/index.d.ts:409
 
 #### Defined in
 
-[3d/src/cameras/FAttachedCamera.ts:30](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FAttachedCamera.ts#L30)
+[3d/src/cameras/FAttachedCamera.ts:30](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FAttachedCamera.ts#L30)
 
 ***
 
@@ -620,4 +620,4 @@ Transform of the camera.
 
 #### Defined in
 
-[3d/src/cameras/FCamera.ts:33](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/cameras/FCamera.ts#L33)
+[3d/src/cameras/FCamera.ts:33](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/cameras/FCamera.ts#L33)

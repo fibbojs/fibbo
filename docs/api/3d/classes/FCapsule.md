@@ -39,7 +39,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[3d/src/polyhedrons/FCapsule.ts:22](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/polyhedrons/FCapsule.ts#L22)
+[3d/src/polyhedrons/FCapsule.ts:22](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/polyhedrons/FCapsule.ts#L22)
 
 ## Methods
 
@@ -61,7 +61,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:282](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L282)
+[3d/src/core/FComponent.ts:282](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L282)
 
 ***
 
@@ -83,7 +83,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:291](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L291)
+[3d/src/core/FComponent.ts:291](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L291)
 
 ***
 
@@ -105,7 +105,7 @@ scene.addComponent(capsule)
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:301](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L301)
+[3d/src/core/FComponent.ts:301](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L301)
 
 ***
 
@@ -133,7 +133,7 @@ Set this to true to propagate the position update to the rigidBody, collider and
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:162](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L162)
+[3d/src/core/FComponent.ts:162](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L162)
 
 ***
 
@@ -161,7 +161,7 @@ Set this to true to propagate the rotation update to the rigidBody, collider and
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:204](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L204)
+[3d/src/core/FComponent.ts:204](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L204)
 
 ***
 
@@ -189,7 +189,7 @@ Set this to true to propagate the scale update to the rigidBody, collider and se
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:246](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L246)
+[3d/src/core/FComponent.ts:246](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L246)
 
 ***
 
@@ -314,7 +314,7 @@ The time since the last frame.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:110](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L110)
+[3d/src/core/FComponent.ts:110](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L110)
 
 ***
 
@@ -336,7 +336,7 @@ The time since the last frame.
 
 #### Defined in
 
-[3d/src/polyhedrons/FCapsule.ts:37](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/polyhedrons/FCapsule.ts#L37)
+[3d/src/polyhedrons/FCapsule.ts:37](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/polyhedrons/FCapsule.ts#L37)
 
 ***
 
@@ -358,7 +358,7 @@ The time since the last frame.
 
 #### Defined in
 
-[3d/src/polyhedrons/FCapsule.ts:44](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/polyhedrons/FCapsule.ts#L44)
+[3d/src/polyhedrons/FCapsule.ts:44](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/polyhedrons/FCapsule.ts#L44)
 
 ***
 
@@ -380,7 +380,7 @@ The time since the last frame.
 
 #### Defined in
 
-[3d/src/polyhedrons/FCapsule.ts:51](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/polyhedrons/FCapsule.ts#L51)
+[3d/src/polyhedrons/FCapsule.ts:51](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/polyhedrons/FCapsule.ts#L51)
 
 ***
 
@@ -434,7 +434,7 @@ player.onCollisionWith(enemy, () => {
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:318](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L318)
+[3d/src/core/FComponent.ts:318](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L318)
 
 ***
 
@@ -534,7 +534,7 @@ core/dist/index.d.ts:420
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:114](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L114)
+[3d/src/core/FComponent.ts:114](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L114)
 
 ***
 
@@ -566,7 +566,7 @@ cube.setColor(0xFF0000)
 
 #### Defined in
 
-[3d/src/polyhedrons/FPolyhedron.ts:42](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/polyhedrons/FPolyhedron.ts#L42)
+[3d/src/polyhedrons/FPolyhedron.ts:42](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/polyhedrons/FPolyhedron.ts#L42)
 
 ## Properties
 
@@ -666,7 +666,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:30](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L30)
+[3d/src/core/FComponent.ts:30](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L30)
 
 ***
 
@@ -683,7 +683,7 @@ directly available after the constructor, as a polyhedron is created synchronous
 
 #### Defined in
 
-[3d/src/polyhedrons/FPolyhedron.ts:15](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/polyhedrons/FPolyhedron.ts#L15)
+[3d/src/polyhedrons/FPolyhedron.ts:15](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/polyhedrons/FPolyhedron.ts#L15)
 
 ***
 
@@ -699,7 +699,7 @@ Collider
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:58](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L58)
+[3d/src/core/FComponent.ts:58](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L58)
 
 ***
 
@@ -715,7 +715,7 @@ The controllers attached to the component.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L38)
+[3d/src/core/FComponent.ts:38](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L38)
 
 ***
 
@@ -731,7 +731,7 @@ RigidBody
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L54)
+[3d/src/core/FComponent.ts:54](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L54)
 
 ***
 
@@ -747,7 +747,7 @@ The scene the component is attached to.
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:34](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L34)
+[3d/src/core/FComponent.ts:34](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L34)
 
 ***
 
@@ -763,7 +763,7 @@ Sensor (a collider that doesn't collide with other colliders, but still triggers
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:62](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L62)
+[3d/src/core/FComponent.ts:62](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L62)
 
 ***
 
@@ -779,4 +779,4 @@ Transforms
 
 #### Defined in
 
-[3d/src/core/FComponent.ts:48](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FComponent.ts#L48)
+[3d/src/core/FComponent.ts:48](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FComponent.ts#L48)

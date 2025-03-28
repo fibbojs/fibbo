@@ -61,7 +61,7 @@ The camera of the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:255](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L255)
+[3d/src/core/FScene.ts:255](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L255)
 
 ## Constructors
 
@@ -83,7 +83,7 @@ The camera of the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:75](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L75)
+[3d/src/core/FScene.ts:75](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L75)
 
 ## Methods
 
@@ -101,7 +101,7 @@ The camera of the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:232](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L232)
+[3d/src/core/FScene.ts:232](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L232)
 
 ***
 
@@ -125,7 +125,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:183](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L183)
+[3d/src/core/FScene.ts:183](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L183)
 
 ***
 
@@ -145,7 +145,7 @@ Add a component to the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:175](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L175)
+[3d/src/core/FScene.ts:175](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L175)
 
 ***
 
@@ -169,7 +169,7 @@ Add a light to the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:220](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L220)
+[3d/src/core/FScene.ts:220](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L220)
 
 ***
 
@@ -187,7 +187,7 @@ Add a light to the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:243](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L243)
+[3d/src/core/FScene.ts:243](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L243)
 
 ***
 
@@ -244,7 +244,7 @@ If the collision has started or ended
 
 #### Defined in
 
-[3d/src/core/FScene.ts:151](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L151)
+[3d/src/core/FScene.ts:151](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L151)
 
 ***
 
@@ -264,7 +264,7 @@ Initialize the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:103](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L103)
+[3d/src/core/FScene.ts:103](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L103)
 
 ***
 
@@ -284,7 +284,7 @@ Initialize the physics world.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:131](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L131)
+[3d/src/core/FScene.ts:131](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L131)
 
 ***
 
@@ -447,7 +447,7 @@ core/dist/index.d.ts:348
 
 #### Defined in
 
-[3d/src/core/FScene.ts:236](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L236)
+[3d/src/core/FScene.ts:236](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L236)
 
 ***
 
@@ -471,7 +471,7 @@ Remove a component from the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:198](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L198)
+[3d/src/core/FScene.ts:198](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L198)
 
 ***
 
@@ -489,7 +489,7 @@ Remove a component from the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:179](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L179)
+[3d/src/core/FScene.ts:179](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L179)
 
 ***
 
@@ -513,7 +513,7 @@ Remove a light from the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:226](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L226)
+[3d/src/core/FScene.ts:226](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L226)
 
 ***
 
@@ -531,7 +531,7 @@ Remove a light from the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:247](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L247)
+[3d/src/core/FScene.ts:247](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L247)
 
 ## Properties
 
@@ -541,7 +541,7 @@ Remove a light from the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:64](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L64)
+[3d/src/core/FScene.ts:64](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L64)
 
 ***
 
@@ -653,7 +653,7 @@ The camera of the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:67](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L67)
+[3d/src/core/FScene.ts:67](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L67)
 
 ***
 
@@ -679,7 +679,7 @@ core/dist/index.d.ts:241
 
 #### Defined in
 
-[3d/src/core/FScene.ts:53](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L53)
+[3d/src/core/FScene.ts:53](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L53)
 
 ***
 
@@ -709,7 +709,7 @@ Internal flags
 
 #### Defined in
 
-[3d/src/core/FScene.ts:52](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L52)
+[3d/src/core/FScene.ts:52](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L52)
 
 ***
 
@@ -773,7 +773,7 @@ core/dist/index.d.ts:232
 
 #### Defined in
 
-[3d/src/core/FScene.ts:73](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L73)
+[3d/src/core/FScene.ts:73](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L73)
 
 ***
 
@@ -783,7 +783,7 @@ core/dist/index.d.ts:232
 
 #### Defined in
 
-[3d/src/core/FScene.ts:60](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L60)
+[3d/src/core/FScene.ts:60](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L60)
 
 ***
 
@@ -799,7 +799,7 @@ The components in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:56](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L56)
+[3d/src/core/FScene.ts:56](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L56)
 
 ***
 
@@ -813,7 +813,7 @@ The components in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:72](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L72)
+[3d/src/core/FScene.ts:72](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L72)
 
 ***
 
@@ -827,7 +827,7 @@ The components in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:70](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L70)
+[3d/src/core/FScene.ts:70](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L70)
 
 ***
 
@@ -843,7 +843,7 @@ The lights in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:58](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L58)
+[3d/src/core/FScene.ts:58](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L58)
 
 ***
 
@@ -853,7 +853,7 @@ The lights in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:66](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L66)
+[3d/src/core/FScene.ts:66](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L66)
 
 ***
 
@@ -863,7 +863,7 @@ The lights in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:62](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L62)
+[3d/src/core/FScene.ts:62](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L62)
 
 ***
 
@@ -873,7 +873,7 @@ The lights in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:65](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L65)
+[3d/src/core/FScene.ts:65](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L65)
 
 ***
 
@@ -887,4 +887,4 @@ The lights in the scene.
 
 #### Defined in
 
-[3d/src/core/FScene.ts:71](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/3d/src/core/FScene.ts#L71)
+[3d/src/core/FScene.ts:71](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/3d/src/core/FScene.ts#L71)

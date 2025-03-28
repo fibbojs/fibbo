@@ -36,7 +36,7 @@ The radian angle.
 
 #### Defined in
 
-[util/src/FMathUtil.ts:22](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/util/src/FMathUtil.ts#L22)
+[util/src/FMathUtil.ts:22](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/util/src/FMathUtil.ts#L22)
 
 ***
 
@@ -60,7 +60,7 @@ The radian angle.
 
 #### Defined in
 
-[util/src/FMathUtil.ts:31](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/util/src/FMathUtil.ts#L31)
+[util/src/FMathUtil.ts:31](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/util/src/FMathUtil.ts#L31)
 
 ***
 
@@ -84,4 +84,4 @@ The euler angle.
 
 #### Defined in
 
-[util/src/FMathUtil.ts:13](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/util/src/FMathUtil.ts#L13)
+[util/src/FMathUtil.ts:13](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/util/src/FMathUtil.ts#L13)

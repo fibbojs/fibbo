@@ -25,7 +25,7 @@ It relies on [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/Wi
 
 #### Defined in
 
-[core/src/pipeline/IntervalPipeline.ts:14](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/IntervalPipeline.ts#L14)
+[core/src/pipeline/IntervalPipeline.ts:14](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/IntervalPipeline.ts#L14)
 
 ## Methods
 
@@ -50,7 +50,7 @@ It should implement the desired behavior of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L40)
+[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L40)
 
 ***
 
@@ -70,7 +70,7 @@ Start the pipeline
 
 #### Defined in
 
-[core/src/pipeline/IntervalPipeline.ts:18](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/IntervalPipeline.ts#L18)
+[core/src/pipeline/IntervalPipeline.ts:18](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/IntervalPipeline.ts#L18)
 
 ***
 
@@ -90,7 +90,7 @@ Stop the pipeline
 
 #### Defined in
 
-[core/src/pipeline/IntervalPipeline.ts:27](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/IntervalPipeline.ts#L27)
+[core/src/pipeline/IntervalPipeline.ts:27](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/IntervalPipeline.ts#L27)
 
 ## Properties
 
@@ -109,7 +109,7 @@ The default value is 30.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L28)
+[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L28)
 
 ***
 
@@ -121,7 +121,7 @@ The interval ID returned by [`setInterval`](https://developer.mozilla.org/en-US/
 
 #### Defined in
 
-[core/src/pipeline/IntervalPipeline.ts:12](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/IntervalPipeline.ts#L12)
+[core/src/pipeline/IntervalPipeline.ts:12](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/IntervalPipeline.ts#L12)
 
 ***
 
@@ -137,4 +137,4 @@ The current state of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L21)
+[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L21)

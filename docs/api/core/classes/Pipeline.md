@@ -22,7 +22,7 @@ Pipeline class that helps handling many processes at a time.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:30](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L30)
+[core/src/pipeline/Pipeline.ts:30](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L30)
 
 ## Methods
 
@@ -43,7 +43,7 @@ It should implement the desired behavior of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L40)
+[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L40)
 
 ***
 
@@ -59,7 +59,7 @@ Start the pipeline
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:45](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L45)
+[core/src/pipeline/Pipeline.ts:45](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L45)
 
 ***
 
@@ -75,7 +75,7 @@ Stop the pipeline
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:50](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L50)
+[core/src/pipeline/Pipeline.ts:50](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L50)
 
 ## Properties
 
@@ -90,7 +90,7 @@ The default value is 30.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L28)
+[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L28)
 
 ***
 
@@ -102,4 +102,4 @@ The current state of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/Pipeline.ts#L21)
+[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L21)

@@ -20,7 +20,7 @@ The pipeline manager is responsible for managing pipelines.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:37](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L37)
+[core/src/pipeline/PipelineManager.ts:37](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L37)
 
 ## Methods
 
@@ -40,7 +40,7 @@ Add an interval pipeline.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:179](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L179)
+[core/src/pipeline/PipelineManager.ts:179](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L179)
 
 ***
 
@@ -60,7 +60,7 @@ Add a standard pipeline.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:139](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L139)
+[core/src/pipeline/PipelineManager.ts:139](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L139)
 
 ***
 
@@ -80,7 +80,7 @@ Add a throttled pipeline.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:159](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L159)
+[core/src/pipeline/PipelineManager.ts:159](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L159)
 
 ***
 
@@ -100,7 +100,7 @@ Remove an interval pipeline.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:188](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L188)
+[core/src/pipeline/PipelineManager.ts:188](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L188)
 
 ***
 
@@ -120,7 +120,7 @@ Remove a standard pipeline.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:148](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L148)
+[core/src/pipeline/PipelineManager.ts:148](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L148)
 
 ***
 
@@ -140,7 +140,7 @@ Remove a throttled pipeline.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:168](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L168)
+[core/src/pipeline/PipelineManager.ts:168](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L168)
 
 ***
 
@@ -156,7 +156,7 @@ Start all pipelines.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:121](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L121)
+[core/src/pipeline/PipelineManager.ts:121](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L121)
 
 ***
 
@@ -172,7 +172,7 @@ Stop all pipelines.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:130](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L130)
+[core/src/pipeline/PipelineManager.ts:130](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L130)
 
 ## Properties
 
@@ -184,7 +184,7 @@ Animation frame request ID
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:30](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L30)
+[core/src/pipeline/PipelineManager.ts:30](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L30)
 
 ***
 
@@ -196,7 +196,7 @@ Auto loop flag.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:35](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L35)
+[core/src/pipeline/PipelineManager.ts:35](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L35)
 
 ***
 
@@ -206,7 +206,7 @@ Auto loop flag.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:25](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L25)
+[core/src/pipeline/PipelineManager.ts:25](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L25)
 
 ***
 
@@ -218,7 +218,7 @@ The scene associated with the pipeline manager.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:20](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L20)
+[core/src/pipeline/PipelineManager.ts:20](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L20)
 
 ***
 
@@ -228,7 +228,7 @@ The scene associated with the pipeline manager.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:23](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L23)
+[core/src/pipeline/PipelineManager.ts:23](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L23)
 
 ***
 
@@ -238,4 +238,4 @@ The scene associated with the pipeline manager.
 
 #### Defined in
 
-[core/src/pipeline/PipelineManager.ts:24](https://github.com/fibbojs/fibbo/blob/a8d7b4720cdb2648ddcb2159cdc3e3671c6aee98/packages/core/src/pipeline/PipelineManager.ts#L24)
+[core/src/pipeline/PipelineManager.ts:24](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/PipelineManager.ts#L24)
