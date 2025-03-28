@@ -284,7 +284,7 @@ export default defineConfig({
     plugins: [llmstxt({
       customTemplateVariables: {
         title: 'Fibbo',
-        details: 'Fibbo is a web-based game engine, built on top of Three.js, Rapier and PixiJS.\nIt offers a unified object-oriented API and modern web-like DX in the context of making games.',
+        description: 'Fibbo is a web-based game engine, built on top of Three.js, Rapier and PixiJS. It offers a unified object-oriented API and modern web-like DX in the context of making games.',
       },
     })],
   },
