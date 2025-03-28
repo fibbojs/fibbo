@@ -48,13 +48,6 @@
     ".nx": true,
     ".idx": true,
     ".zed": true,
-    "**/dist": true,
-    "**/node_modules": true,
-    "**/tsconfig.json": true,
-    "**/.gitignore": true,
-    "**/vitest.workspace.ts": true,
-    "**/vitest.config.ts": true,
-    "**/coverage": true,
-    "**/html": true
+    "**/node_modules": true
   }
 }
