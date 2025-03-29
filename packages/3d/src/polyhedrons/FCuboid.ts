@@ -6,12 +6,9 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Polyhedrons
  * @example
  * ```ts
- * import { FScene, FCuboid } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FCuboid } from '@fibbojs/3d'
  *
  * const cube = new FCuboid()
- * scene.addComponent(cube)
  * ```
  */
 export class FCuboid extends FPolyhedron {

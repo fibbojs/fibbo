@@ -169,15 +169,16 @@ export abstract class FComponent {
 
   /**
    * Add a callback to be called when a collision occurs.
-   * @param classOrObject The class or object to add the callback to.
-   * @param callback The callback to add.
+   * @param classOrObject The class or object to observe for collisions. Should inherit from FComponent.
+   * @param callback The callback to add to the collision event.
    * @returns A function to remove the callback.
    * @example With a class:
    * ```typescript
    * const player = new Player()
    * const enemy = new Enemy()
-   * player.onCollisionWith(Enemy, () => {
+   * player.onCollisionWith(Enemy, ({ component }) => {
    *  console.log('Player collided with an Enemy!')
+   *  console.log('The enemy is:', component)
    * })
    * ```
    * @example With a specific object:
@@ -188,6 +189,15 @@ export abstract class FComponent {
    *  console.log('Player collided with the enemy!')
    * })
    * ```
+   * @example To remove the callback:
+   * ```typescript
+   * const player = new Player()
+   * const enemy = new Enemy()
+   * const removeThisCallback = player.onCollisionWith(enemy, () => {
+   *  console.log('Player collided with the enemy!')
+   * })
+   * // To remove the callback, call the function returned by onCollisionWith
+   * removeThisCallback()
    */
   onCollisionWith(
     classOrObject: any,

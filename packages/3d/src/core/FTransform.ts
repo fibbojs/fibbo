@@ -49,6 +49,8 @@ export class FTransform {
    * @param options.scale The scale of the transform. If not defined, it will default to `{ x: 1, y: 1, z: 1 }`.
    * @example
    * ```ts
+   * import { FTransform } from '@fibbojs/3d'
+   *
    * const transform = new FTransform({
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },

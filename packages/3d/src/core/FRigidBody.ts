@@ -89,6 +89,8 @@ export class FRigidBody {
    * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
    * @example
    * ```ts
+   * import { FRigidBody } from '@fibbojs/3d'
+   *
    * const rigidBody = new FRigidBody({
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },

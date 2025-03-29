@@ -67,6 +67,8 @@ export class FCollider {
    * @param options.sensor If true, the collider will be a sensor.
    * @example
    * ```ts
+   * import { FCollider } from '@fibbojs/3d'
+   *
    * const collider = new FCollider({
    *  position: { x: 0, y: 0, z: 0 },
    *  scale: { x: 1, y: 1, z: 1 },

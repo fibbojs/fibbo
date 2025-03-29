@@ -12,7 +12,11 @@ import { FLogger } from './FLogger'
  * A helper class to debug a given scene
  * @example
  * ```ts
- * const fDebugger = FDebug(scene)
+ * import { FDebug } from '@fibbojs/devtools'
+ * import { FScene } from '@fibbojs/3d'
+ *
+ * const scene = new FScene()
+ * new FDebug(scene)
  * ```
  */
 export class FDebug {
@@ -120,6 +124,10 @@ export class FDebug {
  * @param scene The scene to be debugged
  * @example
  * ```ts
+ * import { fDebug } from '@fibbojs/devtools'
+ * import { FScene } from '@fibbojs/3d'
+ *
+ * const scene = new FScene()
  * fDebug(scene)
  * ```
  */

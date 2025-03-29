@@ -10,12 +10,9 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Polyhedrons
  * @example
  * ```ts
- * import { FScene, FCapsule } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FCapsule } from '@fibbojs/3d'
  *
  * const capsule = new FCapsule()
- * scene.addComponent(capsule)
  * ```
  */
 export class FCapsule extends FPolyhedron {
