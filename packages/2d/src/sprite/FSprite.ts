@@ -12,9 +12,7 @@ export interface FSpriteOptions extends FComponentOptions {
  * @category Sprite
  * @example
  * ```ts
- * import { FScene, FSprite } from '@fibbojs/2d'
- *
- * const scene = new FScene()
+ * import { FSprite } from '@fibbojs/2d'
  *
  * const sprite = new FSprite('/my-texture.png')
  * ```
