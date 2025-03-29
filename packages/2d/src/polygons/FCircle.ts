@@ -10,12 +10,9 @@ import { FPolygon } from './FPolygon'
  * @category Polygons
  * @example
  * ```ts
- * import { FScene, FCircle } from '@fibbojs/2d'
- *
- * const scene = new FScene()
+ * import { FCircle } from '@fibbojs/2d'
  *
  * const circle = new FCircle()
- * scene.addComponent(circle)
  * ```
  */
 export class FCircle extends FPolygon {

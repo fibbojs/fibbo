@@ -8,12 +8,9 @@ import { FPolygon } from './FPolygon'
  * @category Polygons
  * @example
  * ```ts
- * import { FScene, FRectangle } from '@fibbojs/2d'
- *
- * const scene = new FScene()
+ * import { FRectangle } from '@fibbojs/2d'
  *
  * const square = new FRectangle()
- * scene.addComponent(square)
  * ```
  */
 export class FRectangle extends FPolygon {

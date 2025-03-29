@@ -122,10 +122,10 @@ export abstract class FModel extends FComponent {
 
   /**
    * Load the texture for a given mesh.
-   * @param mesh The mesh.
+   * @param mesh The mesh to load the texture for.
    * @example
    * ```ts
-   * model.loadTextureFor(material)
+   * model.loadTextureFor(mesh)
    * ```
    */
   loadTextureForMesh(mesh: THREE.Mesh) {

@@ -26,11 +26,13 @@ export class FSensor extends FRigidBody {
    * @param options.enabledTranslations.enableY If true, the sensor will be able to move on the y-axis.
    * @example
    * ```ts
+   * import { FSensor } from '@fibbojs/2d'
+   *
    * const sensor = new FSensor({
-   *  position: { x: 0, y: 0, z: 0 },
-   *  rotation: { x: 0, y: 0, z: 0 },
-   *  scale: { x: 1, y: 1, z: 1 },
-   *  shape: FShapes.CUBOID
+   *  position: { x: 0, y: 0 },
+   *  rotation: 0,
+   *  scale: { x: 1, y: 1 },
+   *  shape: FShapes.RECTANGLE
    * })
    * ```
    */
