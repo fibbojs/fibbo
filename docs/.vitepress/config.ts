@@ -282,6 +282,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
   vite: {
     plugins: [llmstxt({
+      domain: 'https://fibbo.dev',
       customTemplateVariables: {
         title: 'Fibbo',
         description: 'Fibbo is a web-based game engine, built on top of Three.js, Rapier and PixiJS. It offers a unified object-oriented API and modern web-like DX in the context of making games.',
