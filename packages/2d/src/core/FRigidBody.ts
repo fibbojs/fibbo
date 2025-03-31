@@ -73,6 +73,8 @@ export class FRigidBody {
    * @param options.enabledTranslations.enableY If true, the rigidBody will be able to move on the y-axis.
    * @example
    * ```ts
+   * import { FRigidBody } from '@fibbojs/2d'
+   *
    * const rigidBody = new FRigidBody({
    *  position: { x: 0, y: 0 },
    *  scale: { x: 1, y: 1 },

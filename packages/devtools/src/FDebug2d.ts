@@ -4,10 +4,6 @@ import { State } from './State'
 
 /**
  * A helper class to debug a given 2d scene
- * @example
- * ```ts
- * const fDebugger = FDebug2d(scene)
- * ```
  */
 export class FDebug2d {
   /**

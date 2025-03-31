@@ -7,14 +7,11 @@ import { FGLTF } from './FGLTF'
  * @category Model
  * @example
  * ```ts
- * import { FScene, FGLB } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FGLB } from '@fibbojs/3d'
  *
  * const glb = new FGLB({
  *  path: 'model.glb',
  * })
- * scene.addComponent(glb)
  * ```
  */
 export class FGLB extends FGLTF {

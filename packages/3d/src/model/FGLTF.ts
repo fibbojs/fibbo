@@ -22,14 +22,11 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * @category Model
  * @example
  * ```ts
- * import { FScene, FGLTF } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FGLTF } from '@fibbojs/3d'
  *
  * const gltf = new FGLTF({
  *  path: 'model.glb',
  * })
- * scene.addComponent(gltf)
  * ```
  */
 export class FGLTF extends FModel {

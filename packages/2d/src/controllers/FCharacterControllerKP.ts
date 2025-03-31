@@ -7,13 +7,10 @@ import type { FCharacterControllerOptions } from './FCharacterController'
  * @category Controller
  * @example
  * ```ts
- * import { FCapsule, FCharacterControllerKP, FScene } from '@fibbojs/2d'
+ * import { FRectangle, FCharacterControllerKP } from '@fibbojs/2d'
  *
- * const scene = new FScene()
- *
- * const capsule = new FCapsule()
- * capsule.controller = new FCharacterControllerKP()
- * scene.addComponent(capsule)
+ * const rectangle = new FRectangle()
+ * rectangle.addController(new FCharacterControllerKP())
  * ```
  */
 export class FCharacterControllerKP extends FCharacterControllerK {
