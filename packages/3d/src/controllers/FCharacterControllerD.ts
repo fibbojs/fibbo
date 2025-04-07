@@ -9,13 +9,10 @@ import { FCharacterController } from './FCharacterController'
  * @category Controller
  * @example
  * ```ts
- * import { FCapsule, FCharacterControllerD, FScene } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FCapsule, FCharacterControllerD } from '@fibbojs/3d'
  *
  * const capsule = new FCapsule()
- * capsule.controller = new FCharacterControllerD()
- * scene.addComponent(capsule)
+ * capsule.addController(new FCharacterControllerD())
  * ```
  */
 export class FCharacterControllerD extends FCharacterController {

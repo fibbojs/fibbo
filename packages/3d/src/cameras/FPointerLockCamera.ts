@@ -4,7 +4,9 @@ import { FCamera } from './FCamera'
 import type { FAttachedCameraOptions } from './FAttachedCamera'
 
 /**
- * A camera that can be attached to a FComponent and orbits around it.
+ * A camera that can be attached to a FComponent and uses Pointer Lock controls.
+ * This camera is useful for first-person or immersive experiences where the camera
+ * is locked to the mouse movement and the user can look around freely.
  * @category Camera
  * @example
  * ```ts
@@ -34,7 +36,7 @@ export class FPointerLockCamera extends FCamera {
 
     this.attachedComponent.scene.scene.add(this.controls.getObject())
 
-    // Lock controls when clicking on the renderer
+    // Lock controls when clicking on the renderer's DOM element
     this.attachedComponent.scene.renderer.domElement.addEventListener('click', () => {
       this.controls.lock()
     })

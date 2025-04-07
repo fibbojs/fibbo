@@ -28,7 +28,7 @@ core/dist/index.d.ts:37
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L12)
+[2d/src/lights/FLight.ts:12](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L12)
 
 ***
 
@@ -38,7 +38,7 @@ core/dist/index.d.ts:37
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:13](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L13)
+[2d/src/lights/FLight.ts:13](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L13)
 
 ***
 
@@ -56,7 +56,7 @@ core/dist/index.d.ts:37
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:14](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L14)
+[2d/src/lights/FLight.ts:14](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L14)
 
 ***
 
@@ -74,7 +74,7 @@ core/dist/index.d.ts:37
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:8](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L8)
+[2d/src/lights/FLight.ts:8](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L8)
 
 ***
 
@@ -84,7 +84,7 @@ core/dist/index.d.ts:37
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L9)
+[2d/src/lights/FLight.ts:9](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L9)
 
 ***
 
@@ -94,7 +94,7 @@ core/dist/index.d.ts:37
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L10)
+[2d/src/lights/FLight.ts:10](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L10)
 
 ***
 
@@ -112,7 +112,7 @@ core/dist/index.d.ts:37
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L11)
+[2d/src/lights/FLight.ts:11](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L11)
 
 ***
 

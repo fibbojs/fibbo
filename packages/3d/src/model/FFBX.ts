@@ -9,14 +9,11 @@ import type { FModelOptions } from './FModel'
  * @category Model
  * @example
  * ```ts
- * import { FScene, FFBX } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FFBX } from '@fibbojs/3d'
  *
  * const fbx = new FFBX({
  *   path: 'model.fbx',
  * })
- * scene.addComponent(fbx)
  * ```
  */
 export class FFBX extends FModel {

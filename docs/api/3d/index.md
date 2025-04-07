@@ -79,6 +79,7 @@
 - [FLightOptions](interfaces/FLightOptions.md)
 - [FLightProbeOptions](interfaces/FLightProbeOptions.md)
 - [FModelOptions](interfaces/FModelOptions.md)
+- [FPolyhedronOptions](interfaces/FPolyhedronOptions.md)
 - [FRigidBodyOptions](interfaces/FRigidBodyOptions.md)
 - [FSceneOptions](interfaces/FSceneOptions.md)
 - [FSpotLightOptions](interfaces/FSpotLightOptions.md)

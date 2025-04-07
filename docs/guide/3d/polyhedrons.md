@@ -20,6 +20,7 @@ import { FCuboid } from '@fibbojs/3d'
 const cube = new FCuboid({
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
+  color: 0x00FF00,
 })
 ```
 
@@ -35,6 +36,7 @@ import { FSphere } from '@fibbojs/3d'
 const sphere = new FSphere({
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
+  color: 0x00FF00,
 })
 ```
 
@@ -50,6 +52,7 @@ import { FCapsule } from '@fibbojs/3d'
 const capsule = new FCapsule({
   position: { x: 0, y: 5, z: 0 },
   scale: { x: 1, y: 1, z: 1 },
+  color: 0x00FF00,
 })
 ```
 

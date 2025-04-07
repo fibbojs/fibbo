@@ -1,8 +1,8 @@
 import * as THREE from 'three'
-import type { FComponentOptions } from '../core/FComponent'
 import { FShapes } from '../types/FShapes'
 import type { FRigidBodyOptions } from '../core/FRigidBody'
 import type { FColliderOptions } from '../core/FCollider'
+import type { FPolyhedronOptions } from './FPolyhedron'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -10,16 +10,13 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Polyhedrons
  * @example
  * ```ts
- * import { FScene, FCapsule } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FCapsule } from '@fibbojs/3d'
  *
  * const capsule = new FCapsule()
- * scene.addComponent(capsule)
  * ```
  */
 export class FCapsule extends FPolyhedron {
-  constructor(options?: FComponentOptions) {
+  constructor(options?: FPolyhedronOptions) {
     super(options)
     // Create a capsule
     const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)

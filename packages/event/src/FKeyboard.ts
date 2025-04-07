@@ -10,11 +10,6 @@ export interface FKeyboardOptions {
  * @category Event
  * @example
  * ```ts
- * // Static usage
- * FKeyboard.on('ArrowUp', () => {
- *  console.log('ArrowUp key pressed!')
- * })
- * // Instance usage
  * const keyboard = new FKeyboard()
  * keyboard.on('ArrowUp', () => {
  *  console.log('ArrowUp key pressed!')

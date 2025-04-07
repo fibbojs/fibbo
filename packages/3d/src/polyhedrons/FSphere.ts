@@ -1,8 +1,8 @@
 import * as THREE from 'three'
-import type { FComponentOptions } from '../core/FComponent'
 import type { FColliderOptions } from '../core/FCollider'
 import { FShapes } from '../types/FShapes'
 import type { FRigidBodyOptions } from '../core/FRigidBody'
+import type { FPolyhedronOptions } from './FPolyhedron'
 import { FPolyhedron } from './FPolyhedron'
 
 /**
@@ -10,16 +10,13 @@ import { FPolyhedron } from './FPolyhedron'
  * @category Polyhedrons
  * @example
  * ```ts
- * import { FScene, FSphere } from '@fibbojs/3d'
- *
- * const scene = new FScene()
+ * import { FSphere } from '@fibbojs/3d'
  *
  * const sphere = new FSphere()
- * scene.addComponent(sphere)
  * ```
  */
 export class FSphere extends FPolyhedron {
-  constructor(options?: FComponentOptions) {
+  constructor(options?: FPolyhedronOptions) {
     super(options)
     // Create a sphere
     const geometry = new THREE.SphereGeometry(0.5, 32, 32)

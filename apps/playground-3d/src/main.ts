@@ -54,12 +54,11 @@ import Character from './classes/Character'
   const ground = new FCuboid({
     position: { x: 0, y: -0.1, z: 0 },
     scale: { x: 15, y: 0.1, z: 15 },
+    color: 0x60D641,
   })
   ground.initRigidBody({
     rigidBodyType: FRigidBodyType.FIXED,
   })
-  // Green ground
-  ground.setColor(0x60D641)
 
   // Import 3d models
   const blockGrassCorner = new FOBJ({
@@ -122,18 +121,18 @@ import Character from './classes/Character'
     const cube = new FCuboid({
       scale: { x: 2, y: 0.2, z: 1 },
       position: { x: 6, y: i / 4, z: -i },
+      color: 0x30A641,
     })
     cube.initCollider()
-    cube.setColor(0x60D641)
   }
 
   // Create a second ground
   const ground2 = new FCuboid({
     position: { x: 0, y: 2.2, z: -17 },
     scale: { x: 15, y: 0.1, z: 15 },
+    color: 0xA0D6F1,
   })
   ground2.initCollider()
-  ground2.setColor(0x60D641)
 
   // Create a character
   const character = new Character()
@@ -192,8 +191,8 @@ import Character from './classes/Character'
   // Create a rotating cube
   const rotatingCube = new FCuboid({
     position: { x: 0, y: 5, z: 0 },
+    color: 0xFF0000,
   })
-  rotatingCube.setColor(0x00FF00)
   rotatingCube.initSensor()
   let totalDelta = 0
   scene.onFrame((delta) => {
@@ -212,7 +211,7 @@ import Character from './classes/Character'
     const cube = component as FCuboid
     console.log('Character collided with a cube', cube)
     // Change the color of the cube to a random color
-    // cube.setColor(Math.random() * 0xFFFFFF)
+    // cube.color = Math.random() * 0xFFFFFF
   })
   character.onCollisionWith(sphere, () => {
     console.log('Character collided with the sphere.')

@@ -27,6 +27,17 @@ export interface FColliderOptions {
 /**
  * A 3d collider that can be attached to a component.
  * @category Core
+ * @example
+ * ```ts
+ * import { FCollider } from '@fibbojs/3d'
+ *
+ * const collider = new FCollider({
+ *  position: { x: 0, y: 0, z: 0 },
+ *  scale: { x: 1, y: 1, z: 1 },
+ *  rotation: { x: 0, y: 0, z: 0 },
+ *  shape: FShapes.CUBOID
+ * })
+ * ```
  */
 export class FCollider {
   /**
@@ -65,15 +76,6 @@ export class FCollider {
    * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CUBOID.
    * @param options.rigidBody The rigidBody to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
-   * @example
-   * ```ts
-   * const collider = new FCollider({
-   *  position: { x: 0, y: 0, z: 0 },
-   *  scale: { x: 1, y: 1, z: 1 },
-   *  rotation: { x: 0, y: 0, z: 0 },
-   *  shape: FShapes.CUBOID
-   * })
-   * ```
    */
   constructor(options?: FColliderOptions) {
     // Apply default options

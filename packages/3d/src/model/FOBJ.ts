@@ -8,19 +8,19 @@ import type { FModelOptions } from './FModel'
  * @category Model
  * @example
  * ```ts
- * import { FScene, FOBJ } from '@fibbojs/3d';
- *
- * const scene = new FScene();
+ * import { FOBJ } from '@fibbojs/3d'
  *
  * const obj = new FOBJ({
  *   path: 'model.obj',
- * });
- * scene.addComponent(obj);
+ * })
  * ```
  */
 export class FOBJ extends FModel {
   constructor(options: FModelOptions) {
-    super(options)
+    super({
+      fileExtension: 'obj',
+      ...options,
+    })
 
     // Create OBJ Loader
     const loader = new OBJLoader()

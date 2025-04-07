@@ -21,15 +21,28 @@ export interface FSceneOptions extends FSceneOptionsCore {
  * @category Core
  * @example
  * ```ts
- * import { FScene, FRectangle } from '@fibbojs/2d'
+ * import { FAttachedCamera, FScene, FRectangle } from '@fibbojs/2d'
  *
  * (async () => {
+ *  // Initialize the scene
  *  const scene = new FScene()
  *  await scene.init()
  *  await scene.initPhysics()
  *
+ *  // Create a ground
+ *  const ground = new FRectangle({
+ *    position: { x: 0, y: -0.1 },
+ *    scale: { x: 15, y: 0.1 },
+ *    color: 0x1F1F1F,
+ *  })
+ *  ground.initCollider()
+ *
+ *  // Create a square
  *  const square = new FRectangle()
  *  square.initRigidBody()
+ *
+ *  // Attach a camera to the square
+ *  scene.camera = new FAttachedCamera({ target: square })
  * })()
  * ```
  */

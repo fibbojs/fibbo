@@ -3,10 +3,6 @@ import { State } from './State'
 
 /**
  * A helper class to debug a given 3d scene
- * @example
- * ```ts
- * const fDebugger = FDebug3d(scene)
- * ```
  */
 export class FDebug3d {
   /**

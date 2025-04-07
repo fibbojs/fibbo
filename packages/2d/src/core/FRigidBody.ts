@@ -31,6 +31,16 @@ export interface FRigidBodyOptions {
 /**
  * A 2d rigidBody that can be attached to a component.
  * @category Core
+ * @example
+ * ```ts
+ * import { FRigidBody } from '@fibbojs/2d'
+ *
+ * const rigidBody = new FRigidBody({
+ *  position: { x: 0, y: 0 },
+ *  scale: { x: 1, y: 1 },
+ *  shape: 'CUBOID'
+ * })
+ * ```
  */
 export class FRigidBody {
   /**
@@ -71,14 +81,6 @@ export class FRigidBody {
    * @param options.enabledTranslations If defined, it will enable or disable translations on the x and y axis.
    * @param options.enabledTranslations.enableX If true, the rigidBody will be able to move on the x-axis.
    * @param options.enabledTranslations.enableY If true, the rigidBody will be able to move on the y-axis.
-   * @example
-   * ```ts
-   * const rigidBody = new FRigidBody({
-   *  position: { x: 0, y: 0 },
-   *  scale: { x: 1, y: 1 },
-   *  shape: 'CUBOID'
-   * })
-   * ```
    */
   constructor(options?: FRigidBodyOptions) {
     // Apply default options

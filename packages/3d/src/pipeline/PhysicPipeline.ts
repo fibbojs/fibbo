@@ -8,7 +8,7 @@ export interface PhysicPipelineOptions {
 }
 
 /**
- * Render pipeline.
+ * Physic pipeline.
  */
 export class PhysicPipeline extends IntervalPipeline {
   scene: FScene
