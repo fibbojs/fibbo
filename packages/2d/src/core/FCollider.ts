@@ -24,6 +24,16 @@ export interface FColliderOptions {
 /**
  * A 2d collider that can be attached to a component.
  * @category Core
+ * @example
+ * ```ts
+ * import { FCollider } from '@fibbojs/2d'
+ *
+ * const collider = new FCollider({
+ *  position: { x: 0, y: 0 },
+ *  scale: { x: 1, y: 1 },
+ *  shape: FShapes.CIRCLE
+ * })
+ * ```
  */
 export class FCollider {
   /**
@@ -60,16 +70,6 @@ export class FCollider {
    * @param options.shape The shape of the collider. If not defined, it will default to FShapes.CIRCLE.
    * @param options.rigidBody The rigidBody to attach the collider to. (optional)
    * @param options.sensor If true, the collider will be a sensor.
-   * @example
-   * ```ts
-   * import { FCollider } from '@fibbojs/2d'
-   *
-   * const collider = new FCollider({
-   *  position: { x: 0, y: 0 },
-   *  scale: { x: 1, y: 1 },
-   *  shape: FShapes.CIRCLE
-   * })
-   * ```
    */
   constructor(options?: FColliderOptions) {
     // Apply default options

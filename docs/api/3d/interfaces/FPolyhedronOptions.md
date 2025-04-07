@@ -1,15 +1,10 @@
-[@fibbojs](/api/index) / [3d](/api/3d) / FComponentOptions
+[@fibbojs](/api/index) / [3d](/api/3d) / FPolyhedronOptions
 
-# Interface: FComponentOptions
+# Interface: FPolyhedronOptions
 
 ## Extends
 
-- `FComponentOptions`
-
-## Extended by
-
-- [`FModelOptions`](FModelOptions.md)
-- [`FPolyhedronOptions`](FPolyhedronOptions.md)
+- [`FComponentOptions`](FComponentOptions.md)
 
 ## Properties
 
@@ -19,7 +14,7 @@
 
 #### Inherited from
 
-`FComponentOptionsCore.addToScene`
+[`FComponentOptions`](FComponentOptions.md).[`addToScene`](FComponentOptions.md#addtoscene)
 
 #### Defined in
 
@@ -27,9 +22,23 @@ core/dist/index.d.ts:364
 
 ***
 
+### color?
+
+> `optional` **color**: `number`
+
+#### Defined in
+
+[3d/src/polyhedrons/FPolyhedron.ts:6](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/3d/src/polyhedrons/FPolyhedron.ts#L6)
+
+***
+
 ### position?
 
 > `optional` **position**: `FVector3`
+
+#### Inherited from
+
+[`FComponentOptions`](FComponentOptions.md).[`position`](FComponentOptions.md#position)
 
 #### Defined in
 
@@ -41,6 +50,10 @@ core/dist/index.d.ts:364
 
 > `optional` **rotation**: `FVector3`
 
+#### Inherited from
+
+[`FComponentOptions`](FComponentOptions.md).[`rotation`](FComponentOptions.md#rotation)
+
 #### Defined in
 
 [3d/src/core/FComponent.ts:17](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/3d/src/core/FComponent.ts#L17)
@@ -51,6 +64,10 @@ core/dist/index.d.ts:364
 
 > `optional` **rotationDegree**: `FVector3`
 
+#### Inherited from
+
+[`FComponentOptions`](FComponentOptions.md).[`rotationDegree`](FComponentOptions.md#rotationdegree)
+
 #### Defined in
 
 [3d/src/core/FComponent.ts:18](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/3d/src/core/FComponent.ts#L18)
@@ -60,6 +77,10 @@ core/dist/index.d.ts:364
 ### scale?
 
 > `optional` **scale**: `FVector3`
+
+#### Inherited from
+
+[`FComponentOptions`](FComponentOptions.md).[`scale`](FComponentOptions.md#scale)
 
 #### Defined in
 
@@ -73,7 +94,7 @@ core/dist/index.d.ts:364
 
 #### Inherited from
 
-`FComponentOptionsCore.scene`
+[`FComponentOptions`](FComponentOptions.md).[`scene`](FComponentOptions.md#scene)
 
 #### Defined in
 

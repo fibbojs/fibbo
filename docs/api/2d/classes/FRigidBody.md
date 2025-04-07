@@ -4,6 +4,18 @@
 
 A 2d rigidBody that can be attached to a component.
 
+## Example
+
+```ts
+import { FRigidBody } from '@fibbojs/2d'
+
+const rigidBody = new FRigidBody({
+  position: { x: 0, y: 0 },
+  scale: { x: 1, y: 1 },
+  shape: 'CUBOID'
+})
+```
+
 ## Accessors
 
 ### component
@@ -22,7 +34,7 @@ A 2d rigidBody that can be attached to a component.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:319](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L319)
+[2d/src/core/FRigidBody.ts:321](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L321)
 
 ## Constructors
 
@@ -42,19 +54,9 @@ The options for the rigidBody.
 
 [`FRigidBody`](FRigidBody.md)
 
-#### Example
-
-```ts
-const rigidBody = new FRigidBody({
-  position: { x: 0, y: 0 },
-  scale: { x: 1, y: 1 },
-  shape: 'CUBOID'
-})
-```
-
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:83](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L83)
+[2d/src/core/FRigidBody.ts:85](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L85)
 
 ## Methods
 
@@ -76,7 +78,7 @@ The new position of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:292](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L292)
+[2d/src/core/FRigidBody.ts:294](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L294)
 
 ***
 
@@ -98,7 +100,7 @@ The new rotation of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:302](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L302)
+[2d/src/core/FRigidBody.ts:304](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L304)
 
 ***
 
@@ -120,7 +122,7 @@ The new scale of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:312](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L312)
+[2d/src/core/FRigidBody.ts:314](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L314)
 
 ***
 
@@ -145,7 +147,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:211](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L211)
+[2d/src/core/FRigidBody.ts:213](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L213)
 
 ***
 
@@ -170,7 +172,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:240](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L240)
+[2d/src/core/FRigidBody.ts:242](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L242)
 
 ***
 
@@ -195,7 +197,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:266](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L266)
+[2d/src/core/FRigidBody.ts:268](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L268)
 
 ***
 
@@ -213,7 +215,7 @@ Setting this to true will propagate the event to other objects (component, senso
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:173](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L173)
+[2d/src/core/FRigidBody.ts:175](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L175)
 
 ***
 
@@ -235,7 +237,7 @@ The new angular velocity of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:200](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L200)
+[2d/src/core/FRigidBody.ts:202](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L202)
 
 ***
 
@@ -257,7 +259,7 @@ The new linear velocity of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:192](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L192)
+[2d/src/core/FRigidBody.ts:194](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L194)
 
 ## Properties
 
@@ -269,7 +271,7 @@ The component the rigidBody is attached to.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:47](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L47)
+[2d/src/core/FRigidBody.ts:57](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L57)
 
 ***
 
@@ -281,7 +283,7 @@ RAPIER RigidBody
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:39](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L39)
+[2d/src/core/FRigidBody.ts:49](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L49)
 
 ***
 
@@ -293,7 +295,7 @@ Fibbo Collider
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:43](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L43)
+[2d/src/core/FRigidBody.ts:53](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L53)
 
 ***
 
@@ -305,7 +307,7 @@ The transform offset of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:55](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L55)
+[2d/src/core/FRigidBody.ts:65](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L65)
 
 ***
 
@@ -317,4 +319,4 @@ The transform of the rigidBody.
 
 #### Defined in
 
-[2d/src/core/FRigidBody.ts:51](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/core/FRigidBody.ts#L51)
+[2d/src/core/FRigidBody.ts:61](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/core/FRigidBody.ts#L61)

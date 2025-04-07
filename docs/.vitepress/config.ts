@@ -207,6 +207,7 @@ export default defineConfig({
               { text: 'FComponentOptions', link: '/api/3d/interfaces/FComponentOptions.md' },
               { text: 'FTransformOptions', link: '/api/3d/interfaces/FTransformOptions.md' },
               { text: 'FSceneOptions', link: '/api/3d/interfaces/FSceneOptions.md' },
+              { text: 'FPolyhedronOptions', link: '/api/3d/interfaces/FPolyhedronOptions.md' },
               { text: 'FAttachedCameraOptions', link: '/api/3d/interfaces/FAttachedCameraOptions.md' },
               { text: 'FCameraOptions', link: '/api/3d/interfaces/FCameraOptions.md' },
               { text: 'FModelOptions', link: '/api/3d/interfaces/FModelOptions.md' },

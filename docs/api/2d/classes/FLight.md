@@ -26,7 +26,7 @@ The base class for 2d lights in Fibbo.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:106](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L106)
+[2d/src/lights/FLight.ts:106](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L106)
 
 ***
 
@@ -46,7 +46,7 @@ The base class for 2d lights in Fibbo.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:114](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L114)
+[2d/src/lights/FLight.ts:114](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L114)
 
 ***
 
@@ -78,7 +78,7 @@ The base class for 2d lights in Fibbo.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:118](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L118)
+[2d/src/lights/FLight.ts:118](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L118)
 
 ## Constructors
 
@@ -100,7 +100,7 @@ The base class for 2d lights in Fibbo.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:47](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L47)
+[2d/src/lights/FLight.ts:47](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L47)
 
 ## Methods
 
@@ -117,7 +117,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:80](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L80)
+[2d/src/lights/FLight.ts:80](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L80)
 
 ***
 
@@ -134,7 +134,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:88](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L88)
+[2d/src/lights/FLight.ts:88](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L88)
 
 ***
 
@@ -151,7 +151,7 @@ This method should be called after updating the transform properties.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:96](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L96)
+[2d/src/lights/FLight.ts:96](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L96)
 
 ***
 
@@ -211,7 +211,7 @@ core/dist/index.d.ts:57
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:28](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L28)
+[2d/src/lights/FLight.ts:28](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L28)
 
 ***
 
@@ -237,7 +237,7 @@ core/dist/index.d.ts:47
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:27](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L27)
+[2d/src/lights/FLight.ts:27](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L27)
 
 ***
 
@@ -247,7 +247,7 @@ core/dist/index.d.ts:47
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:26](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L26)
+[2d/src/lights/FLight.ts:26](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L26)
 
 ***
 
@@ -259,7 +259,7 @@ Internal flags
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:25](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L25)
+[2d/src/lights/FLight.ts:25](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L25)
 
 ***
 
@@ -271,7 +271,7 @@ The original light object from PIXI.js.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:33](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L33)
+[2d/src/lights/FLight.ts:33](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L33)
 
 ***
 
@@ -291,7 +291,7 @@ Look at target of the light.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:45](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L45)
+[2d/src/lights/FLight.ts:45](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L45)
 
 ***
 
@@ -307,7 +307,7 @@ The scene the light is attached to.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:35](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L35)
+[2d/src/lights/FLight.ts:35](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L35)
 
 ***
 
@@ -319,4 +319,4 @@ Transform of the light.
 
 #### Defined in
 
-[2d/src/lights/FLight.ts:40](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/2d/src/lights/FLight.ts#L40)
+[2d/src/lights/FLight.ts:40](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/2d/src/lights/FLight.ts#L40)

@@ -5,6 +5,17 @@ import { FRigidBody } from './FRigidBody'
 /**
  * A 2d sensor that can be attached to a component.
  * @category Core
+ * @example
+ * ```ts
+ * import { FSensor } from '@fibbojs/2d'
+ *
+ * const sensor = new FSensor({
+ *  position: { x: 0, y: 0 },
+ *  rotation: 0,
+ *  scale: { x: 1, y: 1 },
+ *  shape: FShapes.RECTANGLE
+ * })
+ * ```
  */
 export class FSensor extends FRigidBody {
   /**
@@ -24,17 +35,6 @@ export class FSensor extends FRigidBody {
    * @param options.enabledTranslations If defined, it will enable or disable translations on the x and y axis.
    * @param options.enabledTranslations.enableX If true, the sensor will be able to move on the x-axis.
    * @param options.enabledTranslations.enableY If true, the sensor will be able to move on the y-axis.
-   * @example
-   * ```ts
-   * import { FSensor } from '@fibbojs/2d'
-   *
-   * const sensor = new FSensor({
-   *  position: { x: 0, y: 0 },
-   *  rotation: 0,
-   *  scale: { x: 1, y: 1 },
-   *  shape: FShapes.RECTANGLE
-   * })
-   * ```
    */
   constructor(options?: FRigidBodyOptions) {
     super({

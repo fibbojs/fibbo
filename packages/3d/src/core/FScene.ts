@@ -33,8 +33,8 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *  const ground = new FCuboid({
  *    position: { x: 0, y: -0.1, z: 0 },
  *    scale: { x: 15, y: 0.1, z: 15 },
+ *    color: 0x1F1F1F,
  *  })
- *  ground.setColor(0x1F1F1F)
  *  ground.initCollider()
  *
  *  // Create a cube
@@ -42,7 +42,7 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *  cube.initRigidBody()
  *
  *  // Attach a camera to the cube
- *  scene.camera = new FGameCamera({target: cube})
+ *  scene.camera = new FGameCamera({ target: cube })
  * })()
  * ```
  */

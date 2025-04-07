@@ -8,11 +8,6 @@ Events will be triggered on each frame.
 ## Example
 
 ```ts
-// Static usage
-FKeyboard.on('ArrowUp', () => {
-  console.log('ArrowUp key pressed!')
-})
-// Instance usage
 const keyboard = new FKeyboard()
 keyboard.on('ArrowUp', () => {
   console.log('ArrowUp key pressed!')
@@ -35,7 +30,7 @@ keyboard.on('ArrowUp', () => {
 
 #### Defined in
 
-[event/src/FKeyboard.ts:42](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L42)
+[event/src/FKeyboard.ts:37](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L37)
 
 ## Methods
 
@@ -61,7 +56,7 @@ keyboard.clear()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:208](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L208)
+[event/src/FKeyboard.ts:203](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L203)
 
 ***
 
@@ -112,7 +107,7 @@ removeListener()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:116](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L116)
+[event/src/FKeyboard.ts:111](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L111)
 
 ***
 
@@ -161,7 +156,7 @@ removeListener()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:150](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L150)
+[event/src/FKeyboard.ts:145](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L145)
 
 ***
 
@@ -210,7 +205,7 @@ removeListener()
 
 #### Defined in
 
-[event/src/FKeyboard.ts:184](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L184)
+[event/src/FKeyboard.ts:179](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L179)
 
 ## Properties
 
@@ -222,7 +217,7 @@ An map of all the callbacks for each key being pressed
 
 #### Defined in
 
-[event/src/FKeyboard.ts:32](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L32)
+[event/src/FKeyboard.ts:27](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L27)
 
 ***
 
@@ -234,7 +229,7 @@ An map of all the callbacks for each key being released
 
 #### Defined in
 
-[event/src/FKeyboard.ts:36](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L36)
+[event/src/FKeyboard.ts:31](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L31)
 
 ***
 
@@ -246,7 +241,7 @@ An map of all the callbacks for each key being released
 
 #### Defined in
 
-[event/src/FKeyboard.ts:40](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L40)
+[event/src/FKeyboard.ts:35](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L35)
 
 ***
 
@@ -258,4 +253,4 @@ A map of all the keys being pressed
 
 #### Defined in
 
-[event/src/FKeyboard.ts:28](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/event/src/FKeyboard.ts#L28)
+[event/src/FKeyboard.ts:23](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/event/src/FKeyboard.ts#L23)

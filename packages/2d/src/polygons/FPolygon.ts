@@ -41,7 +41,7 @@ export abstract class FPolygon extends FComponent {
 
     // Validate options
     if ((options.color === undefined && options.gradient === undefined)) {
-      throw new Error('FibboError: polygon requires color or gradient')
+      throw new Error('FibboError: FPolygon requires color or gradient')
     }
 
     // Store options

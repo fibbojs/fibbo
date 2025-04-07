@@ -25,7 +25,7 @@ This means the given frameRate is not guaranteed, but it will try to match it as
 
 #### Defined in
 
-[core/src/pipeline/ThrottledPipeline.ts:15](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/ThrottledPipeline.ts#L15)
+[core/src/pipeline/ThrottledPipeline.ts:15](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/pipeline/ThrottledPipeline.ts#L15)
 
 ## Methods
 
@@ -50,7 +50,7 @@ It should implement the desired behavior of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L40)
+[core/src/pipeline/Pipeline.ts:40](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/pipeline/Pipeline.ts#L40)
 
 ***
 
@@ -70,7 +70,7 @@ Start the pipeline
 
 #### Defined in
 
-[core/src/pipeline/ThrottledPipeline.ts:20](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/ThrottledPipeline.ts#L20)
+[core/src/pipeline/ThrottledPipeline.ts:20](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/pipeline/ThrottledPipeline.ts#L20)
 
 ***
 
@@ -90,7 +90,7 @@ Stop the pipeline
 
 #### Defined in
 
-[core/src/pipeline/ThrottledPipeline.ts:25](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/ThrottledPipeline.ts#L25)
+[core/src/pipeline/ThrottledPipeline.ts:25](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/pipeline/ThrottledPipeline.ts#L25)
 
 ## Properties
 
@@ -109,7 +109,7 @@ The default value is 30.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L28)
+[core/src/pipeline/Pipeline.ts:28](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/pipeline/Pipeline.ts#L28)
 
 ***
 
@@ -122,7 +122,7 @@ This is used to determine if enough time has passed to call the frame method aga
 
 #### Defined in
 
-[core/src/pipeline/ThrottledPipeline.ts:13](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/ThrottledPipeline.ts#L13)
+[core/src/pipeline/ThrottledPipeline.ts:13](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/pipeline/ThrottledPipeline.ts#L13)
 
 ***
 
@@ -138,4 +138,4 @@ The current state of the pipeline.
 
 #### Defined in
 
-[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/pipeline/Pipeline.ts#L21)
+[core/src/pipeline/Pipeline.ts:21](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/pipeline/Pipeline.ts#L21)

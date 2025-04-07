@@ -2,7 +2,7 @@
 
 # Class: `abstract` FController
 
-The base class for all 2D and 3D controllers in Fibbo.
+The base class for all controllers in Fibbo.
 
 ## Constructors
 
@@ -22,7 +22,7 @@ The options for the controller.
 
 #### Defined in
 
-[core/src/FController.ts:27](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FController.ts#L27)
+[core/src/FController.ts:27](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/FController.ts#L27)
 
 ## Methods
 
@@ -45,7 +45,7 @@ The time since the last frame.
 
 #### Defined in
 
-[core/src/FController.ts:37](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FController.ts#L37)
+[core/src/FController.ts:37](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/FController.ts#L37)
 
 ## Properties
 
@@ -57,7 +57,7 @@ True if the controller should run in the physic pipeline.
 
 #### Defined in
 
-[core/src/FController.ts:20](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FController.ts#L20)
+[core/src/FController.ts:20](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/FController.ts#L20)
 
 ***
 
@@ -69,4 +69,4 @@ The component attached to the controller.
 
 #### Defined in
 
-[core/src/FController.ts:16](https://github.com/fibbojs/fibbo/blob/75419f67767d6eabd45ee5e8c5b1df60af1ac8f3/packages/core/src/FController.ts#L16)
+[core/src/FController.ts:16](https://github.com/fibbojs/fibbo/blob/65626b456ab47d7e61b23a8dd1be9f399238b0f1/packages/core/src/FController.ts#L16)
