@@ -10,7 +10,10 @@ export interface PipelineManagerOptions {
 }
 
 /**
- * The pipeline manager is responsible for managing pipelines.
+ * The pipeline manager is responsible for managing different pipelines in a scene.
+ * It handles the execution of standard, throttled, and interval pipelines.
+ * It also manages the auto loop feature, which allows pipelines to be executed automatically at a specified frame rate.
+ * A pipeline manager is created automatically when a scene is created.
  * @category Core
  */
 export class PipelineManager {

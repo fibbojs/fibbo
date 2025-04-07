@@ -16,7 +16,7 @@ export interface FSceneOptions {
 }
 
 /**
- * A scene which contains the components, lights and cameras.
+ * A scene which contains the components, lights and camera.
  * Also contains the Rapier world if physics is enabled.
  * @category Core
  */

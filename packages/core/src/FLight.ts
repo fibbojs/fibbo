@@ -30,7 +30,7 @@ export abstract class FLight {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (options.scene === undefined || options.addToScene === undefined)
-      throw new Error('FibboError: FComponent requires addToScene option')
+      throw new Error('FibboError: FLight requires addToScene and scene option')
 
     // Store the scene
     this.scene = options.scene

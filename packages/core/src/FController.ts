@@ -6,7 +6,7 @@ export interface FControllerOptions {
 }
 
 /**
- * The base class for all 2D and 3D controllers in Fibbo.
+ * The base class for all controllers in Fibbo.
  * @category Core
  */
 export abstract class FController {
