@@ -49,7 +49,10 @@ export abstract class FModel extends FComponent {
   /**
    * @param options The options for the component (inherits from FComponent).
    * @param options.scene The 3D scene where the model will be added.
+   * @param options.name The name of the model.
    * @param options.path The path for the model file to load.
+   * @param options.textures The textures for the model. Consists of a record of material names and their corresponding texture paths.
+   * @param options.fileExtension The file extension of the model.
    */
   constructor(options: FModelOptions) {
     super(options)

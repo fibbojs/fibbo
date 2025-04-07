@@ -17,7 +17,10 @@ import type { FModelOptions } from './FModel'
  */
 export class FOBJ extends FModel {
   constructor(options: FModelOptions) {
-    super(options)
+    super({
+      fileExtension: 'obj',
+      ...options,
+    })
 
     // Create OBJ Loader
     const loader = new OBJLoader()

@@ -6,6 +6,17 @@ import type { FScene } from './FScene'
 /**
  * A 3d sensor that can be attached to a component.
  * @category Core
+ * @example
+ * ```ts
+ * import { FSensor } from '@fibbojs/3d'
+ *
+ * const sensor = new FSensor({
+ *  position: { x: 0, y: 0, z: 0 },
+ *  scale: { x: 1, y: 1, z: 1 },
+ *  rotation: { x: 0, y: 0, z: 0 },
+ *  shape: FShapes.CUBOID
+ * })
+ * ```
  */
 export class FSensor extends FRigidBody {
   /**
@@ -27,17 +38,6 @@ export class FSensor extends FRigidBody {
    * @param options.enabledRotations.enableX If true, the rigidBody will be able to rotate on the x-axis.
    * @param options.enabledRotations.enableY If true, the rigidBody will be able to rotate on the y-axis.
    * @param options.enabledRotations.enableZ If true, the rigidBody will be able to rotate on the z-axis.
-   * @example
-   * ```ts
-   * import { FSensor } from '@fibbojs/3d'
-   *
-   * const sensor = new FSensor({
-   *  position: { x: 0, y: 0, z: 0 },
-   *  scale: { x: 1, y: 1, z: 1 },
-   *  rotation: { x: 0, y: 0, z: 0 },
-   *  shape: FShapes.CUBOID
-   * })
-   * ```
    */
   constructor(options?: FRigidBodyOptions) {
     super({

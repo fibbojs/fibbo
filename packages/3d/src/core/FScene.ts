@@ -30,11 +30,12 @@ export interface FSceneOptions extends FSceneOptionsCore {
  *  await scene.initPhysics()
  *
  *  // Create a ground
- *  const ground = new FCuboid()
- *  ground.transform.setScale(15, 0.1, 15)
- *  ground.transform.setPosition(0, -0.1, 0)
- *  ground.initCollider()
+ *  const ground = new FCuboid({
+ *    position: { x: 0, y: -0.1, z: 0 },
+ *    scale: { x: 15, y: 0.1, z: 15 },
+ *  })
  *  ground.setColor(0x1F1F1F)
+ *  ground.initCollider()
  *
  *  // Create a cube
  *  const cube = new FCuboid()

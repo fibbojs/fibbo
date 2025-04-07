@@ -20,7 +20,7 @@ export interface FComponentOptions extends FComponentOptionsCore {
 }
 
 /**
- * The base class for all 3D objects in Fibbo.
+ * The base class for all 3D components in Fibbo.
  * @category Core
  */
 export abstract class FComponent extends FComponentCore {

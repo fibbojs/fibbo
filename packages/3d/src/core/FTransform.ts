@@ -11,6 +11,16 @@ export interface FTransformOptions {
 /**
  * 3D Transform
  * @category Core
+ * @example
+ * ```ts
+ * import { FTransform } from '@fibbojs/3d'
+ *
+ * const transform = new FTransform({
+ *  position: { x: 0, y: 0, z: 0 },
+ *  scale: { x: 1, y: 1, z: 1 },
+ *  rotation: { x: 0, y: 0, z: 0 },
+ * })
+ * ```
  */
 export class FTransform {
   // Callback
@@ -47,16 +57,6 @@ export class FTransform {
    * @param options.rotation The rotation of the transform. If not defined, it will default to `{ x: 0, y: 0, z: 0 }`.
    * @param options.rotationDegree The rotation of the transform in degrees. If not defined, it will default to undefined.
    * @param options.scale The scale of the transform. If not defined, it will default to `{ x: 1, y: 1, z: 1 }`.
-   * @example
-   * ```ts
-   * import { FTransform } from '@fibbojs/3d'
-   *
-   * const transform = new FTransform({
-   *  position: { x: 0, y: 0, z: 0 },
-   *  scale: { x: 1, y: 1, z: 1 },
-   *  rotation: { x: 0, y: 0, z: 0 },
-   * })
-   * ```
    */
   constructor(options?: FTransformOptions) {
     // Apply default options
