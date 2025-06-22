@@ -42,10 +42,4 @@
     "yaml"
   ],
   "vitest.disableWorkspaceWarning": true,
-
-  // Exclude files from the sidebar (makes it cleaner)
-  "files.exclude": {
-    ".nx": true,
-    "**/node_modules": true
-  }
 }
