@@ -11,10 +11,7 @@ export abstract class BackgroundPipeline extends Pipeline {
 
   constructor(path: string) {
     super()
-    /*
-    console.log(import.meta.url)
-    console.log(new URL(path, import.meta.url).href)
-    */
+
     this.worker = new Worker(new URL(path, import.meta.url), { type: 'module' })
   }
 
