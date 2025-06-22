@@ -68,7 +68,6 @@ export class FTransform {
     options = { ...DEFAULT_OPTIONS, ...options }
     // Validate options
     if (!options.position || (!options.rotation && !options.rotationDegree) || !options.scale) {
-      console.log(options)
       throw new Error('FibboError: options missing for FTransform')
     }
 
