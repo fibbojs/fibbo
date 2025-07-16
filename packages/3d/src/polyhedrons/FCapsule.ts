@@ -1,9 +1,9 @@
-import * as THREE from 'three'
-import { FShapes } from '../types/FShapes'
-import type { FRigidBodyOptions } from '../core/FRigidBody'
-import type { FColliderOptions } from '../core/FCollider'
-import type { FPolyhedronOptions } from './FPolyhedron'
-import { FPolyhedron } from './FPolyhedron'
+import * as THREE from "three";
+import type { FColliderOptions } from "../core/FCollider";
+import type { FRigidBodyOptions } from "../core/FRigidBody";
+import { FShapes } from "../types/FShapes";
+import type { FPolyhedronOptions } from "./FPolyhedron";
+import { FPolyhedron } from "./FPolyhedron";
 
 /**
  * A simple capsule model in Fibbo.
@@ -16,39 +16,39 @@ import { FPolyhedron } from './FPolyhedron'
  * ```
  */
 export class FCapsule extends FPolyhedron {
-  constructor(options?: FPolyhedronOptions) {
-    super(options)
-    // Create a capsule
-    const geometry = new THREE.CapsuleGeometry(0.5, 1, 32)
-    const material = new THREE.MeshPhongMaterial({ color: 0x666666 })
-    this.__MESH__ = new THREE.Mesh(geometry, material)
-    // If shadows are enabled, cast and receive shadows
-    if (this.scene.__ENABLE_SHADOWS__) {
-      this.__MESH__.castShadow = true
-      this.__MESH__.receiveShadow = true
-    }
-    // Emit the onLoaded event
-    this.emitOnLoaded()
-  }
+	constructor(options?: FPolyhedronOptions) {
+		super(options);
+		// Create a capsule
+		const geometry = new THREE.CapsuleGeometry(0.5, 1, 32);
+		const material = new THREE.MeshPhongMaterial({ color: 0x666666 });
+		this.__MESH__ = new THREE.Mesh(geometry, material);
+		// If shadows are enabled, cast and receive shadows
+		if (this.scene.__ENABLE_SHADOWS__) {
+			this.__MESH__.castShadow = true;
+			this.__MESH__.receiveShadow = true;
+		}
+		// Emit the onLoaded event
+		this.emitOnLoaded();
+	}
 
-  initCollider(options?: FColliderOptions): void {
-    super.initCollider({
-      shape: FShapes.CAPSULE,
-      ...options,
-    })
-  }
+	initCollider(options?: FColliderOptions): void {
+		super.initCollider({
+			shape: FShapes.CAPSULE,
+			...options,
+		});
+	}
 
-  initRigidBody(options?: FRigidBodyOptions): void {
-    super.initRigidBody({
-      shape: FShapes.CAPSULE,
-      ...options,
-    })
-  }
+	initRigidBody(options?: FRigidBodyOptions): void {
+		super.initRigidBody({
+			shape: FShapes.CAPSULE,
+			...options,
+		});
+	}
 
-  initSensor(options?: FRigidBodyOptions): void {
-    super.initSensor({
-      shape: FShapes.CAPSULE,
-      ...options,
-    })
-  }
+	initSensor(options?: FRigidBodyOptions): void {
+		super.initSensor({
+			shape: FShapes.CAPSULE,
+			...options,
+		});
+	}
 }

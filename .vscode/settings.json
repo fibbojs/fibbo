@@ -6,10 +6,16 @@
   "prettier.enable": false,
   "editor.formatOnSave": true,
 
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome",
+  },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome",
   },
   "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+  },
+  "[vue]": {
     "editor.defaultFormatter": "biomejs.biome",
   },
 

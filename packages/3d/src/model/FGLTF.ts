@@ -1,6 +1,6 @@
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { FModel } from './FModel'
-import type { FModelOptions } from './FModel'
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import type { FModelOptions } from "./FModel";
+import { FModel } from "./FModel";
 
 /*
 import * as THREE from 'three'
@@ -30,41 +30,40 @@ const KTX2_LOADER = new KTX2Loader(MANAGER).setTranscoderPath(
  * ```
  */
 export class FGLTF extends FModel {
-  constructor(options: FModelOptions) {
-    super({
-      fileExtension: 'gltf',
-      ...options,
-    })
-    // Create GLTF Loader
-    const loader = new GLTFLoader()
-    /*
+	constructor(options: FModelOptions) {
+		super({
+			fileExtension: "gltf",
+			...options,
+		});
+		// Create GLTF Loader
+		const loader = new GLTFLoader();
+		/*
       .setCrossOrigin('anonymous')
       .setDRACOLoader(DRACO_LOADER)
       .setKTX2Loader(KTX2_LOADER)
       .setMeshoptDecoder(MeshoptDecoder)
     */
-    // Load the glTF resource
-    loader.load(
-      this.path,
-      // Called when the resource is loaded
-      (gltf) => {
-        // Get the mesh from the glTF scene
-        this.__MESH__ = gltf.scene
+		// Load the glTF resource
+		loader.load(
+			this.path,
+			// Called when the resource is loaded
+			(gltf) => {
+				// Get the mesh from the glTF scene
+				this.__MESH__ = gltf.scene;
 
-        // Define mesh transforms
-        this.defineMeshTransforms()
+				// Define mesh transforms
+				this.defineMeshTransforms();
 
-        // Call the onLoaded Callbacks
-        this.emitOnLoaded()
-      },
-      // Called while loading is progressing
-      (_xhr) => {
-      },
-      // Called when loading has errors
-      (error) => {
-        console.log(`An error happened while loading the model : ${this.path}`)
-        console.log(error)
-      },
-    )
-  }
+				// Call the onLoaded Callbacks
+				this.emitOnLoaded();
+			},
+			// Called while loading is progressing
+			(_xhr) => {},
+			// Called when loading has errors
+			(error) => {
+				console.log(`An error happened while loading the model : ${this.path}`);
+				console.log(error);
+			},
+		);
+	}
 }

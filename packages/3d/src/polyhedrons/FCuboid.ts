@@ -1,5 +1,5 @@
-import type { FPolyhedronOptions } from './FPolyhedron'
-import { FPolyhedron } from './FPolyhedron'
+import type { FPolyhedronOptions } from "./FPolyhedron";
+import { FPolyhedron } from "./FPolyhedron";
 
 /**
  * A simple cuboid model in Fibbo.
@@ -12,9 +12,9 @@ import { FPolyhedron } from './FPolyhedron'
  * ```
  */
 export class FCuboid extends FPolyhedron {
-  constructor(options?: FPolyhedronOptions) {
-    super(options)
-    // Emit the onLoaded event
-    this.emitOnLoaded()
-  }
+	constructor(options?: FPolyhedronOptions) {
+		super(options);
+		// Emit the onLoaded event
+		this.emitOnLoaded();
+	}
 }

@@ -10,41 +10,41 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { onMounted, ref } from 'vue'
+import type { Ref } from "vue";
+import { onMounted, ref } from "vue";
 
 interface Stargazer {
-  avatar_url: string
-  events_url: string
-  followers_url: string
-  following_url: string
-  gists_url: string
-  gravatar_id: string
-  html_url: string
-  id: number
-  login: string
-  node_id: string
-  organizations_url: string
-  received_events_url: string
-  repos_url: string
-  site_admin: boolean
-  starred_url: string
-  subscriptions_url: string
-  type: string
-  url: string
-  user_view_type: string
+	avatar_url: string;
+	events_url: string;
+	followers_url: string;
+	following_url: string;
+	gists_url: string;
+	gravatar_id: string;
+	html_url: string;
+	id: number;
+	login: string;
+	node_id: string;
+	organizations_url: string;
+	received_events_url: string;
+	repos_url: string;
+	site_admin: boolean;
+	starred_url: string;
+	subscriptions_url: string;
+	type: string;
+	url: string;
+	user_view_type: string;
 }
-const stargazers: Ref<Stargazer[]> = ref([])
+const stargazers: Ref<Stargazer[]> = ref([]);
 
 onMounted(() => {
-  fetch('https://api.github.com/repos/fibbojs/fibbo/stargazers?per_page=100')
-    .then(response => response.json())
-    .then((data) => {
-      // Reverse the array to show the latest stargazers first
-      stargazers.value = data.reverse()
-    })
-    .catch(error => console.error('Error fetching stargazers:', error))
-})
+	fetch("https://api.github.com/repos/fibbojs/fibbo/stargazers?per_page=100")
+		.then((response) => response.json())
+		.then((data) => {
+			// Reverse the array to show the latest stargazers first
+			stargazers.value = data.reverse();
+		})
+		.catch((error) => console.error("Error fetching stargazers:", error));
+});
 </script>
 
 <style>

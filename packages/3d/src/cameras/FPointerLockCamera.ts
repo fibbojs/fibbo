@@ -1,7 +1,7 @@
-import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'
-import type { FComponent } from '../core/FComponent'
-import { FCamera } from './FCamera'
-import type { FAttachedCameraOptions } from './FAttachedCamera'
+import { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
+import type { FComponent } from "../core/FComponent";
+import type { FAttachedCameraOptions } from "./FAttachedCamera";
+import { FCamera } from "./FCamera";
 
 /**
  * A camera that can be attached to a FComponent and uses Pointer Lock controls.
@@ -22,33 +22,38 @@ import type { FAttachedCameraOptions } from './FAttachedCamera'
  * ```
  */
 export class FPointerLockCamera extends FCamera {
-  // Model that the camera is attached to
-  attachedComponent: FComponent
-  // Pointer Lock controls
-  controls: PointerLockControls
+	// Model that the camera is attached to
+	attachedComponent: FComponent;
+	// Pointer Lock controls
+	controls: PointerLockControls;
 
-  constructor(options: FAttachedCameraOptions) {
-    super(options)
-    this.attachedComponent = options.target
+	constructor(options: FAttachedCameraOptions) {
+		super(options);
+		this.attachedComponent = options.target;
 
-    // Create Pointer Lock controls
-    this.controls = new PointerLockControls(this.__CAMERA__, this.attachedComponent.scene.renderer.domElement)
+		// Create Pointer Lock controls
+		this.controls = new PointerLockControls(
+			this.__CAMERA__,
+			this.attachedComponent.scene.renderer.domElement,
+		);
 
-    this.attachedComponent.scene.scene.add(this.controls.getObject())
+		this.attachedComponent.scene.scene.add(this.controls.getObject());
 
-    // Lock controls when clicking on the renderer's DOM element
-    this.attachedComponent.scene.renderer.domElement.addEventListener('click', () => {
-      this.controls.lock()
-    })
-  }
+		// Lock controls when clicking on the renderer's DOM element
+		this.attachedComponent.scene.renderer.domElement.addEventListener(
+			"click",
+			() => {
+				this.controls.lock();
+			},
+		);
+	}
 
-  frame(_delta: number): void {
-    if (this.attachedComponent.__MESH__ === undefined)
-      return
+	frame(_delta: number): void {
+		if (this.attachedComponent.__MESH__ === undefined) return;
 
-    // Position the camera at the model's position + offset
-    this.transform.x = this.attachedComponent.__MESH__.position.x
-    this.transform.y = this.attachedComponent.__MESH__.position.y
-    this.transform.z = this.attachedComponent.__MESH__.position.z
-  }
+		// Position the camera at the model's position + offset
+		this.transform.x = this.attachedComponent.__MESH__.position.x;
+		this.transform.y = this.attachedComponent.__MESH__.position.y;
+		this.transform.z = this.attachedComponent.__MESH__.position.z;
+	}
 }
