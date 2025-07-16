@@ -1,8 +1,8 @@
 {
-  "name": "@fibbojs/core",
+  "name": "@fibbojs/config",
   "type": "module",
   "version": "0.0.17",
-  "description": "Core package for Fibbo",
+  "description": "Config package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@proton.me>",
   "license": "Apache-2.0",
   "publishConfig": {
