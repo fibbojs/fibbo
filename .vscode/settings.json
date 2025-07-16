@@ -21,7 +21,7 @@
 
   // Auto fix
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always",
+    "source.organizeImports.biome": "always",
   },
 
   "vitest.disableWorkspaceWarning": true,
