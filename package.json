@@ -18,6 +18,7 @@
   "scripts": {
     "buildAll": "nx run-many --target=build --all",
     "buildAll:noCache": "nx run-many --target=build --all --skip-nx-cache",
+    "nx:clean": "nx reset",
     "dev:3d": "nx dev:watch @fibbojs/playground-3d",
     "dev:3d:windows": "nx dev:watch:windows @fibbojs/playground-3d",
     "dev:2d": "nx dev:watch @fibbojs/playground-2d",
@@ -38,12 +39,15 @@
     "packages/*"
   ],
   "dependencies": {
+    "@clack/prompts": "^0.11.0",
     "@dimforge/rapier2d": "^0.14.0",
     "@dimforge/rapier3d": "^0.14.0",
+    "ansis": "^4.1.0",
+    "cac": "^6.7.14",
     "pixi-viewport": "^5.0.3",
     "pixi.js": "^8.3.4",
-    "rolldown-vite": "^7.0.9",
     "three": "^0.168.0",
+    "unconfig": "^7.3.2",
     "vite-plugin-top-level-await": "^1.5.0",
     "vite-plugin-wasm": "^3.5.0"
   },
@@ -60,7 +64,7 @@
     "playwright": "^1.47.2",
     "sass": "^1.77.8",
     "tsdown": "^0.12.8",
-    "typedoc": "^0.26.5",
+    "typedoc": "^0.28.7",
     "typedoc-plugin-markdown": "^4.2.2",
     "typescript": "^5.5.4",
     "vite": "^5.2.9",

@@ -8,7 +8,8 @@
       "@fibbojs/core",
       "@fibbojs/devtools",
       "@fibbojs/event",
-      "@fibbojs/util"
+      "@fibbojs/util",
+      "fibbo"
     ]
   },
   "targetDefaults": {

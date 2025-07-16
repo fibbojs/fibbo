@@ -1,7 +1,7 @@
+import { loadConfig as loadUnconfig } from "unconfig";
 import { mergeConfig, type UserConfig } from "vite";
 import topLevelAwait from "vite-plugin-top-level-await";
 import wasm from "vite-plugin-wasm";
-import { jit } from "./util/jit";
 
 export interface FibboOptions {
 	vite?: UserConfig;
@@ -49,21 +49,23 @@ export function resolveFibboOptions(
 }
 
 /**
- * Load the Fibbo configuration from a specified path.
- * This function reads the configuration file at the given path and resolves it to the Fibbo options
- * @param path The path to the configuration file.
+ * Load the Fibbo configuration file and resolve the options.
  * @returns {ResolvedFibboOptions} The resolved Fibbo options.
  */
-export async function loadConfig(path?: string): Promise<ResolvedFibboOptions> {
-	const module = await jit({
-		path: path || "fibbo.config.ts",
+export async function loadConfig(): Promise<ResolvedFibboOptions> {
+	const { config } = await loadUnconfig({
+		sources: [
+			{
+				files: "fibbo.config",
+				extensions: ["ts", "mts", "cts", "js", "mjs", "cjs", "json"],
+			},
+		],
 	});
 
-	if (module.default) {
-		return resolveFibboOptions(module.default as FibboOptions);
+	if (!config) {
+		throw new Error("No configuration found.");
 	}
-
-	return resolveFibboOptions(module as FibboOptions);
+	return resolveFibboOptions(config as FibboOptions);
 }
 
 /**

@@ -1,3 +1,7 @@
 export { build } from "./build";
 export { createServer } from "./createServer";
-export { defineConfig } from "./options";
+export {
+	defineConfig,
+	type FibboOptions,
+	type ResolvedFibboOptions,
+} from "./options";

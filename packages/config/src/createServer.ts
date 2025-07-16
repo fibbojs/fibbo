@@ -1,5 +1,4 @@
 import { createServer as viteCreateServer } from "vite";
-import { version } from "../package.json";
 import { loadConfig } from "./options";
 
 /**
@@ -7,10 +6,8 @@ import { loadConfig } from "./options";
  * This function initializes a Vite server with the provided options.
  */
 export async function createServer(): Promise<void> {
-	console.log(`Fibbo v${version}`);
 	// Load the configuration file and resolve options
 	const options = await loadConfig();
-	console.log("Creating dev server with options:", options);
 	// Create a development server with Vite
 	const server = await viteCreateServer({
 		...options.vite,
@@ -18,6 +15,6 @@ export async function createServer(): Promise<void> {
 	});
 	// Start the server
 	await server.listen();
-	// server.printUrls()
-	console.log("Bye bye.");
+	console.log("Server is running at :");
+	server.printUrls();
 }

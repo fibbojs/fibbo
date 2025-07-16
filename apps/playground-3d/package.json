@@ -12,18 +12,16 @@
   },
   "bugs": "https://github.com/fibbojs/fibbo/issues",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "fibbo dev",
+    "build": "fibbo build",
+    "preview": "fibbo preview"
   },
   "devDependencies": {
     "@fibbojs/3d": "*",
     "@fibbojs/core": "*",
     "@fibbojs/devtools": "*",
     "@fibbojs/event": "*",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-top-level-await": "^1.4.1",
-    "vite-plugin-wasm": "^3.3.0"
+    "@fibbojs/config": "*",
+    "fibbo": "*"
   }
 }
