@@ -54,6 +54,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.1",
+    "@nx/js": "^19.6.1",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
     "@types/node": "^20.12.7",
     "@types/three": "^0.166.0",
     "@vitejs/plugin-vue": "^5.1.2",
