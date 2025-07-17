@@ -46,6 +46,9 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
+      # Install fibbo CLI globally
+      - name: Install fibbo CLI
+        run: npm install -g ./packages/fibbo
       # Build all packages
       - name: Build all packages
         run: npx nx run-many --target=build --all
