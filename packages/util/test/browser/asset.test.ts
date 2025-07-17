@@ -6,12 +6,15 @@ describe("@fibbojs/util/FAssetUtil should", () => {
 		expect(
 			FAssetUtil.interpretPath("http://localhost:5173/custom/my-asset.png"),
 		).toEqual("http://localhost:5173/custom/my-asset.png");
-		// for href based tests, the url isn't predictable as vitest will create a random id for the test, so we use regex to match the url
+		// For href based tests, the URL isn't predictable as Vitest will create a random ID for the test.
+		// We use a more flexible regex to match the URL.
+		// It should match: http://localhost:<port>/<any_vitest_path>/my-asset.png
 		expect(FAssetUtil.interpretPath("/my-asset.png")).toMatch(
-			/http:\/\/localhost:5173\/.*\/my-asset.png/,
+			/^http:\/\/localhost:\d+\/.*\/my-asset\.png$/,
 		);
+		// It should match: http://localhost:<port>/<any_vitest_path>/assets/my-asset.png
 		expect(FAssetUtil.interpretPath("my-asset.png")).toMatch(
-			/http:\/\/localhost:5173\/.*\/assets\/my-asset.png/,
+			/^http:\/\/localhost:\d+\/.*\/assets\/my-asset\.png$/,
 		);
 	});
 });
