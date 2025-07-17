@@ -13,7 +13,7 @@
   "bugs": "https://github.com/fibbojs/fibbo/issues",
   "scripts": {
     "dev": "fibbo dev",
-    "build": "fibbo build",
+    "build": "../../node_modules/.bin/fibbo build",
     "preview": "fibbo preview"
   },
   "devDependencies": {
