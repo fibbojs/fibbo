@@ -1,0 +1,54 @@
+{
+  "name": "fibbo",
+  "type": "module",
+  "version": "0.0.17",
+  "description": "The CLI for the Fibbo game engine",
+  "author": "Augustin Mercier <mercier.augustin@proton.me>",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://fibbo.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibbojs/fibbo.git"
+  },
+  "bugs": "https://github.com/fibbojs/fibbo/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "bin": {
+    "fibbo": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "ansis": "^4.1.0",
+    "cac": "^6.7.14"
+  },
+  "peerDependencies": {
+    "@fibbojs/config": "^0.0.17"
+  }
+}

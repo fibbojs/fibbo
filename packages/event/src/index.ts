@@ -1,4 +1,4 @@
 /**
  * Export Event classes
  */
-export { FKeyboard } from './FKeyboard'
+export { FKeyboard } from "./FKeyboard";

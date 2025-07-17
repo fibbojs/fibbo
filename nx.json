@@ -4,10 +4,12 @@
     "projects": [
       "@fibbojs/2d",
       "@fibbojs/3d",
+      "@fibbojs/config",
       "@fibbojs/core",
       "@fibbojs/devtools",
       "@fibbojs/event",
-      "@fibbojs/util"
+      "@fibbojs/util",
+      "fibbo"
     ]
   },
   "targetDefaults": {

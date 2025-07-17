@@ -1,4 +1,4 @@
-import { Pipeline, PipelineState } from './Pipeline'
+import { Pipeline, PipelineState } from "./Pipeline";
 
 /**
  * A standard pipeline is a pipeline that runs at max FPS, using [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame).
@@ -7,17 +7,13 @@ import { Pipeline, PipelineState } from './Pipeline'
  * @category Pipeline
  */
 export abstract class StandardPipeline extends Pipeline {
-  constructor() {
-    super()
-  }
+	start(): void {
+		// Update the pipeline state
+		this.state = PipelineState.RUNNING;
+	}
 
-  start(): void {
-    // Update the pipeline state
-    this.state = PipelineState.RUNNING
-  }
-
-  stop(): void {
-    // Update the pipeline state
-    this.state = PipelineState.STOPPED
-  }
+	stop(): void {
+		// Update the pipeline state
+		this.state = PipelineState.STOPPED;
+	}
 }

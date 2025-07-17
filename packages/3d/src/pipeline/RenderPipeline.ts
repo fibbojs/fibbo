@@ -1,29 +1,29 @@
-import { StandardPipeline } from '@fibbojs/core'
-import type { FScene } from '../core/FScene'
+import { StandardPipeline } from "@fibbojs/core";
+import type { FScene } from "../core/FScene";
 
 export interface RenderPipelineOptions {
-  scene: FScene
+	scene: FScene;
 }
 
 /**
  * Render pipeline.
  */
 export class RenderPipeline extends StandardPipeline {
-  scene: FScene
+	scene: FScene;
 
-  constructor(options: RenderPipelineOptions) {
-    super()
-    this.scene = options.scene
-  }
+	constructor(options: RenderPipelineOptions) {
+		super();
+		this.scene = options.scene;
+	}
 
-  frame(delta: number) {
-    // Call render for each component
-    this.scene.components.forEach(component => component.render(delta))
+	frame(delta: number) {
+		// Call render for each component
+		this.scene.components.forEach((component) => component.render(delta));
 
-    // Call frame for the camera
-    this.scene.camera.frame(delta)
+		// Call frame for the camera
+		this.scene.camera.frame(delta);
 
-    // Render the scene
-    this.scene.renderer.render(this.scene.scene, this.scene.camera.__CAMERA__)
-  }
+		// Render the scene
+		this.scene.renderer.render(this.scene.scene, this.scene.camera.__CAMERA__);
+	}
 }

@@ -1,5 +1,4 @@
-import type { FCameraOptions } from './FCamera'
-import { FCamera } from './FCamera'
+import { FCamera } from "./FCamera";
 
 /**
  * A fixed camera that does not move.
@@ -15,8 +14,4 @@ import { FCamera } from './FCamera'
  * scene.camera.lookAt(0, 0, 0)
  * ```
  */
-export class FFixedCamera extends FCamera {
-  constructor(options?: FCameraOptions) {
-    super(options)
-  }
-}
+export class FFixedCamera extends FCamera {}

@@ -1,8 +1,8 @@
-import type { FScene } from './FScene'
+import type { FScene } from "./FScene";
 
 export interface FLightOptions {
-  scene?: FScene
-  addToScene?: boolean
+	scene?: FScene;
+	addToScene?: boolean;
 }
 
 /**
@@ -10,53 +10,55 @@ export interface FLightOptions {
  * @category Core
  */
 export abstract class FLight {
-  /**
-   * Callbacks for when the light is loaded.
-   */
-  public __CALLBACKS_ON_LOADED__: (() => void)[] = []
+	/**
+	 * Callbacks for when the light is loaded.
+	 */
+	public __CALLBACKS_ON_LOADED__: (() => void)[] = [];
 
-  /**
-   * The scene the light is attached to.
-   */
-  public scene: FScene
+	/**
+	 * The scene the light is attached to.
+	 */
+	public scene: FScene;
 
-  constructor(options?: FLightOptions) {
-    // Define default options
-    const DEFAULT_OPTIONS = {
-      scene: globalThis.__FIBBO_ACTUAL_SCENE__,
-      addToScene: true,
-    }
-    // Apply default options
-    options = { ...DEFAULT_OPTIONS, ...options }
-    // Validate options
-    if (options.scene === undefined || options.addToScene === undefined)
-      throw new Error('FibboError: FLight requires addToScene and scene option')
+	constructor(options?: FLightOptions) {
+		// Define default options
+		const DEFAULT_OPTIONS = {
+			scene: globalThis.__FIBBO_ACTUAL_SCENE__,
+			addToScene: true,
+		};
+		// Apply default options
+		options = { ...DEFAULT_OPTIONS, ...options };
+		// Validate options
+		if (options.scene === undefined || options.addToScene === undefined)
+			throw new Error(
+				"FibboError: FLight requires addToScene and scene option",
+			);
 
-    // Store the scene
-    this.scene = options.scene
+		// Store the scene
+		this.scene = options.scene;
 
-    // If addToScene is true, wait for the light to be loaded and add it to the scene
-    if (options.addToScene) {
-      this.onLoaded(() => {
-        this.scene.addLight(this)
-      })
-    }
-  }
+		// If addToScene is true, wait for the light to be loaded and add it to the scene
+		if (options.addToScene) {
+			this.onLoaded(() => {
+				this.scene.addLight(this);
+			});
+		}
+	}
 
-  /**
-   * Add a callback to be called when the light is loaded.
-   * @param callback The callback function.
-   */
-  onLoaded(callback: () => void) {
-    this.__CALLBACKS_ON_LOADED__.push(callback)
-  }
+	/**
+	 * Add a callback to be called when the light is loaded.
+	 * @param callback The callback function.
+	 */
+	onLoaded(callback: () => void) {
+		this.__CALLBACKS_ON_LOADED__.push(callback);
+	}
 
-  /**
-   * Emit the onLoaded callbacks.
-   */
-  emitOnLoaded() {
-    this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
-      callback()
-    })
-  }
+	/**
+	 * Emit the onLoaded callbacks.
+	 */
+	emitOnLoaded() {
+		this.__CALLBACKS_ON_LOADED__.forEach((callback) => {
+			callback();
+		});
+	}
 }

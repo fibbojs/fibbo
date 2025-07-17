@@ -3,11 +3,11 @@
  * For some reason, `instanceof` doesn't work in this context, so we have to do this.
  */
 export function getPrototypeChain(obj: object) {
-  let proto = obj
-  const names = []
-  while (proto) {
-    names.push(proto.constructor.name)
-    proto = Object.getPrototypeOf(proto)
-  }
-  return names
+	let proto = obj;
+	const names = [];
+	while (proto) {
+		names.push(proto.constructor.name);
+		proto = Object.getPrototypeOf(proto);
+	}
+	return names;
 }

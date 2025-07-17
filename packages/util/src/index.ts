@@ -1,5 +1,5 @@
 /**
  * Export Core utilities.
  */
-export * from './FAssetUtil'
-export * from './FMathUtil'
+export * from "./FAssetUtil";
+export * from "./FMathUtil";

@@ -1,8 +1,8 @@
-import { FComponent } from './FComponent'
-import type { FScene } from './FScene'
+import { FComponent } from "./FComponent";
+import type { FScene } from "./FScene";
 
 export interface FCameraOptions {
-  scene?: FScene
+	scene?: FScene;
 }
 
 /**
@@ -10,7 +10,7 @@ export interface FCameraOptions {
  * @category Core
  */
 export abstract class FCamera extends FComponent {
-  constructor(options?: FCameraOptions) {
-    super({ addToScene: false, ...options })
-  }
+	constructor(options?: FCameraOptions) {
+		super({ addToScene: false, ...options });
+	}
 }

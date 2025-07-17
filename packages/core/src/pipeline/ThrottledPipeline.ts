@@ -1,4 +1,4 @@
-import { Pipeline, PipelineState } from './Pipeline'
+import { Pipeline, PipelineState } from "./Pipeline";
 
 /**
  * A throttled pipeline is similar to a StandardPipeline (also based on [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame)), but it only calls the frame method if enough time has passed.
@@ -6,24 +6,24 @@ import { Pipeline, PipelineState } from './Pipeline'
  * @category Pipeline
  */
 export abstract class ThrottledPipeline extends Pipeline {
-  /**
-   * The last time the frame was called.
-   * This is used to determine if enough time has passed to call the frame method again.
-   */
-  lastTime: number
+	/**
+	 * The last time the frame was called.
+	 * This is used to determine if enough time has passed to call the frame method again.
+	 */
+	lastTime: number;
 
-  constructor() {
-    super()
-    this.lastTime = (new Date()).getTime()
-  }
+	constructor() {
+		super();
+		this.lastTime = Date.now();
+	}
 
-  start(): void {
-    // Update the pipeline state
-    this.state = PipelineState.RUNNING
-  }
+	start(): void {
+		// Update the pipeline state
+		this.state = PipelineState.RUNNING;
+	}
 
-  stop(): void {
-    // Update the pipeline state
-    this.state = PipelineState.STOPPED
-  }
+	stop(): void {
+		// Update the pipeline state
+		this.state = PipelineState.STOPPED;
+	}
 }

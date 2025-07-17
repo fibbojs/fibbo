@@ -1,5 +1,5 @@
-import type { FModelOptions } from './FModel'
-import { FGLTF } from './FGLTF'
+import { FGLTF } from "./FGLTF";
+import type { FModelOptions } from "./FModel";
 
 /**
  * A GLB model in Fibbo.
@@ -15,10 +15,10 @@ import { FGLTF } from './FGLTF'
  * ```
  */
 export class FGLB extends FGLTF {
-  constructor(options: FModelOptions) {
-    super({
-      fileExtension: 'glb',
-      ...options,
-    })
-  }
+	constructor(options: FModelOptions) {
+		super({
+			fileExtension: "glb",
+			...options,
+		});
+	}
 }

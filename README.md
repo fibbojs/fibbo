@@ -31,12 +31,12 @@ See the [installation guide](https://fibbo.dev/getting-started/installation) for
   - [Vue](https://vuejs.org/) for the devtools
 - Tooling
   - [Nx](https://nx.dev/) for monorepo management
-  - [unbuild](https://github.com/unjs/unbuild) for building the packages
+  - [tsdown](https://tsdown.dev/) for building the packages
   - [Vite](https://vitejs.dev/) for the playgrounds + building the devtools
   - [VitePress](https://vitepress.dev/) for the documentation
   - [Vitest](https://vitest.dev/) for testing
   - [TypeDoc](https://typedoc.org/) for the API Reference part of the documentation
-  - [ESLint](https://eslint.org/) for linting
+  - [Biome](https://biomejs.dev/) for formatting and linting
 
 ## Development
 
