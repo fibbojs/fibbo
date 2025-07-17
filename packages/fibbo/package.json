@@ -1,7 +1,7 @@
 {
   "name": "fibbo",
   "type": "module",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "The CLI for the Fibbo game engine",
   "author": "Augustin Mercier <mercier.augustin@proton.me>",
   "license": "Apache-2.0",
@@ -45,10 +45,8 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.11.0",
+    "@fibbojs/config": "0.0.19",
     "ansis": "^4.1.0",
     "cac": "^6.7.14"
-  },
-  "peerDependencies": {
-    "@fibbojs/config": "^0.0.18"
   }
 }

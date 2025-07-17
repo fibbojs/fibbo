@@ -1,7 +1,7 @@
 {
   "name": "@fibbojs/util",
   "type": "module",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Util package for Fibbo",
   "author": "Augustin Mercier <mercier.augustin@proton.me>",
   "license": "Apache-2.0",
@@ -44,6 +44,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fibbojs/core": "^0.0.18"
+    "@fibbojs/core": "0.0.19"
   }
 }
