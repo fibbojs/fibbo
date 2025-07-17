@@ -16,6 +16,7 @@
   "bugs": "https://github.com/fibbojs/fibbo/issues",
   "keywords": [],
   "scripts": {
+    "postinstall": "node ./scripts/postinstall.mjs",
     "buildAll": "nx run-many --target=build --all",
     "buildAll:noCache": "nx run-many --target=build --all --skip-nx-cache",
     "nx:clean": "nx reset",
