@@ -18,10 +18,8 @@
   },
   "devDependencies": {
     "@fibbojs/2d": "*",
-    "@fibbojs/core": "*",
     "@fibbojs/devtools": "*",
     "@fibbojs/event": "*",
-    "@fibbojs/config": "*",
     "fibbo": "*"
   }
 }
