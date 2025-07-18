@@ -49,6 +49,9 @@ Here are the main packages :
 - [`@fibbojs/3d`](https://www.npmjs.com/package/@fibbojs/3d) : The 3D engine, mainly based on [Three.js](https://threejs.org/) and [Rapier](https://rapier.rs/).
 - [`@fibbojs/event`](https://www.npmjs.com/package/@fibbojs/event) : The event system, which allows you to create and listen to events in the browser.
 - [`@fibbojs/devtools`](https://www.npmjs.com/package/@fibbojs/devtools) : The devtools, which lets you inspect and debug your scenes.
+- [`@fibbojs/util`](https://www.npmjs.com/package/@fibbojs/util) : Common utilities used by the other packages.
+- [`@fibbojs/config`](https://www.npmjs.com/package/@fibbojs/config) : The configuration package, responsible for building and serving your application.
+- [`fibbo`](https://www.npmjs.com/package/fibbo) : The CLI mainly used to call the `@fibbojs/config` package.
 
 For now, here is what the tech stack looks like :
 
@@ -59,9 +62,9 @@ For now, here is what the tech stack looks like :
   - [Vue](https://vuejs.org/) for the devtools
 - Tooling
   - [Nx](https://nx.dev/) for monorepo management
-  - [unbuild](https://github.com/unjs/unbuild) for building the packages
+  - [tsdown](https://tsdown.dev/) for building the packages
   - [Vite](https://vitejs.dev/) for the playgrounds + building the devtools
   - [VitePress](https://vitepress.dev/) for the documentation
   - [Vitest](https://vitest.dev/) for testing
   - [TypeDoc](https://typedoc.org/) for the API Reference part of the documentation
-  - [ESLint](https://eslint.org/) for linting
+  - [Biome](https://biomejs.dev/) for formatting and linting

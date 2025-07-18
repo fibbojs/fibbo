@@ -1,6 +1,6 @@
 # Extending Fibbo
 
-We provide a [module starter](https://github.com/fibbojs/starter-module) to help you get started with creating your own modules for Fibbo.
+We provide a [module starter](https://github.com/fibbojs/create-fibbo/tree/main/templates/module) to help you get started with creating your own modules for Fibbo.
 
 This concept was highly inspired by the [Nuxt module system](https://nuxt.com/modules), so shoutout to them for the idea !
 
@@ -9,17 +9,15 @@ This concept was highly inspired by the [Nuxt module system](https://nuxt.com/mo
 - Clone the template
 
 ```bash
-fibbo init module [module-name]
+npm create fibbo@latest -t module
 ```
 
 - Do not forget to modify the following fields :
     - package.json : `name`, `description`, `author`, `homepage`, `repository`, `bugs`
-    - vite.config.ts : `build.lib.name`
 
 - Install the dependencies
 
 ```bash
-cd starter-module
 npm install
 ```
 

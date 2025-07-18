@@ -113,7 +113,6 @@ export default defineConfig({
 							],
 						},
 						{ text: "Deployment", link: "/more/deployment" },
-						{ text: "Upgrading", link: "/more/upgrading" },
 						{ text: "Devtools", link: "/more/devtools" },
 						{ text: "Extending Fibbo", link: "/more/extending-fibbo" },
 						{ text: "Contributing", link: "/more/contributing" },
