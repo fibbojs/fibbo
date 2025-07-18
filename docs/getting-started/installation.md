@@ -9,14 +9,6 @@ Want to create a new game ? Fibbo provides an easy way to clone a starter projec
 
 ## Quick start
 
-::: code-group
-
-```bash [2d]
-npm create fibbo@latest -t 2d
+```bash
+npm create fibbo@latest
 ```
-
-```bash [3d]
-npm create fibbo@latest -t 3d
-```
-
-:::
